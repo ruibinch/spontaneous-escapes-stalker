@@ -19,6 +19,11 @@ export interface RedemptionTableInfoWithRegion extends RedemptionTableInfo {
 }
 
 export interface RedemptionInfo extends RedemptionTableInfoWithRegion {
-  validUntil: Date; // TODO:
-  travelPeriod: string[]; // TODO:
+  endDate: Date;
+  travelPeriod: TimePeriod;
+}
+
+interface TimePeriod {
+  from: Date;
+  to: Date;
 }
