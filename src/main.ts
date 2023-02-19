@@ -1,6 +1,7 @@
 import axios from 'axios';
 import fs from 'fs';
 import { parse } from 'node-html-parser';
+import { Redemption } from './models/Redemption';
 
 import { parseRedemptionTables } from './parseRedemptionTables';
 import {
@@ -21,10 +22,14 @@ async function run() {
   const redemptionEndDate = parseRedemptionEndDate(root);
   const redemptionTravelPeriod = parseRedemptionTravelPeriod(root);
 
-  // fs.writeFileSync(
-  //   './redemptions.json',
-  //   JSON.stringify(redemptionsInfo, null, 4),
-  // );
+  const redemptions: Redemption[] = redemptionTablesInfo.map((redemptionInfo) =>
+    Redemption.create({
+      ...redemptionInfo,
+      redemptionEndDate,
+    }),
+  );
+
+  fs.writeFileSync('./redemptions.json', JSON.stringify(redemptions, null, 4));
 }
 
 if (require.main === module) {

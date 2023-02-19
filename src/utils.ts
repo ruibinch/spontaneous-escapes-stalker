@@ -1,3 +1,16 @@
+import { formatISO } from 'date-fns';
+import Hashes from 'jshashes';
+
+// Date
+
+export const toDateISO8601 = (date: Date | number): string =>
+  formatISO(date, { representation: 'date' });
+
+// Misc
+
+export const hash = (...inputs: string[]): string =>
+  new Hashes.SHA1().hex(inputs.join(''));
+
 export const toCamelCase = (str: string) =>
   str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
 

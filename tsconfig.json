@@ -121,5 +121,8 @@
     // "watchFile": "dynamicPriorityPolling",           /* specify strategy for watching individual files */
     // "watchDirectory": "dynamicPriorityPolling",      /* specify strategy for watching directory trees (for systems that lack recursive file-watching functionality) */
     // "fallbackPolling": "dynamicPriority",            /* specify polling strategy used when systems runs out and/or doesn't support native file watchers */
+  },
+  "ts-node": {
+    "files": true
   }
 }

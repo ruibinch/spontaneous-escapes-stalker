@@ -1,29 +1,17 @@
-export enum FlightClass {
-  ECONOMY = 'Economy',
-  PREMIUM_ECONOMY = 'Premium Economy',
-  BUSINESS = 'Business',
-  FIRST = 'First',
-}
+import { Redemption } from './models/Redemption';
 
-export interface RedemptionTableInfo {
-  origin: string;
-  destination: string;
-  flightClass: FlightClass;
-  flightNo: string;
-  milesRequired: number;
-  blackoutPeriod: string; // TODO: to be formatted better
-}
+// Base information that can be obtained from each individual redemption table
+export type RedemptionTableInfo = Omit<
+  Redemption,
+  'region' | 'redemptionEndDate'
+>;
 
-export interface RedemptionTableInfoWithRegion extends RedemptionTableInfo {
-  region: string;
-}
+export type RedemptionTableInfoWithRegion = Omit<
+  Redemption,
+  'redemptionEndDate'
+>;
 
-export interface RedemptionInfo extends RedemptionTableInfoWithRegion {
-  endDate: Date;
-  travelPeriod: TimePeriod;
-}
-
-interface TimePeriod {
+export interface TimePeriod {
   from: Date;
   to: Date;
 }
