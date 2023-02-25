@@ -15,3 +15,8 @@ export interface TimePeriod {
   from: Date;
   to: Date;
 }
+
+export interface TimePeriodSerialized {
+  from: string;
+  to: string;
+}

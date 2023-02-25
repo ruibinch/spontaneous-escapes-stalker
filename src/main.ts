@@ -1,7 +1,7 @@
 import axios from 'axios';
-import fs from 'fs';
 import { parse } from 'node-html-parser';
 import { Redemption } from './models/Redemption';
+import { RedemptionPeriod } from './models/RedemptionPeriod';
 
 import { parseRedemptionTables } from './parseRedemptionTables';
 import {
@@ -22,14 +22,24 @@ async function run() {
   const redemptionEndDate = parseRedemptionEndDate(root);
   const redemptionTravelPeriod = parseRedemptionTravelPeriod(root);
 
-  const redemptions: Redemption[] = redemptionTablesInfo.map((redemptionInfo) =>
+  const redemptions = redemptionTablesInfo.map((redemptionInfo) =>
     Redemption.create({
       ...redemptionInfo,
       redemptionEndDate,
     }),
   );
+  const redemptionPeriod = RedemptionPeriod.create({
+    redemptionEndDate,
+    travelPeriod: redemptionTravelPeriod,
+  });
 
-  fs.writeFileSync('./redemptions.json', JSON.stringify(redemptions, null, 4));
+  await RedemptionPeriod.upload(redemptionPeriod);
+
+  // fs.writeFileSync('./redemptions.json', JSON.stringify(redemptions, null, 4));
+  await Redemption.upload(redemptions);
+
+  // const redemptionsJson = fs.readFileSync('./redemptions.json').toString();
+  // await Redemption.upload(JSON.parse(redemptionsJson));
 }
 
 if (require.main === module) {
@@ -37,7 +47,8 @@ if (require.main === module) {
     .then(() => {
       process.exit(0);
     })
-    .catch(() => {
+    .catch((err) => {
+      console.log(err);
       process.exit(1);
     });
 }

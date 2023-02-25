@@ -1,6 +1,5 @@
 import { parse } from 'date-fns';
 import { HTMLElement } from 'node-html-parser';
-import { toDateISO8601 } from './utils';
 
 // e.g. 1 March 2023, 28 June 2023
 const DATE_STRING_FORMAT = 'd MMMM yyyy';
@@ -25,7 +24,7 @@ export function parseRedemptionEndDate(root: HTMLElement) {
     DATE_STRING_FORMAT,
     new Date(),
   );
-  return toDateISO8601(redemptionEndDate);
+  return redemptionEndDate;
 }
 
 /**
@@ -61,7 +60,7 @@ export function parseRedemptionTravelPeriod(root: HTMLElement) {
   const fromDate = parse(periodFrom, DATE_STRING_FORMAT, new Date());
   const toDate = parse(periodTo, DATE_STRING_FORMAT, new Date());
   return {
-    from: toDateISO8601(fromDate),
-    to: toDateISO8601(toDate),
+    from: fromDate,
+    to: toDate,
   };
 }
