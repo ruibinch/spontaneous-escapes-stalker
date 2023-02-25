@@ -3,7 +3,7 @@ import {
   KeyType,
   ScalarAttributeType,
 } from '@aws-sdk/client-dynamodb';
-import { PutCommand } from '@aws-sdk/lib-dynamodb';
+import { PutCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient, getDynamoDBBillingDetails } from '../lib/aws/dynamodb';
 import { toDateISO8601 } from '../utils';
 
@@ -120,6 +120,41 @@ export class Redemption {
     ).length;
     console.log(
       `${successfulPutCount} items uploaded to table "${REDEMPTION_TABLE_NAME}"`,
+    );
+  }
+
+  /**
+   * Retrieves redemptions based on their redemption end date.
+   *
+   * To support retrieving by sort key when the use case arises.
+   */
+  static async query(redemptionEndDate: string) {
+    try {
+      const command = new QueryCommand({
+        TableName: REDEMPTION_TABLE_NAME,
+        KeyConditionExpression: 'redemptionEndDate = :red',
+        ExpressionAttributeValues: {
+          ':red': redemptionEndDate,
+        },
+      });
+      const queryOutput = await ddbDocClient.send(command);
+
+      return queryOutput.Items as Redemption[] | undefined;
+    } catch (err) {
+      console.log('[Redemption > query]', err);
+      return undefined;
+    }
+  }
+
+  isIdentical(otherRedemption: Redemption) {
+    return (
+      this.origin === otherRedemption.origin &&
+      this.destination === otherRedemption.destination &&
+      this.flightClass === otherRedemption.flightClass &&
+      this.flightNo === otherRedemption.flightNo &&
+      this.milesRequired === otherRedemption.milesRequired &&
+      // TODO: update this comparison when blackoutPeriod is updated to an array
+      this.blackoutPeriod === otherRedemption.blackoutPeriod
     );
   }
 }

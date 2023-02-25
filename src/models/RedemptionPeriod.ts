@@ -3,7 +3,7 @@ import {
   KeyType,
   ScalarAttributeType,
 } from '@aws-sdk/client-dynamodb';
-import { PutCommand } from '@aws-sdk/lib-dynamodb';
+import { GetCommand, PutCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient, getDynamoDBBillingDetails } from '../lib/aws/dynamodb';
 import { TimePeriod, TimePeriodSerialized } from '../types';
 import { toDateISO8601 } from '../utils';
@@ -59,15 +59,37 @@ export class RedemptionPeriod {
     };
   }
 
-  static async upload(redemptionPeriod: RedemptionPeriod) {
+  static async upload(redemptionPeriodProps: RedemptionPeriodInputProps) {
     const command = new PutCommand({
       TableName: REDEMPTION_PERIOD_TABLE_NAME,
-      Item: redemptionPeriod,
+      Item: RedemptionPeriod.create(redemptionPeriodProps),
     });
     const putOutput = await ddbDocClient.send(command);
 
     if (putOutput.$metadata.httpStatusCode === 200) {
       console.log(`1 item uploaded to table "${REDEMPTION_PERIOD_TABLE_NAME}"`);
     }
+  }
+
+  static async get(redemptionEndDate: string) {
+    try {
+      const command = new GetCommand({
+        TableName: REDEMPTION_PERIOD_TABLE_NAME,
+        Key: {
+          redemptionEndDate,
+        },
+      });
+      const getOutput = await ddbDocClient.send(command);
+
+      return getOutput.Item as RedemptionPeriod | undefined;
+    } catch (err) {
+      console.log('[RedemptionPeriod > get]', err);
+      return undefined;
+    }
+  }
+
+  static async exists(redemptionEndDate: string) {
+    const result = await this.get(redemptionEndDate);
+    return Boolean(result);
   }
 }
