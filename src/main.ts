@@ -1,5 +1,7 @@
 import axios from 'axios';
+import fs from 'fs';
 import { parse } from 'node-html-parser';
+import { escapeCharacters } from './lib/telegram/helpers';
 import { Redemption } from './models/Redemption';
 import { RedemptionPeriod } from './models/RedemptionPeriod';
 
@@ -8,13 +10,20 @@ import {
   parseRedemptionEndDate,
   parseRedemptionTravelPeriod,
 } from './parseRedemptionTerms';
-import { toDateISO8601 } from './utils';
+import {
+  sendExistingRedemptionPeriodChangesNotification,
+  sendMessageToChannel,
+  sendNewRedemptionPeriodNotification,
+  sendRedemptionsInfoNotification,
+} from './sender';
+import { currentDateInYYYYMMDD, toDateISO8601 } from './utils';
 
 process.env.TZ = 'UTC';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
 
+// TODO: integrate with serverless.yml
 async function run() {
   const result = await axios.get(SPONTANEOUS_ESCAPES_URL);
   const root = parse(result.data);
@@ -30,6 +39,14 @@ async function run() {
     }),
   );
 
+  if (process.env['LOCAL_RUN']) {
+    fs.writeFileSync(
+      `./${currentDateInYYYYMMDD()}-redemptions.json`,
+      JSON.stringify(redemptions, null, 4),
+    );
+    return;
+  }
+
   // check saved data
   const doesRedemptionPeriodExist = await RedemptionPeriod.exists(
     toDateISO8601(redemptionEndDate),
@@ -44,25 +61,29 @@ async function run() {
     redemptionsSavedForPeriod,
   );
 
-  if (!doesRedemptionPeriodExist) {
-    // TODO: flag out on the bot prominently!
+  if (doesRedemptionPeriodExist && newRedemptions.length === 0) {
+    // no changes, return early
+    // TODO: only for debugging, to remove
+    await sendMessageToChannel(
+      escapeCharacters(`[${new Date().toUTCString()}] 🚫 No changes`),
+    );
+    return;
+  }
 
+  if (!doesRedemptionPeriodExist) {
+    console.log(`Redemption period "${redemptionEndDate}" does not exist`);
     await RedemptionPeriod.upload({
       redemptionEndDate,
       travelPeriod: redemptionTravelPeriod,
     });
+    await sendNewRedemptionPeriodNotification();
   } else {
-    if (newRedemptions.length > 0) {
-      // TODO: flag out that travel period is the same, but some changes have been made
-      // should be a rarer case
-    }
+    console.log(`Changes to existing redemption period "${redemptionEndDate}"`);
+    await sendExistingRedemptionPeriodChangesNotification();
   }
 
-  sendNewRedemptions(newRedemptions);
-
-  // TODO: figure out this bit
   await Redemption.upload(newRedemptions);
-  // fs.writeFileSync('./redemptions.json', JSON.stringify(redemptions, null, 4));
+  await sendRedemptionsInfoNotification(newRedemptions);
 }
 
 /**
@@ -79,10 +100,6 @@ function compareRedemptions(
     );
     return isRedemptionNew;
   });
-}
-
-function sendNewRedemptions(redemptions: Redemption[]) {
-  // TODO: send to Telegram channel
 }
 
 if (require.main === module) {

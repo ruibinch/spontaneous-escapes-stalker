@@ -1,8 +1,12 @@
-import { formatISO } from 'date-fns';
+import { format, formatISO } from 'date-fns';
 
 // Date
 
-export const toDateISO8601 = (date: Date | number): string =>
+export const currentDate = () => new Date(Date.now());
+
+export const currentDateInYYYYMMDD = () => format(currentDate(), 'yyyyMMdd');
+
+export const toDateISO8601 = (date: Date | number) =>
   formatISO(date, { representation: 'date' });
 
 // Misc
@@ -14,7 +18,7 @@ export const toNumber = (str: string) => Number(str.replace(/\D/g, ''));
 
 export const isAllDefined = (...vars: unknown[]) => vars.every(notEmpty);
 
-const notEmpty = <T>(value: T | null | undefined): value is T => {
+export const notEmpty = <T>(value: T | null | undefined): value is T => {
   if (value === null || value === undefined) return false;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _: T = value;
