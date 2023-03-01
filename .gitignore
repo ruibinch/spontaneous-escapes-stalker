@@ -1,6 +1,8 @@
 # compiled output
-/dist
-/node_modules
+.build
+.serverless
+dist
+node_modules
 redemptions.json
 
 # OS

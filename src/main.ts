@@ -18,12 +18,9 @@ import {
 } from './sender';
 import { currentDateInYYYYMMDD, toDateISO8601 } from './utils';
 
-process.env.TZ = 'UTC';
-
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
 
-// TODO: integrate with serverless.yml
 async function run() {
   const result = await axios.get(SPONTANEOUS_ESCAPES_URL);
   const root = parse(result.data);
@@ -100,6 +97,11 @@ function compareRedemptions(
     );
     return isRedemptionNew;
   });
+}
+
+// Lambda handler
+export async function pollUpdates() {
+  await run();
 }
 
 if (require.main === module) {
