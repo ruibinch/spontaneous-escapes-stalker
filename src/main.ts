@@ -80,7 +80,11 @@ async function run() {
   }
 
   await Redemption.upload(newRedemptions);
-  await sendRedemptionsInfoNotification(newRedemptions);
+  await sendRedemptionsInfoNotification({
+    redemptions: newRedemptions,
+    redemptionEndDate,
+    travelPeriod: redemptionTravelPeriod,
+  });
 }
 
 /**

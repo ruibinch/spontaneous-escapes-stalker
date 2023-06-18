@@ -9,6 +9,9 @@ export const currentDateInYYYYMMDD = () => format(currentDate(), 'yyyyMMdd');
 export const toDateISO8601 = (date: Date | number) =>
   formatISO(date, { representation: 'date' });
 
+// e.g. 1 Jul 2023, 23 Aug 2023
+export const formatDateDisplay = (date: Date) => format(date, 'd MMM yyyy');
+
 // Misc
 
 export const toCamelCase = (str: string) =>

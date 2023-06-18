@@ -1,7 +1,8 @@
 import { escapeCharacters } from './lib/telegram/helpers';
 import { sendMessage } from './lib/telegram/methods';
 import { FlightClass, Redemption } from './models/Redemption';
-import { notEmpty } from './utils';
+import { TimePeriod } from './types';
+import { formatDateDisplay, notEmpty } from './utils';
 
 const CHANNEL_ID = '-1001889957472'; // FishSoupChannel
 
@@ -20,9 +21,15 @@ export async function sendExistingRedemptionPeriodChangesNotification() {
   await sendMessageToChannel('‼️ *Changes to existing redemption period* ‼️');
 }
 
-export async function sendRedemptionsInfoNotification(
-  redemptions: Redemption[],
-) {
+export async function sendRedemptionsInfoNotification({
+  redemptions,
+  redemptionEndDate,
+  travelPeriod,
+}: {
+  redemptions: Redemption[];
+  redemptionEndDate: Date;
+  travelPeriod: TimePeriod;
+}) {
   const redemptionsSorted = sortRedemptionsByClass(redemptions);
 
   const generateRedemptionsInfo = (flightClass: FlightClass) => {
@@ -43,7 +50,15 @@ export async function sendRedemptionsInfoNotification(
     return `*${flightClass}*\n${redemptionsInfoForFlightClass}`;
   };
 
+  const redemptionTerms = [
+    `Valid for travel from *${formatDateDisplay(
+      travelPeriod.from,
+    )} to ${formatDateDisplay(travelPeriod.to)}*`,
+    `Redemption ends on ${formatDateDisplay(redemptionEndDate)}`,
+  ].join('\n');
+
   const redemptionsInfo = [
+    redemptionTerms,
     generateRedemptionsInfo(FlightClass.ECONOMY),
     generateRedemptionsInfo(FlightClass.PREMIUM_ECONOMY),
     generateRedemptionsInfo(FlightClass.BUSINESS),
