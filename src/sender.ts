@@ -92,6 +92,7 @@ function sortRedemptionsByClass(redemptions: Redemption[]) {
     'North Asia',
     'West Asia & Africa',
     'Australia',
+    'Southwest Pacific',
     'Europe',
     'USA',
   ];
