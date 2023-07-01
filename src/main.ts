@@ -1,10 +1,9 @@
 import axios from 'axios';
 import fs from 'fs';
-import { parse } from 'node-html-parser';
+import { HTMLElement, parse } from 'node-html-parser';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { Redemption } from './models/Redemption';
 import { RedemptionPeriod } from './models/RedemptionPeriod';
-
 import { parseRedemptionTables } from './parseRedemptionTables';
 import {
   parseRedemptionEndDate,
@@ -16,19 +15,40 @@ import {
   sendNewRedemptionPeriodNotification,
   sendRedemptionsInfoNotification,
 } from './sender';
-import { currentDateInYYYYMMDD, toDateISO8601 } from './utils';
+import { dateInYYYYMM, toDateISO8601 } from './utils';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
 
+// env var configs
+const isLocalRun = !!process.env['LOCAL_RUN'];
+const htmlFilepath = process.env['HTML_FILEPATH'];
+
+/**
+ * Fetches the latest HTML conent from the webpage, or loads a local HTML file specified by the HTML_FILEPATH env var.
+ */
+async function loadHtml() {
+  let html: HTMLElement;
+  let isNewHtml = true;
+
+  if (htmlFilepath) {
+    const htmlFileContent = fs.readFileSync(htmlFilepath).toString();
+    html = parse(htmlFileContent);
+    isNewHtml = false;
+  } else {
+    const response = await axios.get(SPONTANEOUS_ESCAPES_URL);
+    html = parse(response.data);
+  }
+  return { html, isNewHtml };
+}
+
 async function run() {
-  const result = await axios.get(SPONTANEOUS_ESCAPES_URL);
-  const root = parse(result.data);
+  const { html, isNewHtml } = await loadHtml();
 
   // extract the latest info from the page first
-  const redemptionTablesInfo = parseRedemptionTables(root);
-  const redemptionEndDate = parseRedemptionEndDate(root);
-  const redemptionTravelPeriod = parseRedemptionTravelPeriod(root);
+  const redemptionTablesInfo = parseRedemptionTables(html);
+  const redemptionEndDate = parseRedemptionEndDate(html);
+  const redemptionTravelPeriod = parseRedemptionTravelPeriod(html);
   const redemptions = redemptionTablesInfo.map((redemptionInfo) =>
     Redemption.create({
       ...redemptionInfo,
@@ -36,10 +56,18 @@ async function run() {
     }),
   );
 
-  if (process.env['LOCAL_RUN']) {
+  if (isNewHtml) {
+    // save new HTML pages for reference
     fs.writeFileSync(
-      `./${currentDateInYYYYMMDD()}-redemptions.json`,
-      JSON.stringify(redemptions, null, 4),
+      `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-content.html`,
+      html.toString(),
+    );
+  }
+
+  if (isLocalRun) {
+    fs.writeFileSync(
+      `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-redemptions.json`,
+      JSON.stringify(redemptions, null, 2),
     );
     return;
   }
