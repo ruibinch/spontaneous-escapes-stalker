@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "license": "UNLICENSED",
   "scripts": {
-    "run:main": "ts-node src/main.ts"
+    "run:main": "ts-node src/main.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.279.0",
