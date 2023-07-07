@@ -11,6 +11,13 @@ export type RedemptionTableInfoWithRegion = Omit<
   'redemptionEndDate'
 >;
 
+export enum FlightClass {
+  ECONOMY = 'Economy',
+  PREMIUM_ECONOMY = 'Premium Economy',
+  BUSINESS = 'Business',
+  FIRST = 'First',
+}
+
 export interface TimePeriod {
   from: Date;
   to: Date;

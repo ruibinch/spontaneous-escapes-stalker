@@ -1,7 +1,7 @@
 import { escapeCharacters } from './lib/telegram/helpers';
 import { sendMessage } from './lib/telegram/methods';
-import { FlightClass, Redemption } from './models/Redemption';
-import { TimePeriod } from './types';
+import { Redemption } from './models/Redemption';
+import { FlightClass, TimePeriod } from './types';
 import { formatDateDisplay, notEmpty } from './utils';
 
 const CHANNEL_ID = '-1001889957472'; // FishSoupChannel

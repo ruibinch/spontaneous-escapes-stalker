@@ -5,16 +5,10 @@ import {
 } from '@aws-sdk/client-dynamodb';
 import { PutCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient, getDynamoDBBillingDetails } from '../lib/aws/dynamodb';
+import { FlightClass } from '../types';
 import { toDateISO8601 } from '../utils';
 
 const REDEMPTION_TABLE_NAME = 'kf-redemptions';
-
-export enum FlightClass {
-  ECONOMY = 'Economy',
-  PREMIUM_ECONOMY = 'Premium Economy',
-  BUSINESS = 'Business',
-  FIRST = 'First',
-}
 
 interface RedemptionProps {
   origin: string;

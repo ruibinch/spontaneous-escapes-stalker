@@ -1,6 +1,9 @@
 import { HTMLElement } from 'node-html-parser';
-import { FlightClass } from './models/Redemption';
-import { RedemptionTableInfo, RedemptionTableInfoWithRegion } from './types';
+import {
+  FlightClass,
+  RedemptionTableInfo,
+  RedemptionTableInfoWithRegion,
+} from './types';
 import { isAllDefined, toNumber } from './utils';
 
 const ACCORDIONS_CLASS_NAME = '.block-2.accordion';
