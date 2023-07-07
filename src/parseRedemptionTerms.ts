@@ -1,8 +1,6 @@
 import { parse } from 'date-fns';
 import { HTMLElement } from 'node-html-parser';
-
-// e.g. 1 March 2023, 28 June 2023
-const DATE_STRING_FORMAT = 'd MMMM yyyy';
+import { parseDateString } from './utils';
 
 /**
  * Finds the end date of the redemption period.
@@ -19,11 +17,7 @@ export function parseRedemptionEndDate(root: HTMLElement) {
   }
 
   const redemptionEndDateStr = redemptionEndDateMatch[0];
-  const redemptionEndDate = parse(
-    redemptionEndDateStr,
-    DATE_STRING_FORMAT,
-    new Date(),
-  );
+  const redemptionEndDate = parseDateString(redemptionEndDateStr);
   return redemptionEndDate;
 }
 
@@ -57,8 +51,8 @@ export function parseRedemptionTravelPeriod(root: HTMLElement) {
   const periodFrom = `${periodFromDay}${periodMonthYear}`;
   const periodTo = `${periodToDay}${periodMonthYear}`;
 
-  const fromDate = parse(periodFrom, DATE_STRING_FORMAT, new Date());
-  const toDate = parse(periodTo, DATE_STRING_FORMAT, new Date());
+  const fromDate = parseDateString(periodFrom);
+  const toDate = parseDateString(periodTo);
   return {
     from: fromDate,
     to: toDate,

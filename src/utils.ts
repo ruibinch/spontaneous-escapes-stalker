@@ -1,4 +1,4 @@
-import { format, formatISO } from 'date-fns';
+import { format, formatISO, parse } from 'date-fns';
 
 // Date
 
@@ -11,8 +11,12 @@ export const dateInYYYYMM = (date: Date) => format(date, 'yyyyMM');
 export const toDateISO8601 = (date: Date | number) =>
   formatISO(date, { representation: 'date' });
 
-// e.g. 1 Jul 2023, 23 Aug 2023
+// e.g. output: 1 Jul 2023, 23 Aug 2023
 export const formatDateDisplay = (date: Date) => format(date, 'd MMM yyyy');
+
+// e.g. input: 1 March 2023, 28 June 2023
+export const parseDateString = (dateString: string) =>
+  parse(dateString, 'd MMMM yyyy', new Date());
 
 // Misc
 
