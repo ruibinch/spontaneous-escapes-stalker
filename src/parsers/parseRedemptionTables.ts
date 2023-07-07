@@ -1,10 +1,12 @@
 import { HTMLElement } from 'node-html-parser';
 import {
+  BlackoutPeriod,
   FlightClass,
   RedemptionTableInfo,
   RedemptionTableInfoWithRegion,
 } from '../types';
 import { isAllDefined, toNumber } from '../utils';
+import { parseBlackoutPeriod } from './parseBlackoutPeriod';
 
 const ACCORDIONS_CLASS_NAME = '.block-2.accordion';
 const BUSINESS_AND_ECONOMY_CLASS_SECTION_NAME =
@@ -106,7 +108,7 @@ function parseRedemptionsTable(table: HTMLElement) {
     let flightClass: FlightClass | undefined;
     let milesRequired: number | undefined;
     let flightNo: string | undefined;
-    let blackoutPeriod: string | undefined;
+    let blackoutPeriod: BlackoutPeriod[] | undefined;
 
     cells.slice(1).forEach((cell) => {
       const hasKeyword = isCellContaining(cell);
@@ -126,7 +128,8 @@ function parseRedemptionsTable(table: HTMLElement) {
         flightNo = extractCellDetails(cell);
       }
       if (hasKeyword('BLACKOUT')) {
-        blackoutPeriod = extractCellDetails(cell);
+        const blackoutPeriodRaw = extractCellDetails(cell);
+        blackoutPeriod = parseBlackoutPeriod(blackoutPeriodRaw);
       }
 
       // Assumption: all relevant details are contiguous entries in a single row

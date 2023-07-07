@@ -18,6 +18,12 @@ export enum FlightClass {
   FIRST = 'First',
 }
 
+export interface BlackoutPeriod {
+  from: string;
+  to: string;
+  flightNos?: string[]; // if undefined, then it's applicable for all flights
+}
+
 export interface TimePeriod {
   from: Date;
   to: Date;

@@ -5,7 +5,7 @@ import {
 } from '@aws-sdk/client-dynamodb';
 import { PutCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient, getDynamoDBBillingDetails } from '../lib/aws/dynamodb';
-import { FlightClass } from '../types';
+import { BlackoutPeriod, FlightClass } from '../types';
 import { toDateISO8601 } from '../utils';
 
 const REDEMPTION_TABLE_NAME = 'kf-redemptions';
@@ -16,7 +16,7 @@ interface RedemptionProps {
   flightClass: FlightClass;
   flightNo: string;
   milesRequired: number;
-  blackoutPeriod: string;
+  blackoutPeriod: BlackoutPeriod[];
   region: string;
   redemptionEndDate: string;
   sortKey: string;
@@ -38,8 +38,7 @@ export class Redemption {
 
   milesRequired: number;
 
-  // TODO: to format into TimePeriod[]
-  blackoutPeriod: string;
+  blackoutPeriod: BlackoutPeriod[];
 
   region: string;
 
