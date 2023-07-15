@@ -4,11 +4,9 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { Redemption } from './models/Redemption';
 import { RedemptionPeriod } from './models/RedemptionPeriod';
-import { parseRedemptionTables } from './parseRedemptionTables';
-import {
-  parseRedemptionEndDate,
-  parseRedemptionTravelPeriod,
-} from './parseRedemptionTerms';
+import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
+import { parseRedemptionTables } from './parsers/parseRedemptionTables';
+import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
 import {
   sendExistingRedemptionPeriodChangesNotification,
   sendMessageToChannel,

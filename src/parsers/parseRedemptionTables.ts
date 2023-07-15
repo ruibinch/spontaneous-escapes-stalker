@@ -3,8 +3,8 @@ import {
   FlightClass,
   RedemptionTableInfo,
   RedemptionTableInfoWithRegion,
-} from './types';
-import { isAllDefined, toNumber } from './utils';
+} from '../types';
+import { isAllDefined, toNumber } from '../utils';
 
 const ACCORDIONS_CLASS_NAME = '.block-2.accordion';
 const BUSINESS_AND_ECONOMY_CLASS_SECTION_NAME =

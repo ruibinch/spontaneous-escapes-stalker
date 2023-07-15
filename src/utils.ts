@@ -14,9 +14,12 @@ export const toDateISO8601 = (date: Date | number) =>
 // e.g. output: 1 Jul 2023, 23 Aug 2023
 export const formatDateDisplay = (date: Date) => format(date, 'd MMM yyyy');
 
-// e.g. input: 1 March 2023, 28 June 2023
+// e.g. input: 1 March 2023 / 28 June 2023
 export const parseDateString = (dateString: string) =>
   parse(dateString, 'd MMMM yyyy', new Date());
+// e.g. converts "1 July 2023" -> "2023-07-01"
+export const parseDateStringToISO8601 = (dateString: string) =>
+  toDateISO8601(parseDateString(dateString));
 
 // Misc
 
