@@ -33,6 +33,70 @@ describe('parseBlackoutPeriod', () => {
       },
     ],
     [
+      'single date entry, split by a single flight number',
+      {
+        input: 'SQ874: 7 June 2023',
+        expected: [
+          { from: '2023-06-07', to: '2023-06-07', flightNos: ['SQ874'] },
+        ],
+      },
+    ],
+    [
+      'single date entry, split by multiple flight numbers',
+      {
+        input: 'SQ874: 7 June 2023 SQ875: 11 June 2023',
+        expected: [
+          { from: '2023-06-07', to: '2023-06-07', flightNos: ['SQ874'] },
+          { from: '2023-06-11', to: '2023-06-11', flightNos: ['SQ875'] },
+        ],
+      },
+    ],
+    [
+      'single date range entry, split by a single flight number',
+      {
+        input: 'SQ20: 9 – 10 June 2023',
+        expected: [
+          { from: '2023-06-09', to: '2023-06-10', flightNos: ['SQ20'] },
+        ],
+      },
+    ],
+    [
+      'single date range entry, split by multiple flight numbers',
+      {
+        input: 'SQ20: 9 – 10 June 2023 SQ21: 12 - 14 June 2023',
+        expected: [
+          { from: '2023-06-09', to: '2023-06-10', flightNos: ['SQ20'] },
+          { from: '2023-06-12', to: '2023-06-14', flightNos: ['SQ21'] },
+        ],
+      },
+    ],
+    [
+      'multiple date and date range entries, split by a single flight number',
+      {
+        input: 'SQ212: 1 ‐ 7 July 2023, 14 July 2023, 18 July 2023',
+        expected: [
+          { from: '2023-07-01', to: '2023-07-07', flightNos: ['SQ212'] },
+          { from: '2023-07-14', to: '2023-07-14', flightNos: ['SQ212'] },
+          { from: '2023-07-18', to: '2023-07-18', flightNos: ['SQ212'] },
+        ],
+      },
+    ],
+    [
+      'multiple date and date range entries, split by multiple flight numbers',
+      {
+        input:
+          'SQ212: 1 ‐ 7 July 2023, 14 July 2023, 18 July 2023 SQ232: 1 ‐ 11 July 2023, 14 July 2023, 27 ‐ 28 July 2023',
+        expected: [
+          { from: '2023-07-01', to: '2023-07-07', flightNos: ['SQ212'] },
+          // prettier-ignore
+          { from: '2023-07-14', to: '2023-07-14', flightNos: ['SQ212', 'SQ232'] },
+          { from: '2023-07-18', to: '2023-07-18', flightNos: ['SQ212'] },
+          { from: '2023-07-01', to: '2023-07-11', flightNos: ['SQ232'] },
+          { from: '2023-07-27', to: '2023-07-28', flightNos: ['SQ232'] },
+        ],
+      },
+    ],
+    [
       'dash variation 1',
       {
         input: '-',
