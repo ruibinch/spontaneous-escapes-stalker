@@ -1,83 +1,91 @@
 import { parseBlackoutPeriod } from '../parseBlackoutPeriod';
 
 describe('parseBlackoutPeriod', () => {
+  beforeAll(() => {
+    jest.spyOn(Date, 'now').mockReturnValue(new Date('2023-12-01').getTime());
+  });
+
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
+
   it.each([
     [
       'single date entry',
       {
-        input: '7 June 2023',
-        expected: [{ from: '2023-06-07', to: '2023-06-07' }],
+        input: '7 December 2023',
+        expected: [{ from: '2023-12-07', to: '2023-12-07' }],
       },
     ],
     [
       'single date range entry',
       {
-        input: '9 – 10 June 2023',
-        expected: [{ from: '2023-06-09', to: '2023-06-10' }],
+        input: '9 – 10 December 2023',
+        expected: [{ from: '2023-12-09', to: '2023-12-10' }],
       },
     ],
     [
       'multiple date and date range entries',
       {
         input:
-          '7 June 2023, 9 – 10 June 2023, 14 June 2023, 16 – 18 June 2023, 21 June 2023, 23 – 24 June 2023, 28 June 2023',
+          '7 December 2023, 9 – 10 December 2023, 14 December 2023, 16 – 18 December 2023, 21 December 2023, 23 – 24 December 2023, 28 December 2023',
         expected: [
-          { from: '2023-06-07', to: '2023-06-07' },
-          { from: '2023-06-09', to: '2023-06-10' },
-          { from: '2023-06-14', to: '2023-06-14' },
-          { from: '2023-06-16', to: '2023-06-18' },
-          { from: '2023-06-21', to: '2023-06-21' },
-          { from: '2023-06-23', to: '2023-06-24' },
-          { from: '2023-06-28', to: '2023-06-28' },
+          { from: '2023-12-07', to: '2023-12-07' },
+          { from: '2023-12-09', to: '2023-12-10' },
+          { from: '2023-12-14', to: '2023-12-14' },
+          { from: '2023-12-16', to: '2023-12-18' },
+          { from: '2023-12-21', to: '2023-12-21' },
+          { from: '2023-12-23', to: '2023-12-24' },
+          { from: '2023-12-28', to: '2023-12-28' },
         ],
       },
     ],
     [
       'single date entry, split by a single flight number',
       {
-        input: 'SQ874: 7 June 2023',
+        input: 'SQ874: 7 December 2023',
         expected: [
-          { from: '2023-06-07', to: '2023-06-07', flightNos: ['SQ874'] },
+          { from: '2023-12-07', to: '2023-12-07', flightNos: ['SQ874'] },
         ],
       },
     ],
     [
       'single date entry, split by multiple flight numbers',
       {
-        input: 'SQ874: 7 June 2023 SQ875: 11 June 2023',
+        input: 'SQ874: 7 December 2023 SQ875: 11 December 2023',
         expected: [
-          { from: '2023-06-07', to: '2023-06-07', flightNos: ['SQ874'] },
-          { from: '2023-06-11', to: '2023-06-11', flightNos: ['SQ875'] },
+          { from: '2023-12-07', to: '2023-12-07', flightNos: ['SQ874'] },
+          { from: '2023-12-11', to: '2023-12-11', flightNos: ['SQ875'] },
         ],
       },
     ],
     [
       'single date range entry, split by a single flight number',
       {
-        input: 'SQ20: 9 – 10 June 2023',
+        input: 'SQ20: 9 – 10 December 2023',
         expected: [
-          { from: '2023-06-09', to: '2023-06-10', flightNos: ['SQ20'] },
+          { from: '2023-12-09', to: '2023-12-10', flightNos: ['SQ20'] },
         ],
       },
     ],
     [
       'single date range entry, split by multiple flight numbers',
       {
-        input: 'SQ20: 9 – 10 June 2023 SQ21: 12 - 14 June 2023',
+        input: 'SQ20: 9 – 10 December 2023 SQ21: 12 - 14 December 2023',
         expected: [
-          { from: '2023-06-09', to: '2023-06-10', flightNos: ['SQ20'] },
-          { from: '2023-06-12', to: '2023-06-14', flightNos: ['SQ21'] },
+          { from: '2023-12-09', to: '2023-12-10', flightNos: ['SQ20'] },
+          { from: '2023-12-12', to: '2023-12-14', flightNos: ['SQ21'] },
         ],
       },
     ],
     [
       'multiple date and date range entries, split by a single flight number',
       {
-        input: 'SQ212: 1 ‐ 7 July 2023, 14 July 2023, 18 July 2023',
+        input: 'SQ212: 1 ‐ 7 January 2024, 14 January 2024, 18 January 2024',
         expected: [
-          { from: '2023-07-01', to: '2023-07-07', flightNos: ['SQ212'] },
-          { from: '2023-07-14', to: '2023-07-14', flightNos: ['SQ212'] },
-          { from: '2023-07-18', to: '2023-07-18', flightNos: ['SQ212'] },
+          { from: '2024-01-01', to: '2024-01-07', flightNos: ['SQ212'] },
+          { from: '2024-01-14', to: '2024-01-14', flightNos: ['SQ212'] },
+          { from: '2024-01-18', to: '2024-01-18', flightNos: ['SQ212'] },
         ],
       },
     ],
@@ -85,14 +93,24 @@ describe('parseBlackoutPeriod', () => {
       'multiple date and date range entries, split by multiple flight numbers',
       {
         input:
-          'SQ212: 1 ‐ 7 July 2023, 14 July 2023, 18 July 2023 SQ232: 1 ‐ 11 July 2023, 14 July 2023, 27 ‐ 28 July 2023',
+          'SQ212: 1 ‐ 7 January 2024, 14 January 2024, 18 January 2024 SQ232: 1 ‐ 11 January 2024, 14 January 2024, 27 ‐ 28 January 2024',
         expected: [
-          { from: '2023-07-01', to: '2023-07-07', flightNos: ['SQ212'] },
+          { from: '2024-01-01', to: '2024-01-07', flightNos: ['SQ212'] },
           // prettier-ignore
-          { from: '2023-07-14', to: '2023-07-14', flightNos: ['SQ212', 'SQ232'] },
-          { from: '2023-07-18', to: '2023-07-18', flightNos: ['SQ212'] },
-          { from: '2023-07-01', to: '2023-07-11', flightNos: ['SQ232'] },
-          { from: '2023-07-27', to: '2023-07-28', flightNos: ['SQ232'] },
+          { from: '2024-01-14', to: '2024-01-14', flightNos: ['SQ212', 'SQ232'] },
+          { from: '2024-01-18', to: '2024-01-18', flightNos: ['SQ212'] },
+          { from: '2024-01-01', to: '2024-01-11', flightNos: ['SQ232'] },
+          { from: '2024-01-27', to: '2024-01-28', flightNos: ['SQ232'] },
+        ],
+      },
+    ],
+    [
+      '[special case] dates with missing years',
+      {
+        input: '14 January 2024, 18 - 21 January',
+        expected: [
+          { from: '2024-01-14', to: '2024-01-14' },
+          { from: '2024-01-18', to: '2024-01-21' },
         ],
       },
     ],

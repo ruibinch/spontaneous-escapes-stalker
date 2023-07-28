@@ -128,21 +128,44 @@ function getBlackoutPeriod(blackoutPeriodString: string) {
     blackoutPeriodString.includes(sep),
   );
 
-  // blackout period is a single day, e.g. "3 July 2023"
+  // blackout period is a single day, e.g. "3 July 2023" / "3 July"
   if (!separator) {
+    const blackoutPeriodStringSplit = blackoutPeriodString.split(' ');
+    const day = blackoutPeriodStringSplit[0];
+    const month = blackoutPeriodStringSplit[1];
+    const year = blackoutPeriodStringSplit[2] ?? getYearInNextMonth();
+
+    const date = `${day} ${month} ${year}`;
     return {
-      from: parseDateStringToISO8601(blackoutPeriodString),
-      to: parseDateStringToISO8601(blackoutPeriodString),
+      from: parseDateStringToISO8601(date),
+      to: parseDateStringToISO8601(date),
     };
   }
 
-  // blackout period is a date range, e.g. "3 – 5 July 2023"
+  // blackout period is a date range, e.g. "3 – 5 July 2023" / "3 – 5 July"
   // then, fromDay = 3, toDate = 5 July 2023
-  const [fromDay, toDate] = blackoutPeriodString.split(separator);
-  const [, toMonth, toYear] = toDate.trim().split(' ');
-  const fromDate = `${fromDay.trim()} ${toMonth} ${toYear}`;
+  const blackoutPeriodStringSplit = blackoutPeriodString.split(separator);
+  const fromDay = blackoutPeriodStringSplit[0].trim();
+  const toDateSplit = blackoutPeriodStringSplit[1].trim().split(' ');
+  const toDay = toDateSplit[0];
+  const toMonth = toDateSplit[1];
+  const toYear = toDateSplit[2] ?? getYearInNextMonth();
+
+  const fromDate = `${fromDay} ${toMonth} ${toYear}`;
+  const toDate = `${toDay} ${toMonth} ${toYear}`;
   return {
-    from: parseDateStringToISO8601(fromDate.trim()),
-    to: parseDateStringToISO8601(toDate.trim()),
+    from: parseDateStringToISO8601(fromDate),
+    to: parseDateStringToISO8601(toDate),
   };
+}
+
+/**
+ * Simple function to get the year value in the next month.
+ * For handling the case where the year is not defined in the blackout period, e.g. "1 – 4 August"
+ */
+function getYearInNextMonth() {
+  const today = new Date(Date.now());
+  const currentYear = today.getFullYear();
+  const isMonthDec = today.getMonth() === 11;
+  return isMonthDec ? currentYear + 1 : currentYear;
 }
