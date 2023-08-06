@@ -1,0 +1,943 @@
+[
+  {
+    "origin": "Singapore",
+    "destination": "Kuala lumpur",
+    "flightClass": "Economy",
+    "flightNo": "SQ114, SQ116, SQ122",
+    "milesRequired": 5950,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-09"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Kuala lumpur"
+  },
+  {
+    "origin": "Kuala Lumpur",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ105, SQ107, SQ121",
+    "milesRequired": 5950,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-05",
+        "to": "2022-08-10"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Kuala Lumpur#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Penang",
+    "flightClass": "Economy",
+    "flightNo": "SQ138",
+    "milesRequired": 5950,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-12"
+      },
+      {
+        "from": "2022-08-26",
+        "to": "2022-08-31"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Penang"
+  },
+  {
+    "origin": "Penang",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ133",
+    "milesRequired": 5950,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-05",
+        "to": "2022-08-10"
+      },
+      {
+        "from": "2022-08-27",
+        "to": "2022-08-28"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Penang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Da Nang",
+    "flightClass": "Economy",
+    "flightNo": "SQ174",
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-08"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Da Nang"
+  },
+  {
+    "origin": "Da Nang",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ171",
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-07",
+        "to": "2022-08-14"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Da Nang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hanoi",
+    "flightClass": "Economy",
+    "flightNo": "SQ194",
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-08"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Hanoi"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hanoi",
+    "flightClass": "Business",
+    "flightNo": "SQ194",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-08"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Hanoi"
+  },
+  {
+    "origin": "Hanoi",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ191",
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-08",
+        "to": "2022-08-12"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Hanoi#Singapore"
+  },
+  {
+    "origin": "Hanoi",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ191",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-08",
+        "to": "2022-08-12"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Hanoi#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Ho Chi Minh City",
+    "flightClass": "Economy",
+    "flightNo": "SQ186",
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-08"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Ho Chi Minh City"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Ho Chi Minh City",
+    "flightClass": "Business",
+    "flightNo": "SQ186",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-08"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Ho Chi Minh City"
+  },
+  {
+    "origin": "Ho Chi Minh City",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ177",
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-08",
+        "to": "2022-08-12"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Ho Chi Minh City#Singapore"
+  },
+  {
+    "origin": "Ho Chi Minh City",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ177",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-08",
+        "to": "2022-08-12"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Ho Chi Minh City#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Manila",
+    "flightClass": "Economy",
+    "flightNo": "SQ916, SQ918",
+    "milesRequired": 9450,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Manila"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Manila",
+    "flightClass": "Business",
+    "flightNo": "SQ912, SQ916, SQ918",
+    "milesRequired": 16800,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Manila"
+  },
+  {
+    "origin": "Manila",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ917, SQ919",
+    "milesRequired": 9450,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Manila#Singapore"
+  },
+  {
+    "origin": "Manila",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ915, SQ917, SQ919",
+    "milesRequired": 16800,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Manila#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Siem Reap",
+    "flightClass": "Economy",
+    "flightNo": "SQ166",
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-08"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Siem Reap"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Siem Reap",
+    "flightClass": "Business",
+    "flightNo": "SQ166",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-04",
+        "to": "2022-08-08"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Siem Reap"
+  },
+  {
+    "origin": "Siem Reap",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ163",
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-07",
+        "to": "2022-08-14"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Siem Reap#Singapore"
+  },
+  {
+    "origin": "Siem Reap",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ163",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-07",
+        "to": "2022-08-14"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Siem Reap#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hong Kong",
+    "flightClass": "Economy",
+    "flightNo": "SQ882, SQ894",
+    "milesRequired": 11550,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Hong Kong"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hong Kong",
+    "flightClass": "Business",
+    "flightNo": "SQ882, SQ894",
+    "milesRequired": 23800,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Hong Kong"
+  },
+  {
+    "origin": "Hong Kong",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ883, SQ895",
+    "milesRequired": 11550,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Hong Kong#Singapore"
+  },
+  {
+    "origin": "Hong Kong",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ883, SQ895",
+    "milesRequired": 23800,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Hong Kong#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Ahmedabad",
+    "flightClass": "Economy",
+    "flightNo": "SQ504",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Ahmedabad"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Ahmedabad",
+    "flightClass": "Business",
+    "flightNo": "SQ504",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Ahmedabad"
+  },
+  {
+    "origin": "Ahmedabad",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ505",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Ahmedabad#Singapore"
+  },
+  {
+    "origin": "Ahmedabad",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ505",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Ahmedabad#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bangalore",
+    "flightClass": "Economy",
+    "flightNo": "SQ510",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Bangalore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bangalore",
+    "flightClass": "Business",
+    "flightNo": "SQ510",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Bangalore"
+  },
+  {
+    "origin": "Bangalore",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ511",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-15"
+      }
+    ],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Bangalore#Singapore"
+  },
+  {
+    "origin": "Bangalore",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ511",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Bangalore#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chennai",
+    "flightClass": "Economy",
+    "flightNo": "SQ524, SQ528",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Chennai"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chennai",
+    "flightClass": "Business",
+    "flightNo": "SQ524, SQ528",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Chennai"
+  },
+  {
+    "origin": "Chennai",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ525, SQ529",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-16"
+      }
+    ],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Chennai#Singapore"
+  },
+  {
+    "origin": "Chennai",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ525, SQ529",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Chennai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kochi",
+    "flightClass": "Economy",
+    "flightNo": "SQ536",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Kochi"
+  },
+  {
+    "origin": "Kochi",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ537",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Kochi#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Mumbai",
+    "flightClass": "Economy",
+    "flightNo": "SQ422, SQ424, SQ426",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Mumbai"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Mumbai",
+    "flightClass": "Business",
+    "flightNo": "SQ422, SQ424, SQ426",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Mumbai"
+  },
+  {
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ421, SQ423, SQ425",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Mumbai#Singapore"
+  },
+  {
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ421, SQ423, SQ425",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Mumbai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "New Delhi",
+    "flightClass": "Economy",
+    "flightNo": "SQ402, SQ406",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#New Delhi"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "New Delhi",
+    "flightClass": "Business",
+    "flightNo": "SQ402, SQ406",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#New Delhi"
+  },
+  {
+    "origin": "New Delhi",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ401, SQ403",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#New Delhi#Singapore"
+  },
+  {
+    "origin": "New Delhi",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ401, SQ403",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#New Delhi#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Darwin",
+    "flightClass": "Economy",
+    "flightNo": "SQ251",
+    "milesRequired": 15050,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Darwin"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Darwin",
+    "flightClass": "Business",
+    "flightNo": "SQ251",
+    "milesRequired": 28350,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Darwin"
+  },
+  {
+    "origin": "Darwin",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ252",
+    "milesRequired": 15050,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Darwin#Singapore"
+  },
+  {
+    "origin": "Darwin",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ252",
+    "milesRequired": 28350,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Darwin#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Perth",
+    "flightClass": "Economy",
+    "flightNo": "SQ215, SQ225",
+    "milesRequired": 15050,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-09"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Perth"
+  },
+  {
+    "origin": "Perth",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ216, SQ224",
+    "milesRequired": 15050,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Perth#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Adelaide",
+    "flightClass": "Business",
+    "flightNo": "SQ279",
+    "milesRequired": 47950,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Singapore#Adelaide"
+  },
+  {
+    "origin": "Adelaide",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ278",
+    "milesRequired": 47950,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Business#Adelaide#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Brisbane",
+    "flightClass": "Economy",
+    "flightNo": "SQ235, SQ255",
+    "milesRequired": 21350,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Brisbane"
+  },
+  {
+    "origin": "Brisbane",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ246, SQ256",
+    "milesRequired": 21350,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Brisbane#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Cairns",
+    "flightClass": "Economy",
+    "flightNo": "SQ203",
+    "milesRequired": 21350,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Cairns"
+  },
+  {
+    "origin": "Cairns",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ204",
+    "milesRequired": 21350,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Cairns#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Melbourne",
+    "flightClass": "Economy",
+    "flightNo": "SQ207, SQ217",
+    "milesRequired": 21350,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-09"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Melbourne"
+  },
+  {
+    "origin": "Melbourne",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ208, SQ218, SQ238",
+    "milesRequired": 21350,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-14",
+        "flightNos": [
+          "SQ238"
+        ]
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Melbourne#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Sydney",
+    "flightClass": "Economy",
+    "flightNo": "SQ231, SQ241",
+    "milesRequired": 21350,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-06"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Singapore#Sydney"
+  },
+  {
+    "origin": "Sydney",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ212, SQ222, SQ232, SQ242",
+    "milesRequired": 21350,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-14",
+        "flightNos": [
+          "SQ232"
+        ]
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Economy#Sydney#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hong Kong",
+    "flightClass": "Premium Economy",
+    "flightNo": "SQ882, SQ894",
+    "milesRequired": 18550,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Premium Economy#Singapore#Hong Kong"
+  },
+  {
+    "origin": "Hong Kong",
+    "destination": "Singapore",
+    "flightClass": "Premium Economy",
+    "flightNo": "SQ883, SQ895",
+    "milesRequired": 18550,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Premium Economy#Hong Kong#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "New Delhi",
+    "flightClass": "Premium Economy",
+    "flightNo": "SQ406",
+    "milesRequired": 24150,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Premium Economy#Singapore#New Delhi"
+  },
+  {
+    "origin": "New Delhi",
+    "destination": "Singapore",
+    "flightClass": "Premium Economy",
+    "flightNo": "SQ403",
+    "milesRequired": 24150,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Premium Economy#New Delhi#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Mumbai",
+    "flightClass": "Premium Economy",
+    "flightNo": "SQ424, SQ426",
+    "milesRequired": 24150,
+    "blackoutPeriod": [],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Premium Economy#Singapore#Mumbai"
+  },
+  {
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "flightClass": "Premium Economy",
+    "flightNo": "SQ423, SQ425",
+    "milesRequired": 24150,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-15"
+      }
+    ],
+    "region": "West Asia & Africa",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Premium Economy#Mumbai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Sydney",
+    "flightClass": "Premium Economy",
+    "flightNo": "SQ231",
+    "milesRequired": 35700,
+    "blackoutPeriod": [
+      {
+        "from": "2022-08-01",
+        "to": "2022-08-06"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Premium Economy#Singapore#Sydney"
+  },
+  {
+    "origin": "Sydney",
+    "destination": "Singapore",
+    "flightClass": "Premium Economy",
+    "flightNo": "SQ212",
+    "milesRequired": 35700,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2022-07-31",
+    "sortKey": "Premium Economy#Sydney#Singapore"
+  }
+]

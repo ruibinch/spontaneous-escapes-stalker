@@ -3,7 +3,6 @@
 .serverless
 dist
 node_modules
-redemptions.json
 
 # OS
 .DS_Store
@@ -14,9 +13,6 @@ redemptions.json
 # IDEs and editors
 .settings/
 .vscode/
-
-# output data
-data/*-redemptions.json
 
 .env
 .npmrc
