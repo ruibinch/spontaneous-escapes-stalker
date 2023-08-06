@@ -121,12 +121,33 @@ function parseBlackoutPeriodContent(
 /**
  * Finds the from/to dates of a single blackout period entry.
  *
- * @param blackoutPeriodString e.g. "3 – 5 July 2023"
+ * @param blackoutPeriodString e.g. "3 – 5 July 2023" / "5 July 2023"
  */
-function getBlackoutPeriod(blackoutPeriodString: string) {
+function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
   const separator = POSSIBLE_DASHES.find((sep) =>
-    blackoutPeriodString.includes(sep),
+    blackoutPeriodStringRaw.includes(sep),
   );
+  // use a regex to extract only the date component from the string, in case the string contains irrelevant extra chars
+  const blackoutPeriodString = (() => {
+    const dayRegex = '\\d{1,2}';
+    const dayRangeRegex = `${dayRegex}\\s?${separator}\\s?${dayRegex}`;
+    const monthRegex = '\\s[a-zA-Z]+';
+    const yearOptionalRegex = '(\\s\\d{4})?';
+    const re = new RegExp(
+      separator
+        ? `${dayRangeRegex}${monthRegex}${yearOptionalRegex}`
+        : `${dayRegex}${monthRegex}${yearOptionalRegex}`,
+      'g',
+    );
+
+    const match = blackoutPeriodStringRaw.match(re);
+    if (!match) {
+      throw new Error(
+        `Unable to extract date component from "${blackoutPeriodStringRaw}"`,
+      );
+    }
+    return match[0];
+  })();
 
   // blackout period is a single day, e.g. "3 July 2023" / "3 July"
   if (!separator) {

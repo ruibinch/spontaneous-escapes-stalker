@@ -115,6 +115,23 @@ describe('parseBlackoutPeriod', () => {
       },
     ],
     [
+      '[special case] dates with missing whitespace around separator and random character variation at the end',
+      {
+        input: '14 January 2024, 18-21 January 2024,',
+        expected: [
+          { from: '2024-01-14', to: '2024-01-14' },
+          { from: '2024-01-18', to: '2024-01-21' },
+        ],
+      },
+    ],
+    [
+      '[special case] dates with random character variation at the end',
+      {
+        input: '14 January 2024s',
+        expected: [{ from: '2024-01-14', to: '2024-01-14' }],
+      },
+    ],
+    [
       'dash variation 1',
       {
         input: '-',
