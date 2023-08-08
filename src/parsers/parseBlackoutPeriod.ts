@@ -18,14 +18,23 @@ export function parseBlackoutPeriod(blackoutPeriodString: string) {
   );
   if (hasNoBlackoutPeriod) return [];
 
-  const blackoutPeriodStringByFlightNos =
-    maybeSplitByFlightNos(blackoutPeriodString);
+  try {
+    const blackoutPeriodStringByFlightNos =
+      maybeSplitByFlightNos(blackoutPeriodString);
 
-  const blackoutPeriods = parseBlackoutPeriodContent(
-    blackoutPeriodStringByFlightNos,
-  );
+    const blackoutPeriods = parseBlackoutPeriodContent(
+      blackoutPeriodStringByFlightNos,
+    );
 
-  return blackoutPeriods;
+    return blackoutPeriods;
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error(
+        `[parseBlackoutPeriod] "${blackoutPeriodString}": ${err.message}`,
+      );
+    }
+    return [];
+  }
 }
 
 /**
