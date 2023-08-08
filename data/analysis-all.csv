@@ -1,50 +1,111 @@
-City,202205_Y,202205_PY,202205_J,202206_Y,202206_PY,202206_J,202207_Y,202207_PY,202207_J,202208_Y,202208_PY,202208_J,202210_Y,202210_PY,202210_J,202211_Y,202211_PY,202211_J,202302_Y,202302_PY,202302_J,202303_Y,202303_PY,202303_J,202304_Y,202304_PY,202304_J,202306_Y,202306_PY,202306_J,202307_Y,202307_PY,202307_J,202308_Y,202308_PY,202308_J
-Adelaide,X,,X,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,
-Ahmedabad,X,,X,X,,X,X,,X,X,,X,,,,,,,,,,X,,X,X,,X,,,X,,,X,X,,X
-Bali,X,,,,,,,,,,,,,,,,,,X,,,X,,X,,,,,,,,,,,,
-Bangalore,X,,X,X,,X,X,,X,X,,X,,,,,,,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X
-Bangkok,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Beijing,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,X,,,X,,X
-Brisbane,X,,X,,,,,,,X,,,,,,,,,,,,,,X,,,,,,,,,,,,
-Cairns,X,,X,X,,X,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,
-Cape Town,X,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Cebu,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Chengdu,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,X,X,X,,X,X,
-Chennai,X,,X,,,X,,,X,X,,X,X,,X,,,,X,,X,X,,X,X,,X,,,X,X,,X,X,,X
-Colombo,,,,,,,,,,,,,,,,,,X,,,,,,X,,,X,,,,,,,X,,
-Da Nang,X,,X,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,
-Darwin,X,,X,X,,X,X,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,
-Dhaka,X,,X,X,,X,,,,,,,X,,X,,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X
-Dubai,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Frankfurt,X,X,,X,,,,,,,,,X,X,,X,X,,,,,,,,,,,,,,,,,,,
-Guangzhou,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,X,X,,,X,,
-Hanoi,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X,X,,,X,,,,,,,,,,,,,,
-Ho Chi Minh City,X,,X,X,,X,X,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X,X,,,X,,X,X,,X
-Hong Kong,X,X,X,,,,,,,X,X,X,X,X,,,,,X,X,X,X,X,X,X,X,X,,,,X,X,X,,,
-Hyderabad,,,,,,,,,,,,,X,,,,,,X,,,X,,,X,,X,,,X,X,,,X,,
-Jakarta,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X
-Johannesburg,X,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Kathmandu,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
-Kochi,,,X,,,,,,,X,,,X,,,,,,X,,,X,,,,,,X,,,X,,,,,
-Kolkata,X,,,X,,,X,,,,,,,,,,,,,,,X,,,X,,X,,,X,X,,,X,,
-Kuala Lumpur,,,,X,,,,,,X,,,,,,X,,,X,,X,X,,,X,,X,X,,X,X,,,X,,X
-London,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,
-Los Angeles,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,
-Malé,X,,,,,,,,,,,,,,,X,,,X,,,,,,X,,,,,,,,,,,
-Manila,X,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X
-Medan,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,X,,
-Melbourne,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,X,
-Mumbai,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,X,X,X,X,X,X,X,X,X,,X,X,X,X,X,X,X,X
-New Delhi,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,X,X,X,,,,,X,,X,X,X
-New York (JFK),,X,,,X,,,X,,,,,,X,,,X,,,X,,,X,,,,,,,,,,,,,
-New York (Newark),,X,,,,,,X,,,,,,X,,,X,,,,,,,,,,,,,,,,,,,
-Penang,,,,X,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,
-Perth,X,,X,,,,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,
-Phnom Penh,,,,,,,,,,,,,X,,,X,,,X,,,X,,,,,,,,,,,,,,
-Phuket,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-San Francisco,,,,,,,,,,,,,,,,,,,,X,,,X,,,,,,,,,,,,,
-Shanghai,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,X,,X,X,,X,X,X
-Siem Reap,X,,X,X,,X,,,,X,,X,,,,,,,,,,,,,X,,,X,,,X,,,X,,
-Surabaya,X,,X,,,,,,,,,,,,X,,,,,,,,,,,,,X,,X,,,X,X,,X
-Sydney,X,X,,,,,X,,,X,X,,,,,,,,,,,X,X,,,,,X,X,,,,,,X,X
-Taipei,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+City,202205_Y,202205_PY,202205_J,202206_Y,202206_PY,202206_J,202207_Y,202207_PY,202207_J,202208_Y,202208_PY,202208_J,202210_Y,202210_PY,202210_J,202211_Y,202211_PY,202211_J,202302_Y,202302_PY,202302_J,202303_Y,202303_PY,202303_J,202304_Y,202304_PY,202304_J,202306_Y,202306_PY,202306_J,202307_Y,202307_PY,202307_J,202308_Y,202308_PY,202308_J,202309_Y,202309_PY,202309_J
+Singapore - Adelaide,X,,X,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Ahmedabad,X,,X,X,,X,X,,X,X,,X,,,,,,,,,,X,,X,X,,X,,,X,,,X,X,,X,,,X
+Singapore - Bali,X,,,,,,,,,,,,,,,,,,X,,,X,,X,,,,,,,,,,,,,X,,
+Singapore - Bangalore,X,,X,X,,X,X,,X,X,,X,,,,,,,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X
+Singapore - Bangkok,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
+Singapore - Beijing,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,X,,,X,,X,,,
+Singapore - Brisbane,X,,X,,,,,,,X,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,
+Singapore - Brunei,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
+Singapore - Cairns,X,,X,X,,X,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Cape Town,X,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Cebu,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Chengdu,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,X,X,X,,X,X,,,,
+Singapore - Chennai,X,,X,,,X,,,X,X,,X,X,,X,,,,X,,X,X,,X,X,,X,,,X,X,,X,X,,X,X,,X
+Singapore - Colombo,,,,,,,,,,,,,,,,,,X,,,,,,X,,,X,,,,,,,X,,,X,,
+Singapore - Da Nang,X,,X,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Darwin,X,,X,X,,X,X,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Dhaka,X,,X,X,,X,,,,,,,X,,X,,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X,X,,X
+Singapore - Dubai,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Frankfurt,X,X,,X,,,,,,,,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Guangzhou,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,X,X,,,X,,,,,
+Singapore - Hanoi,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X,X,,,X,,,,,,,,,,,,,,,,,
+Singapore - Ho Chi Minh City,X,,X,X,,X,X,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X,X,,,X,,X,X,,X,X,,X
+Singapore - Hong Kong,X,X,X,,,,,,,X,X,X,X,X,,,,,X,X,X,X,X,X,X,X,X,,,,X,X,X,,,,X,X,X
+Singapore - Hyderabad,,,,,,,,,,,,,X,,,,,,X,,,X,,,X,,X,,,X,X,,,X,,,X,,
+Singapore - Jakarta,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,X
+Singapore - Johannesburg,X,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Kathmandu,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,
+Singapore - Kochi,,,X,,,,,,,X,,,X,,,,,,X,,,X,,,,,,X,,,X,,,,,,,,
+Singapore - Kolkata,X,,,X,,,X,,,,,,,,,,,,,,,X,,,X,,X,,,X,X,,,X,,,X,,
+Singapore - Kuala Lumpur,,,,X,,,,,,X,,,,,,X,,,X,,X,X,,,X,,X,X,,X,X,,,X,,X,X,,X
+Singapore - London,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,
+Singapore - Los Angeles,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Malé,X,,,,,,,,,,,,,,,X,,,X,,,,,,X,,,,,,,,,,,,,,
+Singapore - Manila,X,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X,X,,X
+Singapore - Medan,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,X,,,X,,
+Singapore - Melbourne,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,
+Singapore - Mumbai,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,X,X,X,X,X,X,X,X,X,,X,X,X,X,X,X,X,X,X,X,X
+Singapore - New Delhi,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,X,X,X,,,,,X,X,X,X,X,,,
+Singapore - New York (JFK),,X,,,X,,,X,,,,,,X,,,X,,,X,,,X,,,,,,,,,,,,,,,,
+Singapore - New York (Newark),,X,,,,,,X,,,,,,X,,,X,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Penang,,,,X,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X
+Singapore - Perth,X,,X,,,,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Singapore - Phnom Penh,,,,,,,,,,,,,X,,,X,,,X,,,X,,,,,,,,,,,,,,,,,
+Singapore - Phuket,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
+Singapore - San Francisco,,,,,,,,,,,,,,,,,,,,X,,,X,,,,,,,,,,,,,,,X,
+Singapore - Seoul (Incheon),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
+Singapore - Shanghai,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,X,,X,X,,X,X,X,,,
+Singapore - Siem Reap,X,,X,X,,X,,,,X,,X,,,,,,,,,,,,,X,,,X,,,X,,,X,,,X,,
+Singapore - Surabaya,X,,X,,,,,,,,,,,,X,,,,,,,,,,,,,X,,X,,,X,X,,X,X,,X
+Singapore - Sydney,X,X,,,,,X,,,X,X,,,,,,,,,,,X,X,,,,,X,X,,,,,,X,X,,,
+Singapore - Taipei,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Adelaide - Singapore,X,,X,,,,,,,,,X,,,,,,,,,X,,,,,,,,,,,,,,,,,,
+Ahmedabad - Singapore,,,X,X,,X,X,,X,X,,X,X,,X,,,,,,,,,,,,X,,,X,,,X,,,X,,,X
+Amsterdam - Singapore,,,,,,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,
+Bali - Singapore,X,,,,,,,,,,,,,,,,,,X,,,X,,X,,,,,,,,,,,,,X,,
+Bangalore - Singapore,X,,X,X,,X,X,,X,X,,X,,,,,,,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X
+Bangkok - Singapore,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
+Beijing - Singapore,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,X,,,X,,X,,,
+Brisbane - Singapore,X,,X,,,,,,,X,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,
+Brunei - Singapore,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
+Cairns - Singapore,X,,X,,,X,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cape Town - Singapore,X,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cebu - Singapore,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Chengdu - Singapore,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,X,,,X,,,,
+Chennai - Singapore,X,,X,,,X,,,X,X,,X,X,,X,,,,X,,X,X,,X,X,,X,,,X,X,,X,X,,X,X,,X
+Christchurch - Singapore,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,X,,X,,,,
+Colombo - Singapore,,,,,,,,,,,,,,,,,,X,,,,,,X,,,X,,,,,,,,,,,,
+Da Nang - Singapore,X,,X,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Darwin - Singapore,X,,X,X,,X,X,,,X,,X,,,,,,,,,X,,,,,,,,,,,,,,,,,,
+Dhaka - Singapore,X,,X,X,,X,,,,,,,X,,X,,,X,,,X,,,,,,,X,,X,,,,X,,X,X,,X
+Dubai - Singapore,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Frankfurt - Singapore,X,X,,X,,,,,,,,,,,,,,,,,,X,,,X,,,,,,,,,,,,,,
+Guangzhou - Singapore,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,X,X,,,X,,,,,
+Hanoi - Singapore,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X,X,,,X,,,,,,,,,,,,,,,,,
+Ho Chi Minh City - Singapore,X,,X,X,,X,X,,X,X,,X,,,,X,,X,,,X,,,X,X,,X,X,,,X,,X,X,,X,X,,X
+Hong Kong - Singapore,X,X,X,,,,,,,X,X,X,X,X,,,,,X,X,X,X,X,X,X,X,X,,,,X,X,X,,,,X,X,X
+Hyderabad - Singapore,,,,,,,,,,,,,X,,,,,,,,,,,,,,X,,,X,,,,,,,X,,
+Jakarta - Singapore,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,X,,,X
+Johannesburg - Singapore,X,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Kochi - Singapore,,,X,,,,,,,X,,,X,,,,,,,,,,,,,,,X,,,,,,,,,,,
+Kolkata - Singapore,X,,,X,,,X,,,,,,,,,,,,,,,,,,X,,X,,,X,X,,,,,,X,,
+Kuala Lumpur - Singapore,,,,X,,,,,,X,,,,,,X,,,X,,X,X,,,X,,X,X,,X,X,,,X,,X,X,,X
+London - Singapore,,,,,,,,,,,,,,,,,,,,,,X,,,X,,,,,,,,,,,,,,
+Los Angeles - Singapore,,,,,,,,,,,,,X,,,,,,X,,,X,,,X,,,,,,,,,,,,X,,
+Malé - Singapore,X,,,,,,,,,,,,,,,X,,,X,,,,,,X,,,,,,,,,,,,,,
+Manila - Singapore,X,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X,,,,X,,X,X,,X,X,,X,X,,X,X,,X
+Medan - Singapore,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,X,,,X,,
+Melbourne - Singapore,,,,,,,,,,X,,,,,,,,,X,,X,,,,,,,,,,,,,X,,,,X,
+Mumbai - Singapore,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,X,,,X,,X,X,,X,X,,X,X,,,X,,,X
+Munich - Singapore,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,,,,,,,,,
+New Delhi - Singapore,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,X,,,,,,,,,,,,
+New York (JFK) - Singapore,,,,,,,,,,,,,,X,,,X,,,,,,,,,,,,,,,,,,,,,,
+New York (Newark) - Singapore,,X,,,X,,,X,,,,,,X,,,X,,,X,,,X,,,X,,,,,,,,,,,,,
+Penang - Singapore,,,,X,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X
+Perth - Singapore,X,,X,,,,X,,,X,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,
+Phnom Penh - Singapore,,,,,,,,,,,,,X,,,X,,,X,,,X,,,,,,,,,,,,,,,,,
+Phuket - Singapore,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
+San Francisco - Singapore,,,,,,,,,,,,,,,,,,,X,X,,X,X,,X,X,,,,,,,,,X,,,X,
+Seoul (Incheon) - Singapore,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,
+Shanghai - Singapore,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,X,,X,X,,X,X,X,,,
+Siem Reap - Singapore,X,,X,X,,X,,,,X,,X,,,,,,,,,,,,,,,,X,,,X,,,X,,,X,,
+Surabaya - Singapore,X,,X,,,,,,,,,,,,X,,,,,,,,,,,,,,,X,,,X,,,X,X,,X
+Sydney - Singapore,X,X,,,,,X,,,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,,X,,,
+Taipei - Singapore,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Frankfurt - New York (JFK),,,,,,,,,,,,,X,X,,X,X,X,X,X,X,X,X,X,,X,X,X,X,,,X,,,,,,X,
+Los Angeles - Narita,,,,,,,,,,,,,,,,,,,X,X,,,,,X,X,,,,,,,,,X,,,X,
+Los Angeles - Tokyo,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,
+Narita - Los Angeles,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,X,
+New York (JFK) - Frankfurt,,,,,,,,,,,,,X,X,,X,X,X,X,X,X,X,X,X,,X,X,,,,,X,,,X,,,X,
+Tokyo - Los Angeles,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,

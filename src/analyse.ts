@@ -11,9 +11,10 @@ type RedemptionAnalysisResult = Record<
 >;
 
 // to fix any casing/naming discrepancies
-const destinationMap: Record<string, string> = {
+const cityMapper: Record<string, string> = {
   'Ho Chi Minh': 'Ho Chi Minh City',
   'Kuala lumpur': 'Kuala Lumpur',
+  Sinapore: 'Singapore',
 };
 const flightClassToCodeMap = {
   Economy: 'Y',
@@ -43,19 +44,18 @@ const formatValue = (value: boolean) => (value ? 'X' : '');
     const redemptionsString = fs.readFileSync(filepath).toString();
     const redemptions = JSON.parse(redemptionsString) as Redemption[];
 
-    const outboundRedemptions = redemptions.filter(
-      (redemption) => redemption.origin === 'Singapore',
-    );
-    outboundRedemptions.forEach((redemption) => {
+    redemptions.forEach((redemption) => {
+      const origin = cityMapper[redemption.origin] ?? redemption.origin;
       const destination =
-        destinationMap[redemption.destination] ?? redemption.destination;
+        cityMapper[redemption.destination] ?? redemption.destination;
+      const flightPath = `${origin} - ${destination}`;
       // @ts-expect-error "First" is intentionally excluded as it's not applicable for spontaneous escapes
       const flightClassCode = flightClassToCodeMap[redemption.flightClass];
 
-      result[destination] = {
-        ...result[destination],
+      result[flightPath] = {
+        ...result[flightPath],
         [month]: {
-          ...result[destination]?.[month],
+          ...result[flightPath]?.[month],
           [flightClassCode]: true,
         },
       };
@@ -63,10 +63,42 @@ const formatValue = (value: boolean) => (value ? 'X' : '');
   });
 
   // format the result dict a little better:
-  // 1. sort cities in alphabetical order
+  // 1. sort order, where each subsection is sorted in alphabetical order
+  //   a. SG outbound flights
+  //   b. SG inbound flights
+  //   c. all other flights
   // 2. add false to all missing entries in the dict
   const resultFormatted = Object.keys(result)
-    .sort()
+    .sort((a, b) => {
+      const [aOrigin, aDestination] = a.split(' - ');
+      const [bOrigin, bDestination] = b.split(' - ');
+
+      // SG outbound flights
+      if (aOrigin === 'Singapore') {
+        if (bOrigin === 'Singapore') {
+          return aDestination.localeCompare(bDestination);
+        }
+        return -1; // b is not an SG outbound flight, so a less than b
+      }
+      if (bOrigin === 'Singapore') {
+        return 1; // a is not an SG outbound flight, so b less than a
+      }
+      // SG inbound flights
+      if (aDestination === 'Singapore') {
+        if (bDestination === 'Singapore') {
+          return aOrigin.localeCompare(bOrigin);
+        }
+        return -1; // b is not an SG inbound flight, so a less than b
+      }
+      if (bDestination === 'Singapore') {
+        return 1; // a is not an SG inbound flight, so b less than a
+      }
+
+      // non-SG inbound/outbound flights
+      return aOrigin !== bOrigin
+        ? aOrigin.localeCompare(bOrigin)
+        : aDestination.localeCompare(bDestination);
+    })
     .reduce((_result: RedemptionAnalysisResult, city) => {
       const details = result[city];
       const detailsUpdated: Record<

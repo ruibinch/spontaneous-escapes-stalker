@@ -4,6 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "run:main": "ts-node src/main.ts",
+    "run:analyse": "ts-node src/analyse.ts",
     "typecheck": "tsc --noEmit",
     "test": "TZ=UTC jest"
   },
