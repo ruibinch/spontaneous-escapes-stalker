@@ -60,13 +60,14 @@ async function run() {
       `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-content.html`,
       html.toString(),
     );
-  }
 
-  if (isLocalRun) {
     fs.writeFileSync(
       `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-redemptions.json`,
       JSON.stringify(redemptions, null, 2),
     );
+  }
+
+  if (isLocalRun) {
     return;
   }
 
