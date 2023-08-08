@@ -132,6 +132,13 @@ describe('parseBlackoutPeriod', () => {
       },
     ],
     [
+      '[special case] dates with a typo in the month',
+      {
+        input: '26 Septmeber 2023',
+        expected: [{ from: '2023-09-26', to: '2023-09-26' }],
+      },
+    ],
+    [
       'dash variation 1',
       {
         input: '-',

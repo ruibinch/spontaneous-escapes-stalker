@@ -1,3 +1,4 @@
+import { spellcheckMonth } from '../lib/spellcheck';
 import { BlackoutPeriod } from '../types';
 import { parseDateStringToISO8601 } from '../utils';
 
@@ -153,7 +154,7 @@ function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
   if (!separator) {
     const blackoutPeriodStringSplit = blackoutPeriodString.split(' ');
     const day = blackoutPeriodStringSplit[0];
-    const month = blackoutPeriodStringSplit[1];
+    const month = spellcheckMonth(blackoutPeriodStringSplit[1]);
     const year = blackoutPeriodStringSplit[2] ?? getYearInNextMonth();
 
     const date = `${day} ${month} ${year}`;
@@ -169,7 +170,7 @@ function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
   const fromDay = blackoutPeriodStringSplit[0].trim();
   const toDateSplit = blackoutPeriodStringSplit[1].trim().split(' ');
   const toDay = toDateSplit[0];
-  const toMonth = toDateSplit[1];
+  const toMonth = spellcheckMonth(toDateSplit[1]);
   const toYear = toDateSplit[2] ?? getYearInNextMonth();
 
   const fromDate = `${fromDay} ${toMonth} ${toYear}`;
