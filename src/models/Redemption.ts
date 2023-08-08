@@ -145,9 +145,8 @@ export class Redemption {
       this.destination === otherRedemption.destination &&
       this.flightClass === otherRedemption.flightClass &&
       this.flightNo === otherRedemption.flightNo &&
-      this.milesRequired === otherRedemption.milesRequired &&
-      // TODO: update this comparison when blackoutPeriod is updated to an array
-      this.blackoutPeriod === otherRedemption.blackoutPeriod
+      this.milesRequired === otherRedemption.milesRequired
+      // skip checking equivalence of blackoutPeriod because it's a pain and doesn't add much value
     );
   }
 }
