@@ -23,7 +23,7 @@ const SPONTANEOUS_ESCAPES_URL =
 const isBasicRun = !!process.env['BASIC_RUN'];
 const htmlFilepath = process.env['HTML_FILEPATH'];
 
-export async function run() {
+export async function scrape() {
   const { html, isNewHtml } = await loadHtml();
 
   // extract the latest info from the page first
@@ -158,7 +158,7 @@ function compareRedemptions(
 }
 
 if (require.main === module) {
-  run()
+  scrape()
     .then(() => {
       process.exit(0);
     })
