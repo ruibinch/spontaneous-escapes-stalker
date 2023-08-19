@@ -6,6 +6,8 @@ export const currentDate = () => new Date(Date.now());
 
 export const currentDateInYYYYMMDD = () => format(currentDate(), 'yyyyMMdd');
 
+export const utcDate = () => new Date().toUTCString();
+
 export const dateInYYYYMM = (date: Date) => format(date, 'yyyyMM');
 
 export const toDateISO8601 = (date: Date | number) =>

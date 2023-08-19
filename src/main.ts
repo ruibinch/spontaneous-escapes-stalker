@@ -7,40 +7,23 @@ import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
-import { dateInYYYYMM, toDateISO8601 } from './utils';
+import { dateInYYYYMM, toDateISO8601, utcDate } from './utils';
 import {
   sendExistingRedemptionPeriodChangesNotification,
   sendMessageToChannel,
   sendNewRedemptionPeriodNotification,
   sendRedemptionsInfoNotification,
 } from './utils/sender';
+import { TimePeriod } from './utils/types';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
 
 // env var configs
-const isLocalRun = !!process.env['LOCAL_RUN'];
+const isBasicRun = !!process.env['BASIC_RUN'];
 const htmlFilepath = process.env['HTML_FILEPATH'];
 
-/**
- * Fetches the latest HTML conent from the webpage, or loads a local HTML file specified by the HTML_FILEPATH env var.
- */
-async function loadHtml() {
-  let html: HTMLElement;
-  let isNewHtml = true;
-
-  if (htmlFilepath) {
-    const htmlFileContent = fs.readFileSync(htmlFilepath).toString();
-    html = parse(htmlFileContent);
-    isNewHtml = false;
-  } else {
-    const response = await axios.get(SPONTANEOUS_ESCAPES_URL);
-    html = parse(response.data);
-  }
-  return { html, isNewHtml };
-}
-
-async function run() {
+export async function run() {
   const { html, isNewHtml } = await loadHtml();
 
   // extract the latest info from the page first
@@ -54,20 +37,13 @@ async function run() {
     }),
   );
 
-  if (isNewHtml) {
-    // save new HTML pages for reference
-    fs.writeFileSync(
-      `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-content.html`,
-      html.toString(),
-    );
-
-    fs.writeFileSync(
-      `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-redemptions.json`,
-      JSON.stringify(redemptions, null, 2),
-    );
-  }
-
-  if (isLocalRun) {
+  // in a basic run, simply save the files to local disk and return early without subsequent checks
+  if (isBasicRun) {
+    saveFilesToLocal({
+      html: isNewHtml ? html : undefined,
+      redemptions,
+      redemptionTravelPeriod,
+    });
     return;
   }
 
@@ -89,10 +65,17 @@ async function run() {
     // no changes, return early
     // TODO: only for debugging, to remove
     await sendMessageToChannel(
-      escapeCharacters(`[${new Date().toUTCString()}] 🚫 No changes`),
+      escapeCharacters(`[${utcDate()}] 🚫 No changes`),
     );
     return;
   }
+
+  // data has changed, so we save the new files
+  saveFilesToLocal({
+    html: isNewHtml ? html : undefined,
+    redemptions,
+    redemptionTravelPeriod,
+  });
 
   if (!doesRedemptionPeriodExist) {
     console.log(`Redemption period "${redemptionEndDate}" does not exist`);
@@ -112,6 +95,50 @@ async function run() {
     redemptionEndDate,
     travelPeriod: redemptionTravelPeriod,
   });
+}
+
+/**
+ * Fetches the latest HTML content from the SE webpage, or loads a local HTML file specified by the HTML_FILEPATH env var.
+ */
+async function loadHtml() {
+  let html: HTMLElement;
+  let isNewHtml = true;
+
+  if (htmlFilepath) {
+    const htmlFileContent = fs.readFileSync(htmlFilepath).toString();
+    html = parse(htmlFileContent);
+    isNewHtml = false;
+  } else {
+    const response = await axios.get(SPONTANEOUS_ESCAPES_URL);
+    html = parse(response.data);
+  }
+
+  return { html, isNewHtml };
+}
+
+/**
+ * Saves HTML and redemptions JSON to local disk.
+ */
+function saveFilesToLocal({
+  html,
+  redemptions,
+  redemptionTravelPeriod,
+}: {
+  html: HTMLElement | undefined;
+  redemptions: Redemption[];
+  redemptionTravelPeriod: TimePeriod;
+}) {
+  if (html) {
+    fs.writeFileSync(
+      `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-content.html`,
+      html.toString(),
+    );
+  }
+
+  fs.writeFileSync(
+    `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-redemptions.json`,
+    JSON.stringify(redemptions, null, 2),
+  );
 }
 
 /**
