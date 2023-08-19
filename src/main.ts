@@ -130,11 +130,6 @@ function compareRedemptions(
   });
 }
 
-// Lambda handler
-export async function pollUpdates() {
-  await run();
-}
-
 if (require.main === module) {
   run()
     .then(() => {
