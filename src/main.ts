@@ -7,13 +7,13 @@ import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
+import { dateInYYYYMM, toDateISO8601 } from './utils';
 import {
   sendExistingRedemptionPeriodChangesNotification,
   sendMessageToChannel,
   sendNewRedemptionPeriodNotification,
   sendRedemptionsInfoNotification,
-} from './sender';
-import { dateInYYYYMM, toDateISO8601 } from './utils';
+} from './utils/sender';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';

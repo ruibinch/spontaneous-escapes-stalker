@@ -1,5 +1,5 @@
 import { spellcheckMonth } from '../lib/spellcheck';
-import { BlackoutPeriod } from '../types';
+import { BlackoutPeriod } from '../utils/types';
 import { parseDateStringToISO8601 } from '../utils';
 
 // SQ website doesn't standardise their dashes

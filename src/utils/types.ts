@@ -1,4 +1,4 @@
-import { Redemption } from './models/Redemption';
+import { Redemption } from '../models/Redemption';
 
 // Base information that can be obtained from each individual redemption table
 export type RedemptionTableInfo = Omit<

@@ -5,7 +5,7 @@ import {
 } from '@aws-sdk/client-dynamodb';
 import { PutCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient, getDynamoDBBillingDetails } from '../lib/aws/dynamodb';
-import { BlackoutPeriod, FlightClass } from '../types';
+import { BlackoutPeriod, FlightClass } from '../utils/types';
 import { toDateISO8601 } from '../utils';
 
 const REDEMPTION_TABLE_NAME = 'kf-redemptions';

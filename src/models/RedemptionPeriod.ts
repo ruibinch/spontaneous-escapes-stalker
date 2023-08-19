@@ -5,7 +5,7 @@ import {
 } from '@aws-sdk/client-dynamodb';
 import { GetCommand, PutCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient, getDynamoDBBillingDetails } from '../lib/aws/dynamodb';
-import { TimePeriod, TimePeriodSerialized } from '../types';
+import { TimePeriod, TimePeriodSerialized } from '../utils/types';
 import { toDateISO8601 } from '../utils';
 
 const REDEMPTION_PERIOD_TABLE_NAME = 'kf-redemption-periods';

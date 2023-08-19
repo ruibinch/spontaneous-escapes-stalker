@@ -4,7 +4,7 @@ import {
   FlightClass,
   RedemptionTableInfo,
   RedemptionTableInfoWithRegion,
-} from '../types';
+} from '../utils/types';
 import { isAllDefined, toNumber } from '../utils';
 import { parseBlackoutPeriod } from './parseBlackoutPeriod';
 
