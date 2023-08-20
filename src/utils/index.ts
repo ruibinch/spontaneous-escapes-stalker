@@ -1,4 +1,4 @@
-import { format, formatISO, parse } from 'date-fns';
+import { addHours, format, formatISO, parse } from 'date-fns';
 
 // Date
 
@@ -6,7 +6,9 @@ export const currentDate = () => new Date(Date.now());
 
 export const currentDateInYYYYMMDD = () => format(currentDate(), 'yyyyMMdd');
 
-export const utcDate = () => new Date().toUTCString();
+// used as prefixes in sent messages
+export const datePrefix = () =>
+  `[${format(addHours(new Date(), 8), 'dd/MM/yyyy HH:mm:ss')}]`;
 
 export const dateInYYYYMM = (date: Date) => format(date, 'yyyyMM');
 

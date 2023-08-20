@@ -7,7 +7,7 @@ import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
-import { dateInYYYYMM, toDateISO8601, utcDate } from './utils';
+import { dateInYYYYMM, toDateISO8601, datePrefix } from './utils';
 import {
   sendExistingRedemptionPeriodChangesNotification,
   sendMessageToChannel,
@@ -67,7 +67,7 @@ export async function scrape() {
     // no changes, return early
     // TODO: only for debugging, to remove
     await sendMessageToChannel(
-      escapeCharacters(`[${utcDate()}] 🚫 No changes`),
+      escapeCharacters(`${datePrefix()} 🚫 No changes`),
     );
     return;
   }

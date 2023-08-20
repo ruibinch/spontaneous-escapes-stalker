@@ -2,7 +2,7 @@ import { addMonths } from 'date-fns';
 import fs from 'fs';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { scrape } from './scrape';
-import { sleep, utcDate } from './utils';
+import { sleep, datePrefix } from './utils';
 import { sendMessageToChannel } from './utils/sender';
 
 process.env.TZ = 'UTC';
@@ -37,7 +37,7 @@ function checkNextMonthRedemptionsAlreadyPublished() {
   if (isNextMonthRedemptionsAlreadyPublished) {
     await sendMessageToChannel(
       escapeCharacters(
-        `[${utcDate()}] 💤 Redemptions for next month are already published`,
+        `${datePrefix()} 💤 Redemptions for next month are already published`,
       ),
     );
     return;
@@ -48,7 +48,7 @@ function checkNextMonthRedemptionsAlreadyPublished() {
 
   await sendMessageToChannel(
     escapeCharacters(
-      `[${utcDate()}] 🔍 Scraping KF SE page for new redemptions!`,
+      `${datePrefix()} 🔍 Scraping KF SE page for new redemptions!`,
     ),
   );
   await scrape();
