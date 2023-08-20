@@ -28,7 +28,9 @@ const flattenDeep = (arr: unknown): string[] =>
     : [arr];
 const formatValue = (value: boolean) => (value ? 'X' : '');
 
-(() => {
+export function analyse() {
+  console.log('🧮 Running analysis');
+
   const redemptionsFiles = fs
     .readdirSync('data')
     .filter((filename) => filename.endsWith('redemptions.json'));
@@ -164,4 +166,14 @@ const formatValue = (value: boolean) => (value ? 'X' : '');
   fs.writeFileSync('data/analysis-Y.csv', csvY);
   fs.writeFileSync('data/analysis-PY.csv', csvPY);
   fs.writeFileSync('data/analysis-J.csv', csvJ);
-})();
+}
+
+if (require.main === module) {
+  try {
+    analyse();
+    process.exit(0);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
+}

@@ -15,13 +15,15 @@ import {
   sendRedemptionsInfoNotification,
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
+import { analyse } from './analyse';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
 
 // env var configs
-const isBasicRun = !!process.env['BASIC_RUN'];
 const htmlFilepath = process.env['HTML_FILEPATH'];
+const shouldRunPostAnalysis = !!process.env['RUN_POST_ANALYSIS'];
+const isBasicRun = !!process.env['BASIC_RUN'];
 
 export async function scrape() {
   const { html, isNewHtml } = await loadHtml();
@@ -95,6 +97,10 @@ export async function scrape() {
     redemptionEndDate,
     travelPeriod: redemptionTravelPeriod,
   });
+
+  if (shouldRunPostAnalysis) {
+    analyse();
+  }
 }
 
 /**
@@ -163,7 +169,7 @@ if (require.main === module) {
       process.exit(0);
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
       process.exit(1);
     });
 }
