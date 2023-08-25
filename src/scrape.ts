@@ -1,13 +1,15 @@
 import axios from 'axios';
 import fs from 'fs';
 import { HTMLElement, parse } from 'node-html-parser';
+import { analyse } from './analyse';
+import { commitDataDiffs } from './lib/git/commitDataDiffs';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { Redemption } from './models/Redemption';
 import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
-import { dateInYYYYMM, toDateISO8601, datePrefix } from './utils';
+import { dateInYYYYMM, datePrefix, toDateISO8601 } from './utils';
 import {
   sendExistingRedemptionPeriodChangesNotification,
   sendMessageToChannel,
@@ -15,7 +17,6 @@ import {
   sendRedemptionsInfoNotification,
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
-import { analyse } from './analyse';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
@@ -41,7 +42,7 @@ export async function scrape() {
 
   // in a basic run, simply save the files to local disk and return early without subsequent checks
   if (isBasicRun) {
-    saveFilesToLocal({
+    saveDataFiles({
       html: isNewHtml ? html : undefined,
       redemptions,
       redemptionTravelPeriod,
@@ -72,13 +73,6 @@ export async function scrape() {
     return;
   }
 
-  // data has changed, so we save the new files
-  saveFilesToLocal({
-    html: isNewHtml ? html : undefined,
-    redemptions,
-    redemptionTravelPeriod,
-  });
-
   if (!doesRedemptionPeriodExist) {
     console.log(`Redemption period "${redemptionEndDate}" does not exist`);
     await RedemptionPeriod.upload({
@@ -97,6 +91,14 @@ export async function scrape() {
     redemptionEndDate,
     travelPeriod: redemptionTravelPeriod,
   });
+
+  // data has changed, so we save the new files
+  saveDataFiles({
+    html: isNewHtml ? html : undefined,
+    redemptions,
+    redemptionTravelPeriod,
+  });
+  await commitDataDiffs();
 
   if (shouldRunPostAnalysis) {
     analyse();
@@ -123,9 +125,9 @@ async function loadHtml() {
 }
 
 /**
- * Saves HTML and redemptions JSON to local disk.
+ * Saves HTML and redemptions JSON to /data folder on local disk.
  */
-function saveFilesToLocal({
+function saveDataFiles({
   html,
   redemptions,
   redemptionTravelPeriod,

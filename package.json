@@ -6,6 +6,7 @@
     "run:scrape": "ts-node src/scrape.ts",
     "run:scrape-with-precheck": "ts-node src/scrapeWithPrecheck.ts",
     "run:analyse": "ts-node src/analyse.ts",
+    "git:commit-data-diffs": "ts-node src/lib/git/commitDataDiffs.ts",
     "typecheck": "tsc --noEmit",
     "test": "TZ=UTC jest"
   },
