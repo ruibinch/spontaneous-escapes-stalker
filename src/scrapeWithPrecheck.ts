@@ -6,7 +6,7 @@ import { sleep, datePrefix } from './utils';
 import { sendMessageToChannel } from './utils/sender';
 
 process.env.TZ = 'UTC';
-const MAX_DELAY_SECS = 500;
+const MAX_DELAY_SECS = 890; // 14m50s
 
 function checkNextMonthRedemptionsAlreadyPublished() {
   const redemptionsFiles = fs
