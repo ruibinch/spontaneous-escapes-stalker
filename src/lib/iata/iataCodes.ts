@@ -5,6 +5,7 @@ const iataCodes: Record<string, string> = {
   Auckland: 'AKL',
   Bali: 'DPS',
   'Bandar Seri Begawan': 'BWN',
+  Brunei: 'BWN',
   Bandung: 'BDO',
   Bangkok: 'BKK',
   Barcelona: 'BCN',
@@ -43,7 +44,7 @@ const iataCodes: Record<string, string> = {
   'Kuala Lumpur': 'KUL',
   London: 'LHR',
   'Los Angeles': 'LAX',
-  Male: 'MLE',
+  Malé: 'MLE',
   Manchester: 'MAN',
   Mandalay: 'MDL',
   Manila: 'MNL',
@@ -66,7 +67,7 @@ const iataCodes: Record<string, string> = {
   Rome: 'ROM',
   'San Francisco': 'SFO',
   Seattle: 'SEA',
-  Seoul: 'ICN',
+  'Seoul (Incheon)': 'ICN',
   Shanghai: 'PVG',
   Shenzhen: 'SZX',
   'Siem Reap': 'REP',
@@ -82,4 +83,10 @@ const iataCodes: Record<string, string> = {
   Zurich: 'ZRH',
 };
 
-export default iataCodes;
+export const iata = (city: string) => {
+  const cityIata: string | undefined = iataCodes[city];
+  if (!cityIata) {
+    throw new Error(`IATA code not found for ${city}`);
+  }
+  return cityIata;
+};

@@ -1,12 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import { Redemption } from './models/Redemption';
+import { iata } from './lib/iata/iataCodes';
 
-type City = string;
+type Route = string;
 type Month = string;
 type FlightClassCode = string;
 type RedemptionAnalysisResult = Record<
-  City,
+  Route,
   Record<Month, Record<FlightClassCode, boolean>>
 >;
 
@@ -14,6 +15,7 @@ type RedemptionAnalysisResult = Record<
 const cityMapper: Record<string, string> = {
   'Ho Chi Minh': 'Ho Chi Minh City',
   'Kuala lumpur': 'Kuala Lumpur',
+  Narita: 'Tokyo (Narita)',
   Sinapore: 'Singapore',
 };
 const flightClassToCodeMap = {
@@ -27,6 +29,12 @@ const flattenDeep = (arr: unknown): string[] =>
     ? arr.reduce((a, b) => a.concat(flattenDeep(b)), [])
     : [arr];
 const formatValue = (value: boolean) => (value ? 'X' : '');
+const formatYearMonth = (yearMonth: string) =>
+  `${yearMonth.slice(0, 4)}-${yearMonth.slice(4)}`;
+const getRouteIata = (route: string) => {
+  const [origin, destination] = route.split(' - ');
+  return `${iata(origin)} - ${iata(destination)}`;
+};
 
 export function analyse() {
   console.log('🧮 Running analysis');
@@ -50,14 +58,14 @@ export function analyse() {
       const origin = cityMapper[redemption.origin] ?? redemption.origin;
       const destination =
         cityMapper[redemption.destination] ?? redemption.destination;
-      const flightPath = `${origin} - ${destination}`;
+      const route = `${origin} - ${destination}`;
       // @ts-expect-error "First" is intentionally excluded as it's not applicable for spontaneous escapes
       const flightClassCode = flightClassToCodeMap[redemption.flightClass];
 
-      result[flightPath] = {
-        ...result[flightPath],
+      result[route] = {
+        ...result[route],
         [month]: {
-          ...result[flightPath]?.[month],
+          ...result[route]?.[month],
           [flightClassCode]: true,
         },
       };
@@ -101,8 +109,8 @@ export function analyse() {
         ? aOrigin.localeCompare(bOrigin)
         : aDestination.localeCompare(bDestination);
     })
-    .reduce((_result: RedemptionAnalysisResult, city) => {
-      const details = result[city];
+    .reduce((_result: RedemptionAnalysisResult, route) => {
+      const details = result[route];
       const detailsUpdated: Record<
         Month,
         Record<FlightClassCode, boolean>
@@ -119,7 +127,7 @@ export function analyse() {
         };
       });
 
-      _result[city] = detailsUpdated;
+      _result[route] = detailsUpdated;
       return _result;
     }, {});
 
@@ -131,7 +139,9 @@ export function analyse() {
     J: [],
   };
 
-  Object.entries(resultFormatted).forEach(([city, details]) => {
+  Object.entries(resultFormatted).forEach(([route, details]) => {
+    const routeInfo = [route, getRouteIata(route)];
+
     const detailsForMonths = Object.values(details);
     const detailsCsvAll = detailsForMonths.map((detailsForMonth) =>
       Object.values(detailsForMonth).map(formatValue),
@@ -146,18 +156,25 @@ export function analyse() {
       formatValue(detailsForMonth['J']),
     );
 
-    results.all.push([city, ...flattenDeep(detailsCsvAll)].join(','));
-    results.Y.push([city, ...detailsCsvY].join(','));
-    results.PY.push([city, ...detailsCsvPY].join(','));
-    results.J.push([city, ...detailsCsvJ].join(','));
+    results.all.push([...routeInfo, ...flattenDeep(detailsCsvAll)].join(','));
+    results.Y.push([...routeInfo, ...detailsCsvY].join(','));
+    results.PY.push([...routeInfo, ...detailsCsvPY].join(','));
+    results.J.push([...routeInfo, ...detailsCsvJ].join(','));
   });
 
   // save results
   const headerAll = flattenDeep([
-    'City',
-    months.map((month) => flightClassCodes.map((code) => `${month}_${code}`)),
+    'Route',
+    'Route',
+    months.map((month) =>
+      flightClassCodes.map((code) => `${formatYearMonth(month)}_${code}`),
+    ),
   ]);
-  const headerIndividual = ['City', ...months.map((month) => `${month}`)];
+  const headerIndividual = [
+    'Route',
+    'Route',
+    ...months.map((month) => `${formatYearMonth(month)}`),
+  ];
   const csvAll = [headerAll, ...results.all].join('\r\n');
   const csvY = [headerIndividual, ...results.Y].join('\r\n');
   const csvPY = [headerIndividual, ...results.PY].join('\r\n');
