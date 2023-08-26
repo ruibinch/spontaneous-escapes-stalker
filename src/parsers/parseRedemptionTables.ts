@@ -142,10 +142,13 @@ function parseRedemptionsTable(table: HTMLElement) {
           flightNo &&
           flightNo !== '-';
 
+        // @ts-expect-error value ascertained to be defined
+        const formatCityForFlightNo = formatCity(flightNo);
+
         if (isRedemptionDetailsValid) {
           redemptions.push({
-            origin,
-            destination,
+            origin: formatCityForFlightNo(origin),
+            destination: formatCityForFlightNo(destination),
             // @ts-expect-error value ascertained to be defined
             flightClass,
             // @ts-expect-error value ascertained to be defined
@@ -168,6 +171,27 @@ function parseRedemptionsTable(table: HTMLElement) {
 
   return redemptions;
 }
+
+/**
+ * Some cities have multiple international airports, so we require the flight number to determine the specific airport to be added as a suffix.
+ */
+const formatCity = (flightNo: string) => (city: string) => {
+  const cityToAirportMapping: Record<string, Record<string, string>> = {
+    Tokyo: {
+      SQ11: 'Narita',
+      SQ12: 'Narita',
+      SQ631: 'Haneda',
+      SQ634: 'Haneda',
+      SQ635: 'Haneda',
+      SQ636: 'Haneda',
+      SQ637: 'Narita',
+      SQ638: 'Narita',
+    },
+  };
+
+  const cityAirport = cityToAirportMapping[city]?.[flightNo];
+  return cityAirport ? `${city} (${cityAirport})` : city;
+};
 
 const extractCellDetails = (cell: HTMLElement) => {
   const cellInfo = cell.text.split('\n').filter(Boolean);
