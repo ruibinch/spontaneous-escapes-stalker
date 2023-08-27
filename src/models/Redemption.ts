@@ -4,9 +4,11 @@ import {
   ScalarAttributeType,
 } from '@aws-sdk/client-dynamodb';
 import { PutCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
+import fs from 'fs';
+import path from 'path';
 import { ddbDocClient, getDynamoDBBillingDetails } from '../lib/aws/dynamodb';
+import { dateInYYYYMM, toDateISO8601 } from '../utils';
 import { BlackoutPeriod, FlightClass } from '../utils/types';
-import { toDateISO8601 } from '../utils';
 
 const REDEMPTION_TABLE_NAME = 'kf-redemptions';
 
@@ -117,26 +119,39 @@ export class Redemption {
   }
 
   /**
-   * Retrieves redemptions based on their redemption end date.
+   * Retrieves redemptions from AWS DDB based on their redemption end date.
    *
-   * To support retrieving by sort key when the use case arises.
+   * Note: To support retrieving by sort key when the use case arises.
    */
-  static async query(redemptionEndDate: string) {
+  static async query(redemptionEndDate: Date) {
     try {
       const command = new QueryCommand({
         TableName: REDEMPTION_TABLE_NAME,
         KeyConditionExpression: 'redemptionEndDate = :red',
         ExpressionAttributeValues: {
-          ':red': redemptionEndDate,
+          ':red': toDateISO8601(redemptionEndDate),
         },
       });
       const queryOutput = await ddbDocClient.send(command);
 
-      return queryOutput.Items as Redemption[] | undefined;
+      return (queryOutput.Items ?? []) as Redemption[];
     } catch (err) {
       console.log('[Redemption > query]', err);
-      return undefined;
+      return [];
     }
+  }
+
+  static queryLocal(redemptionTravelPeriodFrom: Date) {
+    const redemptionTravelPeriodMonth = dateInYYYYMM(
+      redemptionTravelPeriodFrom,
+    );
+    const filepath = path.join(
+      'data',
+      `${redemptionTravelPeriodMonth}-redemptions.json`,
+    );
+
+    const redemptionsString = fs.readFileSync(filepath).toString();
+    return JSON.parse(redemptionsString) as Redemption[];
   }
 
   isIdentical(otherRedemption: Redemption) {

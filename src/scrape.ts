@@ -22,8 +22,10 @@ const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
 
 // env var configs
-const htmlFilepath = process.env['HTML_FILEPATH'];
+process.env.TZ = 'UTC';
+const shouldUseAws = !!process.env['USE_AWS'];
 const shouldRunPostAnalysis = !!process.env['RUN_POST_ANALYSIS'];
+const htmlFilepath = process.env['HTML_FILEPATH'];
 const isBasicRun = !!process.env['BASIC_RUN'];
 
 export async function scrape() {
@@ -51,12 +53,15 @@ export async function scrape() {
   }
 
   // check saved data
-  const doesRedemptionPeriodExist = await RedemptionPeriod.exists(
-    toDateISO8601(redemptionEndDate),
-  );
-  const redemptionsSavedForPeriod = doesRedemptionPeriodExist
-    ? (await Redemption.query(toDateISO8601(redemptionEndDate))) ?? []
-    : [];
+  const doesRedemptionPeriodExist = await (shouldUseAws
+    ? RedemptionPeriod.exists(redemptionEndDate)
+    : RedemptionPeriod.existsLocal(redemptionTravelPeriod.from));
+  const redemptionsSavedForPeriod = await (() => {
+    if (!doesRedemptionPeriodExist) return [];
+    return shouldUseAws
+      ? Redemption.query(redemptionEndDate)
+      : Redemption.queryLocal(redemptionTravelPeriod.from);
+  })();
 
   // compare latest and saved redemptions info
   const newRedemptions = compareRedemptions(
@@ -75,17 +80,21 @@ export async function scrape() {
 
   if (!doesRedemptionPeriodExist) {
     console.log(`Redemption period "${redemptionEndDate}" does not exist`);
-    await RedemptionPeriod.upload({
-      redemptionEndDate,
-      travelPeriod: redemptionTravelPeriod,
-    });
+    if (shouldUseAws) {
+      await RedemptionPeriod.upload({
+        redemptionEndDate,
+        travelPeriod: redemptionTravelPeriod,
+      });
+    }
     await sendNewRedemptionPeriodNotification();
   } else {
     console.log(`Changes to existing redemption period "${redemptionEndDate}"`);
     await sendExistingRedemptionPeriodChangesNotification();
   }
 
-  await Redemption.upload(newRedemptions);
+  if (shouldUseAws) {
+    await Redemption.upload(newRedemptions);
+  }
   await sendRedemptionsInfoNotification({
     redemptions: newRedemptions,
     redemptionEndDate,

@@ -4,9 +4,10 @@ import {
   ScalarAttributeType,
 } from '@aws-sdk/client-dynamodb';
 import { GetCommand, PutCommand } from '@aws-sdk/lib-dynamodb';
+import fs from 'fs';
 import { ddbDocClient, getDynamoDBBillingDetails } from '../lib/aws/dynamodb';
+import { dateInYYYYMM, toDateISO8601 } from '../utils';
 import { TimePeriod, TimePeriodSerialized } from '../utils/types';
-import { toDateISO8601 } from '../utils';
 
 const REDEMPTION_PERIOD_TABLE_NAME = 'kf-redemption-periods';
 
@@ -88,8 +89,27 @@ export class RedemptionPeriod {
     }
   }
 
-  static async exists(redemptionEndDate: string) {
-    const result = await this.get(redemptionEndDate);
+  /**
+   * Checks the RedemptionPeriod table on DDB if the input redemption date is present.
+   */
+  static async exists(redemptionEndDate: Date) {
+    const result = await this.get(toDateISO8601(redemptionEndDate));
     return Boolean(result);
+  }
+
+  /**
+   * Checks local /data folder if there is a redemptions.json file for the input redemption travel month.
+   */
+  static existsLocal(redemptionTravelPeriodFrom: Date) {
+    const redemptionTravelPeriodMonth = dateInYYYYMM(
+      redemptionTravelPeriodFrom,
+    );
+    const redemptionsFiles = fs
+      .readdirSync('data')
+      .filter((filename) => filename.endsWith('redemptions.json'));
+
+    return redemptionsFiles.some((filename) =>
+      filename.includes(redemptionTravelPeriodMonth),
+    );
   }
 }
