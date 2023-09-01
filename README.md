@@ -33,6 +33,7 @@ This file execution accepts the following optional environment variables:
 | ------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
 | `USE_AWS`           | Whether to connect to AWS DDB or check local /data folder (default)                                                  | `USE_AWS=1`                              |
 | `RUN_POST_ANALYSIS` | Whether to run post-analysis to update the analysis CSVs if new redemptions are found                                | `RUN_POST_ANALYSIS=1`                    |
+| `USE_DEBUG_CHANNEL` | Whether to send messages to the debug Telegram channel, if ID is specified                                           | `USE_DEBUG_CHANNEL=1`                    |
 | `HTML_FILEPATH`     | Specify a HTML file to read from instead of scraping the live SE page; useful for scraping past versions of the page | `HTML_FILEPATH=data/202306-content.html` |
 | `BASIC_RUN`         | Performs a basic scrape of the HTML page and saves the HTML/JSON files locally without interacting with AWS          | `BASIC_RUN=1`                            |
 
@@ -63,6 +64,6 @@ The detailed analysis logic is as follows:
 This is being deployed on a local Raspberry Pi, where a cronjob checks for new redemptions and then updates the analysis sheet when a new redemption period has been launched.
 
 - A cronjob executing the `run:scrape-with-precheck` script runs **every 15 minutes** from **7am-8pm SGT** on **Mondays through Fridays** ([reference](https://crontab.guru/#*/15_7-19_*_*_1-5))
-  - `*/15 7-19 * * 1-5 export PATH="$PATH:/home/pi/.nvm/versions/node/v18.17.1/bin"; cd /home/pi/self/spontaneous-escapes-stalker && RUN_POST_ANALYSIS=1 yarn run:scrape-with-precheck`
+  - `*/15 7-19 * * 1-5 export PATH="$PATH:/home/pi/.nvm/versions/node/v18.17.1/bin"; cd /home/pi/self/spontaneous-escapes-stalker && RUN_POST_ANALYSIS=1 USE_DEBUG_CHANNEL=1 yarn run:scrape-with-precheck`
 - When a new redemption period is launched, the scraper script handles the upload to AWS DDB; additionally, the corresponding HTML and JSON files are committed and pushed via a GL access token
 - The analyser script is then triggered to update the analysis GSheet with the details of the new redemption period

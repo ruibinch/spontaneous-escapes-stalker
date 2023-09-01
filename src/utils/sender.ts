@@ -1,24 +1,60 @@
 import { formatDateDisplay, notEmpty } from '.';
-import { escapeCharacters } from '../lib/telegram/helpers';
+import {
+  escapeCharacters,
+  makeTelegramChannelId,
+} from '../lib/telegram/helpers';
 import { sendMessage } from '../lib/telegram/methods';
 import { Redemption } from '../models/Redemption';
 import { FlightClass, TimePeriod } from './types';
 
-const CHANNEL_ID = '-1001889957472'; // FishSoupChannel
+const TELEGRAM_DEBUG_CHANNEL_ID = makeTelegramChannelId(
+  process.env['TELEGRAM_DEBUG_CHANNEL_ID'],
+);
+const TELEGRAM_PROD_CHANNEL_ID = makeTelegramChannelId(
+  process.env['TELEGRAM_PROD_CHANNEL_ID'],
+);
+const shouldUseDebugChannel = !!process.env['USE_DEBUG_CHANNEL'];
 
-export async function sendMessageToChannel(message: string) {
-  await sendMessage({
-    chatId: CHANNEL_ID,
-    message,
-  });
+/**
+ * Do not send messages to debug channel, unless USE_DEBUG_CHANNEL env var is specified.
+ * Do not send messages to prod channel, unless specified via the shouldSendToProdChannel prop.
+ */
+export async function sendMessageToChannels(props: {
+  message: string;
+  shouldSendToProdChannel: boolean;
+}) {
+  const shouldSendToDebugChannel =
+    TELEGRAM_DEBUG_CHANNEL_ID && shouldUseDebugChannel;
+  const shouldSendToProdChannel =
+    TELEGRAM_PROD_CHANNEL_ID && props.shouldSendToProdChannel;
+
+  if (shouldSendToDebugChannel) {
+    await sendMessage({
+      chatId: TELEGRAM_DEBUG_CHANNEL_ID,
+      message: props.message,
+    });
+  }
+
+  if (shouldSendToProdChannel) {
+    await sendMessage({
+      chatId: TELEGRAM_PROD_CHANNEL_ID,
+      message: props.message,
+    });
+  }
 }
 
 export async function sendNewRedemptionPeriodNotification() {
-  await sendMessageToChannel('‼️ *New redemptions available* ‼️');
+  await sendMessageToChannels({
+    message: '‼️ *New redemptions available* ‼️',
+    shouldSendToProdChannel: true,
+  });
 }
 
 export async function sendExistingRedemptionPeriodChangesNotification() {
-  await sendMessageToChannel('‼️ *Changes to existing redemption period* ‼️');
+  await sendMessageToChannels({
+    message: '‼️ *Changes to existing redemption period* ‼️',
+    shouldSendToProdChannel: true,
+  });
 }
 
 export async function sendRedemptionsInfoNotification({
@@ -66,9 +102,9 @@ export async function sendRedemptionsInfoNotification({
     .filter(notEmpty)
     .join('\n\n');
 
-  await sendMessage({
-    chatId: CHANNEL_ID,
+  await sendMessageToChannels({
     message: redemptionsInfo,
+    shouldSendToProdChannel: true,
   });
 }
 

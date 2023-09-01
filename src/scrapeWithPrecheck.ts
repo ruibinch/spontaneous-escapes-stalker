@@ -3,7 +3,7 @@ import fs from 'fs';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { scrape } from './scrape';
 import { sleep, datePrefix } from './utils';
-import { sendMessageToChannel } from './utils/sender';
+import { sendMessageToChannels } from './utils/sender';
 
 process.env.TZ = 'UTC';
 const MAX_DELAY_SECS = 890; // 14m50s
@@ -35,21 +35,23 @@ function checkNextMonthRedemptionsAlreadyPublished() {
   const isNextMonthRedemptionsAlreadyPublished =
     checkNextMonthRedemptionsAlreadyPublished();
   if (isNextMonthRedemptionsAlreadyPublished) {
-    await sendMessageToChannel(
-      escapeCharacters(
+    await sendMessageToChannels({
+      message: escapeCharacters(
         `${datePrefix()} 💤 Redemptions for next month are already published`,
       ),
-    );
+      shouldSendToProdChannel: false,
+    });
     return;
   }
 
   // add some delay to avoid calling the SE page at the same time everyday
   await sleep(Math.random() * MAX_DELAY_SECS);
 
-  await sendMessageToChannel(
-    escapeCharacters(
+  await sendMessageToChannels({
+    message: escapeCharacters(
       `${datePrefix()} 🔍 Scraping KF SE page for new redemptions!`,
     ),
-  );
+    shouldSendToProdChannel: false,
+  });
   await scrape();
 })();

@@ -9,10 +9,10 @@ import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
-import { dateInYYYYMM, datePrefix, toDateISO8601 } from './utils';
+import { dateInYYYYMM, datePrefix } from './utils';
 import {
   sendExistingRedemptionPeriodChangesNotification,
-  sendMessageToChannel,
+  sendMessageToChannels,
   sendNewRedemptionPeriodNotification,
   sendRedemptionsInfoNotification,
 } from './utils/sender';
@@ -72,9 +72,10 @@ export async function scrape() {
   if (doesRedemptionPeriodExist && newRedemptions.length === 0) {
     // no changes, return early
     // TODO: only for debugging, to remove
-    await sendMessageToChannel(
-      escapeCharacters(`${datePrefix()} 🚫 No changes`),
-    );
+    await sendMessageToChannels({
+      message: escapeCharacters(`${datePrefix()} 🚫 No changes`),
+      shouldSendToProdChannel: false,
+    });
     return;
   }
 

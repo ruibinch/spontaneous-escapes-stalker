@@ -5,6 +5,13 @@ export function makeTelegramApiBase(token: string): string {
   return `https://api.telegram.org/bot${token}`;
 }
 
+/**
+ * A "-100" prefix is required for usage with the Telegram Bot API.
+ */
+export function makeTelegramChannelId(channelId: string | undefined) {
+  return channelId ? `-100${channelId}` : undefined;
+}
+
 export function extractTelegramMessage(
   telegramUpdate: TelegramUpdate,
 ): TelegramMessage | null {
