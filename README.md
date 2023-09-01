@@ -2,7 +2,7 @@
 
 Stalker of the latest KrisFlyer Spontaneous Escapes offers and analyser of past redemptions.
 
-<br/>
+<br/><br/>
 
 # Components
 
@@ -13,10 +13,17 @@ The scraper lives in `src/scrape.ts` (`run:scrape`) - it handles the scraping of
 The detailed scraping logic is as follows:
 
 - Scrapes the SE page and parses the information into an array of `Redemption` objects with the accompanying redemption period
-- Checks AWS DDB if the redemption period already exists; if yes, it pulls the list of redemptions saved for that period and compares with the latest scraped data if there are any changes
+- Checks if there are any new redemptions
+  - If `USE_AWS` is true
+    - A check is done against the `kf-redemption-periods` table if the redemption period already exists; if yes, it pulls the list of corresponding redemptions from the `kf-redemptions` table and compares with the latest scraped data
+  - If `USE_AWS` is false
+    - A check is done against the local `/data` folder if the redemption period already exists; if yes, it pulls the list of corresponding redemptions from the saved JSON file and compares with the latest scraped data
 - If no new additions/changes, the script terminates
-- If there are additions/changes, the HTML/JSON files are saved locally and the `Redemption`/`RedemptionPeriod` objects are saved to DDB
-- A Telegram notification will be sent detailing the latest changes in the SE offers
+- If there are additions/changes, the HTML/JSON files are saved locally and the `Redemption`/`RedemptionPeriod` objects are saved to DDB (if `USE_AWS` is true)
+- Subsequently,
+  - A Telegram notification will be sent detailing the latest changes in the SE offers
+  - The new HTML/JSON files are committed and pushed to Github
+  - The analyser script is run to include the new data (if `RUN_POST_ANALYSIS` is true)
 
 2 DDB tables are used to store the redemption information:
 
