@@ -27,8 +27,8 @@ export const parseDateStringToISO8601 = (dateString: string) =>
 
 // Misc
 
-export const sleep = async (durationInMs: number): Promise<void> =>
-  new Promise((resolve) => setTimeout(resolve, durationInMs));
+export const sleep = async (durationInSecs: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, durationInSecs * 1000));
 
 export const toCamelCase = (str: string) =>
   str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
