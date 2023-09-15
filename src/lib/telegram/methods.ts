@@ -1,30 +1,20 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
 
 import { TelegramMessageError } from '../../errors/TelegramMessageError';
 import { makeTelegramApiBase } from './helpers';
 import { TelegramResponseBase, TelegramSendMessageParams } from './types';
 
-dotenv.config();
-const { TELEGRAM_BOT_TOKEN } = process.env;
-
 export async function sendMessage(props: {
+  botToken: string;
   chatId: number | string;
   message?: string | undefined;
   messageParams?: TelegramSendMessageParams | undefined;
 }): Promise<void> {
-  const { chatId, message: _message, messageParams } = props;
+  const { botToken, chatId, message: _message, messageParams } = props;
   const message = _message ?? messageParams?.text;
   if (!message) return;
 
-  if (!TELEGRAM_BOT_TOKEN) {
-    throw new Error(
-      '[telegram > methods > sendMessage] TELEGRAM_BOT_TOKEN not defined',
-    );
-  }
-  const telegramSendMessageUrl = `${makeTelegramApiBase(
-    TELEGRAM_BOT_TOKEN,
-  )}/sendMessage`;
+  const telegramSendMessageUrl = `${makeTelegramApiBase(botToken)}/sendMessage`;
 
   const response: TelegramResponseBase = await axios
     .get(telegramSendMessageUrl, {
@@ -42,6 +32,8 @@ export async function sendMessage(props: {
       console.error('[telegram > methods > sendMessage]', {
         telegramResponse: error.response.data,
         message,
+        botToken,
+        chatId,
       });
       return error.response.data;
     });

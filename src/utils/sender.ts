@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import { formatDateDisplay, notEmpty } from '.';
 import {
   escapeCharacters,
@@ -7,6 +8,8 @@ import { sendMessage } from '../lib/telegram/methods';
 import { Redemption } from '../models/Redemption';
 import { FlightClass, TimePeriod } from './types';
 
+dotenv.config();
+const { TELEGRAM_DEBUG_BOT_TOKEN, TELEGRAM_PROD_BOT_TOKEN } = process.env;
 const TELEGRAM_DEBUG_CHANNEL_ID = makeTelegramChannelId(
   process.env['TELEGRAM_DEBUG_CHANNEL_ID'],
 );
@@ -24,12 +27,17 @@ export async function sendMessageToChannels(props: {
   shouldSendToProdChannel: boolean;
 }) {
   const shouldSendToDebugChannel =
-    TELEGRAM_DEBUG_CHANNEL_ID && shouldUseDebugChannel;
+    TELEGRAM_DEBUG_BOT_TOKEN &&
+    TELEGRAM_DEBUG_CHANNEL_ID &&
+    shouldUseDebugChannel;
   const shouldSendToProdChannel =
-    TELEGRAM_PROD_CHANNEL_ID && props.shouldSendToProdChannel;
+    TELEGRAM_PROD_BOT_TOKEN &&
+    TELEGRAM_PROD_CHANNEL_ID &&
+    props.shouldSendToProdChannel;
 
   if (shouldSendToDebugChannel) {
     await sendMessage({
+      botToken: TELEGRAM_DEBUG_BOT_TOKEN,
       chatId: TELEGRAM_DEBUG_CHANNEL_ID,
       message: props.message,
     });
@@ -37,6 +45,7 @@ export async function sendMessageToChannels(props: {
 
   if (shouldSendToProdChannel) {
     await sendMessage({
+      botToken: TELEGRAM_PROD_BOT_TOKEN,
       chatId: TELEGRAM_PROD_CHANNEL_ID,
       message: props.message,
     });
