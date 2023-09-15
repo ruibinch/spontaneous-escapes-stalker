@@ -71,11 +71,6 @@ export async function scrape() {
 
   if (doesRedemptionPeriodExist && newRedemptions.length === 0) {
     // no changes, return early
-    // TODO: only for debugging, to remove
-    await sendMessageToChannels({
-      message: escapeCharacters(`${datePrefix()} 🚫 No changes`),
-      shouldSendToProdChannel: false,
-    });
     return;
   }
 
