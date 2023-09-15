@@ -108,11 +108,13 @@ export async function scrape() {
     redemptions,
     redemptionTravelPeriod,
   });
-  await commitDataDiffs();
 
   if (shouldRunPostAnalysis) {
     analyse();
   }
+
+  // commit new HTML/JSON and updated analysis files
+  await commitDataDiffs();
 }
 
 /**
