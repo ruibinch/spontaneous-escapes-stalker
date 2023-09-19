@@ -30,17 +30,10 @@ function checkNextMonthRedemptionsAlreadyPublished() {
   return latestRedemptionDate.getMonth() === nextMonth.getMonth();
 }
 
-// TODO: to remove debugging messages sent to Telegram channel
 (async () => {
   const isNextMonthRedemptionsAlreadyPublished =
     checkNextMonthRedemptionsAlreadyPublished();
   if (isNextMonthRedemptionsAlreadyPublished) {
-    await sendMessageToChannels({
-      message: escapeCharacters(
-        `${datePrefix()} 💤 Redemptions for next month are already published`,
-      ),
-      shouldSendToProdChannel: false,
-    });
     return;
   }
 
