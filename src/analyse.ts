@@ -36,6 +36,88 @@ const getRouteIata = (route: string) => {
   return `${iata(origin)} - ${iata(destination)}`;
 };
 
+function saveCsvResults({
+  months,
+  flightClassCodes,
+  result,
+}: {
+  months: string[];
+  flightClassCodes: string[];
+  result: RedemptionAnalysisResult;
+}) {
+  // consolidate results by flight class
+  let resultsByFlightClass: Record<'all' | 'Y' | 'PY' | 'J', string[]> = {
+    all: [],
+    Y: [],
+    PY: [],
+    J: [],
+  };
+
+  Object.entries(result).forEach(([route, details]) => {
+    const routeInfo = [route, getRouteIata(route)];
+
+    const detailsForMonths = Object.values(details);
+    const detailsCsvAll = detailsForMonths.map((detailsForMonth) =>
+      Object.values(detailsForMonth).map(formatValue),
+    );
+    const detailsCsvY = detailsForMonths.map((detailsForMonth) =>
+      formatValue(detailsForMonth['Y']),
+    );
+    const detailsCsvPY = detailsForMonths.map((detailsForMonth) =>
+      formatValue(detailsForMonth['PY']),
+    );
+    const detailsCsvJ = detailsForMonths.map((detailsForMonth) =>
+      formatValue(detailsForMonth['J']),
+    );
+
+    resultsByFlightClass.all.push(
+      [...routeInfo, ...flattenDeep(detailsCsvAll)].join(','),
+    );
+    resultsByFlightClass.Y.push([...routeInfo, ...detailsCsvY].join(','));
+    resultsByFlightClass.PY.push([...routeInfo, ...detailsCsvPY].join(','));
+    resultsByFlightClass.J.push([...routeInfo, ...detailsCsvJ].join(','));
+  });
+
+  // save CSV results
+  const headerAll = flattenDeep([
+    'Route',
+    'Route',
+    months.map((month) =>
+      flightClassCodes.map((code) => `${formatYearMonth(month)}_${code}`),
+    ),
+  ]);
+  const headerIndividual = [
+    'Route',
+    'Route',
+    ...months.map((month) => `${formatYearMonth(month)}`),
+  ];
+  const csvAll = [headerAll, ...resultsByFlightClass.all].join('\r\n');
+  const csvY = [headerIndividual, ...resultsByFlightClass.Y].join('\r\n');
+  const csvPY = [headerIndividual, ...resultsByFlightClass.PY].join('\r\n');
+  const csvJ = [headerIndividual, ...resultsByFlightClass.J].join('\r\n');
+  fs.writeFileSync('data/analysis-all.csv', csvAll);
+  fs.writeFileSync('data/analysis-Y.csv', csvY);
+  fs.writeFileSync('data/analysis-PY.csv', csvPY);
+  fs.writeFileSync('data/analysis-J.csv', csvJ);
+}
+
+function saveJsonResults({ result }: { result: RedemptionAnalysisResult }) {
+  const jsonAll = Object.entries(result).map(([route, details]) => {
+    const [from, to] = route.split(' - ');
+    const [fromIata, toIata] = getRouteIata(route).split(' - ');
+
+    return {
+      from,
+      to,
+      fromIata,
+      toIata,
+      details,
+    };
+  });
+
+  fs.writeFileSync('data/analysis-all.json', JSON.stringify(jsonAll, null, 2));
+}
+
 export function analyse() {
   console.log('🧮 Running analysis');
 
@@ -131,58 +213,15 @@ export function analyse() {
       return _result;
     }, {});
 
-  // consolidate results by flight class
-  let results: Record<'all' | 'Y' | 'PY' | 'J', string[]> = {
-    all: [],
-    Y: [],
-    PY: [],
-    J: [],
-  };
-
-  Object.entries(resultFormatted).forEach(([route, details]) => {
-    const routeInfo = [route, getRouteIata(route)];
-
-    const detailsForMonths = Object.values(details);
-    const detailsCsvAll = detailsForMonths.map((detailsForMonth) =>
-      Object.values(detailsForMonth).map(formatValue),
-    );
-    const detailsCsvY = detailsForMonths.map((detailsForMonth) =>
-      formatValue(detailsForMonth['Y']),
-    );
-    const detailsCsvPY = detailsForMonths.map((detailsForMonth) =>
-      formatValue(detailsForMonth['PY']),
-    );
-    const detailsCsvJ = detailsForMonths.map((detailsForMonth) =>
-      formatValue(detailsForMonth['J']),
-    );
-
-    results.all.push([...routeInfo, ...flattenDeep(detailsCsvAll)].join(','));
-    results.Y.push([...routeInfo, ...detailsCsvY].join(','));
-    results.PY.push([...routeInfo, ...detailsCsvPY].join(','));
-    results.J.push([...routeInfo, ...detailsCsvJ].join(','));
+  saveCsvResults({
+    months,
+    flightClassCodes,
+    result: resultFormatted,
   });
 
-  // save results
-  const headerAll = flattenDeep([
-    'Route',
-    'Route',
-    months.map((month) =>
-      flightClassCodes.map((code) => `${formatYearMonth(month)}_${code}`),
-    ),
-  ]);
-  const headerIndividual = [
-    'Route',
-    'Route',
-    ...months.map((month) => `${formatYearMonth(month)}`),
-  ];
-  const csvAll = [headerAll, ...results.all].join('\r\n');
-  const csvY = [headerIndividual, ...results.Y].join('\r\n');
-  const csvPY = [headerIndividual, ...results.PY].join('\r\n');
-  const csvJ = [headerIndividual, ...results.J].join('\r\n');
-  fs.writeFileSync('data/analysis-all.csv', csvAll);
-  fs.writeFileSync('data/analysis-Y.csv', csvY);
-  fs.writeFileSync('data/analysis-PY.csv', csvPY);
-  fs.writeFileSync('data/analysis-J.csv', csvJ);
+  saveJsonResults({
+    result: resultFormatted,
+  });
 }
 
 if (require.main === module) {
