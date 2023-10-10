@@ -1,3 +1,5 @@
+import { FlightClass } from '.';
+
 const dataRaw = [
   {
     from: 'Singapore',
@@ -12162,6 +12164,16 @@ export const data = dataRaw.map((datum) => {
     ...details,
   };
 });
+
+export const isMonthDatum = (d: unknown): d is Record<FlightClass, boolean> =>
+  typeof d === 'object' &&
+  d != null &&
+  'Y' in d &&
+  'PY' in d &&
+  'J' in d &&
+  typeof d.Y === 'boolean' &&
+  typeof d.PY === 'boolean' &&
+  typeof d.J === 'boolean';
 
 export const columns: Array<{ key: string; label: string }> = [
   {

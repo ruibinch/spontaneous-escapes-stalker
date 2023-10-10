@@ -7,14 +7,52 @@ import {
   TableHeader,
   TableRow,
 } from '@nextui-org/react';
+import { useReducer } from 'react';
 import { FlightClassChip } from './components/chips';
-import { columns, data } from './data';
+import { columns, data, isMonthDatum } from './data';
+import TableOptions from './TableOptions';
+import {
+  tableOptionsInitialState,
+  tableOptionsReducer,
+} from './tableOptionsReducer';
 
 type Datum = (typeof data)[number];
 
 export default function Content() {
+  const [state, dispatch] = useReducer(
+    tableOptionsReducer,
+    tableOptionsInitialState,
+  );
+
+  const dataFiltered = data
+    .filter((datum) => {
+      if (!state.searchTerm) return datum;
+
+      return (
+        datum.from.toLowerCase().includes(state.searchTerm) ||
+        datum.to.toLowerCase().includes(state.searchTerm)
+      );
+    })
+    .map((datum) => {
+      const datumUpdated = Object.entries(datum).reduce((_d, [key, value]) => {
+        // @ts-expect-error key is of type string
+        _d[key] = isMonthDatum(value)
+          ? {
+              Y: value.Y && state.flightClass.Y,
+              PY: value.PY && state.flightClass.PY,
+              J: value.J && state.flightClass.J,
+            }
+          : value;
+        return _d;
+      }, {} as Datum);
+
+      return datumUpdated;
+    });
+
   return (
     <div className="h-full px-4 pt-4 pb-8">
+      <TableOptions state={state} dispatch={dispatch} />
+
       <div className="mt-4 w-full flex">
         <Table
           isStriped
@@ -30,13 +68,18 @@ export default function Content() {
                     ? 'start'
                     : 'center'
                 }
+                width={
+                  column.key === 'from' || column.key === 'to'
+                    ? '20fr'
+                    : undefined
+                }
               >
                 {column.label}
               </TableColumn>
             )}
           </TableHeader>
 
-          <TableBody items={data}>
+          <TableBody items={dataFiltered}>
             {(item) => (
               <TableRow key={`${item.from}-${item.to}`}>
                 {(columnKey) => (
