@@ -1,4 +1,4 @@
-import { FlightClass } from '.';
+import { FlightClass } from '../..';
 
 export interface TableOptionsState {
   flightClass: Record<FlightClass, boolean>;

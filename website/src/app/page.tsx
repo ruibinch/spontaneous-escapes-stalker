@@ -8,13 +8,13 @@ import {
   TableRow,
 } from '@nextui-org/react';
 import { useReducer } from 'react';
-import { FlightClassChip } from './components/chips';
-import { columns, data, isMonthDatum } from './data';
-import TableOptions from './TableOptions';
+import { FlightClassChip } from '../components/flight-class-chip';
+import { columns, data, isMonthDatum } from '../data';
+import { TableOptions } from './table-options';
 import {
   tableOptionsInitialState,
   tableOptionsReducer,
-} from './tableOptionsReducer';
+} from './table-options/reducer';
 
 type Datum = (typeof data)[number];
 
