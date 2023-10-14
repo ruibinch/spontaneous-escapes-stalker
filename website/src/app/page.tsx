@@ -9,7 +9,7 @@ import {
 } from '@nextui-org/react';
 import { useReducer } from 'react';
 import { FlightClassChip } from '../components/flight-class-chip';
-import { columns, data, isMonthDatum } from '../data';
+import { getColumns, data, isMonthDatum, isRouteColumn } from '../data';
 import { TableOptions } from './table-options';
 import {
   tableOptionsInitialState,
@@ -30,7 +30,9 @@ export default function Content() {
 
       return (
         datum.from.toLowerCase().includes(state.searchTerm) ||
-        datum.to.toLowerCase().includes(state.searchTerm)
+        datum.fromIata.toLowerCase().includes(state.searchTerm) ||
+        datum.to.toLowerCase().includes(state.searchTerm) ||
+        datum.toIata.toLowerCase().includes(state.searchTerm)
       );
     })
     .map((datum) => {
@@ -59,20 +61,12 @@ export default function Content() {
           isHeaderSticky
           aria-label="Analysis table of SE redemptions history"
         >
-          <TableHeader columns={columns}>
+          <TableHeader columns={getColumns(state.cityIata)}>
             {(column) => (
               <TableColumn
                 key={column.key}
-                align={
-                  column.key === 'from' || column.key === 'to'
-                    ? 'start'
-                    : 'center'
-                }
-                width={
-                  column.key === 'from' || column.key === 'to'
-                    ? '20fr'
-                    : undefined
-                }
+                align={isRouteColumn(column.key) ? 'start' : 'center'}
+                width={isRouteColumn(column.key) ? '20fr' : undefined}
               >
                 {column.label}
               </TableColumn>
@@ -99,7 +93,9 @@ export default function Content() {
 function renderCell({ item, columnKey }: { item: Datum; columnKey: string }) {
   switch (columnKey) {
     case 'from':
+    case 'fromIata':
     case 'to':
+    case 'toIata':
       return (
         <div>
           <span>{item[columnKey]}</span>

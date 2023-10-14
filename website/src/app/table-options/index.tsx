@@ -19,6 +19,10 @@ export function TableOptions({
             onToggleFlightClass={(flightClass) =>
               dispatch({ type: 'TOGGLE_FLIGHT_CLASS', payload: flightClass })
             }
+            cityIata={state.cityIata}
+            onToggleCityIata={(cityIata) =>
+              dispatch({ type: 'TOGGLE_CITY_IATA', payload: cityIata })
+            }
           />
         </div>
 

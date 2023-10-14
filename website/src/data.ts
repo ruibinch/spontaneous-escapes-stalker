@@ -1,4 +1,4 @@
-import { FlightClass } from '.';
+import { CityIata, FlightClass } from '.';
 
 const dataRaw = [
   {
@@ -12175,13 +12175,15 @@ export const isMonthDatum = (d: unknown): d is Record<FlightClass, boolean> =>
   typeof d.PY === 'boolean' &&
   typeof d.J === 'boolean';
 
-export const columns: Array<{ key: string; label: string }> = [
+export const getColumns = (
+  cityIata: CityIata,
+): Array<{ key: string; label: string }> => [
   {
-    key: 'from',
+    key: cityIata === 'city' ? 'from' : 'fromIata',
     label: 'FROM',
   },
   {
-    key: 'to',
+    key: cityIata === 'city' ? 'to' : 'toIata',
     label: 'TO',
   },
   ...Object.keys(dataRaw[0].details).map((key) => ({
@@ -12189,3 +12191,6 @@ export const columns: Array<{ key: string; label: string }> = [
     label: key,
   })),
 ];
+
+export const isRouteColumn = (key: string) =>
+  key === 'from' || key === 'fromIata' || key === 'to' || key === 'toIata';

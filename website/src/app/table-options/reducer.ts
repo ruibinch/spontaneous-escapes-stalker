@@ -1,7 +1,8 @@
-import { FlightClass } from '../..';
+import { CityIata, FlightClass } from '../..';
 
 export interface TableOptionsState {
   flightClass: Record<FlightClass, boolean>;
+  cityIata: CityIata;
   searchTerm: string;
 }
 
@@ -11,6 +12,7 @@ export const tableOptionsInitialState: TableOptionsState = {
     PY: true,
     J: true,
   },
+  cityIata: 'city',
   searchTerm: '',
 };
 
@@ -18,6 +20,10 @@ export type TableOptionsAction =
   | {
       type: 'TOGGLE_FLIGHT_CLASS';
       payload: FlightClass;
+    }
+  | {
+      type: 'TOGGLE_CITY_IATA';
+      payload: CityIata;
     }
   | {
       type: 'UPDATE_SEARCH_TERM';
@@ -38,6 +44,11 @@ export function tableOptionsReducer(
           ...state.flightClass,
           [payload]: !state.flightClass[payload],
         },
+      };
+    case 'TOGGLE_CITY_IATA':
+      return {
+        ...state,
+        cityIata: payload,
       };
     case 'UPDATE_SEARCH_TERM':
       return {

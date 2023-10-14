@@ -17,6 +17,7 @@ export function FlightClassChip({
   const appendHighlight = () => (highlight ? 'ring-2 ring-amber-400' : '');
   const appendHoverEffect = (hoverColor: string) =>
     onClick ? `${hoverColor} cursor-pointer` : '';
+  const appendHtmlRole = () => (onClick ? { role: 'button' } : {});
 
   const classBase = (() => {
     switch (flightClass) {
@@ -49,7 +50,7 @@ export function FlightClassChip({
       }}
       onClick={onClick}
     >
-      <span>{flightClass}</span>
+      <span {...appendHtmlRole()}>{flightClass}</span>
     </Chip>
   );
 }
