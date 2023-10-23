@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { isAxiosError } from 'axios';
 import fs from 'fs';
 import { HTMLElement, parse } from 'node-html-parser';
 import { analyse } from './analyse';
@@ -29,7 +29,21 @@ const htmlFilepath = process.env['HTML_FILEPATH'];
 const isBasicRun = !!process.env['BASIC_RUN'];
 
 export async function scrape() {
-  const { html, isNewHtml } = await loadHtml();
+  let html: HTMLElement | undefined;
+  let isNewHtml: boolean;
+
+  try {
+    const loadHtmlResult = await loadHtml();
+    html = loadHtmlResult.html;
+    isNewHtml = loadHtmlResult.isNewHtml;
+  } catch (err) {
+    const errorMessage = isAxiosError(err) ? err.message : 'Unknown error';
+    await sendMessageToChannels({
+      message: escapeCharacters(`${datePrefix()} 🔥 ${errorMessage}`),
+      shouldSendToProdChannel: false,
+    });
+    return;
+  }
 
   // extract the latest info from the page first
   const redemptionTablesInfo = parseRedemptionTables(html);
@@ -129,7 +143,9 @@ async function loadHtml() {
     html = parse(htmlFileContent);
     isNewHtml = false;
   } else {
-    const response = await axios.get(SPONTANEOUS_ESCAPES_URL);
+    const response = await axios.get(SPONTANEOUS_ESCAPES_URL, {
+      timeout: 20000,
+    });
     html = parse(response.data);
   }
 
