@@ -144,6 +144,9 @@ async function loadHtml() {
     isNewHtml = false;
   } else {
     const response = await axios.get(SPONTANEOUS_ESCAPES_URL, {
+      headers: {
+        'User-Agent': 'PostmanRuntime/7.33.0',
+      },
       timeout: 20000,
     });
     html = parse(response.data);
