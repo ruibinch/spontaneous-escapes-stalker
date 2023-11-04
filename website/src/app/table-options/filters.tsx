@@ -1,13 +1,17 @@
 import { Card, CardBody } from '@nextui-org/react';
 import { CityIata, FlightClass } from '../..';
 import { FlightClassChip } from '../../components/flight-class-chip';
+import { TableOptionsState } from './reducer';
 import { CityNameIataToggle } from './city-name-iata-toggle';
+import { DateRangeSlider } from './date-range-slider';
 
 interface FilterProps {
-  flightClass: Record<FlightClass, boolean>;
+  flightClass: TableOptionsState['flightClass'];
   onToggleFlightClass: (flightClass: FlightClass) => void;
-  cityIata: CityIata;
+  cityIata: TableOptionsState['cityIata'];
   onToggleCityIata: (cityIata: CityIata) => void;
+  dateRange: TableOptionsState['dateRange'];
+  onToggleDateRange: (dateRange: [number, number]) => void;
 }
 
 export function Filters({
@@ -15,11 +19,13 @@ export function Filters({
   onToggleFlightClass,
   cityIata,
   onToggleCityIata,
+  dateRange,
+  onToggleDateRange,
 }: FilterProps) {
   return (
     <Card>
       <CardBody>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-4">
           <div>
             <div>
               <FlightClassChip
@@ -28,7 +34,7 @@ export function Filters({
                 useStandardisedWidth
                 onClick={() => onToggleFlightClass('Y')}
               />
-              <span className="ml-2 cursor-default">Economy</span>
+              <span className="ml-2 text-sm cursor-default">Economy</span>
             </div>
             <div className="mt-2">
               <FlightClassChip
@@ -37,7 +43,9 @@ export function Filters({
                 useStandardisedWidth
                 onClick={() => onToggleFlightClass('PY')}
               />
-              <span className="ml-2 cursor-default">Premium Economy</span>
+              <span className="ml-2 text-sm cursor-default">
+                Premium Economy
+              </span>
             </div>
             <div className="mt-2">
               <FlightClassChip
@@ -46,14 +54,19 @@ export function Filters({
                 useStandardisedWidth
                 onClick={() => onToggleFlightClass('J')}
               />
-              <span className="ml-2 cursor-default">Business</span>
+              <span className="ml-2 text-sm cursor-default">Business</span>
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col gap-8 sm:gap-6">
             <CityNameIataToggle
               cityIata={cityIata}
               onToggleCityIata={onToggleCityIata}
+            />
+
+            <DateRangeSlider
+              dateRange={dateRange}
+              onToggleDateRange={onToggleDateRange}
             />
           </div>
         </div>

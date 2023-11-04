@@ -1,8 +1,10 @@
+import { dataMonths } from '@/data';
 import { CityIata, FlightClass } from '../..';
 
 export interface TableOptionsState {
   flightClass: Record<FlightClass, boolean>;
   cityIata: CityIata;
+  dateRange: [number, number];
   searchTerm: string;
 }
 
@@ -12,6 +14,7 @@ export const tableOptionsInitialState: TableOptionsState = {
     PY: true,
     J: true,
   },
+  dateRange: [0, dataMonths.length - 1],
   cityIata: 'city',
   searchTerm: '',
 };
@@ -24,6 +27,10 @@ export type TableOptionsAction =
   | {
       type: 'TOGGLE_CITY_IATA';
       payload: CityIata;
+    }
+  | {
+      type: 'TOGGLE_DATE_RANGE';
+      payload: [number, number];
     }
   | {
       type: 'UPDATE_SEARCH_TERM';
@@ -49,6 +56,11 @@ export function tableOptionsReducer(
       return {
         ...state,
         cityIata: payload,
+      };
+    case 'TOGGLE_DATE_RANGE':
+      return {
+        ...state,
+        dateRange: payload,
       };
     case 'UPDATE_SEARCH_TERM':
       return {

@@ -23,6 +23,10 @@ export function TableOptions({
             onToggleCityIata={(cityIata) =>
               dispatch({ type: 'TOGGLE_CITY_IATA', payload: cityIata })
             }
+            dateRange={state.dateRange}
+            onToggleDateRange={(dateRange) =>
+              dispatch({ type: 'TOGGLE_DATE_RANGE', payload: dateRange })
+            }
           />
         </div>
 

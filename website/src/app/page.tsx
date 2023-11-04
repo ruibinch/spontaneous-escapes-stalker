@@ -26,7 +26,7 @@ export default function Content() {
 
   const dataFiltered = data
     .filter((datum) => {
-      if (!state.searchTerm) return datum;
+      if (!state.searchTerm) return true;
 
       return (
         datum.from.toLowerCase().includes(state.searchTerm) ||
@@ -61,7 +61,12 @@ export default function Content() {
           isHeaderSticky
           aria-label="Analysis table of SE redemptions history"
         >
-          <TableHeader columns={getColumns(state.cityIata)}>
+          <TableHeader
+            columns={getColumns({
+              cityIata: state.cityIata,
+              dateRange: state.dateRange,
+            })}
+          >
             {(column) => (
               <TableColumn
                 key={column.key}

@@ -1,4 +1,5 @@
 import { CityIata, FlightClass } from '.';
+import { TableOptionsState } from './app/table-options/reducer';
 
 const dataRaw = [
   {
@@ -12165,6 +12166,8 @@ export const data = dataRaw.map((datum) => {
   };
 });
 
+export const dataMonths = Object.keys(dataRaw[0].details);
+
 export const isMonthDatum = (d: unknown): d is Record<FlightClass, boolean> =>
   typeof d === 'object' &&
   d != null &&
@@ -12175,9 +12178,13 @@ export const isMonthDatum = (d: unknown): d is Record<FlightClass, boolean> =>
   typeof d.PY === 'boolean' &&
   typeof d.J === 'boolean';
 
-export const getColumns = (
-  cityIata: CityIata,
-): Array<{ key: string; label: string }> => [
+export const getColumns = ({
+  cityIata,
+  dateRange,
+}: {
+  cityIata: TableOptionsState['cityIata'];
+  dateRange: TableOptionsState['dateRange'];
+}): Array<{ key: string; label: string }> => [
   {
     key: cityIata === 'city' ? 'from' : 'fromIata',
     label: 'FROM',
@@ -12186,10 +12193,12 @@ export const getColumns = (
     key: cityIata === 'city' ? 'to' : 'toIata',
     label: 'TO',
   },
-  ...Object.keys(dataRaw[0].details).map((key) => ({
-    key,
-    label: key,
-  })),
+  ...Object.keys(dataRaw[0].details)
+    .filter((_, idx) => idx >= dateRange[0] && idx <= dateRange[1])
+    .map((month) => ({
+      key: month,
+      label: `${month.slice(0, 4)}-${month.slice(4, 6)}`,
+    })),
 ];
 
 export const isRouteColumn = (key: string) =>

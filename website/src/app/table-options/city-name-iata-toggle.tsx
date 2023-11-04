@@ -22,7 +22,7 @@ export function CityNameIataToggle({
         base: 'cursor-pointer',
         wrapper: cn(
           'p-0 w-32 h-7 rounded-lg overflow-visible border-small border-neutral-300/50',
-          'group-data-[selected=true]:bg-teal-700', // city background colour
+          'group-data-[selected=true]:bg-amber-600', // city background colour
           'bg-blue-700', // IATA background colour
         ),
         thumb: cn(
