@@ -67,6 +67,7 @@ const iataCodes: Record<string, string> = {
   Rome: 'ROM',
   'San Francisco': 'SFO',
   Seattle: 'SEA',
+  Seoul: 'ICN',
   'Seoul (Incheon)': 'ICN',
   Shanghai: 'PVG',
   Shenzhen: 'SZX',
