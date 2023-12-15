@@ -4,6 +4,8 @@ import { TelegramMessageError } from '../../errors/TelegramMessageError';
 import { makeTelegramApiBase } from './helpers';
 import { TelegramResponseBase, TelegramSendMessageParams } from './types';
 
+const TELEGRAM_MESSAGE_MAX_LENGTH = 4096;
+
 export async function sendMessage(props: {
   botToken: string;
   chatId: number | string;
@@ -15,30 +17,74 @@ export async function sendMessage(props: {
   if (!message) return;
 
   const telegramSendMessageUrl = `${makeTelegramApiBase(botToken)}/sendMessage`;
+  const telegramMessages = composeTelegramMessages(message);
 
-  const response: TelegramResponseBase = await axios
-    .get(telegramSendMessageUrl, {
-      params: {
-        chat_id: chatId,
-        text: message,
-        parse_mode: 'MarkdownV2',
-        reply_markup: messageParams?.reply_markup ?? {
-          remove_keyboard: true,
-        },
-      },
-    })
-    .then((res) => res.data)
-    .catch((error) => {
-      console.error('[telegram > methods > sendMessage]', {
-        telegramResponse: error.response.data,
-        message,
-        botToken,
-        chatId,
-      });
-      return error.response.data;
-    });
+  const responses = await telegramMessages.reduce(
+    (promise, telegramMessage) =>
+      promise.then((_responses) =>
+        axios
+          .get(telegramSendMessageUrl, {
+            params: {
+              chat_id: chatId,
+              text: telegramMessage,
+              parse_mode: 'MarkdownV2',
+              reply_markup: messageParams?.reply_markup ?? {
+                remove_keyboard: true,
+              },
+            },
+          })
+          .then((res) => res.data)
+          .catch((error) => {
+            console.error('[telegram > methods > sendMessage]', {
+              telegramResponse: error.response.data,
+              message,
+              botToken,
+              chatId,
+            });
+            return error.response.data;
+          })
+          .then((_response: TelegramResponseBase) => [
+            ..._responses,
+            _response,
+          ]),
+      ),
+    Promise.resolve([] as TelegramResponseBase[]),
+  );
 
-  if (!response.ok) {
-    throw new TelegramMessageError(response);
+  const errorResponses = responses.filter((res) => !res.ok);
+  if (errorResponses.length > 0) {
+    // just throw the first response for convenience; TODO: to improve
+    throw new TelegramMessageError(errorResponses[0]);
   }
+}
+
+/**
+ * Splits the message into multiple messages if it exceeds the Telegram message length limit.
+ */
+function composeTelegramMessages(message: string): string[] {
+  if (message.length <= TELEGRAM_MESSAGE_MAX_LENGTH) {
+    return [message];
+  }
+
+  const delimiter = '\n\n';
+  const messageSplit = message.split(delimiter);
+
+  let firstMessageLength = 0;
+  let splitIndex = 0;
+  for (let i = 0; i < messageSplit.length; i += 1) {
+    const entryLength = messageSplit[i].length + delimiter.length;
+
+    if (firstMessageLength + entryLength > TELEGRAM_MESSAGE_MAX_LENGTH) {
+      break;
+    }
+
+    firstMessageLength += entryLength;
+    splitIndex = i;
+  }
+
+  // Assumption: message.length will never exceed 4096 * 2, i.e. at most 2 Telegram messages are required
+  const firstMessage = messageSplit.slice(0, splitIndex + 1).join('\n\n');
+  const secondMessage = messageSplit.slice(splitIndex + 1).join('\n\n');
+
+  return [firstMessage, secondMessage];
 }
