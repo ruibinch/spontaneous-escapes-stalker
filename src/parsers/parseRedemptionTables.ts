@@ -10,9 +10,39 @@ import { parseBlackoutPeriod } from './parseBlackoutPeriod';
 
 const ACCORDIONS_CLASS_NAME = '.block-2.accordion';
 const BUSINESS_AND_ECONOMY_CLASS_SECTION_NAME =
-  'Business and Economy Class Redemptions';
-const PREMIUM_ECONOMY_CLASS_SECTION_NAME = 'Premium Economy Class Redemptions';
+  /Business and Economy Class Redemptions/i;
+const PREMIUM_ECONOMY_CLASS_SECTION_NAME = /Premium Economy Class Redemptions/i;
+const SINGAPORE_AIRLINES_DESTINATIONS_SECTION_NAME =
+  /Singapore Airlines Destinations/i;
+const SINGAPORE_AIRLINES_SECTION_NAME = /Singapore Airlines/i;
 
+/**
+ * Extracts the relevant sections based on accordion style for further parsing.
+ *
+ * The list of accordions in the post-Covid layout is:
+ *   - Business and Economy Class Redemptions
+ *   - Premium Economy Class Redemptions
+ *   - How to Redeem
+ *   - Terms and Conditions,
+ * from which we extract the first 2 accordions.
+ *
+ * The list of accordions in the pre-Covid and post-Jun 2019 layout is:
+ *   - Singapore Airlines Destinations
+ *   - SilkAir Destinations
+ *   - Premium Economy Class Redemptions
+ *   - How to Redeem
+ *   - Terms and Conditions,
+ * from which we extract the 1st and 3rd accordions (let's just ignore SilkAir).
+ *
+ * The list of accordions in the pre-Covid and pre-Jun 2019 layout is:
+ *   - Singapore Airlines
+ *   - SilkAir
+ *   - Terms and Conditions,
+ * from which we extract the 1st and 3rd accordions (let's just ignore SilkAir).
+ *
+ * @param root
+ * @returns
+ */
 export function parseRedemptionTables(root: HTMLElement) {
   const accordions = root.querySelectorAll(ACCORDIONS_CLASS_NAME);
   const businessAndEconomyClassRedemptionsSection = accordions.find((e) =>
@@ -21,24 +51,31 @@ export function parseRedemptionTables(root: HTMLElement) {
   const premiumEconomyClassRedemptionsSection = accordions.find((e) =>
     e.toString().match(PREMIUM_ECONOMY_CLASS_SECTION_NAME),
   );
+  const singaporeAirlinesDestinationsSection = accordions.find((e) =>
+    e.toString().match(SINGAPORE_AIRLINES_DESTINATIONS_SECTION_NAME),
+  );
+  const singaporeAirlinesSection = accordions.find((e) =>
+    e.toString().match(SINGAPORE_AIRLINES_SECTION_NAME),
+  );
 
-  if (!businessAndEconomyClassRedemptionsSection) {
-    throw new Error('Business and Economy class redemption section not found');
-  }
-  if (!premiumEconomyClassRedemptionsSection) {
-    throw new Error('Premium Economy class redemption section not found');
-  }
-
-  const redemptionsForBusinessAndEconomyClass = parseSection(
+  const redemptionsForBusinessAndEconomyClassSection = parseSection(
     businessAndEconomyClassRedemptionsSection,
   );
-  const redemptionsForPremiumEconomyClass = parseSection(
+  const redemptionsForPremiumEconomyClassSection = parseSection(
     premiumEconomyClassRedemptionsSection,
+  );
+  const redemptionsForSingaporeAirlinesDestinationsSection = parseSection(
+    singaporeAirlinesDestinationsSection,
+  );
+  const redemptionsForSingaporeAirlinesSection = parseSection(
+    singaporeAirlinesSection,
   );
 
   return [
-    ...redemptionsForBusinessAndEconomyClass,
-    ...redemptionsForPremiumEconomyClass,
+    ...redemptionsForBusinessAndEconomyClassSection,
+    ...redemptionsForPremiumEconomyClassSection,
+    ...redemptionsForSingaporeAirlinesDestinationsSection,
+    ...redemptionsForSingaporeAirlinesSection,
   ];
 }
 
@@ -46,7 +83,11 @@ export function parseRedemptionTables(root: HTMLElement) {
  * Parses a section of the HTML page; it is usually split into multiple accordions with
  * Business/Economy class in one table and Premium Economy class in another.
  */
-function parseSection(section: HTMLElement): RedemptionTableInfoWithRegion[] {
+function parseSection(
+  section: HTMLElement | undefined,
+): RedemptionTableInfoWithRegion[] {
+  if (!section) return [];
+
   const regions = section.getElementsByTagName('h3');
   const tables = section.getElementsByTagName('table');
   if (regions.length !== tables.length) {

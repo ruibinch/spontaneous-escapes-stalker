@@ -168,16 +168,18 @@ function saveDataFiles({
   redemptionTravelPeriod: TimePeriod;
 }) {
   if (html) {
-    fs.writeFileSync(
-      `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-content.html`,
-      html.toString(),
-    );
+    const htmlFilename = `data/${dateInYYYYMM(
+      redemptionTravelPeriod.from,
+    )}-content.html`;
+    console.log(`Writing to ${htmlFilename}`);
+    fs.writeFileSync(htmlFilename, html.toString());
   }
 
-  fs.writeFileSync(
-    `data/${dateInYYYYMM(redemptionTravelPeriod.from)}-redemptions.json`,
-    JSON.stringify(redemptions, null, 2),
-  );
+  const redemptionsFilename = `data/${dateInYYYYMM(
+    redemptionTravelPeriod.from,
+  )}-redemptions.json`;
+  console.log(`Writing to ${redemptionsFilename}`);
+  fs.writeFileSync(redemptionsFilename, JSON.stringify(redemptions, null, 2));
 }
 
 /**
