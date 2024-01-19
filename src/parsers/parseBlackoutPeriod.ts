@@ -4,7 +4,7 @@ import { parseDateStringToISO8601 } from '../utils';
 
 // SQ website doesn't standardise their dashes
 // TODO: check for other possible Unicode dash characters
-const POSSIBLE_DASHES = ['–', '‐', '-'];
+export const POSSIBLE_DASHES = ['–', '‐', '—', '-'];
 
 interface BlackoutPeriodStringByFlightNo {
   blackoutPeriodString: string;
@@ -14,7 +14,7 @@ interface BlackoutPeriodStringByFlightNo {
 export function parseBlackoutPeriod(blackoutPeriodString: string) {
   // if input value is just a dash, there is no blackout period
   const hasNoBlackoutPeriod = POSSIBLE_DASHES.some(
-    (dash) => blackoutPeriodString === dash,
+    (dash) => blackoutPeriodString.trim() === dash,
   );
   if (hasNoBlackoutPeriod) return [];
 

@@ -24,9 +24,11 @@ interface RedemptionProps {
   sortKey: string;
 }
 
-type RedemptionInputProps = Omit<RedemptionProps, 'redemptionEndDate'> & {
+export type RedemptionInputProps = Omit<
+  RedemptionProps,
+  'redemptionEndDate' | 'sortKey'
+> & {
   redemptionEndDate: Date;
-  sortKey: string;
 };
 
 export class Redemption {

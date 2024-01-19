@@ -6,7 +6,7 @@ import {
   RedemptionTableInfoWithRegion,
 } from '../utils/types';
 import { isAllDefined, toNumber } from '../utils';
-import { parseBlackoutPeriod } from './parseBlackoutPeriod';
+import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
 
 const ACCORDIONS_CLASS_NAME = '.block-2.accordion';
 const BUSINESS_AND_ECONOMY_CLASS_SECTION_NAME =
@@ -96,7 +96,7 @@ function parseSection(
 
   const redemptions = tables.reduce(
     (_redemptions: RedemptionTableInfoWithRegion[], table, idx) => {
-      const redemptionsTableInfo = parseRedemptionsTable(table);
+      const redemptionsTableInfo = parseRedemptionTable(table);
       const region = regions[idx].text;
       const redemptionsTableInfoWithRegion = redemptionsTableInfo.map((r) => ({
         ...r,
@@ -130,7 +130,7 @@ function parseSection(
  * - FLIGHT NO.
  * - BLACKOUT PERIOD
  */
-function parseRedemptionsTable(table: HTMLElement) {
+function parseRedemptionTable(table: HTMLElement) {
   const body = table.getElementsByTagName('tbody')[0];
   const rows = body.getElementsByTagName('tr');
 
@@ -181,7 +181,7 @@ function parseRedemptionsTable(table: HTMLElement) {
           milesRequired &&
           milesRequired > 0 &&
           flightNo &&
-          flightNo !== '-';
+          POSSIBLE_DASHES.every((dash) => flightNo !== dash);
 
         // @ts-expect-error value ascertained to be defined
         const formatCityForFlightNo = formatCity(flightNo);
@@ -216,7 +216,7 @@ function parseRedemptionsTable(table: HTMLElement) {
 /**
  * Some cities have multiple international airports, so we require the flight number to determine the specific airport to be added as a suffix.
  */
-const formatCity = (flightNo: string) => (city: string) => {
+export const formatCity = (flightNo: string) => (city: string) => {
   const cityToAirportMapping: Record<string, Record<string, string>> = {
     Tokyo: {
       SQ11: 'Narita',
