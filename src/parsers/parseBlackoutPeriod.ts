@@ -93,8 +93,9 @@ function parseBlackoutPeriodContent(
     blackoutPeriodStringByFlightNos[0].flightNo === undefined;
 
   if (hasNoDifferentiationByFlightNo) {
-    const blackoutPeriodsString =
-      blackoutPeriodStringByFlightNos[0].blackoutPeriodString.split(', ');
+    const blackoutPeriodsString = splitBlackoutPeriodString(
+      blackoutPeriodStringByFlightNos[0].blackoutPeriodString,
+    );
     blackoutPeriods = blackoutPeriodsString.map(getBlackoutPeriod);
   } else {
     // multiple flight numbers might have a common blackout period
@@ -107,7 +108,8 @@ function parseBlackoutPeriodContent(
           throw new Error('flightNo should not be undefined here!');
         }
 
-        const blackoutPeriodsString = blackoutPeriodString.split(', ');
+        const blackoutPeriodsString =
+          splitBlackoutPeriodString(blackoutPeriodString);
         blackoutPeriodsString.map(getBlackoutPeriod).forEach(({ from, to }) => {
           blackoutPeriodsDict[`${from}__${to}`] = [
             ...(blackoutPeriodsDict[`${from}__${to}`] ?? []),
@@ -129,9 +131,47 @@ function parseBlackoutPeriodContent(
 }
 
 /**
+ * Splits a string representation of a blackout period into single entries.
+ *
+ * @param blackoutPeriodString
+ *  Either multiple entries each containing their own month/year component, e.g. 1 ‐ 7 January 2024, 14 January 2024;
+ *  Or multiple entires sharing a single month/year component, e.g. 1, 2, 5 December 2023
+ * @returns Array of blackout period strings,
+ *  e.g. ["1 ‐ 7 January 2024", "14 January 2024"]
+ *  or ["1 December 2023", "2 December 2023", "5 December 2023"]
+ */
+function splitBlackoutPeriodString(blackoutPeriodString: string) {
+  const monthRegex = '[a-zA-Z]+';
+  const yearOptionalRegex = '(\\s\\d{4})?';
+  const monthYearComponentRegex = new RegExp(
+    `${monthRegex}${yearOptionalRegex}`,
+    'g',
+  );
+
+  // Get any month/year component from the string
+  const monthYearComponent = (() => {
+    const match = blackoutPeriodString.match(monthYearComponentRegex);
+    if (!match) {
+      throw new Error(
+        `Unable to extract any month/year component from "${blackoutPeriodString}`,
+      );
+    }
+    return match[0];
+  })();
+
+  const entriesRaw = blackoutPeriodString.split(', ');
+  // Append month/year component to any entry that does not have it
+  const entries = entriesRaw.map((entry) => {
+    const hasMonthYear = entry.match(monthYearComponentRegex);
+    return hasMonthYear ? entry : `${entry} ${monthYearComponent}`;
+  });
+  return entries;
+}
+
+/**
  * Finds the from/to dates of a single blackout period entry.
  *
- * @param blackoutPeriodString e.g. "3 – 5 July 2023" / "5 July 2023"
+ * @param blackoutPeriodStringRaw e.g. "3 – 5 July 2023" / "5 July 2023"
  */
 function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
   const separator = POSSIBLE_DASHES.find((sep) =>
