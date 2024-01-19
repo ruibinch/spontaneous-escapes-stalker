@@ -1,0 +1,641 @@
+[
+  {
+    "origin": "Singapore",
+    "destination": "Guangzhou",
+    "flightClass": "Economy",
+    "flightNo": "SQ850 / SQ852",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Guangzhou"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Guangzhou",
+    "flightClass": "Business",
+    "flightNo": "SQ850/ SQ852",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Guangzhou"
+  },
+  {
+    "origin": "Guangzhou",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ851 / SQ853",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Guangzhou#Singapore"
+  },
+  {
+    "origin": "Guangzhou",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ853",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Guangzhou#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hong Kong",
+    "flightClass": "Economy",
+    "flightNo": "SQ866 / SQ868 / SQ872",
+    "milesRequired": 10500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-04"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Hong Kong"
+  },
+  {
+    "origin": "Hong Kong",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ861 / SQ863/ SQ891",
+    "milesRequired": 10500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-04"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Hong Kong#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Taipei",
+    "flightClass": "Economy",
+    "flightNo": "SQ876 / SQ878",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Taipei"
+  },
+  {
+    "origin": "Taipei",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ877 / SQ879",
+    "milesRequired": 10500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-08"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Taipei#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Beijing",
+    "flightClass": "Economy",
+    "flightNo": "SQ800 / SQ802 / SQ806",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Beijing"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Beijing",
+    "flightClass": "Business",
+    "flightNo": "SQ800 / SQ802 / SQ806",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Beijing"
+  },
+  {
+    "origin": "Beijing",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ801 / SQ805 / SQ807",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Beijing#Singapore"
+  },
+  {
+    "origin": "Beijing",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ801 / SQ805 / SQ807",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Beijing#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shanghai",
+    "flightClass": "Economy",
+    "flightNo": "SQ826 / SQ828 / SQ830 / SQ836",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Shanghai"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shanghai",
+    "flightClass": "Business",
+    "flightNo": "SQ826 / SQ828 / SQ830 / SQ836",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Shanghai"
+  },
+  {
+    "origin": "Shanghai",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ825 / SQ827 / SQ831 / SQ833",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Shanghai#Singapore"
+  },
+  {
+    "origin": "Shanghai",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ825 / SQ827 / SQ831 / SQ833",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Shanghai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Nagoya",
+    "flightClass": "Economy",
+    "flightNo": "SQ672",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Nagoya"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Nagoya",
+    "flightClass": "Business",
+    "flightNo": "SQ672",
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Nagoya"
+  },
+  {
+    "origin": "Nagoya",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ671",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Nagoya#Singapore"
+  },
+  {
+    "origin": "Nagoya",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ671",
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Nagoya#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Ahmedabad",
+    "flightClass": "Business",
+    "flightNo": "SQ530",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Ahmedabad"
+  },
+  {
+    "origin": "Ahmedabad",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ531",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Ahmedabad#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bengaluru",
+    "flightClass": "Business",
+    "flightNo": "SQ502",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Bengaluru"
+  },
+  {
+    "origin": "Bengaluru",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ503",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Bengaluru#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kolkata",
+    "flightClass": "Business",
+    "flightNo": "SQ516",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kolkata"
+  },
+  {
+    "origin": "Kolkata",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ517",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kolkata#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Mumbai",
+    "flightClass": "Business",
+    "flightNo": "SQ422 / SQ426",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Mumbai"
+  },
+  {
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ421 / SQ425",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Mumbai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Cape Town",
+    "flightClass": "Economy",
+    "flightNo": "SQ478",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-17"
+      }
+    ],
+    "region": "Africa",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Cape Town"
+  },
+  {
+    "origin": "Cape Town",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ479",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-17"
+      }
+    ],
+    "region": "Africa",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Cape Town#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Johannesburg",
+    "flightClass": "Economy",
+    "flightNo": "SQ478",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-17"
+      }
+    ],
+    "region": "Africa",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Johannesburg"
+  },
+  {
+    "origin": "Johannesburg",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ479",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-17"
+      }
+    ],
+    "region": "Africa",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Johannesburg#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Amsterdam",
+    "flightClass": "Business",
+    "flightNo": "SQ324",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-05",
+        "to": "2018-01-08"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Amsterdam"
+  },
+  {
+    "origin": "Amsterdam",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ323",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-02",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Amsterdam#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Copenhagen",
+    "flightClass": "Business",
+    "flightNo": "SQ352",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-05",
+        "to": "2018-01-11"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Copenhagen"
+  },
+  {
+    "origin": "Copenhagen",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ351",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-13"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Copenhagen#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Dusseldorf",
+    "flightClass": "Economy",
+    "flightNo": "SQ338",
+    "milesRequired": 26600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-13"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Dusseldorf"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Dusseldorf",
+    "flightClass": "Business",
+    "flightNo": "SQ338",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-07"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Dusseldorf"
+  },
+  {
+    "origin": "Dusseldorf",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ337",
+    "milesRequired": 26600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-13"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Dusseldorf#Singapore"
+  },
+  {
+    "origin": "Dusseldorf",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ337",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-07"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Dusseldorf#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Paris",
+    "flightClass": "Economy",
+    "flightNo": "SQ334 / SQ336",
+    "milesRequired": 26600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-02",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Paris"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Paris",
+    "flightClass": "Business",
+    "flightNo": "SQ334 / SQ336",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-05",
+        "to": "2018-01-08"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Paris"
+  },
+  {
+    "origin": "Paris",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ333 / SQ335",
+    "milesRequired": 26600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-02",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Paris#Singapore"
+  },
+  {
+    "origin": "Paris",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ333 / SQ335",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Paris#Singapore"
+  }
+]
