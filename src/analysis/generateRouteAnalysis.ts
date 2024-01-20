@@ -105,7 +105,7 @@ const getFlightClassCode = (flightClass: FlightClass): FlightClassCode => {
     return 'PY';
   }
   if (flightClass === FlightClass.BUSINESS) {
-    return 'Y';
+    return 'J';
   }
   throw new Error(`Invalid flightClass value: ${flightClass}`);
 };
