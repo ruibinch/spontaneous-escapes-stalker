@@ -3,6 +3,7 @@ export type RouteAnalysisEntry = {
   to: string;
   fromIata: string;
   toIata: string;
+  region: string;
   details: Record<Month, Record<FlightClass, SingleRedemptionInfo | null>>;
 };
 
@@ -14,5 +15,3 @@ export type SingleRedemptionInfo = {
   milesRequired: number;
   blackoutPeriod: string[];
 };
-
-export type CityIata = 'city' | 'iata';

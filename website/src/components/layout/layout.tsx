@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLockedBody } from '../hooks/use-locked-body';
+import { useLockedBody } from '../../hooks/use-locked-body';
 import { SidebarWrapper } from '../sidebar/sidebar';
 import { SidebarContext } from './layout-context';
 

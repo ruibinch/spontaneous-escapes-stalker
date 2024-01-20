@@ -1,70 +1,63 @@
-import { FlightClassSelectOption } from '@/index';
-import { Select, SelectItem, SelectedItems } from '@nextui-org/react';
-import { Dispatch, SetStateAction } from 'react';
-import { FlightClassIndicator } from '../common/flight-class-indicator';
+import { Button } from '@nextui-org/react';
+import {
+  DateRangeFilter,
+  DateRangeFilterProps,
+} from './filters/date-range-filter';
+import {
+  FlightClassFilter,
+  FlightClassFilterProps,
+} from './filters/flight-class-filter';
+import { MonthFilter, MonthFilterProps } from './filters/month-filter';
+import { RegionFilter, RegionFilterProps } from './filters/region-filter';
+import {
+  SearchTermFilter,
+  SearchTermFilterProps,
+} from './filters/search-term-filter';
 
-interface FilterProps {
-  flightClassOption: FlightClassSelectOption;
-  setFlightClassOption: Dispatch<SetStateAction<FlightClassSelectOption>>;
-}
+type Props = SearchTermFilterProps &
+  FlightClassFilterProps &
+  RegionFilterProps &
+  DateRangeFilterProps &
+  MonthFilterProps;
 
-const flightClassOptions = [
-  {
-    label: 'Economy',
-    value: 'Y',
-  },
-  {
-    label: 'Premium Economy',
-    value: 'PY',
-  },
-  {
-    label: 'Business',
-    value: 'J',
-  },
-  {
-    label: 'All',
-    value: 'ALL',
-  },
-];
+export function Filters(props: Props) {
+  const resetAllFilters = () => {
+    props.setSearchTerm('');
+    props.setFlightClassOption('ALL');
+    props.setRegions('All');
+    props.setDateRange([0, props.monthsList.length - 1]);
+    props.setMonths('All');
+  };
 
-export function Filters({
-  flightClassOption,
-  setFlightClassOption,
-}: FilterProps) {
   return (
     <div>
-      <Select
-        items={flightClassOptions}
-        label="Flight class"
-        className="max-w-xs"
-        selectedKeys={[flightClassOption]}
-        renderValue={(items: SelectedItems<(typeof flightClassOptions)[0]>) => {
-          return items.map((item) => (
-            <div
-              key={item.data?.value}
-              className="flex flex-row gap-2 items-center"
-            >
-              <FlightClassIndicator flightClass={item.data?.value} />
-              {item.data?.label}
-            </div>
-          ));
-        }}
-        onChange={(e) => {
-          setFlightClassOption(e.target.value as FlightClassSelectOption);
-        }}
-      >
-        {(option) => (
-          <SelectItem key={option.value} textValue={option.value}>
-            <div
-              key={option.value}
-              className="flex flex-row gap-2 items-center"
-            >
-              <FlightClassIndicator flightClass={option.value} />
-              {option.label}
-            </div>
-          </SelectItem>
-        )}
-      </Select>
+      <div className="grid lg:grid-cols-3 gap-6">
+        <SearchTermFilter
+          searchTerm={props.searchTerm}
+          setSearchTerm={props.setSearchTerm}
+        />
+
+        <RegionFilter regions={props.regions} setRegions={props.setRegions} />
+
+        <FlightClassFilter
+          flightClassOption={props.flightClassOption}
+          setFlightClassOption={props.setFlightClassOption}
+        />
+
+        <div className="lg:col-span-2">
+          <DateRangeFilter
+            dateRange={props.dateRange}
+            setDateRange={props.setDateRange}
+            monthsList={props.monthsList}
+          />
+        </div>
+
+        <MonthFilter months={props.months} setMonths={props.setMonths} />
+      </div>
+
+      <div className="flex justify-end mt-6">
+        <Button onPress={resetAllFilters}>Reset all filters</Button>
+      </div>
     </div>
   );
 }

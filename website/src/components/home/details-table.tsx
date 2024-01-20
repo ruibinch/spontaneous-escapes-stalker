@@ -1,4 +1,8 @@
-import { FlightClass, RouteAnalysisEntry } from '@/index';
+import {
+  FlightClass,
+  FlightClassSelectOption,
+  RouteAnalysisEntry,
+} from '@/index';
 import {
   Pagination,
   Table,
@@ -7,14 +11,14 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-  getKeyValue,
 } from '@nextui-org/react';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { filterApplicableMonthsList } from './helpers/filter-applicable-months-list';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
 
 interface Props {
   data: RouteAnalysisEntry[];
+  flightClassSelectedOption: FlightClassSelectOption;
   startDate?: Date;
   endDate?: Date;
 }
@@ -23,7 +27,7 @@ const getColumns = ({
   data,
   startDate,
   endDate,
-}: Props): Array<{
+}: Omit<Props, 'flightClassSelectedOption'>): Array<{
   key: string;
   label: string;
 }> => [
@@ -45,10 +49,25 @@ const getColumns = ({
   })),
 ];
 
-export function DetailsTable({ data, startDate, endDate }: Props) {
+export function DetailsTable({
+  data,
+  flightClassSelectedOption,
+  startDate,
+  endDate,
+}: Props) {
+  const [numEntries, setNumEntries] = useState<number>();
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(1);
   const pages = Math.ceil(data.length / rowsPerPage);
+
+  useEffect(() => {
+    // reset all rows/pagination props if number of entries has changed
+    if (numEntries !== undefined && data.length !== numEntries) {
+      setRowsPerPage(10);
+      setPage(1);
+    }
+    setNumEntries(data.length);
+  }, [data, numEntries]);
 
   const onRowsPerPageChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -71,25 +90,39 @@ export function DetailsTable({ data, startDate, endDate }: Props) {
   const topContent = useMemo(() => {
     return (
       <div className="flex flex-col">
-        <div className="flex justify-between items-center">
-          <span className="text-default-400 text-small">
-            {`Total ${data.length} entr${data.length === 1 ? 'y' : 'ies'}`}
-          </span>
+        <div className="flex justify-between items-end">
+          <div className="pl-2">
+            <span className="text-default-400 text-small">
+              <div className="flex flex-row gap-2 items-center">
+                <FlightClassIndicator flightClass={'Y'} />
+                {'Economy'}
+              </div>
+              <div className="flex flex-row gap-2 items-center">
+                <FlightClassIndicator flightClass={'PY'} />
+                {'Premium Economy'}
+              </div>
+              <div className="flex flex-row gap-2 items-center">
+                <FlightClassIndicator flightClass={'J'} />
+                {'Business'}
+              </div>
+            </span>
+          </div>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
             <select
               className="bg-transparent outline-none text-default-400 text-small"
+              value={rowsPerPage}
               onChange={onRowsPerPageChange}
             >
               <option value="10">10</option>
-              <option value="15">15</option>
               <option value="20">20</option>
+              <option value="50">50</option>
             </select>
           </label>
         </div>
       </div>
     );
-  }, [onRowsPerPageChange, data.length]);
+  }, [rowsPerPage, onRowsPerPageChange]);
 
   const bottomContent = useMemo(() => {
     return (
@@ -132,6 +165,7 @@ export function DetailsTable({ data, startDate, endDate }: Props) {
                   {renderDetailCell({
                     item,
                     columnKey: columnKey.toString(),
+                    flightClassSelectedOption,
                   })}
                 </TableCell>
               )}
@@ -146,9 +180,11 @@ export function DetailsTable({ data, startDate, endDate }: Props) {
 function renderDetailCell({
   item,
   columnKey,
+  flightClassSelectedOption,
 }: {
   item: RouteAnalysisEntry;
   columnKey: string;
+  flightClassSelectedOption: FlightClassSelectOption;
 }) {
   switch (columnKey) {
     case 'from':
@@ -160,11 +196,21 @@ function renderDetailCell({
         FlightClass,
         boolean
       >;
+      const isFlightClassFilterValid = (flightClass: string) =>
+        flightClassSelectedOption === 'ALL' ||
+        flightClassSelectedOption === flightClass;
+
       return (
         <div className="flex flex-row gap-1">
-          {flightClassCodeMap.Y && <FlightClassIndicator flightClass="Y" />}
-          {flightClassCodeMap.PY && <FlightClassIndicator flightClass="PY" />}
-          {flightClassCodeMap.J && <FlightClassIndicator flightClass="J" />}
+          {flightClassCodeMap.Y && isFlightClassFilterValid('Y') && (
+            <FlightClassIndicator flightClass="Y" />
+          )}
+          {flightClassCodeMap.PY && isFlightClassFilterValid('PY') && (
+            <FlightClassIndicator flightClass="PY" />
+          )}
+          {flightClassCodeMap.J && isFlightClassFilterValid('J') && (
+            <FlightClassIndicator flightClass="J" />
+          )}
         </div>
       );
     }

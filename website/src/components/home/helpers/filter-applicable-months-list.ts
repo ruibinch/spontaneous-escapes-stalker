@@ -1,3 +1,4 @@
+import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { isAfter, isBefore, isEqual } from 'date-fns';
 
 export function filterApplicableMonthsList({
@@ -10,7 +11,7 @@ export function filterApplicableMonthsList({
   endDate?: Date;
 }) {
   return months.filter((month) => {
-    const monthDate = new Date(`${month.slice(0, 4)}-${month.slice(4, 6)}-01`);
+    const monthDate = yyyymmToDate(month);
     const isAfterOrEqualStartDate = startDate
       ? isAfter(monthDate, startDate) || isEqual(monthDate, startDate)
       : true;
