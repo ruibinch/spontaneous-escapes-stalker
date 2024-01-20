@@ -14,6 +14,7 @@ const iataCodes: Record<string, string> = {
   Brisbane: 'BNE',
   Busan: 'PUS',
   Cairns: 'CNS',
+  Canberra: 'CBR',
   'Cape Town': 'CPT',
   Cebu: 'CEB',
   Chengdu: 'CTU',
@@ -27,6 +28,7 @@ const iataCodes: Record<string, string> = {
   Davao: 'DVO',
   Dhaka: 'DAC',
   Dubai: 'DXB',
+  Düsseldorf: 'DUS',
   Frankfurt: 'FRA',
   Fukuoka: 'FUK',
   Guangzhou: 'CAN',
@@ -56,6 +58,7 @@ const iataCodes: Record<string, string> = {
   Munich: 'MUC',
   Nagoya: 'NGO',
   'New Delhi': 'DEL',
+  'New York': 'JFK', // TODO: defined as a default fallback option for now
   'New York (JFK)': 'JFK',
   'New York (Newark)': 'EWR',
   Osaka: 'KIX',
@@ -79,9 +82,10 @@ const iataCodes: Record<string, string> = {
   Tokyo: 'NRT', // TODO: defined as a default fallback option for now; await reference on how Tokyo airports are specified
   'Tokyo (Haneda)': 'HND',
   'Tokyo (Narita)': 'NRT',
+  Wellington: 'WLG',
   Xiamen: 'XMN',
   Yangon: 'RGN',
-  Zurich: 'ZRH',
+  Zürich: 'ZRH',
 };
 
 export const iata = (city: string) => {
