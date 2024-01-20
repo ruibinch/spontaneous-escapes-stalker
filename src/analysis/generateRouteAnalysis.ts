@@ -2,10 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import { iata } from '../lib/iata/iataCodes';
 import { Redemption } from '../models/Redemption';
-import { FlightClass } from '../utils/types';
+import { FlightClass, Region } from '../utils/types';
 import { cleanupCityFields } from './helpers/cleanupCityFields';
 import { sortRoutesList } from './helpers/sortRoutesList';
 import { FlightClassCode, Month, Route } from './types';
+import { standardiseRegionField } from './helpers/standardiseRegionField';
 
 type SingleRedemptionInfo = {
   flightNo: string;
@@ -19,24 +20,27 @@ type RouteAnalysis = Record<
 
 export function generateRouteAnalysis(redemptionsFilenames: string[]) {
   const months = redemptionsFilenames.map((filename) => filename.split('-')[0]);
-  const result: RouteAnalysis = {};
+  const routeToMonthsMap: RouteAnalysis = {};
+  const routeToRegionMap: Record<string, string> = {};
 
-  // create result dict from data
+  // create routeToMonthsMap dict from data
   redemptionsFilenames.forEach((filename) => {
     const filepath = path.join('data', filename);
     const month = filename.split('-')[0];
     const redemptionsString = fs.readFileSync(filepath).toString();
     const redemptionsPrecleaned = JSON.parse(redemptionsString) as Redemption[];
-    const redemptions = cleanupCityFields(redemptionsPrecleaned);
+    const redemptions = standardiseRegionField(
+      cleanupCityFields(redemptionsPrecleaned),
+    );
 
     redemptions.forEach((redemption) => {
       const route = `${redemption.origin}-${redemption.destination}`;
       const flightClassCode = getFlightClassCode(redemption.flightClass);
 
-      result[route] = {
-        ...result[route],
+      routeToMonthsMap[route] = {
+        ...routeToMonthsMap[route],
         [month]: {
-          ...result[route]?.[month],
+          ...routeToMonthsMap[route]?.[month],
           [flightClassCode]: {
             flightNo: redemption.flightNo,
             milesRequired: redemption.milesRequired,
@@ -44,6 +48,7 @@ export function generateRouteAnalysis(redemptionsFilenames: string[]) {
           },
         },
       };
+      routeToRegionMap[route] = redemption.region;
     });
   });
 
@@ -53,10 +58,10 @@ export function generateRouteAnalysis(redemptionsFilenames: string[]) {
   //   b. SG inbound flights
   //   c. all other flights
   // 2. add null to all missing entries in the dict
-  const routesSorted = sortRoutesList(Object.keys(result));
+  const routesSorted = sortRoutesList(Object.keys(routeToMonthsMap));
   const resultFormatted = routesSorted.reduce(
     (_result: RouteAnalysis, route) => {
-      const details = result[route];
+      const details = routeToMonthsMap[route];
       const detailsUpdated: Record<
         Month,
         Record<FlightClassCode, SingleRedemptionInfo | null>
@@ -83,12 +88,14 @@ export function generateRouteAnalysis(redemptionsFilenames: string[]) {
     ([route, details]) => {
       const [from, to] = route.split('-');
       const [fromIata, toIata] = getRouteIata(route).split('-');
+      const region = routeToRegionMap[route];
 
       return {
         from,
         to,
         fromIata,
         toIata,
+        region,
         details,
       };
     },
