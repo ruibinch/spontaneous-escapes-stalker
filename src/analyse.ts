@@ -1,7 +1,10 @@
 import fs from 'fs';
 import { generateRouteAnalysis } from './analysis/generateRouteAnalysis';
+import { generateMonthSummaryAnalysis } from './analysis/generateMonthSummaryAnalysis';
 
 const ROUTE_ANALYSIS_OUTPUT_FILENAME = 'data/route-analysis.json';
+const MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME =
+  'data/month-summary-analysis.json';
 
 export function analyse() {
   const redemptionsFilenames = fs
@@ -17,6 +20,14 @@ export function analyse() {
   fs.writeFileSync(
     ROUTE_ANALYSIS_OUTPUT_FILENAME,
     JSON.stringify(routeAnalysis, null, 2),
+  );
+
+  const monthSummaryAnalysis =
+    generateMonthSummaryAnalysis(redemptionsFilenames);
+  console.log(`📄 Writing to ${MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME}`);
+  fs.writeFileSync(
+    MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME,
+    JSON.stringify(monthSummaryAnalysis, null, 2),
   );
 }
 
