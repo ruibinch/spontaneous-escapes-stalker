@@ -59,8 +59,8 @@ const iataCodes: Record<string, string> = {
   Nagoya: 'NGO',
   'New Delhi': 'DEL',
   'New York': 'JFK', // TODO: defined as a default fallback option for now
-  'New York (JFK)': 'JFK',
-  'New York (Newark)': 'EWR',
+  // 'New York (JFK)': 'JFK',
+  // 'New York (Newark)': 'EWR',
   Osaka: 'KIX',
   Paris: 'CDG',
   Penang: 'PEN',
@@ -71,7 +71,6 @@ const iataCodes: Record<string, string> = {
   'San Francisco': 'SFO',
   Seattle: 'SEA',
   Seoul: 'ICN',
-  'Seoul (Incheon)': 'ICN',
   Shanghai: 'PVG',
   Shenzhen: 'SZX',
   'Siem Reap': 'REP',
@@ -79,9 +78,9 @@ const iataCodes: Record<string, string> = {
   Surabaya: 'SUB',
   Sydney: 'SYD',
   Taipei: 'TPE',
-  Tokyo: 'NRT', // TODO: defined as a default fallback option for now; await reference on how Tokyo airports are specified
-  'Tokyo (Haneda)': 'HND',
-  'Tokyo (Narita)': 'NRT',
+  Tokyo: 'NRT', // TODO: defined as a default fallback option for now
+  // 'Tokyo (Haneda)': 'HND',
+  // 'Tokyo (Narita)': 'NRT',
   Wellington: 'WLG',
   Xiamen: 'XMN',
   Yangon: 'RGN',
