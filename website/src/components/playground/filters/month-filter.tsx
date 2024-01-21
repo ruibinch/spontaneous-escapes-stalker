@@ -1,4 +1,4 @@
-import { monthsMap } from '@/common/months-map';
+import { monthNameToNumMap } from '@/common/months-map';
 import { Select, SelectItem } from '@nextui-org/react';
 import { Dispatch, SetStateAction } from 'react';
 
@@ -7,7 +7,7 @@ export interface MonthFilterProps {
   setMonths: Dispatch<SetStateAction<string>>;
 }
 
-const monthsOptions = Object.keys(monthsMap);
+const monthsOptions = Object.keys(monthNameToNumMap);
 const monthsOptionsWithAll = ['All', ...monthsOptions] as const;
 
 export function MonthFilter({ months, setMonths }: MonthFilterProps) {

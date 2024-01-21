@@ -1,18 +1,28 @@
+import { getMonthsList } from '@/common/get-months-list';
 import { usePathname } from 'next/navigation';
 import { useSidebarContext } from '../layout/layout-context';
-import { CollapseItems } from './collapse-items';
+import { SidebarCollapsibleItem } from './sidebar-collapsible-item';
 import { SidebarItem } from './sidebar-item';
 import { Sidebar } from './sidebar.styles';
+import { monthNumToNameMap } from '@/common/months-map';
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
   const { collapsed, setCollapsed } = useSidebarContext();
+
+  const monthsList = getMonthsList();
+  const monthsListItems = [...monthsList].reverse().map((month) => ({
+    label: `${month.slice(0, 4)}-${month.slice(4, 6)}`,
+    value: month,
+    keywords: [monthNumToNameMap[month.slice(4, 6)]],
+  }));
 
   return (
     <aside className="h-screen z-[202] sticky top-0">
       {collapsed ? (
         <div className={Sidebar.Overlay()} onClick={setCollapsed} />
       ) : null}
+
       <div
         className={Sidebar({
           collapsed: collapsed,
@@ -30,14 +40,15 @@ export const SidebarWrapper = () => {
               isActive={pathname === '/analysis'}
               href="analysis"
             />
-            <CollapseItems
-              items={['Banks Accounts', 'Credit Cards', 'Loans']}
+            <SidebarCollapsibleItem
               title="By Month"
+              items={monthsListItems}
+              filterPlaceholder="Filter month"
             />
-            <CollapseItems
+            {/* <CollapseItems
               items={['Banks Accounts', 'Credit Cards', 'Loans']}
               title="By Route"
-            />
+            /> */}
           </div>
         </div>
       </div>

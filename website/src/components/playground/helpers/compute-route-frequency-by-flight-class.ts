@@ -1,3 +1,4 @@
+import { getMonthsList } from '@/common/get-months-list';
 import { FlightClassSelectOption, RouteAnalysisEntry } from '@/index';
 import { filterApplicableMonthsList } from './filter-applicable-months-list';
 
@@ -22,7 +23,7 @@ export function computeRouteFrequencyByFlightClass({
   endDate?: Date;
 }): RouteFrequencyByFlightClass {
   const applicableMonths = filterApplicableMonthsList({
-    months: Object.keys(routeAnalysisList[0].details),
+    months: getMonthsList(),
     startDate,
     endDate,
   });

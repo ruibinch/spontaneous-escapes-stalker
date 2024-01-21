@@ -1,4 +1,4 @@
-import { monthsMap } from '@/common/months-map';
+import { monthNameToNumMap } from '@/common/months-map';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { FlightClassSelectOption, RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
@@ -9,9 +9,10 @@ import { FilterInfo } from './filter-info';
 import { Filters } from './filters';
 import { computeRouteFrequencyByFlightClass } from './helpers/compute-route-frequency-by-flight-class';
 import { RouteFrequencyTable } from './route-frequency-table';
+import { getMonthsList } from '@/common/get-months-list';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
-const monthsList = Object.keys(routeAnalysisList[0].details);
+const monthsList = getMonthsList();
 
 export function PlaygroundContent() {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -97,7 +98,7 @@ function filterRouteAnalysisList({
   };
 }) {
   const monthsInNumFormat = months.map((month) =>
-    month === 'All' ? month : monthsMap[month],
+    month === 'All' ? month : monthNameToNumMap[month],
   );
 
   return routeAnalysisList

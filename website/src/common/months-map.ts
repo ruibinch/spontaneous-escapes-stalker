@@ -1,4 +1,4 @@
-export const monthsMap: Record<string, string> = {
+export const monthNameToNumMap: Record<string, string> = {
   January: '01',
   February: '02',
   March: '03',
@@ -11,4 +11,19 @@ export const monthsMap: Record<string, string> = {
   October: '10',
   November: '11',
   December: '12',
+};
+
+export const monthNumToNameMap: Record<string, string> = {
+  '01': 'January',
+  '02': 'February',
+  '03': 'March',
+  '04': 'April',
+  '05': 'May',
+  '06': 'June',
+  '07': 'July',
+  '08': 'August',
+  '09': 'September',
+  '10': 'October',
+  '11': 'November',
+  '12': 'December',
 };
