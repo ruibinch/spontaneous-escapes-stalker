@@ -1,7 +1,9 @@
 [
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Kuala Lumpur",
+    "destinationIata": "KUL",
     "flightClass": "Economy",
     "flightNo": "SQ112, SQ116, SQ118, SQ122",
     "milesRequired": 5950,
@@ -11,7 +13,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Kuala Lumpur",
+    "destinationIata": "KUL",
     "flightClass": "Business",
     "flightNo": "SQ112, SQ116, SQ118, SQ122",
     "milesRequired": 14700,
@@ -34,7 +38,9 @@
   },
   {
     "origin": "Kuala Lumpur",
+    "originIata": "KUL",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ105, SQ111, SQ117",
     "milesRequired": 5950,
@@ -53,7 +59,9 @@
   },
   {
     "origin": "Kuala Lumpur",
+    "originIata": "KUL",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ105, SQ111, SQ117",
     "milesRequired": 14700,
@@ -80,7 +88,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Ho Chi Minh City",
+    "destinationIata": "SGN",
     "flightClass": "Economy",
     "flightNo": "SQ184, SQ186",
     "milesRequired": 9450,
@@ -90,7 +100,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Ho Chi Minh City",
+    "destinationIata": "SGN",
     "flightClass": "Business",
     "flightNo": "SQ184, SQ186",
     "milesRequired": 16800,
@@ -109,7 +121,9 @@
   },
   {
     "origin": "Ho Chi Minh City",
+    "originIata": "SGN",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ177, SQ183",
     "milesRequired": 9450,
@@ -128,7 +142,9 @@
   },
   {
     "origin": "Ho Chi Minh City",
+    "originIata": "SGN",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ177, SQ183",
     "milesRequired": 16800,
@@ -159,7 +175,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Manila",
+    "destinationIata": "MNL",
     "flightClass": "Economy",
     "flightNo": "SQ916, SQ918",
     "milesRequired": 9450,
@@ -174,7 +192,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Manila",
+    "destinationIata": "MNL",
     "flightClass": "Business",
     "flightNo": "SQ916, SQ918, SQ912",
     "milesRequired": 16800,
@@ -197,7 +217,9 @@
   },
   {
     "origin": "Manila",
+    "originIata": "MNL",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ921",
     "milesRequired": 9450,
@@ -216,7 +238,9 @@
   },
   {
     "origin": "Manila",
+    "originIata": "MNL",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ921, SQ919, SQ915, SQ917",
     "milesRequired": 16800,
@@ -235,7 +259,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Siem Reap",
+    "destinationIata": "REP",
     "flightClass": "Economy",
     "flightNo": "SQ166",
     "milesRequired": 9450,
@@ -254,7 +280,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Guangzhou",
+    "destinationIata": "CAN",
     "flightClass": "Economy",
     "flightNo": "SQ850",
     "milesRequired": 11550,
@@ -269,7 +297,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Guangzhou",
+    "destinationIata": "CAN",
     "flightClass": "Business",
     "flightNo": "SQ850",
     "milesRequired": 23800,
@@ -284,7 +314,9 @@
   },
   {
     "origin": "Guangzhou",
+    "originIata": "CAN",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ851",
     "milesRequired": 11550,
@@ -299,7 +331,9 @@
   },
   {
     "origin": "Guangzhou",
+    "originIata": "CAN",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ851",
     "milesRequired": 23800,
@@ -314,7 +348,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Hong Kong",
+    "destinationIata": "HKG",
     "flightClass": "Economy",
     "flightNo": "SQ898",
     "milesRequired": 11550,
@@ -329,7 +365,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Hong Kong",
+    "destinationIata": "HKG",
     "flightClass": "Business",
     "flightNo": "SQ898",
     "milesRequired": 23800,
@@ -356,7 +394,9 @@
   },
   {
     "origin": "Hong Kong",
+    "originIata": "HKG",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ899",
     "milesRequired": 11550,
@@ -371,7 +411,9 @@
   },
   {
     "origin": "Hong Kong",
+    "originIata": "HKG",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ899",
     "milesRequired": 23800,
@@ -386,7 +428,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Shanghai",
+    "destinationIata": "PVG",
     "flightClass": "Economy",
     "flightNo": "SQ830, SQ836",
     "milesRequired": 15050,
@@ -401,7 +445,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Shanghai",
+    "destinationIata": "PVG",
     "flightClass": "Business",
     "flightNo": "SQ830, SQ836",
     "milesRequired": 30100,
@@ -416,7 +462,9 @@
   },
   {
     "origin": "Shanghai",
+    "originIata": "PVG",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ825, SQ833",
     "milesRequired": 15050,
@@ -431,7 +479,9 @@
   },
   {
     "origin": "Shanghai",
+    "originIata": "PVG",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ825, SQ833",
     "milesRequired": 30100,
@@ -446,7 +496,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Beijing",
+    "destinationIata": "PEK",
     "flightClass": "Economy",
     "flightNo": "SQ802",
     "milesRequired": 15050,
@@ -461,7 +513,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Beijing",
+    "destinationIata": "PEK",
     "flightClass": "Business",
     "flightNo": "SQ802",
     "milesRequired": 30100,
@@ -476,7 +530,9 @@
   },
   {
     "origin": "Beijing",
+    "originIata": "PEK",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ807",
     "milesRequired": 15050,
@@ -491,7 +547,9 @@
   },
   {
     "origin": "Beijing",
+    "originIata": "PEK",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ807",
     "milesRequired": 30100,
@@ -506,7 +564,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Ahmedabad",
+    "destinationIata": "AMD",
     "flightClass": "Economy",
     "flightNo": "SQ504",
     "milesRequired": 14000,
@@ -529,7 +589,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Ahmedabad",
+    "destinationIata": "AMD",
     "flightClass": "Business",
     "flightNo": "SQ504",
     "milesRequired": 30100,
@@ -539,7 +601,9 @@
   },
   {
     "origin": "Ahmedabad",
+    "originIata": "AMD",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ505",
     "milesRequired": 30100,
@@ -558,7 +622,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Bangalore",
+    "destinationIata": "BLR",
     "flightClass": "Economy",
     "flightNo": "SQ508, SQ510, SQ512",
     "milesRequired": 14000,
@@ -568,7 +634,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Bangalore",
+    "destinationIata": "BLR",
     "flightClass": "Business",
     "flightNo": "SQ510, SQ512",
     "milesRequired": 30100,
@@ -578,7 +646,9 @@
   },
   {
     "origin": "Bangalore",
+    "originIata": "BLR",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ513",
     "milesRequired": 14000,
@@ -588,7 +658,9 @@
   },
   {
     "origin": "Bangalore",
+    "originIata": "BLR",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ513",
     "milesRequired": 30100,
@@ -598,7 +670,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Chennai",
+    "destinationIata": "MAA",
     "flightClass": "Economy",
     "flightNo": "SQ524, SQ526, SQ528",
     "milesRequired": 14000,
@@ -608,7 +682,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Chennai",
+    "destinationIata": "MAA",
     "flightClass": "Business",
     "flightNo": "SQ526, SQ528",
     "milesRequired": 30100,
@@ -618,7 +694,9 @@
   },
   {
     "origin": "Chennai",
+    "originIata": "MAA",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ527",
     "milesRequired": 14000,
@@ -628,7 +706,9 @@
   },
   {
     "origin": "Chennai",
+    "originIata": "MAA",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ527, SQ529",
     "milesRequired": 30100,
@@ -638,7 +718,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Colombo",
+    "destinationIata": "CMB",
     "flightClass": "Business",
     "flightNo": "SQ468",
     "milesRequired": 30100,
@@ -661,7 +743,9 @@
   },
   {
     "origin": "Colombo",
+    "originIata": "CMB",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ469",
     "milesRequired": 30100,
@@ -671,7 +755,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Dhaka",
+    "destinationIata": "DAC",
     "flightClass": "Economy",
     "flightNo": "SQ446",
     "milesRequired": 14000,
@@ -690,7 +776,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Dhaka",
+    "destinationIata": "DAC",
     "flightClass": "Business",
     "flightNo": "SQ446",
     "milesRequired": 30100,
@@ -700,7 +788,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Hyderabad",
+    "destinationIata": "HYD",
     "flightClass": "Economy",
     "flightNo": "SQ522",
     "milesRequired": 14000,
@@ -715,7 +805,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Hyderabad",
+    "destinationIata": "HYD",
     "flightClass": "Business",
     "flightNo": "SQ524",
     "milesRequired": 30100,
@@ -742,7 +834,9 @@
   },
   {
     "origin": "Hyderabad",
+    "originIata": "HYD",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ523",
     "milesRequired": 30100,
@@ -769,7 +863,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Kolkata",
+    "destinationIata": "CCU",
     "flightClass": "Economy",
     "flightNo": "SQ516",
     "milesRequired": 14000,
@@ -796,7 +892,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Kolkata",
+    "destinationIata": "CCU",
     "flightClass": "Business",
     "flightNo": "SQ516",
     "milesRequired": 30100,
@@ -823,7 +921,9 @@
   },
   {
     "origin": "Kolkata",
+    "originIata": "CCU",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ517",
     "milesRequired": 14000,
@@ -846,7 +946,9 @@
   },
   {
     "origin": "Kolkata",
+    "originIata": "CCU",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ517",
     "milesRequired": 30100,
@@ -873,7 +975,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Mumbai",
+    "destinationIata": "BOM",
     "flightClass": "Economy",
     "flightNo": "SQ422, SQ424, SQ426",
     "milesRequired": 14000,
@@ -883,7 +987,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Mumbai",
+    "destinationIata": "BOM",
     "flightClass": "Business",
     "flightNo": "SQ422, SQ424, SQ426",
     "milesRequired": 30100,
@@ -898,7 +1004,9 @@
   },
   {
     "origin": "Mumbai",
+    "originIata": "BOM",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ423, SQ425",
     "milesRequired": 30100,
@@ -917,7 +1025,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Malé",
+    "destinationIata": "MLE",
     "flightClass": "Economy",
     "flightNo": "SQ438",
     "milesRequired": 14000,
@@ -944,7 +1054,9 @@
   },
   {
     "origin": "Malé",
+    "originIata": "MLE",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ437",
     "milesRequired": 14000,
@@ -975,7 +1087,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "New Delhi",
+    "destinationIata": "DEL",
     "flightClass": "Economy",
     "flightNo": "SQ406",
     "milesRequired": 14000,
@@ -990,7 +1104,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "New Delhi",
+    "destinationIata": "DEL",
     "flightClass": "Business",
     "flightNo": "SQ406",
     "milesRequired": 30100,
@@ -1000,7 +1116,9 @@
   },
   {
     "origin": "New Delhi",
+    "originIata": "DEL",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ403",
     "milesRequired": 30100,
@@ -1019,7 +1137,9 @@
   },
   {
     "origin": "Frankfurt",
+    "originIata": "FRA",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ25, SQ325",
     "milesRequired": 29400,
@@ -1042,7 +1162,9 @@
   },
   {
     "origin": "London",
+    "originIata": "LHR",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ319",
     "milesRequired": 29400,
@@ -1073,7 +1195,9 @@
   },
   {
     "origin": "Munich",
+    "originIata": "MUC",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ327",
     "milesRequired": 29400,
@@ -1108,7 +1232,9 @@
   },
   {
     "origin": "Frankfurt",
+    "originIata": "FRA",
     "destination": "New York",
+    "destinationIata": "JFK",
     "flightClass": "Business",
     "flightNo": "SQ26",
     "milesRequired": 56700,
@@ -1131,7 +1257,9 @@
   },
   {
     "origin": "New York",
+    "originIata": "JFK",
     "destination": "Frankfurt",
+    "destinationIata": "FRA",
     "flightClass": "Business",
     "flightNo": "SQ25",
     "milesRequired": 56700,
@@ -1158,7 +1286,9 @@
   },
   {
     "origin": "Los Angeles",
+    "originIata": "LAX",
     "destination": "Tokyo",
+    "destinationIata": "NRT",
     "flightClass": "Economy",
     "flightNo": "SQ11",
     "milesRequired": 26950,
@@ -1177,7 +1307,9 @@
   },
   {
     "origin": "Los Angeles",
+    "originIata": "LAX",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ35,SQ37",
     "milesRequired": 29400,
@@ -1216,7 +1348,9 @@
   },
   {
     "origin": "San Francisco",
+    "originIata": "SFO",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Economy",
     "flightNo": "SQ31",
     "milesRequired": 29400,
@@ -1247,7 +1381,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Hong Kong",
+    "destinationIata": "HKG",
     "flightClass": "Premium Economy",
     "flightNo": "SQ874",
     "milesRequired": 18550,
@@ -1266,7 +1402,9 @@
   },
   {
     "origin": "Hong Kong",
+    "originIata": "HKG",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Premium Economy",
     "flightNo": "SQ875",
     "milesRequired": 18550,
@@ -1289,7 +1427,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Mumbai",
+    "destinationIata": "BOM",
     "flightClass": "Premium Economy",
     "flightNo": "SQ424",
     "milesRequired": 24150,
@@ -1299,7 +1439,9 @@
   },
   {
     "origin": "Mumbai",
+    "originIata": "BOM",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Premium Economy",
     "flightNo": "SQ423",
     "milesRequired": 24150,
@@ -1322,7 +1464,9 @@
   },
   {
     "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "New Delhi",
+    "destinationIata": "DEL",
     "flightClass": "Premium Economy",
     "flightNo": "SQ406",
     "milesRequired": 24150,
@@ -1337,7 +1481,9 @@
   },
   {
     "origin": "Frankfurt",
+    "originIata": "FRA",
     "destination": "New York",
+    "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ26",
     "milesRequired": 36400,
@@ -1360,7 +1506,9 @@
   },
   {
     "origin": "New York",
+    "originIata": "JFK",
     "destination": "Frankfurt",
+    "destinationIata": "FRA",
     "flightClass": "Premium Economy",
     "flightNo": "SQ25",
     "milesRequired": 36400,
@@ -1375,7 +1523,9 @@
   },
   {
     "origin": "Munich",
+    "originIata": "MUC",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Premium Economy",
     "flightNo": "SQ327",
     "milesRequired": 49700,
@@ -1398,7 +1548,9 @@
   },
   {
     "origin": "Los Angeles",
+    "originIata": "LAX",
     "destination": "Tokyo",
+    "destinationIata": "NRT",
     "flightClass": "Premium Economy",
     "flightNo": "SQ11",
     "milesRequired": 51100,
@@ -1413,7 +1565,9 @@
   },
   {
     "origin": "San Francisco",
+    "originIata": "SFO",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Premium Economy",
     "flightNo": "SQ31, SQ33",
     "milesRequired": 52500,
@@ -1436,7 +1590,9 @@
   },
   {
     "origin": "New York",
+    "originIata": "JFK",
     "destination": "Singapore",
+    "destinationIata": "SIN",
     "flightClass": "Premium Economy",
     "flightNo": "SQ21",
     "milesRequired": 56350,

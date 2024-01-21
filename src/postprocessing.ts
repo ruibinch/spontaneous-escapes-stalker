@@ -23,16 +23,14 @@ export function postprocessing() {
     const redemptionsFileString = fs.readFileSync(filepath).toString();
     const redemptions = JSON.parse(redemptionsFileString) as RedemptionJson[];
 
-    const redemptionsPostprocessed1 = appendAndRemoveFields({
-      redemptions,
-      month,
-    });
-    const redemptionsPostprocessed2 = cleanupCityFields(
+    const redemptionsPostprocessed1 = cleanupCityFields(redemptions);
+    const redemptionsPostprocessed2 = standardiseRegionField(
       redemptionsPostprocessed1,
     );
-    const redemptionsPostprocessed3 = standardiseRegionField(
-      redemptionsPostprocessed2,
-    );
+    const redemptionsPostprocessed3 = appendAndRemoveFields({
+      redemptions: redemptionsPostprocessed2,
+      month,
+    });
 
     const redemptionPostprocessedFilename = `data/${month}-redemptions-postprocessed.json`;
     console.log(`📄 Writing to ${redemptionPostprocessedFilename}`);

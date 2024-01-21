@@ -28,6 +28,8 @@ export type RedemptionJsonPostprocessed = Omit<
   RedemptionJson,
   'redemptionEndDate' | 'sortKey'
 > & {
+  originIata: string;
+  destinationIata: string;
   redemptionMonth: string;
 };
 
