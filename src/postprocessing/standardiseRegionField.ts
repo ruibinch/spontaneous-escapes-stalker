@@ -26,7 +26,7 @@ const cityToRegionMap: Record<string, Region> = {
   Christchurch: Region.SOUTHWEST_PACIFIC,
   Colombo: Region.SOUTH_ASIA,
   Copenhagen: Region.EUROPE,
-  'Da Nang': Region.SOUTH_ASIA,
+  'Da Nang': Region.SOUTH_EAST_ASIA,
   Darwin: Region.SOUTHWEST_PACIFIC,
   Davao: Region.SOUTH_EAST_ASIA,
   Dhaka: Region.SOUTH_ASIA,
