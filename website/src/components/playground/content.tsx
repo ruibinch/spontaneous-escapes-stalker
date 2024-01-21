@@ -13,7 +13,7 @@ import { RouteFrequencyTable } from './route-frequency-table';
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 const monthsList = Object.keys(routeAnalysisList[0].details);
 
-export function HomeContent() {
+export function PlaygroundContent() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [flightClassOption, setFlightClassOption] =
     useState<FlightClassSelectOption>('ALL');

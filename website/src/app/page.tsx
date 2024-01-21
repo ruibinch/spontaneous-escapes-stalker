@@ -1,6 +1,6 @@
 'use client';
-import { HomeContent } from '@/components/home/content';
+import { PlaygroundContent } from '@/components/playground/content';
 
-export default function Home() {
-  return <HomeContent />;
+export default function Playground() {
+  return <PlaygroundContent />;
 }
