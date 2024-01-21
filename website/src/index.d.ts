@@ -31,6 +31,19 @@ export type MonthSummaryAnalysis = Record<
   }
 >;
 
+export type RouteFrequencyByFlightClass = Record<
+  FlightClassSelectOption,
+  RouteFrequencyEntry[]
+>;
+
+export type RouteFrequencyEntry = {
+  from: string;
+  to: string;
+  fromIata: string;
+  toIata: string;
+  count: number;
+};
+
 export type Month = string;
 export type FlightClass = 'Y' | 'PY' | 'J';
 export type FlightClassSelectOption = FlightClass | 'ALL';

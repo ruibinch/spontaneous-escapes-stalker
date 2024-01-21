@@ -27,8 +27,10 @@ const columns = [
 
 export function RedemptionsTable({
   data: inputData,
+  tableSummaryComponent,
 }: {
   data: RedemptionEntry[];
+  tableSummaryComponent: React.ReactNode;
 }) {
   const [data, setData] = useState<RedemptionEntry[]>([]);
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
@@ -58,14 +60,15 @@ export function RedemptionsTable({
 
   const topContent = useMemo(() => {
     return (
-      <div className="flex justify-end">
+      <div className="flex justify-between">
+        {tableSummaryComponent}
         <TableRowsPerPage
           rowsPerPage={rowsPerPage}
           onRowsPerPageChange={onRowsPerPageChange}
         />
       </div>
     );
-  }, [rowsPerPage, onRowsPerPageChange]);
+  }, [tableSummaryComponent, rowsPerPage, onRowsPerPageChange]);
 
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
     if (column === 'milesRequired') {

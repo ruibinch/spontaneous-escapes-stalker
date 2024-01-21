@@ -1,4 +1,6 @@
+import { RouteFrequencyByFlightClass, RouteFrequencyEntry } from '@/index';
 import {
+  SortDescriptor,
   Table,
   TableBody,
   TableCell,
@@ -23,33 +25,35 @@ const columns = [
   {
     key: 'count',
     label: 'Count',
+    allowsSorting: true,
   },
 ];
 
 export function RouteFrequencyTable({
-  data,
+  data: inputData,
 }: {
-  data: Array<{
-    from: string;
-    to: string;
-    fromIata: string;
-    toIata: string;
-    count: number;
-  }>;
+  data: RouteFrequencyEntry[];
 }) {
+  const [data, setData] = useState<RouteFrequencyEntry[]>([]);
+  const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
+
   const [numEntries, setNumEntries] = useState<number>();
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(1);
-  const pages = Math.ceil(data.length / rowsPerPage);
+  const pages = Math.ceil(inputData.length / rowsPerPage);
+
+  useEffect(() => {
+    setData(inputData);
+  }, [inputData]);
 
   useEffect(() => {
     // reset all rows/pagination props if number of entries has changed
-    if (numEntries !== undefined && data.length !== numEntries) {
+    if (numEntries !== undefined && inputData.length !== numEntries) {
       setRowsPerPage(10);
       setPage(1);
     }
-    setNumEntries(data.length);
-  }, [data, numEntries]);
+    setNumEntries(inputData.length);
+  }, [inputData, numEntries]);
 
   const onRowsPerPageChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -77,6 +81,20 @@ export function RouteFrequencyTable({
     );
   }, [rowsPerPage, onRowsPerPageChange]);
 
+  const handleSortChange = ({ column, direction }: SortDescriptor) => {
+    if (column === 'count') {
+      const dataSortedByCount = [...inputData].sort((a, b) => {
+        return direction === 'ascending'
+          ? a.count - b.count
+          : b.count - a.count;
+      });
+
+      setData(dataSortedByCount);
+    }
+
+    setSortDescriptor({ column, direction });
+  };
+
   return (
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">Number of occurrences by route</h3>
@@ -87,11 +105,15 @@ export function RouteFrequencyTable({
         bottomContent={
           <TablePagination pages={pages} page={page} setPage={setPage} />
         }
+        sortDescriptor={sortDescriptor}
+        onSortChange={handleSortChange}
         aria-label="Number of occurrences by route"
       >
         <TableHeader columns={columns}>
           {(column) => (
-            <TableColumn key={column.key}>{column.label}</TableColumn>
+            <TableColumn key={column.key} allowsSorting={column.allowsSorting}>
+              {column.label}
+            </TableColumn>
           )}
         </TableHeader>
         <TableBody items={dataToDisplay}>

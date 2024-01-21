@@ -41,7 +41,7 @@ export const SidebarWrapper = () => {
               href="/analysis"
             />
             <SidebarCollapsibleItem
-              title="By Month"
+              title="View by Month"
               items={monthsListItems}
               filterPlaceholder="Filter month"
             />

@@ -24,13 +24,16 @@ export function PlaygroundContent() {
   ]);
   const [months, setMonths] = useState<string>('All'); // comma-separated list of months
 
+  const startDate = yyyymmToDate(monthsList[dateRange[0]]);
+  const endDate = yyyymmToDate(monthsList[dateRange[1]]);
+
   const routeAnalysisListFiltered = filterRouteAnalysisList({
     data: routeAnalysisList,
     filters: {
       searchTerm: searchTerm.toLowerCase(),
       regions: regions.split(','),
-      startDate: yyyymmToDate(monthsList[dateRange[0]]),
-      endDate: yyyymmToDate(monthsList[dateRange[1]]),
+      startDate,
+      endDate,
       months: months.split(','),
     },
   });
@@ -60,7 +63,8 @@ export function PlaygroundContent() {
           <FilterInfo
             routeAnalysisList={routeAnalysisList}
             routeAnalysisListFiltered={routeAnalysisListFiltered}
-            monthsList={monthsList}
+            startDate={startDate}
+            endDate={endDate}
           />
         </div>
 
@@ -76,6 +80,8 @@ export function PlaygroundContent() {
           <DetailsTable
             data={routeAnalysisListFiltered}
             flightClassSelectedOption={flightClassOption}
+            startDate={startDate}
+            endDate={endDate}
           />
         </div>
       </div>

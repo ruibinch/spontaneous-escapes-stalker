@@ -12,23 +12,22 @@ import {
   TableRow,
 } from '@nextui-org/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { filterApplicableMonthsList } from './helpers/filter-applicable-months-list';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { TablePagination } from '../common/table-pagination';
 import { TableRowsPerPage } from '../common/table-rows-per-page';
+import { filterApplicableMonthsList } from './helpers/filter-applicable-months-list';
 
 interface Props {
   data: RouteAnalysisEntry[];
   flightClassSelectedOption: FlightClassSelectOption;
-  startDate?: Date;
-  endDate?: Date;
+  startDate: Date;
+  endDate: Date;
 }
 
 const getColumns = ({
-  data,
   startDate,
   endDate,
-}: Omit<Props, 'flightClassSelectedOption'>): Array<{
+}: Pick<Props, 'startDate' | 'endDate'>): Array<{
   key: string;
   label: string;
 }> => [
@@ -41,7 +40,6 @@ const getColumns = ({
     label: 'TO',
   },
   ...filterApplicableMonthsList({
-    months: Object.keys(data[0].details),
     startDate,
     endDate,
   }).map((month) => ({
@@ -117,7 +115,7 @@ export function DetailsTable({
     );
   }, [rowsPerPage, onRowsPerPageChange]);
 
-  const columns = getColumns({ data, startDate, endDate });
+  const columns = getColumns({ startDate, endDate });
 
   return (
     <div className="flex flex-col gap-2">

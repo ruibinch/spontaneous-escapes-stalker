@@ -1,33 +1,10 @@
-import { getMonthsList } from '@/common/get-months-list';
-import { FlightClassSelectOption, RouteAnalysisEntry } from '@/index';
-import { filterApplicableMonthsList } from './filter-applicable-months-list';
-
-type RouteFrequencyByFlightClass = Record<
-  FlightClassSelectOption,
-  Array<{
-    from: string;
-    to: string;
-    fromIata: string;
-    toIata: string;
-    count: number;
-  }>
->;
+import { RouteAnalysisEntry, RouteFrequencyByFlightClass } from '@/index';
 
 export function computeRouteFrequencyByFlightClass({
   routeAnalysisList,
-  startDate,
-  endDate,
 }: {
   routeAnalysisList: RouteAnalysisEntry[];
-  startDate?: Date;
-  endDate?: Date;
 }): RouteFrequencyByFlightClass {
-  const applicableMonths = filterApplicableMonthsList({
-    months: getMonthsList(),
-    startDate,
-    endDate,
-  });
-
   const routeFrequencyByFlightClass: RouteFrequencyByFlightClass = {
     Y: [],
     PY: [],
@@ -41,7 +18,7 @@ export function computeRouteFrequencyByFlightClass({
     let premiumEconomyRedemptionsCount = 0;
     let businessRedemptionsCount = 0;
 
-    applicableMonths.forEach((month) => {
+    Object.keys(details).forEach((month) => {
       const detailsForMonth = details[month];
 
       if (detailsForMonth.Y) {

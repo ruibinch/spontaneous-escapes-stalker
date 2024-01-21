@@ -1,22 +1,30 @@
+import { getMonthsList } from '@/common/get-months-list';
 import { RouteAnalysisEntry } from '@/index';
+import { filterApplicableMonthsList } from './helpers/filter-applicable-months-list';
 
 export function FilterInfo({
   routeAnalysisList,
   routeAnalysisListFiltered,
-  monthsList,
+  startDate,
+  endDate,
 }: {
   routeAnalysisList: RouteAnalysisEntry[];
   routeAnalysisListFiltered: RouteAnalysisEntry[];
-  monthsList: string[];
+  startDate: Date;
+  endDate: Date;
 }) {
+  const monthsList = getMonthsList();
+  const applicableMonths = filterApplicableMonthsList({
+    startDate,
+    endDate,
+  });
+
   const routesFilteredText =
     routeAnalysisList.length !== routeAnalysisListFiltered.length
       ? `${routeAnalysisListFiltered.length} of ${routeAnalysisList.length} routes`
       : null;
 
-  const numFilteredMonths = Object.keys(
-    routeAnalysisListFiltered[0].details,
-  ).length;
+  const numFilteredMonths = applicableMonths.length;
   const monthsFilteredText =
     monthsList.length !== numFilteredMonths
       ? `${numFilteredMonths} of ${monthsList.length} months`

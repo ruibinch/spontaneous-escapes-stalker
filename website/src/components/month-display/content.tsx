@@ -18,8 +18,6 @@ export function MonthDisplayContent({
     useState<FlightClassSelectOption>('ALL');
   const [regions, setRegions] = useState<string>('All'); // comma-separated list of regions
 
-  const header = `${month.slice(0, 4)} ${monthNumToNameMap[month.slice(4, 6)]}`;
-
   const redemptionsFiltered = filterRedemptionEntryList({
     data: redemptions,
     filters: {
@@ -33,7 +31,9 @@ export function MonthDisplayContent({
     <div className="h-full lg:px-6">
       <div className="flex justify-center pt-12 pb-12 px-4 lg:px-0 flex-wrap xl:flex-nowrap max-w-[90rem] mx-auto w-full">
         <div className="gap-12 flex flex-col w-full">
-          <h1 className="text-2xl font-bold">{header}</h1>
+          <h1 className="text-2xl font-bold">{`${month.slice(0, 4)} ${
+            monthNumToNameMap[month.slice(4, 6)]
+          }`}</h1>
 
           <div className="flex flex-col gap-4">
             <RedemptionsTableFilters
@@ -45,10 +45,38 @@ export function MonthDisplayContent({
               setRegions={setRegions}
             />
 
-            <RedemptionsTable data={redemptionsFiltered} />
+            <RedemptionsTable
+              data={redemptionsFiltered}
+              tableSummaryComponent={
+                <TableSummary
+                  redemptions={redemptions}
+                  redemptionsFiltered={redemptionsFiltered}
+                />
+              }
+            />
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function TableSummary({
+  redemptions,
+  redemptionsFiltered,
+}: {
+  redemptions: RedemptionEntry[];
+  redemptionsFiltered: RedemptionEntry[];
+}) {
+  return redemptions.length === redemptionsFiltered.length ? (
+    <div>
+      <span>Total </span>
+      <span className="font-bold">{`${redemptionsFiltered.length} entries`}</span>
+    </div>
+  ) : (
+    <div>
+      <span>Showing </span>
+      <span className="font-bold">{`${redemptionsFiltered.length} of ${redemptions.length} entries`}</span>
     </div>
   );
 }
