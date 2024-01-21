@@ -1,4 +1,4 @@
-import { RedemptionJson, Region } from '../../utils/types';
+import { RedemptionJsonPostprocessed, Region } from '../utils/types';
 
 // Override for all cities because the region definition by SQ varies depending on time
 const cityToRegionMap: Record<string, Region> = {
@@ -87,8 +87,6 @@ const cityToRegionMap: Record<string, Region> = {
 };
 
 /**
- * Preprocessing before analysis.
- *
  * Standardises the region fields to the following set:
  *   - South East Asia
  *   - North Asia
@@ -98,7 +96,9 @@ const cityToRegionMap: Record<string, Region> = {
  *   - Europe
  *   - USA
  */
-export function standardiseRegionField(redemptions: RedemptionJson[]) {
+export function standardiseRegionField(
+  redemptions: RedemptionJsonPostprocessed[],
+) {
   return redemptions.map((redemption) => {
     const { origin, destination } = redemption;
     const regionOverride = (() => {

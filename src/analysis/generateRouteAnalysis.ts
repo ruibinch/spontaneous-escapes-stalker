@@ -1,5 +1,5 @@
 import { iata } from '../lib/iata/iataCodes';
-import { FlightClass, RedemptionJsonWithMonth } from '../utils/types';
+import { FlightClass, RedemptionJsonPostprocessed } from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
 import { FlightClassCode, Month, Route } from './types';
 
@@ -17,7 +17,7 @@ export function generateRouteAnalysis({
   redemptions,
   months,
 }: {
-  redemptions: RedemptionJsonWithMonth[];
+  redemptions: RedemptionJsonPostprocessed[];
   months: string[];
 }) {
   const routeToMonthsMap: RouteAnalysis = {};

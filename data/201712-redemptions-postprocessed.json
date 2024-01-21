@@ -1,0 +1,112 @@
+[
+  {
+    "origin": "Singapore",
+    "destination": "Ho Chi Minh City",
+    "flightClass": "Business",
+    "flightNo": "SQ178, SQ184, SQ186",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Ho Chi Minh City",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ177, SQ183, SQ185",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Manila",
+    "flightClass": "Business",
+    "flightNo": "SQ910, SQ912, SQ916, SQ918",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Manila",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ915, SQ917, SQ919, SQ921",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Yangon",
+    "flightClass": "Business",
+    "flightNo": "SQ998",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Yangon",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ997",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Dhaka",
+    "flightClass": "Business",
+    "flightNo": "SQ446, SQ448",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Dhaka",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ447, SQ449",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Düsseldorf",
+    "flightClass": "Business",
+    "flightNo": "SQ338",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2017-12-14",
+        "to": "2017-12-21"
+      }
+    ],
+    "region": "Europe",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Düsseldorf",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ337",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2017-12-14",
+        "to": "2017-12-21"
+      }
+    ],
+    "region": "Europe",
+    "redemptionMonth": "201712"
+  }
+]

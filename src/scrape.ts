@@ -17,6 +17,7 @@ import {
   sendRedemptionsInfoNotification,
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
+import { postprocessing } from './postprocessing';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
@@ -124,6 +125,7 @@ export async function scrape() {
   });
 
   if (shouldRunPostAnalysis) {
+    postprocessing();
     analyse();
   }
 

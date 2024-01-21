@@ -24,7 +24,10 @@ export type RedemptionJson = Pick<
   | 'redemptionEndDate'
   | 'sortKey'
 >;
-export type RedemptionJsonWithMonth = RedemptionJson & {
+export type RedemptionJsonPostprocessed = Omit<
+  RedemptionJson,
+  'redemptionEndDate' | 'sortKey'
+> & {
   redemptionMonth: string;
 };
 

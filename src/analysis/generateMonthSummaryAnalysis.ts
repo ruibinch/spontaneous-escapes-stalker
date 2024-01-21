@@ -1,5 +1,9 @@
 import { FlightClassCode, Route } from './types';
-import { FlightClass, RedemptionJsonWithMonth, Region } from '../utils/types';
+import {
+  FlightClass,
+  RedemptionJsonPostprocessed,
+  Region,
+} from '../utils/types';
 
 type MonthSummaryAnalysis = Record<
   Route,
@@ -13,7 +17,7 @@ export function generateMonthSummaryAnalysis({
   redemptions,
   months,
 }: {
-  redemptions: RedemptionJsonWithMonth[];
+  redemptions: RedemptionJsonPostprocessed[];
   months: string[];
 }) {
   const result: MonthSummaryAnalysis = {};
