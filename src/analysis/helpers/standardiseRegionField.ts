@@ -1,5 +1,4 @@
-import { Redemption } from '../../models/Redemption';
-import { Region } from '../../utils/types';
+import { RedemptionJson, Region } from '../../utils/types';
 
 // Override for all cities because the region definition by SQ varies depending on time
 const cityToRegionMap: Record<string, Region> = {
@@ -99,7 +98,7 @@ const cityToRegionMap: Record<string, Region> = {
  *   - Europe
  *   - USA
  */
-export function standardiseRegionField(redemptions: Redemption[]) {
+export function standardiseRegionField(redemptions: RedemptionJson[]) {
   return redemptions.map((redemption) => {
     const { origin, destination } = redemption;
     const regionOverride = (() => {
@@ -119,10 +118,9 @@ export function standardiseRegionField(redemptions: Redemption[]) {
       );
     }
 
-    return Redemption.create({
+    return {
       ...redemption,
       region: regionOverride,
-      redemptionEndDate: new Date(redemption.redemptionEndDate),
-    });
+    };
   });
 }

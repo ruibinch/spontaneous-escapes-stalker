@@ -11,6 +11,23 @@ export type RedemptionTableInfoWithRegion = Omit<
   'redemptionEndDate'
 >;
 
+// Exclude the class-level fields
+export type RedemptionJson = Pick<
+  Redemption,
+  | 'origin'
+  | 'destination'
+  | 'flightClass'
+  | 'flightNo'
+  | 'milesRequired'
+  | 'blackoutPeriod'
+  | 'region'
+  | 'redemptionEndDate'
+  | 'sortKey'
+>;
+export type RedemptionJsonWithMonth = RedemptionJson & {
+  redemptionMonth: string;
+};
+
 export enum FlightClass {
   ECONOMY = 'Economy',
   PREMIUM_ECONOMY = 'Premium Economy',

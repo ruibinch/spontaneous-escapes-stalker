@@ -2,7 +2,7 @@ import fs from 'fs';
 import { toNumber } from '../utils';
 import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
 import { Redemption, RedemptionInputProps } from '../models/Redemption';
-import { FlightClass } from '../utils/types';
+import { FlightClass, RedemptionJson } from '../utils/types';
 import { subDays } from 'date-fns';
 import { formatCity } from './parseRedemptionTables';
 
@@ -230,7 +230,7 @@ function createOrUpdateRedemptionsFile({
     if (!fs.existsSync(redemptionsFilepath)) return [];
 
     const redemptionsString = fs.readFileSync(redemptionsFilepath).toString();
-    return JSON.parse(redemptionsString) as Redemption[];
+    return JSON.parse(redemptionsString) as RedemptionJson[];
   })();
 
   const redemptionsUpdated = [...redemptionsExisting, ...redemptions];

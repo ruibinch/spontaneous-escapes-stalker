@@ -1,12 +1,7 @@
-import fs from 'fs';
-import path from 'path';
 import { iata } from '../lib/iata/iataCodes';
-import { Redemption } from '../models/Redemption';
-import { FlightClass, Region } from '../utils/types';
-import { cleanupCityFields } from './helpers/cleanupCityFields';
+import { FlightClass, RedemptionJsonWithMonth } from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
 import { FlightClassCode, Month, Route } from './types';
-import { standardiseRegionField } from './helpers/standardiseRegionField';
 
 type SingleRedemptionInfo = {
   flightNo: string;
@@ -18,38 +13,33 @@ type RouteAnalysis = Record<
   Record<Month, Partial<Record<FlightClassCode, SingleRedemptionInfo | null>>>
 >;
 
-export function generateRouteAnalysis(redemptionsFilenames: string[]) {
-  const months = redemptionsFilenames.map((filename) => filename.split('-')[0]);
+export function generateRouteAnalysis({
+  redemptions,
+  months,
+}: {
+  redemptions: RedemptionJsonWithMonth[];
+  months: string[];
+}) {
   const routeToMonthsMap: RouteAnalysis = {};
   const routeToRegionMap: Record<string, string> = {};
 
   // create routeToMonthsMap dict from data
-  redemptionsFilenames.forEach((filename) => {
-    const filepath = path.join('data', filename);
-    const month = filename.split('-')[0];
-    const redemptionsString = fs.readFileSync(filepath).toString();
-    const redemptionsPrecleaned = JSON.parse(redemptionsString) as Redemption[];
-    const redemptions = standardiseRegionField(
-      cleanupCityFields(redemptionsPrecleaned),
-    );
+  redemptions.forEach((redemption) => {
+    const route = `${redemption.origin}-${redemption.destination}`;
+    const flightClassCode = getFlightClassCode(redemption.flightClass);
 
-    redemptions.forEach((redemption) => {
-      const route = `${redemption.origin}-${redemption.destination}`;
-      const flightClassCode = getFlightClassCode(redemption.flightClass);
-
-      routeToMonthsMap[route] = {
-        ...routeToMonthsMap[route],
-        [month]: {
-          ...routeToMonthsMap[route]?.[month],
-          [flightClassCode]: {
-            flightNo: redemption.flightNo,
-            milesRequired: redemption.milesRequired,
-            blackoutPeriod: redemption.blackoutPeriod,
-          },
+    routeToMonthsMap[route] = {
+      ...routeToMonthsMap[route],
+      [redemption.redemptionMonth]: {
+        ...routeToMonthsMap[route]?.[redemption.redemptionMonth],
+        [flightClassCode]: {
+          flightNo: redemption.flightNo,
+          milesRequired: redemption.milesRequired,
+          blackoutPeriod: redemption.blackoutPeriod,
         },
-      };
-      routeToRegionMap[route] = redemption.region;
-    });
+      },
+    };
+    routeToRegionMap[route] = redemption.region;
   });
 
   // format the result dict a little better:

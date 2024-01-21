@@ -1,9 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-
 import { FlightClassCode, Route } from './types';
-import { Redemption } from '../models/Redemption';
-import { FlightClass, Region } from '../utils/types';
+import { FlightClass, RedemptionJsonWithMonth, Region } from '../utils/types';
 
 type MonthSummaryAnalysis = Record<
   Route,
@@ -13,14 +9,19 @@ type MonthSummaryAnalysis = Record<
   }
 >;
 
-export function generateMonthSummaryAnalysis(redemptionsFilenames: string[]) {
+export function generateMonthSummaryAnalysis({
+  redemptions,
+  months,
+}: {
+  redemptions: RedemptionJsonWithMonth[];
+  months: string[];
+}) {
   const result: MonthSummaryAnalysis = {};
 
-  redemptionsFilenames.forEach((filename) => {
-    const filepath = path.join('data', filename);
-    const month = filename.split('-')[0];
-    const redemptionsString = fs.readFileSync(filepath).toString();
-    const redemptions = JSON.parse(redemptionsString) as Redemption[];
+  months.forEach((month) => {
+    const redemptionsForMonth = redemptions.filter(
+      (redemption) => redemption.redemptionMonth === month,
+    );
 
     // flightClass
     let economyClassCount = 0;
@@ -35,7 +36,7 @@ export function generateMonthSummaryAnalysis(redemptionsFilenames: string[]) {
     let europeRegionCount = 0;
     let usaRegionCount = 0;
 
-    redemptions.forEach(({ flightClass, region }) => {
+    redemptionsForMonth.forEach(({ flightClass, region }) => {
       switch (flightClass) {
         case FlightClass.ECONOMY:
           economyClassCount += 1;

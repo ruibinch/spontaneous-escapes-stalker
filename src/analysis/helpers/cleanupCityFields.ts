@@ -1,4 +1,4 @@
-import { Redemption } from '../../models/Redemption';
+import { RedemptionJson } from '../../utils/types';
 
 const cityMapper: Record<string, string> = {
   Bengaluru: 'Bangalore',
@@ -26,13 +26,10 @@ const cityMapper: Record<string, string> = {
  *
  * Also combines cities with multiple airports together (e.g. Tokyo, New York) for simplicity.
  */
-export function cleanupCityFields(redemptions: Redemption[]) {
-  return redemptions.map((redemption) =>
-    Redemption.create({
-      ...redemption,
-      origin: cityMapper[redemption.origin] ?? redemption.origin,
-      destination: cityMapper[redemption.destination] ?? redemption.destination,
-      redemptionEndDate: new Date(redemption.redemptionEndDate),
-    }),
-  );
+export function cleanupCityFields(redemptions: RedemptionJson[]) {
+  return redemptions.map((redemption) => ({
+    ...redemption,
+    origin: cityMapper[redemption.origin] ?? redemption.origin,
+    destination: cityMapper[redemption.destination] ?? redemption.destination,
+  }));
 }
