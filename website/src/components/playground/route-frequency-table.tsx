@@ -1,5 +1,4 @@
 import {
-  Pagination,
   Table,
   TableBody,
   TableCell,
@@ -9,6 +8,8 @@ import {
   getKeyValue,
 } from '@nextui-org/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { TablePagination } from '../common/table-pagination';
+import { TableRowsPerPage } from '../common/table-rows-per-page';
 
 const columns = [
   {
@@ -67,40 +68,14 @@ export function RouteFrequencyTable({
 
   const topContent = useMemo(() => {
     return (
-      <div className="flex flex-col">
-        <div className="flex justify-end items-center">
-          <label className="flex items-center text-default-400 text-small">
-            Rows per page:
-            <select
-              className="bg-transparent outline-none text-default-400 text-small"
-              value={rowsPerPage}
-              onChange={onRowsPerPageChange}
-            >
-              <option value="10">10</option>
-              <option value="20">20</option>
-              <option value="50">50</option>
-            </select>
-          </label>
-        </div>
-      </div>
-    );
-  }, [rowsPerPage, onRowsPerPageChange]);
-
-  const bottomContent = useMemo(() => {
-    return (
-      <div className="py-2 px-2 flex justify-end">
-        <Pagination
-          isCompact
-          showControls
-          showShadow
-          color="primary"
-          page={page}
-          total={pages}
-          onChange={setPage}
+      <div className="flex justify-end">
+        <TableRowsPerPage
+          rowsPerPage={rowsPerPage}
+          onRowsPerPageChange={onRowsPerPageChange}
         />
       </div>
     );
-  }, [page, pages]);
+  }, [rowsPerPage, onRowsPerPageChange]);
 
   return (
     <div className="flex flex-col gap-2">
@@ -109,7 +84,9 @@ export function RouteFrequencyTable({
         isStriped
         radius="md"
         topContent={topContent}
-        bottomContent={bottomContent}
+        bottomContent={
+          <TablePagination pages={pages} page={page} setPage={setPage} />
+        }
         aria-label="Number of occurrences by route"
       >
         <TableHeader columns={columns}>

@@ -4,7 +4,6 @@ import {
   RouteAnalysisEntry,
 } from '@/index';
 import {
-  Pagination,
   Table,
   TableBody,
   TableCell,
@@ -15,6 +14,8 @@ import {
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { filterApplicableMonthsList } from './helpers/filter-applicable-months-list';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
+import { TablePagination } from '../common/table-pagination';
+import { TableRowsPerPage } from '../common/table-rows-per-page';
 
 interface Props {
   data: RouteAnalysisEntry[];
@@ -94,51 +95,27 @@ export function DetailsTable({
           <div className="pl-2">
             <span className="text-default-400 text-small">
               <div className="flex flex-row gap-2 items-center">
-                <FlightClassIndicator flightClass={'Y'} />
+                <FlightClassIndicator flightClassCode={'Y'} />
                 {'Economy'}
               </div>
               <div className="flex flex-row gap-2 items-center">
-                <FlightClassIndicator flightClass={'PY'} />
+                <FlightClassIndicator flightClassCode={'PY'} />
                 {'Premium Economy'}
               </div>
               <div className="flex flex-row gap-2 items-center">
-                <FlightClassIndicator flightClass={'J'} />
+                <FlightClassIndicator flightClassCode={'J'} />
                 {'Business'}
               </div>
             </span>
           </div>
-          <label className="flex items-center text-default-400 text-small">
-            Rows per page:
-            <select
-              className="bg-transparent outline-none text-default-400 text-small"
-              value={rowsPerPage}
-              onChange={onRowsPerPageChange}
-            >
-              <option value="10">10</option>
-              <option value="20">20</option>
-              <option value="50">50</option>
-            </select>
-          </label>
+          <TableRowsPerPage
+            rowsPerPage={rowsPerPage}
+            onRowsPerPageChange={onRowsPerPageChange}
+          />
         </div>
       </div>
     );
   }, [rowsPerPage, onRowsPerPageChange]);
-
-  const bottomContent = useMemo(() => {
-    return (
-      <div className="py-2 px-2 flex justify-end">
-        <Pagination
-          isCompact
-          showControls
-          showShadow
-          color="primary"
-          page={page}
-          total={pages}
-          onChange={setPage}
-        />
-      </div>
-    );
-  }, [page, pages]);
 
   const columns = getColumns({ data, startDate, endDate });
 
@@ -149,7 +126,9 @@ export function DetailsTable({
         isStriped
         radius="md"
         topContent={topContent}
-        bottomContent={bottomContent}
+        bottomContent={
+          <TablePagination pages={pages} page={page} setPage={setPage} />
+        }
         aria-label="Details view"
       >
         <TableHeader columns={columns}>
@@ -203,13 +182,13 @@ function renderDetailCell({
       return (
         <div className="flex flex-row gap-1">
           {flightClassCodeMap.Y && isFlightClassFilterValid('Y') && (
-            <FlightClassIndicator flightClass="Y" />
+            <FlightClassIndicator flightClassCode="Y" />
           )}
           {flightClassCodeMap.PY && isFlightClassFilterValid('PY') && (
-            <FlightClassIndicator flightClass="PY" />
+            <FlightClassIndicator flightClassCode="PY" />
           )}
           {flightClassCodeMap.J && isFlightClassFilterValid('J') && (
-            <FlightClassIndicator flightClass="J" />
+            <FlightClassIndicator flightClassCode="J" />
           )}
         </div>
       );

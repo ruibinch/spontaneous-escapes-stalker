@@ -1,19 +1,21 @@
 export function FlightClassIndicator({
   flightClass,
+  flightClassCode,
 }: {
-  flightClass: string | undefined;
+  flightClass?: string;
+  flightClassCode?: string;
 }) {
   const color = (() => {
-    switch (flightClass) {
-      case 'Y':
-        return 'bg-green-600';
-      case 'PY':
-        return 'bg-blue-600';
-      case 'J':
-        return 'bg-red-700';
-      default:
-        return '';
+    if (flightClass === 'Economy' || flightClassCode === 'Y') {
+      return 'bg-green-600';
     }
+    if (flightClass === 'Premium Economy' || flightClassCode === 'PY') {
+      return 'bg-blue-600';
+    }
+    if (flightClass === 'Business' || flightClassCode === 'J') {
+      return 'bg-red-700';
+    }
+    return '';
   })();
 
   return color ? <div className={`w-2 h-2 rounded-lg ${color}`} /> : null;

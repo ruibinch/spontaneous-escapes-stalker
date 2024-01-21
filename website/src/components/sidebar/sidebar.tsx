@@ -38,7 +38,7 @@ export const SidebarWrapper = () => {
             <SidebarItem
               title="Analysis"
               isActive={pathname === '/analysis'}
-              href="analysis"
+              href="/analysis"
             />
             <SidebarCollapsibleItem
               title="By Month"

@@ -2,8 +2,8 @@
 import { Accordion, AccordionItem, Input } from '@nextui-org/react';
 import NextLink from 'next/link';
 import { useState } from 'react';
-import { ChevronUpIcon } from '../icons/chevron-up-icon';
-import { SearchIcon } from '../icons/search-icon';
+import { ChevronUpIcon } from '../icons/chevron-up';
+import { SearchIcon } from '../icons/search';
 
 interface Props {
   title: string;

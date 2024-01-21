@@ -42,7 +42,7 @@ export function FlightClassFilter({
             key={item.data?.value}
             className="flex flex-row gap-2 items-center"
           >
-            <FlightClassIndicator flightClass={item.data?.value} />
+            <FlightClassIndicator flightClassCode={item.data?.value} />
             {item.data?.label}
           </div>
         ));
@@ -54,7 +54,7 @@ export function FlightClassFilter({
       {(option) => (
         <SelectItem key={option.value} textValue={option.value}>
           <div key={option.value} className="flex flex-row gap-2 items-center">
-            <FlightClassIndicator flightClass={option.value} />
+            <FlightClassIndicator flightClassCode={option.value} />
             {option.label}
           </div>
         </SelectItem>

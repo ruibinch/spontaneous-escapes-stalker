@@ -1,15 +1,14 @@
-import { monthNameToNumMap } from '@/common/months-map';
+import { getMonthsList } from '@/common/get-months-list';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { FlightClassSelectOption, RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
-import { isAfter, isBefore } from 'date-fns';
 import { useState } from 'react';
 import { DetailsTable } from './details-table';
 import { FilterInfo } from './filter-info';
 import { Filters } from './filters';
 import { computeRouteFrequencyByFlightClass } from './helpers/compute-route-frequency-by-flight-class';
+import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { RouteFrequencyTable } from './route-frequency-table';
-import { getMonthsList } from '@/common/get-months-list';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 const monthsList = getMonthsList();
@@ -26,9 +25,9 @@ export function PlaygroundContent() {
   const [months, setMonths] = useState<string>('All'); // comma-separated list of months
 
   const routeAnalysisListFiltered = filterRouteAnalysisList({
-    routeAnalysisList,
+    data: routeAnalysisList,
     filters: {
-      searchTerm,
+      searchTerm: searchTerm.toLowerCase(),
       regions: regions.split(','),
       startDate: yyyymmToDate(monthsList[dateRange[0]]),
       endDate: yyyymmToDate(monthsList[dateRange[1]]),
@@ -82,64 +81,4 @@ export function PlaygroundContent() {
       </div>
     </div>
   );
-}
-
-function filterRouteAnalysisList({
-  routeAnalysisList,
-  filters: { searchTerm, regions, startDate, endDate, months },
-}: {
-  routeAnalysisList: RouteAnalysisEntry[];
-  filters: {
-    searchTerm: string;
-    regions: string[];
-    startDate: Date;
-    endDate: Date;
-    months: string[];
-  };
-}) {
-  const monthsInNumFormat = months.map((month) =>
-    month === 'All' ? month : monthNameToNumMap[month],
-  );
-
-  return routeAnalysisList
-    .filter((d) => {
-      const isSearchTermMatch =
-        searchTerm === ''
-          ? true
-          : d.from.toLowerCase().includes(searchTerm) ||
-            d.fromIata.toLowerCase().includes(searchTerm) ||
-            d.to.toLowerCase().includes(searchTerm) ||
-            d.toIata.toLowerCase().includes(searchTerm);
-
-      const isRegionsMatch =
-        regions.includes('All') || regions.includes(d.region);
-
-      return isSearchTermMatch && isRegionsMatch;
-    })
-    .map((d) => {
-      const detailsFiltered = Object.entries(d.details).reduce(
-        (
-          _detailsFiltered: RouteAnalysisEntry['details'],
-          [month, detailsInfo],
-        ) => {
-          const monthDate = yyyymmToDate(month);
-          const isOutsideDateBounds =
-            isBefore(monthDate, startDate) || isAfter(monthDate, endDate);
-          const isValidMonth =
-            monthsInNumFormat.includes('All') ||
-            monthsInNumFormat.includes(month.slice(4, 6));
-
-          if (!isOutsideDateBounds && isValidMonth) {
-            _detailsFiltered[month] = detailsInfo;
-          }
-          return _detailsFiltered;
-        },
-        {},
-      );
-
-      return {
-        ...d,
-        details: detailsFiltered,
-      };
-    });
 }

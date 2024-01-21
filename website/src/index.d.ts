@@ -1,3 +1,19 @@
+export type RedemptionEntry = {
+  origin: string;
+  originIata: string;
+  destination: string;
+  destinationIata: string;
+  flightClass: string;
+  flightNo: string;
+  milesRequired: number;
+  blackoutPeriod: Array<{
+    from: string;
+    to: string;
+    flightNos?: string[];
+  }>;
+  region: string;
+};
+
 export type RouteAnalysisEntry = {
   from: string;
   to: string;
