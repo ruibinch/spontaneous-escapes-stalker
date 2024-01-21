@@ -7,6 +7,14 @@ export type RouteAnalysisEntry = {
   details: Record<Month, Record<FlightClass, SingleRedemptionInfo | null>>;
 };
 
+export type MonthSummaryAnalysis = Record<
+  string,
+  {
+    flightClass: Record<FlightClass, number>;
+    region: Record<Region, number>;
+  }
+>;
+
 export type Month = string;
 export type FlightClass = 'Y' | 'PY' | 'J';
 export type FlightClassSelectOption = FlightClass | 'ALL';
@@ -15,3 +23,13 @@ export type SingleRedemptionInfo = {
   milesRequired: number;
   blackoutPeriod: string[];
 };
+
+enum Region {
+  SOUTH_EAST_ASIA = 'South East Asia',
+  NORTH_ASIA = 'North Asia',
+  SOUTH_ASIA = 'South Asia',
+  MIDDLE_EAST_AND_AFRICA = 'Middle East & Africa',
+  SOUTHWEST_PACIFIC = 'Southwest Pacific',
+  EUROPE = 'Europe',
+  USA = 'USA',
+}

@@ -1,4 +1,4 @@
-import { FlightClass } from '@/index';
+import { MonthSummaryAnalysis } from '@/index';
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -10,7 +10,6 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import monthSummaryAnalysisFile from '../../static/month-summary-analysis.json';
 
 ChartJS.register(
   CategoryScale,
@@ -22,51 +21,27 @@ ChartJS.register(
   Legend,
 );
 
-const monthSummaryAnalysis = monthSummaryAnalysisFile as Record<
-  string,
-  Record<FlightClass, number>
->;
-
-// Define this list manually first as there are missing months of data
-const SE_MONTHS_LIST_WITH_MISSING_DATA_MONTHS = [
-  '201709', // missing data
-  '201710', // missing data
-  '201711',
-  '201712',
-  '201801',
-  '201802', // missing data
-  '201803',
-  '201804',
-  '201805',
-  '201806',
-  '201807',
-  '201808', // missing data
-  '201809', // missing data
-];
-
-export function RedemptionHistoryChart() {
-  const months = (() => {
-    const monthsSet = new Set(SE_MONTHS_LIST_WITH_MISSING_DATA_MONTHS);
-    Object.keys(monthSummaryAnalysis).forEach((month) => {
-      monthsSet.add(month);
-    });
-    return Array.from(monthsSet);
-  })();
-
+export function DistributionByFlightClassChart({
+  monthSummaryAnalysis,
+  months,
+}: {
+  monthSummaryAnalysis: MonthSummaryAnalysis;
+  months: string[];
+}) {
   const economyDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.Y ?? 0,
+    (month) => monthSummaryAnalysis[month]?.flightClass.Y ?? 0,
   );
   const premiumEconomyDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.PY ?? 0,
+    (month) => monthSummaryAnalysis[month]?.flightClass.PY ?? 0,
   );
   const businessDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.J ?? 0,
+    (month) => monthSummaryAnalysis[month]?.flightClass.J ?? 0,
   );
   const allDataset = months.map(
     (month) =>
-      (monthSummaryAnalysis[month]?.Y ?? 0) +
-      (monthSummaryAnalysis[month]?.PY ?? 0) +
-      (monthSummaryAnalysis[month]?.J ?? 0),
+      (monthSummaryAnalysis[month]?.flightClass.Y ?? 0) +
+      (monthSummaryAnalysis[month]?.flightClass.PY ?? 0) +
+      (monthSummaryAnalysis[month]?.flightClass.J ?? 0),
   );
 
   const options = {
