@@ -1,5 +1,5 @@
 import { MonthSummaryAnalysis } from '@/index';
-import monthSummaryAnalysisFile from '../../static/month-summary-analysis.json';
+import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { DistributionByFlightClassChart } from './distribution-by-flight-class-chart';
 import { DistributionByRegionChart } from './distribution-by-region-chart';
 

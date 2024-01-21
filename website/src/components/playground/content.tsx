@@ -1,9 +1,9 @@
 import { monthsMap } from '@/common/months-map';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { FlightClassSelectOption, RouteAnalysisEntry } from '@/index';
+import routeAnalysisFile from '@/static/route-analysis.json';
 import { isAfter, isBefore } from 'date-fns';
 import { useState } from 'react';
-import routeAnalysisFile from '../../static/route-analysis.json';
 import { DetailsTable } from './details-table';
 import { FilterInfo } from './filter-info';
 import { Filters } from './filters';
