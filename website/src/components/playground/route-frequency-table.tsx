@@ -83,13 +83,13 @@ export function RouteFrequencyTable({
 
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
     if (column === 'count') {
-      const dataSortedByCount = [...inputData].sort((a, b) => {
+      const dataSorted = [...inputData].sort((a, b) => {
         return direction === 'ascending'
           ? a.count - b.count
           : b.count - a.count;
       });
 
-      setData(dataSortedByCount);
+      setData(dataSorted);
     }
 
     setSortDescriptor({ column, direction });

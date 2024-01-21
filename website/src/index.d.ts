@@ -44,14 +44,26 @@ export type RouteFrequencyEntry = {
   count: number;
 };
 
-export type Month = string;
-export type FlightClass = 'Y' | 'PY' | 'J';
-export type FlightClassSelectOption = FlightClass | 'ALL';
+export type RedemptionInfoForMonth = Record<
+  FlightClass,
+  SingleRedemptionInfo | null
+> & {
+  month: string;
+};
+
 export type SingleRedemptionInfo = {
   flightNo: string;
   milesRequired: number;
-  blackoutPeriod: string[];
+  blackoutPeriod: Array<{
+    from: string;
+    to: string;
+    flightNos?: string[];
+  }>;
 };
+
+export type Month = string;
+export type FlightClass = 'Y' | 'PY' | 'J';
+export type FlightClassSelectOption = FlightClass | 'ALL';
 
 enum Region {
   SOUTH_EAST_ASIA = 'South East Asia',

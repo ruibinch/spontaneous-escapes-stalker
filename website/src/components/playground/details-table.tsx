@@ -10,6 +10,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  getKeyValue,
 } from '@nextui-org/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
@@ -166,7 +167,7 @@ function renderDetailCell({
   switch (columnKey) {
     case 'from':
     case 'to':
-      return <span>{item[columnKey]}</span>;
+      return getKeyValue(item, columnKey);
     default: {
       // @ts-expect-error assume that columnKey here represents a month
       const flightClassCodeMap = item[columnKey] as Record<

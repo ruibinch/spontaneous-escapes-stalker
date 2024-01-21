@@ -1,4 +1,4 @@
-import { getMonthsList } from '@/common/get-months-list';
+import { getMonthsList } from '@/common/get-data-time-range';
 import { RouteAnalysisEntry } from '@/index';
 import { filterApplicableMonthsList } from './helpers/filter-applicable-months-list';
 

@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import { getMonthsList } from '@/common/get-months-list';
+import { getMonthsList } from '@/common/get-data-time-range';
 import { RedemptionEntry } from '@/index';
 import { MonthDisplayContent } from '@/components/month-display/content';
 import { Card, CardBody } from '@nextui-org/react';

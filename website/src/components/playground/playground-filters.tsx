@@ -2,17 +2,20 @@ import { Button } from '@nextui-org/react';
 import {
   DateRangeFilter,
   DateRangeFilterProps,
-} from './filters/date-range-filter';
+} from '../common/filters/date-range-filter';
 import {
   FlightClassFilter,
   FlightClassFilterProps,
-} from './filters/flight-class-filter';
-import { MonthFilter, MonthFilterProps } from './filters/month-filter';
-import { RegionFilter, RegionFilterProps } from './filters/region-filter';
+} from '../common/filters/flight-class-filter';
+import { MonthFilter, MonthFilterProps } from '../common/filters/month-filter';
+import {
+  RegionFilter,
+  RegionFilterProps,
+} from '../common/filters/region-filter';
 import {
   SearchTermFilter,
   SearchTermFilterProps,
-} from './filters/search-term-filter';
+} from '../common/filters/search-term-filter';
 
 type Props = SearchTermFilterProps &
   FlightClassFilterProps &

@@ -3,7 +3,7 @@ import { monthNumToNameMap } from '@/common/months-map';
 import { FlightClassSelectOption, RedemptionEntry } from '@/index';
 import { useState } from 'react';
 import { RedemptionsTable } from './redemptions-table';
-import { RedemptionsTableFilters } from './redemptions-table-filters';
+import { MonthDisplayFilters } from './month-display-filters';
 import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
 
 export function MonthDisplayContent({
@@ -36,7 +36,7 @@ export function MonthDisplayContent({
           }`}</h1>
 
           <div className="flex flex-col gap-4">
-            <RedemptionsTableFilters
+            <MonthDisplayFilters
               flightClassOption={flightClassOption}
               setFlightClassOption={setFlightClassOption}
               searchTerm={searchTerm}
