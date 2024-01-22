@@ -8,24 +8,8 @@ export const SidebarWrapper = tv({
       true: 'translate-x-0 ml-0 [display:inherit]',
     },
   },
-  // ""
-  //   "@md": {
-  //     marginLeft: "0",
-  //     display: "flex",
-  //     position: "static",
-  //     height: "100vh",
-  //     transform: "translateX(0)",
-  //   },
-  //   variants: {
-  //     collapsed: {
-  //       true: {
-  //         display: "inherit",
-  //         marginLeft: "0 ",
-  //         transform: "translateX(0)",
-  //       },
-  //     },
-  //   },
 });
+
 export const Overlay = tv({
   base: 'bg-[rgb(15_23_42/0.3)] fixed inset-0 z-[201] opacity-80 transition-opacity md:hidden md:z-auto md:opacity-100',
 });
@@ -35,7 +19,7 @@ export const Header = tv({
 });
 
 export const Body = tv({
-  base: 'flex flex-col gap-6 mt-9 px-2',
+  base: 'flex flex-col gap-2 mt-9 px-2',
 });
 
 export const Sidebar = Object.assign(SidebarWrapper, {

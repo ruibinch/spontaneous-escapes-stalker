@@ -1,21 +1,11 @@
-import { getMonthsList } from '@/common/get-data-time-range';
 import { usePathname } from 'next/navigation';
 import { useSidebarContext } from '../layout/layout-context';
-import { SidebarCollapsibleItem } from './sidebar-collapsible-item';
 import { SidebarItem } from './sidebar-item';
 import { Sidebar } from './sidebar.styles';
-import { monthNumToNameMap } from '@/common/months-map';
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
   const { collapsed, setCollapsed } = useSidebarContext();
-
-  const monthsList = getMonthsList();
-  const monthsListItems = [...monthsList].reverse().map((month) => ({
-    label: `${month.slice(0, 4)}-${month.slice(4, 6)}`,
-    value: month,
-    keywords: [monthNumToNameMap[month.slice(4, 6)]],
-  }));
 
   return (
     <aside className="h-screen z-[202] sticky top-0">
@@ -28,6 +18,10 @@ export const SidebarWrapper = () => {
           collapsed: collapsed,
         })}
       >
+        <div className={Sidebar.Header()}>
+          {/* {<h1 className="font-semibold">SOME_NICE_LOGO</h1>} */}
+        </div>
+
         <div className="flex flex-col justify-between h-full">
           <div className={Sidebar.Body()}>
             <SidebarItem
@@ -40,15 +34,16 @@ export const SidebarWrapper = () => {
               isActive={pathname === '/analysis'}
               href="/analysis"
             />
-            <SidebarCollapsibleItem
+            <SidebarItem
               title="View by Month"
-              items={monthsListItems}
-              filterPlaceholder="Filter month"
+              isActive={pathname === '/month'}
+              href="/month"
             />
-            {/* <CollapseItems
-              items={['Banks Accounts', 'Credit Cards', 'Loans']}
-              title="By Route"
-            /> */}
+            <SidebarItem
+              title="View by Route"
+              isActive={pathname === '/route'}
+              href="/route"
+            />
           </div>
         </div>
       </div>

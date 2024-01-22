@@ -121,6 +121,7 @@ function RouteHistoryTableContent({
 
       <Table
         radius="md"
+        isStriped
         aria-label="Month/year frequency table for a specific route"
         topContent={topContent}
         bottomContent={

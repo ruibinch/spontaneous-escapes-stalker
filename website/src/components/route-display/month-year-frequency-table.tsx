@@ -36,11 +36,35 @@ export function MonthYearFrequencyTable({
 }) {
   const tableData = makeMonthYearFrequencyData({ data, years });
 
+  const topContent = (
+    <div className="flex flex-col pl-2">
+      <span className="text-default-400 text-small">
+        <div className="flex flex-row gap-2 items-center pl-6">
+          <FlightClassIndicator flightClassCode={'Y'} />
+          {'Economy'}
+        </div>
+        <div className="flex flex-row gap-2 items-center pl-6">
+          <FlightClassIndicator flightClassCode={'PY'} />
+          {'Premium Economy'}
+        </div>
+        <div className="flex flex-row gap-2 items-center pl-6">
+          <FlightClassIndicator flightClassCode={'J'} />
+          {'Business'}
+        </div>
+        <div className="flex flex-row gap-2 items-center">
+          <NoData />
+          {'No data'}
+        </div>
+      </span>
+    </div>
+  );
+
   return (
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">Calendar view</h3>
       <Table
         radius="md"
+        topContent={topContent}
         aria-label="Month/year frequency table for a specific route"
       >
         <TableHeader columns={columns}>
@@ -85,9 +109,7 @@ function renderCell({
 
       if (!flightClassCodeMap) {
         // no data for that month
-        return (
-          <div className="w-8 h-4 bg-gray-500/50 rounded-md shadow-sm"></div>
-        );
+        return <NoData />;
       }
 
       return (
@@ -101,4 +123,8 @@ function renderCell({
       );
     }
   }
+}
+
+function NoData() {
+  return <div className="w-8 h-4 bg-gray-500/50 rounded-md shadow-sm"></div>;
 }
