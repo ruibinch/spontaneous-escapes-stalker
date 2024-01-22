@@ -39,6 +39,7 @@ export function RedemptionsTable({
   const [data, setData] = useState<RedemptionEntry[]>([]);
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
 
+  const [numEntries, setNumEntries] = useState<number>();
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(1);
   const pages = Math.ceil(inputData.length / rowsPerPage);
@@ -46,6 +47,15 @@ export function RedemptionsTable({
   useEffect(() => {
     setData(inputData);
   }, [inputData]);
+
+  useEffect(() => {
+    // reset all rows/pagination props if number of entries has changed
+    if (numEntries !== undefined && inputData.length !== numEntries) {
+      setRowsPerPage(10);
+      setPage(1);
+    }
+    setNumEntries(inputData.length);
+  }, [inputData, numEntries]);
 
   const onRowsPerPageChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
