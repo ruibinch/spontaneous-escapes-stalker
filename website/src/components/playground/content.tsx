@@ -65,6 +65,7 @@ export function PlaygroundContent() {
             routeAnalysisListFiltered={routeAnalysisListFiltered}
             startDate={startDate}
             endDate={endDate}
+            months={months.split(',')}
           />
         </div>
 
@@ -82,6 +83,7 @@ export function PlaygroundContent() {
             flightClassSelectedOption={flightClassOption}
             startDate={startDate}
             endDate={endDate}
+            months={months.split(',')}
           />
         </div>
       </div>

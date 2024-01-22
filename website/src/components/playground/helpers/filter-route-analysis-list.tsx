@@ -1,7 +1,5 @@
-import { monthNameToNumMap } from '@/common/months-map';
-import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { RouteAnalysisEntry } from '@/index';
-import { isAfter, isBefore } from 'date-fns';
+import { isApplicableMonth } from './is-applicable-month';
 
 export function filterRouteAnalysisList({
   data,
@@ -16,10 +14,6 @@ export function filterRouteAnalysisList({
     months: string[];
   };
 }) {
-  const monthsInNumFormat = months.map((month) =>
-    month === 'All' ? month : monthNameToNumMap[month],
-  );
-
   return data
     .filter((d) => {
       const isSearchTermMatch =
@@ -41,14 +35,16 @@ export function filterRouteAnalysisList({
           _detailsFiltered: RouteAnalysisEntry['details'],
           [month, detailsInfo],
         ) => {
-          const monthDate = yyyymmToDate(month);
-          const isOutsideDateBounds =
-            isBefore(monthDate, startDate) || isAfter(monthDate, endDate);
-          const isValidMonth =
-            monthsInNumFormat.includes('All') ||
-            monthsInNumFormat.includes(month.slice(4, 6));
+          const _isApplicableMonth = isApplicableMonth({
+            month,
+            filters: {
+              startDate,
+              endDate,
+              months,
+            },
+          });
 
-          if (!isOutsideDateBounds && isValidMonth) {
+          if (_isApplicableMonth) {
             _detailsFiltered[month] = detailsInfo;
           }
           return _detailsFiltered;

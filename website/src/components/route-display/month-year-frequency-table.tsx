@@ -39,15 +39,15 @@ export function MonthYearFrequencyTable({
   const topContent = (
     <div className="flex flex-col pl-2">
       <span className="text-default-400 text-small">
-        <div className="flex flex-row gap-2 items-center pl-6">
+        <div className="flex flex-row gap-2 items-center">
           <FlightClassIndicator flightClassCode={'Y'} />
           {'Economy'}
         </div>
-        <div className="flex flex-row gap-2 items-center pl-6">
+        <div className="flex flex-row gap-2 items-center">
           <FlightClassIndicator flightClassCode={'PY'} />
           {'Premium Economy'}
         </div>
-        <div className="flex flex-row gap-2 items-center pl-6">
+        <div className="flex flex-row gap-2 items-center">
           <FlightClassIndicator flightClassCode={'J'} />
           {'Business'}
         </div>
@@ -126,5 +126,5 @@ function renderCell({
 }
 
 function NoData() {
-  return <div className="w-8 h-4 bg-gray-500/50 rounded-md shadow-sm"></div>;
+  return <div className="w-2 h-2 bg-gray-500/50"></div>;
 }

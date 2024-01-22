@@ -19,7 +19,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { TablePagination } from '../common/table-pagination';
 import { TableRowsPerPage } from '../common/table-rows-per-page';
-import { filterApplicableMonthsList } from './helpers/filter-applicable-months-list';
+import { isApplicableMonth } from './helpers/is-applicable-month';
 import { EyeIcon } from '../icons/eye';
 
 interface Props {
@@ -27,12 +27,14 @@ interface Props {
   flightClassSelectedOption: FlightClassSelectOption;
   startDate: Date;
   endDate: Date;
+  months: string[];
 }
 
-const getColumns = ({
-  startDate,
-  endDate,
-}: Pick<Props, 'startDate' | 'endDate'>): Array<{
+const monthsList = getMonthsList();
+
+const getColumns = (
+  filters: Pick<Props, 'startDate' | 'endDate' | 'months'>,
+): Array<{
   key: string;
   label: string;
 }> => [
@@ -45,13 +47,17 @@ const getColumns = ({
     key: 'to',
     label: 'TO',
   },
-  ...filterApplicableMonthsList({
-    startDate,
-    endDate,
-  }).map((month) => ({
-    key: month,
-    label: `${month.slice(0, 4)}-${month.slice(4, 6)}`,
-  })),
+  ...monthsList
+    .filter((month) =>
+      isApplicableMonth({
+        month,
+        filters,
+      }),
+    )
+    .map((month) => ({
+      key: month,
+      label: `${month.slice(0, 4)}-${month.slice(4, 6)}`,
+    })),
 ];
 
 export function DetailsTable({
@@ -59,6 +65,7 @@ export function DetailsTable({
   flightClassSelectedOption,
   startDate,
   endDate,
+  months,
 }: Props) {
   const [numEntries, setNumEntries] = useState<number>();
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -121,7 +128,7 @@ export function DetailsTable({
     );
   }, [rowsPerPage, onRowsPerPageChange]);
 
-  const columns = getColumns({ startDate, endDate });
+  const columns = getColumns({ startDate, endDate, months });
 
   return (
     <div className="flex flex-col gap-2">
@@ -186,23 +193,22 @@ function renderCell({
     }
     default: {
       // @ts-expect-error assume that columnKey here represents a month
-      const flightClassCodeMap = item[columnKey] as Record<
-        FlightClass,
-        boolean
-      >;
+      const flightClassCodeMap = item[columnKey] as
+        | Record<FlightClass, boolean>
+        | undefined;
       const isFlightClassFilterValid = (flightClass: string) =>
         flightClassSelectedOption === 'ALL' ||
         flightClassSelectedOption === flightClass;
 
       return (
         <div className="flex flex-row gap-1">
-          {flightClassCodeMap.Y && isFlightClassFilterValid('Y') && (
+          {flightClassCodeMap?.Y && isFlightClassFilterValid('Y') && (
             <FlightClassIndicator flightClassCode="Y" />
           )}
-          {flightClassCodeMap.PY && isFlightClassFilterValid('PY') && (
+          {flightClassCodeMap?.PY && isFlightClassFilterValid('PY') && (
             <FlightClassIndicator flightClassCode="PY" />
           )}
-          {flightClassCodeMap.J && isFlightClassFilterValid('J') && (
+          {flightClassCodeMap?.J && isFlightClassFilterValid('J') && (
             <FlightClassIndicator flightClassCode="J" />
           )}
         </div>
