@@ -1,4 +1,4 @@
-import { RouteFrequencyByFlightClass, RouteFrequencyEntry } from '@/index';
+import { RouteFrequencyEntry } from '@/index';
 import {
   SortDescriptor,
   Table,
@@ -7,13 +7,20 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  Tooltip,
   getKeyValue,
 } from '@nextui-org/react';
+import NextLink from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { TablePagination } from '../common/table-pagination';
 import { TableRowsPerPage } from '../common/table-rows-per-page';
+import { EyeIcon } from '../icons/eye';
 
 const columns = [
+  {
+    key: 'actions',
+    label: '',
+  },
   {
     key: 'from',
     label: 'Origin',
@@ -120,7 +127,9 @@ export function RouteFrequencyTable({
           {(item) => (
             <TableRow key={`${item.from}-${item.to}`}>
               {(columnKey) => (
-                <TableCell>{getKeyValue(item, columnKey)}</TableCell>
+                <TableCell>
+                  {renderCell({ item, columnKey: columnKey.toString() })}
+                </TableCell>
               )}
             </TableRow>
           )}
@@ -128,4 +137,28 @@ export function RouteFrequencyTable({
       </Table>
     </div>
   );
+}
+
+function renderCell({
+  item,
+  columnKey,
+}: {
+  item: RouteFrequencyEntry;
+  columnKey: string;
+}) {
+  switch (columnKey) {
+    case 'actions': {
+      return (
+        <Tooltip content="View detailed route info">
+          <NextLink href={`/route/${item.fromIata}${item.toIata}`}>
+            <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
+              <EyeIcon />
+            </span>
+          </NextLink>
+        </Tooltip>
+      );
+    }
+    default:
+      return getKeyValue(item, columnKey);
+  }
 }

@@ -1,3 +1,4 @@
+import { getMonthsList } from '@/common/get-data-time-range';
 import {
   FlightClass,
   FlightClassSelectOption,
@@ -10,13 +11,16 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  Tooltip,
   getKeyValue,
 } from '@nextui-org/react';
+import NextLink from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { TablePagination } from '../common/table-pagination';
 import { TableRowsPerPage } from '../common/table-rows-per-page';
 import { filterApplicableMonthsList } from './helpers/filter-applicable-months-list';
+import { EyeIcon } from '../icons/eye';
 
 interface Props {
   data: RouteAnalysisEntry[];
@@ -32,6 +36,7 @@ const getColumns = ({
   key: string;
   label: string;
 }> => [
+  { key: 'actions', label: '' },
   {
     key: 'from',
     label: 'FROM',
@@ -140,7 +145,7 @@ export function DetailsTable({
             <TableRow key={`${item.from}-${item.to}`}>
               {(columnKey) => (
                 <TableCell>
-                  {renderDetailCell({
+                  {renderCell({
                     item,
                     columnKey: columnKey.toString(),
                     flightClassSelectedOption,
@@ -155,7 +160,7 @@ export function DetailsTable({
   );
 }
 
-function renderDetailCell({
+function renderCell({
   item,
   columnKey,
   flightClassSelectedOption,
@@ -168,6 +173,17 @@ function renderDetailCell({
     case 'from':
     case 'to':
       return getKeyValue(item, columnKey);
+    case 'actions': {
+      return (
+        <Tooltip content="View detailed route info">
+          <NextLink href={`/route/${item.fromIata}${item.toIata}`}>
+            <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
+              <EyeIcon />
+            </span>
+          </NextLink>
+        </Tooltip>
+      );
+    }
     default: {
       // @ts-expect-error assume that columnKey here represents a month
       const flightClassCodeMap = item[columnKey] as Record<
