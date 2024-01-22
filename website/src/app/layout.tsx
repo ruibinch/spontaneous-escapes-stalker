@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Providers } from '../providers';
 
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Providers>{children}</Providers>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
