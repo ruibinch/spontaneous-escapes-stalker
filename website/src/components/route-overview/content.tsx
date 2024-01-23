@@ -54,27 +54,25 @@ export function RouteOverviewContent() {
   );
 
   return (
-    <div className="h-full lg:px-6 py-12 px-4">
-      <div className="grid grid-cols-4 gap-4">
-        {routeOverviewList.map(({ letter, routes }) => (
-          <div key={letter} className="flex flex-col gap-2">
-            <h1 className="text-2xl font-bold">{letter}</h1>
+    <div className="grid grid-cols-4 gap-4">
+      {routeOverviewList.map(({ letter, routes }) => (
+        <div key={letter} className="flex flex-col gap-2">
+          <h1 className="text-2xl font-bold">{letter}</h1>
 
-            <div className="flex flex-col gap-1">
-              {routes.map((route) => (
-                <Link
-                  key={route.label}
-                  href={route.href}
-                  size="sm"
-                  underline="hover"
-                >
-                  {route.label}
-                </Link>
-              ))}
-            </div>
+          <div className="flex flex-col gap-1">
+            {routes.map((route) => (
+              <Link
+                key={route.label}
+                href={route.href}
+                size="sm"
+                underline="hover"
+              >
+                {route.label}
+              </Link>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }

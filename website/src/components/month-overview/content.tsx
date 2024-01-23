@@ -21,24 +21,22 @@ export function MonthOverviewContent() {
   );
 
   return (
-    <div className="h-full lg:px-6 py-12 px-4">
-      <div className="flex flex-col gap-8">
-        {yearMonthListSorted.map((entry) => (
-          <div key={entry.year} className="flex flex-col gap-2">
-            <h1 className="text-2xl font-bold">{entry.year}</h1>
+    <div className="flex flex-col gap-8">
+      {yearMonthListSorted.map((entry) => (
+        <div key={entry.year} className="flex flex-col gap-2">
+          <h1 className="text-2xl font-bold">{entry.year}</h1>
 
-            <div className="grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-2">
-              {entry.months.map((month) => (
-                <NextLink key={month} href={`/month/${month}`}>
-                  <Button size="sm" className="w-full">
-                    {monthNumToNameMap[month.slice(4, 6)]}
-                  </Button>
-                </NextLink>
-              ))}
-            </div>
+          <div className="grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-2">
+            {entry.months.map((month) => (
+              <NextLink key={month} href={`/month/${month}`}>
+                <Button size="sm" className="w-full">
+                  {monthNumToNameMap[month.slice(4, 6)]}
+                </Button>
+              </NextLink>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }

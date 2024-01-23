@@ -28,34 +28,30 @@ export function MonthDisplayContent({
   });
 
   return (
-    <div className="h-full lg:px-6">
-      <div className="flex justify-center pt-12 pb-12 px-4 lg:px-0 flex-wrap xl:flex-nowrap max-w-[90rem] mx-auto w-full">
-        <div className="gap-12 flex flex-col w-full">
-          <h1 className="text-2xl font-bold">{`${month.slice(0, 4)} ${
-            monthNumToNameMap[month.slice(4, 6)]
-          }`}</h1>
+    <div className="flex flex-col w-full gap-8">
+      <h1 className="text-2xl font-bold">{`${month.slice(0, 4)} ${
+        monthNumToNameMap[month.slice(4, 6)]
+      }`}</h1>
 
-          <div className="flex flex-col gap-4">
-            <MonthDisplayFilters
-              flightClassOption={flightClassOption}
-              setFlightClassOption={setFlightClassOption}
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              regions={regions}
-              setRegions={setRegions}
-            />
+      <div className="flex flex-col gap-4">
+        <MonthDisplayFilters
+          flightClassOption={flightClassOption}
+          setFlightClassOption={setFlightClassOption}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          regions={regions}
+          setRegions={setRegions}
+        />
 
-            <RedemptionsTable
-              data={redemptionsFiltered}
-              tableSummaryComponent={
-                <TableSummary
-                  redemptions={redemptions}
-                  redemptionsFiltered={redemptionsFiltered}
-                />
-              }
+        <RedemptionsTable
+          data={redemptionsFiltered}
+          tableSummaryComponent={
+            <TableSummary
+              redemptions={redemptions}
+              redemptionsFiltered={redemptionsFiltered}
             />
-          </div>
-        </div>
+          }
+        />
       </div>
     </div>
   );

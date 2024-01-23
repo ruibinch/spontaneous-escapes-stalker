@@ -34,7 +34,7 @@ export function Filters(props: Props) {
 
   return (
     <div>
-      <div className="grid lg:grid-cols-3 gap-6">
+      <div className="grid lg:grid-cols-3 gap-4 lg:gap-6">
         <SearchTermFilter
           searchTerm={props.searchTerm}
           setSearchTerm={props.setSearchTerm}
