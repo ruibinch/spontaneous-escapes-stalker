@@ -173,14 +173,14 @@ function saveDataFiles({
     const htmlFilename = `data/${dateInYYYYMM(
       redemptionTravelPeriod.from,
     )}-content.html`;
-    console.log(`Writing to ${htmlFilename}`);
+    console.log(`📄 Writing to ${htmlFilename}`);
     fs.writeFileSync(htmlFilename, html.toString());
   }
 
   const redemptionsFilename = `data/${dateInYYYYMM(
     redemptionTravelPeriod.from,
   )}-redemptions.json`;
-  console.log(`Writing to ${redemptionsFilename}`);
+  console.log(`📄 Writing to ${redemptionsFilename}`);
   fs.writeFileSync(redemptionsFilename, JSON.stringify(redemptions, null, 2));
 }
 

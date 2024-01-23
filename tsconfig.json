@@ -1,5 +1,6 @@
 {
   /* Reference: https://www.typescriptlang.org/tsconfig */
+  "exclude": ["website"],
 
   /* Options are only uncommented if they are used and override the default option */
   "compilerOptions": {

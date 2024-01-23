@@ -7,14 +7,17 @@ import {
 } from '../utils/types';
 import { isAllDefined, toNumber } from '../utils';
 import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
+import { dedupeRedemptions } from './dedupeRedemptions';
 
 const ACCORDIONS_CLASS_NAME = '.block-2.accordion';
 const BUSINESS_AND_ECONOMY_CLASS_SECTION_NAME =
-  /Business and Economy Class Redemptions/i;
-const PREMIUM_ECONOMY_CLASS_SECTION_NAME = /Premium Economy Class Redemptions/i;
+  />Business and Economy Class Redemptions</i;
+const PREMIUM_ECONOMY_CLASS_SECTION_NAME =
+  />Premium Economy Class Redemptions</i;
 const SINGAPORE_AIRLINES_DESTINATIONS_SECTION_NAME =
-  /Singapore Airlines Destinations/i;
-const SINGAPORE_AIRLINES_SECTION_NAME = /Singapore Airlines/i;
+  />Singapore Airlines Destinations</i;
+const SINGAPORE_AIRLINES_SECTION_NAME = />Singapore Airlines</i;
+const SILKAIR_DESTINATIONS_SECTION_NAME = />SilkAir Destinations</i;
 
 /**
  * Extracts the relevant sections based on accordion style for further parsing.
@@ -32,13 +35,13 @@ const SINGAPORE_AIRLINES_SECTION_NAME = /Singapore Airlines/i;
  *   - Premium Economy Class Redemptions
  *   - How to Redeem
  *   - Terms and Conditions,
- * from which we extract the 1st and 3rd accordions (let's just ignore SilkAir).
+ * from which we extract the first 3 accordions.
  *
  * The list of accordions in the pre-Covid and pre-Jun 2019 layout is:
  *   - Singapore Airlines
  *   - SilkAir
  *   - Terms and Conditions,
- * from which we extract the 1st and 3rd accordions (let's just ignore SilkAir).
+ * from which we extract the first 2 accordions.
  *
  * @param root
  * @returns
@@ -54,6 +57,9 @@ export function parseRedemptionTables(root: HTMLElement) {
   const singaporeAirlinesDestinationsSection = accordions.find((e) =>
     e.toString().match(SINGAPORE_AIRLINES_DESTINATIONS_SECTION_NAME),
   );
+  const silkairDestinationsSection = accordions.find((e) =>
+    e.toString().match(SILKAIR_DESTINATIONS_SECTION_NAME),
+  );
   const singaporeAirlinesSection = accordions.find((e) =>
     e.toString().match(SINGAPORE_AIRLINES_SECTION_NAME),
   );
@@ -61,22 +67,42 @@ export function parseRedemptionTables(root: HTMLElement) {
   const redemptionsForBusinessAndEconomyClassSection = parseSection(
     businessAndEconomyClassRedemptionsSection,
   );
-  const redemptionsForPremiumEconomyClassSection = parseSection(
-    premiumEconomyClassRedemptionsSection,
-  );
   const redemptionsForSingaporeAirlinesDestinationsSection = parseSection(
     singaporeAirlinesDestinationsSection,
   );
   const redemptionsForSingaporeAirlinesSection = parseSection(
     singaporeAirlinesSection,
   );
+  const redemptionsForPremiumEconomyClassSection = parseSection(
+    premiumEconomyClassRedemptionsSection,
+  );
+  const redemptionsForSilkairDestinationsSection = parseSection(
+    silkairDestinationsSection,
+  );
 
-  return [
+  console.log(
+    [
+      '⛏️ Number of redemptions scraped from each section',
+      `  • Business and Economy Class Redemptions: ${redemptionsForBusinessAndEconomyClassSection.length}`,
+      `  • Premium Economy Class Redemptions: ${redemptionsForPremiumEconomyClassSection.length}`,
+      `  • Singapore Airlines Destinations: ${redemptionsForSingaporeAirlinesDestinationsSection.length}`,
+      `  • SilkAir Destinations: ${redemptionsForSilkairDestinationsSection.length}`,
+      `  • Singapore Airlines: ${redemptionsForSingaporeAirlinesSection.length}\n`,
+    ].join('\n'),
+  );
+
+  const redemptionsCombined = [
     ...redemptionsForBusinessAndEconomyClassSection,
-    ...redemptionsForPremiumEconomyClassSection,
     ...redemptionsForSingaporeAirlinesDestinationsSection,
     ...redemptionsForSingaporeAirlinesSection,
+    ...redemptionsForPremiumEconomyClassSection,
+    ...redemptionsForSilkairDestinationsSection,
   ];
+  const redemptionsDeduped = dedupeRedemptions(redemptionsCombined);
+  console.log(
+    `🧹 Deduplicated ${redemptionsCombined.length} redemptions to ${redemptionsDeduped.length} redemptions\n`,
+  );
+  return redemptionsDeduped;
 }
 
 /**
@@ -165,10 +191,12 @@ function parseRedemptionTable(table: HTMLElement) {
         const milesRequiredDetail = extractCellDetails(cell);
         milesRequired = toNumber(milesRequiredDetail);
       }
-      if (hasKeyword('FLIGHT NO')) {
+      // some old pages use "FLIGHT NUMBER" instead of "FLIGHT NO"
+      if (hasKeyword('FLIGHT NO') || hasKeyword('FLIGHT NUMBER')) {
         flightNo = extractCellDetails(cell);
       }
-      if (hasKeyword('BLACKOUT')) {
+      // some old pages use "BLACK OUT PERIOD" instead of "BLACKOUT PERIOD"
+      if (hasKeyword('BLACKOUT') || hasKeyword('BLACK OUT')) {
         const blackoutPeriodRaw = extractCellDetails(cell);
         blackoutPeriod = parseBlackoutPeriod(blackoutPeriodRaw);
       }

@@ -1,15 +1,18 @@
 import { Redemption } from '../models/Redemption';
 
 // Base information that can be obtained from each individual redemption table
-export type RedemptionTableInfo = Omit<
+export type RedemptionTableInfo = Pick<
   Redemption,
-  'region' | 'redemptionEndDate'
+  | 'origin'
+  | 'destination'
+  | 'flightClass'
+  | 'flightNo'
+  | 'milesRequired'
+  | 'blackoutPeriod'
 >;
 
-export type RedemptionTableInfoWithRegion = Omit<
-  Redemption,
-  'redemptionEndDate'
->;
+export type RedemptionTableInfoWithRegion = RedemptionTableInfo &
+  Pick<Redemption, 'region'>;
 
 // Exclude the class-level fields
 export type RedemptionJson = Pick<
