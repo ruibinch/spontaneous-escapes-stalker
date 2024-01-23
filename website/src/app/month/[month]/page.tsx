@@ -2,18 +2,11 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 import { getMonthsList } from '@/common/get-data-time-range';
-import { RedemptionEntry } from '@/index';
-import { MonthDisplayContent } from '@/components/month-display/content';
-import { Card, CardBody } from '@nextui-org/react';
+import { MONTHS_WITH_MISSING_DATA } from '@/common/months-with-missing-data';
 import { InfoIcon } from '@/components/icons/info';
-
-const MONTHS_WITH_MISSING_DATA = [
-  '201709',
-  '201710',
-  '201802',
-  '201808',
-  '201809',
-];
+import { MonthDisplayContent } from '@/components/month-display/content';
+import { RedemptionEntry } from '@/index';
+import { Card, CardBody } from '@nextui-org/react';
 
 export default async function ByMonth({
   params: { month },

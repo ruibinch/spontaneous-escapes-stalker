@@ -23,12 +23,15 @@ export type RouteAnalysisEntry = {
   details: Record<Month, Record<FlightClass, SingleRedemptionInfo | null>>;
 };
 
-export type MonthSummaryAnalysis = Record<
+export type MonthSummaryAnalysisEntry = {
+  month: string;
+  total: number;
+  byFlightClass: Record<FlightClassCode, number>;
+  byRegion: Record<Region, number>;
+};
+export type MonthSummaryAnalysisDict = Record<
   string,
-  {
-    flightClass: Record<FlightClass, number>;
-    region: Record<Region, number>;
-  }
+  Omit<MonthSummaryAnalysisEntry, 'month'>
 >;
 
 export type RouteFrequencyByFlightClass = Record<

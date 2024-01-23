@@ -1,4 +1,4 @@
-import { MonthSummaryAnalysis } from '@/index';
+import { MonthSummaryAnalysisDict } from '@/index';
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -22,26 +22,23 @@ ChartJS.register(
 );
 
 export function DistributionByFlightClassChart({
-  monthSummaryAnalysis,
+  monthSummaryAnalysisDict,
   months,
 }: {
-  monthSummaryAnalysis: MonthSummaryAnalysis;
+  monthSummaryAnalysisDict: MonthSummaryAnalysisDict;
   months: string[];
 }) {
   const economyDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.flightClass.Y ?? 0,
+    (month) => monthSummaryAnalysisDict[month]?.byFlightClass.Y ?? 0,
   );
   const premiumEconomyDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.flightClass.PY ?? 0,
+    (month) => monthSummaryAnalysisDict[month]?.byFlightClass.PY ?? 0,
   );
   const businessDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.flightClass.J ?? 0,
+    (month) => monthSummaryAnalysisDict[month]?.byFlightClass.J ?? 0,
   );
   const allDataset = months.map(
-    (month) =>
-      (monthSummaryAnalysis[month]?.flightClass.Y ?? 0) +
-      (monthSummaryAnalysis[month]?.flightClass.PY ?? 0) +
-      (monthSummaryAnalysis[month]?.flightClass.J ?? 0),
+    (month) => monthSummaryAnalysisDict[month]?.total ?? 0,
   );
 
   const options = {

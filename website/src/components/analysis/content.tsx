@@ -1,35 +1,27 @@
-import { MonthSummaryAnalysis } from '@/index';
+import { MonthSummaryAnalysisEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { DistributionByFlightClassChart } from './distribution-by-flight-class-chart';
 import { DistributionByRegionChart } from './distribution-by-region-chart';
+import { getMonthsList } from '@/common/get-data-time-range';
+import { MONTHS_WITH_MISSING_DATA } from '@/common/months-with-missing-data';
 
-const monthSummaryAnalysis = monthSummaryAnalysisFile as MonthSummaryAnalysis;
-
-// Define this list manually first as there are missing months of data
-const SE_MONTHS_LIST_WITH_MISSING_DATA_MONTHS = [
-  '201709', // missing data
-  '201710', // missing data
-  '201711',
-  '201712',
-  '201801',
-  '201802', // missing data
-  '201803',
-  '201804',
-  '201805',
-  '201806',
-  '201807',
-  '201808', // missing data
-  '201809', // missing data
-];
+const monthSummaryAnalysis =
+  monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
 
 export function AnalysisContent() {
   const months = (() => {
-    const monthsSet = new Set(SE_MONTHS_LIST_WITH_MISSING_DATA_MONTHS);
-    Object.keys(monthSummaryAnalysis).forEach((month) => {
-      monthsSet.add(month);
-    });
-    return Array.from(monthsSet);
+    const _months = [...getMonthsList(), ...MONTHS_WITH_MISSING_DATA];
+    return [..._months].sort((a, b) => a.localeCompare(b));
   })();
+
+  const monthSummaryAnalysisDict = monthSummaryAnalysis.reduce(
+    (_monthSummaryAnalysisDict, entry) => {
+      const { month, ...restProps } = entry;
+      _monthSummaryAnalysisDict[month] = restProps;
+      return _monthSummaryAnalysisDict;
+    },
+    {} as Record<string, Omit<MonthSummaryAnalysisEntry, 'month'>>,
+  );
 
   return (
     <div className=" flex flex-col w-full gap-16">
@@ -37,7 +29,7 @@ export function AnalysisContent() {
         <h3 className="text-xl font-semibold">Distribution by flight class</h3>
         <div className="w-full bg-default-50 shadow-md p-6 rounded-lg">
           <DistributionByFlightClassChart
-            monthSummaryAnalysis={monthSummaryAnalysis}
+            monthSummaryAnalysisDict={monthSummaryAnalysisDict}
             months={months}
           />
         </div>
@@ -47,7 +39,7 @@ export function AnalysisContent() {
         <h3 className="text-xl font-semibold">Distribution by region</h3>
         <div className="w-full bg-default-50 shadow-md p-6 rounded-lg">
           <DistributionByRegionChart
-            monthSummaryAnalysis={monthSummaryAnalysis}
+            monthSummaryAnalysisDict={monthSummaryAnalysisDict}
             months={months}
           />
         </div>

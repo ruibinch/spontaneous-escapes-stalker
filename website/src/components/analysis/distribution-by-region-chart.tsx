@@ -1,4 +1,4 @@
-import { MonthSummaryAnalysis } from '@/index';
+import { MonthSummaryAnalysisDict } from '@/index';
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -33,35 +33,40 @@ enum Region {
 }
 
 export function DistributionByRegionChart({
-  monthSummaryAnalysis,
+  monthSummaryAnalysisDict,
   months,
 }: {
-  monthSummaryAnalysis: MonthSummaryAnalysis;
+  monthSummaryAnalysisDict: MonthSummaryAnalysisDict;
   months: string[];
 }) {
   const southEastAsiaRegionDataset = months.map(
     (month) =>
-      monthSummaryAnalysis[month]?.region?.[Region.SOUTH_EAST_ASIA] ?? 0,
+      monthSummaryAnalysisDict[month]?.byRegion?.[Region.SOUTH_EAST_ASIA] ?? 0,
   );
   const northAsiaRegionDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.region?.[Region.NORTH_ASIA] ?? 0,
+    (month) =>
+      monthSummaryAnalysisDict[month]?.byRegion?.[Region.NORTH_ASIA] ?? 0,
   );
   const southAsiaRegionDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.region?.[Region.SOUTH_ASIA] ?? 0,
+    (month) =>
+      monthSummaryAnalysisDict[month]?.byRegion?.[Region.SOUTH_ASIA] ?? 0,
   );
   const middleEastAndAfricaRegionDataset = months.map(
     (month) =>
-      monthSummaryAnalysis[month]?.region?.[Region.MIDDLE_EAST_AND_AFRICA] ?? 0,
+      monthSummaryAnalysisDict[month]?.byRegion?.[
+        Region.MIDDLE_EAST_AND_AFRICA
+      ] ?? 0,
   );
   const southwestPacificRegionDataset = months.map(
     (month) =>
-      monthSummaryAnalysis[month]?.region?.[Region.SOUTHWEST_PACIFIC] ?? 0,
+      monthSummaryAnalysisDict[month]?.byRegion?.[Region.SOUTHWEST_PACIFIC] ??
+      0,
   );
   const europeRegionDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.region?.[Region.EUROPE] ?? 0,
+    (month) => monthSummaryAnalysisDict[month]?.byRegion?.[Region.EUROPE] ?? 0,
   );
   const usaRegionDataset = months.map(
-    (month) => monthSummaryAnalysis[month]?.region?.[Region.USA] ?? 0,
+    (month) => monthSummaryAnalysisDict[month]?.byRegion?.[Region.USA] ?? 0,
   );
 
   const options = {
