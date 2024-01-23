@@ -5,13 +5,12 @@ import {
   Region,
 } from '../utils/types';
 
-type MonthSummaryAnalysis = Record<
-  Route,
-  {
-    flightClass: Record<FlightClassCode, number>;
-    region: Record<Region, number>;
-  }
->;
+type MonthSummaryAnalysisEntry = {
+  month: string;
+  total: number;
+  byFlightClass: Record<FlightClassCode, number>;
+  byRegion: Record<Region, number>;
+};
 
 export function generateMonthSummaryAnalysis({
   redemptions,
@@ -20,7 +19,7 @@ export function generateMonthSummaryAnalysis({
   redemptions: RedemptionJsonPostprocessed[];
   months: string[];
 }) {
-  const result: MonthSummaryAnalysis = {};
+  const result: MonthSummaryAnalysisEntry[] = [];
 
   months.forEach((month) => {
     const redemptionsForMonth = redemptions.filter(
@@ -82,13 +81,15 @@ export function generateMonthSummaryAnalysis({
       }
     });
 
-    result[month] = {
-      flightClass: {
+    result.push({
+      month,
+      total: redemptionsForMonth.length,
+      byFlightClass: {
         Y: economyClassCount,
         PY: premiumEconomyClassCount,
         J: businessClassCount,
       },
-      region: {
+      byRegion: {
         'South East Asia': southEastAsiaRegionCount,
         'North Asia': northAsiaRegionCount,
         'South Asia': southAsiaRegionCount,
@@ -97,7 +98,7 @@ export function generateMonthSummaryAnalysis({
         Europe: europeRegionCount,
         USA: usaRegionCount,
       },
-    };
+    });
   });
 
   return result;

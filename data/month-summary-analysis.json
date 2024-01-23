@@ -1,11 +1,13 @@
-{
-  "201711": {
-    "flightClass": {
+[
+  {
+    "month": "201711",
+    "total": 43,
+    "byFlightClass": {
       "Y": 19,
       "PY": 0,
       "J": 24
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 12,
       "North Asia": 4,
       "South Asia": 6,
@@ -15,13 +17,15 @@
       "USA": 0
     }
   },
-  "201712": {
-    "flightClass": {
+  {
+    "month": "201712",
+    "total": 10,
+    "byFlightClass": {
       "Y": 0,
       "PY": 0,
       "J": 10
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 6,
       "North Asia": 0,
       "South Asia": 2,
@@ -31,13 +35,15 @@
       "USA": 0
     }
   },
-  "201801": {
-    "flightClass": {
+  {
+    "month": "201801",
+    "total": 53,
+    "byFlightClass": {
       "Y": 24,
       "PY": 0,
       "J": 29
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 0,
       "North Asia": 20,
       "South Asia": 8,
@@ -47,13 +53,15 @@
       "USA": 0
     }
   },
-  "201803": {
-    "flightClass": {
+  {
+    "month": "201803",
+    "total": 30,
+    "byFlightClass": {
       "Y": 12,
       "PY": 0,
       "J": 18
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 2,
       "North Asia": 4,
       "South Asia": 8,
@@ -63,13 +71,15 @@
       "USA": 0
     }
   },
-  "201804": {
-    "flightClass": {
+  {
+    "month": "201804",
+    "total": 42,
+    "byFlightClass": {
       "Y": 18,
       "PY": 0,
       "J": 24
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 10,
       "North Asia": 12,
       "South Asia": 6,
@@ -79,13 +89,15 @@
       "USA": 0
     }
   },
-  "201805": {
-    "flightClass": {
+  {
+    "month": "201805",
+    "total": 84,
+    "byFlightClass": {
       "Y": 38,
       "PY": 0,
       "J": 46
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 18,
       "North Asia": 18,
       "South Asia": 16,
@@ -95,13 +107,15 @@
       "USA": 0
     }
   },
-  "201806": {
-    "flightClass": {
+  {
+    "month": "201806",
+    "total": 66,
+    "byFlightClass": {
       "Y": 24,
       "PY": 0,
       "J": 42
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 12,
       "North Asia": 14,
       "South Asia": 22,
@@ -111,13 +125,15 @@
       "USA": 0
     }
   },
-  "201807": {
-    "flightClass": {
+  {
+    "month": "201807",
+    "total": 103,
+    "byFlightClass": {
       "Y": 53,
       "PY": 0,
       "J": 50
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 19,
       "North Asia": 32,
       "South Asia": 29,
@@ -127,13 +143,15 @@
       "USA": 0
     }
   },
-  "201810": {
-    "flightClass": {
+  {
+    "month": "201810",
+    "total": 68,
+    "byFlightClass": {
       "Y": 28,
       "PY": 6,
       "J": 34
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 24,
       "North Asia": 20,
       "South Asia": 14,
@@ -143,13 +161,15 @@
       "USA": 10
     }
   },
-  "201811": {
-    "flightClass": {
+  {
+    "month": "201811",
+    "total": 66,
+    "byFlightClass": {
       "Y": 27,
       "PY": 6,
       "J": 33
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 19,
       "North Asia": 15,
       "South Asia": 17,
@@ -159,13 +179,15 @@
       "USA": 6
     }
   },
-  "201812": {
-    "flightClass": {
+  {
+    "month": "201812",
+    "total": 37,
+    "byFlightClass": {
       "Y": 16,
       "PY": 4,
       "J": 17
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 18,
       "North Asia": 9,
       "South Asia": 4,
@@ -175,13 +197,15 @@
       "USA": 4
     }
   },
-  "201901": {
-    "flightClass": {
+  {
+    "month": "201901",
+    "total": 42,
+    "byFlightClass": {
       "Y": 14,
       "PY": 6,
       "J": 22
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 12,
       "North Asia": 22,
       "South Asia": 0,
@@ -191,13 +215,15 @@
       "USA": 8
     }
   },
-  "201903": {
-    "flightClass": {
+  {
+    "month": "201903",
+    "total": 83,
+    "byFlightClass": {
       "Y": 41,
       "PY": 2,
       "J": 40
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 11,
       "North Asia": 18,
       "South Asia": 22,
@@ -207,13 +233,15 @@
       "USA": 2
     }
   },
-  "201904": {
-    "flightClass": {
+  {
+    "month": "201904",
+    "total": 67,
+    "byFlightClass": {
       "Y": 29,
       "PY": 12,
       "J": 26
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 14,
       "North Asia": 25,
       "South Asia": 14,
@@ -223,13 +251,15 @@
       "USA": 2
     }
   },
-  "201905": {
-    "flightClass": {
+  {
+    "month": "201905",
+    "total": 56,
+    "byFlightClass": {
       "Y": 34,
       "PY": 0,
       "J": 22
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 15,
       "North Asia": 26,
       "South Asia": 12,
@@ -239,13 +269,15 @@
       "USA": 1
     }
   },
-  "201906": {
-    "flightClass": {
+  {
+    "month": "201906",
+    "total": 67,
+    "byFlightClass": {
       "Y": 33,
       "PY": 3,
       "J": 31
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 23,
       "North Asia": 16,
       "South Asia": 12,
@@ -255,13 +287,15 @@
       "USA": 3
     }
   },
-  "201907": {
-    "flightClass": {
+  {
+    "month": "201907",
+    "total": 83,
+    "byFlightClass": {
       "Y": 35,
       "PY": 9,
       "J": 39
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 18,
       "North Asia": 33,
       "South Asia": 18,
@@ -271,13 +305,15 @@
       "USA": 0
     }
   },
-  "201908": {
-    "flightClass": {
+  {
+    "month": "201908",
+    "total": 82,
+    "byFlightClass": {
       "Y": 28,
       "PY": 13,
       "J": 41
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 26,
       "North Asia": 35,
       "South Asia": 18,
@@ -287,13 +323,15 @@
       "USA": 2
     }
   },
-  "201909": {
-    "flightClass": {
+  {
+    "month": "201909",
+    "total": 125,
+    "byFlightClass": {
       "Y": 52,
       "PY": 20,
       "J": 53
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 40,
       "North Asia": 36,
       "South Asia": 28,
@@ -303,13 +341,15 @@
       "USA": 2
     }
   },
-  "201910": {
-    "flightClass": {
+  {
+    "month": "201910",
+    "total": 86,
+    "byFlightClass": {
       "Y": 36,
       "PY": 16,
       "J": 34
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 22,
       "North Asia": 32,
       "South Asia": 13,
@@ -319,13 +359,15 @@
       "USA": 3
     }
   },
-  "201911": {
-    "flightClass": {
+  {
+    "month": "201911",
+    "total": 133,
+    "byFlightClass": {
       "Y": 57,
       "PY": 23,
       "J": 53
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 27,
       "North Asia": 35,
       "South Asia": 19,
@@ -335,13 +377,15 @@
       "USA": 9
     }
   },
-  "201912": {
-    "flightClass": {
+  {
+    "month": "201912",
+    "total": 60,
+    "byFlightClass": {
       "Y": 14,
       "PY": 13,
       "J": 33
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 10,
       "North Asia": 31,
       "South Asia": 11,
@@ -351,13 +395,15 @@
       "USA": 5
     }
   },
-  "202001": {
-    "flightClass": {
+  {
+    "month": "202001",
+    "total": 73,
+    "byFlightClass": {
       "Y": 30,
       "PY": 15,
       "J": 28
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 14,
       "North Asia": 29,
       "South Asia": 14,
@@ -367,13 +413,15 @@
       "USA": 3
     }
   },
-  "202002": {
-    "flightClass": {
+  {
+    "month": "202002",
+    "total": 153,
+    "byFlightClass": {
       "Y": 65,
       "PY": 33,
       "J": 55
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 28,
       "North Asia": 45,
       "South Asia": 12,
@@ -383,13 +431,15 @@
       "USA": 13
     }
   },
-  "202003": {
-    "flightClass": {
+  {
+    "month": "202003",
+    "total": 121,
+    "byFlightClass": {
       "Y": 50,
       "PY": 24,
       "J": 47
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 35,
       "North Asia": 12,
       "South Asia": 7,
@@ -399,13 +449,15 @@
       "USA": 10
     }
   },
-  "202205": {
-    "flightClass": {
+  {
+    "month": "202205",
+    "total": 124,
+    "byFlightClass": {
       "Y": 61,
       "PY": 13,
       "J": 50
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 36,
       "North Asia": 10,
       "South Asia": 37,
@@ -415,13 +467,15 @@
       "USA": 3
     }
   },
-  "202206": {
-    "flightClass": {
+  {
+    "month": "202206",
+    "total": 85,
+    "byFlightClass": {
       "Y": 41,
       "PY": 10,
       "J": 34
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 28,
       "North Asia": 0,
       "South Asia": 32,
@@ -431,13 +485,15 @@
       "USA": 2
     }
   },
-  "202207": {
-    "flightClass": {
+  {
+    "month": "202207",
+    "total": 51,
+    "byFlightClass": {
       "Y": 28,
       "PY": 7,
       "J": 16
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 12,
       "North Asia": 0,
       "South Asia": 28,
@@ -447,13 +503,15 @@
       "USA": 3
     }
   },
-  "202208": {
-    "flightClass": {
+  {
+    "month": "202208",
+    "total": 72,
+    "byFlightClass": {
       "Y": 40,
       "PY": 8,
       "J": 24
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 20,
       "North Asia": 6,
       "South Asia": 28,
@@ -463,13 +521,15 @@
       "USA": 0
     }
   },
-  "202209": {
-    "flightClass": {
+  {
+    "month": "202209",
+    "total": 56,
+    "byFlightClass": {
       "Y": 28,
       "PY": 11,
       "J": 17
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 10,
       "North Asia": 0,
       "South Asia": 36,
@@ -479,13 +539,15 @@
       "USA": 7
     }
   },
-  "202210": {
-    "flightClass": {
+  {
+    "month": "202210",
+    "total": 46,
+    "byFlightClass": {
       "Y": 24,
       "PY": 10,
       "J": 12
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 12,
       "North Asia": 5,
       "South Asia": 14,
@@ -495,13 +557,15 @@
       "USA": 9
     }
   },
-  "202211": {
-    "flightClass": {
+  {
+    "month": "202211",
+    "total": 34,
+    "byFlightClass": {
       "Y": 15,
       "PY": 7,
       "J": 12
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 16,
       "North Asia": 0,
       "South Asia": 6,
@@ -511,13 +575,15 @@
       "USA": 7
     }
   },
-  "202212": {
-    "flightClass": {
+  {
+    "month": "202212",
+    "total": 22,
+    "byFlightClass": {
       "Y": 10,
       "PY": 4,
       "J": 8
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 12,
       "North Asia": 5,
       "South Asia": 1,
@@ -527,13 +593,15 @@
       "USA": 2
     }
   },
-  "202301": {
-    "flightClass": {
+  {
+    "month": "202301",
+    "total": 41,
+    "byFlightClass": {
       "Y": 18,
       "PY": 7,
       "J": 16
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 13,
       "North Asia": 7,
       "South Asia": 12,
@@ -543,13 +611,15 @@
       "USA": 5
     }
   },
-  "202302": {
-    "flightClass": {
+  {
+    "month": "202302",
+    "total": 66,
+    "byFlightClass": {
       "Y": 32,
       "PY": 11,
       "J": 23
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 17,
       "North Asia": 8,
       "South Asia": 19,
@@ -559,13 +629,15 @@
       "USA": 11
     }
   },
-  "202303": {
-    "flightClass": {
+  {
+    "month": "202303",
+    "total": 58,
+    "byFlightClass": {
       "Y": 28,
       "PY": 11,
       "J": 19
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 13,
       "North Asia": 6,
       "South Asia": 19,
@@ -575,13 +647,15 @@
       "USA": 9
     }
   },
-  "202304": {
-    "flightClass": {
+  {
+    "month": "202304",
+    "total": 78,
+    "byFlightClass": {
       "Y": 34,
       "PY": 11,
       "J": 33
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 13,
       "North Asia": 20,
       "South Asia": 33,
@@ -591,13 +665,15 @@
       "USA": 6
     }
   },
-  "202305": {
-    "flightClass": {
+  {
+    "month": "202305",
+    "total": 68,
+    "byFlightClass": {
       "Y": 28,
       "PY": 10,
       "J": 30
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 17,
       "North Asia": 13,
       "South Asia": 19,
@@ -607,13 +683,15 @@
       "USA": 7
     }
   },
-  "202306": {
-    "flightClass": {
+  {
+    "month": "202306",
+    "total": 58,
+    "byFlightClass": {
       "Y": 26,
       "PY": 8,
       "J": 24
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 17,
       "North Asia": 15,
       "South Asia": 22,
@@ -623,13 +701,15 @@
       "USA": 2
     }
   },
-  "202307": {
-    "flightClass": {
+  {
+    "month": "202307",
+    "total": 60,
+    "byFlightClass": {
       "Y": 27,
       "PY": 12,
       "J": 21
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 15,
       "North Asia": 17,
       "South Asia": 23,
@@ -639,13 +719,15 @@
       "USA": 1
     }
   },
-  "202308": {
-    "flightClass": {
+  {
+    "month": "202308",
+    "total": 72,
+    "byFlightClass": {
       "Y": 33,
       "PY": 12,
       "J": 27
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 22,
       "North Asia": 16,
       "South Asia": 26,
@@ -655,13 +737,15 @@
       "USA": 1
     }
   },
-  "202309": {
-    "flightClass": {
+  {
+    "month": "202309",
+    "total": 74,
+    "byFlightClass": {
       "Y": 40,
       "PY": 10,
       "J": 24
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 35,
       "North Asia": 9,
       "South Asia": 23,
@@ -671,13 +755,15 @@
       "USA": 5
     }
   },
-  "202310": {
-    "flightClass": {
+  {
+    "month": "202310",
+    "total": 95,
+    "byFlightClass": {
       "Y": 46,
       "PY": 15,
       "J": 34
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 32,
       "North Asia": 12,
       "South Asia": 29,
@@ -687,13 +773,15 @@
       "USA": 5
     }
   },
-  "202311": {
-    "flightClass": {
+  {
+    "month": "202311",
+    "total": 80,
+    "byFlightClass": {
       "Y": 38,
       "PY": 15,
       "J": 27
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 32,
       "North Asia": 13,
       "South Asia": 19,
@@ -703,13 +791,15 @@
       "USA": 7
     }
   },
-  "202312": {
-    "flightClass": {
+  {
+    "month": "202312",
+    "total": 78,
+    "byFlightClass": {
       "Y": 38,
       "PY": 5,
       "J": 35
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 23,
       "North Asia": 10,
       "South Asia": 20,
@@ -719,13 +809,15 @@
       "USA": 5
     }
   },
-  "202401": {
-    "flightClass": {
+  {
+    "month": "202401",
+    "total": 137,
+    "byFlightClass": {
       "Y": 62,
       "PY": 17,
       "J": 58
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 41,
       "North Asia": 37,
       "South Asia": 25,
@@ -735,13 +827,15 @@
       "USA": 8
     }
   },
-  "202402": {
-    "flightClass": {
+  {
+    "month": "202402",
+    "total": 119,
+    "byFlightClass": {
       "Y": 56,
       "PY": 20,
       "J": 43
     },
-    "region": {
+    "byRegion": {
       "South East Asia": 35,
       "North Asia": 25,
       "South Asia": 23,
@@ -751,4 +845,4 @@
       "USA": 8
     }
   }
-}
+]
