@@ -2,26 +2,19 @@ import { SvgIconProps } from './types';
 
 export const InfoIcon = (props: SvgIconProps) => (
   <svg
-    width="24"
-    height="24"
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
     {...props}
   >
-    <circle cx="12" cy="12" r="10" stroke="#1C274C" stroke-width="1.5" />
-    <path
-      d="M12 17V11"
-      stroke="#1C274C"
-      stroke-width="1.5"
-      stroke-linecap="round"
-    />
-    <circle
-      cx="1"
-      cy="1"
-      r="1"
-      transform="matrix(1 0 0 -1 11 9)"
-      fill="#1C274C"
-    />
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="12" y1="16" x2="12" y2="12"></line>
+    <line x1="12" y1="8" x2="12.01" y2="8"></line>
   </svg>
 );

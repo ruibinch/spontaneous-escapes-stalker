@@ -5,11 +5,12 @@ import clsx from 'clsx';
 
 interface Props {
   title: string;
+  icon: React.ReactNode;
   isActive?: boolean;
   href?: string;
 }
 
-export const SidebarItem = ({ title, isActive, href = '' }: Props) => {
+export const SidebarItem = ({ title, icon, isActive, href = '' }: Props) => {
   const { setCollapsed } = useSidebarContext();
 
   const handleClick = () => {
@@ -24,13 +25,12 @@ export const SidebarItem = ({ title, isActive, href = '' }: Props) => {
     >
       <div
         className={clsx(
-          isActive
-            ? 'bg-primary-100 [&_svg_path]:fill-primary-500'
-            : 'hover:bg-default-100',
+          isActive ? 'bg-primary-100' : 'hover:bg-default-100',
           'flex gap-2 w-full min-h-[44px] h-full items-center px-3.5 rounded-xl cursor-pointer transition-all duration-150 active:scale-[0.98]',
         )}
         onClick={handleClick}
       >
+        {icon}
         <span className="text-default-900">{title}</span>
       </div>
     </NextLink>

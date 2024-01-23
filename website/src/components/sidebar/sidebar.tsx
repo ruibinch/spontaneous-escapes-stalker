@@ -2,6 +2,10 @@ import { usePathname } from 'next/navigation';
 import { useSidebarContext } from '../layout/layout-context';
 import { SidebarItem } from './sidebar-item';
 import { Sidebar } from './sidebar.styles';
+import { GlobeIcon } from '../icons/globe';
+import { PieChartIcon } from '../icons/pie-chart';
+import { CalendarIcon } from '../icons/calendar';
+import { MapIcon } from '../icons/map';
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -26,21 +30,25 @@ export const SidebarWrapper = () => {
           <div className={Sidebar.Body()}>
             <SidebarItem
               title="Playground"
+              icon={<GlobeIcon />}
               isActive={pathname === '/'}
               href="/"
             />
             <SidebarItem
               title="Analysis"
+              icon={<PieChartIcon />}
               isActive={pathname === '/analysis'}
               href="/analysis"
             />
             <SidebarItem
               title="View by Month"
+              icon={<CalendarIcon />}
               isActive={pathname === '/month'}
               href="/month"
             />
             <SidebarItem
               title="View by Route"
+              icon={<MapIcon />}
               isActive={pathname === '/route'}
               href="/route"
             />
