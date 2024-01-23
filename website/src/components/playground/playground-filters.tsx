@@ -16,6 +16,7 @@ import {
   SearchTermFilter,
   SearchTermFilterProps,
 } from '../common/filters/search-term-filter';
+import { trackEvent } from '@/analytics';
 
 type Props = SearchTermFilterProps &
   FlightClassFilterProps &
@@ -25,6 +26,7 @@ type Props = SearchTermFilterProps &
 
 export function Filters(props: Props) {
   const resetAllFilters = () => {
+    trackEvent(['playground', 'resetAllFilters']);
     props.setSearchTerm('');
     props.setFlightClassOption('ALL');
     props.setRegions('All');

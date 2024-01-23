@@ -11,11 +11,13 @@ import {
   SearchTermFilterProps,
   SearchTermFilter,
 } from '../common/filters/search-term-filter';
+import { trackEvent } from '@/analytics';
 
 type Props = SearchTermFilterProps & FlightClassFilterProps & RegionFilterProps;
 
 export function MonthDisplayFilters(props: Props) {
   const resetAllFilters = () => {
+    trackEvent(['monthDisplay', 'resetAllFilters']);
     props.setSearchTerm('');
     props.setRegions('All');
     props.setFlightClassOption('ALL');

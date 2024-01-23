@@ -1,3 +1,4 @@
+import { trackEvent } from '@/analytics';
 import { RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import { Link } from '@nextui-org/react';
@@ -66,6 +67,9 @@ export function RouteOverviewContent() {
                 href={route.href}
                 size="sm"
                 underline="hover"
+                onClick={() => {
+                  trackEvent(['routeOverview'], { route: route.label });
+                }}
               >
                 {route.label}
               </Link>

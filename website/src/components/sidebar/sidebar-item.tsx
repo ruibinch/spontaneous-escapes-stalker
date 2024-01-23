@@ -1,7 +1,8 @@
+import { trackEvent } from '@/analytics';
+import clsx from 'clsx';
 import NextLink from 'next/link';
 import React from 'react';
 import { useSidebarContext } from '../layout/layout-context';
-import clsx from 'clsx';
 
 interface Props {
   title: string;
@@ -22,6 +23,9 @@ export const SidebarItem = ({ title, icon, isActive, href = '' }: Props) => {
     <NextLink
       href={href}
       className="text-default-900 active:bg-none max-w-full"
+      onClick={() => {
+        trackEvent(['sidebar'], { page: title });
+      }}
     >
       <div
         className={clsx(

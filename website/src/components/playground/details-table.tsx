@@ -21,6 +21,7 @@ import { TablePagination } from '../common/table-pagination';
 import { TableRowsPerPage } from '../common/table-rows-per-page';
 import { isApplicableMonth } from './helpers/is-applicable-month';
 import { EyeIcon } from '../icons/eye';
+import { trackEvent } from '@/analytics';
 
 interface Props {
   data: RouteAnalysisEntry[];
@@ -183,7 +184,14 @@ function renderCell({
     case 'actions': {
       return (
         <Tooltip content="View detailed route info">
-          <NextLink href={`/route/${item.fromIata}${item.toIata}`}>
+          <NextLink
+            href={`/route/${item.fromIata}${item.toIata}`}
+            onClick={() => {
+              trackEvent(['playground', 'detailsTable', 'detailedRouteInfo'], {
+                route: `${item.fromIata}${item.toIata}`,
+              });
+            }}
+          >
             <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
               <EyeIcon />
             </span>

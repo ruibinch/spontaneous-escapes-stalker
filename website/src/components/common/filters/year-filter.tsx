@@ -1,6 +1,7 @@
+import { trackEvent } from '@/analytics';
 import { getYearsList } from '@/common/get-data-time-range';
-import { monthNameToNumMap } from '@/common/months-map';
 import { Select, SelectItem } from '@nextui-org/react';
+import { usePathname } from 'next/navigation';
 import { Dispatch, SetStateAction } from 'react';
 
 export interface YearFilterProps {
@@ -12,6 +13,8 @@ const yearsOptions = getYearsList();
 const yearsOptionsWithAll = ['All', ...yearsOptions] as const;
 
 export function YearFilter({ years, setYears }: YearFilterProps) {
+  const pathname = usePathname();
+
   // Do some manual tweaking of the selected months list so that "All" option is correctly handled
   const tweakSelectedYears = (value: string) => {
     if (value === '') {
@@ -41,7 +44,9 @@ export function YearFilter({ years, setYears }: YearFilterProps) {
       selectionMode="multiple"
       selectedKeys={years.split(',')}
       onChange={(e) => {
-        setYears(tweakSelectedYears(e.target.value));
+        const selectedYears = tweakSelectedYears(e.target.value);
+        trackEvent(['yearFilter'], { pathname, selectedYears });
+        setYears(selectedYears);
       }}
     >
       {(option) => <SelectItem key={option.label}>{option.label}</SelectItem>}

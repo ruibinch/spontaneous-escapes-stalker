@@ -1,4 +1,6 @@
+import { trackEvent } from '@/analytics';
 import { Slider, SliderStepMark } from '@nextui-org/react';
+import { usePathname } from 'next/navigation';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 export interface DateRangeFilterProps {
@@ -15,6 +17,7 @@ export function DateRangeFilter({
   setDateRange,
   monthsList,
 }: DateRangeFilterProps) {
+  const pathname = usePathname();
   // update this when user is still dragging the thumb; only call setDateRange when user stops dragging
   const [dateRangeLocal, setDateRangeLocal] =
     useState<[number, number]>(dateRange);
@@ -51,7 +54,14 @@ export function DateRangeFilter({
         setDateRangeLocal(to2Tuple(value));
       }}
       onChangeEnd={(value) => {
-        setDateRange(to2Tuple(value));
+        const selectedDateRange = to2Tuple(value);
+        trackEvent(['dateRangeFilter'], {
+          pathname,
+          selectedDateRange: `${monthsList[selectedDateRange[0]]}-${
+            monthsList[selectedDateRange[1]]
+          }`,
+        });
+        setDateRange(selectedDateRange);
       }}
       classNames={{
         labelWrapper: 'mb-1',

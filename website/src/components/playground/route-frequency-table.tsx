@@ -15,6 +15,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { TablePagination } from '../common/table-pagination';
 import { TableRowsPerPage } from '../common/table-rows-per-page';
 import { EyeIcon } from '../icons/eye';
+import { trackEvent } from '@/analytics';
 
 const columns = [
   {
@@ -89,6 +90,13 @@ export function RouteFrequencyTable({
   }, [rowsPerPage, onRowsPerPageChange]);
 
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
+    if (typeof column === 'string' && typeof direction === 'string') {
+      trackEvent(['playground', 'routeFrequencyTable', 'sort'], {
+        column,
+        direction,
+      });
+    }
+
     if (column === 'count') {
       const dataSorted = [...inputData].sort((a, b) => {
         return direction === 'ascending'
@@ -150,7 +158,15 @@ function renderCell({
     case 'actions': {
       return (
         <Tooltip content="View detailed route info">
-          <NextLink href={`/route/${item.fromIata}${item.toIata}`}>
+          <NextLink
+            href={`/route/${item.fromIata}${item.toIata}`}
+            onClick={() => {
+              trackEvent(
+                ['playground', 'routeFrequencyTable', 'detailedRouteInfo'],
+                { route: `${item.fromIata}${item.toIata}` },
+              );
+            }}
+          >
             <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
               <EyeIcon />
             </span>

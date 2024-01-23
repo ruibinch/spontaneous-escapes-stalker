@@ -1,3 +1,4 @@
+import { trackEvent } from '@/analytics';
 import { getMonthsList, getYearsList } from '@/common/get-data-time-range';
 import { monthNumToNameMap } from '@/common/months-map';
 import { Button } from '@nextui-org/react';
@@ -28,7 +29,13 @@ export function MonthOverviewContent() {
 
           <div className="grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-2">
             {entry.months.map((month) => (
-              <NextLink key={month} href={`/month/${month}`}>
+              <NextLink
+                key={month}
+                href={`/month/${month}`}
+                onClick={() => {
+                  trackEvent(['monthOverview'], { month });
+                }}
+              >
                 <Button size="sm" className="w-full">
                   {monthNumToNameMap[month.slice(4, 6)]}
                 </Button>

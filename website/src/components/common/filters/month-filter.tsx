@@ -1,5 +1,7 @@
+import { trackEvent } from '@/analytics';
 import { monthNameToNumMap } from '@/common/months-map';
 import { Select, SelectItem } from '@nextui-org/react';
+import { usePathname } from 'next/navigation';
 import { Dispatch, SetStateAction } from 'react';
 
 export interface MonthFilterProps {
@@ -11,6 +13,8 @@ const monthsOptions = Object.keys(monthNameToNumMap);
 const monthsOptionsWithAll = ['All', ...monthsOptions] as const;
 
 export function MonthFilter({ months, setMonths }: MonthFilterProps) {
+  const pathname = usePathname();
+
   // Do some manual tweaking of the selected months list so that "All" option is correctly handled
   const tweakSelectedMonths = (value: string) => {
     if (value === '') {
@@ -40,7 +44,12 @@ export function MonthFilter({ months, setMonths }: MonthFilterProps) {
       selectionMode="multiple"
       selectedKeys={months.split(',')}
       onChange={(e) => {
-        setMonths(tweakSelectedMonths(e.target.value));
+        const selectedMonths = tweakSelectedMonths(e.target.value);
+        trackEvent(['monthFilter'], {
+          pathname,
+          selectedMonths,
+        });
+        setMonths(selectedMonths);
       }}
     >
       {(option) => <SelectItem key={option.label}>{option.label}</SelectItem>}
