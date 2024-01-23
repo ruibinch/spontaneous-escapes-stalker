@@ -12,14 +12,46 @@ export function postprocessing() {
   const redemptionsFilenames = fs
     .readdirSync('data')
     .filter((filename) => filename.endsWith('redemptions.json'));
+  const redemptionsOverrideFilenames = fs
+    .readdirSync('data')
+    .filter((filename) => filename.endsWith('redemptions-override.json'));
+
+  // Some months have a redemptions-override.json, which will take precedence over the base redemptions.json file
+  const redemptionsFilenamesToReadFrom = (() => {
+    const monthsUnique = Array.from(
+      new Set([
+        ...redemptionsFilenames.map((filename) => filename.split('-')[0]),
+        ...redemptionsOverrideFilenames.map(
+          (filename) => filename.split('-')[0],
+        ),
+      ]),
+    );
+    return [...monthsUnique].sort().map((month) => {
+      const filenameToReadFromForMonth =
+        redemptionsOverrideFilenames.find((overrideFilename) =>
+          overrideFilename.startsWith(month),
+        ) ??
+        redemptionsFilenames.find((filename) => filename.startsWith(month));
+      if (!filenameToReadFromForMonth) {
+        throw new Error(`No redemption filename found for ${month}`);
+      }
+      return filenameToReadFromForMonth;
+    });
+  })();
 
   console.log('🧹 Postprocessing - cleaning up city fields');
   console.log('🧹 Postprocessing - standardising region fields');
   console.log('🧹 Postprocessing - appending redemptionMonth field\n');
 
-  redemptionsFilenames.forEach((filename) => {
-    const filepath = path.join('data', filename);
+  console.log(
+    `📖 Reading from the following files:\n${redemptionsFilenamesToReadFrom.join(
+      '\n',
+    )}\n`,
+  );
+
+  redemptionsFilenamesToReadFrom.forEach((filename) => {
     const month = filename.split('-')[0];
+    const filepath = path.join('data', filename);
     const redemptionsFileString = fs.readFileSync(filepath).toString();
     const redemptions = JSON.parse(redemptionsFileString) as RedemptionJson[];
 

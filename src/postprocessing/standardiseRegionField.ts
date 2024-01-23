@@ -80,6 +80,7 @@ const cityToRegionMap: Record<string, Region> = {
   Sydney: Region.SOUTHWEST_PACIFIC,
   Taipei: Region.NORTH_ASIA,
   Tokyo: Region.NORTH_ASIA,
+  Vancouver: Region.USA,
   Wellington: Region.SOUTHWEST_PACIFIC,
   Xiamen: Region.NORTH_ASIA,
   Yangon: Region.SOUTH_EAST_ASIA,

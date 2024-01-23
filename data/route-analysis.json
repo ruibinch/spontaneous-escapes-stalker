@@ -178,15 +178,28 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ277. SQ279",
+          "flightNo": "SQ279",
           "milesRequired": 19600,
           "blackoutPeriod": []
         },
         "PY": null,
         "J": {
-          "flightNo": "SQ277, SQ279",
+          "flightNo": "SQ279",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ279",
+          "milesRequired": 19600,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ279",
           "milesRequired": 43400,
           "blackoutPeriod": []
         }
@@ -589,6 +602,19 @@
         "PY": null,
         "J": {
           "flightNo": "SQ530",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ504",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ504",
           "milesRequired": 27300,
           "blackoutPeriod": []
         }
@@ -1044,9 +1070,30 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ324",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ324",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": null
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
+        "Y": {
+          "flightNo": "SQ324",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ324",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
         "J": null
       },
       "202206": {
@@ -1292,6 +1339,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -1635,14 +1687,31 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ944",
+          "flightNo": "SQ938, SQ944",
           "milesRequired": 5250,
           "blackoutPeriod": []
         },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ944",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ938, SQ944",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ944",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -2129,6 +2198,11 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -2444,6 +2518,19 @@
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ510",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ510",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202205": {
         "Y": {
@@ -3116,6 +3203,19 @@
           ]
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ710, SQ712, SQ714",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ710, SQ712, SQ714",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ710, SQ712, SQ714",
@@ -3124,7 +3224,7 @@
         },
         "PY": null,
         "J": {
-          "flightNo": "SQ712, SQ714",
+          "flightNo": "SQ710, SQ712, SQ714",
           "milesRequired": 15050,
           "blackoutPeriod": []
         }
@@ -3484,10 +3584,39 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ378",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ378",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ378",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ378",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ378",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ378",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -3979,6 +4108,11 @@
         }
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -4483,6 +4617,19 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ235, SQ255",
+          "milesRequired": 19600,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ235, SQ255",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ235, SQ255",
@@ -4764,8 +4911,21 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ148",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": null
+      },
       "202205": {
-        "Y": null,
+        "Y": {
+          "flightNo": "SQ148",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
         "PY": null,
         "J": null
       },
@@ -5038,6 +5198,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -5281,6 +5446,19 @@
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ203",
+          "milesRequired": 19600,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ203",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
       },
       "202205": {
         "Y": {
@@ -5588,6 +5766,11 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -5841,13 +6024,34 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ478",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ478",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ478",
+          "milesRequired": 34300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ478",
           "milesRequired": 17500,
           "blackoutPeriod": []
         },
-        "PY": null,
+        "PY": {
+          "flightNo": "SQ478",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
         "J": {
           "flightNo": "SQ478",
           "milesRequired": 34300,
@@ -6105,6 +6309,19 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ906",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ906",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ906",
@@ -6112,7 +6329,11 @@
           "blackoutPeriod": []
         },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ906",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -6396,6 +6617,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -6751,16 +6977,24 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ524, SQ528",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ524, SQ528",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ524, SQ528",
           "milesRequired": 12950,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-20",
-              "to": "2022-05-31"
-            }
-          ]
+          "blackoutPeriod": []
         },
         "PY": null,
         "J": {
@@ -7243,6 +7477,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -7495,6 +7734,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -7797,10 +8041,31 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ468, SQ464",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ468, SQ464",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ468, SQ464",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ468, SQ464",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -8233,10 +8498,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ352",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ352",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ352",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ352",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ352",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ352",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -8350,7 +8644,7 @@
     "to": "Da Nang",
     "fromIata": "SIN",
     "toIata": "DAD",
-    "region": "South Asia",
+    "region": "South East Asia",
     "details": {
       "201711": {
         "Y": null,
@@ -8477,27 +8771,30 @@
         "PY": null,
         "J": null
       },
-      "202205": {
+      "202204": {
         "Y": {
           "flightNo": "SQ172, SQ174",
           "milesRequired": 8750,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-01",
-              "to": "2022-05-01"
-            }
-          ]
+          "blackoutPeriod": []
         },
         "PY": null,
         "J": {
           "flightNo": "SQ172, SQ174",
           "milesRequired": 15050,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-01",
-              "to": "2022-05-01"
-            }
-          ]
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ172, SQ174",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ172, SQ174",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
         }
       },
       "202206": {
@@ -8783,6 +9080,19 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ251",
+          "milesRequired": 14000,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ251",
+          "milesRequired": 25500,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ251",
@@ -8936,6 +9246,271 @@
             }
           ]
         }
+      },
+      "202401": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202402": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      }
+    }
+  },
+  {
+    "from": "Singapore",
+    "to": "Davao",
+    "fromIata": "SIN",
+    "toIata": "DVO",
+    "region": "South East Asia",
+    "details": {
+      "201711": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201712": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201801": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201803": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201804": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201805": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201806": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201807": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201810": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201811": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201812": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201901": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201903": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201904": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201905": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201906": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201907": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201908": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201909": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201910": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201911": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201912": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202001": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202002": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ906",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ906",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ906",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ906",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
+      "202206": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202207": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202208": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202209": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202210": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202211": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202212": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202301": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202302": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202303": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202304": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202305": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202306": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202307": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202308": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202309": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202310": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202311": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202312": {
+        "Y": null,
+        "PY": null,
+        "J": null
       },
       "202401": {
         "Y": null,
@@ -9209,13 +9784,34 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ446, SQ448",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ446, SQ448",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ446, SQ448",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ446, SQ448",
           "milesRequired": 12950,
           "blackoutPeriod": []
         },
-        "PY": null,
+        "PY": {
+          "flightNo": "SQ446, SQ448",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
         "J": {
           "flightNo": "SQ446, SQ448",
           "milesRequired": 27300,
@@ -9707,14 +10303,39 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ494",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ494",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ494",
+          "milesRequired": 34300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ494",
           "milesRequired": 17500,
           "blackoutPeriod": []
         },
-        "PY": null,
-        "J": null
+        "PY": {
+          "flightNo": "SQ494",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ494",
+          "milesRequired": 34300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": {
@@ -10073,6 +10694,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -10412,18 +11038,39 @@
         "PY": null,
         "J": null
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ326",
+          "flightNo": "SQ26, SQ326",
           "milesRequired": 26600,
           "blackoutPeriod": []
         },
         "PY": {
-          "flightNo": "SQ326",
+          "flightNo": "SQ26, SQ326",
           "milesRequired": 45150,
           "blackoutPeriod": []
         },
-        "J": null
+        "J": {
+          "flightNo": "SQ326",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ26, SQ326",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ26, SQ326",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ326",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": {
@@ -11086,10 +11733,23 @@
           ]
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": {
+          "flightNo": "SQ656",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": null,
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ656",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -11433,6 +12093,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -11875,9 +12540,22 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ192, SQ194",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ192",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
-          "flightNo": "SQ194",
+          "flightNo": "SQ192, SQ194",
           "milesRequired": 8750,
           "blackoutPeriod": []
         },
@@ -12357,6 +13035,19 @@
         },
         "PY": null,
         "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ184, SQ186",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ184, SQ186",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
       },
       "202205": {
         "Y": {
@@ -13080,6 +13771,23 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ882, SQ894",
+          "milesRequired": 10500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ882, SQ894",
+          "milesRequired": 17150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ882, SQ894",
+          "milesRequired": 21350,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ882, SQ894",
@@ -13662,6 +14370,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -13906,10 +14619,31 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ522",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ522",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ522",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ522",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -14423,6 +15157,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -14802,25 +15541,48 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ950, SQ956, SQ958, SQ964, SQ968",
+          "milesRequired": 5250,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-05",
+              "to": "2022-05-10"
+            }
+          ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ950, SQ956, SQ958, SQ964, SQ968",
+          "milesRequired": 13300,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-05",
+              "to": "2022-05-10"
+            }
+          ]
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ950, SQ956, SQ958, SQ964, SQ968",
           "milesRequired": 5250,
           "blackoutPeriod": [
             {
-              "from": "2022-05-02",
-              "to": "2022-05-12"
+              "from": "2022-05-05",
+              "to": "2022-05-10"
             }
           ]
         },
         "PY": null,
         "J": {
-          "flightNo": "SQ950, SQ964, SQ968",
+          "flightNo": "SQ950, SQ956, SQ958, SQ964, SQ968",
           "milesRequired": 13300,
           "blackoutPeriod": [
             {
-              "from": "2022-05-02",
-              "to": "2022-05-16"
+              "from": "2022-05-05",
+              "to": "2022-05-10"
             }
           ]
         }
@@ -15359,13 +16121,34 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ478",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ478",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ478",
+          "milesRequired": 34300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ478",
           "milesRequired": 17500,
           "blackoutPeriod": []
         },
-        "PY": null,
+        "PY": {
+          "flightNo": "SQ478",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
         "J": {
           "flightNo": "SQ478",
           "milesRequired": 34300,
@@ -15647,10 +16430,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ440, SQ442",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ440, SQ442",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ440, SQ442",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ440, SQ442",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ440, SQ442",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ440, SQ442",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -15934,18 +16746,40 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ534",
+          "milesRequired": 12950,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-15"
+            }
+          ]
+        },
         "PY": null,
         "J": {
           "flightNo": "SQ534",
           "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ534",
+          "milesRequired": 12950,
           "blackoutPeriod": [
             {
-              "from": "2022-05-20",
-              "to": "2022-05-31"
+              "from": "2022-04-01",
+              "to": "2022-04-15"
             }
           ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ534",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
         }
       },
       "202206": {
@@ -16476,6 +17310,19 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ516",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ516",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ516",
@@ -16483,7 +17330,11 @@
           "blackoutPeriod": []
         },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ516",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": {
@@ -17041,10 +17892,31 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ104, SQ108, SQ126",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ104, SQ108, SQ126",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ104, SQ108, SQ126",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ104, SQ108, SQ126",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": {
@@ -17635,9 +18507,30 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ308, SQ306, SQ322",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ308, SQ306, SQ322",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": null
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
+        "Y": {
+          "flightNo": "SQ308, SQ306, SQ322",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ308, SQ306, SQ322",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
         "J": null
       },
       "202206": {
@@ -18038,10 +18931,39 @@
         },
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ38, SQ12, SQ36",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ38, SQ12, SQ36",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ12, SQ36",
+          "milesRequired": 66500,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ38, SQ12, SQ36",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ38, SQ12, SQ36",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ12, SQ36",
+          "milesRequired": 66500,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -18412,16 +19334,20 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ432, SQ438",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ432, SQ438",
           "milesRequired": 12950,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-01",
-              "to": "2022-05-03"
-            }
-          ]
+          "blackoutPeriod": []
         },
         "PY": null,
         "J": null
@@ -18837,6 +19763,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -19194,6 +20125,19 @@
         "PY": null,
         "J": {
           "flightNo": "SQ912, SQ916, SQ918",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ910, SQ912, SQ916, SQ918",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ910, SQ912, SQ916, SQ918",
           "milesRequired": 15050,
           "blackoutPeriod": []
         }
@@ -19659,6 +20603,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -20112,9 +21061,30 @@
         },
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ227, SQ237",
+          "milesRequired": 19600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ237",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        },
+        "J": null
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
+        "Y": {
+          "flightNo": "SQ227, SQ237",
+          "milesRequired": 19600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ237",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        },
         "J": null
       },
       "202206": {
@@ -20452,10 +21422,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ356, SQ378",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ356, SQ378",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ356, SQ378",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ356, SQ378",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ356, SQ378",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ356, SQ378",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -20800,6 +21799,23 @@
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ422, SQ424",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ424",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ422, SQ424",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202205": {
         "Y": {
@@ -21350,10 +22366,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ328, SQ332",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ328, SQ332",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ328, SQ332",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ328, SQ332",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ328, SQ332",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ328, SQ332",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -21774,10 +22819,31 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ672",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ672",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ672",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ672",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -22118,11 +23184,38 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ402, SQ406",
+          "milesRequired": 12950,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-10"
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ406",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ402, SQ406",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ402, SQ406",
           "milesRequired": 12950,
-          "blackoutPeriod": []
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-10"
+            }
+          ]
         },
         "PY": {
           "flightNo": "SQ406",
@@ -22596,14 +23689,39 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ26",
+          "milesRequired": 28000,
+          "blackoutPeriod": []
+        },
         "PY": {
           "flightNo": "SQ22",
           "milesRequired": 51100,
           "blackoutPeriod": []
         },
-        "J": null
+        "J": {
+          "flightNo": "SQ22",
+          "milesRequired": 69300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ26",
+          "milesRequired": 28000,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ22",
+          "milesRequired": 51100,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ22",
+          "milesRequired": 69300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -23030,10 +24148,31 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ622",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ622",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ622",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ622",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -23369,9 +24508,30 @@
         },
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ336",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ336",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": null
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
+        "Y": {
+          "flightNo": "SQ336",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ336",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
         "J": null
       },
       "202206": {
@@ -23647,6 +24807,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -24094,9 +25259,22 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ215, SQ223, SQ225",
+          "milesRequired": 14000,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ215, SQ225",
+          "milesRequired": 25500,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
-          "flightNo": "SQ215, SQ225",
+          "flightNo": "SQ215, SQ223, SQ225",
           "milesRequired": 14000,
           "blackoutPeriod": []
         },
@@ -24398,6 +25576,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -24772,14 +25955,18 @@
           ]
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
           "flightNo": "SQ736, SQ740",
           "milesRequired": 8750,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-01"
+              "from": "2022-04-01",
+              "to": "2022-04-16"
+            },
+            {
+              "from": "2022-04-27",
+              "to": "2022-04-30"
             }
           ]
         },
@@ -24789,8 +25976,43 @@
           "milesRequired": 15050,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-01"
+              "from": "2022-04-01",
+              "to": "2022-04-16"
+            },
+            {
+              "from": "2022-04-27",
+              "to": "2022-04-30"
+            }
+          ]
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ736, SQ740",
+          "milesRequired": 8750,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-16"
+            },
+            {
+              "from": "2022-04-27",
+              "to": "2022-04-30"
+            }
+          ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ736, SQ740",
+          "milesRequired": 15050,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-16"
+            },
+            {
+              "from": "2022-04-27",
+              "to": "2022-04-30"
             }
           ]
         }
@@ -25097,10 +26319,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ352",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ352",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ352",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ352",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ352",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ352",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -25412,10 +26663,59 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ32",
+          "milesRequired": 26600,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-23",
+              "to": "2022-05-03"
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ32, SQ34",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ34",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ32",
+          "milesRequired": 26600,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-23",
+              "to": "2022-05-03"
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ32, SQ34",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ34",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
       },
       "202206": {
         "Y": null,
@@ -25599,6 +26899,281 @@
             }
           ]
         },
+        "J": null
+      }
+    }
+  },
+  {
+    "from": "Singapore",
+    "to": "Seattle",
+    "fromIata": "SIN",
+    "toIata": "SEA",
+    "region": "USA",
+    "details": {
+      "201711": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201712": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201801": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201803": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201804": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201805": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201806": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201807": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201810": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201811": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201812": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201901": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201903": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201904": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201905": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201906": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201907": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201908": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201909": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201910": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201911": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201912": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202001": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202002": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
+        "Y": null,
+        "PY": {
+          "flightNo": "SQ28",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ28",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
+      },
+      "202205": {
+        "Y": null,
+        "PY": {
+          "flightNo": "SQ28",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ28",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
+      },
+      "202206": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202207": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202208": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202209": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202210": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202211": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202212": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202301": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202302": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202303": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202304": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202305": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202306": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202307": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202308": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202309": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202310": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202311": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202312": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202401": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202402": {
+        "Y": null,
+        "PY": null,
         "J": null
       }
     }
@@ -25913,10 +27488,31 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ600, SQ608",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ600, SQ608",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ600, SQ608",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ600, SQ608",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -26471,6 +28067,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -26869,6 +28470,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -27130,14 +28736,18 @@
         "PY": null,
         "J": null
       },
-      "202205": {
+      "202204": {
         "Y": {
           "flightNo": "SQ164, SQ166",
           "milesRequired": 8750,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-01"
+              "from": "2022-04-13",
+              "to": "2022-04-18"
+            },
+            {
+              "from": "2022-04-29",
+              "to": "2022-04-30"
             }
           ]
         },
@@ -27147,8 +28757,43 @@
           "milesRequired": 15050,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-01"
+              "from": "2022-04-13",
+              "to": "2022-04-18"
+            },
+            {
+              "from": "2022-04-29",
+              "to": "2022-04-30"
+            }
+          ]
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ164, SQ166",
+          "milesRequired": 8750,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-13",
+              "to": "2022-04-18"
+            },
+            {
+              "from": "2022-04-29",
+              "to": "2022-04-30"
+            }
+          ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ164, SQ166",
+          "milesRequired": 15050,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-13",
+              "to": "2022-04-18"
+            },
+            {
+              "from": "2022-04-29",
+              "to": "2022-04-30"
             }
           ]
         }
@@ -27622,14 +29267,14 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
           "flightNo": "SQ922, SQ926, SQ928",
           "milesRequired": 5250,
           "blackoutPeriod": [
             {
-              "from": "2022-05-05",
-              "to": "2022-05-17"
+              "from": "2022-05-03",
+              "to": "2022-05-08"
             }
           ]
         },
@@ -27637,12 +29282,25 @@
         "J": {
           "flightNo": "SQ922",
           "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ922, SQ926, SQ928",
+          "milesRequired": 5250,
           "blackoutPeriod": [
             {
-              "from": "2022-05-06",
-              "to": "2022-05-14"
+              "from": "2022-05-03",
+              "to": "2022-05-08"
             }
           ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ922",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
         }
       },
       "202206": {
@@ -28256,23 +29914,55 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ221, SQ231, SQ241",
+          "flightNo": "SQ231, SQ241",
           "milesRequired": 19600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ211, SQ231",
+          "milesRequired": 32900,
           "blackoutPeriod": [
             {
               "from": "2022-05-01",
-              "to": "2022-05-17"
+              "to": "2022-05-04",
+              "flightNos": [
+                "SQ211"
+              ]
             }
           ]
         },
-        "PY": {
-          "flightNo": "SQ231",
-          "milesRequired": 32900,
+        "J": {
+          "flightNo": "SQ221, SQ231, SQ241",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ231, SQ241",
+          "milesRequired": 19600,
           "blackoutPeriod": []
         },
-        "J": null
+        "PY": {
+          "flightNo": "SQ211, SQ231",
+          "milesRequired": 32900,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-01",
+              "to": "2022-05-04",
+              "flightNos": [
+                "SQ211"
+              ]
+            }
+          ]
+        },
+        "J": {
+          "flightNo": "SQ221, SQ231, SQ241",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -28964,6 +30654,19 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ876, SQ878",
+          "milesRequired": 10500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ876, SQ878",
+          "milesRequired": 21350,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ876, SQ878",
@@ -29430,10 +31133,314 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ638, SQ12",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ12",
+          "milesRequired": 24150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ12",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
+        "Y": {
+          "flightNo": "SQ638, SQ12",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ12",
+          "milesRequired": 24150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ12",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
+      "202206": {
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202207": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202208": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202209": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202210": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202211": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202212": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202301": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202302": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202303": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202304": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202305": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202306": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202307": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202308": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202309": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202310": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202311": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202312": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202401": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202402": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      }
+    }
+  },
+  {
+    "from": "Singapore",
+    "to": "Vancouver",
+    "fromIata": "SIN",
+    "toIata": "YVR",
+    "region": "USA",
+    "details": {
+      "201711": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201712": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201801": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201803": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201804": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201805": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201806": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201807": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201810": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201811": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201812": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201901": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201903": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201904": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201905": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201906": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201907": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201908": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201909": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201910": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201911": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201912": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202001": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202002": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
+        "Y": null,
+        "PY": {
+          "flightNo": "SQ28",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ28",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
+      },
+      "202205": {
+        "Y": null,
+        "PY": {
+          "flightNo": "SQ28",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ28",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
       },
       "202206": {
         "Y": null,
@@ -29702,6 +31709,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -29942,6 +31954,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -30328,6 +32345,11 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -30636,10 +32658,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ386",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ346",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ386",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ386",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ346",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ386",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -30999,6 +33050,19 @@
               "to": "2020-03-31"
             }
           ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ278",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ278",
+          "milesRequired": 19600,
+          "blackoutPeriod": []
         },
         "PY": null,
         "J": {
@@ -31423,6 +33487,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -31827,9 +33896,30 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ323, SQ329",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ323, SQ329",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": null
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
+        "Y": {
+          "flightNo": "SQ323, SQ329",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ323, SQ329",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
         "J": null
       },
       "202206": {
@@ -32105,6 +34195,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -32498,23 +34593,31 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ939",
+          "flightNo": "SQ939, SQ945",
           "milesRequired": 5250,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-01",
-              "to": "2022-05-09"
-            },
-            {
-              "from": "2022-05-15",
-              "to": "2022-05-20"
-            }
-          ]
+          "blackoutPeriod": []
         },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ939, SQ945",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ939, SQ945",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ939, SQ945",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -33005,6 +35108,11 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -33308,6 +35416,19 @@
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ511",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ511",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202205": {
         "Y": {
@@ -33952,15 +36073,28 @@
           ]
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ705, SQ707",
+          "flightNo": "SQ705, SQ711, SQ713",
           "milesRequired": 8750,
           "blackoutPeriod": []
         },
         "PY": null,
         "J": {
-          "flightNo": "SQ705, SQ707",
+          "flightNo": "SQ705, SQ711, SQ713",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ705, SQ711, SQ713",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ705, SQ711, SQ713",
           "milesRequired": 15050,
           "blackoutPeriod": []
         }
@@ -34294,10 +36428,39 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ377",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ377",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ377",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ377",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ377",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ377",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -34805,6 +36968,11 @@
         }
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -35352,6 +37520,19 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ246, SQ256",
+          "milesRequired": 19600,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ246, SQ256",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ246, SQ256",
@@ -35659,8 +37840,21 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ147",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": null
+      },
       "202205": {
-        "Y": null,
+        "Y": {
+          "flightNo": "SQ147",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
         "PY": null,
         "J": null
       },
@@ -35987,6 +38181,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -36230,6 +38429,19 @@
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ204",
+          "milesRequired": 19600,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ204",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
       },
       "202205": {
         "Y": {
@@ -36558,6 +38770,11 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -36811,13 +39028,34 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ479",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ479",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ479",
+          "milesRequired": 34300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ479",
           "milesRequired": 17500,
           "blackoutPeriod": []
         },
-        "PY": null,
+        "PY": {
+          "flightNo": "SQ479",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
         "J": {
           "flightNo": "SQ479",
           "milesRequired": 34300,
@@ -37075,6 +39313,19 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ906",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ906",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ906",
@@ -37082,7 +39333,11 @@
           "blackoutPeriod": []
         },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ906",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -37384,6 +39639,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -37701,6 +39961,19 @@
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ525, SQ529",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ525, SQ529",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202205": {
         "Y": {
@@ -38125,6 +40398,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -38386,6 +40664,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -38779,10 +41062,31 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ465, SQ469",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ465, SQ469",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ465, SQ469",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ465, SQ469",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -39163,10 +41467,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ351",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ351",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ351",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ351",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ351",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ351",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -39323,7 +41656,7 @@
     "to": "Singapore",
     "fromIata": "DAD",
     "toIata": "SIN",
-    "region": "South Asia",
+    "region": "South East Asia",
     "details": {
       "201711": {
         "Y": null,
@@ -39450,27 +41783,30 @@
         "PY": null,
         "J": null
       },
-      "202205": {
+      "202204": {
         "Y": {
           "flightNo": "SQ171, SQ173",
           "milesRequired": 8750,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-02",
-              "to": "2022-05-05"
-            }
-          ]
+          "blackoutPeriod": []
         },
         "PY": null,
         "J": {
           "flightNo": "SQ171, SQ173",
           "milesRequired": 15050,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-02",
-              "to": "2022-05-05"
-            }
-          ]
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ171, SQ173",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ171, SQ173",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
         }
       },
       "202206": {
@@ -39756,6 +42092,19 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ252",
+          "milesRequired": 14000,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ252",
+          "milesRequired": 25500,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ252",
@@ -39928,6 +42277,271 @@
             }
           ]
         }
+      }
+    }
+  },
+  {
+    "from": "Davao",
+    "to": "Singapore",
+    "fromIata": "DVO",
+    "toIata": "SIN",
+    "region": "South East Asia",
+    "details": {
+      "201711": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201712": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201801": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201803": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201804": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201805": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201806": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201807": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201810": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201811": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201812": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201901": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201903": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201904": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201905": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201906": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201907": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201908": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201909": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201910": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201911": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201912": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202001": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202002": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ906",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ906",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ906",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ906",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
+      "202206": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202207": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202208": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202209": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202210": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202211": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202212": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202301": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202302": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202303": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202304": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202305": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202306": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202307": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202308": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202309": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202310": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202311": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202312": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202401": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202402": {
+        "Y": null,
+        "PY": null,
+        "J": null
       }
     }
   },
@@ -40195,13 +42809,34 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ447, SQ449",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ447, SQ449",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ447, SQ449",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ447, SQ449",
           "milesRequired": 12950,
           "blackoutPeriod": []
         },
-        "PY": null,
+        "PY": {
+          "flightNo": "SQ447, SQ449",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
         "J": {
           "flightNo": "SQ447, SQ449",
           "milesRequired": 27300,
@@ -40629,14 +43264,39 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ495",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ495",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ495",
+          "milesRequired": 34300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ495",
           "milesRequired": 17500,
           "blackoutPeriod": []
         },
-        "PY": null,
-        "J": null
+        "PY": {
+          "flightNo": "SQ495",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ495",
+          "milesRequired": 34300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": {
@@ -40990,6 +43650,11 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -41250,6 +43915,23 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ25, SQ325",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ25, SQ325",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ25",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ25, SQ325",
@@ -41261,7 +43943,11 @@
           "milesRequired": 45150,
           "blackoutPeriod": []
         },
-        "J": null
+        "J": {
+          "flightNo": "SQ25",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": {
@@ -41657,10 +44343,31 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ655",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ655",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ655",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ655",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -41993,6 +44700,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -42452,15 +45164,28 @@
         "PY": null,
         "J": null
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ191",
+          "flightNo": "SQ191 SQ193",
           "milesRequired": 8750,
           "blackoutPeriod": []
         },
         "PY": null,
         "J": {
-          "flightNo": "SQ191",
+          "flightNo": "SQ191;",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ191 SQ193",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ191;",
           "milesRequired": 15050,
           "blackoutPeriod": []
         }
@@ -42919,15 +45644,28 @@
         "PY": null,
         "J": null
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ177",
+          "flightNo": "SQ183, SQ185",
           "milesRequired": 8750,
           "blackoutPeriod": []
         },
         "PY": null,
         "J": {
-          "flightNo": "SQ177",
+          "flightNo": "SQ183, SQ185",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ183, SQ185",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ183, SQ185",
           "milesRequired": 15050,
           "blackoutPeriod": []
         }
@@ -43661,6 +46399,19 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ883, SQ895",
+          "milesRequired": 10500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ883, SQ895",
+          "milesRequired": 21350,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ883, SQ895",
@@ -44239,10 +46990,31 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ523",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ523",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ523",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ523",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -44694,6 +47466,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -45061,25 +47838,48 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ951, SQ953, SQ957, SQ959, SQ965",
+          "flightNo": "SQ951, SQ957, SQ959, SQ965",
           "milesRequired": 5250,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-08"
+              "from": "2022-05-26",
+              "to": "2022-05-06"
             }
           ]
         },
         "PY": null,
         "J": {
-          "flightNo": "SQ951, SQ953, SQ957, SQ959, SQ965",
+          "flightNo": "SQ951, SQ957, SQ959, SQ965",
           "milesRequired": 13300,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-05"
+              "from": "2022-05-26",
+              "to": "2022-05-06"
+            }
+          ]
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ951, SQ957, SQ959, SQ965",
+          "milesRequired": 5250,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-06"
+            }
+          ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ951, SQ957, SQ959, SQ965",
+          "milesRequired": 13300,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-06"
             }
           ]
         }
@@ -45499,13 +48299,34 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ479",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ479",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ479",
+          "milesRequired": 34300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ479",
           "milesRequired": 17500,
           "blackoutPeriod": []
         },
-        "PY": null,
+        "PY": {
+          "flightNo": "SQ479",
+          "milesRequired": 25900,
+          "blackoutPeriod": []
+        },
         "J": {
           "flightNo": "SQ479",
           "milesRequired": 34300,
@@ -45656,6 +48477,279 @@
     }
   },
   {
+    "from": "Kathmandu",
+    "to": "Singapore",
+    "fromIata": "KTM",
+    "toIata": "SIN",
+    "region": "South Asia",
+    "details": {
+      "201711": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201712": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201801": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201803": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201804": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201805": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201806": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201807": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201810": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201811": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201812": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201901": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201903": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201904": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201905": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201906": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201907": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201908": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201909": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201910": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201911": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201912": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202001": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202002": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ439, SQ441",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ439, SQ441",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ439, SQ441",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ439, SQ441",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ439, SQ441",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ439, SQ441",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
+      "202206": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202207": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202208": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202209": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202210": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202211": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202212": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202301": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202302": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202303": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202304": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202305": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202306": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202307": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202308": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202309": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202310": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202311": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202312": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202401": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202402": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      }
+    }
+  },
+  {
     "from": "Kochi",
     "to": "Singapore",
     "fromIata": "KCZ",
@@ -45787,18 +48881,30 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ535",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
         "PY": null,
         "J": {
           "flightNo": "SQ535",
           "milesRequired": 27300,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-01",
-              "to": "2022-05-20"
-            }
-          ]
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ535",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ535",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
         }
       },
       "202206": {
@@ -46248,6 +49354,19 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ517",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ517",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ517",
@@ -46255,7 +49374,11 @@
           "blackoutPeriod": []
         },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ517",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": {
@@ -46758,10 +49881,31 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ103, SQ107, SQ125",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ103, SQ107, SQ125",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ103, SQ107, SQ125",
+          "milesRequired": 5250,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ103, SQ107, SQ125",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": {
@@ -47328,9 +50472,40 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ305",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ305",
+          "milesRequired": 45150,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-10"
+            }
+          ]
+        },
+        "J": null
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
+        "Y": {
+          "flightNo": "SQ305",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ305",
+          "milesRequired": 45150,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-10"
+            }
+          ]
+        },
         "J": null
       },
       "202206": {
@@ -47690,10 +50865,55 @@
         },
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ11, SQ35",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ11, SQ35",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ11, SQ35",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31",
+              "flightNos": [
+                "SQ11"
+              ]
+            }
+          ]
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ11, SQ35",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ11, SQ35",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ11, SQ35",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31",
+              "flightNos": [
+                "SQ11"
+              ]
+            }
+          ]
+        }
       },
       "202206": {
         "Y": null,
@@ -48072,16 +51292,20 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ431, SQ437",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ431, SQ437",
           "milesRequired": 12950,
-          "blackoutPeriod": [
-            {
-              "from": "2022-05-01",
-              "to": "2022-05-08"
-            }
-          ]
+          "blackoutPeriod": []
         },
         "PY": null,
         "J": null
@@ -48649,6 +51873,19 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ915, SQ917, SQ919, SQ921",
+          "milesRequired": 8750,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ915, SQ917, SQ919, SQ921",
+          "milesRequired": 15050,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ915, SQ917, SQ919, SQ921",
@@ -49130,6 +52367,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -49544,10 +52786,81 @@
         },
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ218, SQ238",
+          "milesRequired": 19600,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-30",
+              "flightNos": [
+                "SQ238"
+              ]
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ228",
+          "milesRequired": 32900,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-01",
+              "to": "2022-05-03",
+              "flightNos": [
+                "SQ228"
+              ]
+            }
+          ]
+        },
+        "J": {
+          "flightNo": "SQ218, SQ238",
+          "milesRequired": 43400,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-18"
+            }
+          ]
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ218, SQ238",
+          "milesRequired": 19600,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-30",
+              "flightNos": [
+                "SQ238"
+              ]
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ228",
+          "milesRequired": 32900,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-01",
+              "to": "2022-05-03",
+              "flightNos": [
+                "SQ228"
+              ]
+            }
+          ]
+        },
+        "J": {
+          "flightNo": "SQ218, SQ238",
+          "milesRequired": 43400,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-18"
+            }
+          ]
+        }
       },
       "202206": {
         "Y": null,
@@ -50470,10 +53783,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ355, SQ377",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ355, SQ377",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ355, SQ377",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ355, SQ377",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ355, SQ377",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ355, SQ377",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -50791,6 +54133,23 @@
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ421, SQ423",
+          "milesRequired": 12950,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ423",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ421, SQ423",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
       },
       "202205": {
         "Y": {
@@ -51286,10 +54645,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ327, SQ331",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ327, SQ331",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ327, SQ331",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ327, SQ331",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ327, SQ331",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ327, SQ331",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -51807,10 +55195,31 @@
           ]
         }
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ671",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ671",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ671",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ671",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -52087,14 +55496,36 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ401, SQ403",
+          "milesRequired": 12950,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-06"
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ403",
+          "milesRequired": 22400,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ401, SQ403",
+          "milesRequired": 27300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ401, SQ403",
           "milesRequired": 12950,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-15"
+              "from": "2022-04-01",
+              "to": "2022-04-06"
             }
           ]
         },
@@ -52503,14 +55934,39 @@
         },
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ25",
+          "milesRequired": 28000,
+          "blackoutPeriod": []
+        },
         "PY": {
           "flightNo": "SQ21",
           "milesRequired": 51100,
           "blackoutPeriod": []
         },
-        "J": null
+        "J": {
+          "flightNo": "SQ21",
+          "milesRequired": 69300,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ25",
+          "milesRequired": 28000,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ21",
+          "milesRequired": 51100,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ21",
+          "milesRequired": 69300,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -52955,10 +56411,31 @@
         "PY": null,
         "J": null
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ623",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ623",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ623",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ623",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -53302,9 +56779,30 @@
         },
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ335",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ335",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": null
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
+        "Y": {
+          "flightNo": "SQ335",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ335",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
         "J": null
       },
       "202206": {
@@ -53572,6 +57070,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -54054,9 +57557,22 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ214, SQ216, SQ224",
+          "milesRequired": 14000,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ216, SQ224",
+          "milesRequired": 25500,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
-          "flightNo": "SQ216, SQ224",
+          "flightNo": "SQ214, SQ216, SQ224",
           "milesRequired": 14000,
           "blackoutPeriod": []
         },
@@ -54363,6 +57879,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -54754,13 +58275,17 @@
           ]
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ725, SQ727",
+          "flightNo": "SQ723, SQ725, SQ727",
           "milesRequired": 8750,
           "blackoutPeriod": [
             {
-              "from": "2022-05-02",
+              "from": "2022-04-15",
+              "to": "2022-04-25"
+            },
+            {
+              "from": "2022-05-30",
               "to": "2022-05-05"
             }
           ]
@@ -54771,7 +58296,42 @@
           "milesRequired": 15050,
           "blackoutPeriod": [
             {
-              "from": "2022-05-02",
+              "from": "2022-04-15",
+              "to": "2022-04-25"
+            },
+            {
+              "from": "2022-05-30",
+              "to": "2022-05-05"
+            }
+          ]
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ723, SQ725, SQ727",
+          "milesRequired": 8750,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-15",
+              "to": "2022-04-25"
+            },
+            {
+              "from": "2022-05-30",
+              "to": "2022-05-05"
+            }
+          ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ723, SQ725, SQ727",
+          "milesRequired": 15050,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-15",
+              "to": "2022-04-25"
+            },
+            {
+              "from": "2022-05-30",
               "to": "2022-05-05"
             }
           ]
@@ -55092,10 +58652,31 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": {
+          "flightNo": "SQ351",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ351",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": null,
-        "PY": null,
-        "J": null
+        "PY": {
+          "flightNo": "SQ351",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ351",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -55411,10 +58992,59 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ31",
+          "milesRequired": 26600,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-05",
+              "to": "2022-05-31"
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ31, SQ33",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ31, SQ33",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ31",
+          "milesRequired": 26600,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-05",
+              "to": "2022-05-31"
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ31, SQ33",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ31, SQ33",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
       },
       "202206": {
         "Y": null,
@@ -55660,6 +59290,279 @@
             }
           ]
         },
+        "J": null
+      }
+    }
+  },
+  {
+    "from": "Seattle",
+    "to": "Singapore",
+    "fromIata": "SEA",
+    "toIata": "SIN",
+    "region": "USA",
+    "details": {
+      "201711": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201712": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201801": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201803": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201804": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201805": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201806": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201807": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201810": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201811": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201812": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201901": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201903": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201904": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201905": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201906": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201907": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201908": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201909": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201910": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201911": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201912": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202001": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202002": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ27",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ27",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ27",
+          "milesRequired": 66500,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ27",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ27",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ27",
+          "milesRequired": 66500,
+          "blackoutPeriod": []
+        }
+      },
+      "202206": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202207": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202208": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202209": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202210": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202211": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202212": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202301": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202302": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202303": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202304": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202305": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202306": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202307": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202308": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202309": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202310": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202311": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202312": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202401": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202402": {
+        "Y": null,
+        "PY": null,
         "J": null
       }
     }
@@ -55992,10 +59895,31 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
-        "Y": null,
+      "202204": {
+        "Y": {
+          "flightNo": "SQ601, SQ607",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
         "PY": null,
-        "J": null
+        "J": {
+          "flightNo": "SQ601, SQ607",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ601, SQ607",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ601, SQ607",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -56540,6 +60464,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -56935,6 +60864,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -57196,14 +61130,18 @@
         "PY": null,
         "J": null
       },
-      "202205": {
+      "202204": {
         "Y": {
           "flightNo": "SQ163, SQ165",
           "milesRequired": 8750,
           "blackoutPeriod": [
             {
-              "from": "2022-05-02",
-              "to": "2022-05-05"
+              "from": "2022-04-13",
+              "to": "2022-04-18"
+            },
+            {
+              "from": "2022-04-29",
+              "to": "2022-04-30"
             }
           ]
         },
@@ -57213,8 +61151,43 @@
           "milesRequired": 15050,
           "blackoutPeriod": [
             {
-              "from": "2022-05-02",
-              "to": "2022-05-05"
+              "from": "2022-04-13",
+              "to": "2022-04-18"
+            },
+            {
+              "from": "2022-04-29",
+              "to": "2022-04-30"
+            }
+          ]
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ163, SQ165",
+          "milesRequired": 8750,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-13",
+              "to": "2022-04-18"
+            },
+            {
+              "from": "2022-04-29",
+              "to": "2022-04-30"
+            }
+          ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ163, SQ165",
+          "milesRequired": 15050,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-13",
+              "to": "2022-04-18"
+            },
+            {
+              "from": "2022-04-29",
+              "to": "2022-04-30"
             }
           ]
         }
@@ -57635,14 +61608,32 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ923, SQ927, SQ929",
+          "milesRequired": 5250,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-27",
+              "to": "2022-05-06"
+            }
+          ]
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ923",
+          "milesRequired": 13300,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ923, SQ927, SQ929",
           "milesRequired": 5250,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-07"
+              "from": "2022-05-27",
+              "to": "2022-05-06"
             }
           ]
         },
@@ -58349,23 +62340,55 @@
           "blackoutPeriod": []
         }
       },
-      "202205": {
+      "202204": {
         "Y": {
-          "flightNo": "SQ212, SQ242",
+          "flightNo": "SQ212, SQ222, SQ232, SQ242",
           "milesRequired": 19600,
           "blackoutPeriod": [
             {
-              "from": "2022-05-01",
-              "to": "2022-05-08"
+              "from": "2022-04-01",
+              "to": "2022-04-30",
+              "flightNos": [
+                "SQ232"
+              ]
             }
           ]
         },
         "PY": {
-          "flightNo": "SQ212",
+          "flightNo": "SQ212, SQ222",
           "milesRequired": 32900,
           "blackoutPeriod": []
         },
-        "J": null
+        "J": {
+          "flightNo": "SQ212, SQ242",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ212, SQ222, SQ232, SQ242",
+          "milesRequired": 19600,
+          "blackoutPeriod": [
+            {
+              "from": "2022-04-01",
+              "to": "2022-04-30",
+              "flightNos": [
+                "SQ232"
+              ]
+            }
+          ]
+        },
+        "PY": {
+          "flightNo": "SQ212, SQ222",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ212, SQ242",
+          "milesRequired": 43400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -59314,6 +63337,19 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ877, SQ879",
+          "milesRequired": 10500,
+          "blackoutPeriod": []
+        },
+        "PY": null,
+        "J": {
+          "flightNo": "SQ877, SQ879",
+          "milesRequired": 21350,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
         "Y": {
           "flightNo": "SQ877, SQ879",
@@ -59743,10 +63779,322 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ637, SQ11",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ11",
+          "milesRequired": 24150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ11",
+          "milesRequired": 32900,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
+      },
       "202205": {
+        "Y": {
+          "flightNo": "SQ637, SQ11",
+          "milesRequired": 17500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ11",
+          "milesRequired": 24150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ11",
+          "milesRequired": 32900,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
+      },
+      "202206": {
         "Y": null,
         "PY": null,
         "J": null
+      },
+      "202207": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202208": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202209": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202210": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202211": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202212": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202301": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202302": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202303": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202304": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202305": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202306": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202307": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202308": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202309": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202310": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202311": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202312": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202401": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202402": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      }
+    }
+  },
+  {
+    "from": "Vancouver",
+    "to": "Singapore",
+    "fromIata": "YVR",
+    "toIata": "SIN",
+    "region": "USA",
+    "details": {
+      "201711": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201712": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201801": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201803": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201804": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201805": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201806": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201807": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201810": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201811": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201812": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201901": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201903": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201904": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201905": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201906": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201907": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201908": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201909": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201910": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201911": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "201912": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202001": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202002": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ27",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ27",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ27",
+          "milesRequired": 66500,
+          "blackoutPeriod": []
+        }
+      },
+      "202205": {
+        "Y": {
+          "flightNo": "SQ27",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ27",
+          "milesRequired": 47600,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ27",
+          "milesRequired": 66500,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -60015,6 +64363,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -60255,6 +64608,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -60641,6 +64999,11 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -60957,10 +65320,39 @@
           "blackoutPeriod": []
         }
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ345",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ345",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ345",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ345",
+          "milesRequired": 26600,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ345",
+          "milesRequired": 45150,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ345",
+          "milesRequired": 64400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -61244,10 +65636,39 @@
         },
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ26",
+          "milesRequired": 15570,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ26",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ26",
+          "milesRequired": 50400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ26",
+          "milesRequired": 15570,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ26",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ26",
+          "milesRequired": 50400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -61853,6 +66274,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -62101,6 +66527,11 @@
         "J": null
       },
       "202003": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
+      "202204": {
         "Y": null,
         "PY": null,
         "J": null
@@ -62362,10 +66793,49 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ11",
+          "milesRequired": 24500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ11",
+          "milesRequired": 46200,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ11",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ11",
+          "milesRequired": 24500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ11",
+          "milesRequired": 46200,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ11",
+          "milesRequired": 66500,
+          "blackoutPeriod": [
+            {
+              "from": "2022-05-26",
+              "to": "2022-05-31"
+            }
+          ]
+        }
       },
       "202206": {
         "Y": null,
@@ -62695,6 +67165,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -62981,10 +67456,39 @@
         },
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ25",
+          "milesRequired": 15570,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ25",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ25",
+          "milesRequired": 50400,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ25",
+          "milesRequired": 15570,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ25",
+          "milesRequired": 32900,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ25",
+          "milesRequired": 50400,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,
@@ -63469,6 +67973,11 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": null,
+        "PY": null,
+        "J": null
+      },
       "202205": {
         "Y": null,
         "PY": null,
@@ -63722,10 +68231,39 @@
         "PY": null,
         "J": null
       },
+      "202204": {
+        "Y": {
+          "flightNo": "SQ12",
+          "milesRequired": 24500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ12",
+          "milesRequired": 46200,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ12",
+          "milesRequired": 66500,
+          "blackoutPeriod": []
+        }
+      },
       "202205": {
-        "Y": null,
-        "PY": null,
-        "J": null
+        "Y": {
+          "flightNo": "SQ12",
+          "milesRequired": 24500,
+          "blackoutPeriod": []
+        },
+        "PY": {
+          "flightNo": "SQ12",
+          "milesRequired": 46200,
+          "blackoutPeriod": []
+        },
+        "J": {
+          "flightNo": "SQ12",
+          "milesRequired": 66500,
+          "blackoutPeriod": []
+        }
       },
       "202206": {
         "Y": null,

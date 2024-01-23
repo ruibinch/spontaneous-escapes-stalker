@@ -8,6 +8,7 @@ import { formatCity } from './parseRedemptionTables';
 
 process.env.TZ = 'UTC';
 
+const OUTPUT_FILEPATH = process.env['OUTPUT_FILEPATH'];
 // Should be in the format `data/YYYYMM-content.tsv`
 const TSV_FILEPATH = process.env['TSV_FILEPATH'];
 const TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS = [
@@ -84,7 +85,7 @@ function parseFromTsvFile() {
     redemptionEndDate,
   }));
 
-  createOrUpdateRedemptionsFile({ redemptionPeriod, redemptionsData });
+  createRedemptionsOutputFile({ redemptionPeriod, redemptionsData });
 }
 
 /**
@@ -112,19 +113,43 @@ function parseSection(rows: string[], flightClassCategory: 'J/Y' | 'PY') {
 
       const economyRedemption = parseSingleEntry({
         region: cells[0],
-        from: cells[1],
+        from: cleanCellContent(
+          cells[1],
+          TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS[1],
+        ),
         flightClass: FlightClass.ECONOMY,
-        milesRequiredText: cells[2],
-        flightNo: cells[3],
-        blackoutPeriodText: cells[4],
+        milesRequiredText: cleanCellContent(
+          cells[2],
+          TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS[2],
+        ),
+        flightNo: cleanCellContent(
+          cells[3],
+          TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS[3],
+        ),
+        blackoutPeriodText: cleanCellContent(
+          cells[4],
+          TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS[4],
+        ),
       });
       const businessRedemption = parseSingleEntry({
         region: cells[0],
-        from: cells[1],
+        from: cleanCellContent(
+          cells[1],
+          TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS[1],
+        ),
         flightClass: FlightClass.BUSINESS,
-        milesRequiredText: cells[5],
-        flightNo: cells[6],
-        blackoutPeriodText: cells[7],
+        milesRequiredText: cleanCellContent(
+          cells[5],
+          TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS[5],
+        ),
+        flightNo: cleanCellContent(
+          cells[6],
+          TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS[6],
+        ),
+        blackoutPeriodText: cleanCellContent(
+          cells[7],
+          TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS[7],
+        ),
       });
       if (economyRedemption) {
         redemptions.push(economyRedemption);
@@ -143,11 +168,23 @@ function parseSection(rows: string[], flightClassCategory: 'J/Y' | 'PY') {
 
       const premiumEconomyRedemption = parseSingleEntry({
         region: cells[0],
-        from: cells[1],
+        from: cleanCellContent(
+          cells[1],
+          TSV_PREMIUM_ECONOMY_SECTION_COLUMNS[1],
+        ),
         flightClass: FlightClass.PREMIUM_ECONOMY,
-        milesRequiredText: cells[2],
-        flightNo: cells[3],
-        blackoutPeriodText: cells[4],
+        milesRequiredText: cleanCellContent(
+          cells[2],
+          TSV_PREMIUM_ECONOMY_SECTION_COLUMNS[2],
+        ),
+        flightNo: cleanCellContent(
+          cells[3],
+          TSV_PREMIUM_ECONOMY_SECTION_COLUMNS[3],
+        ),
+        blackoutPeriodText: cleanCellContent(
+          cells[4],
+          TSV_PREMIUM_ECONOMY_SECTION_COLUMNS[4],
+        ),
       });
       if (premiumEconomyRedemption) {
         redemptions.push(premiumEconomyRedemption);
@@ -215,7 +252,7 @@ function getHeaderRowIdx(fileContent: string[], headerCols: string[]) {
   return index === -1 ? undefined : index;
 }
 
-function createOrUpdateRedemptionsFile({
+function createRedemptionsOutputFile({
   redemptionPeriod,
   redemptionsData,
 }: {
@@ -225,19 +262,20 @@ function createOrUpdateRedemptionsFile({
   const redemptions = redemptionsData.map((redemptionInfo) =>
     Redemption.create(redemptionInfo),
   );
-  const redemptionsFilepath = `data/${redemptionPeriod}-redemptions.json`;
-  const redemptionsExisting = (() => {
-    if (!fs.existsSync(redemptionsFilepath)) return [];
+  const redemptionsFilepath =
+    OUTPUT_FILEPATH ?? `data/${redemptionPeriod}-redemptions.json`;
 
-    const redemptionsString = fs.readFileSync(redemptionsFilepath).toString();
-    return JSON.parse(redemptionsString) as RedemptionJson[];
-  })();
+  fs.writeFileSync(redemptionsFilepath, JSON.stringify(redemptions, null, 2));
+}
 
-  const redemptionsUpdated = [...redemptionsExisting, ...redemptions];
-  fs.writeFileSync(
-    redemptionsFilepath,
-    JSON.stringify(redemptionsUpdated, null, 2),
-  );
+/**
+ * The cell value can contain the column name in addition to the value, e.g.
+ * "FROM Singapore to Bali" instead of "Singapore to Bali".
+ *
+ * In such cases, we remove the column name from the cell.
+ */
+function cleanCellContent(content: string, textToRemove: string) {
+  return content.replace(textToRemove, '').trim();
 }
 
 if (require.main === module) {

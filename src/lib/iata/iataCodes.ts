@@ -81,6 +81,7 @@ const iataCodes: Record<string, string> = {
   Tokyo: 'NRT', // TODO: defined as a default fallback option for now
   // 'Tokyo (Haneda)': 'HND',
   // 'Tokyo (Narita)': 'NRT',
+  Vancouver: 'YVR',
   Wellington: 'WLG',
   Xiamen: 'XMN',
   Yangon: 'RGN',
