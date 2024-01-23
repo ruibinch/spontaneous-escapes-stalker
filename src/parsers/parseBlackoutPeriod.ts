@@ -171,18 +171,21 @@ function splitBlackoutPeriodString(blackoutPeriodString: string) {
 /**
  * Finds the from/to dates of a single blackout period entry.
  *
- * @param blackoutPeriodStringRaw e.g. "3 – 5 July 2023" / "5 July 2023"
+ * @param blackoutPeriodStringRaw e.g. "3 – 5 July 2023" / "4 July - 6 July 2023" / "5 July 2023"
  */
 function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
   const separator = POSSIBLE_DASHES.find((sep) =>
     blackoutPeriodStringRaw.includes(sep),
   );
+  const yearOptionalRegex = '(\\s\\d{4})?';
+  const monthRegex = '\\s[a-zA-Z]+';
+  const monthOptionalRegex = `(${monthRegex})?`;
+  const dayRegex = '\\d{1,2}';
+
   // use a regex to extract only the date component from the string, in case the string contains irrelevant extra chars
   const blackoutPeriodString = (() => {
-    const dayRegex = '\\d{1,2}';
-    const dayRangeRegex = `${dayRegex}\\s?${separator}\\s?${dayRegex}`;
-    const monthRegex = '\\s[a-zA-Z]+';
-    const yearOptionalRegex = '(\\s\\d{4})?';
+    // monthOptionalRegex is to cover cases like "4 July - 6 July"
+    const dayRangeRegex = `${dayRegex}${monthOptionalRegex}\\s?${separator}\\s?${dayRegex}`;
     const re = new RegExp(
       separator
         ? `${dayRangeRegex}${monthRegex}${yearOptionalRegex}`
@@ -213,10 +216,13 @@ function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
     };
   }
 
-  // blackout period is a date range, e.g. "3 – 5 July 2023" / "3 – 5 July"
+  // blackout period is a date range, e.g. "3 – 5 July 2023" / "3 – 5 July" / "3 July - 5 July"
   // then, fromDay = 3, toDate = 5 July 2023
   const blackoutPeriodStringSplit = blackoutPeriodString.split(separator);
-  const fromDay = blackoutPeriodStringSplit[0].trim();
+  // convert "3 July" to "3"
+  const fromDay = blackoutPeriodStringSplit[0]
+    .replace(new RegExp(monthRegex), '')
+    .trim();
   const toDateSplit = blackoutPeriodStringSplit[1].trim().split(' ');
   const toDay = toDateSplit[0];
   const toMonth = spellcheckMonth(toDateSplit[1]);
