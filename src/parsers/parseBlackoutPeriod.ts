@@ -13,9 +13,9 @@ interface BlackoutPeriodStringByFlightNo {
 
 export function parseBlackoutPeriod(blackoutPeriodString: string) {
   // if input value is just a dash, there is no blackout period
-  const hasNoBlackoutPeriod = POSSIBLE_DASHES.some(
-    (dash) => blackoutPeriodString.trim() === dash,
-  );
+  const hasNoBlackoutPeriod =
+    POSSIBLE_DASHES.some((dash) => blackoutPeriodString.trim() === dash) ||
+    new RegExp(/^\s+$/g).test(blackoutPeriodString);
   if (hasNoBlackoutPeriod) return [];
 
   try {
