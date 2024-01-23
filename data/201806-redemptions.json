@@ -365,7 +365,7 @@
     "origin": "Singapore",
     "destination": "Colombo",
     "flightClass": "Economy",
-    "flightNo": "SQ468",
+    "flightNo": "SQ468,MI428",
     "milesRequired": 12950,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -387,7 +387,7 @@
     "origin": "Colombo",
     "destination": "Singapore",
     "flightClass": "Economy",
-    "flightNo": "SQ469",
+    "flightNo": "SQ469,MI427",
     "milesRequired": 12950,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -605,7 +605,11 @@
     "blackoutPeriod": [
       {
         "from": "2018-06-01",
-        "to": "2018-06-15"
+        "to": "2018-06-15",
+        "flightNos": [
+          "SQ221",
+          "SQ231"
+        ]
       }
     ],
     "region": "South West Pacific",
@@ -621,7 +625,11 @@
     "blackoutPeriod": [
       {
         "from": "2018-06-01",
-        "to": "2018-06-15"
+        "to": "2018-06-15",
+        "flightNos": [
+          "SQ221",
+          "SQ231"
+        ]
       }
     ],
     "region": "South West Pacific",
@@ -769,5 +777,235 @@
     "region": "Europe",
     "redemptionEndDate": "2018-05-31",
     "sortKey": "Business#Düsseldorf#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Balikpapan",
+    "flightClass": "Economy",
+    "flightNo": "MI134 / MI138",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Balikpapan"
+  },
+  {
+    "origin": "Balikpapan",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI133 / MI137",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Balikpapan#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Makassar",
+    "flightClass": "Economy",
+    "flightNo": "MI142 / MI144",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Makassar"
+  },
+  {
+    "origin": "Makassar",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI141 / MI143",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Makassar#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Luang Prabang",
+    "flightClass": "Economy",
+    "flightNo": "MI787",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Luang Prabang"
+  },
+  {
+    "origin": "Luang Prabang",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI787",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Luang Prabang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phnom Penh",
+    "flightClass": "Economy",
+    "flightNo": "MI602 / MI606 / MI608",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Phnom Penh"
+  },
+  {
+    "origin": "Phnom Penh",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI601 / MI605 / MI607",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Phnom Penh#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Siem Reap",
+    "flightClass": "Economy",
+    "flightNo": "MI614 / MI616",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Siem Reap"
+  },
+  {
+    "origin": "Siem Reap",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI613 / MI615",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Siem Reap#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Vientiane",
+    "flightClass": "Economy",
+    "flightNo": "MI787",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Vientiane"
+  },
+  {
+    "origin": "Vientiane",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI787",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Vientiane#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Yangon",
+    "flightClass": "Economy",
+    "flightNo": "MI512 / MI518 / MI511",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Yangon"
+  },
+  {
+    "origin": "Yangon",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI519 / MI522 / MI533",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Yangon#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Fuzhou",
+    "flightClass": "Economy",
+    "flightNo": "MI996",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Fuzhou"
+  },
+  {
+    "origin": "Fuzhou",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI995",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Fuzhou#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shenzhen",
+    "flightClass": "Economy",
+    "flightNo": "MI962 / MI966",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Shenzhen"
+  },
+  {
+    "origin": "Shenzhen",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI961 / MI965",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Shenzhen#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hiroshima",
+    "flightClass": "Economy",
+    "flightNo": "MI868",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-06-09",
+        "to": "2018-06-11"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Singapore#Hiroshima"
+  },
+  {
+    "origin": "Hiroshima",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI867",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-06-16",
+        "to": "2018-06-21"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-05-31",
+    "sortKey": "Economy#Hiroshima#Singapore"
   }
 ]

@@ -1,0 +1,2797 @@
+[
+  {
+    "origin": "Singapore",
+    "destination": "Guangzhou",
+    "flightClass": "Economy",
+    "flightNo": "SQ850 / SQ852",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Guangzhou"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Guangzhou",
+    "flightClass": "Business",
+    "flightNo": "SQ850/ SQ852",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Guangzhou"
+  },
+  {
+    "origin": "Guangzhou",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ851 / SQ853",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Guangzhou#Singapore"
+  },
+  {
+    "origin": "Guangzhou",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ853",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Guangzhou#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hong Kong",
+    "flightClass": "Economy",
+    "flightNo": "SQ866 / SQ868 / SQ872",
+    "milesRequired": 10500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-04"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Hong Kong"
+  },
+  {
+    "origin": "Hong Kong",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ847 / SQ861 / SQ863/ SQ891",
+    "milesRequired": 10500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-04"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Hong Kong#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Taipei",
+    "flightClass": "Economy",
+    "flightNo": "SQ876 / SQ878",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Taipei"
+  },
+  {
+    "origin": "Taipei",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ877 / SQ879",
+    "milesRequired": 10500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-08"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Taipei#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Beijing",
+    "flightClass": "Economy",
+    "flightNo": "SQ800 / SQ802 / SQ806",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Beijing"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Beijing",
+    "flightClass": "Business",
+    "flightNo": "SQ800 / SQ802 / SQ806",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Beijing"
+  },
+  {
+    "origin": "Beijing",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ801 / SQ805 / SQ807",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Beijing#Singapore"
+  },
+  {
+    "origin": "Beijing",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ801 / SQ805 / SQ807",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Beijing#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shanghai",
+    "flightClass": "Economy",
+    "flightNo": "SQ826 / SQ828 / SQ830 / SQ836",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Shanghai"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shanghai",
+    "flightClass": "Business",
+    "flightNo": "SQ826 / SQ828 / SQ830 / SQ836",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Shanghai"
+  },
+  {
+    "origin": "Shanghai",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ825 / SQ827 / SQ831 / SQ833",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Shanghai#Singapore"
+  },
+  {
+    "origin": "Shanghai",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ825 / SQ827 / SQ831 / SQ833",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-21",
+        "to": "2018-01-31"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Shanghai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Nagoya",
+    "flightClass": "Economy",
+    "flightNo": "SQ672",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Nagoya"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Nagoya",
+    "flightClass": "Business",
+    "flightNo": "SQ672",
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Nagoya"
+  },
+  {
+    "origin": "Nagoya",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ671",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Nagoya#Singapore"
+  },
+  {
+    "origin": "Nagoya",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ671",
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Nagoya#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Ahmedabad",
+    "flightClass": "Business",
+    "flightNo": "SQ530",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Ahmedabad"
+  },
+  {
+    "origin": "Ahmedabad",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ531",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Ahmedabad#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bengaluru",
+    "flightClass": "Business",
+    "flightNo": "SQ502,MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Bengaluru"
+  },
+  {
+    "origin": "Bengaluru",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ503,MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Bengaluru#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kolkata",
+    "flightClass": "Business",
+    "flightNo": "SQ516,MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kolkata"
+  },
+  {
+    "origin": "Kolkata",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ517,MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kolkata#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Mumbai",
+    "flightClass": "Business",
+    "flightNo": "SQ422 / SQ426",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Mumbai"
+  },
+  {
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ421 / SQ425",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Mumbai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Cape Town",
+    "flightClass": "Economy",
+    "flightNo": "SQ478",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-17"
+      }
+    ],
+    "region": "Africa",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Cape Town"
+  },
+  {
+    "origin": "Cape Town",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ479",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-17"
+      }
+    ],
+    "region": "Africa",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Cape Town#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Johannesburg",
+    "flightClass": "Economy",
+    "flightNo": "SQ478",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-17"
+      }
+    ],
+    "region": "Africa",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Johannesburg"
+  },
+  {
+    "origin": "Johannesburg",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ479",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-17"
+      }
+    ],
+    "region": "Africa",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Johannesburg#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Amsterdam",
+    "flightClass": "Business",
+    "flightNo": "SQ324",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-05",
+        "to": "2018-01-08"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Amsterdam"
+  },
+  {
+    "origin": "Amsterdam",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ323",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-02",
+        "to": "2018-01-09"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Amsterdam#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Copenhagen",
+    "flightClass": "Business",
+    "flightNo": "SQ352",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-05",
+        "to": "2018-01-11"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Copenhagen"
+  },
+  {
+    "origin": "Copenhagen",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ351",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-13"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Copenhagen#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Dusseldorf",
+    "flightClass": "Economy",
+    "flightNo": "SQ338",
+    "milesRequired": 26600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-13"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Dusseldorf"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Dusseldorf",
+    "flightClass": "Business",
+    "flightNo": "SQ338",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-07"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Dusseldorf"
+  },
+  {
+    "origin": "Dusseldorf",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ337",
+    "milesRequired": 26600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-13"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Dusseldorf#Singapore"
+  },
+  {
+    "origin": "Dusseldorf",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ337",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-07"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Dusseldorf#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Paris",
+    "flightClass": "Economy",
+    "flightNo": "SQ334 / SQ336",
+    "milesRequired": 26600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-02",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Paris"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Paris",
+    "flightClass": "Business",
+    "flightNo": "SQ334 / SQ336",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-05",
+        "to": "2018-01-08"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Paris"
+  },
+  {
+    "origin": "Paris",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ333 / SQ335",
+    "milesRequired": 26600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-02",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Paris#Singapore"
+  },
+  {
+    "origin": "Paris",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ333 / SQ335",
+    "milesRequired": 59500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Europe",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Paris#Singapore"
+  },
+  {
+    "origin": "Darwin",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI802 / MI804",
+    "milesRequired": 12000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Darwin#Singapore"
+  },
+  {
+    "origin": "Darwin",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI802/ MI804",
+    "milesRequired": 19500,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Darwin#Singapore"
+  },
+  {
+    "origin": "Perth",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ214 / SQ216 / SQ224 / SQ226",
+    "milesRequired": 12000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-14"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Perth#Singapore"
+  },
+  {
+    "origin": "Perth",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ214 / SQ216 / SQ224 / SQ226",
+    "milesRequired": 19500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-14"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Perth#Singapore"
+  },
+  {
+    "origin": "Adelaide",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ276 / SQ278",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Adelaide#Singapore"
+  },
+  {
+    "origin": "Adelaide",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ276 / SQ278",
+    "milesRequired": 34800,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Adelaide#Singapore"
+  },
+  {
+    "origin": "Brisbane",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ236 / SQ246 / SQ256 / SQ266",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Brisbane#Singapore"
+  },
+  {
+    "origin": "Brisbane",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ236 / SQ246 / SQ256 / SQ266",
+    "milesRequired": 34800,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Brisbane#Singapore"
+  },
+  {
+    "origin": "Canberra",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ292",
+    "milesRequired": 34800,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Canberra#Singapore"
+  },
+  {
+    "origin": "Cairns",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI812 / MI814",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-10"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Cairns#Singapore"
+  },
+  {
+    "origin": "Cairns",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI812/ MI814",
+    "milesRequired": 34800,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Cairns#Singapore"
+  },
+  {
+    "origin": "Sydney",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "SQ222 / SQ242 / SQ252",
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-16"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Sydney#Singapore"
+  },
+  {
+    "origin": "Sydney",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "SQ222 / SQ242 / SQ252",
+    "milesRequired": 34800,
+    "blackoutPeriod": [
+      {
+        "from": "2018-01-01",
+        "to": "2018-01-16"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Sydney#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bandung",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Bandung"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bandung",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Bandung"
+  },
+  {
+    "origin": "Bandung",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Bandung#Singapore"
+  },
+  {
+    "origin": "Bandung",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Bandung#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Denpasar",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Denpasar"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Denpasar",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Denpasar"
+  },
+  {
+    "origin": "Denpasar",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Denpasar#Singapore"
+  },
+  {
+    "origin": "Denpasar",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Denpasar#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kalimantan",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Kalimantan"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kalimantan",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kalimantan"
+  },
+  {
+    "origin": "Kalimantan",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Kalimantan#Singapore"
+  },
+  {
+    "origin": "Kalimantan",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kalimantan#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kota Kinabalu",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Kota Kinabalu"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kota Kinabalu",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kota Kinabalu"
+  },
+  {
+    "origin": "Kota Kinabalu",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Kota Kinabalu#Singapore"
+  },
+  {
+    "origin": "Kota Kinabalu",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kota Kinabalu#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kuala Lumpur",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Kuala Lumpur"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kuala Lumpur",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kuala Lumpur"
+  },
+  {
+    "origin": "Kuala Lumpur",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Kuala Lumpur#Singapore"
+  },
+  {
+    "origin": "Kuala Lumpur",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kuala Lumpur#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kuching",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Kuching"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kuching",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kuching"
+  },
+  {
+    "origin": "Kuching",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Kuching#Singapore"
+  },
+  {
+    "origin": "Kuching",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kuching#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Langkawi",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Langkawi"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Langkawi",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Langkawi"
+  },
+  {
+    "origin": "Langkawi",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Langkawi#Singapore"
+  },
+  {
+    "origin": "Langkawi",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Langkawi#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Lombok",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Lombok"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Lombok",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Lombok"
+  },
+  {
+    "origin": "Lombok",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Lombok#Singapore"
+  },
+  {
+    "origin": "Lombok",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Lombok#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Makassar",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Makassar"
+  },
+  {
+    "origin": "Makassar",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Makassar#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Manado",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Manado"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Manado",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Manado"
+  },
+  {
+    "origin": "Manado",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Manado#Singapore"
+  },
+  {
+    "origin": "Manado",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Manado#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Medan",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Medan"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Medan",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Medan"
+  },
+  {
+    "origin": "Medan",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Medan#Singapore"
+  },
+  {
+    "origin": "Medan",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Medan#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Pekanbaru",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Pekanbaru"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Pekanbaru",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Pekanbaru"
+  },
+  {
+    "origin": "Pekanbaru",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Pekanbaru#Singapore"
+  },
+  {
+    "origin": "Pekanbaru",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Pekanbaru#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Penang",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Penang"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Penang",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Penang"
+  },
+  {
+    "origin": "Penang",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Penang#Singapore"
+  },
+  {
+    "origin": "Penang",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Penang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Semarang",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Semarang"
+  },
+  {
+    "origin": "Semarang",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Semarang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Surabaya",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Surabaya"
+  },
+  {
+    "origin": "Surabaya",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Surabaya#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Yogyakarta",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Yogyakarta"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Yogyakarta",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Yogyakarta"
+  },
+  {
+    "origin": "Yogyakarta",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Yogyakarta#Singapore"
+  },
+  {
+    "origin": "Yogyakarta",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Yogyakarta#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Cebu",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Cebu"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Cebu",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Cebu"
+  },
+  {
+    "origin": "Cebu",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Cebu#Singapore"
+  },
+  {
+    "origin": "Cebu",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Cebu#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chiang Mai",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Chiang Mai"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chiang Mai",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Chiang Mai"
+  },
+  {
+    "origin": "Chiang Mai",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Chiang Mai#Singapore"
+  },
+  {
+    "origin": "Chiang Mai",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Chiang Mai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Da Nang",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Da Nang"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Da Nang",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Da Nang"
+  },
+  {
+    "origin": "Da Nang",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Da Nang#Singapore"
+  },
+  {
+    "origin": "Da Nang",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Da Nang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Davao",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Davao"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Davao",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Davao"
+  },
+  {
+    "origin": "Davao",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Davao#Singapore"
+  },
+  {
+    "origin": "Davao",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Davao#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hanoi",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Hanoi"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hanoi",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Hanoi"
+  },
+  {
+    "origin": "Hanoi",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Hanoi#Singapore"
+  },
+  {
+    "origin": "Hanoi",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Hanoi#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kalibo",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Kalibo"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kalibo",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kalibo"
+  },
+  {
+    "origin": "Kalibo",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Kalibo#Singapore"
+  },
+  {
+    "origin": "Kalibo",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kalibo#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Koh Samui",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Koh Samui"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Koh Samui",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Koh Samui"
+  },
+  {
+    "origin": "Koh Samui",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Koh Samui#Singapore"
+  },
+  {
+    "origin": "Koh Samui",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Koh Samui#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Luang Prabang",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Luang Prabang"
+  },
+  {
+    "origin": "Luang Prabang",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Luang Prabang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Mandalay",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Mandalay"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Mandalay",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Mandalay"
+  },
+  {
+    "origin": "Mandalay",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Mandalay#Singapore"
+  },
+  {
+    "origin": "Mandalay",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Mandalay#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phnom Penh",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Phnom Penh"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phnom Penh",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Phnom Penh"
+  },
+  {
+    "origin": "Phnom Penh",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Phnom Penh#Singapore"
+  },
+  {
+    "origin": "Phnom Penh",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Phnom Penh#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phuket",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Phuket"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phuket",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Phuket"
+  },
+  {
+    "origin": "Phuket",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Phuket#Singapore"
+  },
+  {
+    "origin": "Phuket",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Phuket#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Siem Reap",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Siem Reap"
+  },
+  {
+    "origin": "Siem Reap",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Siem Reap#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Vientiane",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Vientiane"
+  },
+  {
+    "origin": "Vientiane",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Vientiane#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Yangon",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Yangon"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Yangon",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Yangon"
+  },
+  {
+    "origin": "Yangon",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Yangon#Singapore"
+  },
+  {
+    "origin": "Yangon",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Yangon#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Changsha",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Changsha"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Changsha",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Changsha"
+  },
+  {
+    "origin": "Changsha",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Changsha#Singapore"
+  },
+  {
+    "origin": "Changsha",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Changsha#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chengdu",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Chengdu"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chengdu",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Chengdu"
+  },
+  {
+    "origin": "Chengdu",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Chengdu#Singapore"
+  },
+  {
+    "origin": "Chengdu",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Chengdu#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chongqing",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Chongqing"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chongqing",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Chongqing"
+  },
+  {
+    "origin": "Chongqing",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Chongqing#Singapore"
+  },
+  {
+    "origin": "Chongqing",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Chongqing#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Fuzhou",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Fuzhou"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Fuzhou",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Fuzhou"
+  },
+  {
+    "origin": "Fuzhou",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Fuzhou#Singapore"
+  },
+  {
+    "origin": "Fuzhou",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Fuzhou#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kunming",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Kunming"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kunming",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kunming"
+  },
+  {
+    "origin": "Kunming",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Kunming#Singapore"
+  },
+  {
+    "origin": "Kunming",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kunming#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shenzhen",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Shenzhen"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shenzhen",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Shenzhen"
+  },
+  {
+    "origin": "Shenzhen",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Shenzhen#Singapore"
+  },
+  {
+    "origin": "Shenzhen",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Shenzhen#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Wuhan",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Wuhan"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Wuhan",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Wuhan"
+  },
+  {
+    "origin": "Wuhan",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Wuhan#Singapore"
+  },
+  {
+    "origin": "Wuhan",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Wuhan#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Xiamen",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Xiamen"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Xiamen",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Xiamen"
+  },
+  {
+    "origin": "Xiamen",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Xiamen#Singapore"
+  },
+  {
+    "origin": "Xiamen",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Xiamen#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hiroshima",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 17500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Hiroshima"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hiroshima",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Hiroshima"
+  },
+  {
+    "origin": "Hiroshima",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 17500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Hiroshima#Singapore"
+  },
+  {
+    "origin": "Hiroshima",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Hiroshima#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bengaluru",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Bengaluru"
+  },
+  {
+    "origin": "Bengaluru",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Bengaluru#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chennai",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Chennai"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chennai",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Chennai"
+  },
+  {
+    "origin": "Chennai",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Chennai#Singapore"
+  },
+  {
+    "origin": "Chennai",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Chennai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Coimbatore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Coimbatore"
+  },
+  {
+    "origin": "Coimbatore",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Coimbatore#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Colombo",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Colombo"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Colombo",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Colombo"
+  },
+  {
+    "origin": "Colombo",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Colombo#Singapore"
+  },
+  {
+    "origin": "Colombo",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Colombo#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hyderabad",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Hyderabad"
+  },
+  {
+    "origin": "Hyderabad",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Hyderabad#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kathmandu",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Kathmandu"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kathmandu",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kathmandu"
+  },
+  {
+    "origin": "Kathmandu",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Kathmandu#Singapore"
+  },
+  {
+    "origin": "Kathmandu",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kathmandu#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kochi",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Kochi"
+  },
+  {
+    "origin": "Kochi",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Kochi#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kolkata",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Kolkata"
+  },
+  {
+    "origin": "Kolkata",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Kolkata#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Male",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Male"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Male",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Male"
+  },
+  {
+    "origin": "Male",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Male#Singapore"
+  },
+  {
+    "origin": "Male",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Male#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Trivandrum",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Trivandrum"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Trivandrum",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Trivandrum"
+  },
+  {
+    "origin": "Trivandrum",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Trivandrum#Singapore"
+  },
+  {
+    "origin": "Trivandrum",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Trivandrum#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Visakhapatnam",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Singapore#Visakhapatnam"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Visakhapatnam",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Singapore#Visakhapatnam"
+  },
+  {
+    "origin": "Visakhapatnam",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Economy#Visakhapatnam#Singapore"
+  },
+  {
+    "origin": "Visakhapatnam",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI?",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2017-12-31",
+    "sortKey": "Business#Visakhapatnam#Singapore"
+  }
+]

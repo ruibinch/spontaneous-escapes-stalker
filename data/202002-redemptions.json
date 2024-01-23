@@ -3,7 +3,7 @@
     "origin": "Singapore",
     "destination": "Kuala Lumpur",
     "flightClass": "Economy",
-    "flightNo": "SQ112, SQ116",
+    "flightNo": "SQ112, SQ116,MI320, MI326, MI328, MI330, MI340, MI342",
     "milesRequired": 3675,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -14,7 +14,7 @@
     "origin": "Singapore",
     "destination": "Kuala Lumpur",
     "flightClass": "Business",
-    "flightNo": "SQ112, SQ116, SQ118",
+    "flightNo": "SQ112, SQ116, SQ118,MI320, MI326, MI328, MI330, MI340, MI342",
     "milesRequired": 9310,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -25,7 +25,7 @@
     "origin": "Kuala Lumpur",
     "destination": "Singapore",
     "flightClass": "Economy",
-    "flightNo": "SQ107",
+    "flightNo": "SQ107,MI319, MI321, MI323, MI325, MI341",
     "milesRequired": 3675,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -36,7 +36,7 @@
     "origin": "Kuala Lumpur",
     "destination": "Singapore",
     "flightClass": "Business",
-    "flightNo": "SQ107",
+    "flightNo": "SQ107,MI319, MI321, MI323, MI325, MI341",
     "milesRequired": 9310,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -69,7 +69,7 @@
     "origin": "Singapore",
     "destination": "Surabaya",
     "flightClass": "Economy",
-    "flightNo": "SQ930, SQ932",
+    "flightNo": "SQ930, SQ932,MI224, MI226",
     "milesRequired": 3675,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -91,7 +91,7 @@
     "origin": "Surabaya",
     "destination": "Singapore",
     "flightClass": "Economy",
-    "flightNo": "SQ931, SQ933",
+    "flightNo": "SQ931, SQ933,MI223, MI225",
     "milesRequired": 3675,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -133,7 +133,7 @@
     "origin": "Singapore",
     "destination": "Bali",
     "flightClass": "Business",
-    "flightNo": "SQ938, SQ942, SQ946, SQ948",
+    "flightNo": "SQ938, SQ942, SQ946, SQ948,MI176",
     "milesRequired": 9310,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -155,7 +155,7 @@
     "origin": "Bali",
     "destination": "Singapore",
     "flightClass": "Business",
-    "flightNo": "SQ939, SQ943, SQ947, SQ949",
+    "flightNo": "SQ939, SQ943, SQ947, SQ949,MI175",
     "milesRequired": 9310,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -166,7 +166,7 @@
     "origin": "Singapore",
     "destination": "Hanoi",
     "flightClass": "Economy",
-    "flightNo": "SQ176, SQ188",
+    "flightNo": "SQ176, SQ188,MI654",
     "milesRequired": 6125,
     "blackoutPeriod": [
       {
@@ -182,7 +182,7 @@
     "origin": "Hanoi",
     "destination": "Singapore",
     "flightClass": "Economy",
-    "flightNo": "SQ175, SQ187",
+    "flightNo": "SQ175, SQ187,MI653",
     "milesRequired": 6125,
     "blackoutPeriod": [
       {
@@ -318,7 +318,7 @@
     "origin": "Phuket",
     "destination": "Singapore",
     "flightClass": "Economy",
-    "flightNo": "SQ993",
+    "flightNo": "SQ993,MI749",
     "milesRequired": 6125,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -329,7 +329,7 @@
     "origin": "Phuket",
     "destination": "Singapore",
     "flightClass": "Business",
-    "flightNo": "SQ993",
+    "flightNo": "SQ993,MI749, MI753",
     "milesRequired": 10535,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -977,7 +977,7 @@
     "origin": "Singapore",
     "destination": "Malé",
     "flightClass": "Economy",
-    "flightNo": "SQ452",
+    "flightNo": "SQ452,MI480",
     "milesRequired": 9065,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -1004,7 +1004,7 @@
     "origin": "Malé",
     "destination": "Singapore",
     "flightClass": "Economy",
-    "flightNo": "SQ451",
+    "flightNo": "SQ451,MI479",
     "milesRequired": 9065,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -1929,5 +1929,566 @@
     "region": "USA",
     "redemptionEndDate": "2020-01-31",
     "sortKey": "Premium Economy#New York#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Penang",
+    "flightClass": "Economy",
+    "flightNo": "MI346, MI348, MI350, MI352, MI354, MI356",
+    "milesRequired": 3675,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-01"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Penang"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Penang",
+    "flightClass": "Business",
+    "flightNo": "MI346, MI348, MI350, MI352, MI354, MI356",
+    "milesRequired": 9310,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Penang"
+  },
+  {
+    "origin": "Penang",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI345, MI347, MI349, MI351, MI353, MI355",
+    "milesRequired": 3675,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-03"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Penang#Singapore"
+  },
+  {
+    "origin": "Penang",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI345, MI347, MI349, MI351, MI353, MI355",
+    "milesRequired": 9310,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Penang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bandung",
+    "flightClass": "Economy",
+    "flightNo": "MI192, MI194, MI196",
+    "milesRequired": 3675,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Bandung"
+  },
+  {
+    "origin": "Bandung",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI191, MI193, MI195",
+    "milesRequired": 3675,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Bandung#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Lombok",
+    "flightClass": "Economy",
+    "flightNo": "MI124, MI128",
+    "milesRequired": 3675,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Lombok"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Lombok",
+    "flightClass": "Business",
+    "flightNo": "MI124, MI128",
+    "milesRequired": 9310,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Lombok"
+  },
+  {
+    "origin": "Lombok",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI123, MI127",
+    "milesRequired": 3675,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Lombok#Singapore"
+  },
+  {
+    "origin": "Lombok",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI123, MI127",
+    "milesRequired": 9310,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Lombok#Singapore"
+  },
+  {
+    "origin": "Medan",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI237",
+    "milesRequired": 3675,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Medan#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Davao City",
+    "flightClass": "Business",
+    "flightNo": "MI562",
+    "milesRequired": 10535,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Davao City"
+  },
+  {
+    "origin": "Davao City",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI562",
+    "milesRequired": 10535,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Davao City#Singapore"
+  },
+  {
+    "origin": "Cebu",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI559",
+    "milesRequired": 6125,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Cebu#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phuket",
+    "flightClass": "Economy",
+    "flightNo": "MI756",
+    "milesRequired": 6125,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Phuket"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phuket",
+    "flightClass": "Business",
+    "flightNo": "MI754, MI756",
+    "milesRequired": 10535,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Phuket"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phnom Penh",
+    "flightClass": "Economy",
+    "flightNo": "MI602, MI606, MI608",
+    "milesRequired": 6125,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Phnom Penh"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phnom Penh",
+    "flightClass": "Business",
+    "flightNo": "MI602, MI606, MI608",
+    "milesRequired": 10535,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Phnom Penh"
+  },
+  {
+    "origin": "Phnom Penh",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI601, MI605, MI607",
+    "milesRequired": 6125,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Phnom Penh#Singapore"
+  },
+  {
+    "origin": "Phnom Penh",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI601, MI605, MI607",
+    "milesRequired": 10535,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Phnom Penh#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chengdu",
+    "flightClass": "Economy",
+    "flightNo": "MI938",
+    "milesRequired": 7350,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-15"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Chengdu"
+  },
+  {
+    "origin": "Chengdu",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI935, MI937",
+    "milesRequired": 7350,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-05"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Chengdu#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chongqing",
+    "flightClass": "Economy",
+    "flightNo": "MI972, MI976, MI980",
+    "milesRequired": 7350,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Chongqing"
+  },
+  {
+    "origin": "Chongqing",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI971, MI975, MI979",
+    "milesRequired": 7350,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-05"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Chongqing#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shenzhen",
+    "flightClass": "Economy",
+    "flightNo": "MI962, MI966, MI968",
+    "milesRequired": 7350,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-07"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Shenzhen"
+  },
+  {
+    "origin": "Shenzhen",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI961, MI965, MI980",
+    "milesRequired": 7350,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-05"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Shenzhen#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Xiamen",
+    "flightClass": "Economy",
+    "flightNo": "MI922",
+    "milesRequired": 7350,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Xiamen"
+  },
+  {
+    "origin": "Xiamen",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI921",
+    "milesRequired": 7350,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-05"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Xiamen#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hiroshima",
+    "flightClass": "Economy",
+    "flightNo": "MI868",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Hiroshima"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Hiroshima",
+    "flightClass": "Business",
+    "flightNo": "MI868",
+    "milesRequired": 23030,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Hiroshima"
+  },
+  {
+    "origin": "Hiroshima",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI867",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Hiroshima#Singapore"
+  },
+  {
+    "origin": "Hiroshima",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI867",
+    "milesRequired": 23030,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Hiroshima#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chennai",
+    "flightClass": "Business",
+    "flightNo": "MI436",
+    "milesRequired": 19110,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Chennai"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kochi",
+    "flightClass": "Economy",
+    "flightNo": "MI462, MI468",
+    "milesRequired": 9065,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Kochi"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kochi",
+    "flightClass": "Business",
+    "flightNo": "MI462, MI468",
+    "milesRequired": 19110,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Kochi"
+  },
+  {
+    "origin": "Kochi",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI461, MI467",
+    "milesRequired": 19110,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Kochi#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kathmandu",
+    "flightClass": "Business",
+    "flightNo": "MI416",
+    "milesRequired": 19110,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Kathmandu"
+  },
+  {
+    "origin": "Kathmandu",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI415",
+    "milesRequired": 19110,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Kathmandu#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Darwin",
+    "flightClass": "Economy",
+    "flightNo": "MI801, MI803",
+    "milesRequired": 9800,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Darwin"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Darwin",
+    "flightClass": "Business",
+    "flightNo": "MI801, MI803",
+    "milesRequired": 17885,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Darwin"
+  },
+  {
+    "origin": "Darwin",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI802, MI804",
+    "milesRequired": 9800,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Darwin#Singapore"
+  },
+  {
+    "origin": "Darwin",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI802, MI804",
+    "milesRequired": 17885,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Darwin#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Cairns",
+    "flightClass": "Economy",
+    "flightNo": "MI811, MI813",
+    "milesRequired": 13720,
+    "blackoutPeriod": [
+      {
+        "from": "2020-02-01",
+        "to": "2020-02-12"
+      }
+    ],
+    "region": "Australia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Singapore#Cairns"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Cairns",
+    "flightClass": "Business",
+    "flightNo": "MI811, MI813",
+    "milesRequired": 30380,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Singapore#Cairns"
+  },
+  {
+    "origin": "Cairns",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI812, MI814",
+    "milesRequired": 13720,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Economy#Cairns#Singapore"
+  },
+  {
+    "origin": "Cairns",
+    "destination": "Singapore",
+    "flightClass": "Business",
+    "flightNo": "MI812, MI814",
+    "milesRequired": 30380,
+    "blackoutPeriod": [],
+    "region": "Australia",
+    "redemptionEndDate": "2020-01-31",
+    "sortKey": "Business#Cairns#Singapore"
   }
 ]

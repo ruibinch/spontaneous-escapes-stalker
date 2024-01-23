@@ -477,8 +477,8 @@
     "origin": "Singapore",
     "destination": "Paris",
     "flightClass": "Business",
-    "flightNo": "59,500",
-    "milesRequired": 334,
+    "flightNo": "SQ334",
+    "milesRequired": 59500,
     "blackoutPeriod": [
       {
         "from": "2017-11-04",
@@ -509,8 +509,8 @@
     "origin": "Paris",
     "destination": "Singapore",
     "flightClass": "Business",
-    "flightNo": "59,500",
-    "milesRequired": 333,
+    "flightNo": "SQ333",
+    "milesRequired": 59500,
     "blackoutPeriod": [
       {
         "from": "2017-11-04",
@@ -531,5 +531,137 @@
     "region": "Europe",
     "redemptionEndDate": "2017-10-31",
     "sortKey": "Economy#Singapore#Zurich"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bandung",
+    "flightClass": "Economy",
+    "flightNo": "MI192, MI194,MI196",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Singapore#Bandung"
+  },
+  {
+    "origin": "Bandung",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI191, MI193,MI195",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Bandung#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Pekanbaru",
+    "flightClass": "Economy",
+    "flightNo": "MI254, MI258",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Singapore#Pekanbaru"
+  },
+  {
+    "origin": "Pekanbaru",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI253, MI257",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Pekanbaru#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Semarang",
+    "flightClass": "Economy",
+    "flightNo": "MI102, MI104",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Singapore#Semarang"
+  },
+  {
+    "origin": "Semarang",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI101, MI103",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Semarang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kalimantan",
+    "flightClass": "Economy",
+    "flightNo": "MI134, MI138",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Singapore#Kalimantan"
+  },
+  {
+    "origin": "Kalimantan",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI133, MI137",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Kalimantan#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Da Nang",
+    "flightClass": "Economy",
+    "flightNo": "MI632, MI636",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Singapore#Da Nang"
+  },
+  {
+    "origin": "Da Nang",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI631",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Da Nang#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shenzhen",
+    "flightClass": "Economy",
+    "flightNo": "MI962, MI966",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Singapore#Shenzhen"
+  },
+  {
+    "origin": "Shenzhen",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI961, MI965",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2017-10-31",
+    "sortKey": "Economy#Shenzhen#Singapore"
   }
 ]

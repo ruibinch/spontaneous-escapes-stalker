@@ -398,5 +398,233 @@
     "region": "Europe",
     "redemptionEndDate": "2018-02-28",
     "sortKey": "Business#Dusseldorf#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Kalimantan",
+    "flightClass": "Economy",
+    "flightNo": "MI134 / MI138",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Kalimantan"
+  },
+  {
+    "origin": "Kalimantan",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI133 / MI137",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Kalimantan#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Pekanbaru",
+    "flightClass": "Economy",
+    "flightNo": "MI254 / MI258",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Pekanbaru"
+  },
+  {
+    "origin": "Pekanbaru",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI253 / MI257",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Pekanbaru#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Phnom Penh",
+    "flightClass": "Economy",
+    "flightNo": "MI602 / MI606 / MI608",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-29",
+        "to": "2018-03-30"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Phnom Penh"
+  },
+  {
+    "origin": "Phnom Penh",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI601 / MI605 / MI607",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-29",
+        "to": "2018-03-30"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Phnom Penh#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Shenzhen",
+    "flightClass": "Economy",
+    "flightNo": "MI962 / MI966",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Shenzhen"
+  },
+  {
+    "origin": "Shenzhen",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI961 / MI965",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Shenzhen#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Fuzhou",
+    "flightClass": "Economy",
+    "flightNo": "MI992 / MI996",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Fuzhou"
+  },
+  {
+    "origin": "Fuzhou",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI991 / MI995",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Fuzhou#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Bengaluru",
+    "flightClass": "Economy",
+    "flightNo": "MI424",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Bengaluru"
+  },
+  {
+    "origin": "Bengaluru",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI423",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Bengaluru#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Chennai",
+    "flightClass": "Economy",
+    "flightNo": "MI436",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Chennai"
+  },
+  {
+    "origin": "Chennai",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI435",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Chennai#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Cairns",
+    "flightClass": "Economy",
+    "flightNo": "MI811 / MI813",
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "South West Pacific",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Cairns"
+  },
+  {
+    "origin": "Cairns",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI812 / MI814",
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "South West Pacific",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Cairns#Singapore"
+  },
+  {
+    "origin": "Singapore",
+    "destination": "Darwin",
+    "flightClass": "Economy",
+    "flightNo": "MI801 / MI803",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "South West Pacific",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Singapore#Darwin"
+  },
+  {
+    "origin": "Darwin",
+    "destination": "Singapore",
+    "flightClass": "Economy",
+    "flightNo": "MI802 / MI804",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "South West Pacific",
+    "redemptionEndDate": "2018-02-28",
+    "sortKey": "Economy#Darwin#Singapore"
   }
 ]

@@ -59,6 +59,7 @@ function parseFromTsvFile() {
     subDays(redemptionPeriodStart, 1).toISOString().split('T')[0],
   );
 
+  console.log(`📖 Reading from ${TSV_FILEPATH}\n`);
   const tsvFileContent = fs.readFileSync(TSV_FILEPATH).toString().split('\r\n');
   const headerRowsIdxs = getHeaderRowsIdxs({
     fileContent: tsvFileContent,
@@ -313,6 +314,7 @@ function createRedemptionsOutputFile({
   const redemptionsFilepath =
     OUTPUT_FILEPATH ?? `data/${redemptionPeriod}-redemptions.json`;
 
+  console.log(`📄 Writing to ${redemptionsFilepath}`);
   fs.writeFileSync(redemptionsFilepath, JSON.stringify(redemptions, null, 2));
 }
 
