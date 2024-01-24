@@ -1,4 +1,4 @@
-import { iata } from '../lib/iata/iataCodes';
+import { iata } from '../lib/iata/iata';
 import { FlightClass, RedemptionJsonPostprocessed } from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
 import { FlightClassCode, Month, Route } from './types';

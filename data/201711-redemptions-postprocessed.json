@@ -518,8 +518,8 @@
     "destination": "Paris",
     "destinationIata": "CDG",
     "flightClass": "Business",
-    "flightNo": "59,500",
-    "milesRequired": 334,
+    "flightNo": "SQ334",
+    "milesRequired": 59500,
     "blackoutPeriod": [
       {
         "from": "2017-11-04",
@@ -552,8 +552,8 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "59,500",
-    "milesRequired": 333,
+    "flightNo": "SQ333",
+    "milesRequired": 59500,
     "blackoutPeriod": [
       {
         "from": "2017-11-04",
@@ -573,6 +573,150 @@
     "milesRequired": 26600,
     "blackoutPeriod": [],
     "region": "Europe",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bandung",
+    "destinationIata": "BDO",
+    "flightClass": "Economy",
+    "flightNo": "MI192, MI194,MI196",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Bandung",
+    "originIata": "BDO",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI191, MI193,MI195",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Pekanbaru",
+    "destinationIata": "PKU",
+    "flightClass": "Economy",
+    "flightNo": "MI254, MI258",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Pekanbaru",
+    "originIata": "PKU",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI253, MI257",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Semarang",
+    "destinationIata": "SRG",
+    "flightClass": "Economy",
+    "flightNo": "MI102, MI104",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Semarang",
+    "originIata": "SRG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI101, MI103",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Balikpapan",
+    "destinationIata": "BPN",
+    "flightClass": "Economy",
+    "flightNo": "MI134, MI138",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Balikpapan",
+    "originIata": "BPN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI133, MI137",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Da Nang",
+    "destinationIata": "DAD",
+    "flightClass": "Economy",
+    "flightNo": "MI632, MI636",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Da Nang",
+    "originIata": "DAD",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI631",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Shenzhen",
+    "destinationIata": "SZX",
+    "flightClass": "Economy",
+    "flightNo": "MI962, MI966",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201711"
+  },
+  {
+    "origin": "Shenzhen",
+    "originIata": "SZX",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI961, MI965",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
     "redemptionMonth": "201711"
   }
 ]

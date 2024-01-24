@@ -37,7 +37,7 @@ export function generateMonthSummaryAnalysis({
     let middleEastAndAfricaRegionCount = 0;
     let southwestPacificRegionCount = 0;
     let europeRegionCount = 0;
-    let usaRegionCount = 0;
+    let northAmericaRegionCount = 0;
 
     redemptionsForMonth.forEach(({ flightClass, region }) => {
       switch (flightClass) {
@@ -73,8 +73,8 @@ export function generateMonthSummaryAnalysis({
         case Region.EUROPE:
           europeRegionCount += 1;
           break;
-        case Region.USA:
-          usaRegionCount += 1;
+        case Region.NORTH_AMERICA:
+          northAmericaRegionCount += 1;
           break;
         default:
           break;
@@ -96,7 +96,7 @@ export function generateMonthSummaryAnalysis({
         'Middle East & Africa': middleEastAndAfricaRegionCount,
         'Southwest Pacific': southwestPacificRegionCount,
         Europe: europeRegionCount,
-        USA: usaRegionCount,
+        'North America': northAmericaRegionCount,
       },
     });
   });

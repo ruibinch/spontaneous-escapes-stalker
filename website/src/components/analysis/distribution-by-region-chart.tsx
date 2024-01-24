@@ -66,7 +66,8 @@ export function DistributionByRegionChart({
     (month) => monthSummaryAnalysisDict[month]?.byRegion?.[Region.EUROPE] ?? 0,
   );
   const usaRegionDataset = months.map(
-    (month) => monthSummaryAnalysisDict[month]?.byRegion?.[Region.USA] ?? 0,
+    (month) =>
+      monthSummaryAnalysisDict[month]?.byRegion?.[Region.NORTH_AMERICA] ?? 0,
   );
 
   const options = {
@@ -130,7 +131,7 @@ export function DistributionByRegionChart({
         pointRadius: 2,
       },
       {
-        label: Region.USA,
+        label: Region.NORTH_AMERICA,
         data: usaRegionDataset,
         borderColor: '#ef4444', // red-500
         borderWidth: 1,

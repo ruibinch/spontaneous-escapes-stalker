@@ -1,4 +1,4 @@
-import { iata } from '../lib/iata/iataCodes';
+import { iata } from '../lib/iata/iata';
 import { RedemptionJson, RedemptionJsonPostprocessed } from '../utils/types';
 
 /**

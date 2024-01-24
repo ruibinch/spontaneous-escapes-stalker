@@ -428,5 +428,251 @@
     "blackoutPeriod": [],
     "region": "Europe",
     "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Balikpapan",
+    "destinationIata": "BPN",
+    "flightClass": "Economy",
+    "flightNo": "MI134 / MI138",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Balikpapan",
+    "originIata": "BPN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI133 / MI137",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Pekanbaru",
+    "destinationIata": "PKU",
+    "flightClass": "Economy",
+    "flightNo": "MI254 / MI258",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Pekanbaru",
+    "originIata": "PKU",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI253 / MI257",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Phnom Penh",
+    "destinationIata": "PNH",
+    "flightClass": "Economy",
+    "flightNo": "MI602 / MI606 / MI608",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-29",
+        "to": "2018-03-30"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Phnom Penh",
+    "originIata": "PNH",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI601 / MI605 / MI607",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-29",
+        "to": "2018-03-30"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Shenzhen",
+    "destinationIata": "SZX",
+    "flightClass": "Economy",
+    "flightNo": "MI962 / MI966",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Shenzhen",
+    "originIata": "SZX",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI961 / MI965",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Fuzhou",
+    "destinationIata": "FOC",
+    "flightClass": "Economy",
+    "flightNo": "MI992 / MI996",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Fuzhou",
+    "originIata": "FOC",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI991 / MI995",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bangalore",
+    "destinationIata": "BLR",
+    "flightClass": "Economy",
+    "flightNo": "MI424",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Bangalore",
+    "originIata": "BLR",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI423",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Chennai",
+    "destinationIata": "MAA",
+    "flightClass": "Economy",
+    "flightNo": "MI436",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Chennai",
+    "originIata": "MAA",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI435",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Cairns",
+    "destinationIata": "CNS",
+    "flightClass": "Economy",
+    "flightNo": "MI811 / MI813",
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Cairns",
+    "originIata": "CNS",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI812 / MI814",
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Darwin",
+    "destinationIata": "DRW",
+    "flightClass": "Economy",
+    "flightNo": "MI801 / MI803",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Darwin",
+    "originIata": "DRW",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI802 / MI804",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
   }
 ]

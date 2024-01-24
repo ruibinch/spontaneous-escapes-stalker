@@ -50,7 +50,7 @@ export enum Region {
   MIDDLE_EAST_AND_AFRICA = 'Middle East & Africa',
   SOUTHWEST_PACIFIC = 'Southwest Pacific',
   EUROPE = 'Europe',
-  USA = 'USA',
+  NORTH_AMERICA = 'North America',
 }
 
 export interface BlackoutPeriod {
