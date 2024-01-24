@@ -2473,7 +2473,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Economy",
     "flightNo": "SQ26",
@@ -2485,7 +2485,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Business",
     "flightNo": "SQ26",
@@ -2495,7 +2495,7 @@
     "redemptionMonth": "202205"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -2507,7 +2507,7 @@
     "redemptionMonth": "202205"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -2746,7 +2746,7 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Economy",
     "flightNo": "SQ26",
@@ -2758,7 +2758,7 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Business",
     "flightNo": "SQ24",
@@ -2768,7 +2768,7 @@
     "redemptionMonth": "202205"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Singapore",
     "destinationIata": "SIN",
@@ -2780,7 +2780,7 @@
     "redemptionMonth": "202205"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Singapore",
     "destinationIata": "SIN",
@@ -2794,8 +2794,8 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
-    "destinationIata": "JFK",
+    "destination": "New York (Newark)",
+    "destinationIata": "EWR",
     "flightClass": "Business",
     "flightNo": "SQ22",
     "milesRequired": 69300,
@@ -2804,8 +2804,8 @@
     "redemptionMonth": "202205"
   },
   {
-    "origin": "New York",
-    "originIata": "JFK",
+    "origin": "New York (Newark)",
+    "originIata": "EWR",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
@@ -3413,7 +3413,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ26",
@@ -3423,7 +3423,7 @@
     "redemptionMonth": "202205"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -3533,7 +3533,7 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ24",
@@ -3543,7 +3543,7 @@
     "redemptionMonth": "202205"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Singapore",
     "destinationIata": "SIN",
@@ -3557,8 +3557,8 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
-    "destinationIata": "JFK",
+    "destination": "New York (Newark)",
+    "destinationIata": "EWR",
     "flightClass": "Premium Economy",
     "flightNo": "SQ22",
     "milesRequired": 51100,
@@ -3567,8 +3567,8 @@
     "redemptionMonth": "202205"
   },
   {
-    "origin": "New York",
-    "originIata": "JFK",
+    "origin": "New York (Newark)",
+    "originIata": "EWR",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",

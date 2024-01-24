@@ -1564,7 +1564,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Economy",
     "flightNo": "SQ26",
@@ -1574,7 +1574,7 @@
     "redemptionMonth": "202002"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -2062,8 +2062,8 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
-    "destinationIata": "JFK",
+    "destination": "New York (Newark)",
+    "destinationIata": "EWR",
     "flightClass": "Premium Economy",
     "flightNo": "SQ22",
     "milesRequired": 35770,
@@ -2072,8 +2072,8 @@
     "redemptionMonth": "202002"
   },
   {
-    "origin": "New York",
-    "originIata": "JFK",
+    "origin": "New York (Newark)",
+    "originIata": "EWR",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",

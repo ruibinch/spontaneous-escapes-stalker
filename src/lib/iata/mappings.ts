@@ -77,10 +77,8 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Munich: { iata: 'MUC', region: Region.EUROPE },
   Nagoya: { iata: 'NGO', region: Region.NORTH_ASIA },
   'New Delhi': { iata: 'DEL', region: Region.SOUTH_ASIA },
-  // TODO: defined as a default fallback option for now
-  'New York': { iata: 'JFK', region: Region.NORTH_AMERICA },
-  // 'New York (JFK)': { iata: 'JFK', region: Region.NORTH_AMERICA },
-  // 'New York (Newark)': { iata: 'EWR', region: Region.NORTH_AMERICA },
+  'New York (JFK)': { iata: 'JFK', region: Region.NORTH_AMERICA },
+  'New York (Newark)': { iata: 'EWR', region: Region.NORTH_AMERICA },
   Osaka: { iata: 'KIX', region: Region.NORTH_ASIA },
   Paris: { iata: 'CDG', region: Region.EUROPE },
   Penang: { iata: 'PEN', region: Region.SOUTH_EAST_ASIA },
@@ -100,7 +98,7 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Surabaya: { iata: 'SUB', region: Region.SOUTH_EAST_ASIA },
   Sydney: { iata: 'SYD', region: Region.SOUTHWEST_PACIFIC },
   Taipei: { iata: 'TPE', region: Region.NORTH_ASIA },
-  // TODO: defined as a default fallback option for now
+  // TODO: combine both HND/NRT into one for now as it's hard to separate by flight number
   Tokyo: { iata: 'NRT', region: Region.NORTH_ASIA },
   // 'Tokyo (Haneda)': { iata: 'HND', region: Region.NORTH_ASIA },
   // 'Tokyo (Narita)': { iata: 'NRT', region: Region.NORTH_ASIA },

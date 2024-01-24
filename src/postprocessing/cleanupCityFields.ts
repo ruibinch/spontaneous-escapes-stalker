@@ -13,11 +13,10 @@ const cityMapper: Record<string, string> = {
   Male: 'Malé',
   Kalimantan: 'Balikpapan',
   Narita: 'Tokyo',
-  'New York (JFK)': 'New York',
-  'New York (Newark)': 'New York',
   Sermarang: 'Semarang',
   'Siam Reap': 'Siem Reap',
   'Seoul (Incheon)': 'Seoul',
+  // TODO: don't combine both HND/NRT into one
   'Tokyo (Haneda)': 'Tokyo',
   'Tokyo (Narita)': 'Tokyo',
   Sinapore: 'Singapore',

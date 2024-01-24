@@ -4,6 +4,7 @@ import { RedemptionJson } from './utils/types';
 import { cleanupCityFields } from './postprocessing/cleanupCityFields';
 import { standardiseRegionField } from './postprocessing/standardiseRegionField';
 import { appendAndRemoveFields } from './postprocessing/appendAndRemoveFields';
+import { appendSpecificAirportNameToCity } from './postprocessing/appendSpecificAirportNameToCity';
 
 /**
  * Reads in the full list of redemptions.json files and generates a redemptions-postprocessed.json version.
@@ -40,6 +41,9 @@ export function postprocessing() {
   })();
 
   console.log('🧹 Postprocessing - cleaning up city fields');
+  console.log(
+    '🧹 Postprocessing - appending specific airport name for some cities',
+  );
   console.log('🧹 Postprocessing - standardising region fields');
   console.log('🧹 Postprocessing - appending redemptionMonth field\n');
 
@@ -56,11 +60,14 @@ export function postprocessing() {
     const redemptions = JSON.parse(redemptionsFileString) as RedemptionJson[];
 
     const redemptionsPostprocessed1 = cleanupCityFields(redemptions);
-    const redemptionsPostprocessed2 = standardiseRegionField(
+    const redemptionsPostprocessed2 = appendSpecificAirportNameToCity(
       redemptionsPostprocessed1,
     );
-    const redemptionsPostprocessed3 = appendAndRemoveFields({
-      redemptions: redemptionsPostprocessed2,
+    const redemptionsPostprocessed3 = standardiseRegionField(
+      redemptionsPostprocessed2,
+    );
+    const redemptionsPostprocessed4 = appendAndRemoveFields({
+      redemptions: redemptionsPostprocessed3,
       month,
     });
 
@@ -68,7 +75,7 @@ export function postprocessing() {
     console.log(`📄 Writing to ${redemptionPostprocessedFilename}`);
     fs.writeFileSync(
       redemptionPostprocessedFilename,
-      JSON.stringify(redemptionsPostprocessed3, null, 2),
+      JSON.stringify(redemptionsPostprocessed4, null, 2),
     );
   });
 }
