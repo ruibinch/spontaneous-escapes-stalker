@@ -18,6 +18,7 @@ const SINGAPORE_AIRLINES_DESTINATIONS_SECTION_NAME =
   />Singapore Airlines Destinations</i;
 const SINGAPORE_AIRLINES_SECTION_NAME = />Singapore Airlines</i;
 const SILKAIR_DESTINATIONS_SECTION_NAME = />SilkAir Destinations</i;
+const SILKAIR_SECTION_NAME = />SilkAir</i;
 
 /**
  * Extracts the relevant sections based on accordion style for further parsing.
@@ -57,11 +58,14 @@ export function parseRedemptionTables(root: HTMLElement) {
   const singaporeAirlinesDestinationsSection = accordions.find((e) =>
     e.toString().match(SINGAPORE_AIRLINES_DESTINATIONS_SECTION_NAME),
   );
+  const singaporeAirlinesSection = accordions.find((e) =>
+    e.toString().match(SINGAPORE_AIRLINES_SECTION_NAME),
+  );
   const silkairDestinationsSection = accordions.find((e) =>
     e.toString().match(SILKAIR_DESTINATIONS_SECTION_NAME),
   );
-  const singaporeAirlinesSection = accordions.find((e) =>
-    e.toString().match(SINGAPORE_AIRLINES_SECTION_NAME),
+  const silkairSection = accordions.find((e) =>
+    e.toString().match(SILKAIR_SECTION_NAME),
   );
 
   const redemptionsForBusinessAndEconomyClassSection = parseSection(
@@ -79,6 +83,7 @@ export function parseRedemptionTables(root: HTMLElement) {
   const redemptionsForSilkairDestinationsSection = parseSection(
     silkairDestinationsSection,
   );
+  const redemptionsForSilkairSection = parseSection(silkairSection);
 
   console.log(
     [
@@ -86,8 +91,9 @@ export function parseRedemptionTables(root: HTMLElement) {
       `  • Business and Economy Class Redemptions: ${redemptionsForBusinessAndEconomyClassSection.length}`,
       `  • Premium Economy Class Redemptions: ${redemptionsForPremiumEconomyClassSection.length}`,
       `  • Singapore Airlines Destinations: ${redemptionsForSingaporeAirlinesDestinationsSection.length}`,
+      `  • Singapore Airlines: ${redemptionsForSingaporeAirlinesSection.length}`,
       `  • SilkAir Destinations: ${redemptionsForSilkairDestinationsSection.length}`,
-      `  • Singapore Airlines: ${redemptionsForSingaporeAirlinesSection.length}\n`,
+      `  • SilkAir: ${redemptionsForSilkairSection.length}\n`,
     ].join('\n'),
   );
 
@@ -97,6 +103,7 @@ export function parseRedemptionTables(root: HTMLElement) {
     ...redemptionsForSingaporeAirlinesSection,
     ...redemptionsForPremiumEconomyClassSection,
     ...redemptionsForSilkairDestinationsSection,
+    ...redemptionsForSilkairSection,
   ];
   const redemptionsDeduped = dedupeRedemptions(redemptionsCombined);
   console.log(
