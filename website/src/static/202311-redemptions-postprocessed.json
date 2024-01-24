@@ -163,7 +163,7 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Medan",
-    "destinationIata": "MES",
+    "destinationIata": "KNO",
     "flightClass": "Economy",
     "flightNo": "SQ990",
     "milesRequired": 5950,
@@ -190,7 +190,7 @@
   },
   {
     "origin": "Medan",
-    "originIata": "MES",
+    "originIata": "KNO",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
@@ -1366,7 +1366,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Economy",
     "flightNo": "SQ26",
@@ -1377,13 +1377,13 @@
         "to": "2023-11-01"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202311"
   },
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Business",
     "flightNo": "SQ26",
@@ -1394,11 +1394,11 @@
         "to": "2023-11-07"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202311"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1432,7 +1432,7 @@
         "to": "2023-11-30"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202311"
   },
   {
@@ -1453,7 +1453,7 @@
         "to": "2023-11-30"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202311"
   },
   {
@@ -1677,7 +1677,7 @@
         "to": "2023-11-28"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202311"
   },
   {
@@ -1700,17 +1700,17 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ26",
     "milesRequired": 36400,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202311"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1739,7 +1739,7 @@
     "flightNo": "SQ34",
     "milesRequired": 52500,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202311"
   }
 ]

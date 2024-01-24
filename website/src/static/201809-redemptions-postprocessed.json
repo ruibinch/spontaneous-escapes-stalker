@@ -1,0 +1,2021 @@
+[
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Jakarta",
+    "destinationIata": "JKT",
+    "flightClass": "Economy",
+    "flightNo": "SQ950",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Jakarta",
+    "originIata": "JKT",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ951",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kuala Lumpur",
+    "destinationIata": "KUL",
+    "flightClass": "Economy",
+    "flightNo": "SQ116",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kuala Lumpur",
+    "destinationIata": "KUL",
+    "flightClass": "Business",
+    "flightNo": "SQ116, SQ118",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Kuala Lumpur",
+    "originIata": "KUL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ107",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Kuala Lumpur",
+    "originIata": "KUL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ107",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Surabaya",
+    "destinationIata": "SUB",
+    "flightClass": "Economy",
+    "flightNo": "SQ930",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Surabaya",
+    "destinationIata": "SUB",
+    "flightClass": "Business",
+    "flightNo": "SQ930",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Surabaya",
+    "originIata": "SUB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ931",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Surabaya",
+    "originIata": "SUB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ931",
+    "milesRequired": 12250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bangkok",
+    "destinationIata": "BKK",
+    "flightClass": "Economy",
+    "flightNo": "SQ976, SQ978, SQ982",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-09"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bangkok",
+    "destinationIata": "BKK",
+    "flightClass": "Business",
+    "flightNo": "SQ976, SQ978, SQ982",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-09"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Bangkok",
+    "originIata": "BKK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ973, SQ975, SQ981",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-09"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Bangkok",
+    "originIata": "BKK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ973, SQ975, SQ981",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-09"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hanoi",
+    "destinationIata": "HAN",
+    "flightClass": "Economy",
+    "flightNo": "SQ188",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hanoi",
+    "destinationIata": "HAN",
+    "flightClass": "Business",
+    "flightNo": "SQ188",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Hanoi",
+    "originIata": "HAN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ175, SQ187",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Hanoi",
+    "originIata": "HAN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ175, SQ187",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Ho Chi Minh City",
+    "destinationIata": "SGN",
+    "flightClass": "Economy",
+    "flightNo": "SQ184, SQ186",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Ho Chi Minh City",
+    "destinationIata": "SGN",
+    "flightClass": "Business",
+    "flightNo": "SQ184, SQ186",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Ho Chi Minh City",
+    "originIata": "SGN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ177, SQ183",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Ho Chi Minh City",
+    "originIata": "SGN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ177, SQ183",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Manila",
+    "destinationIata": "MNL",
+    "flightClass": "Economy",
+    "flightNo": "SQ912, SQ916, SQ918",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Manila",
+    "destinationIata": "MNL",
+    "flightClass": "Business",
+    "flightNo": "SQ912, SQ916, SQ918",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Manila",
+    "originIata": "MNL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ915, SQ919, SQ921",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Manila",
+    "originIata": "MNL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ915, SQ919, SQ921",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Yangon",
+    "destinationIata": "RGN",
+    "flightClass": "Economy",
+    "flightNo": "SQ998",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Yangon",
+    "destinationIata": "RGN",
+    "flightClass": "Business",
+    "flightNo": "SQ998",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Yangon",
+    "originIata": "RGN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ997",
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Yangon",
+    "originIata": "RGN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ997",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hong Kong",
+    "destinationIata": "HKG",
+    "flightClass": "Economy",
+    "flightNo": "SQ890, SQ860, SQ856, SQ866, SQ872",
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hong Kong",
+    "destinationIata": "HKG",
+    "flightClass": "Business",
+    "flightNo": "SQ890, SQ860, SQ856, SQ866, SQ872",
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Hong Kong",
+    "originIata": "HKG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ857, SQ891, SQ863, SQ861, SQ865",
+    "milesRequired": 10500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-28",
+        "to": "2018-09-30"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Hong Kong",
+    "originIata": "HKG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ857, SQ891, SQ863, SQ861, SQ865",
+    "milesRequired": 19250,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-28",
+        "to": "2018-09-30"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Beijing",
+    "destinationIata": "PEK",
+    "flightClass": "Economy",
+    "flightNo": "SQ802",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Beijing",
+    "destinationIata": "PEK",
+    "flightClass": "Business",
+    "flightNo": "SQ802",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Beijing",
+    "originIata": "PEK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ807",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-21",
+        "to": "2018-09-23"
+      },
+      {
+        "from": "2018-09-28",
+        "to": "2018-09-30"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Beijing",
+    "originIata": "PEK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ807",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-28",
+        "to": "2018-09-30"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Shanghai",
+    "destinationIata": "PVG",
+    "flightClass": "Economy",
+    "flightNo": "SQ826",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Shanghai",
+    "destinationIata": "PVG",
+    "flightClass": "Business",
+    "flightNo": "SQ826",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Shanghai",
+    "originIata": "PVG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ835",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-21",
+        "to": "2018-09-23"
+      },
+      {
+        "from": "2018-09-28",
+        "to": "2018-09-30"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Shanghai",
+    "originIata": "PVG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ835",
+    "milesRequired": 24500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-28",
+        "to": "2018-09-30"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Seoul",
+    "destinationIata": "ICN",
+    "flightClass": "Business",
+    "flightNo": "SQ8, SQ602",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Seoul",
+    "originIata": "ICN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ7, SQ603",
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-20",
+        "to": "2018-09-23"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Nagoya",
+    "destinationIata": "NGO",
+    "flightClass": "Economy",
+    "flightNo": "SQ672",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-12"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Nagoya",
+    "originIata": "NGO",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ671",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-12"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Fukuoka",
+    "destinationIata": "FUK",
+    "flightClass": "Economy",
+    "flightNo": "SQ656",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-03"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Fukuoka",
+    "destinationIata": "FUK",
+    "flightClass": "Business",
+    "flightNo": "SQ656",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Fukuoka",
+    "originIata": "FUK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ655",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-03"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Fukuoka",
+    "originIata": "FUK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ655",
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Osaka",
+    "destinationIata": "KIX",
+    "flightClass": "Economy",
+    "flightNo": "SQ622",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-03"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Osaka",
+    "destinationIata": "KIX",
+    "flightClass": "Business",
+    "flightNo": "SQ622",
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-13",
+        "to": "2018-09-17"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Osaka",
+    "originIata": "KIX",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ619, SQ623",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-03"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Osaka",
+    "originIata": "KIX",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ619, SQ623",
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-13",
+        "to": "2018-09-17"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Ahmedabad",
+    "destinationIata": "AMD",
+    "flightClass": "Business",
+    "flightNo": "SQ530",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Ahmedabad",
+    "originIata": "AMD",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ531",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bangalore",
+    "destinationIata": "BLR",
+    "flightClass": "Business",
+    "flightNo": "SQ502",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Bangalore",
+    "originIata": "BLR",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ502",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Chennai",
+    "destinationIata": "MAA",
+    "flightClass": "Business",
+    "flightNo": "SQ528",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Chennai",
+    "originIata": "MAA",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ529",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Colombo",
+    "destinationIata": "CMB",
+    "flightClass": "Business",
+    "flightNo": "SQ468",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Colombo",
+    "originIata": "CMB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ469",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Dhaka",
+    "destinationIata": "DAC",
+    "flightClass": "Economy",
+    "flightNo": "SQ446, SQ448",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Dhaka",
+    "destinationIata": "DAC",
+    "flightClass": "Business",
+    "flightNo": "SQ446, SQ448",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Dhaka",
+    "originIata": "DAC",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ447, SQ449",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Dhaka",
+    "originIata": "DAC",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ447, SQ449",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kolkata",
+    "destinationIata": "CCU",
+    "flightClass": "Economy",
+    "flightNo": "SQ516",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kolkata",
+    "destinationIata": "CCU",
+    "flightClass": "Business",
+    "flightNo": "SQ516",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Kolkata",
+    "originIata": "CCU",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ517",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Kolkata",
+    "originIata": "CCU",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ517",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Dubai",
+    "destinationIata": "DXB",
+    "flightClass": "Economy",
+    "flightNo": "SQ494",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-09"
+      }
+    ],
+    "region": "Middle East & Africa",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Dubai",
+    "destinationIata": "DXB",
+    "flightClass": "Business",
+    "flightNo": "SQ494",
+    "milesRequired": 31500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-09"
+      }
+    ],
+    "region": "Middle East & Africa",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Dubai",
+    "originIata": "DXB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ495",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-09"
+      }
+    ],
+    "region": "Middle East & Africa",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Dubai",
+    "originIata": "DXB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ495",
+    "milesRequired": 31500,
+    "blackoutPeriod": [
+      {
+        "from": "2018-09-01",
+        "to": "2018-09-09"
+      }
+    ],
+    "region": "Middle East & Africa",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Wellington",
+    "destinationIata": "WLG",
+    "flightClass": "Economy",
+    "flightNo": "SQ247",
+    "milesRequired": 19600,
+    "blackoutPeriod": [],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Wellington",
+    "destinationIata": "WLG",
+    "flightClass": "Business",
+    "flightNo": "SQ247",
+    "milesRequired": 40600,
+    "blackoutPeriod": [],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Wellington",
+    "originIata": "WLG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "SQ248",
+    "milesRequired": 19600,
+    "blackoutPeriod": [],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Wellington",
+    "originIata": "WLG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "SQ248",
+    "milesRequired": 40600,
+    "blackoutPeriod": [],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Balikpapan",
+    "destinationIata": "BPN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Balikpapan",
+    "originIata": "BPN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bandung",
+    "destinationIata": "BDO",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Bandung",
+    "originIata": "BDO",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bali",
+    "destinationIata": "DPS",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Bali",
+    "originIata": "DPS",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kota Kinabalu",
+    "destinationIata": "BKI",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Kota Kinabalu",
+    "originIata": "BKI",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Lombok",
+    "destinationIata": "LOP",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Lombok",
+    "originIata": "LOP",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Manado",
+    "destinationIata": "MDC",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Manado",
+    "originIata": "MDC",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Makassar",
+    "destinationIata": "UPG",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Makassar",
+    "originIata": "UPG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Medan",
+    "destinationIata": "KNO",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Medan",
+    "originIata": "KNO",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Penang",
+    "destinationIata": "PEN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Penang",
+    "originIata": "PEN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Semarang",
+    "destinationIata": "SRG",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Semarang",
+    "originIata": "SRG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Yogyakarta",
+    "destinationIata": "YIA",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Yogyakarta",
+    "originIata": "YIA",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 3750,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Cebu",
+    "destinationIata": "CEB",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Cebu",
+    "originIata": "CEB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Chiang Mai",
+    "destinationIata": "CNX",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Chiang Mai",
+    "originIata": "CNX",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Da Nang",
+    "destinationIata": "DAD",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Da Nang",
+    "originIata": "DAD",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Davao",
+    "destinationIata": "DVO",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Davao",
+    "originIata": "DVO",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Koh Samui",
+    "destinationIata": "USM",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Koh Samui",
+    "originIata": "USM",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Luang Prabang",
+    "destinationIata": "LPQ",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Luang Prabang",
+    "originIata": "LPQ",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Mandalay",
+    "destinationIata": "MDL",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Mandalay",
+    "originIata": "MDL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Phnom Penh",
+    "destinationIata": "PNH",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Phnom Penh",
+    "originIata": "PNH",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Phuket",
+    "destinationIata": "HKT",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Phuket",
+    "originIata": "HKT",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Siem Reap",
+    "destinationIata": "REP",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Siem Reap",
+    "originIata": "REP",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Vientiane",
+    "destinationIata": "VTE",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Vientiane",
+    "originIata": "VTE",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 6250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Changsha",
+    "destinationIata": "CSX",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Changsha",
+    "originIata": "CSX",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Chengdu",
+    "destinationIata": "CTU",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Chengdu",
+    "originIata": "CTU",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Chongqing",
+    "destinationIata": "CKG",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Chongqing",
+    "originIata": "CKG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Fuzhou",
+    "destinationIata": "FOC",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Fuzhou",
+    "originIata": "FOC",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kunming",
+    "destinationIata": "KMG",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Kunming",
+    "originIata": "KMG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Shenzhen",
+    "destinationIata": "SZX",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Shenzhen",
+    "originIata": "SZX",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Wuhan",
+    "destinationIata": "WUH",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Wuhan",
+    "originIata": "WUH",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Xiamen",
+    "destinationIata": "XMN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Xiamen",
+    "originIata": "XMN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 7500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hiroshima",
+    "destinationIata": "HIJ",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Hiroshima",
+    "originIata": "HIJ",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 12500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Coimbatore",
+    "destinationIata": "CJB",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Coimbatore",
+    "originIata": "CJB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hyderabad",
+    "destinationIata": "HYD",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Hyderabad",
+    "originIata": "HYD",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kathmandu",
+    "destinationIata": "KTM",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Kathmandu",
+    "originIata": "KTM",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kochi",
+    "destinationIata": "KCZ",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Kochi",
+    "originIata": "KCZ",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Malé",
+    "destinationIata": "MLE",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Malé",
+    "originIata": "MLE",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Trivandrum",
+    "destinationIata": "TRV",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Trivandrum",
+    "originIata": "TRV",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Visakhapatnam",
+    "destinationIata": "VTZ",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Visakhapatnam",
+    "originIata": "VTZ",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 9250,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Darwin",
+    "destinationIata": "DRW",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10000,
+    "blackoutPeriod": [],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Darwin",
+    "originIata": "DRW",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 10000,
+    "blackoutPeriod": [],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Cairns",
+    "destinationIata": "CNS",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201809"
+  },
+  {
+    "origin": "Cairns",
+    "originIata": "CNS",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI?",
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201809"
+  }
+]

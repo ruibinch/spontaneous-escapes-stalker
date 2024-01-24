@@ -182,7 +182,7 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Medan",
-    "destinationIata": "MES",
+    "destinationIata": "KNO",
     "flightClass": "Economy",
     "flightNo": "SQ990, SQ994",
     "milesRequired": 5950,
@@ -199,7 +199,7 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Medan",
-    "destinationIata": "MES",
+    "destinationIata": "KNO",
     "flightClass": "Business",
     "flightNo": "SQ990",
     "milesRequired": 14700,
@@ -242,7 +242,7 @@
   },
   {
     "origin": "Medan",
-    "originIata": "MES",
+    "originIata": "KNO",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
@@ -1440,7 +1440,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Economy",
     "flightNo": "SQ26",
@@ -1455,23 +1455,23 @@
         "to": "2023-12-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202312"
   },
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Business",
     "flightNo": "SQ26",
     "milesRequired": 56700,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202312"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1488,7 +1488,7 @@
     "redemptionMonth": "202312"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1522,7 +1522,7 @@
         "to": "2023-12-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202312"
   },
   {
@@ -1573,13 +1573,13 @@
         "to": "2023-12-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202312"
   },
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ26",
@@ -1590,11 +1590,11 @@
         "to": "2023-12-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202312"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",

@@ -220,7 +220,7 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Medan",
-    "destinationIata": "MES",
+    "destinationIata": "KNO",
     "flightClass": "Economy",
     "flightNo": "SQ990, SQ994",
     "milesRequired": 5950,
@@ -243,7 +243,7 @@
   },
   {
     "origin": "Medan",
-    "originIata": "MES",
+    "originIata": "KNO",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
@@ -1296,7 +1296,7 @@
     "redemptionMonth": "202308"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1328,7 +1328,7 @@
     "flightNo": "SQ31, SQ33",
     "milesRequired": 52500,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202308"
   }
 ]

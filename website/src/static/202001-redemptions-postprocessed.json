@@ -5,7 +5,7 @@
     "destination": "Kuala Lumpur",
     "destinationIata": "KUL",
     "flightClass": "Economy",
-    "flightNo": "SQ106, SQ112, SQ116, SQ118",
+    "flightNo": "SQ106, SQ112, SQ116, SQ118,MI320, MI322, MI324, MI326, MI328, MI330, MI340, MI342",
     "milesRequired": 5250,
     "blackoutPeriod": [
       {
@@ -22,7 +22,7 @@
     "destination": "Kuala Lumpur",
     "destinationIata": "KUL",
     "flightClass": "Business",
-    "flightNo": "SQ106, SQ112, SQ116, SQ118",
+    "flightNo": "SQ106, SQ112, SQ116, SQ118,MI320, MI322, MI324, MI326, MI328, MI330, MI340, MI342",
     "milesRequired": 13300,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -34,7 +34,7 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ107, SQ113, SQ117, SQ119",
+    "flightNo": "SQ107, SQ113, SQ117, SQ119,MI319, MI321, MI323, MI325, MI341",
     "milesRequired": 5250,
     "blackoutPeriod": [
       {
@@ -51,7 +51,7 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ107, SQ113, SQ117, SQ119",
+    "flightNo": "SQ107, SQ113, SQ117, SQ119,MI319, MI321, MI323, MI325, MI327, MI329, MI339, MI341",
     "milesRequired": 13300,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -92,7 +92,7 @@
     "destination": "Surabaya",
     "destinationIata": "SUB",
     "flightClass": "Economy",
-    "flightNo": "SQ930, SQ932",
+    "flightNo": "SQ930, SQ932,MI224, MI226",
     "milesRequired": 5250,
     "blackoutPeriod": [
       {
@@ -126,7 +126,7 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ931, SQ933",
+    "flightNo": "SQ931, SQ933,MI223, MI225",
     "milesRequired": 5250,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -150,7 +150,7 @@
     "destination": "Bali",
     "destinationIata": "DPS",
     "flightClass": "Business",
-    "flightNo": "SQ938, SQ942, SQ946, SQ948",
+    "flightNo": "SQ938, SQ942, SQ946, SQ948,MI176",
     "milesRequired": 13300,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -162,7 +162,7 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ939, SQ943, SQ947, SQ949",
+    "flightNo": "SQ939, SQ943, SQ947, SQ949,MI175",
     "milesRequired": 13300,
     "blackoutPeriod": [
       {
@@ -690,7 +690,7 @@
     "destination": "Bangalore",
     "destinationIata": "BLR",
     "flightClass": "Economy",
-    "flightNo": "SQ502, SQ504",
+    "flightNo": "SQ502, SQ504,MI424",
     "milesRequired": 12950,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -784,7 +784,7 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ451",
+    "flightNo": "SQ451,MI479",
     "milesRequired": 12950,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -902,7 +902,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Economy",
     "flightNo": "SQ26",
@@ -913,11 +913,11 @@
         "to": "2020-01-08"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202001"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1055,7 +1055,7 @@
         "to": "2020-01-14"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202001"
   },
   {
@@ -1153,7 +1153,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ26",
@@ -1164,11 +1164,11 @@
         "to": "2020-01-06"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202001"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1182,6 +1182,409 @@
       }
     ],
     "region": "Europe",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Penang",
+    "destinationIata": "PEN",
+    "flightClass": "Economy",
+    "flightNo": "MI348, MI350, MI352, MI354, MI356",
+    "milesRequired": 5250,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-21",
+        "to": "2020-01-26"
+      },
+      {
+        "from": "2020-01-31",
+        "to": "2020-01-31"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Penang",
+    "destinationIata": "PEN",
+    "flightClass": "Business",
+    "flightNo": "MI346, MI348, MI350, MI352, MI354, MI356",
+    "milesRequired": 13300,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-22",
+        "to": "2020-01-25"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Penang",
+    "originIata": "PEN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI345, MI347, MI349, MI351, MI353, MI355",
+    "milesRequired": 5250,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-02"
+      },
+      {
+        "from": "2020-01-23",
+        "to": "2020-01-31"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Penang",
+    "originIata": "PEN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "MI345, MI347, MI349, MI351, MI353, MI355",
+    "milesRequired": 13300,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-26",
+        "to": "2020-01-29"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bandung",
+    "destinationIata": "BDO",
+    "flightClass": "Economy",
+    "flightNo": "MI192",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Bandung",
+    "originIata": "BDO",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI191, MI193, MI195",
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Yangon",
+    "destinationIata": "RGN",
+    "flightClass": "Economy",
+    "flightNo": "MI518, MI520",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-07"
+      },
+      {
+        "from": "2020-01-26",
+        "to": "2020-01-31"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Yangon",
+    "originIata": "RGN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI519, MI521",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-07"
+      },
+      {
+        "from": "2020-01-26",
+        "to": "2020-01-31"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Mandalay",
+    "originIata": "MDL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI523",
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-02",
+        "to": "2020-01-04"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hiroshima",
+    "destinationIata": "HIJ",
+    "flightClass": "Economy",
+    "flightNo": "MI868",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-09"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hiroshima",
+    "destinationIata": "HIJ",
+    "flightClass": "Business",
+    "flightNo": "MI868",
+    "milesRequired": 32900,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Hiroshima",
+    "originIata": "HIJ",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI867",
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-05"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Hiroshima",
+    "originIata": "HIJ",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "MI867",
+    "milesRequired": 32900,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-05"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kochi",
+    "destinationIata": "KCZ",
+    "flightClass": "Economy",
+    "flightNo": "MI462",
+    "milesRequired": 12950,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-05"
+      }
+    ],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kochi",
+    "destinationIata": "KCZ",
+    "flightClass": "Business",
+    "flightNo": "MI462",
+    "milesRequired": 27300,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-05"
+      }
+    ],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Kochi",
+    "originIata": "KCZ",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "MI461",
+    "milesRequired": 27300,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-05"
+      }
+    ],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hyderabad",
+    "destinationIata": "HYD",
+    "flightClass": "Economy",
+    "flightNo": "MI472",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hyderabad",
+    "destinationIata": "HYD",
+    "flightClass": "Business",
+    "flightNo": "MI472",
+    "milesRequired": 27300,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Chennai",
+    "destinationIata": "MAA",
+    "flightClass": "Economy",
+    "flightNo": "MI436",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Chennai",
+    "destinationIata": "MAA",
+    "flightClass": "Business",
+    "flightNo": "MI436",
+    "milesRequired": 27300,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kathmandu",
+    "destinationIata": "KTM",
+    "flightClass": "Economy",
+    "flightNo": "MI416",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kathmandu",
+    "destinationIata": "KTM",
+    "flightClass": "Business",
+    "flightNo": "MI416",
+    "milesRequired": 27300,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Kathmandu",
+    "originIata": "KTM",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI415",
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Kathmandu",
+    "originIata": "KTM",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "MI415",
+    "milesRequired": 27300,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Darwin",
+    "originIata": "DRW",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNo": "MI802, MI804",
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-05"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "202001"
+  },
+  {
+    "origin": "Darwin",
+    "originIata": "DRW",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNo": "MI802, MI804",
+    "milesRequired": 25550,
+    "blackoutPeriod": [
+      {
+        "from": "2020-01-01",
+        "to": "2020-01-05"
+      }
+    ],
+    "region": "Southwest Pacific",
     "redemptionMonth": "202001"
   }
 ]

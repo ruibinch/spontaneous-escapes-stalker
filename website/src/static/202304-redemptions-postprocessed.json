@@ -1233,7 +1233,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Business",
     "flightNo": "SQ26",
@@ -1252,11 +1252,11 @@
         "to": "2023-04-11"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202304"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1343,7 +1343,7 @@
         "to": "2023-04-30"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202304"
   },
   {
@@ -1376,7 +1376,7 @@
         "to": "2023-04-30"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202304"
   },
   {
@@ -1482,7 +1482,7 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ26",
@@ -1501,11 +1501,11 @@
         "to": "2023-04-28"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202304"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -1585,12 +1585,12 @@
         "to": "2023-04-28"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202304"
   },
   {
-    "origin": "New York",
-    "originIata": "JFK",
+    "origin": "New York (Newark)",
+    "originIata": "EWR",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
@@ -1602,7 +1602,7 @@
         "to": "2023-04-01"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202304"
   }
 ]

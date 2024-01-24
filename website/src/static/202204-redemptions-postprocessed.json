@@ -2461,29 +2461,29 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Economy",
     "flightNo": "SQ26",
     "milesRequired": 15570,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Business",
     "flightNo": "SQ26",
     "milesRequired": 50400,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -2495,7 +2495,7 @@
     "redemptionMonth": "202204"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -2563,7 +2563,7 @@
     "flightNo": "SQ38, SQ12, SQ36",
     "milesRequired": 26600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2575,7 +2575,7 @@
     "flightNo": "SQ12, SQ36",
     "milesRequired": 66500,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2587,7 +2587,7 @@
     "flightNo": "SQ11, SQ35",
     "milesRequired": 26600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2607,7 +2607,7 @@
         ]
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2619,7 +2619,7 @@
     "flightNo": "SQ12",
     "milesRequired": 24500,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2631,7 +2631,7 @@
     "flightNo": "SQ12",
     "milesRequired": 66500,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2677,7 +2677,7 @@
         "to": "2022-05-03"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2694,7 +2694,7 @@
         "to": "2022-05-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2711,7 +2711,7 @@
         "to": "2022-05-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2728,35 +2728,35 @@
         "to": "2022-05-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Economy",
     "flightNo": "SQ26",
     "milesRequired": 28000,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Business",
     "flightNo": "SQ24",
     "milesRequired": 69300,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Singapore",
     "destinationIata": "SIN",
@@ -2764,11 +2764,11 @@
     "flightNo": "SQ25",
     "milesRequired": 28000,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Singapore",
     "destinationIata": "SIN",
@@ -2776,31 +2776,31 @@
     "flightNo": "SQ23",
     "milesRequired": 69300,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
-    "destinationIata": "JFK",
+    "destination": "New York (Newark)",
+    "destinationIata": "EWR",
     "flightClass": "Business",
     "flightNo": "SQ22",
     "milesRequired": 69300,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
-    "origin": "New York",
-    "originIata": "JFK",
+    "origin": "New York (Newark)",
+    "originIata": "EWR",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNo": "SQ21",
     "milesRequired": 69300,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2817,7 +2817,7 @@
         "to": "2022-05-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2829,7 +2829,7 @@
     "flightNo": "SQ27",
     "milesRequired": 26600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2841,7 +2841,7 @@
     "flightNo": "SQ27",
     "milesRequired": 66500,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2858,7 +2858,7 @@
         "to": "2022-05-31"
       }
     ],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2870,7 +2870,7 @@
     "flightNo": "SQ27",
     "milesRequired": 26600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -2882,7 +2882,7 @@
     "flightNo": "SQ27",
     "milesRequired": 66500,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3389,17 +3389,17 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ26",
     "milesRequired": 32900,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
@@ -3443,7 +3443,7 @@
     "flightNo": "SQ38, SQ12, SQ36",
     "milesRequired": 47600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3455,7 +3455,7 @@
     "flightNo": "SQ11, SQ35",
     "milesRequired": 47600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3467,7 +3467,7 @@
     "flightNo": "SQ12",
     "milesRequired": 46200,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3491,7 +3491,7 @@
     "flightNo": "SQ32, SQ34",
     "milesRequired": 47600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3503,23 +3503,23 @@
     "flightNo": "SQ31, SQ33",
     "milesRequired": 47600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
+    "destination": "New York (JFK)",
     "destinationIata": "JFK",
     "flightClass": "Premium Economy",
     "flightNo": "SQ24",
     "milesRequired": 51100,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
-    "origin": "New York",
+    "origin": "New York (JFK)",
     "originIata": "JFK",
     "destination": "Singapore",
     "destinationIata": "SIN",
@@ -3527,31 +3527,31 @@
     "flightNo": "SQ23",
     "milesRequired": 51100,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York",
-    "destinationIata": "JFK",
+    "destination": "New York (Newark)",
+    "destinationIata": "EWR",
     "flightClass": "Premium Economy",
     "flightNo": "SQ22",
     "milesRequired": 51100,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
-    "origin": "New York",
-    "originIata": "JFK",
+    "origin": "New York (Newark)",
+    "originIata": "EWR",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
     "flightNo": "SQ21",
     "milesRequired": 51100,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3563,7 +3563,7 @@
     "flightNo": "SQ28",
     "milesRequired": 47600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3575,7 +3575,7 @@
     "flightNo": "SQ27",
     "milesRequired": 47600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3587,7 +3587,7 @@
     "flightNo": "SQ28",
     "milesRequired": 47600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   },
   {
@@ -3599,7 +3599,7 @@
     "flightNo": "SQ27",
     "milesRequired": 47600,
     "blackoutPeriod": [],
-    "region": "USA",
+    "region": "North America",
     "redemptionMonth": "202204"
   }
 ]
