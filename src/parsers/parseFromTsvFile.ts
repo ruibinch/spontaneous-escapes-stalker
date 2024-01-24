@@ -2,15 +2,22 @@ import fs from 'fs';
 import { toNumber } from '../utils';
 import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
 import { Redemption, RedemptionInputProps } from '../models/Redemption';
-import { FlightClass, RedemptionJson } from '../utils/types';
+import {
+  FlightClass,
+  RedemptionJson,
+  RedemptionTableInfoWithRegion,
+} from '../utils/types';
 import { subDays } from 'date-fns';
 import { formatCity } from './parseRedemptionTables';
+import { dedupeRedemptions } from './dedupeRedemptions';
 
 process.env.TZ = 'UTC';
 
-const OUTPUT_FILEPATH = process.env['OUTPUT_FILEPATH'];
 // Should be in the format `data/YYYYMM-content.tsv`
 const TSV_FILEPATH = process.env['TSV_FILEPATH'];
+// Optional output filepath to write to
+const OUTPUT_FILEPATH = process.env['OUTPUT_FILEPATH'];
+
 const TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS = [
   'REGION',
   'FROM',
@@ -31,12 +38,9 @@ const TSV_PREMIUM_ECONOMY_SECTION_COLUMNS = [
 
 /**
  * Parses from a TSV file that mirrors the structure of the table in the SE page.
- * The TSV file can contain up to 2 header rows in the formats defined in the above 2 arrays.
- * NOTE: the Business/Economy section must be above the Premium Economy section in the TSV file.
+ * The TSV file can contain multiple header rows in the formats defined in the above 2 arrays (to cater for the SIA/SilkAir split in the past).
  *
  * This function is closely similar to the parseRedemptionTable function, where both share the parsing logic but operate on different eleement types.
- *
- * Then adds the parsed redemptions to a new/existing redemptions JSON file.
  */
 function parseFromTsvFile() {
   if (!TSV_FILEPATH) {
@@ -56,44 +60,73 @@ function parseFromTsvFile() {
   );
 
   const tsvFileContent = fs.readFileSync(TSV_FILEPATH).toString().split('\r\n');
-  const businessAndEconomyClassHeaderRowIdx = getHeaderRowIdx(
-    tsvFileContent,
-    TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS,
-  );
-  const premiumEconomyClassHeaderRowIdx = getHeaderRowIdx(
-    tsvFileContent,
-    TSV_PREMIUM_ECONOMY_SECTION_COLUMNS,
+  const headerRowsIdxs = getHeaderRowsIdxs({
+    fileContent: tsvFileContent,
+    headers: [
+      TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS,
+      TSV_PREMIUM_ECONOMY_SECTION_COLUMNS,
+    ],
+  });
+
+  const redemptionsCombined = headerRowsIdxs.reduce(
+    (_redemptions: RedemptionTableInfoWithRegion[], headerRowIdx, idx) => {
+      const rowsForSection = tsvFileContent.slice(
+        headerRowIdx,
+        headerRowsIdxs[idx + 1],
+      );
+      const flightClassCategory = (() => {
+        const headerRowCells = tsvFileContent[headerRowIdx].split('\t');
+        if (
+          isHeaderRow(headerRowCells, TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS)
+        ) {
+          return 'Y/J';
+        }
+        if (isHeaderRow(headerRowCells, TSV_PREMIUM_ECONOMY_SECTION_COLUMNS)) {
+          return 'PY';
+        }
+        throw new Error(`Invalid header row - ${headerRowCells.join(',')}`);
+      })();
+
+      const redemptionsForSection = parseSection(
+        rowsForSection,
+        flightClassCategory,
+      );
+      console.log(
+        `⛏️ Scraped ${
+          redemptionsForSection.length
+        } redemptions from rows ${headerRowIdx}-${
+          headerRowsIdxs[idx + 1] ?? 'end'
+        }`,
+      );
+
+      _redemptions.push(...redemptionsForSection);
+      return _redemptions;
+    },
+    [],
   );
 
-  const businessAndEconomyClassSectionRows =
-    businessAndEconomyClassHeaderRowIdx !== undefined
-      ? tsvFileContent.slice(
-          businessAndEconomyClassHeaderRowIdx,
-          premiumEconomyClassHeaderRowIdx,
-        )
-      : [];
-  const premiumEconomyClassSectionRows =
-    premiumEconomyClassHeaderRowIdx !== undefined
-      ? tsvFileContent.slice(premiumEconomyClassHeaderRowIdx)
-      : [];
+  const redemptionsDeduped = dedupeRedemptions(redemptionsCombined);
+  console.log(
+    `🧹 Deduplicated ${redemptionsCombined.length} redemptions to ${redemptionsDeduped.length} redemptions\n`,
+  );
 
-  const redemptionsData = [
-    ...parseSection(businessAndEconomyClassSectionRows, 'J/Y'),
-    ...parseSection(premiumEconomyClassSectionRows, 'PY'),
-  ].map((redemption) => ({
+  const redemptions = redemptionsDeduped.map((redemption) => ({
     ...redemption,
     redemptionEndDate,
   }));
 
-  createRedemptionsOutputFile({ redemptionPeriod, redemptionsData });
+  createRedemptionsOutputFile({
+    redemptionPeriod,
+    redemptionsData: redemptions,
+  });
 }
 
 /**
  * Parses an individual "section" of the TSV corresponding to either the Business/Economy Class section or Premium Economy class section.
  * First row is the header row.
  */
-function parseSection(rows: string[], flightClassCategory: 'J/Y' | 'PY') {
-  const redemptions: Omit<RedemptionInputProps, 'redemptionEndDate'>[] = [];
+function parseSection(rows: string[], flightClassCategory: 'Y/J' | 'PY') {
+  const redemptions: RedemptionTableInfoWithRegion[] = [];
 
   // skip the header row
   rows.slice(1).forEach((row) => {
@@ -104,10 +137,10 @@ function parseSection(rows: string[], flightClassCategory: 'J/Y' | 'PY') {
       return;
     }
 
-    if (flightClassCategory === 'J/Y') {
+    if (flightClassCategory === 'Y/J') {
       if (cells.length !== TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS.length) {
         throw new Error(
-          `Mismatch in number of cells for J/Y section - expected ${TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS.length} but received ${cells.length} (${cells})`,
+          `Mismatch in number of cells for Y/J section - expected ${TSV_BUSINESS_AND_ECONOMY_SECTION_COLUMNS.length} but received ${cells.length} (${cells})`,
         );
       }
 
@@ -209,7 +242,7 @@ function parseSingleEntry({
   milesRequiredText: string;
   flightNo: string;
   blackoutPeriodText: string;
-}): Omit<RedemptionInputProps, 'redemptionEndDate'> | null {
+}): RedemptionTableInfoWithRegion | null {
   const [origin, destination] = from.split(' to ');
   if (!origin || !destination) {
     throw new Error(`Unable to obtain origin/destination from "${from}"`);
@@ -239,17 +272,32 @@ function parseSingleEntry({
 }
 
 /**
- * Finds the row number in fileContent that matches the columns in headerCols
+ * Finds all the row numbers in fileContent that represent a header row.
  *
  * @param fileContent An array of rows, where each row is tab-separated.
- * @param headerCols
+ * @param headerCols An array of headers, where each header is an array of column names.
  */
-function getHeaderRowIdx(fileContent: string[], headerCols: string[]) {
-  const index = fileContent.findIndex((row) => {
+function getHeaderRowsIdxs({
+  fileContent,
+  headers,
+}: {
+  fileContent: string[];
+  headers: string[][];
+}) {
+  const headerRowsIdxs: number[] = [];
+
+  fileContent.forEach((row, idx) => {
     const rowCells = row.split('\t');
-    return headerCols.every((headerCol, idx) => headerCol === rowCells[idx]);
+    if (headers.some((headerCols) => isHeaderRow(rowCells, headerCols))) {
+      headerRowsIdxs.push(idx);
+    }
   });
-  return index === -1 ? undefined : index;
+
+  return headerRowsIdxs;
+}
+
+function isHeaderRow(rowCells: string[], headerCols: string[]) {
+  return headerCols.every((headerCol, idx) => headerCol === rowCells[idx]);
 }
 
 function createRedemptionsOutputFile({
