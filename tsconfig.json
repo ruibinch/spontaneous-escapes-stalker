@@ -32,7 +32,7 @@
     // "moduleResolution": "node" /* module resolution strategy */,
     // "noResolve": false,                              /* adds resolved files from `import` anad `<reference>` directives to the program */
     // "paths": {},                                     /* declaration for TS to resolve import paths; useful to avoid long relative import paths */
-    // "resolveJsonModule": true /* allows importing JSON files */,
+    "resolveJsonModule": true /* allows importing JSON files */,
     // "rootDir": "",                                   /* specify root folder of source files */
     // "rootDirs": [],                                  /* specify multiple virtual directories as a single root */
     // "typeRoots": [] /* all visible `@types` packages are included by default; this option is used to override the default */,

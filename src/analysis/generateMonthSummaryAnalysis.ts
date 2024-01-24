@@ -1,11 +1,11 @@
-import { FlightClassCode, Route } from './types';
 import {
   FlightClass,
   RedemptionJsonPostprocessed,
   Region,
 } from '../utils/types';
+import { FlightClassCode } from './types';
 
-type MonthSummaryAnalysisEntry = {
+export type MonthSummaryAnalysisEntry = {
   month: string;
   total: number;
   byFlightClass: Record<FlightClassCode, number>;

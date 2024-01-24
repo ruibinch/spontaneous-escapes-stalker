@@ -3,6 +3,7 @@ import path from 'path';
 import { generateMonthSummaryAnalysis } from './analysis/generateMonthSummaryAnalysis';
 import { generateRouteAnalysis } from './analysis/generateRouteAnalysis';
 import { RedemptionJsonPostprocessed } from './utils/types';
+import { appendMonthMetadata } from './analysis/appendMonthMetadata';
 
 const ROUTE_ANALYSIS_OUTPUT_FILENAME = 'data/route-analysis.json';
 const MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME =
@@ -40,10 +41,12 @@ export function analyse() {
     redemptions,
     months,
   });
+  const monthSummaryAnalysisWithMetadata =
+    appendMonthMetadata(monthSummaryAnalysis);
   console.log(`📄 Writing to ${MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME}`);
   fs.writeFileSync(
     MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME,
-    JSON.stringify(monthSummaryAnalysis, null, 2),
+    JSON.stringify(monthSummaryAnalysisWithMetadata, null, 2),
   );
 }
 
