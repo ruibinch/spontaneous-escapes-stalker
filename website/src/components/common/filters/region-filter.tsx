@@ -43,11 +43,12 @@ export function RegionFilter({ regions, setRegions }: RegionFilterProps) {
 
   return (
     <Select
+      size="sm"
       items={regionsListWithAll.map((region) => ({
         label: region,
         value: region,
       }))}
-      label="Filter by region"
+      label="Region"
       selectionMode="multiple"
       selectedKeys={regions.split(',')}
       onChange={(e) => {

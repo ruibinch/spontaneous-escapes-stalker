@@ -51,6 +51,7 @@ export function SearchTermFilter({
 
   return (
     <Input
+      size="sm"
       classNames={{
         input: 'w-full',
         mainWrapper: 'w-full',
@@ -60,7 +61,7 @@ export function SearchTermFilter({
           /
         </kbd>
       }
-      placeholder="Filter by city name or IATA code"
+      placeholder="Search by city/IATA"
       ref={searchRef}
       value={value}
       onValueChange={onValueChange}

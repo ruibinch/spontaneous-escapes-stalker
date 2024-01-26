@@ -23,11 +23,7 @@ export const Layout = ({ children }: Props) => {
         <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
           <NavbarWrapper />
 
-          <div
-            className={cn('h-full w-full max-w-[90rem] pt-6 pb-8 px-4 lg:px-6')}
-          >
-            {children}
-          </div>
+          {children}
         </div>
       </section>
     </SidebarContext.Provider>

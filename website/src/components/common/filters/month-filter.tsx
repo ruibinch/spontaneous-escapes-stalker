@@ -36,11 +36,12 @@ export function MonthFilter({ months, setMonths }: MonthFilterProps) {
 
   return (
     <Select
+      size="sm"
       items={monthsOptionsWithAll.map((month) => ({
         label: month,
         value: month,
       }))}
-      label="Filter by specific month"
+      label="Month"
       selectionMode="multiple"
       selectedKeys={months.split(',')}
       onChange={(e) => {

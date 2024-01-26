@@ -37,8 +37,9 @@ export function FlightClassFilter({
 
   return (
     <Select
+      size="sm"
       items={flightClassOptions}
-      label="Filter by flight class"
+      label="Flight class"
       selectedKeys={[flightClassOption]}
       renderValue={(items: SelectedItems<(typeof flightClassOptions)[0]>) => {
         return items.map((item) => (
