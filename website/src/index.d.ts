@@ -28,6 +28,9 @@ export type MonthSummaryAnalysisEntry = {
   total: number;
   byFlightClass: Record<FlightClassCode, number>;
   byRegion: Record<Region, number>;
+  metadata: {
+    remarks?: string[];
+  };
 };
 export type MonthSummaryAnalysisDict = Record<
   string,
@@ -68,12 +71,12 @@ export type Month = string;
 export type FlightClass = 'Y' | 'PY' | 'J';
 export type FlightClassSelectOption = FlightClass | 'ALL';
 
-enum Region {
+export enum Region {
   SOUTH_EAST_ASIA = 'South East Asia',
   NORTH_ASIA = 'North Asia',
   SOUTH_ASIA = 'South Asia',
   MIDDLE_EAST_AND_AFRICA = 'Middle East & Africa',
   SOUTHWEST_PACIFIC = 'Southwest Pacific',
   EUROPE = 'Europe',
-  USA = 'USA',
+  NORTH_AMERICA = 'North America',
 }

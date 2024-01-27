@@ -3,15 +3,39 @@ import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { FlightClassSelectOption, RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import { cn } from '@nextui-org/react';
+import {
+  BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LineElement,
+  LinearScale,
+  PointElement,
+  Title,
+  Tooltip,
+} from 'chart.js';
 import { useState } from 'react';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
+import { AnalysisCharts } from './analysis-charts';
 import { DetailsTable } from './details-table';
 import { FilterInfo } from './filter-info';
 import { computeRouteFrequencyByFlightClass } from './helpers/compute-route-frequency-by-flight-class';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { Filters } from './playground-filters';
 import { RouteFrequencyTable } from './route-frequency-table';
+
+// initialise chart components at parent component level
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  BarElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 const monthsList = getMonthsList();
@@ -34,6 +58,7 @@ export function PlaygroundContent() {
     data: routeAnalysisList,
     filters: {
       searchTerm: searchTerm.toLowerCase(),
+      flightClassOption,
       regions: regions.split(','),
       startDate,
       endDate,
@@ -64,13 +89,19 @@ export function PlaygroundContent() {
           setMonths={setMonths}
         />
 
-        <FilterInfo
-          routeAnalysisList={routeAnalysisList}
-          routeAnalysisListFiltered={routeAnalysisListFiltered}
-          startDate={startDate}
-          endDate={endDate}
-          months={months.split(',')}
-        />
+        <div className="flex flex-col gap-4">
+          <FilterInfo
+            routeAnalysisList={routeAnalysisList}
+            routeAnalysisListFiltered={routeAnalysisListFiltered}
+            startDate={startDate}
+            endDate={endDate}
+            months={months.split(',')}
+          />
+
+          <AnalysisCharts
+            routeAnalysisListFiltered={routeAnalysisListFiltered}
+          />
+        </div>
 
         <div className="grid grid-cols-3">
           <div className="col-span-3 lg:col-span-2">

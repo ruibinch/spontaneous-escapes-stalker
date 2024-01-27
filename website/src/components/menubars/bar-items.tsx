@@ -1,6 +1,5 @@
-import { GlobeIcon } from '../icons/globe';
-import { PieChartIcon } from '../icons/pie-chart';
 import { CalendarIcon } from '../icons/calendar';
+import { GlobeIcon } from '../icons/globe';
 import { MapIcon } from '../icons/map';
 
 export interface BarItemProps {
@@ -15,11 +14,6 @@ export const barItems = [
     title: 'Playground',
     icon: <GlobeIcon />,
     href: '/',
-  },
-  {
-    title: 'Analysis',
-    icon: <PieChartIcon />,
-    href: '/analysis',
   },
   {
     title: 'View by Month',

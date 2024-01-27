@@ -1,19 +1,33 @@
-import { RouteAnalysisEntry } from '@/index';
+import {
+  FlightClass,
+  FlightClassSelectOption,
+  RouteAnalysisEntry,
+} from '@/index';
 import { isApplicableMonth } from './is-applicable-month';
 
 export function filterRouteAnalysisList({
   data,
-  filters: { searchTerm, regions, startDate, endDate, months },
+  filters: {
+    searchTerm,
+    flightClassOption,
+    regions,
+    startDate,
+    endDate,
+    months,
+  },
 }: {
   data: RouteAnalysisEntry[];
   filters: {
     searchTerm: string;
+    flightClassOption: FlightClassSelectOption;
     regions: string[];
     startDate: Date;
     endDate: Date;
     months: string[];
   };
 }) {
+  const isFlightClassMatchingSelOption = isFlightClassMatch(flightClassOption);
+
   return data
     .filter((d) => {
       const isSearchTermMatch =
@@ -45,7 +59,11 @@ export function filterRouteAnalysisList({
           });
 
           if (_isApplicableMonth) {
-            _detailsFiltered[month] = detailsInfo;
+            _detailsFiltered[month] = {
+              Y: isFlightClassMatchingSelOption('Y') ? detailsInfo.Y : null,
+              PY: isFlightClassMatchingSelOption('PY') ? detailsInfo.PY : null,
+              J: isFlightClassMatchingSelOption('J') ? detailsInfo.J : null,
+            };
           }
           return _detailsFiltered;
         },
@@ -58,3 +76,9 @@ export function filterRouteAnalysisList({
       };
     });
 }
+
+const isFlightClassMatch =
+  (flightClassOption: FlightClassSelectOption) =>
+  (flightClassCode: FlightClass) => {
+    return flightClassOption === 'ALL' || flightClassOption === flightClassCode;
+  };
