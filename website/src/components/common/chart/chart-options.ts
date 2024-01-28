@@ -79,6 +79,7 @@ export const makeChartOptions = <T extends ChartType>(
         : null,
       tooltip: {
         enabled: false,
+        // @ts-expect-error
         external: (context) => customTooltip(context, tooltipOptions),
         mode: 'index',
         intersect: false,

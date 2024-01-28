@@ -20,10 +20,8 @@ import { CommonStyles } from '../common/styles';
 import { AnalysisCharts } from './analysis-charts';
 import { DetailsTable } from './details-table';
 import { FilterInfo } from './filter-info';
-import { computeRouteFrequencyByFlightClass } from './helpers/compute-route-frequency-by-flight-class';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { Filters } from './playground-filters';
-import { RouteFrequencyTable } from './route-frequency-table';
 
 // initialise chart components at parent component level
 ChartJS.register(
@@ -66,10 +64,6 @@ export function PlaygroundContent() {
     },
   });
 
-  const routeFrequencyByFlightClass = computeRouteFrequencyByFlightClass({
-    routeAnalysisList: routeAnalysisListFiltered,
-  });
-
   return (
     <div>
       <PageHeader title="Playground" />
@@ -103,23 +97,12 @@ export function PlaygroundContent() {
           />
         </div>
 
-        <div className="grid grid-cols-3">
-          <div className="col-span-3 lg:col-span-2">
-            <RouteFrequencyTable
-              data={routeFrequencyByFlightClass[flightClassOption]}
-            />
-          </div>
-        </div>
-
-        <div>
-          <DetailsTable
-            data={routeAnalysisListFiltered}
-            flightClassSelectedOption={flightClassOption}
-            startDate={startDate}
-            endDate={endDate}
-            months={months.split(',')}
-          />
-        </div>
+        <DetailsTable
+          data={routeAnalysisListFiltered}
+          startDate={startDate}
+          endDate={endDate}
+          months={months.split(',')}
+        />
       </div>
     </div>
   );

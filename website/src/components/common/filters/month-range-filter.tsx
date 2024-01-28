@@ -14,8 +14,6 @@ export function DateRangeFilter({
   setMonthRange,
   monthsList,
 }: DateRangeFilterProps) {
-  const pathname = usePathname();
-
   const formatMonthDisplay = (month: string) =>
     `${month.slice(0, 4)}-${month.slice(4, 6)}`;
 

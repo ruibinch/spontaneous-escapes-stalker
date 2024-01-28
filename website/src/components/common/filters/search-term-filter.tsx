@@ -14,9 +14,13 @@ export function SearchTermFilter({
   setSearchTerm,
 }: SearchTermFilterProps) {
   const pathname = usePathname();
-  const [value, setValue] = useState(searchTerm);
+  const [value, setValue] = useState('');
   const searchRef = useRef<HTMLInputElement>(null);
   const [isSlashTrigger, setSlashTrigger] = useState(false);
+
+  useEffect(() => {
+    setValue(searchTerm);
+  }, [searchTerm]);
 
   useDebounce(
     () => {

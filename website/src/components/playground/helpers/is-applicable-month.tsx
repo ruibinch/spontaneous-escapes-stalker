@@ -1,4 +1,3 @@
-import { getMonthsList } from '@/common/get-data-time-range';
 import { monthNameToNumMap } from '@/common/months-map';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { isAfter, isBefore } from 'date-fns';

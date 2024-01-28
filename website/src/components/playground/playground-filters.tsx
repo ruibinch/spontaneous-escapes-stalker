@@ -41,36 +41,29 @@ export function Filters(props: Props) {
   return (
     <div>
       <div className="flex items-center gap-4">
-        <div className="flex flex-col flex-1 gap-2">
-          <div className="grid grid-cols-3 gap-1">
-            <SearchTermFilter
-              searchTerm={props.searchTerm}
-              setSearchTerm={props.setSearchTerm}
-            />
+        <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-2">
+          <SearchTermFilter
+            searchTerm={props.searchTerm}
+            setSearchTerm={props.setSearchTerm}
+          />
 
-            <RegionFilter
-              regions={props.regions}
-              setRegions={props.setRegions}
-            />
+          <RegionFilter regions={props.regions} setRegions={props.setRegions} />
 
-            <FlightClassFilter
-              flightClassOption={props.flightClassOption}
-              setFlightClassOption={props.setFlightClassOption}
-            />
-          </div>
+          <FlightClassFilter
+            flightClassOption={props.flightClassOption}
+            setFlightClassOption={props.setFlightClassOption}
+          />
 
-          <div className="grid grid-cols-3 gap-1">
-            <MonthFilter months={props.months} setMonths={props.setMonths} />
+          <MonthFilter months={props.months} setMonths={props.setMonths} />
 
-            <DateRangeFilter
-              monthRange={props.monthRange}
-              setMonthRange={props.setMonthRange}
-              monthsList={props.monthsList}
-            />
-          </div>
+          <DateRangeFilter
+            monthRange={props.monthRange}
+            setMonthRange={props.setMonthRange}
+            monthsList={props.monthsList}
+          />
         </div>
 
-        <div className="px-4">
+        <div className="">
           <Tooltip content="Reset all filters" placement="bottom">
             <div
               className="border-1 text-lg bg-neutral-100 rounded-md p-1 cursor-pointer"
