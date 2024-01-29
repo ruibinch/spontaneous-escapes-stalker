@@ -1,9 +1,8 @@
 import { RouteAnalysisEntry } from '@/index';
-
 import { Line } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
-import { ChartWrapper } from './chart-wrapper';
+import { ChartWrapper } from '../../common/chart/chart-wrapper';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -37,17 +36,20 @@ export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
   };
 
   return (
-    <ChartWrapper title="Redemptions per month">
-      <Line
-        options={makeChartOptions({
-          axesTicks: { x: true, y: false },
-          axesBorder: { x: true },
-          axesTicksOnChartArea: { x: false, y: true },
-          axesTickMaxLimit: { x: 4, y: 4 },
-        })}
-        plugins={[lineOnHoverPlugin]}
-        data={data}
-      />
-    </ChartWrapper>
+    <ChartWrapper
+      title="Redemptions per month"
+      chart={
+        <Line
+          options={makeChartOptions({
+            axesTicks: { x: true, y: false },
+            axesBorder: { x: true },
+            axesTicksOnChartArea: { x: false, y: true },
+            axesTickMaxLimit: { x: 4, y: 4 },
+          })}
+          plugins={[lineOnHoverPlugin]}
+          data={data}
+        />
+      }
+    />
   );
 }

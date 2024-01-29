@@ -1,3 +1,17 @@
+export type Month = string;
+export type FlightClass = 'Y' | 'PY' | 'J';
+export type FlightClassSelectOption = FlightClass | 'ALL';
+
+export enum Region {
+  SOUTH_EAST_ASIA = 'South East Asia',
+  NORTH_ASIA = 'North Asia',
+  SOUTH_ASIA = 'South Asia',
+  MIDDLE_EAST_AND_AFRICA = 'Middle East & Africa',
+  SOUTHWEST_PACIFIC = 'Southwest Pacific',
+  EUROPE = 'Europe',
+  NORTH_AMERICA = 'North America',
+}
+
 export type RedemptionEntry = {
   origin: string;
   originIata: string;
@@ -66,17 +80,3 @@ export type SingleRedemptionInfo = {
     flightNos?: string[];
   }>;
 };
-
-export type Month = string;
-export type FlightClass = 'Y' | 'PY' | 'J';
-export type FlightClassSelectOption = FlightClass | 'ALL';
-
-export enum Region {
-  SOUTH_EAST_ASIA = 'South East Asia',
-  NORTH_ASIA = 'North Asia',
-  SOUTH_ASIA = 'South Asia',
-  MIDDLE_EAST_AND_AFRICA = 'Middle East & Africa',
-  SOUTHWEST_PACIFIC = 'Southwest Pacific',
-  EUROPE = 'Europe',
-  NORTH_AMERICA = 'North America',
-}

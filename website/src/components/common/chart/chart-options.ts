@@ -14,8 +14,14 @@ interface ChartOptions {
   axesTickMaxLimit?: Partial<Record<Axes, number>>;
   axesTickLabels?: Partial<Record<Axes, boolean>>;
   axesTickLabelOffset?: Partial<Record<Axes, number>>;
+  axesTickLabelRenderFn?: Partial<
+    Record<Axes, (value: string, index: number) => string>
+  >;
+  // Tooltip options
   showTooltipLabelIndicator?: boolean;
   tooltipTitleOverrideMap?: Record<string, string>;
+  tooltipLabelSuffix?: string;
+  // Plugin options
   lineOnHoverPluginOptions?: Partial<{
     width: number;
     color: string;
@@ -61,13 +67,18 @@ export const makeChartOptions = <T extends ChartType>(
       x: inputOptions.axesTickLabelOffset?.x ?? 0,
       y: inputOptions.axesTickLabelOffset?.y ?? 0,
     },
+    axesTickLabelRenderFn: {
+      x: inputOptions.axesTickLabelRenderFn?.x,
+      y: inputOptions.axesTickLabelRenderFn?.y,
+    },
   };
   const tooltipOptions = {
     showTooltipLabelIndicator: inputOptions.showTooltipLabelIndicator ?? false,
     tooltipTitleOverrideMap: inputOptions.tooltipTitleOverrideMap ?? {},
+    tooltipLabelSuffix: inputOptions.tooltipLabelSuffix ?? '',
   };
 
-  // @ts-expect-error
+  // @ts-expect-error hard-to-debug type error
   return {
     plugins: {
       legend: options.showLegend
@@ -79,9 +90,9 @@ export const makeChartOptions = <T extends ChartType>(
         : null,
       tooltip: {
         enabled: false,
-        // @ts-expect-error
         external: (context) => customTooltip(context, tooltipOptions),
         mode: 'index',
+        afterLabel: '%',
         intersect: false,
       },
       lineOnHover: inputOptions.lineOnHoverPluginOptions,
@@ -105,6 +116,9 @@ export const makeChartOptions = <T extends ChartType>(
           color: 'black',
           maxTicksLimit: options.axesTickMaxLimit?.x,
           labelOffset: options.axesTickLabelOffset?.x,
+          ...(options.axesTickLabelRenderFn?.x
+            ? { callback: options.axesTickLabelRenderFn?.x }
+            : {}),
         },
       },
       y: {
@@ -123,6 +137,9 @@ export const makeChartOptions = <T extends ChartType>(
           color: 'black',
           maxTicksLimit: options.axesTickMaxLimit?.y,
           labelOffset: options.axesTickLabelOffset?.y,
+          ...(options.axesTickLabelRenderFn?.y
+            ? { callback: options.axesTickLabelRenderFn?.y }
+            : {}),
         },
       },
     },

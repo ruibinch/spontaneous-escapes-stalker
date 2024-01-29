@@ -9,10 +9,15 @@ export const customTooltip = (
   opts: {
     showTooltipLabelIndicator: boolean;
     tooltipTitleOverrideMap: Record<string, string>;
+    tooltipLabelSuffix: string;
   },
 ) => {
   const { chart, tooltip } = context;
-  const { showTooltipLabelIndicator, tooltipTitleOverrideMap } = opts;
+  const {
+    showTooltipLabelIndicator,
+    tooltipTitleOverrideMap,
+    tooltipLabelSuffix,
+  } = opts;
   const tooltipEl = getOrCreateTooltip(chart);
 
   // hide if no tooltip, e.g. mouse moves out of the chart
@@ -51,7 +56,7 @@ export const customTooltip = (
 
       const td = document.createElement('td');
 
-      const text = document.createTextNode(body[0]);
+      const text = document.createTextNode(`${body[0]}${tooltipLabelSuffix}`);
 
       if (showTooltipLabelIndicator) {
         const colors = tooltip.labelColors[i];

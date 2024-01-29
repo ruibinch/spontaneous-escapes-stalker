@@ -6,7 +6,7 @@ import { RouteAnalysisEntry } from '@/index';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { flightClassColors } from '../../common/colors';
-import { ChartWrapper } from './chart-wrapper';
+import { ChartWrapper } from '../../common/chart/chart-wrapper';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -73,18 +73,21 @@ export function RedemptionsByMonthAndFlightClassChart({
   };
 
   return (
-    <ChartWrapper title="Redemptions by month and flight class">
-      <Bar
-        options={makeChartOptions({
-          axesStacked: { x: true, y: true },
-          axesBorder: { x: true },
-          axesTicksOnChartArea: { x: false, y: true },
-          axesTickMaxLimit: { x: 12, y: 5 },
-          showTooltipLabelIndicator: true,
-          tooltipTitleOverrideMap: monthShortNameToNameMap,
-        })}
-        data={data}
-      />
-    </ChartWrapper>
+    <ChartWrapper
+      title="Redemptions by month and flight class"
+      chart={
+        <Bar
+          options={makeChartOptions({
+            axesStacked: { x: true, y: true },
+            axesBorder: { x: true },
+            axesTicksOnChartArea: { x: false, y: true },
+            axesTickMaxLimit: { x: 12, y: 5 },
+            showTooltipLabelIndicator: true,
+            tooltipTitleOverrideMap: monthShortNameToNameMap,
+          })}
+          data={data}
+        />
+      }
+    />
   );
 }

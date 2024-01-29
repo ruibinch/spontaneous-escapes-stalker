@@ -1,8 +1,18 @@
 import { RouteAnalysisEntry } from '@/index';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from './chart-wrapper';
+import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { regionColors } from '../../common/colors';
+
+enum Region {
+  SOUTH_EAST_ASIA = 'South East Asia',
+  NORTH_ASIA = 'North Asia',
+  SOUTH_ASIA = 'South Asia',
+  MIDDLE_EAST_AND_AFRICA = 'Middle East & Africa',
+  SOUTHWEST_PACIFIC = 'Southwest Pacific',
+  EUROPE = 'Europe',
+  NORTH_AMERICA = 'North America',
+}
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -10,13 +20,13 @@ interface Props {
 
 export function RoutesByRegionChart({ routeAnalysisListFiltered }: Props) {
   const regionToCountDict: Record<string, number> = {
-    'South East Asia': 0,
-    'North Asia': 0,
-    'South Asia': 0,
-    'Middle East & Africa': 0,
-    'Southwest Pacific': 0,
-    Europe: 0,
-    'North America': 0,
+    [Region.SOUTH_EAST_ASIA]: 0,
+    [Region.NORTH_ASIA]: 0,
+    [Region.SOUTH_ASIA]: 0,
+    [Region.MIDDLE_EAST_AND_AFRICA]: 0,
+    [Region.SOUTHWEST_PACIFIC]: 0,
+    [Region.EUROPE]: 0,
+    [Region.NORTH_AMERICA]: 0,
   };
 
   routeAnalysisListFiltered.forEach(({ region, details }) => {
@@ -48,16 +58,19 @@ export function RoutesByRegionChart({ routeAnalysisListFiltered }: Props) {
   };
 
   return (
-    <ChartWrapper title="Routes by region">
-      <Bar
-        options={makeChartOptions({
-          axesStacked: { x: true },
-          axesBorder: { x: true },
-          axesTicksOnChartArea: { x: false, y: true },
-          axesTickMaxLimit: { y: 5 },
-        })}
-        data={data}
-      />
-    </ChartWrapper>
+    <ChartWrapper
+      title="Routes by region"
+      chart={
+        <Bar
+          options={makeChartOptions({
+            axesStacked: { x: true },
+            axesBorder: { x: true },
+            axesTicksOnChartArea: { x: false, y: true },
+            axesTickMaxLimit: { y: 5 },
+          })}
+          data={data}
+        />
+      }
+    />
   );
 }

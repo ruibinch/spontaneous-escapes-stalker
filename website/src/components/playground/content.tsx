@@ -4,6 +4,7 @@ import { FlightClassSelectOption, RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import { cn } from '@nextui-org/react';
 import {
+  ArcElement,
   BarElement,
   CategoryScale,
   Chart as ChartJS,
@@ -23,13 +24,13 @@ import { FilterInfo } from './filter-info';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { Filters } from './playground-filters';
 
-// initialise chart components at parent component level
 ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
   BarElement,
   LineElement,
+  ArcElement,
   Title,
   Tooltip,
   Legend,

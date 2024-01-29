@@ -1,5 +1,4 @@
 import { trackEvent } from '@/analytics';
-import { Button, Tooltip } from '@nextui-org/react';
 import {
   DateRangeFilter,
   DateRangeFilterProps,
@@ -13,11 +12,11 @@ import {
   RegionFilter,
   RegionFilterProps,
 } from '../common/filters/region-filter';
+import { ResetAllFiltersButton } from '../common/filters/reset-all-filters';
 import {
   SearchTermFilter,
   SearchTermFilterProps,
 } from '../common/filters/search-term-filter';
-import { RefreshIcon } from '../icons/refresh';
 
 type Props = SearchTermFilterProps &
   FlightClassFilterProps &
@@ -63,23 +62,7 @@ export function Filters(props: Props) {
           />
         </div>
 
-        <div className="">
-          <Tooltip content="Reset all filters" placement="bottom">
-            <div
-              className="border-1 text-lg bg-neutral-100 rounded-md p-1 cursor-pointer"
-              onClick={resetAllFilters}
-            >
-              <Button
-                size="sm"
-                variant="light"
-                isIconOnly
-                className="pointer-events-none"
-              >
-                <RefreshIcon />
-              </Button>
-            </div>
-          </Tooltip>
-        </div>
+        <ResetAllFiltersButton resetAllFilters={resetAllFilters} />
       </div>
     </div>
   );

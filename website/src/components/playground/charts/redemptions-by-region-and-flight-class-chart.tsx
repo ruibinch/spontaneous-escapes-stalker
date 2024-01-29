@@ -1,8 +1,8 @@
-import { FlightClass, RouteAnalysisEntry } from '@/index';
+import { RouteAnalysisEntry } from '@/index';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from './chart-wrapper';
-import { flightClassColors, regionColors } from '../../common/colors';
+import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { flightClassColors } from '../../common/colors';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -63,17 +63,20 @@ export function RedemptionsByRegionAndFlightClassChart({
   };
 
   return (
-    <ChartWrapper title="Redemptions by region and flight class">
-      <Bar
-        options={makeChartOptions({
-          axesStacked: { x: true, y: true },
-          axesBorder: { x: true },
-          axesTicksOnChartArea: { x: false, y: true },
-          axesTickMaxLimit: { y: 5 },
-          showTooltipLabelIndicator: true,
-        })}
-        data={data}
-      />
-    </ChartWrapper>
+    <ChartWrapper
+      title="Redemptions by region and flight class"
+      chart={
+        <Bar
+          options={makeChartOptions({
+            axesStacked: { x: true, y: true },
+            axesBorder: { x: true },
+            axesTicksOnChartArea: { x: false, y: true },
+            axesTickMaxLimit: { y: 5 },
+            showTooltipLabelIndicator: true,
+          })}
+          data={data}
+        />
+      }
+    />
   );
 }

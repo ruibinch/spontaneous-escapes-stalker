@@ -1,12 +1,39 @@
 'use client';
 import { monthNumToNameMap } from '@/common/months-map';
 import { FlightClassSelectOption, RedemptionEntry } from '@/index';
+import { BreadcrumbItem, Breadcrumbs, cn } from '@nextui-org/react';
+import {
+  ArcElement,
+  BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LineElement,
+  LinearScale,
+  Title,
+  Tooltip,
+} from 'chart.js';
 import { useState } from 'react';
 import { RedemptionsTable } from './redemptions-table';
-import { MonthDisplayFilters } from './month-display-filters';
+import { ByMonthFilters } from './by-month-filters';
 import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
+import { PageHeader } from '../common/page-header';
+import { CommonStyles } from '../common/styles';
+import { FlightClassDistributionChart } from './charts/flight-class-distribution-chart';
+import { RoutesRegionDistributionChart } from './charts/routes-region-distribution-chart';
 
-export function MonthDisplayContent({
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  LineElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend,
+);
+
+export function ByMonthContent({
   redemptions,
   month,
 }: {
@@ -27,14 +54,25 @@ export function MonthDisplayContent({
     },
   });
 
-  return (
-    <div className="flex flex-col w-full gap-8">
-      <h1 className="text-2xl font-bold">{`${month.slice(0, 4)} ${
-        monthNumToNameMap[month.slice(4, 6)]
-      }`}</h1>
+  const isFilterActive = redemptions.length !== redemptionsFiltered.length;
 
-      <div className="flex flex-col gap-4">
-        <MonthDisplayFilters
+  return (
+    <div>
+      <PageHeader
+        breadcrumbs={
+          <Breadcrumbs size="md">
+            <BreadcrumbItem href="/month">View by Month</BreadcrumbItem>
+            <BreadcrumbItem>{`${month.slice(0, 4)}-${month.slice(
+              4,
+              6,
+            )}`}</BreadcrumbItem>
+          </Breadcrumbs>
+        }
+        title={`${month.slice(0, 4)} ${monthNumToNameMap[month.slice(4, 6)]}`}
+      />
+
+      <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>
+        <ByMonthFilters
           flightClassOption={flightClassOption}
           setFlightClassOption={setFlightClassOption}
           searchTerm={searchTerm}
@@ -42,6 +80,21 @@ export function MonthDisplayContent({
           regions={regions}
           setRegions={setRegions}
         />
+
+        <div className="grid grid-cols-2 gap-2">
+          <div className="col-span-2 xl:col-span-1">
+            <FlightClassDistributionChart
+              redemptionsFiltered={redemptionsFiltered}
+              isFilterActive={isFilterActive}
+            />
+          </div>
+          <div className="col-span-2 xl:col-span-1">
+            <RoutesRegionDistributionChart
+              redemptionsFiltered={redemptionsFiltered}
+              isFilterActive={isFilterActive}
+            />
+          </div>
+        </div>
 
         <RedemptionsTable
           data={redemptionsFiltered}

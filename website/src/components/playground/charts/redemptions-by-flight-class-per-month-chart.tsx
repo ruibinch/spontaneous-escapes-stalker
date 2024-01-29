@@ -1,10 +1,9 @@
-import { RouteAnalysisEntry } from '@/index';
-
+import { Month, RouteAnalysisEntry } from '@/index';
 import { Line } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
+import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
 import { flightClassColors } from '../../common/colors';
-import { ChartWrapper } from './chart-wrapper';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -14,7 +13,7 @@ export function RedemptionsByFlightClassPerMonthChart({
   routeAnalysisListFiltered,
 }: Props) {
   const monthToFlightClassToCountDict: Record<
-    string,
+    Month,
     Record<string, number>
   > = {};
 
@@ -71,18 +70,21 @@ export function RedemptionsByFlightClassPerMonthChart({
   };
 
   return (
-    <ChartWrapper title="Redemptions by flight class per month">
-      <Line
-        options={makeChartOptions({
-          axesTicks: { x: true, y: false },
-          axesBorder: { x: true },
-          axesTicksOnChartArea: { x: false, y: true },
-          axesTickMaxLimit: { x: 4, y: 4 },
-          showTooltipLabelIndicator: true,
-        })}
-        plugins={[lineOnHoverPlugin]}
-        data={data}
-      />
-    </ChartWrapper>
+    <ChartWrapper
+      title="Redemptions by flight class per month"
+      chart={
+        <Line
+          options={makeChartOptions({
+            axesTicks: { x: true, y: false },
+            axesBorder: { x: true },
+            axesTicksOnChartArea: { x: false, y: true },
+            axesTickMaxLimit: { x: 4, y: 4 },
+            showTooltipLabelIndicator: true,
+          })}
+          plugins={[lineOnHoverPlugin]}
+          data={data}
+        />
+      }
+    />
   );
 }
