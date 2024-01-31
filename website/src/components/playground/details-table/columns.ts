@@ -20,9 +20,9 @@ export const getColumns = (filters: {
 
   return [
     { key: 'actions', label: '' },
-    { key: 'from', label: 'FROM', allowsSorting: true },
-    { key: 'to', label: 'TO', allowsSorting: true },
-    { key: 'count', label: 'COUNT', allowsSorting: true },
+    { key: 'from', label: 'Origin', allowsSorting: true },
+    { key: 'to', label: 'Destination', allowsSorting: true },
+    { key: 'count', label: 'Count', allowsSorting: true },
     ...monthsList
       .filter((month) =>
         isApplicableMonth({

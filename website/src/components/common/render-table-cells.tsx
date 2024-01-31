@@ -17,6 +17,8 @@ export function renderBlackoutPeriodCell(
     flightNos?: string[];
   }>,
 ) {
+  if (blackoutPeriod.length === 0) return '-';
+
   return blackoutPeriod.map(({ from, to, flightNos }) => {
     const fromFormatted = `${from.slice(8, 10)} ${
       monthNumToShortNameMap[from.slice(5, 7)]

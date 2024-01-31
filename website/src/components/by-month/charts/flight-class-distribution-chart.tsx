@@ -7,6 +7,8 @@ import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Pie } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { TooltipDark } from '@/components/common/tooltip-dark';
+import { Tooltip } from 'chart.js';
 
 type FlightClassToCountDict = Record<string, number>;
 
@@ -90,6 +92,12 @@ export function FlightClassDistributionChart({
   );
 }
 
+const flightClassCodeMap: Record<string, string> = {
+  Y: 'Economy',
+  PY: 'Premium Economy',
+  J: 'Business',
+};
+
 function ComparisonTable({
   flightClassDistributionPctInMonth,
   averageFlightClassDistributionPct,
@@ -108,8 +116,18 @@ function ComparisonTable({
           <tr className="border-b">
             <th className="border-r"></th>
             <th className="px-3 py-2 font-semibold border-r">Month</th>
-            <th className="px-2 py-2 font-semibold border-r">Average</th>
-            <th className="px-2 py-2 font-semibold">Comparison</th>
+            <TooltipDark
+              content="Average percentage breakdown of all redemptions"
+              showArrow
+            >
+              <th className="px-2 py-2 font-semibold border-r">Average</th>
+            </TooltipDark>
+            <TooltipDark
+              content="Comparison of this month's percentage breakdown against the average"
+              showArrow
+            >
+              <th className="px-2 py-2 font-semibold">Comparison</th>
+            </TooltipDark>
           </tr>
         </thead>
         <tbody>
@@ -124,10 +142,12 @@ function ComparisonTable({
                 className={idx !== 0 ? 'border-t' : undefined}
               >
                 <td className="px-2 border-r">
-                  <div className="flex flex-row items-center gap-1">
-                    <FlightClassIndicator flightClassCode={flightClass} />
-                    {flightClass}
-                  </div>
+                  <TooltipDark content={flightClassCodeMap[flightClass]}>
+                    <div className="flex flex-row items-center gap-1">
+                      <FlightClassIndicator flightClassCode={flightClass} />
+                      {flightClass}
+                    </div>
+                  </TooltipDark>
                 </td>
                 <td className="py-1 border-r">
                   {isFilterActive ? '-' : toPct(monthValue)}

@@ -81,51 +81,30 @@ export function ByMonthContent({
           setRegions={setRegions}
         />
 
-        <div className="grid grid-cols-2 gap-2">
-          <div className="col-span-2 xl:col-span-1">
-            <FlightClassDistributionChart
-              redemptionsFiltered={redemptionsFiltered}
-              isFilterActive={isFilterActive}
-            />
+        <div className="flex flex-col gap-4">
+          <div>
+            <span>Showing </span>
+            <span className="font-bold">{`${redemptionsFiltered.length}/${redemptions.length} redemptions`}</span>
           </div>
-          <div className="col-span-2 xl:col-span-1">
-            <RoutesRegionDistributionChart
-              redemptionsFiltered={redemptionsFiltered}
-              isFilterActive={isFilterActive}
-            />
+
+          <div className="grid grid-cols-2 gap-2">
+            <div className="col-span-2 xl:col-span-1">
+              <FlightClassDistributionChart
+                redemptionsFiltered={redemptionsFiltered}
+                isFilterActive={isFilterActive}
+              />
+            </div>
+            <div className="col-span-2 xl:col-span-1">
+              <RoutesRegionDistributionChart
+                redemptionsFiltered={redemptionsFiltered}
+                isFilterActive={isFilterActive}
+              />
+            </div>
           </div>
         </div>
 
-        <RedemptionsTable
-          data={redemptionsFiltered}
-          tableSummaryComponent={
-            <TableSummary
-              redemptions={redemptions}
-              redemptionsFiltered={redemptionsFiltered}
-            />
-          }
-        />
+        <RedemptionsTable data={redemptionsFiltered} />
       </div>
-    </div>
-  );
-}
-
-function TableSummary({
-  redemptions,
-  redemptionsFiltered,
-}: {
-  redemptions: RedemptionEntry[];
-  redemptionsFiltered: RedemptionEntry[];
-}) {
-  return redemptions.length === redemptionsFiltered.length ? (
-    <div>
-      <span>Total </span>
-      <span className="font-bold">{`${redemptionsFiltered.length} entries`}</span>
-    </div>
-  ) : (
-    <div>
-      <span>Showing </span>
-      <span className="font-bold">{`${redemptionsFiltered.length} of ${redemptions.length} entries`}</span>
     </div>
   );
 }

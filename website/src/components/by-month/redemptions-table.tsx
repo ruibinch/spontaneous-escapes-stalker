@@ -1,4 +1,3 @@
-import { monthNumToShortNameMap } from '@/common/months-map';
 import { RedemptionEntry } from '@/index';
 import {
   SortDescriptor,
@@ -10,18 +9,21 @@ import {
   TableRow,
   getKeyValue,
 } from '@nextui-org/react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { TablePagination } from '../common/table-pagination';
-import { TableRowsPerPage } from '../common/table-rows-per-page';
-import { FlightClassIndicator } from '../common/flight-class-indicator';
+import { useEffect, useState } from 'react';
 import {
   renderBlackoutPeriodCell,
   renderFlightClassCell,
 } from '../common/render-table-cells';
+import { TablePagination } from '../common/table-pagination';
+import {
+  TableRowsPerPage,
+  useRowsPerPageHandler,
+} from '../common/table-rows-per-page';
+import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 
 const columns = [
-  { key: 'origin', label: 'Origin' },
-  { key: 'destination', label: 'Destination' },
+  { key: 'origin', label: 'Origin', allowsSorting: true },
+  { key: 'destination', label: 'Destination', allowsSorting: true },
   { key: 'flightClass', label: 'Flight Class' },
   { key: 'flightNo', label: 'Flight No.' },
   { key: 'milesRequired', label: 'Miles Required', allowsSorting: true },
@@ -31,116 +33,112 @@ const columns = [
 
 export function RedemptionsTable({
   data: inputData,
-  tableSummaryComponent,
 }: {
   data: RedemptionEntry[];
-  tableSummaryComponent: React.ReactNode;
 }) {
   const [data, setData] = useState<RedemptionEntry[]>([]);
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
 
-  const [numEntries, setNumEntries] = useState<number>();
-  const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [page, setPage] = useState(1);
-  const pages = Math.ceil(inputData.length / rowsPerPage);
+  const {
+    rowsPerPage,
+    currPage,
+    setCurrPage,
+    pages,
+    startIdx,
+    endIdx,
+    onRowsPerPageChange,
+  } = useRowsPerPageHandler(inputData);
 
   useEffect(() => {
     setData(inputData);
   }, [inputData]);
 
-  useEffect(() => {
-    // reset all rows/pagination props if number of entries has changed
-    if (numEntries !== undefined && inputData.length !== numEntries) {
-      setRowsPerPage(10);
-      setPage(1);
-    }
-    setNumEntries(inputData.length);
-  }, [inputData, numEntries]);
-
-  const onRowsPerPageChange = useCallback(
-    (e: React.ChangeEvent<HTMLSelectElement>) => {
-      setRowsPerPage(Number(e.target.value));
-      setPage(1);
-    },
-    [],
-  );
-
-  const dataToDisplay = useMemo(() => {
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-
-    return data.slice(start, end);
-  }, [data, page, rowsPerPage]);
-
-  const topContent = useMemo(() => {
-    return (
-      <div className="flex justify-between">
-        {tableSummaryComponent}
-        <TableRowsPerPage
-          rowsPerPage={rowsPerPage}
-          onRowsPerPageChange={onRowsPerPageChange}
-        />
-      </div>
-    );
-  }, [tableSummaryComponent, rowsPerPage, onRowsPerPageChange]);
+  const dataToDisplay = data.slice(startIdx, endIdx);
 
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
-    if (column === 'milesRequired') {
-      const dataSortedByMilesRequired = [...inputData].sort((a, b) => {
-        return direction === 'ascending'
-          ? a.milesRequired - b.milesRequired
-          : b.milesRequired - a.milesRequired;
-      });
+    let sortDirection = direction;
 
-      setData(dataSortedByMilesRequired);
+    if (column === 'milesRequired') {
+      // if this is the first sort, sort descending by default
+      sortDirection = sortDescriptor?.direction ? direction : 'descending';
+      setData(sortByNumericField(inputData, 'milesRequired', sortDirection));
+    } else if (column === 'origin' || column === 'destination') {
+      setData(sortByStringField(inputData, column, direction));
     }
 
-    setSortDescriptor({ column, direction });
+    setSortDescriptor({ column, direction: sortDirection });
   };
 
   return (
-    <Table
-      isStriped
-      radius="md"
-      topContent={topContent}
-      bottomContent={
-        <TablePagination pages={pages} page={page} setPage={setPage} />
-      }
-      sortDescriptor={sortDescriptor}
-      onSortChange={handleSortChange}
-      aria-label="Details view"
-    >
-      <TableHeader columns={columns}>
-        {(column) => (
-          <TableColumn key={column.key} allowsSorting={column.allowsSorting}>
-            {column.label}
-          </TableColumn>
-        )}
-      </TableHeader>
-      <TableBody items={dataToDisplay}>
-        {(item) => (
-          <TableRow
-            key={`${item.flightClass}#${item.origin}#${item.destination}`}
-          >
-            {(columnKey) => (
-              <TableCell>
-                {(() => {
-                  switch (columnKey) {
-                    case 'flightClass':
-                      return renderFlightClassCell(item[columnKey]);
-                    case 'milesRequired':
-                      return item[columnKey].toLocaleString();
-                    case 'blackoutPeriod':
-                      return renderBlackoutPeriodCell(item[columnKey]);
-                    default:
-                      return getKeyValue(item, columnKey);
-                  }
-                })()}
-              </TableCell>
-            )}
-          </TableRow>
-        )}
-      </TableBody>
-    </Table>
+    <div className="border border-neutral-250 py-4 px-2 rounded-md">
+      <Table
+        radius="sm"
+        sortDescriptor={sortDescriptor}
+        onSortChange={handleSortChange}
+        topContent={
+          <TopContent
+            rowsPerPage={rowsPerPage}
+            onRowsPerPageChange={onRowsPerPageChange}
+          />
+        }
+        topContentPlacement="outside"
+        bottomContent={
+          <TablePagination
+            pages={pages}
+            page={currPage}
+            setPage={setCurrPage}
+          />
+        }
+        bottomContentPlacement="outside"
+        aria-label="By-month redemptions table"
+      >
+        <TableHeader columns={columns}>
+          {(column) => (
+            <TableColumn key={column.key} allowsSorting={column.allowsSorting}>
+              {column.label}
+            </TableColumn>
+          )}
+        </TableHeader>
+        <TableBody items={dataToDisplay}>
+          {(item) => (
+            <TableRow
+              key={`${item.flightClass}#${item.origin}#${item.destination}`}
+              className="border-b"
+            >
+              {(columnKey) => (
+                <TableCell>
+                  {(() => {
+                    switch (columnKey) {
+                      case 'flightClass':
+                        return renderFlightClassCell(item[columnKey]);
+                      case 'milesRequired':
+                        return item[columnKey].toLocaleString();
+                      case 'blackoutPeriod':
+                        return renderBlackoutPeriodCell(item[columnKey]);
+                      default:
+                        return getKeyValue(item, columnKey);
+                    }
+                  })()}
+                </TableCell>
+              )}
+            </TableRow>
+          )}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}
+
+function TopContent(props: {
+  rowsPerPage: number;
+  onRowsPerPageChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}) {
+  return (
+    <div className="flex justify-end">
+      <TableRowsPerPage
+        rowsPerPage={props.rowsPerPage}
+        onRowsPerPageChange={props.onRowsPerPageChange}
+      />
+    </div>
   );
 }

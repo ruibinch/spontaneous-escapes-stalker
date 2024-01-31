@@ -1,5 +1,6 @@
 import { HelpCircleIcon } from '@/components/icons/help-circle';
-import { Tooltip, cn } from '@nextui-org/react';
+import { cn } from '@nextui-org/react';
+import { TooltipDark } from '../tooltip-dark';
 
 export function ChartWrapper({
   title,
@@ -20,17 +21,11 @@ export function ChartWrapper({
         <span className="text-sm">{title}</span>
 
         {tooltip && (
-          <Tooltip
-            content={tooltip}
-            radius="sm"
-            classNames={{
-              content: 'bg-neutral-600 text-white',
-            }}
-          >
+          <TooltipDark content={tooltip}>
             <div className="cursor-pointer">
               <HelpCircleIcon width={16} height={16} color="#404040" />
             </div>
-          </Tooltip>
+          </TooltipDark>
         )}
       </div>
 

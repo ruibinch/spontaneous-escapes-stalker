@@ -119,7 +119,7 @@ export function DetailsTableContent({
         </TableHeader>
         <TableBody items={dataToDisplay}>
           {(item) => (
-            <TableRow key={`${item.from}-${item.to}`} className="border-b">
+            <TableRow key={`${item.from}#${item.to}`} className="border-b">
               {(columnKey) => (
                 <TableCell>
                   {renderCell({
