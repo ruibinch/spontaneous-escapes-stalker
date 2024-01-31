@@ -26,7 +26,11 @@ export const SidebarWrapper = () => {
                 key={item.title}
                 title={item.title}
                 icon={item.icon}
-                isActive={pathname === item.href}
+                isActive={
+                  item.href === '/'
+                    ? pathname === item.href
+                    : pathname.startsWith(item.href)
+                }
                 href={item.href}
               />
             ))}
