@@ -1,4 +1,4 @@
-import { RouteDisplayContent } from '@/components/route-display/content';
+import { RouteDisplayContent } from '@/components/by-route/content';
 import { RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 
@@ -13,7 +13,7 @@ export default function ByRoute({ params }: { params: { route: string } }) {
   if (!routeInfo) {
     return (
       <div className="pt-12 px-4">
-        <h1 className="text-2xl font-bold">Invalid route</h1>
+        <h1 className="text-2xl font-semibold">Invalid route</h1>
       </div>
     );
   }

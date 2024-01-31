@@ -1,7 +1,9 @@
 import { trackEvent } from '@/analytics';
 import { RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
-import { Link } from '@nextui-org/react';
+import { Link, cn } from '@nextui-org/react';
+import { PageHeader } from '../common/page-header';
+import { CommonStyles } from '../common/styles';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
@@ -55,28 +57,37 @@ export function RouteOverviewContent() {
   );
 
   return (
-    <div className="grid grid-cols-4 gap-4">
-      {routeOverviewList.map(({ letter, routes }) => (
-        <div key={letter} className="flex flex-col gap-2">
-          <h1 className="text-2xl font-bold">{letter}</h1>
+    <div>
+      <PageHeader title="View by Route" />
 
-          <div className="flex flex-col gap-1">
-            {routes.map((route) => (
-              <Link
-                key={route.label}
-                href={route.href}
-                size="sm"
-                underline="hover"
-                onClick={() => {
-                  trackEvent(['routeOverview'], { route: route.label });
-                }}
-              >
-                {route.label}
-              </Link>
-            ))}
+      <div
+        className={cn(
+          CommonStyles.Page(),
+          'grid grid-cols-3 md:grid-cols-4 gap-4',
+        )}
+      >
+        {routeOverviewList.map(({ letter, routes }) => (
+          <div key={letter} className="flex flex-col gap-2">
+            <h1 className="text-2xl font-bold">{letter}</h1>
+
+            <div className="flex flex-col gap-1">
+              {routes.map((route) => (
+                <Link
+                  key={route.label}
+                  href={route.href}
+                  size="sm"
+                  underline="hover"
+                  onClick={() => {
+                    trackEvent(['routeOverview'], { route: route.label });
+                  }}
+                >
+                  {route.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
