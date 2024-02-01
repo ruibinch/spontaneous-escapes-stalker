@@ -16,7 +16,7 @@ export function ChartWrapper({
   contentStyle?: string;
 }) {
   return (
-    <div className="flex flex-col gap-2 border border-neutral-250 p-2 rounded-md">
+    <div className="flex flex-col gap-2 p-2 border border-neutral-250 rounded-md">
       <div className="flex gap-2 items-center">
         <span className="text-sm">{title}</span>
 

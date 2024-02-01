@@ -110,7 +110,9 @@ export function RedemptionsTable({
                   {(() => {
                     switch (columnKey) {
                       case 'flightClass':
-                        return renderFlightClassCell(item[columnKey]);
+                        return renderFlightClassCell({
+                          flightClass: item[columnKey],
+                        });
                       case 'milesRequired':
                         return item[columnKey].toLocaleString();
                       case 'blackoutPeriod':

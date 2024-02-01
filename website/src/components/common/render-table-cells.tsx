@@ -1,11 +1,21 @@
 import { monthNumToShortNameMap } from '@/common/months-map';
+import { flightClassCodeToName } from './flight-class-code-to-name';
 import { FlightClassIndicator } from './flight-class-indicator';
 
-export function renderFlightClassCell(flightClass: string) {
+export function renderFlightClassCell({
+  flightClass,
+  flightClassCode,
+}: {
+  flightClass?: string;
+  flightClassCode?: string;
+}) {
   return (
     <div className="flex flex-row gap-2 items-center">
-      <FlightClassIndicator flightClass={flightClass} />
-      {flightClass}
+      <FlightClassIndicator
+        flightClass={flightClass}
+        flightClassCode={flightClassCode}
+      />
+      {flightClassCode ? flightClassCodeToName[flightClassCode] : flightClass}
     </div>
   );
 }
@@ -31,7 +41,7 @@ export function renderBlackoutPeriodCell(
 
     return (
       <div key={`${from}-${to}`}>
-        {flightNos && `${flightNos.join(',')}: `}
+        {flightNos && `${flightNos.join('/')}: `}
         {blackoutPeriodFormatted}
       </div>
     );

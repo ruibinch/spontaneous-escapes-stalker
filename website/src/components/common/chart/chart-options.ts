@@ -9,9 +9,12 @@ interface ChartOptions {
   axesStacked?: Partial<Record<Axes, boolean>>;
   axesGrid?: Partial<Record<Axes, boolean>>;
   axesBorder?: Partial<Record<Axes, boolean>>;
+  axesMinValue?: Partial<Record<Axes, number>>;
+  axesMaxValue?: Partial<Record<Axes, number>>;
   axesTicks?: Partial<Record<Axes, boolean>>;
   axesTicksOnChartArea?: Partial<Record<Axes, boolean>>;
   axesTickMaxLimit?: Partial<Record<Axes, number>>;
+  axesTickPadding?: Partial<Record<Axes, number>>;
   axesTickLabels?: Partial<Record<Axes, boolean>>;
   axesTickLabelOffset?: Partial<Record<Axes, number>>;
   axesTickLabelRenderFn?: Partial<
@@ -47,6 +50,14 @@ export const makeChartOptions = <T extends ChartType>(
       x: inputOptions.axesBorder?.x ?? false,
       y: inputOptions.axesBorder?.y ?? false,
     },
+    axesMinValue: {
+      x: inputOptions.axesMinValue?.x,
+      y: inputOptions.axesMinValue?.y,
+    },
+    axesMaxValue: {
+      x: inputOptions.axesMaxValue?.x,
+      y: inputOptions.axesMaxValue?.y,
+    },
     axesTicks: {
       x: inputOptions.axesTicks?.x ?? false,
       y: inputOptions.axesTicks?.y ?? false,
@@ -58,6 +69,10 @@ export const makeChartOptions = <T extends ChartType>(
     axesTickMaxLimit: {
       x: inputOptions.axesTickMaxLimit?.x ?? 10,
       y: inputOptions.axesTickMaxLimit?.y ?? 10,
+    },
+    axesTickPadding: {
+      x: inputOptions.axesTickPadding?.x ?? 3,
+      y: inputOptions.axesTickPadding?.y ?? 3,
     },
     axesTickLabels: {
       x: inputOptions.axesTickLabels?.x ?? true,
@@ -116,10 +131,17 @@ export const makeChartOptions = <T extends ChartType>(
           color: 'black',
           maxTicksLimit: options.axesTickMaxLimit?.x,
           labelOffset: options.axesTickLabelOffset?.x,
+          padding: options.axesTickPadding?.x,
           ...(options.axesTickLabelRenderFn?.x
             ? { callback: options.axesTickLabelRenderFn?.x }
             : {}),
         },
+        ...(options.axesMinValue?.x !== undefined
+          ? { min: options.axesMinValue?.x }
+          : {}),
+        ...(options.axesMaxValue?.x !== undefined
+          ? { max: options.axesMaxValue?.x }
+          : {}),
       },
       y: {
         stacked: options.axesStacked?.y,
@@ -137,10 +159,17 @@ export const makeChartOptions = <T extends ChartType>(
           color: 'black',
           maxTicksLimit: options.axesTickMaxLimit?.y,
           labelOffset: options.axesTickLabelOffset?.y,
+          padding: options.axesTickPadding?.y,
           ...(options.axesTickLabelRenderFn?.y
             ? { callback: options.axesTickLabelRenderFn?.y }
             : {}),
         },
+        ...(options.axesMinValue?.y !== undefined
+          ? { min: options.axesMinValue?.y }
+          : {}),
+        ...(options.axesMaxValue?.y !== undefined
+          ? { max: options.axesMaxValue?.y }
+          : {}),
       },
     },
     hover: {

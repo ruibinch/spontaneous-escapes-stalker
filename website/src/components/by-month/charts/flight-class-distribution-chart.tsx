@@ -1,5 +1,7 @@
 import { flightClassColors } from '@/components/common/colors';
+import { flightClassCodeToName } from '@/components/common/flight-class-code-to-name';
 import { FlightClassIndicator } from '@/components/common/flight-class-indicator';
+import { TooltipDark } from '@/components/common/tooltip-dark';
 import { ArrowDownIcon } from '@/components/icons/arrow-down';
 import { ArrowUpIcon } from '@/components/icons/arrow-up';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
@@ -7,8 +9,6 @@ import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Pie } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
-import { TooltipDark } from '@/components/common/tooltip-dark';
-import { Tooltip } from 'chart.js';
 
 type FlightClassToCountDict = Record<string, number>;
 
@@ -92,12 +92,6 @@ export function FlightClassDistributionChart({
   );
 }
 
-const flightClassCodeMap: Record<string, string> = {
-  Y: 'Economy',
-  PY: 'Premium Economy',
-  J: 'Business',
-};
-
 function ComparisonTable({
   flightClassDistributionPctInMonth,
   averageFlightClassDistributionPct,
@@ -142,7 +136,7 @@ function ComparisonTable({
                 className={idx !== 0 ? 'border-t' : undefined}
               >
                 <td className="px-2 border-r">
-                  <TooltipDark content={flightClassCodeMap[flightClass]}>
+                  <TooltipDark content={flightClassCodeToName[flightClass]}>
                     <div className="flex flex-row items-center gap-1">
                       <FlightClassIndicator flightClassCode={flightClass} />
                       {flightClass}

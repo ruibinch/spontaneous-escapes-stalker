@@ -4,6 +4,7 @@ import {
   RedemptionInfoForMonth,
   SingleRedemptionInfo,
 } from '@/index';
+import { RouteDetailDatum } from './make-route-details-list';
 
 export interface MonthYearFrequencyDatum {
   year: string;
@@ -25,7 +26,7 @@ export function makeMonthYearFrequencyData({
   data,
   years,
 }: {
-  data: RedemptionInfoForMonth[];
+  data: RouteDetailDatum[];
   years: string[];
 }) {
   const yearsList = years.includes('All') ? getYearsList() : years;
@@ -34,15 +35,20 @@ export function makeMonthYearFrequencyData({
     const datumForYear: MonthYearFrequencyDatum = {
       year,
     };
+
     data
       .filter((d) => d.month.startsWith(year))
       .forEach((d) => {
         const month = d.month.slice(4, 6);
         // @ts-expect-error month is an accepted key
         datumForYear[month] = {
-          Y: d.Y,
-          PY: d.PY,
-          J: d.J,
+          // @ts-expect-error month is an accepted key
+          ...datumForYear[month],
+          [d.flightClass]: {
+            flightNo: d.flightNo,
+            milesRequired: d.milesRequired,
+            blackoutPeriod: d.blackoutPeriod,
+          },
         };
       });
 

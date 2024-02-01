@@ -1,4 +1,3 @@
-import { RedemptionInfoForMonth, RouteAnalysisEntry } from '@/index';
 import {
   SortDescriptor,
   Table,
@@ -13,13 +12,14 @@ import {
   renderBlackoutPeriodCell,
   renderFlightClassCell,
 } from '../common/render-table-cells';
-import {
-  RouteHistoryDatum,
-  makeRouteHistoryData,
-} from './helpers/make-route-history-data';
 import { TablePagination } from '../common/table-pagination';
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { TableRowsPerPage } from '../common/table-rows-per-page';
+import {
+  TableRowsPerPage,
+  useRowsPerPageHandler,
+} from '../common/table-rows-per-page';
+import { RouteDetailDatum } from './helpers/make-route-details-list';
+import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 
 const columns = [
   { key: 'month', label: 'Month', allowsSorting: true },
@@ -30,86 +30,40 @@ const columns = [
 ];
 
 export function RouteHistoryTable({
-  data,
-}: {
-  data: RedemptionInfoForMonth[];
-}) {
-  const routeHistoryData = makeRouteHistoryData(data);
-  return <RouteHistoryTableContent data={routeHistoryData} />;
-}
-
-function RouteHistoryTableContent({
   data: inputData,
 }: {
-  data: RouteHistoryDatum[];
+  data: RouteDetailDatum[];
 }) {
-  const [data, setData] = useState<RouteHistoryDatum[]>([]);
+  const [data, setData] = useState<RouteDetailDatum[]>([]);
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
 
-  const [numEntries, setNumEntries] = useState<number>();
-  const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [page, setPage] = useState(1);
-  const pages = Math.ceil(inputData.length / rowsPerPage);
+  const {
+    rowsPerPage,
+    currPage,
+    setCurrPage,
+    pages,
+    startIdx,
+    endIdx,
+    onRowsPerPageChange,
+  } = useRowsPerPageHandler(inputData);
 
   useEffect(() => {
-    setData(inputData);
+    // sort by month descending by default whenever input data changes
+    setData(sortByStringField(inputData, 'month', 'descending'));
+
+    setSortDescriptor({
+      column: 'month',
+      direction: 'descending',
+    });
   }, [inputData]);
 
-  useEffect(() => {
-    // reset all rows/pagination props if number of entries has changed
-    if (numEntries !== undefined && inputData.length !== numEntries) {
-      setRowsPerPage(10);
-      setPage(1);
-    }
-    setNumEntries(inputData.length);
-  }, [inputData, numEntries]);
-
-  const onRowsPerPageChange = useCallback(
-    (e: React.ChangeEvent<HTMLSelectElement>) => {
-      setRowsPerPage(Number(e.target.value));
-      setPage(1);
-    },
-    [],
-  );
-
-  const dataToDisplay = useMemo(() => {
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-
-    return data.slice(start, end);
-  }, [data, page, rowsPerPage]);
-
-  const topContent = useMemo(() => {
-    return (
-      <div className="flex justify-between items-end">
-        <div>
-          <span>Total </span>
-          <span className="font-bold">{`${inputData.length} entries`}</span>
-        </div>
-
-        <TableRowsPerPage
-          rowsPerPage={rowsPerPage}
-          onRowsPerPageChange={onRowsPerPageChange}
-        />
-      </div>
-    );
-  }, [inputData.length, rowsPerPage, onRowsPerPageChange]);
+  const dataToDisplay = data.slice(startIdx, endIdx);
 
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
     if (column === 'milesRequired') {
-      const dataSorted = [...inputData].sort((a, b) => {
-        return direction === 'ascending'
-          ? a.milesRequired - b.milesRequired
-          : b.milesRequired - a.milesRequired;
-      });
-      setData(dataSorted);
+      setData(sortByNumericField(inputData, 'milesRequired', direction));
     } else if (column === 'month') {
-      const dataSorted = [...inputData].sort((a, b) => {
-        return direction === 'ascending'
-          ? a.month.localeCompare(b.month)
-          : b.month.localeCompare(a.month);
-      });
-      setData(dataSorted);
+      setData(sortByStringField(inputData, 'month', direction));
     }
 
     setSortDescriptor({ column, direction });
@@ -119,51 +73,85 @@ function RouteHistoryTableContent({
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">History</h3>
 
-      <Table
-        radius="md"
-        isStriped
-        aria-label="Month/year frequency table for a specific route"
-        topContent={topContent}
-        bottomContent={
-          <TablePagination pages={pages} page={page} setPage={setPage} />
-        }
-        sortDescriptor={sortDescriptor}
-        onSortChange={handleSortChange}
-      >
-        <TableHeader columns={columns}>
-          {(column) => (
-            <TableColumn key={column.key} allowsSorting={column.allowsSorting}>
-              {column.label}
-            </TableColumn>
-          )}
-        </TableHeader>
-        <TableBody items={dataToDisplay}>
-          {(item) => (
-            <TableRow key={`${item.month}#${item.flightClass}`}>
-              {(columnKey) => (
-                <TableCell>
-                  {(() => {
-                    switch (columnKey) {
-                      case 'month': {
-                        const value = item[columnKey];
-                        return `${value.slice(0, 4)}-${value.slice(4, 6)}`;
+      <div className="border border-neutral-250 py-4 px-2 rounded-md">
+        <Table
+          radius="sm"
+          aria-label="Month/year frequency table for a specific route"
+          sortDescriptor={sortDescriptor}
+          onSortChange={handleSortChange}
+          topContent={
+            <TopContent
+              rowsPerPage={rowsPerPage}
+              onRowsPerPageChange={onRowsPerPageChange}
+            />
+          }
+          topContentPlacement="outside"
+          bottomContent={
+            <TablePagination
+              pages={pages}
+              page={currPage}
+              setPage={setCurrPage}
+            />
+          }
+          bottomContentPlacement="outside"
+        >
+          <TableHeader columns={columns}>
+            {(column) => (
+              <TableColumn
+                key={column.key}
+                allowsSorting={column.allowsSorting}
+              >
+                {column.label}
+              </TableColumn>
+            )}
+          </TableHeader>
+          <TableBody items={dataToDisplay}>
+            {(item) => (
+              <TableRow
+                key={`${item.month}#${item.flightClass}`}
+                className="border-b"
+              >
+                {(columnKey) => (
+                  <TableCell>
+                    {(() => {
+                      switch (columnKey) {
+                        case 'month': {
+                          const value = item[columnKey];
+                          return `${value.slice(0, 4)}-${value.slice(4, 6)}`;
+                        }
+                        case 'flightClass':
+                          return renderFlightClassCell({
+                            flightClassCode: item[columnKey],
+                          });
+                        case 'milesRequired':
+                          return item[columnKey].toLocaleString();
+                        case 'blackoutPeriod':
+                          return renderBlackoutPeriodCell(item[columnKey]);
+                        default:
+                          return getKeyValue(item, columnKey);
                       }
-                      case 'flightClass':
-                        return renderFlightClassCell(item[columnKey]);
-                      case 'milesRequired':
-                        return item[columnKey].toLocaleString();
-                      case 'blackoutPeriod':
-                        return renderBlackoutPeriodCell(item[columnKey]);
-                      default:
-                        return getKeyValue(item, columnKey);
-                    }
-                  })()}
-                </TableCell>
-              )}
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+                    })()}
+                  </TableCell>
+                )}
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
+    </div>
+  );
+}
+
+function TopContent(props: {
+  rowsPerPage: number;
+  onRowsPerPageChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}) {
+  return (
+    <div className="flex justify-end">
+      <TableRowsPerPage
+        rowsPerPage={props.rowsPerPage}
+        onRowsPerPageChange={props.onRowsPerPageChange}
+      />
     </div>
   );
 }

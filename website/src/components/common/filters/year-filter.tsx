@@ -36,6 +36,7 @@ export function YearFilter({ years, setYears }: YearFilterProps) {
 
   return (
     <Select
+      size="sm"
       items={yearsOptionsWithAll.map((year) => ({
         label: year,
         value: year,
