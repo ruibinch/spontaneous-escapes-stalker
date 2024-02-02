@@ -1,7 +1,5 @@
-import { trackEvent } from '@/analytics';
-import { Input, Slider, SliderStepMark } from '@nextui-org/react';
-import { usePathname } from 'next/navigation';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Input } from '@nextui-org/react';
+import { Dispatch, SetStateAction } from 'react';
 
 export interface DateRangeFilterProps {
   monthRange: [string, string];

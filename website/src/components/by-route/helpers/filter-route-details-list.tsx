@@ -1,3 +1,4 @@
+import { isYearMatch } from '@/components/common/filters/year-filter';
 import { FlightClassSelectOption } from '@/index';
 import { RouteDetailDatum } from './make-route-details-list';
 
@@ -12,11 +13,12 @@ export function filterRouteDetailsList({
   };
 }) {
   return detailsList.filter((detail) => {
-    const isYearMatch =
-      years.includes('All') || years.includes(detail.month.slice(0, 4));
     const isFlightClassMatch =
       flightClassOption === 'ALL' || flightClassOption === detail.flightClass;
 
-    return isYearMatch && isFlightClassMatch;
+    return (
+      isYearMatch({ yearsFiltered: years, year: detail.month.slice(0, 4) }) &&
+      isFlightClassMatch
+    );
   });
 }

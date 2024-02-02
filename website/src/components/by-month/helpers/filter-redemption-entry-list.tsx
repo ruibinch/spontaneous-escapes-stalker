@@ -1,3 +1,5 @@
+import { isRegionMatch } from '@/components/common/filters/region-filter';
+import { isSearchTermMatch } from '@/components/common/filters/search-term-filter';
 import { FlightClassSelectOption, RedemptionEntry } from '@/index';
 
 export function filterRedemptionEntryList({
@@ -12,23 +14,22 @@ export function filterRedemptionEntryList({
   };
 }) {
   return data.filter((d) => {
-    const isSearchTermMatch =
-      searchTerm === ''
-        ? true
-        : d.origin.toLowerCase().includes(searchTerm) ||
-          d.originIata.toLowerCase().includes(searchTerm) ||
-          d.destination.toLowerCase().includes(searchTerm) ||
-          d.destinationIata.toLowerCase().includes(searchTerm);
-
-    const isRegionsMatch =
-      regions.includes('All') || regions.includes(d.region);
-
     const isFlightClassMatch =
       flightClassOption === 'ALL' ||
       (flightClassOption === 'Y' && d.flightClass === 'Economy') ||
       (flightClassOption === 'PY' && d.flightClass === 'Premium Economy') ||
       (flightClassOption === 'J' && d.flightClass === 'Business');
 
-    return isSearchTermMatch && isRegionsMatch && isFlightClassMatch;
+    return (
+      isSearchTermMatch({
+        searchTerm,
+        strings: [d.origin, d.originIata, d.destination, d.destinationIata],
+      }) &&
+      isRegionMatch({
+        regionsFiltered: regions,
+        region: d.region,
+      }) &&
+      isFlightClassMatch
+    );
   });
 }

@@ -72,3 +72,21 @@ export function SearchTermFilter({
     />
   );
 }
+
+/**
+ * Helper function to check for a search term match, given an input list of strings for checking.
+ */
+export function isSearchTermMatch({
+  searchTerm,
+  strings,
+}: {
+  searchTerm: string;
+  strings: string[];
+}) {
+  if (searchTerm === '') return true;
+
+  const searchTermIndivWords = searchTerm.toLowerCase().split(' ');
+  return searchTermIndivWords.every((word) => {
+    return strings.some((str) => str.toLowerCase().includes(word));
+  });
+}

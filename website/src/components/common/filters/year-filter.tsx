@@ -54,3 +54,13 @@ export function YearFilter({ years, setYears }: YearFilterProps) {
     </Select>
   );
 }
+
+export function isYearMatch({
+  yearsFiltered,
+  year,
+}: {
+  yearsFiltered: string[];
+  year: string;
+}) {
+  return yearsFiltered.includes('All') || yearsFiltered.includes(year);
+}

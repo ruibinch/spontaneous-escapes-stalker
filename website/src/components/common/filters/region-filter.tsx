@@ -65,3 +65,13 @@ export function RegionFilter({ regions, setRegions }: RegionFilterProps) {
     </Select>
   );
 }
+
+export function isRegionMatch({
+  regionsFiltered,
+  region,
+}: {
+  regionsFiltered: string[];
+  region: string;
+}) {
+  return regionsFiltered.includes('All') || regionsFiltered.includes(region);
+}

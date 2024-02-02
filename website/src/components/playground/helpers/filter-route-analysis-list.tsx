@@ -1,3 +1,5 @@
+import { isRegionMatch } from '@/components/common/filters/region-filter';
+import { isSearchTermMatch } from '@/components/common/filters/search-term-filter';
 import {
   FlightClass,
   FlightClassSelectOption,
@@ -30,18 +32,16 @@ export function filterRouteAnalysisList({
 
   return data
     .filter((d) => {
-      const isSearchTermMatch =
-        searchTerm === ''
-          ? true
-          : d.from.toLowerCase().includes(searchTerm) ||
-            d.fromIata.toLowerCase().includes(searchTerm) ||
-            d.to.toLowerCase().includes(searchTerm) ||
-            d.toIata.toLowerCase().includes(searchTerm);
-
-      const isRegionsMatch =
-        regions.includes('All') || regions.includes(d.region);
-
-      return isSearchTermMatch && isRegionsMatch;
+      return (
+        isSearchTermMatch({
+          searchTerm,
+          strings: [d.from, d.fromIata, d.to, d.toIata],
+        }) &&
+        isRegionMatch({
+          regionsFiltered: regions,
+          region: d.region,
+        })
+      );
     })
     .map((d) => {
       const detailsFiltered = Object.entries(d.details).reduce(
