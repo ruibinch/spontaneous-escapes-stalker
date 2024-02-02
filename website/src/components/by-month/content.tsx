@@ -1,6 +1,10 @@
 'use client';
 import { monthNumToNameMap } from '@/common/months-map';
-import { FlightClassSelectOption, RedemptionEntry } from '@/index';
+import {
+  FlightClassSelectOption,
+  MonthSummaryAnalysisEntry,
+  RedemptionEntry,
+} from '@/index';
 import { BreadcrumbItem, Breadcrumbs, cn } from '@nextui-org/react';
 import {
   ArcElement,
@@ -21,6 +25,7 @@ import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
 import { FlightClassDistributionChart } from './charts/flight-class-distribution-chart';
 import { RoutesRegionDistributionChart } from './charts/routes-region-distribution-chart';
+import { AlertInfo } from '../common/alert-info';
 
 ChartJS.register(
   CategoryScale,
@@ -34,11 +39,13 @@ ChartJS.register(
 );
 
 export function ByMonthContent({
-  redemptions,
   month,
+  redemptions,
+  monthSummaryAnalysisEntry,
 }: {
-  redemptions: RedemptionEntry[];
   month: string;
+  redemptions: RedemptionEntry[];
+  monthSummaryAnalysisEntry: MonthSummaryAnalysisEntry;
 }) {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [flightClassOption, setFlightClassOption] =
@@ -72,6 +79,10 @@ export function ByMonthContent({
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>
+        {monthSummaryAnalysisEntry.metadata.remarks && (
+          <AlertInfo content={monthSummaryAnalysisEntry.metadata.remarks} />
+        )}
+
         <ByMonthFilters
           flightClassOption={flightClassOption}
           setFlightClassOption={setFlightClassOption}

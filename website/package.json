@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-data-files": "cp ../data/route-analysis.json src/static/ && cp ../data/*-redemptions-postprocessed.json src/static"
+    "update-data-files": "cp ../data/route-analysis.json src/static/ && cp ../data/month-summary-analysis.json src/static/ && cp ../data/*-redemptions-postprocessed.json src/static"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",

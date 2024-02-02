@@ -3,8 +3,9 @@ import path from 'path';
 import { getMonthsList } from '@/common/get-data-time-range';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { ByMonthContent } from '@/components/by-month/content';
+import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import patienceMyYoungPadawanImg from '@/static/patience-my-young-padawan.jpg';
-import { RedemptionEntry } from '@/index';
+import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import { isAfter } from 'date-fns';
 import Image from 'next/image';
 
@@ -49,5 +50,17 @@ export default async function ByMonth({
   const redemptionsFile = await fs.readFile(redemptionsFilepath, 'utf8');
   const redemptions = JSON.parse(redemptionsFile) as RedemptionEntry[];
 
-  return <ByMonthContent redemptions={redemptions} month={month} />;
+  const monthSummaryAnalysisList =
+    monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
+  const monthSummaryAnalysisEntry = monthSummaryAnalysisList.find(
+    (entry) => entry.month === month,
+  ) as MonthSummaryAnalysisEntry;
+
+  return (
+    <ByMonthContent
+      month={month}
+      redemptions={redemptions}
+      monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
+    />
+  );
 }
