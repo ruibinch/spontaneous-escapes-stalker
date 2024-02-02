@@ -1,6 +1,6 @@
 import { monthNumToShortNameMap } from '@/common/months-map';
-import { flightClassCodeToName } from './flight-class-code-to-name';
-import { FlightClassIndicator } from './flight-class-indicator';
+import { flightClassCodeToName } from '../flight-class-code-to-name';
+import { FlightClassIndicator } from '../flight-class-indicator';
 
 export function renderFlightClassCell({
   flightClass,

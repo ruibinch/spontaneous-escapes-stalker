@@ -1,7 +1,7 @@
 import { cn } from '@nextui-org/react';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { FlightClassIndicator } from '../../common/flight-class-indicator';
-import { TableRowsPerPage } from '../../common/table-rows-per-page';
+import { TableRowsPerPage } from '../../common/table/table-rows-per-page';
 
 export function TopContent(props: {
   rowsPerPage: number;

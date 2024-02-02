@@ -13,12 +13,12 @@ import { useEffect, useState } from 'react';
 import {
   renderBlackoutPeriodCell,
   renderFlightClassCell,
-} from '../common/render-table-cells';
-import { TablePagination } from '../common/table-pagination';
+} from '../common/table/render-table-cells';
+import { TablePagination } from '../common/table/table-pagination';
 import {
   TableRowsPerPage,
   useRowsPerPageHandler,
-} from '../common/table-rows-per-page';
+} from '../common/table/table-rows-per-page';
 import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 
 const columns = [

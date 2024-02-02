@@ -14,8 +14,8 @@ import {
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { FlightClassIndicator } from '../../common/flight-class-indicator';
-import { TablePagination } from '../../common/table-pagination';
-import { useRowsPerPageHandler } from '../../common/table-rows-per-page';
+import { TablePagination } from '../../common/table/table-pagination';
+import { useRowsPerPageHandler } from '../../common/table/table-rows-per-page';
 import {
   sortByNumericField,
   sortByStringField,

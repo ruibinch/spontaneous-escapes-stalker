@@ -11,13 +11,13 @@ import {
 import {
   renderBlackoutPeriodCell,
   renderFlightClassCell,
-} from '../common/render-table-cells';
-import { TablePagination } from '../common/table-pagination';
+} from '../common/table/render-table-cells';
+import { TablePagination } from '../common/table/table-pagination';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import {
   TableRowsPerPage,
   useRowsPerPageHandler,
-} from '../common/table-rows-per-page';
+} from '../common/table/table-rows-per-page';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
 import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 
