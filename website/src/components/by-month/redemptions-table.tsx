@@ -117,6 +117,8 @@ export function RedemptionsTable({
                         return item[columnKey].toLocaleString();
                       case 'blackoutPeriod':
                         return renderBlackoutPeriodCell(item[columnKey]);
+                      case 'flightNo':
+                        return renderFlightNoCell(item[columnKey]);
                       default:
                         return getKeyValue(item, columnKey);
                     }
@@ -143,4 +145,16 @@ function TopContent(props: {
       />
     </div>
   );
+}
+
+/**
+ * The flightNo string can contain either "," or "/" separators,
+ * hence some parsing is required to render it in a standardised format.
+ */
+function renderFlightNoCell(flightNo: string) {
+  return flightNo
+    .replace(/\//g, ',')
+    .split(',')
+    .map((s) => s.trim())
+    .join(', ');
 }
