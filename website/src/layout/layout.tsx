@@ -1,7 +1,6 @@
-import { cn } from '@nextui-org/react';
 import React from 'react';
-import { NavbarWrapper } from '../menubars/navbar';
-import { SidebarWrapper } from '../menubars/sidebar';
+import { NavbarWrapper } from '../components/menubars/navbar';
+import { SidebarWrapper } from '../components/menubars/sidebar';
 import { SidebarContext } from './layout-context';
 
 interface Props {

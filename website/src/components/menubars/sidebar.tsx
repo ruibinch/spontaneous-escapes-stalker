@@ -1,5 +1,5 @@
 import { usePathname } from 'next/navigation';
-import { useSidebarContext } from '../layout/layout-context';
+import { useSidebarContext } from '../../layout/layout-context';
 import { barItems } from './bar-items';
 import { SidebarItem } from './sidebar-item';
 import { BarStyles } from './bar.styles';
@@ -9,6 +9,7 @@ export const SidebarWrapper = () => {
   const { collapsed } = useSidebarContext();
 
   return (
+    // TODO: fix non-sticky sidebar when scrolling
     <aside className="h-screen sticky top-0">
       <div
         className={BarStyles.SidebarWrapper({
