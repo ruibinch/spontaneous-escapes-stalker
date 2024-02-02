@@ -8,6 +8,10 @@ import { makeMonthYearFrequencyData } from './helpers/make-month-year-frequency-
 import { RouteDetailDatum } from './helpers/make-route-details-list';
 import { getMonthsList } from '@/common/get-data-time-range';
 import { TooltipDark } from '../common/tooltip-dark';
+import {
+  MONTHS_WITH_MISSING_DATA,
+  MONTHS_WITH_NO_REDEMPTION,
+} from '@/common/months-data-info';
 
 const monthsList = getMonthsList();
 
@@ -89,15 +93,29 @@ function renderCell(
   const monthDate = yyyymmToDate(yyyymm);
   const datasetStartDate = yyyymmToDate(monthsList[0]);
   const datasetEndDate = yyyymmToDate(monthsList[monthsList.length - 1]);
-  const isMonthOutOfDatasetBounds =
-    isBefore(monthDate, datasetStartDate) ||
-    isAfter(monthDate, datasetEndDate) ||
-    // covid era
-    !monthsList.includes(yyyymm);
 
-  if (isMonthOutOfDatasetBounds) {
+  const noDataMessage = (() => {
+    if (MONTHS_WITH_MISSING_DATA.includes(yyyymm)) {
+      return 'Missing data';
+    }
+    if (MONTHS_WITH_NO_REDEMPTION.includes(yyyymm)) {
+      return 'No redemption for this month';
+    }
+    if (isBefore(monthDate, datasetStartDate)) {
+      return 'Pre-Spontaneous Escapes era';
+    }
+    if (isAfter(monthDate, datasetEndDate)) {
+      return "We aren't there yet";
+    }
+    if (!monthsList.includes(yyyymm)) {
+      return 'Covid era';
+    }
+    return null;
+  })();
+
+  if (noDataMessage) {
     return (
-      <TooltipDark content="No data">
+      <TooltipDark key={yyyymm} content={noDataMessage}>
         <td key={yyyymm} className="border-l bg-gray-700" />
       </TooltipDark>
     );

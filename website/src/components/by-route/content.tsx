@@ -34,7 +34,7 @@ ChartJS.register(
   Legend,
 );
 
-export function RouteDisplayContent({
+export function ByRouteContent({
   routeInfo,
 }: {
   routeInfo: RouteAnalysisEntryWithDetailsList;

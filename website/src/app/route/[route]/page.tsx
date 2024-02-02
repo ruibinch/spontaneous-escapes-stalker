@@ -1,4 +1,4 @@
-import { RouteDisplayContent } from '@/components/by-route/content';
+import { ByRouteContent } from '@/components/by-route/content';
 import { makeRouteDetailsList } from '@/components/by-route/helpers/make-route-details-list';
 import { RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
@@ -20,5 +20,5 @@ export default function ByRoute({ params }: { params: { route: string } }) {
   }
 
   const routeInfo = makeRouteDetailsList(routeAnalysisEntry);
-  return <RouteDisplayContent routeInfo={routeInfo} />;
+  return <ByRouteContent routeInfo={routeInfo} />;
 }

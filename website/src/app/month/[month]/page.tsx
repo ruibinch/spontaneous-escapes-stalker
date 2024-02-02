@@ -1,15 +1,14 @@
-import { promises as fs } from 'fs';
-import path from 'path';
 import { getMonthsList } from '@/common/get-data-time-range';
+import { MONTHS_WITH_MISSING_DATA } from '@/common/months-data-info';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { ByMonthContent } from '@/components/by-month/content';
+import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import patienceMyYoungPadawanImg from '@/static/patience-my-young-padawan.jpg';
-import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
-import { isAfter } from 'date-fns';
+import { isAfter, isBefore } from 'date-fns';
+import { promises as fs } from 'fs';
 import Image from 'next/image';
-
-const MONTHS_WITH_MISSING_DATA = ['201709', '201710'];
+import path from 'path';
 
 export default async function ByMonth({
   params: { month },
@@ -32,9 +31,15 @@ export default async function ByMonth({
           </div>
         ) : (
           <h1 className="text-2xl font-semibold">
-            {MONTHS_WITH_MISSING_DATA.includes(month)
-              ? 'Missing data for this month'
-              : 'No Spontaneous Escapes redemption for this month'}
+            {(() => {
+              if (MONTHS_WITH_MISSING_DATA.includes(month)) {
+                return 'Missing data for this month';
+              }
+              if (isBefore(monthDate, yyyymmToDate(monthsList[0]))) {
+                return 'Pre-Spontaneous Escapes era';
+              }
+              return 'No Spontaneous Escapes redemption for this month';
+            })()}
           </h1>
         )}
       </div>

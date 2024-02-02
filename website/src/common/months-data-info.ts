@@ -1,0 +1,3 @@
+export const MONTHS_WITH_MISSING_DATA = ['201709', '201710'];
+
+export const MONTHS_WITH_NO_REDEMPTION = ['201802'];
