@@ -27,12 +27,7 @@ export function NavbarItem({ title, icon, isActive, href = '' }: Props) {
         placement="bottom"
         showArrow
       >
-        <div
-          className={cn(
-            BarStyles.BarItem({ isActive }),
-            'p-3 items-center cursor-pointer rounded-md',
-          )}
-        >
+        <div className={cn(BarStyles.BarItem({ isActive }), 'p-2 rounded-md')}>
           <div className="text-inherit">{icon}</div>
         </div>
       </TooltipDark>

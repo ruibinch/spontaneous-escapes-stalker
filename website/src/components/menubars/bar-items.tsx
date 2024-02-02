@@ -1,6 +1,9 @@
+import { BookOpenIcon } from '../icons/book-open';
 import { CalendarIcon } from '../icons/calendar';
 import { GlobeIcon } from '../icons/globe';
+import { HelpCircleIcon } from '../icons/help-circle';
 import { MapIcon } from '../icons/map';
+import { MessageCircleIcon } from '../icons/message-circle';
 
 export interface BarItemProps {
   title: string;
@@ -9,7 +12,7 @@ export interface BarItemProps {
   href: string;
 }
 
-export const barItems = [
+export const startBarItems = [
   {
     title: 'Playground',
     icon: <GlobeIcon />,
@@ -24,5 +27,23 @@ export const barItems = [
     title: 'View by Route',
     icon: <MapIcon />,
     href: '/route',
+  },
+];
+
+export const endBarItems = [
+  {
+    title: 'Help',
+    icon: <HelpCircleIcon />,
+    href: '/help',
+  },
+  {
+    title: 'Changelog',
+    icon: <BookOpenIcon />,
+    href: '/changelog',
+  },
+  {
+    title: 'Feedback',
+    icon: <MessageCircleIcon />,
+    href: '/feedback',
   },
 ];

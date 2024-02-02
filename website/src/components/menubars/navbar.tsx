@@ -1,52 +1,54 @@
-import { Navbar, NavbarContent, cn } from '@nextui-org/react';
-import { MessageCircleIcon } from '../icons/message-circle';
-import { HelpCircleIcon } from '../icons/help-circle';
-import { NavbarItem } from './navbar-item';
+import { Navbar, NavbarContent } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
-import { barItems } from './bar-items';
+import { endBarItems, startBarItems } from './bar-items';
+import { NavbarItem } from './navbar-item';
 
 export const NavbarWrapper = () => {
   const pathname = usePathname();
 
+  const isItemActive = (item: { href: string }) => {
+    return item.href === '/'
+      ? pathname === item.href
+      : pathname.startsWith(item.href);
+  };
+
   return (
     <Navbar
       isBordered
-      className={cn(
-        'w-full h-14',
-        'lg:hidden',
-        'bg-gradient-to-r from-blue-900 to-indigo-900',
-      )}
+      height="3.5rem" // 56px
+      classNames={{
+        base: 'lg:hidden bg-gradient-to-r from-blue-900 to-indigo-900',
+      }}
     >
       <NavbarContent justify="start">
-        <div className="flex flex-row gap-4">
-          {barItems.map((item) => (
+        <div className="flex gap-2">
+          {startBarItems.map((item) => (
             <NavbarItem
               key={item.title}
               title={item.title}
               icon={item.icon}
-              isActive={pathname === item.href}
+              isActive={isItemActive(item)}
               href={item.href}
             />
           ))}
         </div>
       </NavbarContent>
-      {/* <NavbarContent
+      <NavbarContent
         justify="end"
         className="w-fit data-[justify=end]:flex-grow-0"
       >
-        <div className="flex items-center gap-4">
-          <Tooltip content="Give feedback">
-            <div className="cursor-pointer">
-              <MessageCircleIcon />
-            </div>
-          </Tooltip>
-          <Tooltip content="Help">
-            <div className="cursor-pointer">
-              <HelpCircleIcon />
-            </div>
-          </Tooltip>
+        <div className="flex gap-2">
+          {endBarItems.map((item) => (
+            <NavbarItem
+              key={item.title}
+              title={item.title}
+              icon={item.icon}
+              isActive={isItemActive(item)}
+              href={item.href}
+            />
+          ))}
         </div>
-      </NavbarContent> */}
+      </NavbarContent>
     </Navbar>
   );
 };
