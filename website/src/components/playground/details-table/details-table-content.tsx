@@ -1,4 +1,5 @@
 import { trackEvent } from '@/analytics';
+import { TooltipDark } from '@/components/common/tooltip-dark';
 import { FlightClass, RouteAnalysisEntry } from '@/index';
 import {
   SortDescriptor,
@@ -8,11 +9,10 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-  Tooltip,
   getKeyValue,
 } from '@nextui-org/react';
 import NextLink from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FlightClassIndicator } from '../../common/flight-class-indicator';
 import { TablePagination } from '../../common/table-pagination';
 import { useRowsPerPageHandler } from '../../common/table-rows-per-page';
@@ -150,7 +150,7 @@ function renderCell({
       return getKeyValue(item, columnKey);
     case 'actions': {
       return (
-        <Tooltip content="View detailed route info">
+        <TooltipDark content="View detailed route info">
           <NextLink
             href={`/route/${item.fromIata}${item.toIata}`}
             onClick={() => {
@@ -163,7 +163,7 @@ function renderCell({
               <EyeIcon />
             </span>
           </NextLink>
-        </Tooltip>
+        </TooltipDark>
       );
     }
     default: {

@@ -1,8 +1,8 @@
 import { trackEvent } from '@/analytics';
-import { Tooltip, cn } from '@nextui-org/react';
-import clsx from 'clsx';
+import { cn } from '@nextui-org/react';
 import NextLink from 'next/link';
 import React from 'react';
+import { TooltipDark } from '../common/tooltip-dark';
 import { BarStyles } from './bar.styles';
 
 interface Props {
@@ -20,7 +20,7 @@ export function NavbarItem({ title, icon, isActive, href = '' }: Props) {
         trackEvent(['navbar'], { page: title });
       }}
     >
-      <Tooltip
+      <TooltipDark
         size="lg"
         radius="sm"
         content={title}
@@ -35,7 +35,7 @@ export function NavbarItem({ title, icon, isActive, href = '' }: Props) {
         >
           <div className="text-inherit">{icon}</div>
         </div>
-      </Tooltip>
+      </TooltipDark>
     </NextLink>
   );
 }

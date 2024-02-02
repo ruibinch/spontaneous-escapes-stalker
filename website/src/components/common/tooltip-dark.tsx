@@ -1,26 +1,18 @@
-import { Tooltip } from '@nextui-org/react';
+import { Tooltip, TooltipProps } from '@nextui-org/react';
 import React from 'react';
 
-export function TooltipDark({
-  content,
-  children,
-  showArrow,
-}: {
-  content: string;
-  children: React.ReactNode;
-  showArrow?: boolean;
-}) {
+export function TooltipDark(props: TooltipProps) {
   return (
     <Tooltip
-      content={content}
+      content={props.content}
       radius="sm"
       classNames={{
         base: 'before:bg-neutral-600',
         content: 'bg-neutral-600 text-white',
       }}
-      showArrow={showArrow}
+      showArrow={props.showArrow}
     >
-      {children}
+      {props.children}
     </Tooltip>
   );
 }
