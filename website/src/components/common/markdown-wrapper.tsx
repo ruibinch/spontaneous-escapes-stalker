@@ -6,6 +6,9 @@ export function MarkdownWrapper({ content }: { content: string }) {
     <Markdown
       options={{
         overrides: {
+          h1: {
+            component: H1,
+          },
           h2: {
             component: H2,
           },
@@ -33,6 +36,12 @@ export function MarkdownWrapper({ content }: { content: string }) {
 }
 
 type Props = { children: React.ReactNode } & Record<string, unknown>;
+
+const H1 = ({ children, ...restProps }: Props) => (
+  <h2 {...restProps} className="mt-6 mb-2 text-xl font-semibold">
+    {children}
+  </h2>
+);
 
 const H2 = ({ children, ...restProps }: Props) => (
   <h2 {...restProps} className="mt-6 mb-2 text-lg font-semibold">
