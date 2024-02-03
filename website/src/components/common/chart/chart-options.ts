@@ -105,6 +105,7 @@ export const makeChartOptions = <T extends ChartType>(
         : null,
       tooltip: {
         enabled: false,
+        // @ts-expect-error hard-to-debug type error
         external: (context) => customTooltip(context, tooltipOptions),
         mode: 'index',
         afterLabel: '%',

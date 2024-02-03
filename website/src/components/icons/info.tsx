@@ -2,9 +2,9 @@ import { SvgIconProps } from './types';
 
 export const InfoIcon = (
   props: SvgIconProps & {
-    customProps?: {
+    customprops?: {
       backgroundColor: string;
-      infoColor: string;
+      iconColor: string;
     };
   },
 ) => (
@@ -13,8 +13,8 @@ export const InfoIcon = (
     width="20"
     height="20"
     viewBox="0 0 24 24"
-    fill={props.customProps?.backgroundColor ?? 'none'}
-    stroke={props.customProps?.backgroundColor ?? 'currentColor'}
+    fill={props.customprops?.backgroundColor ?? 'none'}
+    stroke={props.customprops?.backgroundColor ?? 'currentColor'}
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -26,14 +26,14 @@ export const InfoIcon = (
       y1="16"
       x2="12"
       y2="12"
-      stroke={props.customProps?.infoColor ?? 'currentColor'}
+      stroke={props.customprops?.iconColor ?? 'currentColor'}
     ></line>
     <line
       x1="12"
       y1="8"
       x2="12.01"
       y2="8"
-      stroke={props.customProps?.infoColor ?? 'currentColor'}
+      stroke={props.customprops?.iconColor ?? 'currentColor'}
     ></line>
   </svg>
 );

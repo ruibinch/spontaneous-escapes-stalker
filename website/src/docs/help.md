@@ -1,6 +1,6 @@
 ## Where does this data come from?
 
-A combination of scraping the [KrisFlyer Spontaneous Escapes page](https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/) as well as parsing the data published on the [Milelion](https://milelion.com/?s=spontaneous)/[Mainlymiles](https://mainlymiles.com/?s=spontaneous) blogs for older releases.
+A combination of scraping the [KrisFlyer Spontaneous Escapes page](https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/) as well as parsing the data published on the [MileLion](https://milelion.com/?s=spontaneous)/[MainlyMiles](https://mainlymiles.com/?s=spontaneous) blogs for older releases.
 
 Each individual redemption is parsed into a JSON structure to facilitate further data manipulation and analysis.
 
@@ -44,4 +44,4 @@ No, it's just a personal side project to aid in squeezing out more value of ever
 
 ## I have an idea for an additional feature!
 
-Feel free to reach out via the Feedback button on the sidebar.
+Feel free to reach out via the [Feedback page](/feedback).
