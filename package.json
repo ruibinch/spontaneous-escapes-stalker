@@ -9,6 +9,7 @@
     "run:analyse": "ts-node src/analyse.ts",
     "parse-from-tsv": "ts-node src/parsers/parseFromTsvFile.ts",
     "git:commit-data-diffs": "ts-node src/lib/git/commitDataDiffs.ts",
+    "lambda:deploy": "cd src/lambdas && sls deploy",
     "typecheck": "tsc --noEmit",
     "test": "TZ=UTC jest"
   },
