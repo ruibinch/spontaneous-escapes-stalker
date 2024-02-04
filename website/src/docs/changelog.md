@@ -1,4 +1,4 @@
-# 2.0.0 - unreleased
+# 2.0.0 - 2024-02-04
 
 - Refined website layout
 - Added SilkAir redemptions and almost all remaining months to dataset (still missing 2017-09 and 2017-10)
