@@ -2,6 +2,8 @@ import { Navbar, NavbarContent } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
 import { endBarItems, startBarItems } from './bar-items';
 import { NavbarItem } from './navbar-item';
+import { CoffeeItem } from './coffee-item';
+import { ENABLE_COFFEE } from '@/common/env';
 
 export const NavbarWrapper = () => {
   const pathname = usePathname();
@@ -37,7 +39,7 @@ export const NavbarWrapper = () => {
         justify="end"
         className="w-fit data-[justify=end]:flex-grow-0"
       >
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           {endBarItems.map((item) => (
             <NavbarItem
               key={item.title}
@@ -47,6 +49,8 @@ export const NavbarWrapper = () => {
               href={item.href}
             />
           ))}
+
+          {ENABLE_COFFEE && <CoffeeItem />}
         </div>
       </NavbarContent>
     </Navbar>

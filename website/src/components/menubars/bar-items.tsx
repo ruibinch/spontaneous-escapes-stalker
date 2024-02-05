@@ -1,5 +1,6 @@
 import { BookOpenIcon } from '../icons/book-open';
 import { CalendarIcon } from '../icons/calendar';
+import { CoffeeIcon } from '../icons/coffee';
 import { GlobeIcon } from '../icons/globe';
 import { HelpCircleIcon } from '../icons/help-circle';
 import { MapIcon } from '../icons/map';
