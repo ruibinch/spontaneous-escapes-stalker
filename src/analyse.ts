@@ -31,7 +31,7 @@ export function analyse() {
   });
 
   const routeAnalysis = generateRouteAnalysis({ redemptions, months });
-  console.log(`📄 Writing to ${ROUTE_ANALYSIS_OUTPUT_FILENAME}`);
+  console.log(`📄 Writing to ${ROUTE_ANALYSIS_OUTPUT_FILENAME}\n`);
   fs.writeFileSync(
     ROUTE_ANALYSIS_OUTPUT_FILENAME,
     JSON.stringify(routeAnalysis, null, 2),
@@ -43,7 +43,7 @@ export function analyse() {
   });
   const monthSummaryAnalysisWithMetadata =
     appendMonthMetadata(monthSummaryAnalysis);
-  console.log(`📄 Writing to ${MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME}`);
+  console.log(`📄 Writing to ${MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME}\n`);
   fs.writeFileSync(
     MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME,
     JSON.stringify(monthSummaryAnalysisWithMetadata, null, 2),
