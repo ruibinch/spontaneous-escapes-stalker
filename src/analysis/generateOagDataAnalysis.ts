@@ -14,7 +14,7 @@ type RouteToFlightNoToAircraftTypesMap = Record<
   FlightNoToAircraftTypesMap
 >;
 
-interface OagDataAnalysisEntry {
+export interface OagDataAnalysisEntry {
   month: string;
   routes: Array<{
     route: string;

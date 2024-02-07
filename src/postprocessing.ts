@@ -5,6 +5,7 @@ import { cleanupCityFields } from './postprocessing/cleanupCityFields';
 import { standardiseRegionField } from './postprocessing/standardiseRegionField';
 import { appendAndRemoveFields } from './postprocessing/appendAndRemoveFields';
 import { appendSpecificAirportNameToCity } from './postprocessing/appendSpecificAirportNameToCity';
+import { removeRedemptionsMissingFromOagRoutesDataset } from './postprocessing/removeRedemptionsMissingFromOagRoutesDataset';
 
 /**
  * Reads in the full list of redemptions.json files and generates a redemptions-postprocessed.json version.
@@ -45,7 +46,7 @@ export function postprocessing() {
     '🧹 Postprocessing - appending specific airport name for some cities',
   );
   console.log('🧹 Postprocessing - standardising region fields');
-  console.log('🧹 Postprocessing - appending redemptionMonth field\n');
+  console.log('🧹 Postprocessing - appending and removing fields\n');
 
   console.log(
     `📖 Reading from the following files:\n${redemptionsFilenamesToReadFrom.join(
@@ -70,12 +71,17 @@ export function postprocessing() {
       redemptions: redemptionsPostprocessed3,
       month,
     });
+    const redemptionsPostprocessed5 =
+      removeRedemptionsMissingFromOagRoutesDataset({
+        redemptions: redemptionsPostprocessed4,
+        month,
+      });
 
     const redemptionPostprocessedFilename = `data/${month}-redemptions-postprocessed.json`;
-    console.log(`📄 Writing to ${redemptionPostprocessedFilename}`);
+    // console.log(`📄 Writing to ${redemptionPostprocessedFilename}`);
     fs.writeFileSync(
       redemptionPostprocessedFilename,
-      JSON.stringify(redemptionsPostprocessed4, null, 2),
+      JSON.stringify(redemptionsPostprocessed5, null, 2),
     );
   });
 }
