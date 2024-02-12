@@ -41,8 +41,15 @@ export function generateOagDataAnalysis() {
   const oagDataFileContentFiltered = oagDataFileContent
     .slice(1)
     .filter((row) => {
-      const [carrierName] = row.split('\t');
-      return Object.keys(airlineIataMap).includes(carrierName);
+      const cells = row.split('\t');
+      const carrierName = cells[0];
+      const flightNo = cells[1];
+
+      const siaOrSilkAirFlightsOnly =
+        Object.keys(airlineIataMap).includes(carrierName);
+      const nonCodeshareFlightsOnly = flightNo.length <= 3;
+
+      return siaOrSilkAirFlightsOnly && nonCodeshareFlightsOnly;
     });
   console.log(
     `Processing ${oagDataFileContentFiltered.length}/${oagDataFileContent.length} routes after filtering`,

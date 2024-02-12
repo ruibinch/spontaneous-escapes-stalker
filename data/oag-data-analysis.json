@@ -27497,32 +27497,6 @@
         ]
       },
       {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ831",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 8184,
-                "frequency": 31
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 556,
-                "frequency": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "KUL",
         "destinationIata": "SIN",
         "flights": [
@@ -27959,32 +27933,6 @@
                 "aircraftModel": "Boeing 737MAX 8 Passenger",
                 "totalSeats": 624,
                 "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ982",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-200/200ER Passenger",
-                "totalSeats": 9909,
-                "frequency": 31
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 556,
-                "frequency": 2
               }
             ]
           }
@@ -29213,22 +29161,6 @@
                 "aircraftModel": "Airbus A320",
                 "totalSeats": 750,
                 "frequency": 5
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "BKK",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 556,
-                "frequency": 2
               }
             ]
           }
@@ -31432,22 +31364,6 @@
         ]
       },
       {
-        "originIata": "BKK",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "SIN",
         "destinationIata": "DPS",
         "flights": [
@@ -31898,22 +31814,6 @@
                 "aircraftModel": "Boeing 737-800 Passenger",
                 "totalSeats": 3564,
                 "frequency": 22
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
               }
             ]
           }
@@ -33553,16 +33453,6 @@
         "destinationIata": "SIN",
         "flights": [
           {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          },
-          {
             "flightNo": "SQ827",
             "aircraftTypes": [
               {
@@ -33940,18 +33830,23 @@
         "destinationIata": "SIN",
         "flights": [
           {
-            "flightNo": "SQ7835",
+            "flightNo": "SQ827",
             "aircraftTypes": [
               {
                 "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "totalSeats": 792,
+                "frequency": 3
               }
             ]
           },
           {
             "flightNo": "SQ827",
             "aircraftTypes": [
+              {
+                "aircraftModel": "Boeing 777-300ER Passenger",
+                "totalSeats": 792,
+                "frequency": 3
+              },
               {
                 "aircraftModel": "Boeing 777-300 Passenger",
                 "totalSeats": 7952,
@@ -37150,32 +37045,6 @@
         ]
       },
       {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ972",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-200/200ER Passenger",
-                "totalSeats": 9961,
-                "frequency": 31
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "CKG",
         "destinationIata": "SIN",
         "flights": [
@@ -38064,12 +37933,12 @@
         "destinationIata": "SIN",
         "flights": [
           {
-            "flightNo": "SQ7835",
+            "flightNo": "SQ827",
             "aircraftTypes": [
               {
                 "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "totalSeats": 792,
+                "frequency": 3
               }
             ]
           },
@@ -39403,12 +39272,12 @@
         "destinationIata": "SIN",
         "flights": [
           {
-            "flightNo": "SQ7835",
+            "flightNo": "SQ827",
             "aircraftTypes": [
               {
                 "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "totalSeats": 792,
+                "frequency": 3
               }
             ]
           },
@@ -45723,12 +45592,12 @@
         "destinationIata": "SIN",
         "flights": [
           {
-            "flightNo": "SQ7835",
+            "flightNo": "SQ827",
             "aircraftTypes": [
               {
                 "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "totalSeats": 792,
+                "frequency": 3
               }
             ]
           },
@@ -51634,32 +51503,6 @@
         ]
       },
       {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ982",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-200/200ER Passenger",
-                "totalSeats": 8576,
-                "frequency": 28
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "FOC",
         "destinationIata": "SIN",
         "flights": [
@@ -53597,22 +53440,6 @@
                 "aircraftModel": "Boeing 777-300 Passenger",
                 "totalSeats": 7384,
                 "frequency": 26
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "BKK",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
               }
             ]
           }
@@ -58724,32 +58551,6 @@
                 "aircraftModel": "Boeing 737MAX 8 Passenger",
                 "totalSeats": 4368,
                 "frequency": 28
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ825",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 3168,
-                "frequency": 12
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
               }
             ]
           }
@@ -66371,32 +66172,6 @@
                 "aircraftModel": "Airbus A380-800 Passenger",
                 "totalSeats": 12245,
                 "frequency": 31
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ982",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A330-300",
-                "totalSeats": 8835,
-                "frequency": 31
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1390,
-                "frequency": 5
               }
             ]
           }
@@ -77860,22 +77635,6 @@
         ]
       },
       {
-        "originIata": "BKK",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1390,
-                "frequency": 5
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "SIN",
         "destinationIata": "BWN",
         "flights": [
@@ -78166,32 +77925,6 @@
                 "aircraftModel": "Airbus A319",
                 "totalSeats": 1408,
                 "frequency": 11
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ827",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300 Passenger",
-                "totalSeats": 7668,
-                "frequency": 27
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1390,
-                "frequency": 5
               }
             ]
           }
@@ -78876,22 +78609,6 @@
         ]
       },
       {
-        "originIata": "BKK",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "SIN",
         "destinationIata": "ICN",
         "flights": [
@@ -79518,32 +79235,6 @@
         ]
       },
       {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ827",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300 Passenger",
-                "totalSeats": 6816,
-                "frequency": 24
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "PNH",
         "destinationIata": "SIN",
         "flights": [
@@ -79776,32 +79467,6 @@
                 "aircraftModel": "Airbus A319",
                 "totalSeats": 384,
                 "frequency": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ828",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 7920,
-                "frequency": 30
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7898",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 278,
-                "frequency": 1
               }
             ]
           }
@@ -80775,32 +80440,6 @@
                 "aircraftModel": "Boeing 737-800 Passenger",
                 "totalSeats": 810,
                 "frequency": 5
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ827",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300 Passenger",
-                "totalSeats": 6816,
-                "frequency": 24
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7887",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 278,
-                "frequency": 1
               }
             ]
           }
@@ -88231,32 +87870,6 @@
         ]
       },
       {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ982",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A330-300",
-                "totalSeats": 2565,
-                "frequency": 9
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "KUL",
         "destinationIata": "SIN",
         "flights": [
@@ -90901,32 +90514,6 @@
         ]
       },
       {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ827",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300 Passenger",
-                "totalSeats": 6816,
-                "frequency": 24
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7897",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 278,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "SIN",
         "destinationIata": "LGK",
         "flights": [
@@ -91936,32 +91523,6 @@
                 "aircraftModel": "Boeing 737MAX 8 Passenger",
                 "totalSeats": 624,
                 "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ828",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 7920,
-                "frequency": 30
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7888",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 278,
-                "frequency": 1
               }
             ]
           }
@@ -94477,22 +94038,6 @@
       },
       {
         "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
         "destinationIata": "AKL",
         "flights": [
           {
@@ -94815,16 +94360,6 @@
         "originIata": "SIN",
         "destinationIata": "BKK",
         "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          },
           {
             "flightNo": "SQ982",
             "aircraftTypes": [
@@ -95393,22 +94928,6 @@
                 "aircraftModel": "Boeing 737MAX 8 Passenger",
                 "totalSeats": 780,
                 "frequency": 5
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "BKK",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
               }
             ]
           }
@@ -97285,12 +96804,12 @@
         "destinationIata": "BKK",
         "flights": [
           {
-            "flightNo": "SQ7836",
+            "flightNo": "SQ982",
             "aircraftTypes": [
               {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
               }
             ]
           },
@@ -98631,32 +98150,6 @@
         ]
       },
       {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ827",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-200/200ER Passenger",
-                "totalSeats": 266,
-                "frequency": 1
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "BNE",
         "destinationIata": "SIN",
         "flights": [
@@ -99618,12 +99111,12 @@
         "destinationIata": "BKK",
         "flights": [
           {
-            "flightNo": "SQ7836",
+            "flightNo": "SQ982",
             "aircraftTypes": [
               {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
               }
             ]
           },
@@ -101714,18 +101207,23 @@
         "destinationIata": "BKK",
         "flights": [
           {
-            "flightNo": "SQ7836",
+            "flightNo": "SQ982",
             "aircraftTypes": [
               {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
               }
             ]
           },
           {
             "flightNo": "SQ982",
             "aircraftTypes": [
+              {
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
+              },
               {
                 "aircraftModel": "Airbus A330-300",
                 "totalSeats": 7125,
@@ -102058,12 +101556,12 @@
         "destinationIata": "BKK",
         "flights": [
           {
-            "flightNo": "SQ7836",
+            "flightNo": "SQ982",
             "aircraftTypes": [
               {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
               }
             ]
           },
@@ -102375,12 +101873,12 @@
         "destinationIata": "BKK",
         "flights": [
           {
-            "flightNo": "SQ7836",
+            "flightNo": "SQ982",
             "aircraftTypes": [
               {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
               }
             ]
           },
@@ -103523,12 +103021,12 @@
         "destinationIata": "BKK",
         "flights": [
           {
-            "flightNo": "SQ7836",
+            "flightNo": "SQ982",
             "aircraftTypes": [
               {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
               }
             ]
           },
@@ -104407,12 +103905,12 @@
         "destinationIata": "BKK",
         "flights": [
           {
-            "flightNo": "SQ7836",
+            "flightNo": "SQ982",
             "aircraftTypes": [
               {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
               }
             ]
           },
@@ -105814,12 +105312,12 @@
         "destinationIata": "BKK",
         "flights": [
           {
-            "flightNo": "SQ7836",
+            "flightNo": "SQ982",
             "aircraftTypes": [
               {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
+                "aircraftModel": "Boeing 787",
+                "totalSeats": 2022,
+                "frequency": 6
               }
             ]
           },
@@ -112667,32 +112165,6 @@
         ]
       },
       {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ970",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A330-300",
-                "totalSeats": 8550,
-                "frequency": 30
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1390,
-                "frequency": 5
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "KUL",
         "destinationIata": "SIN",
         "flights": [
@@ -114074,32 +113546,6 @@
         ]
       },
       {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-200/200ER Passenger",
-                "totalSeats": 7980,
-                "frequency": 30
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1390,
-                "frequency": 5
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "KUL",
         "destinationIata": "SIN",
         "flights": [
@@ -114496,22 +113942,6 @@
                 "aircraftModel": "Airbus A320",
                 "totalSeats": 1200,
                 "frequency": 8
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "BKK",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1390,
-                "frequency": 5
               }
             ]
           }
@@ -124607,22 +124037,6 @@
         ]
       },
       {
-        "originIata": "BKK",
-        "destinationIata": "PVG",
-        "flights": [
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 834,
-                "frequency": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "PNH",
         "destinationIata": "SIN",
         "flights": [
@@ -126146,22 +125560,6 @@
         ]
       },
       {
-        "originIata": "SYD",
-        "destinationIata": "BWN",
-        "flights": [
-          {
-            "flightNo": "SQ7121",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 556,
-                "frequency": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "KUL",
         "destinationIata": "SIN",
         "flights": [
@@ -126224,32 +125622,6 @@
                 "aircraftModel": "Boeing 737-800 Passenger",
                 "totalSeats": 2754,
                 "frequency": 17
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ974",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-200/200ER Passenger",
-                "totalSeats": 1064,
-                "frequency": 4
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7836",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 834,
-                "frequency": 3
               }
             ]
           }
@@ -127106,32 +126478,6 @@
                 "aircraftModel": "Boeing 777-200/200ER Passenger",
                 "totalSeats": 6650,
                 "frequency": 25
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ974",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-200/200ER Passenger",
-                "totalSeats": 1064,
-                "frequency": 4
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7122",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 556,
-                "frequency": 2
               }
             ]
           }
@@ -130614,22 +129960,6 @@
         ]
       },
       {
-        "originIata": "BKK",
-        "destinationIata": "SYD",
-        "flights": [
-          {
-            "flightNo": "SQ7122",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 556,
-                "frequency": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "SIN",
         "destinationIata": "UPG",
         "flights": [
@@ -131767,32 +131097,6 @@
                 "aircraftModel": "Boeing 737MAX 8 Passenger",
                 "totalSeats": 2652,
                 "frequency": 17
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "BWN",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ181",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300 Passenger",
-                "totalSeats": 2556,
-                "frequency": 9
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7121",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 278,
-                "frequency": 1
               }
             ]
           }
@@ -135657,32 +134961,6 @@
                 "aircraftModel": "Airbus A330-300",
                 "totalSeats": 8835,
                 "frequency": 31
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "PVG",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ827",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300 Passenger",
-                "totalSeats": 8520,
-                "frequency": 30
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7835",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 834,
-                "frequency": 3
               }
             ]
           }
@@ -143662,22 +142940,6 @@
         ]
       },
       {
-        "originIata": "SYD",
-        "destinationIata": "BWN",
-        "flights": [
-          {
-            "flightNo": "SQ7121",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 278,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "SIN",
         "destinationIata": "CEB",
         "flights": [
@@ -144399,32 +143661,6 @@
                 "aircraftModel": "Airbus A319",
                 "totalSeats": 128,
                 "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "BWN",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ181",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300 Passenger",
-                "totalSeats": 2556,
-                "frequency": 9
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7121",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 556,
-                "frequency": 2
               }
             ]
           }
@@ -150498,32 +149734,6 @@
       },
       {
         "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ976",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A330-300",
-                "totalSeats": 8835,
-                "frequency": 31
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7122",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
         "destinationIata": "MEL",
         "flights": [
           {
@@ -151538,22 +150748,6 @@
                 "aircraftModel": "Airbus A319",
                 "totalSeats": 2304,
                 "frequency": 18
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "BKK",
-        "destinationIata": "SYD",
-        "flights": [
-          {
-            "flightNo": "SQ7122",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
               }
             ]
           }
@@ -153059,22 +152253,6 @@
                 "aircraftModel": "Airbus A330-300",
                 "totalSeats": 3990,
                 "frequency": 14
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "BKK",
-        "destinationIata": "SYD",
-        "flights": [
-          {
-            "flightNo": "SQ7122",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
               }
             ]
           }
@@ -164152,32 +163330,6 @@
         ]
       },
       {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ976",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A330-300",
-                "totalSeats": 8550,
-                "frequency": 30
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7122",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 1112,
-                "frequency": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "LOP",
         "destinationIata": "SIN",
         "flights": [
@@ -165235,22 +164387,6 @@
                 "aircraftModel": "Boeing 737MAX 8 Passenger",
                 "totalSeats": 936,
                 "frequency": 6
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "AKL",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ7123",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A350-900",
-                "totalSeats": 314,
-                "frequency": 1
               }
             ]
           }
@@ -167148,16 +166284,6 @@
         "originIata": "AKL",
         "destinationIata": "SIN",
         "flights": [
-          {
-            "flightNo": "SQ7123",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A350-900",
-                "totalSeats": 314,
-                "frequency": 1
-              }
-            ]
-          },
           {
             "flightNo": "SQ286",
             "aircraftTypes": [
@@ -170001,18 +169127,23 @@
         "destinationIata": "SIN",
         "flights": [
           {
-            "flightNo": "SQ7123",
+            "flightNo": "SQ286",
             "aircraftTypes": [
               {
-                "aircraftModel": "Airbus A350-900",
-                "totalSeats": 314,
-                "frequency": 1
+                "aircraftModel": "Airbus A380-800 Passenger",
+                "totalSeats": 1323,
+                "frequency": 3
               }
             ]
           },
           {
             "flightNo": "SQ286",
             "aircraftTypes": [
+              {
+                "aircraftModel": "Airbus A380-800 Passenger",
+                "totalSeats": 1323,
+                "frequency": 3
+              },
               {
                 "aircraftModel": "Boeing 777-300ER Passenger",
                 "totalSeats": 7392,
@@ -170835,22 +169966,6 @@
                 "aircraftModel": "Boeing 777-300ER Passenger",
                 "totalSeats": 7406,
                 "frequency": 28
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "AVV",
-        "destinationIata": "AKL",
-        "flights": [
-          {
-            "flightNo": "SQ7124",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A350-900",
-                "totalSeats": 314,
-                "frequency": 1
               }
             ]
           }
@@ -172529,22 +171644,6 @@
         ]
       },
       {
-        "originIata": "BKK",
-        "destinationIata": "SYD",
-        "flights": [
-          {
-            "flightNo": "SQ7122",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 834,
-                "frequency": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "PER",
         "destinationIata": "SIN",
         "flights": [
@@ -173441,12 +172540,12 @@
         "destinationIata": "SIN",
         "flights": [
           {
-            "flightNo": "SQ7123",
+            "flightNo": "SQ286",
             "aircraftTypes": [
               {
-                "aircraftModel": "Airbus A350-900",
-                "totalSeats": 314,
-                "frequency": 1
+                "aircraftModel": "Airbus A380-800 Passenger",
+                "totalSeats": 1323,
+                "frequency": 3
               }
             ]
           },
@@ -175650,32 +174749,6 @@
                 "aircraftModel": "Boeing 777-300ER Passenger",
                 "totalSeats": 8184,
                 "frequency": 31
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "SIN",
-        "destinationIata": "BKK",
-        "flights": [
-          {
-            "flightNo": "SQ974",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-200/200ER Passenger",
-                "totalSeats": 1064,
-                "frequency": 4
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ7122",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 777-300ER Passenger",
-                "totalSeats": 834,
-                "frequency": 3
               }
             ]
           }
@@ -394796,22 +393869,6 @@
         ]
       },
       {
-        "originIata": "LIS",
-        "destinationIata": "CDG",
-        "flights": [
-          {
-            "flightNo": "SQ1861",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A320",
-                "totalSeats": 150,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "SIN",
         "destinationIata": "HKT",
         "flights": [
@@ -398947,22 +398004,6 @@
         ]
       },
       {
-        "originIata": "DUS",
-        "destinationIata": "WAW",
-        "flights": [
-          {
-            "flightNo": "SQ2356",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Embraer 190",
-                "totalSeats": 99,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "SIN",
         "destinationIata": "NRT",
         "flights": [
@@ -399808,22 +398849,6 @@
         ]
       },
       {
-        "originIata": "AMS",
-        "destinationIata": "WAW",
-        "flights": [
-          {
-            "flightNo": "SQ2366",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Embraer 175",
-                "totalSeats": 79,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "NGO",
         "destinationIata": "SIN",
         "flights": [
@@ -399917,22 +398942,6 @@
               {
                 "aircraftModel": "Airbus A350-900",
                 "totalSeats": 253,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "WAW",
-        "destinationIata": "AMS",
-        "flights": [
-          {
-            "flightNo": "SQ2365",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Embraer 175",
-                "totalSeats": 79,
                 "frequency": 1
               }
             ]
@@ -400907,22 +399916,6 @@
         ]
       },
       {
-        "originIata": "CDG",
-        "destinationIata": "LIS",
-        "flights": [
-          {
-            "flightNo": "SQ1876",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A320",
-                "totalSeats": 150,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "BOM",
         "destinationIata": "SIN",
         "flights": [
@@ -401089,32 +400082,6 @@
                 "aircraftModel": "Boeing 737-800 Passenger",
                 "totalSeats": 486,
                 "frequency": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "NRT",
-        "destinationIata": "SIN",
-        "flights": [
-          {
-            "flightNo": "SQ633",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Airbus A350-900",
-                "totalSeats": 4807,
-                "frequency": 19
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ5905",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Boeing 787-9",
-                "totalSeats": 215,
-                "frequency": 1
               }
             ]
           }
@@ -401327,37 +400294,6 @@
               {
                 "aircraftModel": "Airbus A319",
                 "totalSeats": 128,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "AMS",
-        "destinationIata": "WAW",
-        "flights": [
-          {
-            "flightNo": "SQ2366",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Embraer 175",
-                "totalSeats": 79,
-                "frequency": 1
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ2366",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Embraer 175",
-                "totalSeats": 79,
-                "frequency": 1
-              },
-              {
-                "aircraftModel": "Embraer 190",
-                "totalSeats": 99,
                 "frequency": 1
               }
             ]
@@ -404907,22 +403843,6 @@
         ]
       },
       {
-        "originIata": "WAW",
-        "destinationIata": "DUS",
-        "flights": [
-          {
-            "flightNo": "SQ2359",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Embraer 170",
-                "totalSeats": 70,
-                "frequency": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
         "originIata": "ICN",
         "destinationIata": "SIN",
         "flights": [
@@ -405479,37 +404399,6 @@
                 "aircraftModel": "Airbus A320",
                 "totalSeats": 1650,
                 "frequency": 11
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "originIata": "WAW",
-        "destinationIata": "AMS",
-        "flights": [
-          {
-            "flightNo": "SQ2365",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Embraer 175",
-                "totalSeats": 79,
-                "frequency": 1
-              }
-            ]
-          },
-          {
-            "flightNo": "SQ2365",
-            "aircraftTypes": [
-              {
-                "aircraftModel": "Embraer 175",
-                "totalSeats": 79,
-                "frequency": 1
-              },
-              {
-                "aircraftModel": "Embraer 190",
-                "totalSeats": 99,
-                "frequency": 1
               }
             ]
           }
