@@ -72,55 +72,60 @@ export function generateOagDataAnalysis() {
     const cells = row.split('\t');
     const carrierName = cells[0];
     const flightNo = `${airlineIataMap[carrierName]}${cells[1]}` as const;
-    const originIataRaw = iataMap[cells[2]] ?? cells[2];
-    const destinationIataRaw = iataMap[cells[3]] ?? cells[3];
+    const originIata = iataMap[cells[2]] ?? cells[2];
+    const destinationIata = iataMap[cells[3]] ?? cells[3];
     const aircraftModel = cells[4];
     const totalSeats = toNumber(cells[5]);
     const frequency = toNumber(cells[6]);
     const month = cells[7].replace('-', '');
+    const routeIata = `${originIata}-${destinationIata}` as const;
 
-    let originIata = originIataRaw;
-    let destinationIata = destinationIataRaw;
-    if (
-      originIataRaw !== 'SIN' &&
-      destinationIataRaw !== 'SIN' &&
-      !seRoutesList.includes(`${originIataRaw}-${destinationIataRaw}`)
-    ) {
-      const routeIataOverride = overrideCityForMultiLegFlights({
-        originIata,
-        destinationIata,
-        flightNo,
-      });
-      // Flag if there is a non-SIN origin/destination route that is not covered in the routeOverrideMap
-      if (!routeIataOverride) {
-        console.log(
-          `🚨 Skipping ${originIata}-${destinationIata}/${flightNo} in ${month}`,
-        );
-        return;
+    // Get routes associated with this row entry
+    // Most of the time it's a 1:1 mapping, however there are some exceptions for round-trip flights with multiple stops
+    // e.g. SQ906 flies SIN-DVO-CEB-SIN, so the DVO-CEB leg maps to both SIN-CEB and DVO-SIN routes
+    const routesForRow: Route[] = (() => {
+      if (
+        originIata !== 'SIN' &&
+        destinationIata !== 'SIN' &&
+        !seRoutesList.includes(routeIata)
+      ) {
+        const routeIataOverride = getRouteOverrideForNonSgFlights({
+          routeIata,
+          flightNo,
+        });
+        // Flag if there is a route that is not covered in the routeOverrideMap
+        if (!routeIataOverride) {
+          console.log(
+            `🚨 Skipping ${originIata}-${destinationIata}/${flightNo} in ${month}`,
+          );
+          return [];
+        }
+
+        return routeIataOverride;
       }
 
-      originIata = routeIataOverride.originIata;
-      destinationIata = routeIataOverride.destinationIata;
-    }
+      return [routeIata];
+    })();
 
     const routesForMonth = monthToRoutesMap[month] ?? [];
 
-    const route = `${originIata}-${destinationIata}` as const;
-    const routeForMonth = routesForMonth[route] ?? {};
-    const flightNoForRouteForMonth = routeForMonth?.[flightNo] ?? [];
+    routesForRow.forEach((routeEntry) => {
+      const routeForMonth = routesForMonth[routeEntry] ?? {};
+      const flightNoForRouteForMonth = routeForMonth?.[flightNo] ?? [];
 
-    const flightNoDetailsForRouteForMonthCombined = [
-      ...flightNoForRouteForMonth,
-      {
-        aircraftModel,
-        totalSeats,
-        frequency,
-      },
-    ];
+      const flightNoDetailsForRouteForMonthCombined = [
+        ...flightNoForRouteForMonth,
+        {
+          aircraftModel,
+          totalSeats,
+          frequency,
+        },
+      ];
 
-    routeForMonth[flightNo] = flightNoDetailsForRouteForMonthCombined;
-    routesForMonth[route] = routeForMonth;
-    monthToRoutesMap[month] = routesForMonth;
+      routeForMonth[flightNo] = flightNoDetailsForRouteForMonthCombined;
+      routesForMonth[routeEntry] = routeForMonth;
+      monthToRoutesMap[month] = routesForMonth;
+    });
   });
 
   // restructure to array for a better representation of the data
@@ -179,67 +184,64 @@ function getSERoutesList(): string[] {
 }
 
 /**
- * OAG dataset treats each leg in a multi-leg flight as a standalone route, e.g. SIN-JNB, JNB-CPT for the SIN-JNB-CPT flight.
- * In the SE dataset, such entries omit the transit city in the middle, e.g. SIN-JNB, SIN-CPT for the same flight.
+ * There are some routes that do not have SIN as an origin/destination.
+ *
+ * Some of these are fifth freedom flights, where tickets are purchasable/redeemable, e.g. FRA-JFK.
+ * Others are multi-leg flights which stop briefly in a city before continuing on to another city, but the individual legs are not purchasable/redeemable.
+ *
+ * These legs are treated as a standalone route in the OAG dataset, e.g. SIN-JNB, JNB-CPT for the SIN-JNB-CPT flight.
+ * In the SE dataset however, such entries omit the transit city in the middle, e.g. SIN-JNB, SIN-CPT for the same flight.
  *
  * Hence, we modify the OAG entry such that the origin/destination for such routes will always be SIN.
- *
- * This is only applicable to routes where the secondary leg is non-purchasable, so it excludes fifth freedom flights like FRA-JFK.
  */
-function overrideCityForMultiLegFlights({
-  originIata,
-  destinationIata,
+function getRouteOverrideForNonSgFlights({
+  routeIata,
   flightNo,
 }: {
-  originIata: string;
-  destinationIata: string;
-  flightNo: string;
+  routeIata: Route;
+  flightNo: FlightNo;
 }) {
-  const routeOverrideMap: Record<string, string> = {
-    'ARN-DME/SQ361': 'SIN-DME', // Singapore-Stockholm-Moscow
-    'DME-ARN/SQ362': 'DME-SIN', // Moscow-Stockholm-Singapore
-    'MXP-BCN/SQ378': 'SIN-BCN', // Singapore-Milan-Barcelona
-    'BCN-MXP/SQ377': 'BCN-SIN', // Barcelona-Milan-Singapore
-    'CBR-WLG/SQ291': 'SIN-WLG', // Singapore-Canberra-Wellington
-    'WLG-CBR/SQ292': 'WLG-SIN', // Wellington-Canberra-Singapore
-    'CEB-DVO/MI562': 'SIN-DVO', // Singapore-Cebu-Davao
-    'CEB-DVO/MI566': 'SIN-DVO', // Singapore-Cebu-Davao
-    'CEB-DVO/MI588': 'SIN-DVO', // Singapore-Cebu-Davao
-    'DVO-CEB/MI561': 'DVO-SIN', // Davao-Cebu-Singapore
-    'DVO-CEB/MI562': 'DVO-SIN', // Davao-Cebu-Singapore
-    'DVO-CEB/MI582': 'DVO-SIN', // Davao-Cebu-Singapore
-    'DVO-CEB/MI588': 'DVO-SIN', // Davao-Cebu-Singapore
-    'DVO-CEB/SQ906': 'SIN-CEB', // Singapore-Davao-Cebu-Singapore
-    'CEB-KLO/MI577': 'SIN-KLO', // Singapore-Cebu-Kalibo
-    'KLO-CEB/MI599': 'KLO-SIN', // Kalibo-Cebu-Singapore
-    'CPH-FCO/SQ352': 'SIN-FCO', // Singapore-Copenhagen-Rome
-    'FCO-CPH/SQ351': 'FCO-SIN', // Rome-Copenhagen-Singapore
-    'DAD-SAI/MI636': 'DAD-SIN', // Singapore-Siem Reap-Da Nang
-    'SAI-DAD/MI633': 'SIN-DAD', // Da Nang-Siem Reap-Singapore
-    'ICN-LAX/SQ8': 'SIN-LAX', // Singapore-Incheon-Los Angeles
-    'LAX-ICN/SQ7': 'LAX-SIN', // Los Angeles-Incheon-Singapore
-    'JNB-CPT/SQ478': 'SIN-CPT', // Singapore-Johannesburg-Cape Town
-    'CPT-JNB/SQ479': 'CPT-SIN', // Cape Town-Joahnnesburg-Singapore
-    'LPQ-VTE/MI787': 'SIN-VTE', // Singapore-Luang Prabang-Vientiane
-    'VTE-LPQ/MI788': 'VTE-SIN', // Vientiane-Luang Prabang-Singapore
-    'MEL-WLG/SQ247': 'SIN-WLG', // Singapore-Melbourne-Wellington
-    'WLG-MEL/SQ248': 'WLG-SIN', // Wellington-Melbourne-Singapore
-    'RGN-MDL/MI533': 'SIN-MDL', // Singapore-Yangon-Mandalay
-    'MDL-RGN/MI522': 'MDL-SIN', // Mandalay-Yangon-Singapore
-    'SEA-YVR/SQ27': 'SEA-SIN', // Seattle-Vancouver-Singapore
-    'YVR-SEA/SQ28': 'SIN-SEA', // Singapore-Vancouver-Seattle
-    'SYD-CBR/SQ288': 'SIN-CBR', // Singapore-Sydney-Canberra-Singapore
+  const routeOverrideMap: Record<`${Route}/${FlightNo}`, Route[]> = {
+    'ARN-DME/SQ361': ['SIN-DME'], // Singapore-Stockholm-Moscow
+    'DME-ARN/SQ362': ['DME-SIN'], // Moscow-Stockholm-Singapore
+    'MXP-BCN/SQ378': ['SIN-BCN'], // Singapore-Milan-Barcelona
+    'BCN-MXP/SQ377': ['BCN-SIN'], // Barcelona-Milan-Singapore
+    'CBR-WLG/SQ291': ['SIN-WLG'], // Singapore-Canberra-Wellington
+    'WLG-CBR/SQ292': ['WLG-SIN'], // Wellington-Canberra-Singapore
+    'CEB-DVO/MI562': ['SIN-DVO'], // Singapore-Cebu-Davao
+    'CEB-DVO/MI566': ['SIN-DVO'], // Singapore-Cebu-Davao
+    'CEB-DVO/MI588': ['SIN-DVO'], // Singapore-Cebu-Davao
+    'DVO-CEB/MI561': ['DVO-SIN'], // Davao-Cebu-Singapore
+    'DVO-CEB/MI562': ['DVO-SIN'], // Davao-Cebu-Singapore
+    'DVO-CEB/MI582': ['DVO-SIN'], // Davao-Cebu-Singapore
+    'DVO-CEB/MI588': ['DVO-SIN'], // Davao-Cebu-Singapore
+    'DVO-CEB/SQ906': ['SIN-CEB', 'DVO-SIN'], // Singapore-Davao-Cebu-Singapore
+    'CEB-KLO/MI577': ['SIN-KLO'], // Singapore-Cebu-Kalibo
+    'KLO-CEB/MI599': ['KLO-SIN'], // Kalibo-Cebu-Singapore
+    'CPH-FCO/SQ352': ['SIN-FCO'], // Singapore-Copenhagen-Rome
+    'FCO-CPH/SQ351': ['FCO-SIN'], // Rome-Copenhagen-Singapore
+    'DAD-SAI/MI636': ['DAD-SIN'], // Singapore-Siem Reap-Da Nang
+    'SAI-DAD/MI633': ['SIN-DAD'], // Da Nang-Siem Reap-Singapore
+    'ICN-LAX/SQ8': ['SIN-LAX'], // Singapore-Incheon-Los Angeles
+    'LAX-ICN/SQ7': ['LAX-SIN'], // Los Angeles-Incheon-Singapore
+    'JNB-CPT/SQ478': ['SIN-CPT'], // Singapore-Johannesburg-Cape Town
+    'CPT-JNB/SQ479': ['CPT-SIN'], // Cape Town-Joahnnesburg-Singapore
+    'LPQ-VTE/MI787': ['SIN-VTE', 'LPQ-SIN'], // Singapore-Luang Prabang-Vientiane-Singapore
+    'VTE-LPQ/MI788': ['SIN-LPQ', 'VTE-SIN'], // Singapore-Vientiane-Luang Prabang-Singapore (https://aviability.com/flight-number/flight-mi788-silkair)
+    'MEL-WLG/SQ247': ['SIN-WLG'], // Singapore-Melbourne-Wellington
+    'WLG-MEL/SQ248': ['WLG-SIN'], // Wellington-Melbourne-Singapore
+    'RGN-MDL/MI533': ['SIN-MDL'], // Singapore-Yangon-Mandalay
+    'MDL-RGN/MI522': ['MDL-SIN'], // Mandalay-Yangon-Singapore
+    'SEA-YVR/SQ27': ['SEA-SIN'], // Seattle-Vancouver-Singapore
+    'YVR-SEA/SQ28': ['SIN-SEA'], // Singapore-Vancouver-Seattle
+    'SYD-CBR/SQ288': ['SIN-CBR', 'SYD-SIN'], // Singapore-Sydney-Canberra-Singapore
   };
 
-  const routeIataWithFlightNo = `${originIata}-${destinationIata}/${flightNo}`;
-  const routeIataOverride = routeOverrideMap[routeIataWithFlightNo];
-
-  if (!routeIataOverride) return null;
-
-  return {
-    originIata: routeIataOverride.split('-')[0],
-    destinationIata: routeIataOverride.split('-')[1],
-  };
+  const routeIataWithFlightNo = `${routeIata}/${flightNo}` as const;
+  const routeIataOverride = routeOverrideMap[routeIataWithFlightNo] as
+    | Route[]
+    | undefined;
+  return routeIataOverride;
 }
 
 if (require.main === module) {
