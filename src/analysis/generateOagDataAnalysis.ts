@@ -1,23 +1,31 @@
 import fs from 'fs';
 import { toNumber } from '../utils';
 
+type Route = `${string}-${string}`;
+type FlightNo = `${'SQ' | 'MI'}${string}`;
+type AircraftType = {
+  aircraftModel: string;
+  totalSeats: number;
+  frequency: number;
+};
+type FlightNoToAircraftTypesMap = Record<FlightNo, AircraftType[]>;
+type RouteToFlightNoToAircraftTypesMap = Record<
+  Route,
+  FlightNoToAircraftTypesMap
+>;
+
 interface OagDataAnalysisEntry {
   month: string;
   routes: Array<{
-    originIata: string;
-    destinationIata: string;
-    flights: Array<{
+    route: string;
+    flightNos: Array<{
       flightNo: string;
-      aircraftTypes: Array<{
-        aircraftModel: string;
-        totalSeats: number;
-        frequency: number;
-      }>;
+      details: AircraftType[];
     }>;
   }>;
 }
 
-const airlineIataMap: Record<string, string> = {
+const airlineIataMap: Record<string, 'SQ' | 'MI'> = {
   'Singapore Airlines': 'SQ',
   SilkAir: 'MI',
 };
@@ -37,7 +45,8 @@ export function generateOagDataAnalysis() {
     .split('\r\n');
   const seRoutesList = getSERoutesList();
 
-  const monthToRoutesDict: Record<string, OagDataAnalysisEntry['routes']> = {};
+  const monthToRoutesMap: Record<string, RouteToFlightNoToAircraftTypesMap> =
+    {};
 
   console.log(`🔍 ${oagDataFileContent.length} entries found in OAG dataset`);
   console.log(`🔧 Filtering out non-SIA/SilkAir flights`);
@@ -62,7 +71,7 @@ export function generateOagDataAnalysis() {
   oagDataFileContentFiltered.forEach((row) => {
     const cells = row.split('\t');
     const carrierName = cells[0];
-    const flightNo = `${airlineIataMap[carrierName]}${cells[1]}`;
+    const flightNo = `${airlineIataMap[carrierName]}${cells[1]}` as const;
     const originIataRaw = iataMap[cells[2]] ?? cells[2];
     const destinationIataRaw = iataMap[cells[3]] ?? cells[3];
     const aircraftModel = cells[4];
@@ -94,23 +103,14 @@ export function generateOagDataAnalysis() {
       destinationIata = routeIataOverride.destinationIata;
     }
 
-    const routesForMonth = monthToRoutesDict[month] ?? [];
-    const similarRouteForMonth = routesForMonth.find(
-      (route) =>
-        route.originIata === originIata &&
-        route.destinationIata === destinationIata,
-    );
+    const routesForMonth = monthToRoutesMap[month] ?? [];
 
-    const flightsForSimilarRouteForMonth = similarRouteForMonth?.flights ?? [];
-    const similarFlightForSimilarRouteForMonth =
-      flightsForSimilarRouteForMonth.find(
-        (flight) => flight.flightNo === flightNo,
-      );
+    const route = `${originIata}-${destinationIata}` as const;
+    const routeForMonth = routesForMonth[route] ?? {};
+    const flightNoForRouteForMonth = routeForMonth?.[flightNo] ?? [];
 
-    const aircraftTypesForSimilarFlightForSimilarRouteForMonth =
-      similarFlightForSimilarRouteForMonth?.aircraftTypes ?? [];
-    const aircraftTypesForSimilarFlightForSimilarRouteForMonthCombined = [
-      ...aircraftTypesForSimilarFlightForSimilarRouteForMonth,
+    const flightNoDetailsForRouteForMonthCombined = [
+      ...flightNoForRouteForMonth,
       {
         aircraftModel,
         totalSeats,
@@ -118,30 +118,41 @@ export function generateOagDataAnalysis() {
       },
     ];
 
-    const flightsForRouteForMonthCombined = [
-      ...flightsForSimilarRouteForMonth,
-      {
-        flightNo,
-        aircraftTypes:
-          aircraftTypesForSimilarFlightForSimilarRouteForMonthCombined,
-      },
-    ];
-
-    monthToRoutesDict[month] = [
-      ...routesForMonth,
-      {
-        originIata,
-        destinationIata,
-        flights: flightsForRouteForMonthCombined,
-      },
-    ];
+    routeForMonth[flightNo] = flightNoDetailsForRouteForMonthCombined;
+    routesForMonth[route] = routeForMonth;
+    monthToRoutesMap[month] = routesForMonth;
   });
 
-  const oagDataAnalysis = Object.entries(monthToRoutesDict).map(
-    ([month, routes]) => ({
-      month,
-      routes,
-    }),
+  // restructure to array for a better representation of the data
+  const oagDataAnalysis = Object.entries(monthToRoutesMap).map(
+    ([month, routes]) => {
+      const routesList = Object.entries(routes).reduce(
+        (
+          _routesList: OagDataAnalysisEntry['routes'],
+          [route, flightNosForRoutes],
+        ) => {
+          const flightNosList = Object.entries(flightNosForRoutes).reduce(
+            (
+              _flightNosList: OagDataAnalysisEntry['routes'][0]['flightNos'],
+              [flightNo, flightNoDetails],
+            ) => {
+              _flightNosList.push({ flightNo, details: flightNoDetails });
+              return _flightNosList;
+            },
+            [],
+          );
+
+          _routesList.push({ route, flightNos: flightNosList });
+          return _routesList;
+        },
+        [],
+      );
+
+      return {
+        month,
+        routes: routesList,
+      };
+    },
   );
   oagDataAnalysis.sort((a, b) => a.month.localeCompare(b.month));
 
