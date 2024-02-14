@@ -62,7 +62,7 @@ export function generateRouteAnalysis({
         const flightClassDetailsForMonth = details[month];
         detailsUpdated[month] = {
           Y: null,
-          PY: null,
+          W: null,
           J: null,
           ...flightClassDetailsForMonth,
         };
@@ -99,7 +99,7 @@ const getFlightClassCode = (flightClass: FlightClass): FlightClassCode => {
     return 'Y';
   }
   if (flightClass === FlightClass.PREMIUM_ECONOMY) {
-    return 'PY';
+    return 'W';
   }
   if (flightClass === FlightClass.BUSINESS) {
     return 'J';

@@ -1,5 +1,5 @@
 export type Month = string;
-export type FlightClass = 'Y' | 'PY' | 'J';
+export type FlightClass = 'Y' | 'W' | 'J';
 export type FlightClassSelectOption = FlightClass | 'ALL';
 
 export enum Region {
@@ -39,7 +39,7 @@ export type RouteAnalysisEntry = {
 
 export type MonthSummaryAnalysisEntry = {
   month: string;
-  total: number;
+  count: number;
   byFlightClass: Record<FlightClassCode, number>;
   byRegion: Record<Region, number>;
   metadata: {

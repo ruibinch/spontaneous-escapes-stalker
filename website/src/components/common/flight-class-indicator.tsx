@@ -9,7 +9,7 @@ export function FlightClassIndicator({
     if (flightClass === 'Economy' || flightClassCode === 'Y') {
       return 'bg-green-600';
     }
-    if (flightClass === 'Premium Economy' || flightClassCode === 'PY') {
+    if (flightClass === 'Premium Economy' || flightClassCode === 'W') {
       return 'bg-blue-600';
     }
     if (flightClass === 'Business' || flightClassCode === 'J') {

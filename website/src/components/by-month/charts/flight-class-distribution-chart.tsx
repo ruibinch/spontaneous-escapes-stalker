@@ -26,7 +26,7 @@ export function FlightClassDistributionChart({
           _flightClassDistributionInMonth.Y += 1;
           break;
         case 'Premium Economy':
-          _flightClassDistributionInMonth.PY += 1;
+          _flightClassDistributionInMonth.W += 1;
           break;
         case 'Business':
           _flightClassDistributionInMonth.J += 1;
@@ -36,7 +36,7 @@ export function FlightClassDistributionChart({
       }
       return _flightClassDistributionInMonth;
     },
-    { Y: 0, PY: 0, J: 0 },
+    { Y: 0, W: 0, J: 0 },
   );
 
   const flightClassDistributionPctInMonth = Object.entries(
@@ -62,7 +62,7 @@ export function FlightClassDistributionChart({
         data: Object.values(flightClassDistributionInMonth),
         backgroundColor: [
           flightClassColors.Y,
-          flightClassColors.PY,
+          flightClassColors.W,
           flightClassColors.J,
         ],
       },
@@ -125,7 +125,7 @@ function ComparisonTable({
           </tr>
         </thead>
         <tbody>
-          {['Y', 'PY', 'J'].map((flightClass, idx) => {
+          {['Y', 'W', 'J'].map((flightClass, idx) => {
             const monthValue = flightClassDistributionPctInMonth[flightClass];
             const averageValue = averageFlightClassDistributionPct[flightClass];
             const diffValue = monthValue - averageValue;
@@ -182,15 +182,15 @@ function computeAverageFlightClassDistributionPct() {
   let businessPctSum = 0;
 
   monthSummaryAnalysisList.forEach((monthSummaryAnalysisEntry) => {
-    const { total, byFlightClass } = monthSummaryAnalysisEntry;
-    economyPctSum += byFlightClass.Y / total;
-    premiumEconomyPctSum += byFlightClass.PY / total;
-    businessPctSum += byFlightClass.J / total;
+    const { count, byFlightClass } = monthSummaryAnalysisEntry;
+    economyPctSum += byFlightClass.Y / count;
+    premiumEconomyPctSum += byFlightClass.W / count;
+    businessPctSum += byFlightClass.J / count;
   });
 
   return {
     Y: economyPctSum / numMonths,
-    PY: premiumEconomyPctSum / numMonths,
+    W: premiumEconomyPctSum / numMonths,
     J: businessPctSum / numMonths,
   };
 }

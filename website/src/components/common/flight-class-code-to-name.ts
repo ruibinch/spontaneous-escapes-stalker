@@ -1,5 +1,5 @@
 export const flightClassCodeToName: Record<string, string> = {
   Y: 'Economy',
-  PY: 'Premium Economy',
+  W: 'Premium Economy',
   J: 'Business',
 };

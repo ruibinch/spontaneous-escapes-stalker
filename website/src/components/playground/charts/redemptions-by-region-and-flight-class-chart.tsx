@@ -48,9 +48,9 @@ export function RedemptionsByRegionAndFlightClassChart({
       {
         label: 'Premium Economy',
         data: Object.values(regionToFlightClassToCountDict).map(
-          (flightClassToCountDict) => flightClassToCountDict.PY,
+          (flightClassToCountDict) => flightClassToCountDict.W,
         ),
-        backgroundColor: flightClassColors.PY,
+        backgroundColor: flightClassColors.W,
       },
       {
         label: 'Business',

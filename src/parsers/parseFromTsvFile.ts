@@ -83,7 +83,7 @@ function parseFromTsvFile() {
           return 'Y/J';
         }
         if (isHeaderRow(headerRowCells, TSV_PREMIUM_ECONOMY_SECTION_COLUMNS)) {
-          return 'PY';
+          return 'W';
         }
         throw new Error(`Invalid header row - ${headerRowCells.join(',')}`);
       })();
@@ -126,7 +126,7 @@ function parseFromTsvFile() {
  * Parses an individual "section" of the TSV corresponding to either the Business/Economy Class section or Premium Economy class section.
  * First row is the header row.
  */
-function parseSection(rows: string[], flightClassCategory: 'Y/J' | 'PY') {
+function parseSection(rows: string[], flightClassCategory: 'Y/J' | 'W') {
   const redemptions: RedemptionTableInfoWithRegion[] = [];
 
   // skip the header row
@@ -193,10 +193,10 @@ function parseSection(rows: string[], flightClassCategory: 'Y/J' | 'PY') {
       }
     }
 
-    if (flightClassCategory === 'PY') {
+    if (flightClassCategory === 'W') {
       if (cells.length !== TSV_PREMIUM_ECONOMY_SECTION_COLUMNS.length) {
         throw new Error(
-          `Mismatch in number of cells for PY section - expected ${TSV_PREMIUM_ECONOMY_SECTION_COLUMNS.length} but received ${cells.length}`,
+          `Mismatch in number of cells for W section - expected ${TSV_PREMIUM_ECONOMY_SECTION_COLUMNS.length} but received ${cells.length}`,
         );
       }
 

@@ -18,7 +18,7 @@ export function TopContent(props: {
             {'Economy'}
           </div>
           <div className="flex flex-row gap-2 items-center">
-            <FlightClassIndicator flightClassCode={'PY'} />
+            <FlightClassIndicator flightClassCode={'W'} />
             {'Premium Economy'}
           </div>
           <div className="flex flex-row gap-2 items-center">

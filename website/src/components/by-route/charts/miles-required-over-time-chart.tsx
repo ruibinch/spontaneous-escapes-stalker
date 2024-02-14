@@ -19,7 +19,7 @@ export function MilesRequiredOverTimeChart({
     new Set(detailsListFiltered.map((d) => d.month)),
   );
 
-  ['Y', 'PY', 'J'].forEach((flightClass) => {
+  ['Y', 'W', 'J'].forEach((flightClass) => {
     const detailsListForFlightClass = detailsListFiltered.filter(
       (d) => d.flightClass === flightClass,
     );
@@ -55,10 +55,10 @@ export function MilesRequiredOverTimeChart({
       },
       {
         label: 'Premium Economy',
-        data: Object.values(flightClassToMonthToMilesRequiredDict.PY),
-        borderColor: flightClassColors.PY,
+        data: Object.values(flightClassToMonthToMilesRequiredDict.W),
+        borderColor: flightClassColors.W,
         borderWidth: 1,
-        backgroundColor: flightClassColors.PY,
+        backgroundColor: flightClassColors.W,
         pointRadius: 3,
       },
       {

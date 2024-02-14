@@ -21,7 +21,7 @@ const flightClassOptions = [
   },
   {
     label: 'Premium Economy',
-    value: 'PY',
+    value: 'W',
   },
   {
     label: 'Business',

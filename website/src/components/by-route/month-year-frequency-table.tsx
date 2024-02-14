@@ -129,7 +129,7 @@ function renderCell(
       <div className="flex justify-center">
         <div className="flex flex-row gap-0.5 sm:gap-1">
           {valueAtYearMonth.Y && <FlightClassIndicator flightClassCode="Y" />}
-          {valueAtYearMonth.PY && <FlightClassIndicator flightClassCode="PY" />}
+          {valueAtYearMonth.W && <FlightClassIndicator flightClassCode="W" />}
           {valueAtYearMonth.J && <FlightClassIndicator flightClassCode="J" />}
         </div>
       </div>
@@ -145,7 +145,7 @@ function TopContent() {
         {'Economy'}
       </div>
       <div className="flex flex-row gap-2 items-center">
-        <FlightClassIndicator flightClassCode={'PY'} />
+        <FlightClassIndicator flightClassCode={'W'} />
         {'Premium Economy'}
       </div>
       <div className="flex flex-row gap-2 items-center">

@@ -1,6 +1,8 @@
-export const flightClassColors = {
+import { FlightClass } from '@/index';
+
+export const flightClassColors: Record<FlightClass, string> = {
   Y: '#16a34a', // green-600
-  PY: '#2563eb', // blue-600
+  W: '#2563eb', // blue-600
   J: '#b91c1c', // red-700
 };
 

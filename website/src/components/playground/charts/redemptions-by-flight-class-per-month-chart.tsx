@@ -20,7 +20,7 @@ export function RedemptionsByFlightClassPerMonthChart({
   routeAnalysisListFiltered.forEach(({ details }) => {
     Object.entries(details).forEach(([month, detailsInfo]) => {
       if (!(month in monthToFlightClassToCountDict)) {
-        monthToFlightClassToCountDict[month] = { Y: 0, PY: 0, J: 0 };
+        monthToFlightClassToCountDict[month] = { Y: 0, W: 0, J: 0 };
       }
 
       Object.entries(detailsInfo).forEach(([flightClass, redemptionInfo]) => {
@@ -49,11 +49,11 @@ export function RedemptionsByFlightClassPerMonthChart({
       {
         label: 'Premium Economy',
         data: Object.values(monthToFlightClassToCountDict).map(
-          (flightClassToCountDict) => flightClassToCountDict.PY,
+          (flightClassToCountDict) => flightClassToCountDict.W,
         ),
-        borderColor: flightClassColors.PY,
+        borderColor: flightClassColors.W,
         borderWidth: 1,
-        backgroundColor: flightClassColors.PY,
+        backgroundColor: flightClassColors.W,
         pointRadius: 1,
       },
       {

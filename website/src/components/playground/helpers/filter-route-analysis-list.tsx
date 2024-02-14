@@ -61,7 +61,7 @@ export function filterRouteAnalysisList({
           if (_isApplicableMonth) {
             _detailsFiltered[month] = {
               Y: isFlightClassMatchingSelOption('Y') ? detailsInfo.Y : null,
-              PY: isFlightClassMatchingSelOption('PY') ? detailsInfo.PY : null,
+              W: isFlightClassMatchingSelOption('W') ? detailsInfo.W : null,
               J: isFlightClassMatchingSelOption('J') ? detailsInfo.J : null,
             };
           }

@@ -177,8 +177,8 @@ function renderCell({
           {flightClassCodeMap?.Y && (
             <FlightClassIndicator flightClassCode="Y" />
           )}
-          {flightClassCodeMap?.PY && (
-            <FlightClassIndicator flightClassCode="PY" />
+          {flightClassCodeMap?.W && (
+            <FlightClassIndicator flightClassCode="W" />
           )}
           {flightClassCodeMap?.J && (
             <FlightClassIndicator flightClassCode="J" />

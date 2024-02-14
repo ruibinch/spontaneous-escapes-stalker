@@ -13,7 +13,7 @@ const PRINT_PERCENTAGE_OF_ROUTES_AVAILABLE_FOR_REDEMPTION =
 
 export type MonthSummaryAnalysisEntry = {
   month: string;
-  total: number;
+  count: number;
   byUniqueRoutes: {
     availableForRedemption: number;
     routeNetworkSize: number | undefined;
@@ -115,14 +115,14 @@ export function generateMonthSummaryAnalysis({
 
     result.push({
       month,
-      total: redemptionsForMonth.length,
+      count: redemptionsForMonth.length,
       byUniqueRoutes: {
         availableForRedemption: routes.size,
         routeNetworkSize: oagDataAnalysisEntryForMonth?.routes.length,
       },
       byFlightClass: {
         Y: economyClassCount,
-        PY: premiumEconomyClassCount,
+        W: premiumEconomyClassCount,
         J: businessClassCount,
       },
       byRegion: {

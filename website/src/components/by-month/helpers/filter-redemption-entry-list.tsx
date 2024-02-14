@@ -17,7 +17,7 @@ export function filterRedemptionEntryList({
     const isFlightClassMatch =
       flightClassOption === 'ALL' ||
       (flightClassOption === 'Y' && d.flightClass === 'Economy') ||
-      (flightClassOption === 'PY' && d.flightClass === 'Premium Economy') ||
+      (flightClassOption === 'W' && d.flightClass === 'Premium Economy') ||
       (flightClassOption === 'J' && d.flightClass === 'Business');
 
     return (
