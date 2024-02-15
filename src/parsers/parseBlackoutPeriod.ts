@@ -96,11 +96,11 @@ function parseBlackoutPeriodContent(
     const blackoutPeriodsString = splitBlackoutPeriodString(
       blackoutPeriodStringByFlightNos[0].blackoutPeriodString,
     );
-    blackoutPeriods = blackoutPeriodsString.map(getBlackoutPeriod);
+    blackoutPeriods = blackoutPeriodsString.map(parseDateText);
   } else {
     // multiple flight numbers might have a common blackout period
     // key is in the format `{fromDate}__{toDate}`
-    const blackoutPeriodsDict: Record<string, string[]> = {};
+    const blackoutPeriodsDict: Record<`${string}__${string}`, string[]> = {};
 
     blackoutPeriodStringByFlightNos.forEach(
       ({ blackoutPeriodString, flightNo }) => {
@@ -110,7 +110,7 @@ function parseBlackoutPeriodContent(
 
         const blackoutPeriodsString =
           splitBlackoutPeriodString(blackoutPeriodString);
-        blackoutPeriodsString.map(getBlackoutPeriod).forEach(({ from, to }) => {
+        blackoutPeriodsString.map(parseDateText).forEach(({ from, to }) => {
           blackoutPeriodsDict[`${from}__${to}`] = [
             ...(blackoutPeriodsDict[`${from}__${to}`] ?? []),
             flightNo,
@@ -169,14 +169,12 @@ function splitBlackoutPeriodString(blackoutPeriodString: string) {
 }
 
 /**
- * Finds the from/to dates of a single blackout period entry.
+ * Finds the from/to dates of a date text string.
  *
- * @param blackoutPeriodStringRaw e.g. "3 – 5 July 2023" / "4 July - 6 July 2023" / "5 July 2023"
+ * @param dateText e.g. "3 – 5 July 2023" / "4 July - 6 July 2023" / "5 July 2023"
  */
-function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
-  const separator = POSSIBLE_DASHES.find((sep) =>
-    blackoutPeriodStringRaw.includes(sep),
-  );
+function parseDateText(dateText: string) {
+  const separator = POSSIBLE_DASHES.find((sep) => dateText.includes(sep));
   const yearOptionalRegex = '(\\s\\d{4})?';
   const monthRegex = '\\s[a-zA-Z]+';
   const monthOptionalRegex = `(${monthRegex})?`;
@@ -193,11 +191,9 @@ function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
       'g',
     );
 
-    const match = blackoutPeriodStringRaw.match(re);
+    const match = dateText.match(re);
     if (!match) {
-      throw new Error(
-        `Unable to extract date component from "${blackoutPeriodStringRaw}"`,
-      );
+      throw new Error(`Unable to extract date component from "${dateText}"`);
     }
     return match[0];
   })();
@@ -218,17 +214,19 @@ function getBlackoutPeriod(blackoutPeriodStringRaw: string) {
 
   // blackout period is a date range, e.g. "3 – 5 July 2023" / "3 – 5 July" / "3 July - 5 July"
   // then, fromDay = 3, toDate = 5 July 2023
-  const blackoutPeriodStringSplit = blackoutPeriodString.split(separator);
-  // convert "3 July" to "3"
-  const fromDay = blackoutPeriodStringSplit[0]
-    .replace(new RegExp(monthRegex), '')
-    .trim();
-  const toDateSplit = blackoutPeriodStringSplit[1].trim().split(' ');
+  // alternatively, the from/to months can also be different, e.g. "31 June - 5 July"
+  const [fromSegment, toSegment] = blackoutPeriodString.split(separator);
+
+  const fromDateSplit = fromSegment.trim().split(' ');
+  const fromDay = fromDateSplit[0];
+  const fromMonth = fromDateSplit[1] ? spellcheckMonth(fromDateSplit[1]) : null;
+
+  const toDateSplit = toSegment.trim().split(' ');
   const toDay = toDateSplit[0];
   const toMonth = spellcheckMonth(toDateSplit[1]);
   const toYear = toDateSplit[2] ?? getYearInNextMonth();
 
-  const fromDate = `${fromDay} ${toMonth} ${toYear}`;
+  const fromDate = `${fromDay} ${fromMonth ?? toMonth} ${toYear}`;
   const toDate = `${toDay} ${toMonth} ${toYear}`;
   return {
     from: parseDateStringToISO8601(fromDate),

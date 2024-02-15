@@ -32,6 +32,13 @@ describe('parseBlackoutPeriod', () => {
       },
     ],
     [
+      'single date range entry, with different months attached to both from/to dates',
+      {
+        input: '31 March – 15 April 2024',
+        expected: [{ from: '2024-03-31', to: '2024-04-15' }],
+      },
+    ],
+    [
       'many single date entries sharing a single month/year component',
       {
         input: '1, 2, 5, 8, 10 December 2023',
