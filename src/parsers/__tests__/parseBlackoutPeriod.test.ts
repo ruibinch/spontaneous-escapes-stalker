@@ -152,10 +152,13 @@ describe('parseBlackoutPeriod', () => {
       },
     ],
     [
-      '[special case] dates with random character variation at the end',
+      '[special case] dates with random character variations',
       {
-        input: '14 January 2024s',
-        expected: [{ from: '2024-01-14', to: '2024-01-14' }],
+        input: '14 January 2024s, 30 March -2024',
+        expected: [
+          { from: '2024-01-14', to: '2024-01-14' },
+          { from: '2024-03-30', to: '2024-03-30' },
+        ],
       },
     ],
     [

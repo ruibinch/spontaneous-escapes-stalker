@@ -173,7 +173,14 @@ function splitBlackoutPeriodString(blackoutPeriodString: string) {
  *
  * @param dateText e.g. "3 – 5 July 2023" / "4 July - 6 July 2023" / "5 July 2023"
  */
-function parseDateText(dateText: string) {
+function parseDateText(_dateText: string) {
+  // semi-hardcoded handling to remove any extraneous dashes before the year to avoid it being incorrectly registered as a separator
+  const dashBeforeYearRegex = new RegExp(
+    `[${POSSIBLE_DASHES.join('')}](?=\\d{4})`,
+    'g',
+  );
+  const dateText = _dateText.replace(dashBeforeYearRegex, '');
+
   const separator = POSSIBLE_DASHES.find((sep) => dateText.includes(sep));
   const yearOptionalRegex = '(\\s\\d{4})?';
   const monthRegex = '\\s[a-zA-Z]+';
