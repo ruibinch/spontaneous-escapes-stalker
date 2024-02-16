@@ -5,6 +5,7 @@ import { parseDateStringToISO8601 } from '../utils';
 // SQ website doesn't standardise their dashes
 // TODO: check for other possible Unicode dash characters
 export const POSSIBLE_DASHES = ['–', '‐', '—', '-'];
+const POSSIBLE_SEPARATORS = [...POSSIBLE_DASHES, ' to '];
 
 interface BlackoutPeriodStringByFlightNo {
   blackoutPeriodString: string;
@@ -173,7 +174,7 @@ function splitBlackoutPeriodString(blackoutPeriodString: string) {
  *
  * @param dateText e.g. "3 – 5 July 2023" / "4 July - 6 July 2023" / "5 July 2023"
  */
-function parseDateText(_dateText: string) {
+export function parseDateText(_dateText: string) {
   // semi-hardcoded handling to remove any extraneous dashes before the year to avoid it being incorrectly registered as a separator
   const dashBeforeYearRegex = new RegExp(
     `[${POSSIBLE_DASHES.join('')}](?=\\d{4})`,
@@ -181,7 +182,7 @@ function parseDateText(_dateText: string) {
   );
   const dateText = _dateText.replace(dashBeforeYearRegex, '');
 
-  const separator = POSSIBLE_DASHES.find((sep) => dateText.includes(sep));
+  const separator = POSSIBLE_SEPARATORS.find((sep) => dateText.includes(sep));
   const yearOptionalRegex = '(\\s\\d{4})?';
   const monthRegex = '\\s[a-zA-Z]+';
   const monthOptionalRegex = `(${monthRegex})?`;
@@ -189,8 +190,8 @@ function parseDateText(_dateText: string) {
 
   // use a regex to extract only the date component from the string, in case the string contains irrelevant extra chars
   const blackoutPeriodString = (() => {
-    // monthOptionalRegex is to cover cases like "4 July - 6 July"
-    const dayRangeRegex = `${dayRegex}${monthOptionalRegex}\\s?${separator}\\s?${dayRegex}`;
+    // monthOptionalRegex/yearOptionalRegex is to cover cases like "4 July 2023 - 6 July 2023"
+    const dayRangeRegex = `${dayRegex}${monthOptionalRegex}${yearOptionalRegex}\\s?${separator}\\s?${dayRegex}`;
     const re = new RegExp(
       separator
         ? `${dayRangeRegex}${monthRegex}${yearOptionalRegex}`
