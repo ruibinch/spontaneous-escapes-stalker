@@ -11,7 +11,7 @@ import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
 import { postprocessing } from './postprocessing';
 import { dateInYYYYMM, datePrefix } from './utils';
-import { log } from './utils/log';
+import { log, sendLogs } from './utils/log';
 import {
   sendExistingRedemptionPeriodChangesNotification,
   sendMessageToChannels,
@@ -203,14 +203,15 @@ function compareRedemptions(
 
 if (require.main === module) {
   scrape()
-    .then(() => {
+    .then(async () => {
+      await sendLogs();
       process.exit(0);
     })
-    .catch((err) => {
+    .catch(async (err) => {
       if (err instanceof Error) {
         log(err.message, true);
       }
-      console.error(err);
+      await sendLogs();
       process.exit(1);
     });
 }

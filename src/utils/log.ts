@@ -1,4 +1,6 @@
 import fs from 'fs';
+import { sendMessageToChannels } from './sender';
+import { escapeCharacters } from '../lib/telegram/helpers';
 
 const today = new Date().toISOString().split('T')[0];
 const logFilename = `${today}.log`;
@@ -16,4 +18,18 @@ export function log(_message: string, isError = false) {
   }
 
   fs.appendFileSync(logFilename, `${message}\n`);
+}
+
+export async function sendLogs() {
+  const content = fs.readFileSync(logFilename).toString();
+
+  try {
+    await sendMessageToChannels({
+      message: escapeCharacters(content),
+      shouldSendToProdChannel: false,
+    });
+    fs.rmSync(logFilename);
+  } catch (err) {
+    console.error(`❌ Unable to send contents for ${logFilename} log file`);
+  }
 }

@@ -2,7 +2,8 @@ import { addMonths } from 'date-fns';
 import fs from 'fs';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { scrape } from './scrape';
-import { sleep, datePrefix } from './utils';
+import { datePrefix, sleep } from './utils';
+import { sendLogs } from './utils/log';
 import { sendMessageToChannels } from './utils/sender';
 
 process.env.TZ = 'UTC';
@@ -47,4 +48,5 @@ function checkNextMonthRedemptionsAlreadyPublished() {
     shouldSendToProdChannel: false,
   });
   await scrape();
+  await sendLogs();
 })();
