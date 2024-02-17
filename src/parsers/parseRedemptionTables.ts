@@ -1,13 +1,14 @@
 import { HTMLElement } from 'node-html-parser';
+import { isAllDefined, toNumber } from '../utils';
+import { log } from '../utils/log';
 import {
   BlackoutPeriod,
   FlightClass,
   RedemptionTableInfo,
   RedemptionTableInfoWithRegion,
 } from '../utils/types';
-import { isAllDefined, toNumber } from '../utils';
-import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
 import { dedupeRedemptions } from './dedupeRedemptions';
+import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
 
 const ACCORDIONS_CLASS_NAME = '.block-2.accordion';
 const BUSINESS_AND_ECONOMY_CLASS_SECTION_NAME =
@@ -85,7 +86,7 @@ export function parseRedemptionTables(root: HTMLElement) {
   );
   const redemptionsForSilkairSection = parseSection(silkairSection);
 
-  console.log(
+  log(
     [
       '⛏️ Number of redemptions scraped from each section',
       `  • Business and Economy Class Redemptions: ${redemptionsForBusinessAndEconomyClassSection.length}`,
@@ -106,7 +107,7 @@ export function parseRedemptionTables(root: HTMLElement) {
     ...redemptionsForSilkairSection,
   ];
   const redemptionsDeduped = dedupeRedemptions(redemptionsCombined);
-  console.log(
+  log(
     `🧹 Deduplicated ${redemptionsCombined.length} redemptions to ${redemptionsDeduped.length} redemptions\n`,
   );
   return redemptionsDeduped;

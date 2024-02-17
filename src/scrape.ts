@@ -9,7 +9,9 @@ import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
+import { postprocessing } from './postprocessing';
 import { dateInYYYYMM, datePrefix } from './utils';
+import { log } from './utils/log';
 import {
   sendExistingRedemptionPeriodChangesNotification,
   sendMessageToChannels,
@@ -17,7 +19,6 @@ import {
   sendRedemptionsInfoNotification,
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
-import { postprocessing } from './postprocessing';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
@@ -95,7 +96,7 @@ export async function scrape() {
   }
 
   if (!doesRedemptionPeriodExist) {
-    console.log(`Redemption period "${redemptionEndDate}" does not exist`);
+    log(`Redemption period "${redemptionEndDate}" does not exist`);
     if (shouldUseAws) {
       await RedemptionPeriod.upload({
         redemptionEndDate,
@@ -104,7 +105,7 @@ export async function scrape() {
     }
     await sendNewRedemptionPeriodNotification();
   } else {
-    console.log(`Changes to existing redemption period "${redemptionEndDate}"`);
+    log(`Changes to existing redemption period "${redemptionEndDate}"`);
     await sendExistingRedemptionPeriodChangesNotification();
   }
 
@@ -173,14 +174,14 @@ function saveDataFiles({
     const htmlFilename = `data/${dateInYYYYMM(
       redemptionTravelPeriod.from,
     )}-content.html`;
-    console.log(`📄 Writing to ${htmlFilename}`);
+    log(`📄 Writing to ${htmlFilename}`);
     fs.writeFileSync(htmlFilename, html.toString());
   }
 
   const redemptionsFilename = `data/${dateInYYYYMM(
     redemptionTravelPeriod.from,
   )}-redemptions.json`;
-  console.log(`📄 Writing to ${redemptionsFilename}`);
+  log(`📄 Writing to ${redemptionsFilename}`);
   fs.writeFileSync(redemptionsFilename, JSON.stringify(redemptions, null, 2));
 }
 
@@ -206,6 +207,9 @@ if (require.main === module) {
       process.exit(0);
     })
     .catch((err) => {
+      if (err instanceof Error) {
+        log(err.message, true);
+      }
       console.error(err);
       process.exit(1);
     });

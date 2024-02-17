@@ -1,6 +1,7 @@
 import { spellcheckMonth } from '../lib/spellcheck';
 import { BlackoutPeriod } from '../utils/types';
 import { parseDateStringToISO8601 } from '../utils';
+import { log } from '../utils/log';
 
 // SQ website doesn't standardise their dashes
 // TODO: check for other possible Unicode dash characters
@@ -30,9 +31,8 @@ export function parseBlackoutPeriod(blackoutPeriodString: string) {
     return blackoutPeriods;
   } catch (err) {
     if (err instanceof Error) {
-      console.error(
-        `[parseBlackoutPeriod] "${blackoutPeriodString}": ${err.message}`,
-      );
+      const errorMessage = `[parseBlackoutPeriod] "${blackoutPeriodString}": ${err.message}`;
+      log(errorMessage, true);
     }
     return [];
   }
