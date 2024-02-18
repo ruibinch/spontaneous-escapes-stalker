@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { OagDataAnalysisEntry } from '../scripts/generateOagData';
 import { RedemptionJsonPostprocessed } from '../utils/types';
+import { isAfter } from 'date-fns';
 
 /**
  * Some SE redemptions are missing from the OAG routes dataset. This is impossible if the OAG dataset is 100% accurate.
@@ -15,6 +16,10 @@ export function removeRedemptionsMissingFromOagRoutesDataset({
   month: string;
 }) {
   const oagDataForMonth = getOagDataForMonth(month);
+  if (!oagDataForMonth) {
+    return redemptions;
+  }
+
   const redemptionsFiltered: RedemptionJsonPostprocessed[] = [];
   const missingRedemptions: string[] = [];
 
@@ -55,13 +60,24 @@ function getOagDataForMonth(month: string) {
     oagDataAnalysisFileContent,
   ) as OagDataAnalysisEntry[];
 
+  const { month: lastMonthWithOagData } =
+    oagDataAnalysis[oagDataAnalysis.length - 1];
+  const isAfterLastMonthWithOagData = isAfter(
+    yyyymmToDate(month),
+    yyyymmToDate(lastMonthWithOagData),
+  );
+
   const oagDataForMonth = oagDataAnalysis.find(
     (entry) => entry.month === month,
   );
-  if (!oagDataForMonth) {
+  if (!oagDataForMonth && !isAfterLastMonthWithOagData) {
     throw new Error(`No OAG data for ${month}`);
   }
   return oagDataForMonth;
+}
+
+function yyyymmToDate(s: string) {
+  return new Date(`${s.slice(0, 4)}-${s.slice(4, 6)}-01`);
 }
 
 /**
