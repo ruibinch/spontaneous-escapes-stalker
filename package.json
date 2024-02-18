@@ -8,6 +8,7 @@
     "run:postprocessing": "ts-node src/postprocessing.ts",
     "run:analyse": "ts-node src/analyse.ts",
     "parse-from-tsv": "ts-node src/parsers/parseFromTsvFile.ts",
+    "generate-oag-data": "ts-node src/scripts/generateOagData.ts",
     "git:commit-data-diffs": "ts-node src/lib/git/commitDataDiffs.ts",
     "lambda:deploy": "cd src/lambdas && sls deploy",
     "typecheck": "tsc --noEmit",

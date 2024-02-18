@@ -5,7 +5,7 @@ import {
   Region,
 } from '../utils/types';
 import { FlightClassCode } from './types';
-import { OagDataAnalysisEntry } from './generateOagDataAnalysis';
+import { OagDataAnalysisEntry } from '../scripts/generateOagData';
 
 const PRINT_ROUTES_NOT_AVAILABLE_FOR_REDEMPTION_IN_MONTHS: string[] = [];
 const PRINT_PERCENTAGE_OF_ROUTES_AVAILABLE_FOR_REDEMPTION =
@@ -30,7 +30,7 @@ export function generateMonthSummaryAnalysis({
   months: string[];
 }) {
   const oagDataAnalysisFileContent = fs
-    .readFileSync('data/oag-data-analysis.json')
+    .readFileSync('data/oag-data.json')
     .toString();
   const oagDataAnalysis = JSON.parse(
     oagDataAnalysisFileContent,

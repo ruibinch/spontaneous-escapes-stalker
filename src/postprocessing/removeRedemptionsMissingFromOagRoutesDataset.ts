@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { OagDataAnalysisEntry } from '../analysis/generateOagDataAnalysis';
+import { OagDataAnalysisEntry } from '../scripts/generateOagData';
 import { RedemptionJsonPostprocessed } from '../utils/types';
 
 /**
@@ -49,7 +49,7 @@ export function removeRedemptionsMissingFromOagRoutesDataset({
 
 function getOagDataForMonth(month: string) {
   const oagDataAnalysisFileContent = fs
-    .readFileSync('data/oag-data-analysis.json')
+    .readFileSync('data/oag-data.json')
     .toString();
   const oagDataAnalysis = JSON.parse(
     oagDataAnalysisFileContent,

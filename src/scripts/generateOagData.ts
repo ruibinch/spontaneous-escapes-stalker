@@ -162,7 +162,7 @@ export function generateOagDataAnalysis() {
   oagDataAnalysis.sort((a, b) => a.month.localeCompare(b.month));
 
   fs.writeFileSync(
-    'data/oag-data-analysis.json',
+    'data/oag-data.json',
     JSON.stringify(oagDataAnalysis, null, 2),
   );
 }
