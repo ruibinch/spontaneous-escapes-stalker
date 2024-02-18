@@ -16,6 +16,7 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Beijing: { iata: 'PEK', region: Region.NORTH_ASIA },
   Bangalore: { iata: 'BLR', region: Region.SOUTH_ASIA },
   Brisbane: { iata: 'BNE', region: Region.SOUTHWEST_PACIFIC },
+  Broome: { iata: 'BME', region: Region.SOUTHWEST_PACIFIC },
   Busan: { iata: 'PUS', region: Region.NORTH_ASIA },
   Cairns: { iata: 'CNS', region: Region.SOUTHWEST_PACIFIC },
   Canberra: { iata: 'CBR', region: Region.SOUTHWEST_PACIFIC },
@@ -26,6 +27,7 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Chennai: { iata: 'MAA', region: Region.SOUTH_ASIA },
   'Chiang Mai': { iata: 'CNX', region: Region.SOUTH_EAST_ASIA },
   Chongqing: { iata: 'CKG', region: Region.NORTH_ASIA },
+  Chitose: { iata: 'CTS', region: Region.NORTH_ASIA },
   Christchurch: { iata: 'CHC', region: Region.SOUTHWEST_PACIFIC },
   Coimbatore: { iata: 'CJB', region: Region.SOUTH_ASIA },
   Colombo: { iata: 'CMB', region: Region.SOUTH_ASIA },
@@ -34,12 +36,14 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Darwin: { iata: 'DRW', region: Region.SOUTHWEST_PACIFIC },
   Davao: { iata: 'DVO', region: Region.SOUTH_EAST_ASIA },
   Dhaka: { iata: 'DAC', region: Region.SOUTH_ASIA },
+  Dili: { iata: 'DIL', region: Region.SOUTH_EAST_ASIA },
   Dubai: { iata: 'DXB', region: Region.MIDDLE_EAST_AND_AFRICA },
   Düsseldorf: { iata: 'DUS', region: Region.EUROPE },
   Frankfurt: { iata: 'FRA', region: Region.EUROPE },
   Fukuoka: { iata: 'FUK', region: Region.NORTH_ASIA },
   Fuzhou: { iata: 'FOC', region: Region.NORTH_ASIA },
   Guangzhou: { iata: 'CAN', region: Region.NORTH_ASIA },
+  Guilin: { iata: 'KWL', region: Region.NORTH_ASIA },
   Hanoi: { iata: 'HAN', region: Region.SOUTH_EAST_ASIA },
   Hiroshima: { iata: 'HIJ', region: Region.NORTH_ASIA },
   'Ho Chi Minh City': { iata: 'SGN', region: Region.SOUTH_EAST_ASIA },
@@ -76,11 +80,13 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Mumbai: { iata: 'BOM', region: Region.SOUTH_ASIA },
   Munich: { iata: 'MUC', region: Region.EUROPE },
   Nagoya: { iata: 'NGO', region: Region.NORTH_ASIA },
+  Naha: { iata: 'OKA', region: Region.NORTH_ASIA },
   'New Delhi': { iata: 'DEL', region: Region.SOUTH_ASIA },
   'New York (JFK)': { iata: 'JFK', region: Region.NORTH_AMERICA },
   'New York (Newark)': { iata: 'EWR', region: Region.NORTH_AMERICA },
   Osaka: { iata: 'KIX', region: Region.NORTH_ASIA },
   Paris: { iata: 'CDG', region: Region.EUROPE },
+  Palembang: { iata: 'PLM', region: Region.SOUTH_EAST_ASIA },
   Penang: { iata: 'PEN', region: Region.SOUTH_EAST_ASIA },
   Pekanbaru: { iata: 'PKU', region: Region.SOUTH_EAST_ASIA },
   Perth: { iata: 'PER', region: Region.SOUTHWEST_PACIFIC },
@@ -113,3 +119,13 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Yogyakarta: { iata: 'YIA', region: Region.SOUTH_EAST_ASIA },
   Zürich: { iata: 'ZRH', region: Region.EUROPE },
 };
+
+export const iataMappings = Object.entries(cityMappings).reduce(
+  (_iataMappings: Record<string, string>, [city, cityMapping]) => {
+    _iataMappings[cityMapping.iata] = city;
+    return _iataMappings;
+  },
+  {
+    DME: 'Moscow', // TODO: maybe improve this
+  },
+);

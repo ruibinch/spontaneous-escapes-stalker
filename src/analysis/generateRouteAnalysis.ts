@@ -1,4 +1,5 @@
 import { iata } from '../lib/iata/iata';
+import { iataMappings } from '../lib/iata/mappings';
 import { OagDataAnalysisEntry } from '../scripts/generateOagData';
 import { FlightClass, RedemptionJsonPostprocessed } from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
@@ -12,10 +13,10 @@ type SingleRedemptionInfo = {
 type DetailsForMonth = Record<
   Month,
   {
-    redemptionDetails: Partial<
+    redemptionDetails?: Partial<
       Record<FlightClassCode, SingleRedemptionInfo | null>
     >;
-    flightDetails?: boolean; // TODO: to include flight number etc if there's a use case
+    flightDetails?: boolean;
   }
 >;
 type RouteAnalysis = Record<Route, DetailsForMonth>;
@@ -30,14 +31,11 @@ export function generateRouteAnalysis({
   oagDataAnalysis: OagDataAnalysisEntry[];
 }) {
   const routeAnalysisDict: RouteAnalysis = {};
-  const routeIataToFullnameMap: Record<string, string> = {};
   const routeToRegionMap: Record<string, string> = {};
 
   // create routeAnalysisDict from redemptions data
   redemptions.forEach((redemption) => {
     const route = `${redemption.origin}-${redemption.destination}`;
-    const routeIata = `${redemption.originIata}-${redemption.destinationIata}`;
-    routeIataToFullnameMap[routeIata] = route;
     const flightClassCode = getFlightClassCode(redemption.flightClass);
 
     routeAnalysisDict[route] = {
@@ -60,7 +58,25 @@ export function generateRouteAnalysis({
 
   // add OAG data to routeAnalysisDict
   oagDataAnalysis.forEach(({ month, routes }) => {
-    routes.forEach((routeEntry) => {});
+    routes.forEach((routeEntry) => {
+      const [fromIata, toIata] = routeEntry.route.split('-');
+      const from = iataMappings[fromIata];
+      const to = iataMappings[toIata];
+      if (!from || !to) {
+        throw new Error(
+          `from=(${from}, ${fromIata})/to=(${to}, ${toIata}) does not exist in iataMappings`,
+        );
+      }
+      const routeFullname = `${from}-${to}`;
+
+      routeAnalysisDict[routeFullname] = {
+        ...routeAnalysisDict[routeFullname],
+        [month]: {
+          ...routeAnalysisDict[routeFullname]?.[month],
+          flightDetails: true, // TODO: change to routeEntry.flightNos if there's a use case
+        },
+      };
+    });
   });
 
   // format the result dict a little better:
@@ -80,7 +96,7 @@ export function generateRouteAnalysis({
         const existingRedemptionDetailsForMonth =
           details[month]?.redemptionDetails;
         detailsUpdated[month] = {
-          ...detailsUpdated[month],
+          ...details[month],
           redemptionDetails: {
             Y: null,
             W: null,
@@ -101,6 +117,16 @@ export function generateRouteAnalysis({
       const [from, to] = route.split('-');
       const [fromIata, toIata] = getRouteIata(route).split('-');
       const region = routeToRegionMap[route];
+      const detailsList = Object.entries(details).reduce(
+        (_detailsList, [month, detailsInfo]) => {
+          _detailsList.push({
+            month,
+            ...detailsInfo,
+          });
+          return _detailsList;
+        },
+        [] as any[], // lazy to type this
+      );
 
       return {
         from,
@@ -108,7 +134,7 @@ export function generateRouteAnalysis({
         fromIata,
         toIata,
         region,
-        details,
+        details: detailsList,
       };
     },
   );
