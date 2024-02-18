@@ -7,11 +7,15 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 export interface SearchTermFilterProps {
   searchTerm: string;
   setSearchTerm: Dispatch<SetStateAction<string>>;
+  placeholder?: string;
+  useBasicDesign?: boolean;
 }
 
 export function SearchTermFilter({
   searchTerm,
   setSearchTerm,
+  placeholder,
+  useBasicDesign = false,
 }: SearchTermFilterProps) {
   const pathname = usePathname();
   const [value, setValue] = useState('');
@@ -58,14 +62,19 @@ export function SearchTermFilter({
       size="sm"
       classNames={{
         input: 'w-full',
+        inputWrapper: useBasicDesign
+          ? 'bg-default-50 data-[hover=true]:bg-default-100 border h-8'
+          : '',
         mainWrapper: 'w-full',
       }}
       startContent={
-        <kbd className="px-1.5 mr-1 bg-neutral-100 border rounded border-neutral-400 text-small text-foreground-500">
-          /
-        </kbd>
+        !useBasicDesign && (
+          <kbd className="px-1.5 mr-1 bg-neutral-100 border rounded border-neutral-400 text-small text-foreground-500">
+            /
+          </kbd>
+        )
       }
-      placeholder="Search by city/IATA"
+      placeholder={placeholder ?? 'Search by city/IATA'}
       ref={searchRef}
       value={value}
       onValueChange={onValueChange}

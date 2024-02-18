@@ -3,12 +3,17 @@ import { useCallback, useEffect, useState } from 'react';
 interface Props {
   rowsPerPage: number;
   onRowsPerPageChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  label?: string;
 }
 
-export function TableRowsPerPage({ rowsPerPage, onRowsPerPageChange }: Props) {
+export function TableRowsPerPage({
+  rowsPerPage,
+  onRowsPerPageChange,
+  label,
+}: Props) {
   return (
     <label className="items-center text-default-400 text-small">
-      Rows per page:
+      <span>{label ?? 'Rows per page:'}</span>
       <select
         className="bg-transparent outline-none text-default-400 text-small"
         value={rowsPerPage}

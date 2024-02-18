@@ -5,9 +5,15 @@ interface Props {
   pages: number;
   page: number;
   setPage: Dispatch<SetStateAction<number>>;
+  useBasicDesign?: boolean;
 }
 
-export function TablePagination({ pages, page, setPage }: Props) {
+export function TablePagination({
+  pages,
+  page,
+  setPage,
+  useBasicDesign = false,
+}: Props) {
   return (
     <div className="py-2 px-2 flex justify-end">
       <Pagination
@@ -15,7 +21,7 @@ export function TablePagination({ pages, page, setPage }: Props) {
         color="primary"
         isCompact
         showControls
-        showShadow
+        showShadow={!useBasicDesign}
         page={page}
         total={pages}
         onChange={setPage}

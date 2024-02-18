@@ -5,6 +5,7 @@ import { GlobeIcon } from '../icons/globe';
 import { HelpCircleIcon } from '../icons/help-circle';
 import { MapIcon } from '../icons/map';
 import { MessageCircleIcon } from '../icons/message-circle';
+import { PieChartIcon } from '../icons/pie-chart';
 
 export interface BarItemProps {
   title: string;
@@ -14,6 +15,11 @@ export interface BarItemProps {
 }
 
 export const startBarItems = [
+  {
+    title: 'Analysis',
+    icon: <PieChartIcon />,
+    href: '/analysis',
+  },
   {
     title: 'Playground',
     icon: <GlobeIcon />,
