@@ -106,15 +106,15 @@ function computeAverageRegionDistributionPct() {
   let northAmericaPctSum = 0;
 
   monthSummaryAnalysisList.forEach((monthSummaryAnalysisEntry) => {
-    const { total, byRegion } = monthSummaryAnalysisEntry;
-    southEastAsiaPctSum += byRegion[Region.SOUTH_EAST_ASIA] / total;
-    northAsiaPctSum += byRegion[Region.NORTH_ASIA] / total;
-    southAsiaPctSum += byRegion[Region.SOUTH_ASIA] / total;
+    const { count, byRegion } = monthSummaryAnalysisEntry;
+    southEastAsiaPctSum += byRegion[Region.SOUTH_EAST_ASIA] / count;
+    northAsiaPctSum += byRegion[Region.NORTH_ASIA] / count;
+    southAsiaPctSum += byRegion[Region.SOUTH_ASIA] / count;
     middleEastAndAfricaPctSum +=
-      byRegion[Region.MIDDLE_EAST_AND_AFRICA] / total;
-    southwestPacificPctSum += byRegion[Region.SOUTHWEST_PACIFIC] / total;
-    europePctSum += byRegion[Region.EUROPE] / total;
-    northAmericaPctSum += byRegion[Region.NORTH_AMERICA] / total;
+      byRegion[Region.MIDDLE_EAST_AND_AFRICA] / count;
+    southwestPacificPctSum += byRegion[Region.SOUTHWEST_PACIFIC] / count;
+    europePctSum += byRegion[Region.EUROPE] / count;
+    northAmericaPctSum += byRegion[Region.NORTH_AMERICA] / count;
   });
 
   return {

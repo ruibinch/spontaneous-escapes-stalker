@@ -12,11 +12,12 @@ export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
   const monthToCountDict: Record<string, number> = {};
 
   routeAnalysisListFiltered.forEach(({ details }) => {
-    Object.entries(details).forEach(([month, detailsInfo]) => {
-      const numRedemptionsForMonth =
-        Object.values(detailsInfo).filter(Boolean).length;
-      monthToCountDict[month] =
-        (monthToCountDict[month] ?? 0) + numRedemptionsForMonth;
+    details.forEach((detail) => {
+      const numRedemptionsForMonth = Object.values(
+        detail.redemptionDetails,
+      ).filter(Boolean).length;
+      monthToCountDict[detail.month] =
+        (monthToCountDict[detail.month] ?? 0) + numRedemptionsForMonth;
     });
   });
 

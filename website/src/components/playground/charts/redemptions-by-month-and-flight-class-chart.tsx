@@ -34,14 +34,17 @@ export function RedemptionsByMonthAndFlightClassChart({
   };
 
   routeAnalysisListFiltered.forEach(({ details }) => {
-    Object.entries(details).forEach(([yyyymm, detailsInfo]) => {
-      const monthName = monthNumToShortNameMap[yyyymm.slice(4)];
-      Object.entries(detailsInfo).forEach(([flightClass, redemptionInfo]) => {
-        if (redemptionInfo) {
-          monthToFlightClassToCountDict[monthName][flightClass] =
-            (monthToFlightClassToCountDict[monthName]?.[flightClass] ?? 0) + 1;
-        }
-      });
+    details.forEach((detail) => {
+      const monthName = monthNumToShortNameMap[detail.month.slice(4)];
+      Object.entries(detail.redemptionDetails).forEach(
+        ([flightClass, redemptionInfo]) => {
+          if (redemptionInfo) {
+            monthToFlightClassToCountDict[monthName][flightClass] =
+              (monthToFlightClassToCountDict[monthName]?.[flightClass] ?? 0) +
+              1;
+          }
+        },
+      );
     });
   });
 

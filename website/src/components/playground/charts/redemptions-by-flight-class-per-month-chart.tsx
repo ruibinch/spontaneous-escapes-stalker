@@ -18,16 +18,17 @@ export function RedemptionsByFlightClassPerMonthChart({
   > = {};
 
   routeAnalysisListFiltered.forEach(({ details }) => {
-    Object.entries(details).forEach(([month, detailsInfo]) => {
-      if (!(month in monthToFlightClassToCountDict)) {
-        monthToFlightClassToCountDict[month] = { Y: 0, W: 0, J: 0 };
+    details.forEach((detail) => {
+      if (!(detail.month in monthToFlightClassToCountDict)) {
+        monthToFlightClassToCountDict[detail.month] = { Y: 0, W: 0, J: 0 };
       }
-
-      Object.entries(detailsInfo).forEach(([flightClass, redemptionInfo]) => {
-        if (redemptionInfo) {
-          monthToFlightClassToCountDict[month][flightClass] += 1;
-        }
-      });
+      Object.entries(detail.redemptionDetails).forEach(
+        ([flightClass, redemptionInfo]) => {
+          if (redemptionInfo) {
+            monthToFlightClassToCountDict[detail.month][flightClass] += 1;
+          }
+        },
+      );
     });
   });
 

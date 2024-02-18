@@ -10,21 +10,24 @@ export type RouteAnalysisEntryWithDetailsList = RouteAnalysisEntry & {
 };
 
 /**
- * Converts the details object into a details list for easier manipulation.
+ * Populates a details list, where each entry represents a per-flight-class-per-route redemption.
  */
 export function makeRouteDetailsList(routeAnalysisEntry: RouteAnalysisEntry) {
   const routeDetailsList: RouteDetailDatum[] = [];
 
-  Object.entries(routeAnalysisEntry.details).forEach(([month, detailsInfo]) => {
-    Object.entries(detailsInfo).forEach(([flightClass, redemptionInfo]) => {
-      if (redemptionInfo) {
-        routeDetailsList.push({
-          ...redemptionInfo,
-          flightClass,
-          month,
-        });
-      }
-    });
+  routeAnalysisEntry.details.forEach((detail) => {
+    const { month, redemptionDetails } = detail;
+    Object.entries(redemptionDetails).forEach(
+      ([flightClass, redemptionInfo]) => {
+        if (redemptionInfo) {
+          routeDetailsList.push({
+            ...redemptionInfo,
+            flightClass,
+            month,
+          });
+        }
+      },
+    );
   });
 
   return {

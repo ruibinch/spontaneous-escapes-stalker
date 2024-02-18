@@ -4,7 +4,7 @@ import routeAnalysisFile from '@/static/route-analysis.json';
  * Returns the list of months present in the dataset.
  */
 export function getMonthsList() {
-  return Object.keys(routeAnalysisFile[0].details);
+  return routeAnalysisFile[0].details.map(({ month }) => month);
 }
 
 /**
@@ -12,12 +12,10 @@ export function getMonthsList() {
  * 2021 is manually added as there were no offers during the Covid period.
  */
 export function getYearsList() {
-  const yearsSet = Object.keys(routeAnalysisFile[0].details).reduce(
-    (_yearsSet, yyyymm) => {
-      _yearsSet.add(yyyymm.slice(0, 4));
-      return _yearsSet;
-    },
-    new Set<string>(['2021']),
-  );
+  const monthsList = getMonthsList();
+  const yearsSet = monthsList.reduce((_yearsSet, yyyymm) => {
+    _yearsSet.add(yyyymm.slice(0, 4));
+    return _yearsSet;
+  }, new Set<string>(['2021']));
   return [...Array.from(yearsSet)].sort();
 }

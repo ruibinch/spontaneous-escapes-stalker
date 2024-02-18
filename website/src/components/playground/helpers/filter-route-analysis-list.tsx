@@ -44,31 +44,33 @@ export function filterRouteAnalysisList({
       );
     })
     .map((d) => {
-      const detailsFiltered = Object.entries(d.details).reduce(
-        (
-          _detailsFiltered: RouteAnalysisEntry['details'],
-          [month, detailsInfo],
-        ) => {
-          const _isApplicableMonth = isApplicableMonth({
-            month,
+      const detailsFiltered = d.details
+        .filter((detail) => {
+          return isApplicableMonth({
+            month: detail.month,
             filters: {
               startDate,
               endDate,
               months,
             },
           });
-
-          if (_isApplicableMonth) {
-            _detailsFiltered[month] = {
-              Y: isFlightClassMatchingSelOption('Y') ? detailsInfo.Y : null,
-              W: isFlightClassMatchingSelOption('W') ? detailsInfo.W : null,
-              J: isFlightClassMatchingSelOption('J') ? detailsInfo.J : null,
-            };
-          }
-          return _detailsFiltered;
-        },
-        {},
-      );
+        })
+        .map((detail) => {
+          return {
+            ...detail,
+            redemptionDetails: {
+              Y: isFlightClassMatchingSelOption('Y')
+                ? detail.redemptionDetails.Y
+                : null,
+              W: isFlightClassMatchingSelOption('W')
+                ? detail.redemptionDetails.W
+                : null,
+              J: isFlightClassMatchingSelOption('J')
+                ? detail.redemptionDetails.J
+                : null,
+            },
+          };
+        });
 
       return {
         ...d,

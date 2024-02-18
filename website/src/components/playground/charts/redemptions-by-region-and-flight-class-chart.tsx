@@ -25,13 +25,15 @@ export function RedemptionsByRegionAndFlightClassChart({
   };
 
   routeAnalysisListFiltered.forEach(({ region, details }) => {
-    Object.values(details).forEach((detailsInfo) => {
-      Object.entries(detailsInfo).forEach(([flightClass, redemptionInfo]) => {
-        if (redemptionInfo) {
-          regionToFlightClassToCountDict[region][flightClass] =
-            (regionToFlightClassToCountDict[region]?.[flightClass] ?? 0) + 1;
-        }
-      });
+    details.forEach((detail) => {
+      Object.entries(detail.redemptionDetails).forEach(
+        ([flightClass, redemptionInfo]) => {
+          if (redemptionInfo) {
+            regionToFlightClassToCountDict[region][flightClass] =
+              (regionToFlightClassToCountDict[region]?.[flightClass] ?? 0) + 1;
+          }
+        },
+      );
     });
   });
 

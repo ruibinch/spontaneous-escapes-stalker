@@ -34,7 +34,11 @@ export type RouteAnalysisEntry = {
   fromIata: string;
   toIata: string;
   region: string;
-  details: Record<Month, Record<FlightClass, SingleRedemptionInfo | null>>;
+  details: Array<{
+    month: string;
+    redemptionDetails: Record<FlightClass, SingleRedemptionInfo | null>;
+    flightDetails: boolean;
+  }>;
 };
 
 export type MonthSummaryAnalysisEntry = {
