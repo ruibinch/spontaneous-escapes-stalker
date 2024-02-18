@@ -1,4 +1,5 @@
 import { iata } from '../lib/iata/iata';
+import { OagDataAnalysisEntry } from '../scripts/generateOagData';
 import { FlightClass, RedemptionJsonPostprocessed } from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
 import { FlightClassCode, Month, Route } from './types';
@@ -8,38 +9,58 @@ type SingleRedemptionInfo = {
   milesRequired: number;
   blackoutPeriod: string[];
 };
-type RouteAnalysis = Record<
-  Route,
-  Record<Month, Partial<Record<FlightClassCode, SingleRedemptionInfo | null>>>
+type DetailsForMonth = Record<
+  Month,
+  {
+    redemptionDetails: Partial<
+      Record<FlightClassCode, SingleRedemptionInfo | null>
+    >;
+    flightDetails?: boolean; // TODO: to include flight number etc if there's a use case
+  }
 >;
+type RouteAnalysis = Record<Route, DetailsForMonth>;
 
 export function generateRouteAnalysis({
   redemptions,
   months,
+  oagDataAnalysis,
 }: {
   redemptions: RedemptionJsonPostprocessed[];
   months: string[];
+  oagDataAnalysis: OagDataAnalysisEntry[];
 }) {
-  const routeToMonthsMap: RouteAnalysis = {};
+  const routeAnalysisDict: RouteAnalysis = {};
+  const routeIataToFullnameMap: Record<string, string> = {};
   const routeToRegionMap: Record<string, string> = {};
 
-  // create routeToMonthsMap dict from data
+  // create routeAnalysisDict from redemptions data
   redemptions.forEach((redemption) => {
     const route = `${redemption.origin}-${redemption.destination}`;
+    const routeIata = `${redemption.originIata}-${redemption.destinationIata}`;
+    routeIataToFullnameMap[routeIata] = route;
     const flightClassCode = getFlightClassCode(redemption.flightClass);
 
-    routeToMonthsMap[route] = {
-      ...routeToMonthsMap[route],
+    routeAnalysisDict[route] = {
+      ...routeAnalysisDict[route],
       [redemption.redemptionMonth]: {
-        ...routeToMonthsMap[route]?.[redemption.redemptionMonth],
-        [flightClassCode]: {
-          flightNo: redemption.flightNo,
-          milesRequired: redemption.milesRequired,
-          blackoutPeriod: redemption.blackoutPeriod,
+        ...routeAnalysisDict[route]?.[redemption.redemptionMonth],
+        redemptionDetails: {
+          ...routeAnalysisDict[route]?.[redemption.redemptionMonth]
+            ?.redemptionDetails,
+          [flightClassCode]: {
+            flightNo: redemption.flightNo,
+            milesRequired: redemption.milesRequired,
+            blackoutPeriod: redemption.blackoutPeriod,
+          },
         },
       },
     };
     routeToRegionMap[route] = redemption.region;
+  });
+
+  // add OAG data to routeAnalysisDict
+  oagDataAnalysis.forEach(({ month, routes }) => {
+    routes.forEach((routeEntry) => {});
   });
 
   // format the result dict a little better:
@@ -48,23 +69,24 @@ export function generateRouteAnalysis({
   //   b. SG inbound flights
   //   c. all other flights
   // 2. add null to all missing entries in the dict
-  const routesSorted = sortRoutesList(Object.keys(routeToMonthsMap));
+  const routesSorted = sortRoutesList(Object.keys(routeAnalysisDict));
   const resultFormatted = routesSorted.reduce(
     (_result: RouteAnalysis, route) => {
-      const details = routeToMonthsMap[route];
-      const detailsUpdated: Record<
-        Month,
-        Record<FlightClassCode, SingleRedemptionInfo | null>
-      > = {};
+      const details = routeAnalysisDict[route];
+      const detailsUpdated: DetailsForMonth = {};
 
       // iterate through full list of months
       months.forEach((month) => {
-        const flightClassDetailsForMonth = details[month];
+        const existingRedemptionDetailsForMonth =
+          details[month]?.redemptionDetails;
         detailsUpdated[month] = {
-          Y: null,
-          W: null,
-          J: null,
-          ...flightClassDetailsForMonth,
+          ...detailsUpdated[month],
+          redemptionDetails: {
+            Y: null,
+            W: null,
+            J: null,
+            ...existingRedemptionDetailsForMonth,
+          },
         };
       });
 

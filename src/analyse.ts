@@ -4,12 +4,20 @@ import { generateMonthSummaryAnalysis } from './analysis/generateMonthSummaryAna
 import { generateRouteAnalysis } from './analysis/generateRouteAnalysis';
 import { RedemptionJsonPostprocessed } from './utils/types';
 import { appendMonthMetadata } from './analysis/appendMonthMetadata';
+import { OagDataAnalysisEntry } from './scripts/generateOagData';
 
 const ROUTE_ANALYSIS_OUTPUT_FILENAME = 'data/route-analysis.json';
 const MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME =
   'data/month-summary-analysis.json';
 
 export function analyse() {
+  const oagDataAnalysisFileContent = fs
+    .readFileSync('data/oag-data.json')
+    .toString();
+  const oagDataAnalysis = JSON.parse(
+    oagDataAnalysisFileContent,
+  ) as OagDataAnalysisEntry[];
+
   const redemptionsFilenames = fs
     .readdirSync('data')
     .filter((filename) => filename.endsWith('redemptions-postprocessed.json'));
@@ -30,7 +38,11 @@ export function analyse() {
     redemptions.push(..._redemptions);
   });
 
-  const routeAnalysis = generateRouteAnalysis({ redemptions, months });
+  const routeAnalysis = generateRouteAnalysis({
+    redemptions,
+    months,
+    oagDataAnalysis,
+  });
   console.log(`📄 Writing to ${ROUTE_ANALYSIS_OUTPUT_FILENAME}\n`);
   fs.writeFileSync(
     ROUTE_ANALYSIS_OUTPUT_FILENAME,
@@ -40,6 +52,7 @@ export function analyse() {
   const monthSummaryAnalysis = generateMonthSummaryAnalysis({
     redemptions,
     months,
+    oagDataAnalysis,
   });
   const monthSummaryAnalysisWithMetadata =
     appendMonthMetadata(monthSummaryAnalysis);

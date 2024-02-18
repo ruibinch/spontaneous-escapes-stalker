@@ -25,17 +25,12 @@ export type MonthSummaryAnalysisEntry = {
 export function generateMonthSummaryAnalysis({
   redemptions,
   months,
+  oagDataAnalysis,
 }: {
   redemptions: RedemptionJsonPostprocessed[];
   months: string[];
+  oagDataAnalysis: OagDataAnalysisEntry[];
 }) {
-  const oagDataAnalysisFileContent = fs
-    .readFileSync('data/oag-data.json')
-    .toString();
-  const oagDataAnalysis = JSON.parse(
-    oagDataAnalysisFileContent,
-  ) as OagDataAnalysisEntry[];
-
   const result: MonthSummaryAnalysisEntry[] = [];
 
   months.forEach((month) => {
