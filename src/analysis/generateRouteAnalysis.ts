@@ -84,7 +84,7 @@ export function generateRouteAnalysis({
   //   a. SG outbound flights
   //   b. SG inbound flights
   //   c. all other flights
-  // 2. add null to all missing entries in the dict
+  // 2. add null/false to redemptionDetails/flightDetails sub-objects
   const routesSorted = sortRoutesList(Object.keys(routeAnalysisDict));
   const resultFormatted = routesSorted.reduce(
     (_result: RouteAnalysis, route) => {
@@ -96,6 +96,7 @@ export function generateRouteAnalysis({
         const existingRedemptionDetailsForMonth =
           details[month]?.redemptionDetails;
         detailsUpdated[month] = {
+          flightDetails: false,
           ...details[month],
           redemptionDetails: {
             Y: null,
