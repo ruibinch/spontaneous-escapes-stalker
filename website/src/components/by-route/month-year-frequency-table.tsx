@@ -116,7 +116,15 @@ function renderCell(
   if (noDataMessage) {
     return (
       <TooltipDark key={yyyymm} content={noDataMessage}>
-        <td key={yyyymm} className="border-l bg-gray-700" />
+        <td
+          key={yyyymm}
+          className={cn(
+            'border-l',
+            isAfter(monthDate, datasetEndDate)
+              ? 'bg-gray-700/30'
+              : 'bg-gray-700',
+          )}
+        />
       </TooltipDark>
     );
   }

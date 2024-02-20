@@ -7,18 +7,34 @@ import { ChartWrapper } from '../common/chart/chart-wrapper';
 import { lineOnHoverPlugin } from '../common/chart/line-on-hover-plugin';
 import { getMonthsWithRouteNetworkData } from './helpers/get-months-with-route-network-data';
 
-export function RedemptionsVsRouteNetworkCharts() {
+export function RedemptionsVsRouteNetworkCharts({
+  showSilkairRoutes,
+}: {
+  showSilkairRoutes: boolean;
+}) {
   const monthSummaryAnalysisList =
     monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
   const monthsWithRouteNetworkData = getMonthsWithRouteNetworkData();
 
   // only include up to the last month with route network size data
-  const routeNetworkCountList = monthSummaryAnalysisList
-    .filter((entry) => monthsWithRouteNetworkData.has(entry.month))
-    .map((entry) => entry.byUniqueRoutes.routeNetworkSize) as number[];
-  const redemptionsCountList = monthSummaryAnalysisList
-    .filter((entry) => monthsWithRouteNetworkData.has(entry.month))
-    .map((entry) => entry.byUniqueRoutes.availableForRedemption);
+  const monthSummaryAnalysisListForMonthsWithRouteNetworkData =
+    monthSummaryAnalysisList.filter((entry) =>
+      monthsWithRouteNetworkData.has(entry.month),
+    );
+
+  const routeNetworkCountList =
+    monthSummaryAnalysisListForMonthsWithRouteNetworkData.map(
+      (entry): number => {
+        // @ts-expect-error these values are assured to be defined after .filter above
+        return showSilkairRoutes
+          ? entry.byUniqueRoutes.routeNetworkSize.total
+          : entry.byUniqueRoutes.routeNetworkSize.sia;
+      },
+    );
+  const redemptionsCountList =
+    monthSummaryAnalysisListForMonthsWithRouteNetworkData.map(
+      (entry) => entry.byUniqueRoutes.availableForRedemption,
+    );
   const redemptionsCountPctOfRouteNetworkList = redemptionsCountList.map(
     (redemptionCount, idx) =>
       roundToDp((redemptionCount / routeNetworkCountList[idx]) * 100, 1),
@@ -30,19 +46,19 @@ export function RedemptionsVsRouteNetworkCharts() {
     ),
     datasets: [
       {
-        label: 'SE redemptions',
-        data: redemptionsCountList,
-        borderColor: '#6d28d9', // violet-700
-        borderWidth: 1,
-        backgroundColor: '#6d28d9', // violet-700
-        pointRadius: 1,
-      },
-      {
         label: 'Route network size',
         data: routeNetworkCountList,
         borderColor: '#ca8a04', // yellow-600
         borderWidth: 1,
         backgroundColor: '#ca8a04', // yellow-600
+        pointRadius: 1,
+      },
+      {
+        label: 'SE redemptions',
+        data: redemptionsCountList,
+        borderColor: '#6d28d9', // violet-700
+        borderWidth: 1,
+        backgroundColor: '#6d28d9', // violet-700
         pointRadius: 1,
       },
     ],
@@ -65,7 +81,7 @@ export function RedemptionsVsRouteNetworkCharts() {
   return (
     <div className="flex flex-col gap-8">
       <ChartWrapper
-        title="SE redemptions count vs. route network size"
+        title="Route network size vs no. of SE redemptions offered each month"
         chart={
           <Line
             options={makeChartOptions({

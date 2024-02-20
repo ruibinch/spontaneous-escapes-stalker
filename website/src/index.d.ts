@@ -37,7 +37,10 @@ export type RouteAnalysisEntry = {
   details: Array<{
     month: string;
     redemptionDetails: Record<FlightClass, RedemptionInfoSingle | null>;
-    flightDetails?: boolean;
+    flightDetails?: {
+      sia: boolean;
+      silkair: boolean;
+    };
   }>;
 };
 
@@ -46,7 +49,10 @@ export type MonthSummaryAnalysisEntry = {
   count: number;
   byUniqueRoutes: {
     availableForRedemption: number;
-    routeNetworkSize?: number;
+    routeNetworkSize: {
+      total?: number;
+      sia?: number;
+    };
   };
   byFlightClass: Record<FlightClassCode, number>;
   byRegion: Record<Region, number>;

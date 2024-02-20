@@ -24,12 +24,16 @@ import { EyeIcon } from '../../icons/eye';
 import { getColumns } from './columns';
 import { MonthColumnOrder, TopContent } from './top-content';
 
-type RouteAnalysisEntryWithCount = RouteAnalysisEntry & {
+type DetailsTableDatum = {
+  from: string;
+  fromIata: string;
+  to: string;
+  toIata: string;
   count: number;
-};
+} & Record<string, string>;
 
 export interface DetailsTableContentProps {
-  data: RouteAnalysisEntryWithCount[];
+  data: DetailsTableDatum[];
   startDate: Date;
   endDate: Date;
   months: string[];
@@ -41,7 +45,7 @@ export function DetailsTableContent({
   endDate,
   months,
 }: DetailsTableContentProps) {
-  const [data, setData] = useState<RouteAnalysisEntryWithCount[]>([]);
+  const [data, setData] = useState<DetailsTableContentProps['data']>([]);
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
   const [monthColumnOrder, setMonthColumnOrder] =
     useState<MonthColumnOrder>('latest');
@@ -66,10 +70,7 @@ export function DetailsTableContent({
     });
   }, [inputData]);
 
-  const dataToDisplay = data.slice(startIdx, endIdx).map((datum) => ({
-    ...datum,
-    ...datum.details,
-  }));
+  const dataToDisplay = data.slice(startIdx, endIdx);
 
   const columns = getColumns({ startDate, endDate, months, monthColumnOrder });
 
@@ -140,7 +141,7 @@ function renderCell({
   item,
   columnKey,
 }: {
-  item: RouteAnalysisEntry;
+  item: DetailsTableDatum;
   columnKey: string;
 }) {
   switch (columnKey) {

@@ -54,9 +54,10 @@ function countRedemptions(routeAnalysisList: RouteAnalysisEntry[]) {
   let redemptionsCount = 0;
 
   routeAnalysisList.forEach(({ details }) => {
-    Object.values(details).forEach((detailsInfo) => {
-      const numRedemptionsForMonth =
-        Object.values(detailsInfo).filter(Boolean).length;
+    details.forEach((detail) => {
+      const numRedemptionsForMonth = Object.values(
+        detail.redemptionDetails,
+      ).filter(Boolean).length;
       redemptionsCount += numRedemptionsForMonth;
     });
   });

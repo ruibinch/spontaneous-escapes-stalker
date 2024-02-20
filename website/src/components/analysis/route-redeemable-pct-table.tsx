@@ -25,7 +25,11 @@ import { TablePagination } from '../common/table/table-pagination';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
-export function RouteRedeemablePctTable() {
+export function RouteRedeemablePctTable({
+  showSilkairRoutes,
+}: {
+  showSilkairRoutes: boolean;
+}) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const data = routeAnalysisList
@@ -39,10 +43,16 @@ export function RouteRedeemablePctTable() {
       const details = excludeMonthsNotInOagDataset(entry.details);
 
       const numMonthsWithRedemption = details.filter((detail) => {
-        return Object.values(detail.redemptionDetails).some(Boolean);
+        return Object.values(detail.redemptionDetails).some(
+          (redemptionInfo) => {
+            if (showSilkairRoutes) return !!redemptionInfo;
+            return redemptionInfo?.flightNo.startsWith('SQ');
+          },
+        );
       }).length;
       const numMonthsWithFlight = details.filter((detail) => {
-        return detail.flightDetails;
+        const { sia, silkair } = detail.flightDetails ?? {};
+        return showSilkairRoutes ? sia || silkair : sia;
       }).length;
 
       return {
@@ -204,5 +214,5 @@ function RouteRedeemablePctTableContent({
  * Months not part of the OAG dataset should be excluded to avoid skewing the comparison percentage.
  */
 function excludeMonthsNotInOagDataset(details: RouteAnalysisEntry['details']) {
-  return details.filter((detail) => detail.flightDetails !== undefined);
+  return details.filter((detail) => !!detail.flightDetails);
 }
