@@ -16,7 +16,10 @@ type DetailsForMonth = Record<
     redemptionDetails?: Partial<
       Record<FlightClassCode, RedemptionInfoSingle | null>
     >;
-    flightDetails?: boolean;
+    flightDetails?: {
+      sia: boolean;
+      silkair: boolean;
+    };
   }
 >;
 type RouteAnalysis = Record<Route, DetailsForMonth>;
@@ -69,11 +72,21 @@ export function generateRouteAnalysis({
       }
       const routeFullname = `${from}-${to}`;
 
+      const hasSiaFlights = routeEntry.flightNos.some(({ flightNo }) =>
+        flightNo.startsWith('SQ'),
+      );
+      const hasSilkairFlights = routeEntry.flightNos.some(({ flightNo }) =>
+        flightNo.startsWith('MI'),
+      );
+
       routeAnalysisDict[routeFullname] = {
         ...routeAnalysisDict[routeFullname],
         [month]: {
           ...routeAnalysisDict[routeFullname]?.[month],
-          flightDetails: true, // TODO: change to routeEntry.flightNos if there's a use case
+          flightDetails: {
+            sia: hasSiaFlights,
+            silkair: hasSilkairFlights,
+          },
         },
       };
     });
@@ -84,7 +97,7 @@ export function generateRouteAnalysis({
   //   a. SG outbound flights
   //   b. SG inbound flights
   //   c. all other flights
-  // 2. add null/false to redemptionDetails/flightDetails sub-objects
+  // 2. add null to redemptionDetails object
   const routesSorted = sortRoutesList(Object.keys(routeAnalysisDict));
   const resultFormatted = routesSorted.reduce(
     (_result: RouteAnalysis, route) => {
@@ -93,16 +106,13 @@ export function generateRouteAnalysis({
 
       // iterate through full list of months
       months.forEach((month) => {
-        const existingRedemptionDetailsForMonth =
-          details[month]?.redemptionDetails;
         detailsUpdated[month] = {
-          flightDetails: false,
           ...details[month],
           redemptionDetails: {
             Y: null,
             W: null,
             J: null,
-            ...existingRedemptionDetailsForMonth,
+            ...details[month]?.redemptionDetails,
           },
         };
       });

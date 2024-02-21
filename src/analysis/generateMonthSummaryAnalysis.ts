@@ -16,7 +16,10 @@ export type MonthSummaryAnalysisEntry = {
   count: number;
   byUniqueRoutes: {
     availableForRedemption: number;
-    routeNetworkSize: number | undefined;
+    routeNetworkSize: {
+      total?: number | undefined;
+      sia?: number | undefined;
+    };
   };
   byFlightClass: Record<FlightClassCode, number>;
   byRegion: Record<Region, number>;
@@ -108,12 +111,26 @@ export function generateMonthSummaryAnalysis({
       routes,
     });
 
+    const siaAndSilkairRouteNetworkSize =
+      oagDataAnalysisEntryForMonth?.routes.length;
+    const siaOnlyRouteNetworkSize = oagDataAnalysisEntryForMonth?.routes.filter(
+      (routeEntry) => {
+        const hasOnlySiaFlightsForRoute = routeEntry.flightNos.every(
+          ({ flightNo }) => flightNo.startsWith('SQ'),
+        );
+        return hasOnlySiaFlightsForRoute;
+      },
+    ).length;
+
     result.push({
       month,
       count: redemptionsForMonth.length,
       byUniqueRoutes: {
         availableForRedemption: routes.size,
-        routeNetworkSize: oagDataAnalysisEntryForMonth?.routes.length,
+        routeNetworkSize: {
+          total: siaAndSilkairRouteNetworkSize,
+          sia: siaOnlyRouteNetworkSize,
+        },
       },
       byFlightClass: {
         Y: economyClassCount,
@@ -168,8 +185,8 @@ function printPercentageOfRoutesAvailableForRedemption(
       byUniqueRoutes: { routeNetworkSize, availableForRedemption },
     }) => {
       console.log(
-        `${month}: ${availableForRedemption}/${routeNetworkSize} = ${(
-          (availableForRedemption / (routeNetworkSize ?? 1)) *
+        `${month}: ${availableForRedemption}/${routeNetworkSize.total} = ${(
+          (availableForRedemption / (routeNetworkSize.total ?? 1)) *
           100
         ).toFixed(2)}%`,
       );
