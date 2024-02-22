@@ -46,7 +46,9 @@ export function RouteRedeemablePctTable({
         return Object.values(detail.redemptionDetails).some(
           (redemptionInfo) => {
             if (showSilkairRoutes) return !!redemptionInfo;
-            return redemptionInfo?.flightNo.startsWith('SQ');
+            return redemptionInfo?.flightNos?.every((flightNo) =>
+              flightNo.startsWith('SQ'),
+            );
           },
         );
       }).length;

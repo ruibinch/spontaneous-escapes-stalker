@@ -15,7 +15,10 @@ export type MonthSummaryAnalysisEntry = {
   month: string;
   count: number;
   byUniqueRoutes: {
-    availableForRedemption: number;
+    availableForRedemption: {
+      total: number;
+      sia: number;
+    };
     routeNetworkSize: {
       total?: number | undefined;
       sia?: number | undefined;
@@ -41,8 +44,8 @@ export function generateMonthSummaryAnalysis({
       (redemption) => redemption.redemptionMonth === month,
     );
 
-    // unique routes
-    const routes = new Set<string>();
+    const routesSet = new Set<string>();
+    const routesWithOnlySiaRedemptionsSet = new Set<string>();
     // flightClass
     let economyClassCount = 0;
     let premiumEconomyClassCount = 0;
@@ -57,8 +60,12 @@ export function generateMonthSummaryAnalysis({
     let northAmericaRegionCount = 0;
 
     redemptionsForMonth.forEach(
-      ({ originIata, destinationIata, flightClass, region }) => {
-        routes.add(`${originIata}-${destinationIata}`);
+      ({ originIata, destinationIata, flightClass, region, flightNos }) => {
+        const routeIata = `${originIata}-${destinationIata}`;
+        routesSet.add(routeIata);
+        if (flightNos.every((flightNo) => flightNo.startsWith('SQ'))) {
+          routesWithOnlySiaRedemptionsSet.add(routeIata);
+        }
 
         switch (flightClass) {
           case FlightClass.ECONOMY:
@@ -108,7 +115,7 @@ export function generateMonthSummaryAnalysis({
     printRoutesNotAvailableForRedemption({
       month,
       oagDataAnalysisEntryForMonth,
-      routes,
+      routes: routesSet,
     });
 
     const siaAndSilkairRouteNetworkSize =
@@ -126,7 +133,10 @@ export function generateMonthSummaryAnalysis({
       month,
       count: redemptionsForMonth.length,
       byUniqueRoutes: {
-        availableForRedemption: routes.size,
+        availableForRedemption: {
+          total: routesSet.size,
+          sia: routesWithOnlySiaRedemptionsSet.size,
+        },
         routeNetworkSize: {
           total: siaAndSilkairRouteNetworkSize,
           sia: siaOnlyRouteNetworkSize,
@@ -186,7 +196,7 @@ function printPercentageOfRoutesAvailableForRedemption(
     }) => {
       console.log(
         `${month}: ${availableForRedemption}/${routeNetworkSize.total} = ${(
-          (availableForRedemption / (routeNetworkSize.total ?? 1)) *
+          (availableForRedemption.total / (routeNetworkSize.total ?? 1)) *
           100
         ).toFixed(2)}%`,
       );

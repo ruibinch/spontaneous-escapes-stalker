@@ -32,9 +32,11 @@ export function RedemptionsVsRouteNetworkCharts({
       },
     );
   const redemptionsCountList =
-    monthSummaryAnalysisListForMonthsWithRouteNetworkData.map(
-      (entry) => entry.byUniqueRoutes.availableForRedemption,
-    );
+    monthSummaryAnalysisListForMonthsWithRouteNetworkData.map((entry) => {
+      return showSilkairRoutes
+        ? entry.byUniqueRoutes.availableForRedemption.total
+        : entry.byUniqueRoutes.availableForRedemption.sia;
+    });
   const redemptionsCountPctOfRouteNetworkList = redemptionsCountList.map(
     (redemptionCount, idx) =>
       roundToDp((redemptionCount / routeNetworkCountList[idx]) * 100, 1),

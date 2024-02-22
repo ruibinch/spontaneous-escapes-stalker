@@ -48,7 +48,10 @@ export type MonthSummaryAnalysisEntry = {
   month: string;
   count: number;
   byUniqueRoutes: {
-    availableForRedemption: number;
+    availableForRedemption: {
+      total: number;
+      sia: number;
+    };
     routeNetworkSize: {
       total?: number;
       sia?: number;
