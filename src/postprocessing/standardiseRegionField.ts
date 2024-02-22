@@ -11,7 +11,9 @@ import { RedemptionJson } from '../utils/types';
  *   - Europe
  *   - North America
  */
-export function standardiseRegionField(redemptions: RedemptionJson[]) {
+export function standardiseRegionField(
+  redemptions: RedemptionJson[],
+): RedemptionJson[] {
   return redemptions.map((redemption) => {
     const { origin, destination } = redemption;
     const regionOverride = (() => {

@@ -6,6 +6,7 @@ import { standardiseRegionField } from './postprocessing/standardiseRegionField'
 import { appendAndRemoveFields } from './postprocessing/appendAndRemoveFields';
 import { appendSpecificAirportNameToCity } from './postprocessing/appendSpecificAirportNameToCity';
 import { removeRedemptionsMissingFromOagRoutesDataset } from './postprocessing/removeRedemptionsMissingFromOagRoutesDataset';
+import { formatFlightNosField } from './postprocessing/formatFlightNosField';
 
 /**
  * Reads in the full list of redemptions.json files and generates a redemptions-postprocessed.json version.
@@ -46,6 +47,7 @@ export function postprocessing() {
     '🧹 Postprocessing - appending specific airport name for some cities',
   );
   console.log('🧹 Postprocessing - standardising region fields');
+  console.log('🧹 Postprocessing - formatting flightNos field');
   console.log('🧹 Postprocessing - appending and removing fields\n');
 
   console.log(
@@ -67,13 +69,16 @@ export function postprocessing() {
     const redemptionsPostprocessed3 = standardiseRegionField(
       redemptionsPostprocessed2,
     );
-    const redemptionsPostprocessed4 = appendAndRemoveFields({
-      redemptions: redemptionsPostprocessed3,
+    const redemptionsPostprocessed4 = formatFlightNosField(
+      redemptionsPostprocessed3,
+    );
+    const redemptionsPostprocessed5 = appendAndRemoveFields({
+      redemptions: redemptionsPostprocessed4,
       month,
     });
-    const redemptionsPostprocessed5 =
+    const redemptionsPostprocessed6 =
       removeRedemptionsMissingFromOagRoutesDataset({
-        redemptions: redemptionsPostprocessed4,
+        redemptions: redemptionsPostprocessed5,
         month,
       });
 
@@ -81,7 +86,7 @@ export function postprocessing() {
     // console.log(`📄 Writing to ${redemptionPostprocessedFilename}`);
     fs.writeFileSync(
       redemptionPostprocessedFilename,
-      JSON.stringify(redemptionsPostprocessed5, null, 2),
+      JSON.stringify(redemptionsPostprocessed6, null, 2),
     );
   });
 }

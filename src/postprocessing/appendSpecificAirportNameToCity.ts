@@ -6,7 +6,9 @@ import { RedemptionJson } from '../utils/types';
  *
  * The flight number is used to determine the airport.
  */
-export function appendSpecificAirportNameToCity(redemptions: RedemptionJson[]) {
+export function appendSpecificAirportNameToCity(
+  redemptions: RedemptionJson[],
+): RedemptionJson[] {
   return redemptions.map((redemption) => {
     const { origin, destination, flightNo } = redemption;
     const originWithAirportName = appendAirportName(origin, flightNo);

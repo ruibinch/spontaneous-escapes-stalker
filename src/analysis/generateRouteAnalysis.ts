@@ -6,7 +6,7 @@ import { sortRoutesList } from './helpers/sortRoutesList';
 import { FlightClassCode, Month, Route } from './types';
 
 type SingleRedemptionInfo = {
-  flightNo: string;
+  flightNos: string[];
   milesRequired: number;
   blackoutPeriod: string[];
 };
@@ -46,7 +46,7 @@ export function generateRouteAnalysis({
           ...routeAnalysisDict[route]?.[redemption.redemptionMonth]
             ?.redemptionDetails,
           [flightClassCode]: {
-            flightNo: redemption.flightNo,
+            flightNos: redemption.flightNos,
             milesRequired: redemption.milesRequired,
             blackoutPeriod: redemption.blackoutPeriod,
           },

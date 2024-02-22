@@ -29,8 +29,9 @@ export type RedemptionJson = Pick<
 >;
 export type RedemptionJsonPostprocessed = Omit<
   RedemptionJson,
-  'redemptionEndDate' | 'sortKey'
+  'flightNo' | 'redemptionEndDate' | 'sortKey'
 > & {
+  flightNos: string[];
   originIata: string;
   destinationIata: string;
   redemptionMonth: string;

@@ -14,7 +14,11 @@ export function appendAndRemoveFields({
   redemptions,
   month,
 }: {
-  redemptions: RedemptionJson[];
+  redemptions: Array<
+    Omit<RedemptionJson, 'flightNo'> & {
+      flightNos: string[];
+    }
+  >;
   month: string;
 }): RedemptionJsonPostprocessed[] {
   return redemptions.map((redemption) => ({
@@ -23,7 +27,7 @@ export function appendAndRemoveFields({
     destination: redemption.destination,
     destinationIata: iata(redemption.destination),
     flightClass: redemption.flightClass,
-    flightNo: redemption.flightNo,
+    flightNos: redemption.flightNos,
     milesRequired: redemption.milesRequired,
     blackoutPeriod: redemption.blackoutPeriod,
     region: redemption.region,

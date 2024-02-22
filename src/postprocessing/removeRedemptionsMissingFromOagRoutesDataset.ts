@@ -14,7 +14,7 @@ export function removeRedemptionsMissingFromOagRoutesDataset({
 }: {
   redemptions: RedemptionJsonPostprocessed[];
   month: string;
-}) {
+}): RedemptionJsonPostprocessed[] {
   const oagDataForMonth = getOagDataForMonth(month);
   if (!oagDataForMonth) {
     return redemptions;
@@ -24,19 +24,22 @@ export function removeRedemptionsMissingFromOagRoutesDataset({
   const missingRedemptions: string[] = [];
 
   redemptions.forEach((redemption) => {
-    const { originIata, destinationIata, flightNo, flightClass } = redemption;
+    const { originIata, destinationIata, flightNos, flightClass } = redemption;
     const routeIata = `${originIata}-${destinationIata}`;
     const isRouteInOagDataset = oagDataForMonth.routes.find(
       ({ route }) => route === routeIata,
     );
 
-    if (
-      !isRouteInOagDataset &&
-      !isRedemptionRouteExistsAsMultiLegFlight({ routeIata, flightNo })
-    ) {
-      missingRedemptions.push(
-        `${originIata}-${destinationIata}/${flightNo}/${flightClass}`,
-      );
+    const flightNosWithMissingRedemption = flightNos.filter(
+      (flightNo) =>
+        !isRedemptionRouteExistsAsMultiLegFlight({ routeIata, flightNo }),
+    );
+    if (!isRouteInOagDataset && flightNosWithMissingRedemption.length > 0) {
+      flightNosWithMissingRedemption.forEach((flightNo) => {
+        missingRedemptions.push(
+          `${originIata}-${destinationIata}/${flightNo}/${flightClass}`,
+        );
+      });
     } else {
       redemptionsFiltered.push(redemption);
     }
