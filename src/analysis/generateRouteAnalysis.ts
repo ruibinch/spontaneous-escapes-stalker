@@ -5,7 +5,7 @@ import { FlightClass, RedemptionJsonPostprocessed } from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
 import { FlightClassCode, Month, Route } from './types';
 
-type SingleRedemptionInfo = {
+type RedemptionInfoSingle = {
   flightNos: string[];
   milesRequired: number;
   blackoutPeriod: string[];
@@ -14,7 +14,7 @@ type DetailsForMonth = Record<
   Month,
   {
     redemptionDetails?: Partial<
-      Record<FlightClassCode, SingleRedemptionInfo | null>
+      Record<FlightClassCode, RedemptionInfoSingle | null>
     >;
     flightDetails?: boolean;
   }

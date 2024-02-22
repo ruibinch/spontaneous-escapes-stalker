@@ -5,7 +5,9 @@
     "destination": "Los Angeles",
     "destinationIata": "LAX",
     "flightClass": "Business",
-    "flightNo": "SQ36",
+    "flightNos": [
+      "SQ36"
+    ],
     "milesRequired": 61600,
     "blackoutPeriod": [],
     "region": "North America",
@@ -17,7 +19,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ35",
+    "flightNos": [
+      "SQ35"
+    ],
     "milesRequired": 61600,
     "blackoutPeriod": [],
     "region": "North America",
@@ -29,7 +33,10 @@
     "destination": "Los Angeles",
     "destinationIata": "LAX",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ36, SQ38",
+    "flightNos": [
+      "SQ36",
+      "SQ38"
+    ],
     "milesRequired": 45500,
     "blackoutPeriod": [],
     "region": "North America",
@@ -41,7 +48,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ35, SQ37",
+    "flightNos": [
+      "SQ35",
+      "SQ37"
+    ],
     "milesRequired": 45500,
     "blackoutPeriod": [],
     "region": "North America",
@@ -53,7 +63,9 @@
     "destination": "San Francisco",
     "destinationIata": "SFO",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ34",
+    "flightNos": [
+      "SQ34"
+    ],
     "milesRequired": 45500,
     "blackoutPeriod": [],
     "region": "North America",
@@ -65,7 +77,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ33",
+    "flightNos": [
+      "SQ33"
+    ],
     "milesRequired": 45500,
     "blackoutPeriod": [],
     "region": "North America",
@@ -77,7 +91,9 @@
     "destination": "New York (Newark)",
     "destinationIata": "EWR",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ22",
+    "flightNos": [
+      "SQ22"
+    ],
     "milesRequired": 49000,
     "blackoutPeriod": [],
     "region": "North America",
@@ -89,7 +105,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ21",
+    "flightNos": [
+      "SQ21"
+    ],
     "milesRequired": 49000,
     "blackoutPeriod": [],
     "region": "North America",

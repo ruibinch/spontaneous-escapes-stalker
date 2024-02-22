@@ -18,7 +18,7 @@ export type RedemptionEntry = {
   destination: string;
   destinationIata: string;
   flightClass: string;
-  flightNo: string;
+  flightNos: string[];
   milesRequired: number;
   blackoutPeriod: Array<{
     from: string;
@@ -36,7 +36,7 @@ export type RouteAnalysisEntry = {
   region: string;
   details: Array<{
     month: string;
-    redemptionDetails: Record<FlightClass, SingleRedemptionInfo | null>;
+    redemptionDetails: Record<FlightClass, RedemptionInfoSingle | null>;
     flightDetails: boolean;
   }>;
 };
@@ -70,13 +70,13 @@ export type RouteFrequencyEntry = {
 
 export type RedemptionInfoForMonth = Record<
   FlightClass,
-  SingleRedemptionInfo | null
+  RedemptionInfoSingle | null
 > & {
   month: string;
 };
 
-export type SingleRedemptionInfo = {
-  flightNo: string;
+export type RedemptionInfoSingle = {
+  flightNos: string[];
   milesRequired: number;
   blackoutPeriod: Array<{
     from: string;

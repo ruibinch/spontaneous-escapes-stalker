@@ -2,24 +2,24 @@ import { getYearsList } from '@/common/get-data-time-range';
 import {
   FlightClass,
   RedemptionInfoForMonth,
-  SingleRedemptionInfo,
+  RedemptionInfoSingle,
 } from '@/index';
 import { RouteDetailDatum } from './make-route-details-list';
 
 export interface MonthYearFrequencyDatum {
   year: string;
-  '01'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '02'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '03'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '04'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '05'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '06'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '07'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '08'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '09'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '10'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '11'?: Record<FlightClass, SingleRedemptionInfo | null>;
-  '12'?: Record<FlightClass, SingleRedemptionInfo | null>;
+  '01'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '02'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '03'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '04'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '05'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '06'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '07'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '08'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '09'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '10'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '11'?: Record<FlightClass, RedemptionInfoSingle | null>;
+  '12'?: Record<FlightClass, RedemptionInfoSingle | null>;
 }
 
 export function makeMonthYearFrequencyData({
@@ -45,7 +45,7 @@ export function makeMonthYearFrequencyData({
           // @ts-expect-error month is an accepted key
           ...datumForYear[month],
           [d.flightClass]: {
-            flightNo: d.flightNo,
+            flightNos: d.flightNos,
             milesRequired: d.milesRequired,
             blackoutPeriod: d.blackoutPeriod,
           },

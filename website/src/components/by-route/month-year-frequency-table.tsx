@@ -1,6 +1,6 @@
 import { monthShortNameToNumMap } from '@/common/months-map';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
-import { FlightClass, SingleRedemptionInfo } from '@/index';
+import { FlightClass, RedemptionInfoSingle } from '@/index';
 import { cn } from '@nextui-org/react';
 import { isBefore, isAfter } from 'date-fns';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
@@ -68,7 +68,7 @@ export function MonthYearFrequencyTable({
                   {columns.slice(1).map((col) => {
                     // @ts-expect-error col.key is valid
                     const valueAtYearMonth = tableDatum[col.key] as Partial<
-                      Record<FlightClass, SingleRedemptionInfo>
+                      Record<FlightClass, RedemptionInfoSingle>
                     >;
                     const yyyymm = `${tableDatum.year}${col.key}`;
 
@@ -86,7 +86,7 @@ export function MonthYearFrequencyTable({
 
 function renderCell(
   valueAtYearMonth:
-    | Partial<Record<FlightClass, SingleRedemptionInfo | null>>
+    | Partial<Record<FlightClass, RedemptionInfoSingle | null>>
     | undefined,
   yyyymm: string,
 ) {

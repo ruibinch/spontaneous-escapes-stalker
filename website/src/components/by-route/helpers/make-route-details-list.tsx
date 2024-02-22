@@ -1,6 +1,6 @@
-import { RouteAnalysisEntry, SingleRedemptionInfo } from '@/index';
+import { RouteAnalysisEntry, RedemptionInfoSingle } from '@/index';
 
-export type RouteDetailDatum = SingleRedemptionInfo & {
+export type RouteDetailDatum = RedemptionInfoSingle & {
   flightClass: string;
   month: string;
 };

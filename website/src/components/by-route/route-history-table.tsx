@@ -25,7 +25,7 @@ const columns = [
   { key: 'month', label: 'Month', allowsSorting: true },
   { key: 'flightClass', label: 'Flight Class' },
   { key: 'milesRequired', label: 'Miles Required', allowsSorting: true },
-  { key: 'flightNo', label: 'Flight No.' },
+  { key: 'flightNos', label: 'Flight No.' },
   { key: 'blackoutPeriod', label: 'Blackout Period' },
 ];
 
@@ -127,6 +127,8 @@ export function RouteHistoryTable({
                           return item[columnKey].toLocaleString();
                         case 'blackoutPeriod':
                           return renderBlackoutPeriodCell(item[columnKey]);
+                        case 'flightNos':
+                          return item[columnKey].join(', ');
                         default:
                           return getKeyValue(item, columnKey);
                       }

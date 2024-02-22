@@ -11,7 +11,7 @@ Each individual redemption is parsed into a JSON structure to facilitate further
   "destination": "Bali",
   "destinationIata": "DPS",
   "flightClass": "Economy",
-  "flightNo": "SQ938, SQ944",
+  "flightNos": ["SQ938", "SQ944"],
   "milesRequired": 5250,
   "blackoutPeriod": [],
   "region": "South East Asia",

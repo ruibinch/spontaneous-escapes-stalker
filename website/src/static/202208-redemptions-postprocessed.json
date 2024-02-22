@@ -5,7 +5,11 @@
     "destination": "Kuala Lumpur",
     "destinationIata": "KUL",
     "flightClass": "Economy",
-    "flightNo": "SQ114, SQ116, SQ122",
+    "flightNos": [
+      "SQ114",
+      "SQ116",
+      "SQ122"
+    ],
     "milesRequired": 5950,
     "blackoutPeriod": [
       {
@@ -22,7 +26,11 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ105, SQ107, SQ121",
+    "flightNos": [
+      "SQ105",
+      "SQ107",
+      "SQ121"
+    ],
     "milesRequired": 5950,
     "blackoutPeriod": [
       {
@@ -39,7 +47,9 @@
     "destination": "Penang",
     "destinationIata": "PEN",
     "flightClass": "Economy",
-    "flightNo": "SQ138",
+    "flightNos": [
+      "SQ138"
+    ],
     "milesRequired": 5950,
     "blackoutPeriod": [
       {
@@ -60,7 +70,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ133",
+    "flightNos": [
+      "SQ133"
+    ],
     "milesRequired": 5950,
     "blackoutPeriod": [
       {
@@ -81,7 +93,9 @@
     "destination": "Da Nang",
     "destinationIata": "DAD",
     "flightClass": "Economy",
-    "flightNo": "SQ174",
+    "flightNos": [
+      "SQ174"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [
       {
@@ -98,7 +112,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ171",
+    "flightNos": [
+      "SQ171"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [
       {
@@ -115,7 +131,9 @@
     "destination": "Hanoi",
     "destinationIata": "HAN",
     "flightClass": "Economy",
-    "flightNo": "SQ194",
+    "flightNos": [
+      "SQ194"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [
       {
@@ -132,7 +150,9 @@
     "destination": "Hanoi",
     "destinationIata": "HAN",
     "flightClass": "Business",
-    "flightNo": "SQ194",
+    "flightNos": [
+      "SQ194"
+    ],
     "milesRequired": 16800,
     "blackoutPeriod": [
       {
@@ -149,7 +169,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ191",
+    "flightNos": [
+      "SQ191"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [
       {
@@ -166,7 +188,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ191",
+    "flightNos": [
+      "SQ191"
+    ],
     "milesRequired": 16800,
     "blackoutPeriod": [
       {
@@ -183,7 +207,9 @@
     "destination": "Ho Chi Minh City",
     "destinationIata": "SGN",
     "flightClass": "Economy",
-    "flightNo": "SQ186",
+    "flightNos": [
+      "SQ186"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [
       {
@@ -200,7 +226,9 @@
     "destination": "Ho Chi Minh City",
     "destinationIata": "SGN",
     "flightClass": "Business",
-    "flightNo": "SQ186",
+    "flightNos": [
+      "SQ186"
+    ],
     "milesRequired": 16800,
     "blackoutPeriod": [
       {
@@ -217,7 +245,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ177",
+    "flightNos": [
+      "SQ177"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [
       {
@@ -234,7 +264,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ177",
+    "flightNos": [
+      "SQ177"
+    ],
     "milesRequired": 16800,
     "blackoutPeriod": [
       {
@@ -251,7 +283,10 @@
     "destination": "Manila",
     "destinationIata": "MNL",
     "flightClass": "Economy",
-    "flightNo": "SQ916, SQ918",
+    "flightNos": [
+      "SQ916",
+      "SQ918"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -263,7 +298,11 @@
     "destination": "Manila",
     "destinationIata": "MNL",
     "flightClass": "Business",
-    "flightNo": "SQ912, SQ916, SQ918",
+    "flightNos": [
+      "SQ912",
+      "SQ916",
+      "SQ918"
+    ],
     "milesRequired": 16800,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -275,7 +314,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ917, SQ919",
+    "flightNos": [
+      "SQ917",
+      "SQ919"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -287,7 +329,11 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ915, SQ917, SQ919",
+    "flightNos": [
+      "SQ915",
+      "SQ917",
+      "SQ919"
+    ],
     "milesRequired": 16800,
     "blackoutPeriod": [],
     "region": "South East Asia",
@@ -299,7 +345,9 @@
     "destination": "Siem Reap",
     "destinationIata": "SAI",
     "flightClass": "Economy",
-    "flightNo": "SQ166",
+    "flightNos": [
+      "SQ166"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [
       {
@@ -316,7 +364,9 @@
     "destination": "Siem Reap",
     "destinationIata": "SAI",
     "flightClass": "Business",
-    "flightNo": "SQ166",
+    "flightNos": [
+      "SQ166"
+    ],
     "milesRequired": 16800,
     "blackoutPeriod": [
       {
@@ -333,7 +383,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ163",
+    "flightNos": [
+      "SQ163"
+    ],
     "milesRequired": 9450,
     "blackoutPeriod": [
       {
@@ -350,7 +402,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ163",
+    "flightNos": [
+      "SQ163"
+    ],
     "milesRequired": 16800,
     "blackoutPeriod": [
       {
@@ -367,7 +421,10 @@
     "destination": "Hong Kong",
     "destinationIata": "HKG",
     "flightClass": "Economy",
-    "flightNo": "SQ882, SQ894",
+    "flightNos": [
+      "SQ882",
+      "SQ894"
+    ],
     "milesRequired": 11550,
     "blackoutPeriod": [],
     "region": "North Asia",
@@ -379,7 +436,10 @@
     "destination": "Hong Kong",
     "destinationIata": "HKG",
     "flightClass": "Business",
-    "flightNo": "SQ882, SQ894",
+    "flightNos": [
+      "SQ882",
+      "SQ894"
+    ],
     "milesRequired": 23800,
     "blackoutPeriod": [],
     "region": "North Asia",
@@ -391,7 +451,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ883, SQ895",
+    "flightNos": [
+      "SQ883",
+      "SQ895"
+    ],
     "milesRequired": 11550,
     "blackoutPeriod": [],
     "region": "North Asia",
@@ -403,7 +466,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ883, SQ895",
+    "flightNos": [
+      "SQ883",
+      "SQ895"
+    ],
     "milesRequired": 23800,
     "blackoutPeriod": [],
     "region": "North Asia",
@@ -415,7 +481,9 @@
     "destination": "Ahmedabad",
     "destinationIata": "AMD",
     "flightClass": "Economy",
-    "flightNo": "SQ504",
+    "flightNos": [
+      "SQ504"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -427,7 +495,9 @@
     "destination": "Ahmedabad",
     "destinationIata": "AMD",
     "flightClass": "Business",
-    "flightNo": "SQ504",
+    "flightNos": [
+      "SQ504"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -439,7 +509,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ505",
+    "flightNos": [
+      "SQ505"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -451,7 +523,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ505",
+    "flightNos": [
+      "SQ505"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -463,7 +537,9 @@
     "destination": "Bangalore",
     "destinationIata": "BLR",
     "flightClass": "Economy",
-    "flightNo": "SQ510",
+    "flightNos": [
+      "SQ510"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -475,7 +551,9 @@
     "destination": "Bangalore",
     "destinationIata": "BLR",
     "flightClass": "Business",
-    "flightNo": "SQ510",
+    "flightNos": [
+      "SQ510"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -487,7 +565,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ511",
+    "flightNos": [
+      "SQ511"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [
       {
@@ -504,7 +584,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ511",
+    "flightNos": [
+      "SQ511"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -516,7 +598,10 @@
     "destination": "Chennai",
     "destinationIata": "MAA",
     "flightClass": "Economy",
-    "flightNo": "SQ524, SQ528",
+    "flightNos": [
+      "SQ524",
+      "SQ528"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -528,7 +613,10 @@
     "destination": "Chennai",
     "destinationIata": "MAA",
     "flightClass": "Business",
-    "flightNo": "SQ524, SQ528",
+    "flightNos": [
+      "SQ524",
+      "SQ528"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -540,7 +628,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ525, SQ529",
+    "flightNos": [
+      "SQ525",
+      "SQ529"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [
       {
@@ -557,7 +648,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ525, SQ529",
+    "flightNos": [
+      "SQ525",
+      "SQ529"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -569,7 +663,9 @@
     "destination": "Kochi",
     "destinationIata": "COK",
     "flightClass": "Economy",
-    "flightNo": "SQ536",
+    "flightNos": [
+      "SQ536"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -581,7 +677,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ537",
+    "flightNos": [
+      "SQ537"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -593,7 +691,11 @@
     "destination": "Mumbai",
     "destinationIata": "BOM",
     "flightClass": "Economy",
-    "flightNo": "SQ422, SQ424, SQ426",
+    "flightNos": [
+      "SQ422",
+      "SQ424",
+      "SQ426"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -605,7 +707,11 @@
     "destination": "Mumbai",
     "destinationIata": "BOM",
     "flightClass": "Business",
-    "flightNo": "SQ422, SQ424, SQ426",
+    "flightNos": [
+      "SQ422",
+      "SQ424",
+      "SQ426"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -617,7 +723,11 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ421, SQ423, SQ425",
+    "flightNos": [
+      "SQ421",
+      "SQ423",
+      "SQ425"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -629,7 +739,11 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ421, SQ423, SQ425",
+    "flightNos": [
+      "SQ421",
+      "SQ423",
+      "SQ425"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -641,7 +755,10 @@
     "destination": "New Delhi",
     "destinationIata": "DEL",
     "flightClass": "Economy",
-    "flightNo": "SQ402, SQ406",
+    "flightNos": [
+      "SQ402",
+      "SQ406"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -653,7 +770,10 @@
     "destination": "New Delhi",
     "destinationIata": "DEL",
     "flightClass": "Business",
-    "flightNo": "SQ402, SQ406",
+    "flightNos": [
+      "SQ402",
+      "SQ406"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -665,7 +785,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ401, SQ403",
+    "flightNos": [
+      "SQ401",
+      "SQ403"
+    ],
     "milesRequired": 14000,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -677,7 +800,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ401, SQ403",
+    "flightNos": [
+      "SQ401",
+      "SQ403"
+    ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -689,7 +815,9 @@
     "destination": "Darwin",
     "destinationIata": "DRW",
     "flightClass": "Economy",
-    "flightNo": "SQ251",
+    "flightNos": [
+      "SQ251"
+    ],
     "milesRequired": 15050,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -701,7 +829,9 @@
     "destination": "Darwin",
     "destinationIata": "DRW",
     "flightClass": "Business",
-    "flightNo": "SQ251",
+    "flightNos": [
+      "SQ251"
+    ],
     "milesRequired": 28350,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -713,7 +843,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ252",
+    "flightNos": [
+      "SQ252"
+    ],
     "milesRequired": 15050,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -725,7 +857,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ252",
+    "flightNos": [
+      "SQ252"
+    ],
     "milesRequired": 28350,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -737,7 +871,10 @@
     "destination": "Perth",
     "destinationIata": "PER",
     "flightClass": "Economy",
-    "flightNo": "SQ215, SQ225",
+    "flightNos": [
+      "SQ215",
+      "SQ225"
+    ],
     "milesRequired": 15050,
     "blackoutPeriod": [
       {
@@ -754,7 +891,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ216, SQ224",
+    "flightNos": [
+      "SQ216",
+      "SQ224"
+    ],
     "milesRequired": 15050,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -766,7 +906,9 @@
     "destination": "Adelaide",
     "destinationIata": "ADL",
     "flightClass": "Business",
-    "flightNo": "SQ279",
+    "flightNos": [
+      "SQ279"
+    ],
     "milesRequired": 47950,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -778,7 +920,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
-    "flightNo": "SQ278",
+    "flightNos": [
+      "SQ278"
+    ],
     "milesRequired": 47950,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -790,7 +934,10 @@
     "destination": "Brisbane",
     "destinationIata": "BNE",
     "flightClass": "Economy",
-    "flightNo": "SQ235, SQ255",
+    "flightNos": [
+      "SQ235",
+      "SQ255"
+    ],
     "milesRequired": 21350,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -802,7 +949,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ246, SQ256",
+    "flightNos": [
+      "SQ246",
+      "SQ256"
+    ],
     "milesRequired": 21350,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -814,7 +964,9 @@
     "destination": "Cairns",
     "destinationIata": "CNS",
     "flightClass": "Economy",
-    "flightNo": "SQ203",
+    "flightNos": [
+      "SQ203"
+    ],
     "milesRequired": 21350,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -826,7 +978,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ204",
+    "flightNos": [
+      "SQ204"
+    ],
     "milesRequired": 21350,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
@@ -838,7 +992,10 @@
     "destination": "Melbourne",
     "destinationIata": "MEL",
     "flightClass": "Economy",
-    "flightNo": "SQ207, SQ217",
+    "flightNos": [
+      "SQ207",
+      "SQ217"
+    ],
     "milesRequired": 21350,
     "blackoutPeriod": [
       {
@@ -855,7 +1012,11 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ208, SQ218, SQ238",
+    "flightNos": [
+      "SQ208",
+      "SQ218",
+      "SQ238"
+    ],
     "milesRequired": 21350,
     "blackoutPeriod": [
       {
@@ -875,7 +1036,10 @@
     "destination": "Sydney",
     "destinationIata": "SYD",
     "flightClass": "Economy",
-    "flightNo": "SQ231, SQ241",
+    "flightNos": [
+      "SQ231",
+      "SQ241"
+    ],
     "milesRequired": 21350,
     "blackoutPeriod": [
       {
@@ -892,7 +1056,12 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
-    "flightNo": "SQ212, SQ222, SQ232, SQ242",
+    "flightNos": [
+      "SQ212",
+      "SQ222",
+      "SQ232",
+      "SQ242"
+    ],
     "milesRequired": 21350,
     "blackoutPeriod": [
       {
@@ -912,7 +1081,10 @@
     "destination": "Hong Kong",
     "destinationIata": "HKG",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ882, SQ894",
+    "flightNos": [
+      "SQ882",
+      "SQ894"
+    ],
     "milesRequired": 18550,
     "blackoutPeriod": [],
     "region": "North Asia",
@@ -924,7 +1096,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ883, SQ895",
+    "flightNos": [
+      "SQ883",
+      "SQ895"
+    ],
     "milesRequired": 18550,
     "blackoutPeriod": [],
     "region": "North Asia",
@@ -936,7 +1111,9 @@
     "destination": "New Delhi",
     "destinationIata": "DEL",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ406",
+    "flightNos": [
+      "SQ406"
+    ],
     "milesRequired": 24150,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -948,7 +1125,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ403",
+    "flightNos": [
+      "SQ403"
+    ],
     "milesRequired": 24150,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -960,7 +1139,10 @@
     "destination": "Mumbai",
     "destinationIata": "BOM",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ424, SQ426",
+    "flightNos": [
+      "SQ424",
+      "SQ426"
+    ],
     "milesRequired": 24150,
     "blackoutPeriod": [],
     "region": "South Asia",
@@ -972,7 +1154,10 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ423, SQ425",
+    "flightNos": [
+      "SQ423",
+      "SQ425"
+    ],
     "milesRequired": 24150,
     "blackoutPeriod": [
       {
@@ -989,7 +1174,9 @@
     "destination": "Sydney",
     "destinationIata": "SYD",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ231",
+    "flightNos": [
+      "SQ231"
+    ],
     "milesRequired": 35700,
     "blackoutPeriod": [
       {
@@ -1006,7 +1193,9 @@
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
-    "flightNo": "SQ212",
+    "flightNos": [
+      "SQ212"
+    ],
     "milesRequired": 35700,
     "blackoutPeriod": [],
     "region": "Southwest Pacific",
