@@ -2,6 +2,7 @@ import React from 'react';
 import { NavbarWrapper } from '../components/menubars/navbar';
 import { SidebarWrapper } from '../components/menubars/sidebar';
 import { SidebarContext } from './layout-context';
+import { SilkairRoutesToggleContextProvider } from '@/components/analysis/silkair-routes-toggle';
 
 interface Props {
   children: React.ReactNode;
@@ -22,7 +23,9 @@ export const Layout = ({ children }: Props) => {
         <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
           <NavbarWrapper />
 
-          {children}
+          <SilkairRoutesToggleContextProvider>
+            {children}
+          </SilkairRoutesToggleContextProvider>
         </div>
       </section>
     </SidebarContext.Provider>

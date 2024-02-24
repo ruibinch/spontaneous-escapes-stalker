@@ -1,4 +1,4 @@
-import { Switch, cn } from '@nextui-org/react';
+import { cn } from '@nextui-org/react';
 import {
   ArcElement,
   BarElement,
@@ -11,14 +11,13 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import { useState } from 'react';
+import { AlertInfo } from '../common/alert-info';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
-import { AlertInfo } from '../common/alert-info';
 import { RedemptionsVsRouteNetworkCharts } from './redemptions-vs-route-network-charts';
 import { RouteRedeemablePctTable } from './route-redeemable-pct-table';
-import { CheckIcon } from '../icons/check';
-import { XIcon } from '../icons/x';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { SilkairRoutesToggle } from './silkair-routes-toggle';
 
 ChartJS.register(
   CategoryScale,
@@ -45,12 +44,7 @@ export function AnalysisContent() {
       <PageHeader
         title="Analysis"
         subtitle="Compares Spontaneous Escapes redemptions against the SIA/SilkAir route network"
-        rightComponent={
-          <SilkAirRoutesToggle
-            showSilkairRoutes={showSilkairRoutes}
-            setShowSilkairRoutes={setShowSilkairRoutes}
-          />
-        }
+        rightComponent={<SilkairRoutesToggle />}
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-8')}>
@@ -58,47 +52,14 @@ export function AnalysisContent() {
 
         <div className="grid grid-cols-3 gap-4">
           <div className="col-span-3 md:col-span-2">
-            <RedemptionsVsRouteNetworkCharts
-              showSilkairRoutes={showSilkairRoutes}
-            />
+            <RedemptionsVsRouteNetworkCharts />
           </div>
 
           <div className="col-span-3 md:col-span-1">
-            <RouteRedeemablePctTable showSilkairRoutes={showSilkairRoutes} />
+            <RouteRedeemablePctTable />
           </div>
         </div>
       </div>
     </div>
-  );
-}
-
-function SilkAirRoutesToggle({
-  showSilkairRoutes,
-  setShowSilkairRoutes,
-}: {
-  showSilkairRoutes: boolean;
-  setShowSilkairRoutes: Dispatch<SetStateAction<boolean>>;
-}) {
-  return (
-    <Switch
-      defaultSelected
-      size="sm"
-      isSelected={showSilkairRoutes}
-      onChange={(e) => {
-        setShowSilkairRoutes(e.target.checked);
-      }}
-      thumbIcon={({ isSelected, className }) =>
-        isSelected ? (
-          <CheckIcon className={className} />
-        ) : (
-          <XIcon className={className} />
-        )
-      }
-      classNames={{
-        wrapper: cn('bg-red-600 group-data-[selected=true]:bg-green-600'),
-      }}
-    >
-      Show SilkAir routes
-    </Switch>
   );
 }

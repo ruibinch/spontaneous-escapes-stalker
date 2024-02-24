@@ -1,5 +1,7 @@
+import { roundToDp } from '@/common/round-to-dp';
 import { HelpCircleIcon } from '@/components/icons/help-circle';
 import { RouteAnalysisEntry } from '@/index';
+import routeAnalysisFile from '@/static/route-analysis.json';
 import {
   Table,
   TableBody,
@@ -9,27 +11,23 @@ import {
   TableRow,
   getKeyValue,
 } from '@nextui-org/react';
-import routeAnalysisFile from '@/static/route-analysis.json';
-import { roundToDp } from '@/common/round-to-dp';
-import { TooltipDark } from '../common/tooltip-dark';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useContext, useState } from 'react';
 import {
   SearchTermFilter,
   isSearchTermMatch,
 } from '../common/filters/search-term-filter';
+import { TablePagination } from '../common/table/table-pagination';
 import {
   TableRowsPerPage,
   useRowsPerPageHandler,
 } from '../common/table/table-rows-per-page';
-import { TablePagination } from '../common/table/table-pagination';
+import { TooltipDark } from '../common/tooltip-dark';
+import { useSilkairRoutesToggleContext } from './silkair-routes-toggle';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
-export function RouteRedeemablePctTable({
-  showSilkairRoutes,
-}: {
-  showSilkairRoutes: boolean;
-}) {
+export function RouteRedeemablePctTable() {
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const [searchTerm, setSearchTerm] = useState('');
 
   const data = routeAnalysisList
