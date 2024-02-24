@@ -12,7 +12,7 @@ export function PageHeader({
   rightComponent,
 }: Props) {
   return (
-    <div className="flex bg-neutral-50 p-6 border-b-2 items-end">
+    <div className="flex bg-neutral-50 p-6 border-b-2 gap-4 items-end">
       <div className="flex flex-col flex-1 gap-3">
         {breadcrumbs}
 

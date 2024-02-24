@@ -16,14 +16,14 @@ export interface BarItemProps {
 
 export const startBarItems = [
   {
-    title: 'Analysis',
-    icon: <PieChartIcon />,
-    href: '/analysis',
-  },
-  {
     title: 'Playground',
     icon: <GlobeIcon />,
     href: '/',
+  },
+  {
+    title: 'Analysis',
+    icon: <PieChartIcon />,
+    href: '/analysis',
   },
   {
     title: 'View by Month',

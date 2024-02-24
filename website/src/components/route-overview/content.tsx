@@ -58,7 +58,10 @@ export function RouteOverviewContent() {
 
   return (
     <div>
-      <PageHeader title="View by Route" />
+      <PageHeader
+        title="View by Route"
+        subtitle="View the history of Spontaneous Escapes redemptions offered for a specific route"
+      />
 
       <div
         className={cn(

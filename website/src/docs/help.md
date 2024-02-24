@@ -13,7 +13,12 @@ Each individual redemption is parsed into a JSON structure to facilitate further
   "flightClass": "Economy",
   "flightNos": ["SQ938", "SQ944"],
   "milesRequired": 5250,
-  "blackoutPeriod": [],
+  "blackoutPeriod": [
+    {
+      "from": "2022-05-26",
+      "to": "2022-05-06"
+    }
+  ],
   "region": "South East Asia",
   "redemptionMonth": "202205"
 }

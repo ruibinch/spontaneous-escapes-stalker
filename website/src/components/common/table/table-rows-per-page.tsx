@@ -27,20 +27,27 @@ export function TableRowsPerPage({
   );
 }
 
-export function useRowsPerPageHandler<T extends unknown>(data: T[]) {
+export function useRowsPerPageHandler<T extends unknown>(
+  data: T[],
+  shouldResetTableUponDataChange = true,
+) {
   const [numRowsDisplayed, setNumRowsDisplayed] = useState<number>();
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [currPage, setCurrPage] = useState(1);
   const pages = Math.ceil(data.length / rowsPerPage);
 
   useEffect(() => {
-    // reset all rows/pagination props if number of entries has changed
-    if (numRowsDisplayed !== undefined && data.length !== numRowsDisplayed) {
+    // reset all rows/pagination props if number of entries has changed, if shouldResetTableUponDataChange=true
+    if (
+      shouldResetTableUponDataChange &&
+      numRowsDisplayed !== undefined &&
+      data.length !== numRowsDisplayed
+    ) {
       setRowsPerPage(10);
       setCurrPage(1);
     }
     setNumRowsDisplayed(data.length);
-  }, [data, numRowsDisplayed]);
+  }, [data, numRowsDisplayed, shouldResetTableUponDataChange]);
 
   const onRowsPerPageChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {

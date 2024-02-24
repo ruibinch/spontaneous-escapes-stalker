@@ -86,7 +86,7 @@ export function RouteRedeemablePctTable({
     startIdx,
     endIdx,
     onRowsPerPageChange,
-  } = useRowsPerPageHandler(dataSorted);
+  } = useRowsPerPageHandler(dataSorted, false);
 
   return (
     <div className="flex flex-col gap-4 px-2 pt-2 pb-4 border border-neutral-250 rounded-md">
@@ -177,9 +177,23 @@ function RouteRedeemablePctTableContent({
               switch (column.key) {
                 case 'redeemablePct':
                   return (
-                    <TooltipDark content="# months with route featured on SE / # months with flight route">
+                    <div className="flex gap-2">
                       <span>{column.label}</span>
-                    </TooltipDark>
+
+                      <TooltipDark
+                        content={
+                          '# months with route featured on SE / # months with flight route'
+                        }
+                      >
+                        <div className="cursor-pointer">
+                          <HelpCircleIcon
+                            width={16}
+                            height={16}
+                            color="#404040"
+                          />
+                        </div>
+                      </TooltipDark>
+                    </div>
                   );
                 default:
                   return column.label;

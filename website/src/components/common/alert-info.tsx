@@ -12,7 +12,7 @@ export function AlertInfo({ content }: { content: string | string[] }) {
         }}
       />
 
-      <div className="flex-1 flex flex-col gap-2">
+      <div className="flex-1 flex flex-col gap-2 text-sm">
         {contentToRender.map((contentLine) => (
           <div key={contentLine}>{contentLine}</div>
         ))}

@@ -7,7 +7,10 @@ export function getMonthsWithRouteNetworkData() {
 
   const monthsWithRouteNetworkDataSet = new Set<string>();
   monthSummaryAnalysisList.forEach((entry) => {
-    if (entry.byUniqueRoutes.routeNetworkSize !== undefined) {
+    if (
+      entry.byUniqueRoutes.routeNetworkSize.total !== undefined &&
+      entry.byUniqueRoutes.routeNetworkSize.sia !== undefined
+    ) {
       monthsWithRouteNetworkDataSet.add(entry.month);
     }
   });

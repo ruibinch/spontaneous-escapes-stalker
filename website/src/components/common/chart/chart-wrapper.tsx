@@ -22,9 +22,7 @@ export function ChartWrapper({
 
         {tooltip && (
           <TooltipDark content={tooltip}>
-            <div className="cursor-pointer">
-              <HelpCircleIcon width={16} height={16} color="#404040" />
-            </div>
+            <HelpCircleIcon width={16} height={16} color="#404040" />
           </TooltipDark>
         )}
       </div>

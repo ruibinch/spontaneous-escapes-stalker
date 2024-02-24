@@ -25,7 +25,10 @@ export function MonthOverviewContent() {
 
   return (
     <div>
-      <PageHeader title="View by Month" />
+      <PageHeader
+        title="View by Month"
+        subtitle="View the history of Spontaneous Escapes redemptions offered in a past month"
+      />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
         {yearMonthListSorted.map((entry) => (

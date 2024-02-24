@@ -67,7 +67,10 @@ export function PlaygroundContent() {
 
   return (
     <div>
-      <PageHeader title="Playground" />
+      <PageHeader
+        title="Playground"
+        subtitle="Explore the dataset of past Spontaneous Escapes redemptions offered"
+      />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-8')}>
         <Filters

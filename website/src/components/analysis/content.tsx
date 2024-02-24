@@ -37,7 +37,7 @@ export function AnalysisContent() {
 
   const explanatoryNotes = [
     'The SIA/SilkAir route network dataset time range spans from Nov 2017 to Feb 2024.',
-    'SilkAir flights are included in the route network dataset until it ceased operations in end-2021, hence the pre-Covid network size is slightly higher as the SilkAir flights were subsequently split between SIA and Scoot.',
+    'SilkAir ceased operations in end-2021; subsequently its flights were split between SIA and Scoot.',
   ].map((note) => `• ${note}`);
 
   return (
