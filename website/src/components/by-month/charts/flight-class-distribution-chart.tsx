@@ -1,7 +1,7 @@
 import { flightClassColors } from '@/components/common/colors';
 import { flightClassCodeToName } from '@/components/common/flight-class-code-to-name';
 import { FlightClassIndicator } from '@/components/common/flight-class-indicator';
-import { TooltipDark } from '@/components/common/tooltip-dark';
+import { TooltipCustom } from '@/components/common/tooltip-custom';
 import { ArrowDownIcon } from '@/components/icons/arrow-down';
 import { ArrowUpIcon } from '@/components/icons/arrow-up';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
@@ -110,18 +110,20 @@ function ComparisonTable({
           <tr className="border-b">
             <th className="border-r"></th>
             <th className="px-3 py-2 font-semibold border-r">Month</th>
-            <TooltipDark
+            <TooltipCustom
               content="Average percentage breakdown of all redemptions"
               showArrow
+              alwaysUseTooltip
             >
               <th className="px-2 py-2 font-semibold border-r">Average</th>
-            </TooltipDark>
-            <TooltipDark
+            </TooltipCustom>
+            <TooltipCustom
               content="Comparison of this month's percentage breakdown against the average"
               showArrow
+              alwaysUseTooltip
             >
               <th className="px-2 py-2 font-semibold">Comparison</th>
-            </TooltipDark>
+            </TooltipCustom>
           </tr>
         </thead>
         <tbody>
@@ -136,12 +138,12 @@ function ComparisonTable({
                 className={idx !== 0 ? 'border-t' : undefined}
               >
                 <td className="px-2 border-r">
-                  <TooltipDark content={flightClassCodeToName[flightClass]}>
+                  <TooltipCustom content={flightClassCodeToName[flightClass]}>
                     <div className="flex flex-row items-center gap-1">
                       <FlightClassIndicator flightClassCode={flightClass} />
                       {flightClass}
                     </div>
-                  </TooltipDark>
+                  </TooltipCustom>
                 </td>
                 <td className="py-1 border-r">
                   {isFilterActive ? '-' : toPct(monthValue)}
