@@ -7,7 +7,7 @@ import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { makeMonthYearFrequencyData } from './helpers/make-month-year-frequency-data';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
 import { getMonthsList } from '@/common/get-data-time-range';
-import { TooltipDark } from '../common/tooltip-dark';
+import { TooltipCustom } from '../common/tooltip-custom';
 import {
   MONTHS_WITH_MISSING_DATA,
   MONTHS_WITH_NO_REDEMPTION,
@@ -114,8 +114,9 @@ function renderCell(
   })();
 
   if (noDataMessage) {
+    // FIXME: popover doesn't work here so tooltip is not viewable on mobile
     return (
-      <TooltipDark key={yyyymm} content={noDataMessage}>
+      <TooltipCustom key={yyyymm} content={noDataMessage} alwaysUseTooltip>
         <td
           key={yyyymm}
           className={cn(
@@ -125,7 +126,7 @@ function renderCell(
               : 'bg-gray-700',
           )}
         />
-      </TooltipDark>
+      </TooltipCustom>
     );
   }
   if (!valueAtYearMonth) {

@@ -1,5 +1,5 @@
 import { trackEvent } from '@/analytics';
-import { TooltipDark } from '@/components/common/tooltip-dark';
+import { TooltipCustom } from '@/components/common/tooltip-custom';
 import { FlightClass, RouteAnalysisEntry } from '@/index';
 import {
   SortDescriptor,
@@ -151,7 +151,7 @@ function renderCell({
       return getKeyValue(item, columnKey);
     case 'actions': {
       return (
-        <TooltipDark content="View detailed route info">
+        <TooltipCustom content="View detailed route info">
           <NextLink
             href={`/route/${item.fromIata}${item.toIata}`}
             onClick={() => {
@@ -164,7 +164,7 @@ function renderCell({
               <EyeIcon />
             </span>
           </NextLink>
-        </TooltipDark>
+        </TooltipCustom>
       );
     }
     default: {

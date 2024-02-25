@@ -1,6 +1,6 @@
 import { Button } from '@nextui-org/react';
 import { RefreshIcon } from '../../icons/refresh';
-import { TooltipDark } from '../tooltip-dark';
+import { TooltipCustom } from '../tooltip-custom';
 
 export function ResetAllFiltersButton({
   resetAllFilters,
@@ -8,7 +8,7 @@ export function ResetAllFiltersButton({
   resetAllFilters: () => void;
 }) {
   return (
-    <TooltipDark content="Reset all filters" placement="bottom">
+    <TooltipCustom content="Reset all filters" placement="bottom">
       <div
         className="border-1 text-lg bg-neutral-100 rounded-md p-1 cursor-pointer"
         onClick={resetAllFilters}
@@ -22,6 +22,6 @@ export function ResetAllFiltersButton({
           <RefreshIcon />
         </Button>
       </div>
-    </TooltipDark>
+    </TooltipCustom>
   );
 }
