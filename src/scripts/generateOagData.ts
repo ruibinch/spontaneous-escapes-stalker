@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { toNumber } from '../utils';
+import { iataToIataMappings } from '../lib/iata/mappings';
 
 type Route = `${string}-${string}`;
 type FlightNo = `${'SQ' | 'MI'}${string}`;
@@ -28,14 +29,6 @@ export interface OagDataAnalysisEntry {
 const airlineIataMap: Record<string, 'SQ' | 'MI'> = {
   'Singapore Airlines': 'SQ',
   SilkAir: 'MI',
-};
-
-// Some cities have old and new airports, in which case we map the old IATA to the new IATA
-const iataMap: Record<string, string> = {
-  REP: 'SAI', // Siem Reap
-  JOG: 'YIA', // Yogyakarta
-  CTU: 'TFU', // All Chengdu airports are standardised to TFU for now; TODO: to improve
-  HND: 'NRT', // All Tokyo airports are standardised to NRT for now; TODO: to improve
 };
 
 export function generateOagDataAnalysis() {
@@ -72,13 +65,17 @@ export function generateOagDataAnalysis() {
     const cells = row.split('\t');
     const carrierName = cells[0];
     const flightNo = `${airlineIataMap[carrierName]}${cells[1]}` as const;
-    const originIata = iataMap[cells[2]] ?? cells[2];
-    const destinationIata = iataMap[cells[3]] ?? cells[3];
+    const originIata = iataToIataMappings[cells[2]] ?? cells[2];
+    const destinationIata = iataToIataMappings[cells[3]] ?? cells[3];
     const aircraftModel = cells[4];
     const totalSeats = toNumber(cells[5]);
     const frequency = toNumber(cells[6]);
     const month = cells[7].replace('-', '');
     const routeIata = `${originIata}-${destinationIata}` as const;
+
+    // tmp: only use when adding a new city IATA to iataToIataMappings
+    // const IATA_CODES_SKIP_CHECK: string[] = [];
+    const IATA_CODES_SKIP_CHECK = ['TYO', 'NYC'];
 
     // Get routes associated with this row entry
     // Most of the time it's a 1:1 mapping, however there are some exceptions for round-trip flights with multiple stops
@@ -87,7 +84,10 @@ export function generateOagDataAnalysis() {
       if (
         originIata !== 'SIN' &&
         destinationIata !== 'SIN' &&
-        !seRoutesList.includes(routeIata)
+        !seRoutesList.includes(routeIata) &&
+        !IATA_CODES_SKIP_CHECK.some((iataCodeToSkipCheck) =>
+          routeIata.includes(iataCodeToSkipCheck),
+        )
       ) {
         const routeIataOverride = getRouteOverrideForNonSgFlights({
           routeIata,
@@ -202,8 +202,8 @@ function getRouteOverrideForNonSgFlights({
   flightNo: FlightNo;
 }) {
   const routeOverrideMap: Record<`${Route}/${FlightNo}`, Route[]> = {
-    'ARN-DME/SQ361': ['SIN-DME'], // Singapore-Stockholm-Moscow
-    'DME-ARN/SQ362': ['DME-SIN'], // Moscow-Stockholm-Singapore
+    'ARN-MOW/SQ361': ['SIN-MOW'], // Singapore-Stockholm-Moscow
+    'MOW-ARN/SQ362': ['MOW-SIN'], // Moscow-Stockholm-Singapore
     'MXP-BCN/SQ378': ['SIN-BCN'], // Singapore-Milan-Barcelona
     'BCN-MXP/SQ377': ['BCN-SIN'], // Barcelona-Milan-Singapore
     'CBR-WLG/SQ291': ['SIN-WLG'], // Singapore-Canberra-Wellington

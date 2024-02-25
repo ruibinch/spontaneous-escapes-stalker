@@ -82,8 +82,7 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Nagoya: { iata: 'NGO', region: Region.NORTH_ASIA },
   Naha: { iata: 'OKA', region: Region.NORTH_ASIA },
   'New Delhi': { iata: 'DEL', region: Region.SOUTH_ASIA },
-  'New York (JFK)': { iata: 'JFK', region: Region.NORTH_AMERICA },
-  'New York (Newark)': { iata: 'EWR', region: Region.NORTH_AMERICA },
+  'New York': { iata: 'NYC', region: Region.NORTH_AMERICA },
   Osaka: { iata: 'KIX', region: Region.NORTH_ASIA },
   Paris: { iata: 'CDG', region: Region.EUROPE },
   Palembang: { iata: 'PLM', region: Region.SOUTH_EAST_ASIA },
@@ -104,10 +103,7 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Surabaya: { iata: 'SUB', region: Region.SOUTH_EAST_ASIA },
   Sydney: { iata: 'SYD', region: Region.SOUTHWEST_PACIFIC },
   Taipei: { iata: 'TPE', region: Region.NORTH_ASIA },
-  // TODO: combine both HND/NRT into one for now as it's hard to separate by flight number
-  Tokyo: { iata: 'NRT', region: Region.NORTH_ASIA },
-  // 'Tokyo (Haneda)': { iata: 'HND', region: Region.NORTH_ASIA },
-  // 'Tokyo (Narita)': { iata: 'NRT', region: Region.NORTH_ASIA },
+  Tokyo: { iata: 'TYO', region: Region.NORTH_ASIA },
   Trivandrum: { iata: 'TRV', region: Region.SOUTH_ASIA },
   Vancouver: { iata: 'YVR', region: Region.NORTH_AMERICA },
   Vientiane: { iata: 'VTE', region: Region.SOUTH_EAST_ASIA },
@@ -120,12 +116,27 @@ export const cityMappings: Record<string, { iata: string; region: string }> = {
   Zürich: { iata: 'ZRH', region: Region.EUROPE },
 };
 
+/**
+ * Mapping from either:
+ * - old airport IATAs to new airport IATAs
+ * - specific airport IATAs to the collective city IATA, for cities that have multiple international airports
+ */
+export const iataToIataMappings: Record<string, string> = {
+  REP: 'SAI', // Siem Reap
+  JOG: 'YIA', // Yogyakarta
+  TFU: 'CTU', // Chengdu
+  HND: 'TYO', // Tokyo
+  NRT: 'TYO', // Tokyo
+  JFK: 'NYC', // New York
+  EWR: 'NYC', // New York
+  DME: 'MOW', // Moscow
+  SVO: 'MOW', // Moscow
+};
+
 export const iataMappings = Object.entries(cityMappings).reduce(
   (_iataMappings: Record<string, string>, [city, cityMapping]) => {
     _iataMappings[cityMapping.iata] = city;
     return _iataMappings;
   },
-  {
-    DME: 'Moscow', // TODO: maybe improve this
-  },
+  {},
 );
