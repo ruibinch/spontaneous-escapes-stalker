@@ -468,7 +468,7 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Tokyo",
-    "destinationIata": "NRT",
+    "destinationIata": "TYO",
     "flightClass": "Business",
     "flightNos": [
       "SQ630"
@@ -485,7 +485,7 @@
   },
   {
     "origin": "Tokyo",
-    "originIata": "NRT",
+    "originIata": "TYO",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Business",
@@ -814,8 +814,8 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Economy",
     "flightNos": [
       "SQ26"
@@ -898,7 +898,7 @@
   },
   {
     "origin": "Tokyo",
-    "originIata": "NRT",
+    "originIata": "TYO",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",

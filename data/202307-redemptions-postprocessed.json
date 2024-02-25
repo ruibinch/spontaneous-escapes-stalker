@@ -323,7 +323,7 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Chengdu",
-    "destinationIata": "TFU",
+    "destinationIata": "CTU",
     "flightClass": "Economy",
     "flightNos": [
       "SQ842"
@@ -904,7 +904,7 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Chengdu",
-    "destinationIata": "TFU",
+    "destinationIata": "CTU",
     "flightClass": "Premium Economy",
     "flightNos": [
       "SQ842"
@@ -916,7 +916,7 @@
   },
   {
     "origin": "Chengdu",
-    "originIata": "TFU",
+    "originIata": "CTU",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
@@ -1103,8 +1103,8 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Premium Economy",
     "flightNos": [
       "SQ26"
@@ -1115,8 +1115,8 @@
     "redemptionMonth": "202307"
   },
   {
-    "origin": "New York (JFK)",
-    "originIata": "JFK",
+    "origin": "New York",
+    "originIata": "NYC",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
     "flightClass": "Premium Economy",

@@ -818,24 +818,11 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Premium Economy",
     "flightNos": [
-      "SQ24"
-    ],
-    "milesRequired": 51100,
-    "blackoutPeriod": [],
-    "region": "North America",
-    "redemptionMonth": "202207"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "New York (Newark)",
-    "destinationIata": "EWR",
-    "flightClass": "Premium Economy",
-    "flightNos": [
+      "SQ24",
       "SQ22"
     ],
     "milesRequired": 51100,
@@ -844,8 +831,8 @@
     "redemptionMonth": "202207"
   },
   {
-    "origin": "New York (Newark)",
-    "originIata": "EWR",
+    "origin": "New York",
+    "originIata": "NYC",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",

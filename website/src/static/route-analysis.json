@@ -15945,7 +15945,7 @@
     "from": "Singapore",
     "to": "Chengdu",
     "fromIata": "SIN",
-    "toIata": "TFU",
+    "toIata": "CTU",
     "region": "North Asia",
     "details": [
       {
@@ -58101,7 +58101,7 @@
     "from": "Singapore",
     "to": "Moscow",
     "fromIata": "SIN",
-    "toIata": "SVO",
+    "toIata": "MOW",
     "details": [
       {
         "month": "201711",
@@ -63129,653 +63129,9 @@
   },
   {
     "from": "Singapore",
-    "to": "New York (JFK)",
+    "to": "New York",
     "fromIata": "SIN",
-    "toIata": "JFK",
-    "region": "North America",
-    "details": [
-      {
-        "month": "201711",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201712",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201801",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201803",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201804",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201805",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201806",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201807",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201808",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201809",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201810",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201811",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201812",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201901",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201902",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201903",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201904",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201905",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201906",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201907",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201908",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201909",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201910",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201911",
-        "redemptionDetails": {
-          "Y": {
-            "flightNos": [
-              "SQ26"
-            ],
-            "milesRequired": 28000,
-            "blackoutPeriod": []
-          },
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201912",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202001",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202002",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202003",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202204",
-        "redemptionDetails": {
-          "Y": {
-            "flightNos": [
-              "SQ26"
-            ],
-            "milesRequired": 28000,
-            "blackoutPeriod": []
-          },
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 51100,
-            "blackoutPeriod": []
-          },
-          "J": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 69300,
-            "blackoutPeriod": []
-          }
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202205",
-        "redemptionDetails": {
-          "Y": {
-            "flightNos": [
-              "SQ26"
-            ],
-            "milesRequired": 28000,
-            "blackoutPeriod": []
-          },
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 51100,
-            "blackoutPeriod": []
-          },
-          "J": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 69300,
-            "blackoutPeriod": []
-          }
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202206",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 51100,
-            "blackoutPeriod": []
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202207",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 51100,
-            "blackoutPeriod": []
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202208",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202209",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": [
-              {
-                "from": "2022-09-01",
-                "to": "2022-09-09"
-              }
-            ]
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202210",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": [
-              {
-                "from": "2022-10-01",
-                "to": "2022-10-03"
-              }
-            ]
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202211",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": []
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202212",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202301",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": [
-              {
-                "from": "2023-01-01",
-                "to": "2023-01-23"
-              }
-            ]
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202302",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": []
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202303",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": [
-              {
-                "from": "2023-03-01",
-                "to": "2023-03-05"
-              }
-            ]
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202304",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202305",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202306",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202307",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202308",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202309",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202310",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": []
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202311",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202312",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202401",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202402",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ24"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": [
-              {
-                "from": "2024-02-23",
-                "to": "2024-02-29"
-              }
-            ]
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202403",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      }
-    ]
-  },
-  {
-    "from": "Singapore",
-    "to": "New York (Newark)",
-    "fromIata": "SIN",
-    "toIata": "EWR",
+    "toIata": "NYC",
     "region": "North America",
     "details": [
       {
@@ -64034,14 +63390,20 @@
       },
       {
         "month": "201911",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ26"
+            ],
+            "milesRequired": 28000,
+            "blackoutPeriod": []
+          },
+          "W": null,
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
@@ -64101,9 +63463,16 @@
       {
         "month": "202204",
         "redemptionDetails": {
-          "Y": null,
+          "Y": {
+            "flightNos": [
+              "SQ26"
+            ],
+            "milesRequired": 28000,
+            "blackoutPeriod": []
+          },
           "W": {
             "flightNos": [
+              "SQ24",
               "SQ22"
             ],
             "milesRequired": 51100,
@@ -64111,6 +63480,7 @@
           },
           "J": {
             "flightNos": [
+              "SQ24",
               "SQ22"
             ],
             "milesRequired": 69300,
@@ -64125,9 +63495,16 @@
       {
         "month": "202205",
         "redemptionDetails": {
-          "Y": null,
+          "Y": {
+            "flightNos": [
+              "SQ26"
+            ],
+            "milesRequired": 28000,
+            "blackoutPeriod": []
+          },
           "W": {
             "flightNos": [
+              "SQ24",
               "SQ22"
             ],
             "milesRequired": 51100,
@@ -64135,6 +63512,7 @@
           },
           "J": {
             "flightNos": [
+              "SQ24",
               "SQ22"
             ],
             "milesRequired": 69300,
@@ -64148,14 +63526,20 @@
       },
       {
         "month": "202206",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ24"
+            ],
+            "milesRequired": 51100,
+            "blackoutPeriod": []
+          },
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
@@ -64164,6 +63548,7 @@
           "Y": null,
           "W": {
             "flightNos": [
+              "SQ24",
               "SQ22"
             ],
             "milesRequired": 51100,
@@ -64190,14 +63575,25 @@
       },
       {
         "month": "202209",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ24"
+            ],
+            "milesRequired": 56350,
+            "blackoutPeriod": [
+              {
+                "from": "2022-09-01",
+                "to": "2022-09-09"
+              }
+            ]
+          },
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
@@ -64206,13 +63602,20 @@
           "Y": null,
           "W": {
             "flightNos": [
+              "SQ24",
               "SQ22"
             ],
             "milesRequired": 56350,
             "blackoutPeriod": [
               {
                 "from": "2022-10-01",
-                "to": "2022-10-03"
+                "to": "2022-10-03",
+                "flightNo": "SQ24"
+              },
+              {
+                "from": "2022-10-01",
+                "to": "2022-10-03",
+                "flightNo": "SQ22"
               }
             ]
           },
@@ -64229,6 +63632,7 @@
           "Y": null,
           "W": {
             "flightNos": [
+              "SQ24",
               "SQ22"
             ],
             "milesRequired": 56350,
@@ -64255,38 +63659,66 @@
       },
       {
         "month": "202301",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ24"
+            ],
+            "milesRequired": 56350,
+            "blackoutPeriod": [
+              {
+                "from": "2023-01-01",
+                "to": "2023-01-23"
+              }
+            ]
+          },
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
         "month": "202302",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ24"
+            ],
+            "milesRequired": 56350,
+            "blackoutPeriod": []
+          },
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
         "month": "202303",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ24"
+            ],
+            "milesRequired": 56350,
+            "blackoutPeriod": [
+              {
+                "from": "2023-03-01",
+                "to": "2023-03-05"
+              }
+            ]
+          },
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
@@ -64363,14 +63795,20 @@
       },
       {
         "month": "202310",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ24"
+            ],
+            "milesRequired": 56350,
+            "blackoutPeriod": []
+          },
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
@@ -64411,14 +63849,25 @@
       },
       {
         "month": "202402",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ24"
+            ],
+            "milesRequired": 56350,
+            "blackoutPeriod": [
+              {
+                "from": "2024-02-23",
+                "to": "2024-02-29"
+              }
+            ]
+          },
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
@@ -81129,7 +80578,7 @@
     "from": "Singapore",
     "to": "Tokyo",
     "fromIata": "SIN",
-    "toIata": "NRT",
+    "toIata": "TYO",
     "region": "North Asia",
     "details": [
       {
@@ -105150,7 +104599,7 @@
   {
     "from": "Chengdu",
     "to": "Singapore",
-    "fromIata": "TFU",
+    "fromIata": "CTU",
     "toIata": "SIN",
     "region": "North Asia",
     "details": [
@@ -146485,7 +145934,7 @@
   {
     "from": "Moscow",
     "to": "Singapore",
-    "fromIata": "SVO",
+    "fromIata": "MOW",
     "toIata": "SIN",
     "details": [
       {
@@ -151316,601 +150765,9 @@
     ]
   },
   {
-    "from": "New York (JFK)",
+    "from": "New York",
     "to": "Singapore",
-    "fromIata": "JFK",
-    "toIata": "SIN",
-    "region": "North America",
-    "details": [
-      {
-        "month": "201711",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201712",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201801",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201803",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201804",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201805",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201806",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201807",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201808",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201809",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201810",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201811",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201812",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201901",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201902",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201903",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201904",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201905",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201906",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201907",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201908",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201909",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201910",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201911",
-        "redemptionDetails": {
-          "Y": {
-            "flightNos": [
-              "SQ25"
-            ],
-            "milesRequired": 28000,
-            "blackoutPeriod": []
-          },
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "201912",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202001",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202002",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202003",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202204",
-        "redemptionDetails": {
-          "Y": {
-            "flightNos": [
-              "SQ25"
-            ],
-            "milesRequired": 28000,
-            "blackoutPeriod": []
-          },
-          "W": {
-            "flightNos": [
-              "SQ23"
-            ],
-            "milesRequired": 51100,
-            "blackoutPeriod": []
-          },
-          "J": {
-            "flightNos": [
-              "SQ23"
-            ],
-            "milesRequired": 69300,
-            "blackoutPeriod": []
-          }
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202205",
-        "redemptionDetails": {
-          "Y": {
-            "flightNos": [
-              "SQ25"
-            ],
-            "milesRequired": 28000,
-            "blackoutPeriod": []
-          },
-          "W": {
-            "flightNos": [
-              "SQ23"
-            ],
-            "milesRequired": 51100,
-            "blackoutPeriod": []
-          },
-          "J": {
-            "flightNos": [
-              "SQ23"
-            ],
-            "milesRequired": 69300,
-            "blackoutPeriod": []
-          }
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202206",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202207",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202208",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202209",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202210",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ23"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": [
-              {
-                "from": "2022-10-01",
-                "to": "2022-10-09"
-              }
-            ]
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202211",
-        "redemptionDetails": {
-          "Y": null,
-          "W": {
-            "flightNos": [
-              "SQ23"
-            ],
-            "milesRequired": 56350,
-            "blackoutPeriod": [
-              {
-                "from": "2022-11-17",
-                "to": "2022-11-19"
-              }
-            ]
-          },
-          "J": null
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202212",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202301",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202302",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202303",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202304",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202305",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202306",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202307",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202308",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202309",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202310",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202311",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202312",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202401",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": {
-            "flightNos": [
-              "SQ23"
-            ],
-            "milesRequired": 78050,
-            "blackoutPeriod": [
-              {
-                "from": "2024-01-01",
-                "to": "2024-01-11"
-              }
-            ]
-          }
-        },
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        }
-      },
-      {
-        "month": "202402",
-        "flightDetails": {
-          "sia": true,
-          "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      },
-      {
-        "month": "202403",
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
-        }
-      }
-    ]
-  },
-  {
-    "from": "New York (Newark)",
-    "to": "Singapore",
-    "fromIata": "EWR",
+    "fromIata": "NYC",
     "toIata": "SIN",
     "region": "North America",
     "details": [
@@ -152170,14 +151027,20 @@
       },
       {
         "month": "201911",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ25"
+            ],
+            "milesRequired": 28000,
+            "blackoutPeriod": []
+          },
+          "W": null,
+          "J": null
+        },
         "flightDetails": {
           "sia": true,
           "silkair": false
-        },
-        "redemptionDetails": {
-          "Y": null,
-          "W": null,
-          "J": null
         }
       },
       {
@@ -152243,9 +151106,16 @@
       {
         "month": "202204",
         "redemptionDetails": {
-          "Y": null,
+          "Y": {
+            "flightNos": [
+              "SQ25"
+            ],
+            "milesRequired": 28000,
+            "blackoutPeriod": []
+          },
           "W": {
             "flightNos": [
+              "SQ23",
               "SQ21"
             ],
             "milesRequired": 51100,
@@ -152253,6 +151123,7 @@
           },
           "J": {
             "flightNos": [
+              "SQ23",
               "SQ21"
             ],
             "milesRequired": 69300,
@@ -152267,9 +151138,16 @@
       {
         "month": "202205",
         "redemptionDetails": {
-          "Y": null,
+          "Y": {
+            "flightNos": [
+              "SQ25"
+            ],
+            "milesRequired": 28000,
+            "blackoutPeriod": []
+          },
           "W": {
             "flightNos": [
+              "SQ23",
               "SQ21"
             ],
             "milesRequired": 51100,
@@ -152277,6 +151155,7 @@
           },
           "J": {
             "flightNos": [
+              "SQ23",
               "SQ21"
             ],
             "milesRequired": 69300,
@@ -152365,10 +151244,17 @@
           "Y": null,
           "W": {
             "flightNos": [
+              "SQ23",
               "SQ21"
             ],
             "milesRequired": 56350,
-            "blackoutPeriod": []
+            "blackoutPeriod": [
+              {
+                "from": "2022-10-01",
+                "to": "2022-10-09",
+                "flightNo": "SQ23"
+              }
+            ]
           },
           "J": null
         },
@@ -152383,13 +151269,20 @@
           "Y": null,
           "W": {
             "flightNos": [
+              "SQ23",
               "SQ21"
             ],
             "milesRequired": 56350,
             "blackoutPeriod": [
               {
+                "from": "2022-11-17",
+                "to": "2022-11-19",
+                "flightNo": "SQ23"
+              },
+              {
                 "from": "2022-11-03",
-                "to": "2022-11-05"
+                "to": "2022-11-05",
+                "flightNo": "SQ21"
               }
             ]
           },
@@ -152597,21 +151490,30 @@
           "W": null,
           "J": {
             "flightNos": [
+              "SQ23",
               "SQ21"
             ],
             "milesRequired": 78050,
             "blackoutPeriod": [
               {
                 "from": "2024-01-01",
-                "to": "2024-01-10"
+                "to": "2024-01-11",
+                "flightNo": "SQ23"
+              },
+              {
+                "from": "2024-01-01",
+                "to": "2024-01-10",
+                "flightNo": "SQ21"
               },
               {
                 "from": "2024-01-15",
-                "to": "2024-01-17"
+                "to": "2024-01-17",
+                "flightNo": "SQ21"
               },
               {
                 "from": "2024-01-23",
-                "to": "2024-01-24"
+                "to": "2024-01-24",
+                "flightNo": "SQ21"
               }
             ]
           }
@@ -169815,7 +168717,7 @@
   {
     "from": "Tokyo",
     "to": "Singapore",
-    "fromIata": "NRT",
+    "fromIata": "TYO",
     "toIata": "SIN",
     "region": "North Asia",
     "details": [
@@ -170441,9 +169343,11 @@
           },
           "W": {
             "flightNos": [
+              "SQ883",
+              "SQ895",
               "SQ11"
             ],
-            "milesRequired": 24150,
+            "milesRequired": 17150,
             "blackoutPeriod": []
           },
           "J": {
@@ -170477,9 +169381,11 @@
           },
           "W": {
             "flightNos": [
+              "SQ883",
+              "SQ895",
               "SQ11"
             ],
-            "milesRequired": 24150,
+            "milesRequired": 17150,
             "blackoutPeriod": []
           },
           "J": {
@@ -177288,9 +176194,9 @@
   },
   {
     "from": "Frankfurt",
-    "to": "New York (JFK)",
+    "to": "New York",
     "fromIata": "FRA",
-    "toIata": "JFK",
+    "toIata": "NYC",
     "region": "North America",
     "details": [
       {
@@ -179710,7 +178616,7 @@
     "from": "Los Angeles",
     "to": "Tokyo",
     "fromIata": "LAX",
-    "toIata": "NRT",
+    "toIata": "TYO",
     "region": "North Asia",
     "details": [
       {
@@ -181181,9 +180087,9 @@
     ]
   },
   {
-    "from": "New York (JFK)",
+    "from": "New York",
     "to": "Frankfurt",
-    "fromIata": "JFK",
+    "fromIata": "NYC",
     "toIata": "FRA",
     "region": "Europe",
     "details": [
@@ -182817,7 +181723,7 @@
   {
     "from": "Tokyo",
     "to": "Los Angeles",
-    "fromIata": "NRT",
+    "fromIata": "TYO",
     "toIata": "LAX",
     "region": "North America",
     "details": [

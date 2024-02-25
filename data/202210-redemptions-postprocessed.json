@@ -483,8 +483,8 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Economy",
     "flightNos": [
       "SQ26"
@@ -504,8 +504,8 @@
     "redemptionMonth": "202210"
   },
   {
-    "origin": "New York (JFK)",
-    "originIata": "JFK",
+    "origin": "New York",
+    "originIata": "NYC",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
     "flightClass": "Economy",
@@ -576,7 +576,7 @@
   },
   {
     "origin": "Tokyo",
-    "originIata": "NRT",
+    "originIata": "TYO",
     "destination": "Los Angeles",
     "destinationIata": "LAX",
     "flightClass": "Economy",
@@ -592,7 +592,7 @@
     "origin": "Los Angeles",
     "originIata": "LAX",
     "destination": "Tokyo",
-    "destinationIata": "NRT",
+    "destinationIata": "TYO",
     "flightClass": "Economy",
     "flightNos": [
       "SQ11"
@@ -654,8 +654,8 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Premium Economy",
     "flightNos": [
       "SQ26"
@@ -671,8 +671,8 @@
     "redemptionMonth": "202210"
   },
   {
-    "origin": "New York (JFK)",
-    "originIata": "JFK",
+    "origin": "New York",
+    "originIata": "NYC",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
     "flightClass": "Premium Economy",
@@ -706,71 +706,47 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Premium Economy",
     "flightNos": [
-      "SQ24"
-    ],
-    "milesRequired": 56350,
-    "blackoutPeriod": [
-      {
-        "from": "2022-10-01",
-        "to": "2022-10-03"
-      }
-    ],
-    "region": "North America",
-    "redemptionMonth": "202210"
-  },
-  {
-    "origin": "New York (JFK)",
-    "originIata": "JFK",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ23"
-    ],
-    "milesRequired": 56350,
-    "blackoutPeriod": [
-      {
-        "from": "2022-10-01",
-        "to": "2022-10-09"
-      }
-    ],
-    "region": "North America",
-    "redemptionMonth": "202210"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "New York (Newark)",
-    "destinationIata": "EWR",
-    "flightClass": "Premium Economy",
-    "flightNos": [
+      "SQ24",
       "SQ22"
     ],
     "milesRequired": 56350,
     "blackoutPeriod": [
       {
         "from": "2022-10-01",
-        "to": "2022-10-03"
+        "to": "2022-10-03",
+        "flightNo": "SQ24"
+      },
+      {
+        "from": "2022-10-01",
+        "to": "2022-10-03",
+        "flightNo": "SQ22"
       }
     ],
     "region": "North America",
     "redemptionMonth": "202210"
   },
   {
-    "origin": "New York (Newark)",
-    "originIata": "EWR",
+    "origin": "New York",
+    "originIata": "NYC",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Premium Economy",
     "flightNos": [
+      "SQ23",
       "SQ21"
     ],
     "milesRequired": 56350,
-    "blackoutPeriod": [],
+    "blackoutPeriod": [
+      {
+        "from": "2022-10-01",
+        "to": "2022-10-09",
+        "flightNo": "SQ23"
+      }
+    ],
     "region": "North America",
     "redemptionMonth": "202210"
   }

@@ -558,7 +558,7 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Chengdu",
-    "destinationIata": "TFU",
+    "destinationIata": "CTU",
     "flightClass": "Economy",
     "flightNos": [
       "SQ842"
@@ -570,7 +570,7 @@
   },
   {
     "origin": "Chengdu",
-    "originIata": "TFU",
+    "originIata": "CTU",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "flightClass": "Economy",
@@ -1613,8 +1613,8 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Economy",
     "flightNos": [
       "SQ26"
@@ -1636,8 +1636,8 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Business",
     "flightNos": [
       "SQ26"
@@ -1648,8 +1648,8 @@
     "redemptionMonth": "202312"
   },
   {
-    "origin": "New York (JFK)",
-    "originIata": "JFK",
+    "origin": "New York",
+    "originIata": "NYC",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
     "flightClass": "Economy",
@@ -1667,8 +1667,8 @@
     "redemptionMonth": "202312"
   },
   {
-    "origin": "New York (JFK)",
-    "originIata": "JFK",
+    "origin": "New York",
+    "originIata": "NYC",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
     "flightClass": "Business",
@@ -1687,7 +1687,7 @@
   },
   {
     "origin": "Tokyo",
-    "originIata": "NRT",
+    "originIata": "TYO",
     "destination": "Los Angeles",
     "destinationIata": "LAX",
     "flightClass": "Economy",
@@ -1748,7 +1748,7 @@
   },
   {
     "origin": "Tokyo",
-    "originIata": "NRT",
+    "originIata": "TYO",
     "destination": "Los Angeles",
     "destinationIata": "LAX",
     "flightClass": "Premium Economy",
@@ -1768,8 +1768,8 @@
   {
     "origin": "Frankfurt",
     "originIata": "FRA",
-    "destination": "New York (JFK)",
-    "destinationIata": "JFK",
+    "destination": "New York",
+    "destinationIata": "NYC",
     "flightClass": "Premium Economy",
     "flightNos": [
       "SQ26"
@@ -1785,8 +1785,8 @@
     "redemptionMonth": "202312"
   },
   {
-    "origin": "New York (JFK)",
-    "originIata": "JFK",
+    "origin": "New York",
+    "originIata": "NYC",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
     "flightClass": "Premium Economy",
