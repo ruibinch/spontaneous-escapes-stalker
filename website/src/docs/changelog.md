@@ -1,3 +1,7 @@
+# 2.1.0 - 2024-02-28
+
+- Added comparison of SE redemptions to SIA/SilkAir route network on the analysis page
+
 # 2.0.0 - 2024-02-04
 
 - Refined website layout
