@@ -20,6 +20,7 @@ export const NavbarWrapper = () => {
       height="3.5rem" // 56px
       classNames={{
         base: 'lg:hidden bg-gradient-to-r from-blue-900 to-indigo-900',
+        wrapper: 'px-4',
       }}
     >
       <NavbarContent justify="start">

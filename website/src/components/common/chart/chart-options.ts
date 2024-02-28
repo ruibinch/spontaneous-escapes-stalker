@@ -121,6 +121,7 @@ export const makeChartOptions = <T extends ChartType>(
           drawTicks: options.axesTicks?.x,
           drawOnChartArea: options.axesTicksOnChartArea?.x,
           tickColor: 'black',
+          offset: false, // ticks to always be aligned with tick labels
         },
         border: {
           display: options.axesBorder?.x,
