@@ -21,10 +21,12 @@ export function DetailsTable(props: Props) {
     entry.details.forEach((detail) => {
       monthToRedemptionDetailsMap[detail.month] = detail.redemptionDetails;
 
-      const numRedemptionsForMonth = Object.values(
-        detail.redemptionDetails,
-      ).filter(Boolean).length;
-      count += numRedemptionsForMonth;
+      const hasRedemptionInMonth = Object.values(detail.redemptionDetails).some(
+        Boolean,
+      );
+      if (hasRedemptionInMonth) {
+        count += 1;
+      }
     });
 
     return {
