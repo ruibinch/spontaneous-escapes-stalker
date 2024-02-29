@@ -1,3 +1,7 @@
+# 2.1.1 - 2024-02-29
+
+- Update count of playground details table to be based on number of redemption months without taking flight class into account
+
 # 2.1.0 - 2024-02-28
 
 - Added comparison of SE redemptions to SIA/SilkAir route network on the analysis page
