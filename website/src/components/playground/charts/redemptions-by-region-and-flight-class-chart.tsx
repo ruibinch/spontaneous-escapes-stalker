@@ -67,6 +67,7 @@ export function RedemptionsByRegionAndFlightClassChart({
   return (
     <ChartWrapper
       title="Redemptions by region and flight class"
+      topBarStyle="pb-1.5"
       chart={
         <Bar
           options={makeChartOptions({

@@ -7,14 +7,26 @@ import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { flightClassColors } from '../../common/colors';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { useState } from 'react';
+import { Toggle, ToggleProps } from '@/components/common/toggle';
+import { roundToDp } from '@/common/round-to-dp';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
 }
 
+type AverageOrTotal = 'average' | 'total';
+const displayToggleOptions: ToggleProps<AverageOrTotal>['options'] = [
+  { key: 'average', label: 'Average' },
+  { key: 'total', label: 'Total', backgroundStyle: 'px-5' },
+];
+
 export function RedemptionsByMonthAndFlightClassChart({
   routeAnalysisListFiltered,
 }: Props) {
+  // TODO: implement this logic
+  const [displayAs, setDisplayAs] = useState<AverageOrTotal>('average');
+
   const monthToFlightClassToCountDict: Record<
     string,
     Record<string, number>
@@ -32,10 +44,26 @@ export function RedemptionsByMonthAndFlightClassChart({
     Nov: {},
     Dec: {},
   };
+  const monthNameToMonths: Record<string, Set<string>> = {
+    Jan: new Set(),
+    Feb: new Set(),
+    Mar: new Set(),
+    Apr: new Set(),
+    May: new Set(),
+    Jun: new Set(),
+    Jul: new Set(),
+    Aug: new Set(),
+    Sep: new Set(),
+    Oct: new Set(),
+    Nov: new Set(),
+    Dec: new Set(),
+  };
 
   routeAnalysisListFiltered.forEach(({ details }) => {
     details.forEach((detail) => {
       const monthName = monthNumToShortNameMap[detail.month.slice(4)];
+      monthNameToMonths[monthName].add(detail.month);
+
       Object.entries(detail.redemptionDetails).forEach(
         ([flightClass, redemptionInfo]) => {
           if (redemptionInfo) {
@@ -48,26 +76,60 @@ export function RedemptionsByMonthAndFlightClassChart({
     });
   });
 
+  const monthToFlightClassToAverageCountDict = Object.entries(
+    monthToFlightClassToCountDict,
+  ).reduce(
+    (
+      _monthToFlightClassToAverageCountDict: Record<
+        string,
+        Record<string, number>
+      >,
+      [month, flightClassToCountDict],
+    ) => {
+      _monthToFlightClassToAverageCountDict[month] = Object.entries(
+        flightClassToCountDict,
+      ).reduce(
+        (
+          _flightClassToAverageCountDict: Record<string, number>,
+          [flightClass, count],
+        ) => {
+          _flightClassToAverageCountDict[flightClass] = roundToDp(
+            count / monthNameToMonths[month].size,
+            2,
+          );
+          return _flightClassToAverageCountDict;
+        },
+        {},
+      );
+      return _monthToFlightClassToAverageCountDict;
+    },
+    {},
+  );
+
+  const selectedDataset =
+    displayAs === 'average'
+      ? monthToFlightClassToAverageCountDict
+      : monthToFlightClassToCountDict;
   const data = {
     labels: Object.keys(monthToFlightClassToCountDict),
     datasets: [
       {
         label: 'Economy',
-        data: Object.values(monthToFlightClassToCountDict).map(
+        data: Object.values(selectedDataset).map(
           (flightClassToCountDict) => flightClassToCountDict.Y,
         ),
         backgroundColor: flightClassColors.Y,
       },
       {
         label: 'Premium Economy',
-        data: Object.values(monthToFlightClassToCountDict).map(
+        data: Object.values(selectedDataset).map(
           (flightClassToCountDict) => flightClassToCountDict.W,
         ),
         backgroundColor: flightClassColors.W,
       },
       {
         label: 'Business',
-        data: Object.values(monthToFlightClassToCountDict).map(
+        data: Object.values(selectedDataset).map(
           (flightClassToCountDict) => flightClassToCountDict.J,
         ),
         backgroundColor: flightClassColors.J,
@@ -89,6 +151,14 @@ export function RedemptionsByMonthAndFlightClassChart({
             tooltipTitleOverrideMap: monthShortNameToNameMap,
           })}
           data={data}
+        />
+      }
+      topRightComponent={
+        <Toggle<AverageOrTotal>
+          size="sm"
+          options={displayToggleOptions}
+          selValue={displayAs}
+          setSelValue={setDisplayAs}
         />
       }
     />
