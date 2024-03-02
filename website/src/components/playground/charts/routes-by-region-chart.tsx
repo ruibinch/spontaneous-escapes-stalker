@@ -34,7 +34,7 @@ export function RoutesByRegionChart({ routeAnalysisListFiltered }: Props) {
 
     Object.values(details).forEach((detailsInfo) => {
       const hasRedemption =
-        Object.values(detailsInfo).filter(Boolean).length > 0;
+        Object.values(detailsInfo.redemptionDetails).filter(Boolean).length > 0;
       if (hasRedemption) {
         hasRedemptionForRoute = true;
       }

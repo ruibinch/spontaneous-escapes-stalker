@@ -29,7 +29,7 @@ export function FilterInfo({
 
   const numRedemptions = countRedemptions(routeAnalysisList);
   const numFilteredRedemptions = countRedemptions(routeAnalysisListFiltered);
-  const numRoutes = routeAnalysisList.length;
+  const numRoutes = countRoutes(routeAnalysisList);
   const numFilteredRoutes = countRoutes(routeAnalysisListFiltered);
   const numMonths = monthsList.length;
   const numFilteredMonths = applicableMonths.length;
@@ -68,12 +68,12 @@ function countRedemptions(routeAnalysisList: RouteAnalysisEntry[]) {
 function countRoutes(routeAnalysisList: RouteAnalysisEntry[]) {
   let routesCount = 0;
 
-  routeAnalysisList.forEach(({ region, details }) => {
+  routeAnalysisList.forEach(({ details }) => {
     let hasRedemptionForRoute = false;
 
     Object.values(details).forEach((detailsInfo) => {
       const hasRedemption =
-        Object.values(detailsInfo).filter(Boolean).length > 0;
+        Object.values(detailsInfo.redemptionDetails).filter(Boolean).length > 0;
       if (hasRedemption) {
         hasRedemptionForRoute = true;
       }

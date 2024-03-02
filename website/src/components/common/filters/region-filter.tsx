@@ -1,7 +1,7 @@
 import { trackEvent } from '@/analytics';
 import { Select, SelectItem } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
-import { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 export interface RegionFilterProps {
   regions: string;
@@ -15,7 +15,7 @@ const regionsList = [
   'Middle East & Africa',
   'Southwest Pacific',
   'Europe',
-  'USA',
+  'North America',
 ] as const;
 const regionsListWithAll = ['All', ...regionsList] as const;
 
