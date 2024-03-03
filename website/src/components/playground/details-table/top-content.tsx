@@ -10,15 +10,23 @@ const monthColumnOrderToggleOptions: ToggleProps<MonthColumnOrder>['options'] =
     { key: 'oldest', label: 'Oldest first' },
   ];
 
+export type ShowRoutesAs = 'separate' | 'combined';
+const showRoutesAsToggleOptions: ToggleProps<ShowRoutesAs>['options'] = [
+  { key: 'separate', label: 'Separate' },
+  { key: 'combined', label: 'Combined' },
+];
+
 export function TopContent(props: {
   rowsPerPage: number;
   onRowsPerPageChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   monthColumnOrder: MonthColumnOrder;
   setMonthColumnOrder: Dispatch<SetStateAction<MonthColumnOrder>>;
+  showRoutesAs: ShowRoutesAs;
+  setShowRoutesAs: Dispatch<SetStateAction<ShowRoutesAs>>;
 }) {
   return (
-    <div className="flex flex-col pl-2 gap-4 sm:flex-row sm:justify-between sm:items-end">
-      <div className="flex flex-col md:flex-row gap-4 md:items-end">
+    <div className="flex flex-col pl-2 gap-4 md:flex-row md:justify-between md:items-end">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 xl:gap-8 lg:items-end">
         <div className="text-default-400 text-small">
           <div className="flex flex-row gap-2 items-center">
             <FlightClassIndicator flightClassCode={'Y'} />
@@ -34,14 +42,19 @@ export function TopContent(props: {
           </div>
         </div>
 
-        <div className="md:pl-4 lg:pl-6 xl:pl-8">
-          <Toggle<MonthColumnOrder>
-            options={monthColumnOrderToggleOptions}
-            title="Toggle month column order"
-            selValue={props.monthColumnOrder}
-            setSelValue={props.setMonthColumnOrder}
-          />
-        </div>
+        <Toggle<MonthColumnOrder>
+          options={monthColumnOrderToggleOptions}
+          title="Toggle month column order"
+          selValue={props.monthColumnOrder}
+          setSelValue={props.setMonthColumnOrder}
+        />
+
+        <Toggle<ShowRoutesAs>
+          options={showRoutesAsToggleOptions}
+          title="Show routes as"
+          selValue={props.showRoutesAs}
+          setSelValue={props.setShowRoutesAs}
+        />
       </div>
 
       <TableRowsPerPage

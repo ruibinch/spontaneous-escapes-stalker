@@ -1,12 +1,13 @@
 import { getMonthsList } from '@/common/get-data-time-range';
 import { isApplicableMonth } from '../helpers/is-applicable-month';
-import { MonthColumnOrder } from './top-content';
+import { MonthColumnOrder, ShowRoutesAs } from './top-content';
 
 export const getColumns = (filters: {
   startDate: Date;
   endDate: Date;
   months: string[];
   monthColumnOrder: MonthColumnOrder;
+  showRoutesAs: ShowRoutesAs;
 }): Array<{
   key: string;
   label: string;
@@ -19,9 +20,13 @@ export const getColumns = (filters: {
       : monthsListOldestFirst;
 
   return [
-    { key: 'actions', label: '' },
-    { key: 'from', label: 'Origin', allowsSorting: true },
-    { key: 'to', label: 'Destination', allowsSorting: true },
+    { key: 'actions', label: 'Details' },
+    ...(filters.showRoutesAs === 'separate'
+      ? [
+          { key: 'from', label: 'Origin', allowsSorting: true },
+          { key: 'to', label: 'Destination', allowsSorting: true },
+        ]
+      : [{ key: 'cities', label: 'Cities' }]),
     { key: 'count', label: 'Count', allowsSorting: true },
     ...monthsList
       .filter((month) =>

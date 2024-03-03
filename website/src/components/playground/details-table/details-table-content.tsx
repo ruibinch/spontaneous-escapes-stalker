@@ -2,6 +2,7 @@ import { trackEvent } from '@/analytics';
 import { TooltipCustom } from '@/components/common/tooltip-custom';
 import { FlightClass, RouteAnalysisEntry } from '@/index';
 import {
+  Link,
   SortDescriptor,
   Table,
   TableBody,
@@ -12,7 +13,7 @@ import {
   getKeyValue,
 } from '@nextui-org/react';
 import NextLink from 'next/link';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { FlightClassIndicator } from '../../common/flight-class-indicator';
 import { TablePagination } from '../../common/table/table-pagination';
 import { useRowsPerPageHandler } from '../../common/table/table-rows-per-page';
@@ -22,28 +23,43 @@ import {
 } from '../../common/table/sorters';
 import { EyeIcon } from '../../icons/eye';
 import { getColumns } from './columns';
-import { MonthColumnOrder, TopContent } from './top-content';
+import { MonthColumnOrder, ShowRoutesAs, TopContent } from './top-content';
 
-type DetailsTableDatum = {
+type DatumForSeparateRoutes = {
   from: string;
   fromIata: string;
   to: string;
   toIata: string;
   count: number;
-} & Record<string, string>;
+};
+
+type DatumForCombinedRoutes = {
+  cities: string;
+  routesIata: string[];
+  count: number;
+};
 
 export interface DetailsTableContentProps {
-  data: DetailsTableDatum[];
+  data: (DatumForSeparateRoutes | DatumForCombinedRoutes)[];
   startDate: Date;
   endDate: Date;
   months: string[];
+  showRoutesAs: ShowRoutesAs;
+  setShowRoutesAs: Dispatch<SetStateAction<ShowRoutesAs>>;
 }
+
+const isDatumForSeparateRoutes = (
+  d: DatumForSeparateRoutes | DatumForCombinedRoutes,
+): d is DatumForSeparateRoutes =>
+  'from' in d && 'fromIata' in d && 'to' in d && 'toIata' in d && 'count' in d;
 
 export function DetailsTableContent({
   data: inputData,
   startDate,
   endDate,
   months,
+  showRoutesAs,
+  setShowRoutesAs,
 }: DetailsTableContentProps) {
   const [data, setData] = useState<DetailsTableContentProps['data']>([]);
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
@@ -72,7 +88,13 @@ export function DetailsTableContent({
 
   const dataToDisplay = data.slice(startIdx, endIdx);
 
-  const columns = getColumns({ startDate, endDate, months, monthColumnOrder });
+  const columns = getColumns({
+    startDate,
+    endDate,
+    months,
+    monthColumnOrder,
+    showRoutesAs,
+  });
 
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
     if (column === 'count') {
@@ -98,6 +120,8 @@ export function DetailsTableContent({
             onRowsPerPageChange={onRowsPerPageChange}
             monthColumnOrder={monthColumnOrder}
             setMonthColumnOrder={setMonthColumnOrder}
+            showRoutesAs={showRoutesAs}
+            setShowRoutesAs={setShowRoutesAs}
           />
         }
         topContentPlacement="outside"
@@ -109,7 +133,7 @@ export function DetailsTableContent({
           />
         }
         bottomContentPlacement="outside"
-        aria-label="Detailed view"
+        aria-label="Details table"
       >
         <TableHeader columns={columns}>
           {(column) => (
@@ -120,7 +144,14 @@ export function DetailsTableContent({
         </TableHeader>
         <TableBody items={dataToDisplay}>
           {(item) => (
-            <TableRow key={`${item.from}#${item.to}`} className="border-b">
+            <TableRow
+              key={
+                isDatumForSeparateRoutes(item)
+                  ? `${item.from}#${item.to}`
+                  : item.cities
+              }
+              className="border-b"
+            >
               {(columnKey) => (
                 <TableCell>
                   {renderCell({
@@ -141,7 +172,7 @@ function renderCell({
   item,
   columnKey,
 }: {
-  item: DetailsTableDatum;
+  item: DatumForSeparateRoutes | DatumForCombinedRoutes;
   columnKey: string;
 }) {
   switch (columnKey) {
@@ -149,22 +180,57 @@ function renderCell({
     case 'to':
     case 'count':
       return getKeyValue(item, columnKey);
+    case 'cities':
+      return (
+        <div className="w-32">
+          {(item as DatumForCombinedRoutes)[columnKey]
+            ?.split('/')
+            ?.map((city, idx) => (
+              <div key={city}>{`${city} ${idx === 0 ? ' /' : ''}`}</div>
+            ))}
+        </div>
+      );
     case 'actions': {
       return (
-        <TooltipCustom content="View detailed route info">
-          <NextLink
-            href={`/route/${item.fromIata}${item.toIata}`}
-            onClick={() => {
-              trackEvent(['playground', 'detailsTable', 'detailedRouteInfo'], {
-                route: `${item.fromIata}${item.toIata}`,
-              });
-            }}
-          >
-            <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-              <EyeIcon />
-            </span>
-          </NextLink>
-        </TooltipCustom>
+        <div className="w-14">
+          <TooltipCustom content="View detailed route info">
+            {isDatumForSeparateRoutes(item) ? (
+              <Link
+                key={`${item.fromIata}${item.toIata}`}
+                href={`/route/${item.fromIata}${item.toIata}`}
+                size="sm"
+                underline="hover"
+                onClick={() => {
+                  trackEvent(['playground', 'detailsTable'], {
+                    route: `${item.fromIata}${item.toIata}`,
+                  });
+                }}
+                className="text-xs"
+              >
+                {`${item.fromIata}-${item.toIata}`}
+              </Link>
+            ) : (
+              <div className="flex flex-col gap-1">
+                {item.routesIata.map((routeIata) => (
+                  <Link
+                    key={routeIata}
+                    href={`/route/${routeIata.replace('-', '')}`}
+                    size="sm"
+                    underline="hover"
+                    onClick={() => {
+                      trackEvent(['playground', 'detailsTable'], {
+                        route: routeIata,
+                      });
+                    }}
+                    className="text-xs"
+                  >
+                    {routeIata}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </TooltipCustom>
+        </div>
       );
     }
     default: {
