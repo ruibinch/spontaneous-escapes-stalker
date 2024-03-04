@@ -1,3 +1,8 @@
+# 2.1.2 - 2024-03-04
+
+- Add Average/Total toggle to "Redemptions by month and flight class" chart
+- Add "Show routes as separate/combined" toggle to playground details table
+
 # 2.1.1 - 2024-02-29
 
 - Update count of playground details table to be based on number of redemption months without taking flight class into account
