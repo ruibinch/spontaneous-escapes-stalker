@@ -1,6 +1,6 @@
+import { FlightClassLegend } from '@/components/common/flight-class-legend';
 import { Toggle, ToggleProps } from '@/components/common/toggle';
 import { Dispatch, SetStateAction } from 'react';
-import { FlightClassIndicator } from '../../common/flight-class-indicator';
 import { TableRowsPerPage } from '../../common/table/table-rows-per-page';
 
 export type MonthColumnOrder = 'latest' | 'oldest';
@@ -27,20 +27,7 @@ export function TopContent(props: {
   return (
     <div className="flex flex-col pl-2 gap-4 md:flex-row md:justify-between md:items-end">
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 xl:gap-8 lg:items-end">
-        <div className="text-default-400 text-small">
-          <div className="flex flex-row gap-2 items-center">
-            <FlightClassIndicator flightClassCode={'Y'} />
-            {'Economy'}
-          </div>
-          <div className="flex flex-row gap-2 items-center">
-            <FlightClassIndicator flightClassCode={'W'} />
-            {'Premium Economy'}
-          </div>
-          <div className="flex flex-row gap-2 items-center">
-            <FlightClassIndicator flightClassCode={'J'} />
-            {'Business'}
-          </div>
-        </div>
+        <FlightClassLegend />
 
         <Toggle<MonthColumnOrder>
           options={monthColumnOrderToggleOptions}

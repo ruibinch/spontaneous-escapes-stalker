@@ -12,6 +12,7 @@ import {
   MONTHS_WITH_MISSING_DATA,
   MONTHS_WITH_NO_REDEMPTION,
 } from '@/common/months-data-info';
+import { FlightClassLegend } from '../common/flight-class-legend';
 
 const monthsList = getMonthsList();
 
@@ -37,7 +38,7 @@ export function MonthYearFrequencyTable({
       <h3 className="text-lg font-semibold">Calendar view</h3>
 
       <div className="flex flex-col gap-2 py-4 px-1 sm:px-2 border border-neutral-250 rounded-md">
-        <TopContent />
+        <FlightClassLegend styles="pl-2" />
 
         <div className="border border-neutral-200 rounded-sm">
           <table className="table table-fixed w-full rounded-md text-center">
@@ -143,24 +144,5 @@ function renderCell(
         </div>
       </div>
     </td>
-  );
-}
-
-function TopContent() {
-  return (
-    <div className="flex flex-col pl-2 text-default-400 text-small">
-      <div className="flex flex-row gap-2 items-center">
-        <FlightClassIndicator flightClassCode={'Y'} />
-        {'Economy'}
-      </div>
-      <div className="flex flex-row gap-2 items-center">
-        <FlightClassIndicator flightClassCode={'W'} />
-        {'Premium Economy'}
-      </div>
-      <div className="flex flex-row gap-2 items-center">
-        <FlightClassIndicator flightClassCode={'J'} />
-        {'Business'}
-      </div>
-    </div>
   );
 }
