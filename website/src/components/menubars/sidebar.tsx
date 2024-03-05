@@ -5,6 +5,7 @@ import { endBarItems, startBarItems } from './bar-items';
 import { BarStyles } from './bar.styles';
 import { CoffeeItem } from './coffee-item';
 import { SidebarItem } from './sidebar-item';
+import { ThemeToggleItem } from './theme-toggle-item';
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -52,11 +53,16 @@ export const SidebarWrapper = () => {
               />
             ))}
 
-            {ENABLE_COFFEE && (
-              <div className="mt-2">
-                <CoffeeItem />
+            <div className="mt-2 flex gap-2">
+              {ENABLE_COFFEE && (
+                <div className="flex-1">
+                  <CoffeeItem />
+                </div>
+              )}
+              <div className="flex-1">
+                <ThemeToggleItem />
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
