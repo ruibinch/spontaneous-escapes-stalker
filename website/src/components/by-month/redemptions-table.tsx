@@ -7,6 +7,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  cn,
   getKeyValue,
 } from '@nextui-org/react';
 import { useEffect, useState } from 'react';
@@ -20,6 +21,7 @@ import {
   useRowsPerPageHandler,
 } from '../common/table/table-rows-per-page';
 import { sortByNumericField, sortByStringField } from '../common/table/sorters';
+import { CommonStyles } from '../common/styles';
 
 const columns = [
   { key: 'origin', label: 'Origin', allowsSorting: true },
@@ -70,7 +72,7 @@ export function RedemptionsTable({
   };
 
   return (
-    <div className="border border-neutral-250 py-4 px-2 rounded-md">
+    <div className={cn(CommonStyles.Border, 'border py-4 px-2 rounded-md')}>
       <Table
         radius="sm"
         sortDescriptor={sortDescriptor}
@@ -103,7 +105,7 @@ export function RedemptionsTable({
           {(item) => (
             <TableRow
               key={`${item.flightClass}#${item.origin}#${item.destination}`}
-              className="border-b"
+              className={cn(CommonStyles.Border, 'border-b')}
             >
               {(columnKey) => (
                 <TableCell>

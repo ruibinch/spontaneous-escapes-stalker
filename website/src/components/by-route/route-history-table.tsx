@@ -6,6 +6,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  cn,
   getKeyValue,
 } from '@nextui-org/react';
 import {
@@ -20,6 +21,7 @@ import {
 } from '../common/table/table-rows-per-page';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
 import { sortByNumericField, sortByStringField } from '../common/table/sorters';
+import { CommonStyles } from '../common/styles';
 
 const columns = [
   { key: 'month', label: 'Month', allowsSorting: true },
@@ -73,7 +75,7 @@ export function RouteHistoryTable({
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">History</h3>
 
-      <div className="border border-neutral-250 py-4 px-2 rounded-md">
+      <div className={cn(CommonStyles.Border, 'border py-4 px-2 rounded-md')}>
         <Table
           radius="sm"
           aria-label="Month/year frequency table for a specific route"
@@ -109,7 +111,7 @@ export function RouteHistoryTable({
             {(item) => (
               <TableRow
                 key={`${item.month}#${item.flightClass}`}
-                className="border-b"
+                className={cn(CommonStyles.Border, 'border-b')}
               >
                 {(columnKey) => (
                   <TableCell>

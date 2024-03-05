@@ -10,6 +10,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  cn,
   getKeyValue,
 } from '@nextui-org/react';
 import NextLink from 'next/link';
@@ -24,6 +25,7 @@ import {
 import { EyeIcon } from '../../icons/eye';
 import { getColumns } from './columns';
 import { MonthColumnOrder, ShowRoutesAs, TopContent } from './top-content';
+import { CommonStyles } from '@/components/common/styles';
 
 type DatumForSeparateRoutes = {
   from: string;
@@ -107,7 +109,7 @@ export function DetailsTableContent({
   };
 
   return (
-    <div className="border border-neutral-250 py-4 px-2 rounded-md">
+    <div className={cn(CommonStyles.Border, 'border py-4 px-2 rounded-md')}>
       <Table
         radius="sm"
         isHeaderSticky
@@ -150,7 +152,7 @@ export function DetailsTableContent({
                   ? `${item.from}#${item.to}`
                   : item.cities
               }
-              className="border-b"
+              className={cn(CommonStyles.Border, 'border-b')}
             >
               {(columnKey) => (
                 <TableCell>
@@ -205,7 +207,7 @@ function renderCell({
                     route: `${item.fromIata}${item.toIata}`,
                   });
                 }}
-                className="text-xs"
+                className="text-xs text-blue-500"
               >
                 {`${item.fromIata}-${item.toIata}`}
               </Link>
@@ -222,7 +224,7 @@ function renderCell({
                         route: routeIata,
                       });
                     }}
-                    className="text-xs"
+                    className="text-xs text-blue-500"
                   >
                     {routeIata}
                   </Link>

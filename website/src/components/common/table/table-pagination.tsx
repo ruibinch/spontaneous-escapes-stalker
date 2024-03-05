@@ -29,7 +29,7 @@ export function TablePagination({
           wrapper: 'gap-0 overflow-visible h-8 rounded border border-divider',
           item: 'w-8 h-8 text-small rounded-none bg-transparent',
           cursor:
-            'bg-gradient-to-b shadow-lg from-blue-500 to-blue-800 text-white font-semibold',
+            'bg-gradient-to-b shadow-lg from-blue-500 to-blue-800 dark:from-blue-300 dark:to-blue-600 text-white font-semibold',
         }}
       />
     </div>

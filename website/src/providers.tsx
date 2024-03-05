@@ -7,7 +7,7 @@ import { Layout } from './layout/layout';
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <NextUIProvider>
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="light" attribute="class">
         <Layout>{children}</Layout>
       </ThemeProvider>
     </NextUIProvider>

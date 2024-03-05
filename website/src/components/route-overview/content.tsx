@@ -83,6 +83,7 @@ export function RouteOverviewContent() {
                   onClick={() => {
                     trackEvent(['routeOverview'], { route: route.label });
                   }}
+                  className="text-blue-500"
                 >
                   {route.label}
                 </Link>

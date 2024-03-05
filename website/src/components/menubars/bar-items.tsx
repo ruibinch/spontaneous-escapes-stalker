@@ -40,7 +40,7 @@ export const startBarItems = [
 export const endBarItems = [
   {
     title: 'Help',
-    icon: <HelpCircleIcon />,
+    icon: <HelpCircleIcon color="" />,
     href: '/help',
   },
   {

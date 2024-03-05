@@ -1,8 +1,9 @@
-import { Button, VisuallyHidden, useSwitch } from '@nextui-org/react';
+import { Button, cn } from '@nextui-org/react';
 import { useTheme } from 'next-themes';
-import { SunIcon } from '../icons/sun';
-import { MoonIcon } from '../icons/moon';
 import { TooltipCustom } from '../common/tooltip-custom';
+import { MoonIcon } from '../icons/moon';
+import { SunIcon } from '../icons/sun';
+import { BarStyles } from './bar.styles';
 
 export function ThemeToggleItem() {
   const { setTheme, resolvedTheme } = useTheme();
@@ -19,7 +20,8 @@ export function ThemeToggleItem() {
         variant="light"
         isIconOnly
         onPress={toggleTheme}
-        className="w-full text-neutral-300/75 hover:text-white"
+        className={cn('w-full', BarStyles.BarItem({ isActive: false }))}
+        // className="w-full text-neutral-300/75 hover:text-white hover:dark:bg-neutral-300/25"
       >
         {resolvedTheme === 'light' ? <SunIcon /> : <MoonIcon />}
       </Button>

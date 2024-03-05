@@ -13,6 +13,7 @@ import {
   MONTHS_WITH_NO_REDEMPTION,
 } from '@/common/months-data-info';
 import { FlightClassLegend } from '../common/flight-class-legend';
+import { CommonStyles } from '../common/styles';
 
 const monthsList = getMonthsList();
 
@@ -23,6 +24,11 @@ const columns = [
     label: monthName,
   })),
 ];
+
+const TableStyles = {
+  Borders: cn('border-neutral-300 dark:border-neutral-400'),
+  HeaderCols: cn('bg-neutral-100/75 dark:bg-neutral-700/75'),
+};
 
 export function MonthYearFrequencyTable({
   data,
@@ -37,19 +43,30 @@ export function MonthYearFrequencyTable({
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">Calendar view</h3>
 
-      <div className="flex flex-col gap-2 py-4 px-1 sm:px-2 border border-neutral-250 rounded-md">
+      <div
+        className={cn(
+          CommonStyles.Border,
+          'flex flex-col gap-2 py-4 px-1 sm:px-2 border rounded-md',
+        )}
+      >
         <FlightClassLegend styles="pl-2" />
 
-        <div className="border border-neutral-200 rounded-sm">
+        <div className={cn(TableStyles.Borders, 'border rounded-sm')}>
           <table className="table table-fixed w-full rounded-md text-center">
             <thead>
-              <tr className="border-b bg-neutral-100/75">
+              <tr
+                className={cn(
+                  TableStyles.Borders,
+                  TableStyles.HeaderCols,
+                  'border-b',
+                )}
+              >
                 {columns.map((col, idx) => (
                   <th
                     key={col.key}
                     className={cn(
                       'py-2 text-xs sm:text-sm',
-                      idx !== 0 ? 'border-l' : '',
+                      idx !== 0 ? cn(TableStyles.Borders, 'border-l') : '',
                     )}
                   >
                     {col.label}
@@ -61,9 +78,16 @@ export function MonthYearFrequencyTable({
               {tableData.map((tableDatum, idx) => (
                 <tr
                   key={tableDatum.year}
-                  className={idx !== 0 ? 'border-t' : undefined}
+                  className={
+                    idx !== 0 ? cn(TableStyles.Borders, 'border-t') : undefined
+                  }
                 >
-                  <td className="py-1 text-xs sm:text-sm bg-neutral-100/75">
+                  <td
+                    className={cn(
+                      TableStyles.HeaderCols,
+                      'py-1 text-xs sm:text-sm',
+                    )}
+                  >
                     {tableDatum.year}
                   </td>
                   {columns.slice(1).map((col) => {
@@ -121,21 +145,24 @@ function renderCell(
         <td
           key={yyyymm}
           className={cn(
+            TableStyles.Borders,
             'border-l',
             isAfter(monthDate, datasetEndDate)
-              ? 'bg-gray-700/30'
-              : 'bg-gray-700',
+              ? 'bg-gray-700/30 dark:bg-sky-900'
+              : 'bg-gray-700 dark:bg-sky-900/50',
           )}
         />
       </TooltipCustom>
     );
   }
   if (!valueAtYearMonth) {
-    return <td key={yyyymm} className="border-l"></td>;
+    return (
+      <td key={yyyymm} className={cn(TableStyles.Borders, 'border-l')}></td>
+    );
   }
 
   return (
-    <td key={yyyymm} className="border-l">
+    <td key={yyyymm} className={cn(TableStyles.Borders, 'border-l')}>
       <div className="flex justify-center">
         <div className="flex flex-row gap-0.5 sm:gap-1">
           {valueAtYearMonth.Y && <FlightClassIndicator flightClassCode="Y" />}

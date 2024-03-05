@@ -20,17 +20,17 @@ export function ChartWrapper({
   contentStyle?: string;
 }) {
   return (
-    <div className="flex flex-col gap-2 p-2 border border-neutral-250 rounded-md">
+    <div className="flex flex-col gap-2 p-2 border border-neutral-250 dark:border-neutral-500 rounded-md">
       <div
         className={cn('flex justify-between gap-2 items-center', topBarStyle)}
       >
-        <div className="flex">
+        <div className="flex gap-2 items-center">
           <span className="text-sm">{title}</span>
 
           {tooltip && (
             <TooltipCustom content={tooltip}>
               <div className="cursor-pointer">
-                <HelpCircleIcon width={16} height={16} color="#404040" />
+                <HelpCircleIcon width={16} height={16} />
               </div>
             </TooltipCustom>
           )}

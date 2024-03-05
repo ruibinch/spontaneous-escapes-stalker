@@ -46,7 +46,10 @@ export function MonthOverviewContent() {
                 >
                   <Button
                     size="sm"
-                    className="w-full bg-neutral-100 border-2 rounded-md"
+                    className={cn(
+                      CommonStyles.Border,
+                      'w-full bg-neutral-100 dark:bg-neutral-700 border-2 rounded-md',
+                    )}
                   >
                     {monthNumToNameMap[month.slice(4, 6)]}
                   </Button>

@@ -1,8 +1,9 @@
 import { trackEvent } from '@/analytics';
 import useDebounce from '@/hooks/use-debounce';
-import { Input } from '@nextui-org/react';
+import { Input, cn } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { CommonStyles } from '../styles';
 
 export interface SearchTermFilterProps {
   searchTerm: string;
@@ -63,13 +64,16 @@ export function SearchTermFilter({
       classNames={{
         input: 'w-full',
         inputWrapper: useBasicDesign
-          ? 'bg-default-50 data-[hover=true]:bg-default-100 border h-8'
+          ? cn(
+              CommonStyles.Border,
+              'bg-default-50 data-[hover=true]:bg-default-100 border h-8',
+            )
           : '',
         mainWrapper: 'w-full',
       }}
       startContent={
         !useBasicDesign && (
-          <kbd className="px-1.5 mr-1 bg-neutral-100 border rounded border-neutral-400 text-small text-foreground-500">
+          <kbd className="px-1.5 mr-1 bg-neutral-100 dark:bg-neutral-700 border rounded border-neutral-400 text-small text-foreground-500">
             /
           </kbd>
         )

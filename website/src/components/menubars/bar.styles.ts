@@ -19,7 +19,8 @@ export const BarItem = tv({
   variants: {
     isActive: {
       true: 'bg-neutral-300/25 text-white',
-      false: 'hover:bg-neutral-300/25 text-neutral-300/75  hover:text-white',
+      false:
+        'text-neutral-300/75 hover:bg-neutral-300/25 hover:dark:bg-neutral-300/25 hover:text-white',
     },
   },
 });

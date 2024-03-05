@@ -6,9 +6,11 @@ import { ArrowDownIcon } from '@/components/icons/arrow-down';
 import { ArrowUpIcon } from '@/components/icons/arrow-up';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
+import { cn } from '@nextui-org/react';
 import { Pie } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CommonStyles } from '../../common/styles';
 
 type FlightClassToCountDict = Record<string, number>;
 
@@ -104,18 +106,32 @@ function ComparisonTable({
   const toPct = (value: number, dp = 1) => `${(value * 100).toFixed(dp)}%`;
 
   return (
-    <div className="h-min border border-neutral-200 rounded-sm">
+    <div className={cn(CommonStyles.Border, 'h-min border rounded-sm')}>
       <table className="table rounded-md text-xs text-center">
         <thead>
-          <tr className="border-b">
-            <th className="border-r"></th>
-            <th className="px-3 py-2 font-semibold border-r">Month</th>
+          <tr className={cn(CommonStyles.Border, 'border-b')}>
+            <th className={cn(CommonStyles.Border, 'border-r')}></th>
+            <th
+              className={cn(
+                CommonStyles.Border,
+                'px-3 py-2 font-semibold border-r',
+              )}
+            >
+              Month
+            </th>
             <TooltipCustom
               content="Average percentage breakdown of all redemptions"
               showArrow
               alwaysUseTooltip
             >
-              <th className="px-2 py-2 font-semibold border-r">Average</th>
+              <th
+                className={cn(
+                  CommonStyles.Border,
+                  'px-2 py-2 font-semibold border-r',
+                )}
+              >
+                Average
+              </th>
             </TooltipCustom>
             <TooltipCustom
               content="Comparison of this month's percentage breakdown against the average"
@@ -135,9 +151,11 @@ function ComparisonTable({
             return (
               <tr
                 key={flightClass}
-                className={idx !== 0 ? 'border-t' : undefined}
+                className={
+                  idx !== 0 ? cn(CommonStyles.Border, 'border-t') : undefined
+                }
               >
-                <td className="px-2 border-r">
+                <td className={cn(CommonStyles.Border, 'px-2 border-r')}>
                   <TooltipCustom content={flightClassCodeToName[flightClass]}>
                     <div className="flex flex-row items-center gap-1">
                       <FlightClassIndicator flightClassCode={flightClass} />
@@ -145,10 +163,10 @@ function ComparisonTable({
                     </div>
                   </TooltipCustom>
                 </td>
-                <td className="py-1 border-r">
+                <td className={cn(CommonStyles.Border, 'py-1 border-r')}>
                   {isFilterActive ? '-' : toPct(monthValue)}
                 </td>
-                <td className="py-1 border-r">
+                <td className={cn(CommonStyles.Border, 'py-1 border-r')}>
                   {isFilterActive ? '-' : toPct(averageValue)}
                 </td>
                 <td className="py-1 flex flex-row items-center justify-center gap-1">

@@ -3,6 +3,7 @@ import { HelpCircleIcon } from '@/components/icons/help-circle';
 import { RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import {
+  cn,
   Table,
   TableBody,
   TableCell,
@@ -11,11 +12,12 @@ import {
   TableRow,
   getKeyValue,
 } from '@nextui-org/react';
-import { Dispatch, SetStateAction, useContext, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import {
   SearchTermFilter,
   isSearchTermMatch,
 } from '../common/filters/search-term-filter';
+import { CommonStyles } from '../common/styles';
 import { TablePagination } from '../common/table/table-pagination';
 import {
   TableRowsPerPage,
@@ -87,7 +89,12 @@ export function RouteRedeemablePctTable() {
   } = useRowsPerPageHandler(dataSorted, false);
 
   return (
-    <div className="flex flex-col gap-4 px-2 pt-2 pb-4 border border-neutral-250 rounded-md">
+    <div
+      className={cn(
+        CommonStyles.Border,
+        'flex flex-col gap-4 px-2 pt-2 pb-4 border rounded-md',
+      )}
+    >
       <div className="flex gap-2">
         <span className="text-sm">{'Percentage of routes featured on SE'}</span>
 
@@ -97,7 +104,7 @@ export function RouteRedeemablePctTable() {
           }
         >
           <div className="cursor-pointer">
-            <HelpCircleIcon width={16} height={16} color="#404040" />
+            <HelpCircleIcon width={16} height={16} />
           </div>
         </TooltipCustom>
       </div>
@@ -184,11 +191,7 @@ function RouteRedeemablePctTableContent({
                         }
                       >
                         <div className="cursor-pointer">
-                          <HelpCircleIcon
-                            width={16}
-                            height={16}
-                            color="#404040"
-                          />
+                          <HelpCircleIcon width={16} height={16} />
                         </div>
                       </TooltipCustom>
                     </div>
@@ -202,7 +205,10 @@ function RouteRedeemablePctTableContent({
       </TableHeader>
       <TableBody items={data}>
         {(item) => (
-          <TableRow key={item.route} className="border-b">
+          <TableRow
+            key={item.route}
+            className={cn(CommonStyles.Border, 'border-b')}
+          >
             {(columnKey) => (
               <TableCell className="py-1.5">
                 {(() => {

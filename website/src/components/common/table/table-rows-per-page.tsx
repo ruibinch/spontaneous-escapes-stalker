@@ -12,10 +12,10 @@ export function TableRowsPerPage({
   label,
 }: Props) {
   return (
-    <label className="items-center text-default-400 text-small">
+    <label className="items-center text-default-400 dark:text-default-500 text-small">
       <span>{label ?? 'Rows per page:'}</span>
       <select
-        className="bg-transparent outline-none text-default-400 text-small"
+        className="bg-transparent outline-none text-default-400 dark:text-default-500 text-small"
         value={rowsPerPage}
         onChange={onRowsPerPageChange}
       >

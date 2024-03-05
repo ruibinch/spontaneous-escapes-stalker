@@ -1,3 +1,6 @@
+import { cn } from '@nextui-org/react';
+import { CommonStyles } from './styles';
+
 interface Props {
   breadcrumbs?: React.ReactNode;
   title: string;
@@ -12,7 +15,12 @@ export function PageHeader({
   rightComponent,
 }: Props) {
   return (
-    <div className="grid grid-cols-4 bg-neutral-50 p-6 border-b-2 gap-4 items-end">
+    <div
+      className={cn(
+        CommonStyles.Border,
+        'grid grid-cols-4 bg-neutral-50 dark:bg-neutral-800 p-6 border-b-2 gap-4 items-end',
+      )}
+    >
       <div className="col-span-3 gap-3">
         {breadcrumbs}
 

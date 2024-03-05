@@ -11,7 +11,6 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
-import { useState } from 'react';
 import { AlertInfo } from '../common/alert-info';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
@@ -32,8 +31,6 @@ ChartJS.register(
 );
 
 export function AnalysisContent() {
-  const [showSilkairRoutes, setShowSilkairRoutes] = useState(true);
-
   const explanatoryNotes = [
     'The SIA/SilkAir route network dataset time range spans from Nov 2017 to Feb 2024.',
     'SilkAir ceased operations in end-2021; subsequently its flights were split between SIA and Scoot.',

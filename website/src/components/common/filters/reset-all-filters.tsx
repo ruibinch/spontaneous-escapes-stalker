@@ -1,6 +1,7 @@
-import { Button } from '@nextui-org/react';
+import { Button, cn } from '@nextui-org/react';
 import { RefreshIcon } from '../../icons/refresh';
 import { TooltipCustom } from '../tooltip-custom';
+import { CommonStyles } from '../styles';
 
 export function ResetAllFiltersButton({
   resetAllFilters,
@@ -10,7 +11,10 @@ export function ResetAllFiltersButton({
   return (
     <TooltipCustom content="Reset all filters" placement="bottom">
       <div
-        className="border-1 text-lg bg-neutral-100 rounded-md p-1 cursor-pointer"
+        className={cn(
+          CommonStyles.Border,
+          'border-1 text-lg bg-neutral-100 dark:bg-neutral-600 rounded-md p-1 cursor-pointer',
+        )}
         onClick={resetAllFilters}
       >
         <Button
