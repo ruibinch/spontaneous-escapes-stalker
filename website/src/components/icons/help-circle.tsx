@@ -1,9 +1,9 @@
 import React from 'react';
 import { SvgIconProps } from './types';
-import { useTheme } from 'next-themes';
+import { useTheme } from '../common/use-theme';
 
 export const HelpCircleIcon = (props: SvgIconProps) => {
-  const { resolvedTheme } = useTheme();
+  const { isDarkTheme } = useTheme();
 
   return (
     <svg
@@ -17,7 +17,7 @@ export const HelpCircleIcon = (props: SvgIconProps) => {
       strokeLinecap="round"
       strokeLinejoin="round"
       color={
-        resolvedTheme === 'dark'
+        isDarkTheme
           ? '#d4d4d4' // neutral-300
           : '#404040' // neutral-700
       }

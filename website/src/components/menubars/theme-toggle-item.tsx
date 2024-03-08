@@ -1,15 +1,15 @@
 import { Button, cn } from '@nextui-org/react';
-import { useTheme } from 'next-themes';
 import { TooltipCustom } from '../common/tooltip-custom';
 import { MoonIcon } from '../icons/moon';
 import { SunIcon } from '../icons/sun';
 import { BarStyles } from './bar.styles';
+import { useTheme } from '../common/use-theme';
 
 export function ThemeToggleItem() {
-  const { setTheme, resolvedTheme } = useTheme();
+  const { setTheme, isDarkTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+    setTheme(isDarkTheme ? 'light' : 'dark');
   };
 
   return (
@@ -22,7 +22,7 @@ export function ThemeToggleItem() {
         onPress={toggleTheme}
         className={cn('w-full', BarStyles.BarItem({ isActive: false }))}
       >
-        {resolvedTheme === 'light' ? <SunIcon /> : <MoonIcon />}
+        {isDarkTheme ? <MoonIcon /> : <SunIcon />}
       </Button>
     </TooltipCustom>
   );

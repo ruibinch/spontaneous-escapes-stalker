@@ -1,9 +1,9 @@
 import { cn } from '@nextui-org/react';
 import { InfoIcon } from '../icons/info';
-import { useTheme } from 'next-themes';
+import { useTheme } from './use-theme';
 
 export function AlertInfo({ content }: { content: string | string[] }) {
-  const { resolvedTheme } = useTheme();
+  const { isDarkTheme } = useTheme();
   const contentToRender = Array.isArray(content) ? content : [content];
 
   return (
@@ -16,10 +16,9 @@ export function AlertInfo({ content }: { content: string | string[] }) {
     >
       <InfoIcon
         customprops={{
-          backgroundColor:
-            resolvedTheme === 'dark'
-              ? '#06b6d4' // cyan-500
-              : '#2563eb', // blue-600
+          backgroundColor: isDarkTheme
+            ? '#06b6d4' // cyan-500
+            : '#2563eb', // blue-600
           iconColor: '#fff',
         }}
       />
