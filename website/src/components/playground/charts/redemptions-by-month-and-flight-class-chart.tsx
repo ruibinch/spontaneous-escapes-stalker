@@ -2,14 +2,15 @@ import {
   monthNumToShortNameMap,
   monthShortNameToNameMap,
 } from '@/common/months-map';
+import { roundToDp } from '@/common/round-to-dp';
+import { Toggle, ToggleProps } from '@/components/common/toggle';
+import { useTheme } from '@/components/common/use-theme';
 import { RouteAnalysisEntry } from '@/index';
+import { useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { flightClassColors } from '../../common/colors';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
-import { useState } from 'react';
-import { Toggle, ToggleProps } from '@/components/common/toggle';
-import { roundToDp } from '@/common/round-to-dp';
+import { flightClassColors } from '../../common/colors';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -24,6 +25,8 @@ const displayToggleOptions: ToggleProps<AverageOrTotal>['options'] = [
 export function RedemptionsByMonthAndFlightClassChart({
   routeAnalysisListFiltered,
 }: Props) {
+  const { isDarkTheme } = useTheme();
+
   // TODO: implement this logic
   const [displayAs, setDisplayAs] = useState<AverageOrTotal>('average');
 
@@ -143,6 +146,7 @@ export function RedemptionsByMonthAndFlightClassChart({
       chart={
         <Bar
           options={makeChartOptions({
+            isDarkTheme,
             axesStacked: { x: true, y: true },
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },

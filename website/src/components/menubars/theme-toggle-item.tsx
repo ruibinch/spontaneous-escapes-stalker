@@ -1,9 +1,9 @@
 import { Button, cn } from '@nextui-org/react';
 import { TooltipCustom } from '../common/tooltip-custom';
+import { useTheme } from '../common/use-theme';
 import { MoonIcon } from '../icons/moon';
 import { SunIcon } from '../icons/sun';
 import { BarStyles } from './bar.styles';
-import { useTheme } from '../common/use-theme';
 
 export function ThemeToggleItem() {
   const { setTheme, isDarkTheme } = useTheme();

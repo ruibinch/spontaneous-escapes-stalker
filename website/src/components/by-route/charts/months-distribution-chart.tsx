@@ -2,17 +2,20 @@ import {
   monthNumToShortNameMap,
   monthShortNameToNameMap,
 } from '@/common/months-map';
-import { RouteDetailDatum } from '../helpers/make-route-details-list';
-import { flightClassColors } from '@/components/common/colors';
-import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
-import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '@/components/common/chart/chart-options';
+import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
+import { flightClassColors } from '@/components/common/colors';
+import { useTheme } from '@/components/common/use-theme';
+import { Bar } from 'react-chartjs-2';
+import { RouteDetailDatum } from '../helpers/make-route-details-list';
 
 export function MonthsDistributionChart({
   detailsListFiltered,
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
+  const { isDarkTheme } = useTheme();
+
   const monthToFlightClassToCountDict: Record<
     string,
     Record<string, number>
@@ -70,6 +73,7 @@ export function MonthsDistributionChart({
       chart={
         <Bar
           options={makeChartOptions({
+            isDarkTheme,
             axesStacked: { x: true, y: true },
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },

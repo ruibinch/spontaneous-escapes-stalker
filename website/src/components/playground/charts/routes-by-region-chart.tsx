@@ -1,3 +1,4 @@
+import { useTheme } from '@/components/common/use-theme';
 import { RouteAnalysisEntry } from '@/index';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
@@ -19,6 +20,7 @@ interface Props {
 }
 
 export function RoutesByRegionChart({ routeAnalysisListFiltered }: Props) {
+  const { isDarkTheme } = useTheme();
   const regionToCountDict: Record<string, number> = {
     [Region.SOUTH_EAST_ASIA]: 0,
     [Region.NORTH_ASIA]: 0,
@@ -63,6 +65,7 @@ export function RoutesByRegionChart({ routeAnalysisListFiltered }: Props) {
       chart={
         <Bar
           options={makeChartOptions({
+            isDarkTheme,
             axesStacked: { x: true },
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },

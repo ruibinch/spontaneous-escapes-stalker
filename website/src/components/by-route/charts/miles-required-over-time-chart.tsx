@@ -4,12 +4,15 @@ import { lineOnHoverPlugin } from '@/components/common/chart/line-on-hover-plugi
 import { flightClassColors } from '@/components/common/colors';
 import { Line } from 'react-chartjs-2';
 import { RouteDetailDatum } from '../helpers/make-route-details-list';
+import { useTheme } from '@/components/common/use-theme';
 
 export function MilesRequiredOverTimeChart({
   detailsListFiltered,
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
+  const { isDarkTheme } = useTheme();
+
   const flightClassToMonthToMilesRequiredDict: Record<
     string,
     Record<string, string | number>
@@ -78,6 +81,7 @@ export function MilesRequiredOverTimeChart({
       chart={
         <Line
           options={makeChartOptions({
+            isDarkTheme,
             axesBorder: { x: true },
             axesMinValue: { y: 0 },
             axesTicks: { x: true, y: false },

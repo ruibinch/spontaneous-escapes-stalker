@@ -49,6 +49,7 @@ function FeedbackForm({
 }) {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  console.log('disabled:', !email || !message);
 
   const onSubmit = () => {
     handleSubmit({ email, message });
@@ -97,6 +98,7 @@ function FeedbackForm({
         radius="sm"
         color="primary"
         className="mt-8"
+        isDisabled={!email || !message}
         onPress={onSubmit}
       >
         Submit

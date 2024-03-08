@@ -1,3 +1,4 @@
+import { useTheme } from '@/components/common/use-theme';
 import { Month, RouteAnalysisEntry } from '@/index';
 import { Line } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
@@ -12,6 +13,8 @@ interface Props {
 export function RedemptionsByFlightClassPerMonthChart({
   routeAnalysisListFiltered,
 }: Props) {
+  const { isDarkTheme } = useTheme();
+
   const monthToFlightClassToCountDict: Record<
     Month,
     Record<string, number>
@@ -76,6 +79,7 @@ export function RedemptionsByFlightClassPerMonthChart({
       chart={
         <Line
           options={makeChartOptions({
+            isDarkTheme,
             axesTicks: { x: true, y: false },
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },

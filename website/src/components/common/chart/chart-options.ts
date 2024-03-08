@@ -34,8 +34,12 @@ interface ChartOptions {
 }
 
 export const makeChartOptions = <T extends ChartType>(
-  inputOptions: ChartOptions,
+  inputOptions: ChartOptions & {
+    isDarkTheme: boolean;
+  },
 ): ChartJsOptions<T> => {
+  const { isDarkTheme } = inputOptions;
+
   const options: ChartOptions = {
     showLegend: inputOptions.showLegend ?? false,
     axesStacked: {
@@ -93,6 +97,13 @@ export const makeChartOptions = <T extends ChartType>(
     tooltipLabelSuffix: inputOptions.tooltipLabelSuffix ?? '',
   };
 
+  const tickAndBorderColor = isDarkTheme
+    ? '#d4d4d4' // neutral-300
+    : 'black';
+  const gridColor = isDarkTheme
+    ? '#404040' // neutral-700
+    : '#e5e5e5'; // neutral-200
+
   // @ts-expect-error hard-to-debug type error
   return {
     plugins: {
@@ -120,17 +131,17 @@ export const makeChartOptions = <T extends ChartType>(
           display: options.axesGrid?.x,
           drawTicks: options.axesTicks?.x,
           drawOnChartArea: options.axesTicksOnChartArea?.x,
-          tickColor: 'black',
+          tickColor: tickAndBorderColor,
           offset: false, // ticks to always be aligned with tick labels
         },
         border: {
           display: options.axesBorder?.x,
-          color: 'black',
+          color: tickAndBorderColor,
         },
         ticks: {
           display: options.axesTickLabels?.x,
           font: commonFontProps,
-          color: 'black',
+          color: tickAndBorderColor,
           maxTicksLimit: options.axesTickMaxLimit?.x,
           labelOffset: options.axesTickLabelOffset?.x,
           padding: options.axesTickPadding?.x,
@@ -151,6 +162,7 @@ export const makeChartOptions = <T extends ChartType>(
           display: options.axesGrid?.y,
           drawTicks: options.axesTicks?.y,
           drawOnChartArea: options.axesTicksOnChartArea?.y,
+          color: gridColor,
         },
         border: {
           display: options.axesBorder?.y,
@@ -158,7 +170,7 @@ export const makeChartOptions = <T extends ChartType>(
         ticks: {
           display: options.axesTickLabels?.y,
           font: commonFontProps,
-          color: 'black',
+          color: tickAndBorderColor,
           maxTicksLimit: options.axesTickMaxLimit?.y,
           labelOffset: options.axesTickLabelOffset?.y,
           padding: options.axesTickPadding?.y,

@@ -3,12 +3,14 @@ import { Line } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { useTheme } from '@/components/common/use-theme';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
 }
 
 export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
+  const { isDarkTheme } = useTheme();
   const monthToCountDict: Record<string, number> = {};
 
   routeAnalysisListFiltered.forEach(({ details }) => {
@@ -42,6 +44,7 @@ export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
       chart={
         <Line
           options={makeChartOptions({
+            isDarkTheme,
             axesTicks: { x: true, y: false },
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },

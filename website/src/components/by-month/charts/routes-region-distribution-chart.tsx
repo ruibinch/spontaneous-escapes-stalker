@@ -4,6 +4,7 @@ import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { useTheme } from '@/components/common/use-theme';
 
 enum Region {
   SOUTH_EAST_ASIA = 'South East Asia',
@@ -22,6 +23,8 @@ export function RoutesRegionDistributionChart({
   redemptionsFiltered: RedemptionEntry[];
   isFilterActive: boolean;
 }) {
+  const { isDarkTheme } = useTheme();
+
   const regionDistributionInMonth: Record<string, number> = {
     [Region.SOUTH_EAST_ASIA]: 0,
     [Region.NORTH_ASIA]: 0,
@@ -76,6 +79,7 @@ export function RoutesRegionDistributionChart({
       chart={
         <Bar
           options={makeChartOptions({
+            isDarkTheme,
             axesStacked: { x: true },
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },

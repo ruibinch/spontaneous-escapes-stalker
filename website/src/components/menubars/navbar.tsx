@@ -24,7 +24,7 @@ export const NavbarWrapper = () => {
       }}
     >
       <NavbarContent justify="start">
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           {startBarItems.map((item) => (
             <NavbarItem
               key={item.title}
@@ -40,7 +40,7 @@ export const NavbarWrapper = () => {
         justify="end"
         className="w-fit data-[justify=end]:flex-grow-0"
       >
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-1 items-center">
           {endBarItems.map((item) => (
             <NavbarItem
               key={item.title}

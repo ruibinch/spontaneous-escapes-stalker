@@ -8,8 +8,10 @@ import { ChartWrapper } from '../common/chart/chart-wrapper';
 import { lineOnHoverPlugin } from '../common/chart/line-on-hover-plugin';
 import { getMonthsWithRouteNetworkData } from './helpers/get-months-with-route-network-data';
 import { useSilkairRoutesToggleContext } from './silkair-routes-toggle';
+import { useTheme } from '../common/use-theme';
 
 export function RedemptionsVsRouteNetworkCharts() {
+  const { isDarkTheme } = useTheme();
   const { showSilkairRoutes } = useSilkairRoutesToggleContext();
 
   const monthSummaryAnalysisList =
@@ -58,9 +60,9 @@ export function RedemptionsVsRouteNetworkCharts() {
       {
         label: 'SE redemptions',
         data: redemptionsCountList,
-        borderColor: '#6d28d9', // violet-700
+        borderColor: '#7c3aed', // violet-600
         borderWidth: 1,
-        backgroundColor: '#6d28d9', // violet-700
+        backgroundColor: '#7c3aed', // violet-600
         pointRadius: 1,
       },
     ],
@@ -73,8 +75,8 @@ export function RedemptionsVsRouteNetworkCharts() {
     datasets: [
       {
         data: redemptionsCountPctOfRouteNetworkList,
-        backgroundColor: '#4c0519', // rose-950
-        borderColor: '#4c0519', // rose-950
+        backgroundColor: '#881337', // rose-900
+        borderColor: '#881337', // rose-900
         borderWidth: 1,
       },
     ],
@@ -87,6 +89,7 @@ export function RedemptionsVsRouteNetworkCharts() {
         chart={
           <Line
             options={makeChartOptions({
+              isDarkTheme,
               axesTicks: { x: true, y: false },
               axesBorder: { x: true },
               axesTicksOnChartArea: { x: false, y: true },
@@ -104,6 +107,7 @@ export function RedemptionsVsRouteNetworkCharts() {
         chart={
           <Bar
             options={makeChartOptions({
+              isDarkTheme,
               axesTicks: { x: true, y: false },
               axesBorder: { x: true },
               axesTicksOnChartArea: { x: false, y: true },

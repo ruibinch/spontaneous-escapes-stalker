@@ -1,3 +1,4 @@
+import { useTheme } from '@/components/common/use-theme';
 import { RouteAnalysisEntry } from '@/index';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
@@ -11,6 +12,8 @@ interface Props {
 export function RedemptionsByRegionAndFlightClassChart({
   routeAnalysisListFiltered,
 }: Props) {
+  const { isDarkTheme } = useTheme();
+
   const regionToFlightClassToCountDict: Record<
     string,
     Record<string, number>
@@ -71,6 +74,7 @@ export function RedemptionsByRegionAndFlightClassChart({
       chart={
         <Bar
           options={makeChartOptions({
+            isDarkTheme,
             axesStacked: { x: true, y: true },
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },

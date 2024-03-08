@@ -11,6 +11,7 @@ import { Pie } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { CommonStyles } from '../../common/styles';
+import { useTheme } from '@/components/common/use-theme';
 
 type FlightClassToCountDict = Record<string, number>;
 
@@ -21,6 +22,8 @@ export function FlightClassDistributionChart({
   redemptionsFiltered: RedemptionEntry[];
   isFilterActive: boolean;
 }) {
+  const { isDarkTheme } = useTheme();
+
   const flightClassDistributionInMonth = redemptionsFiltered.reduce(
     (_flightClassDistributionInMonth: FlightClassToCountDict, redemption) => {
       switch (redemption.flightClass) {
@@ -79,6 +82,7 @@ export function FlightClassDistributionChart({
         <Pie
           data={data}
           options={makeChartOptions({
+            isDarkTheme,
             axesTickLabels: { x: false, y: false },
           })}
         />
