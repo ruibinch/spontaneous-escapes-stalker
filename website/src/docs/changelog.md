@@ -1,3 +1,7 @@
+# 2.2.0 - 2024-03-08
+
+- Add dark theme
+
 # 2.1.2 - 2024-03-04
 
 - Add Average/Total toggle to "Redemptions by month and flight class" chart
