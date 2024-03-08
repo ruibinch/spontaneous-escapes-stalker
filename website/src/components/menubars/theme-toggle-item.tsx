@@ -21,7 +21,6 @@ export function ThemeToggleItem() {
         isIconOnly
         onPress={toggleTheme}
         className={cn('w-full', BarStyles.BarItem({ isActive: false }))}
-        // className="w-full text-neutral-300/75 hover:text-white hover:dark:bg-neutral-300/25"
       >
         {resolvedTheme === 'light' ? <SunIcon /> : <MoonIcon />}
       </Button>

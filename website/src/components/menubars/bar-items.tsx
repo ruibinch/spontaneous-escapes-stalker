@@ -1,3 +1,4 @@
+import { ENABLE_COFFEE } from '@/common/env';
 import { BookOpenIcon } from '../icons/book-open';
 import { CalendarIcon } from '../icons/calendar';
 import { CoffeeIcon } from '../icons/coffee';
@@ -6,6 +7,8 @@ import { HelpCircleIcon } from '../icons/help-circle';
 import { MapIcon } from '../icons/map';
 import { MessageCircleIcon } from '../icons/message-circle';
 import { PieChartIcon } from '../icons/pie-chart';
+import { CoffeeItem } from './coffee-item';
+import { ThemeToggleItem } from './theme-toggle-item';
 
 export interface BarItemProps {
   title: string;
@@ -54,3 +57,8 @@ export const endBarItems = [
     href: '/feedback',
   },
 ];
+
+export const additionalEndBarItems = [
+  { key: 'coffee', item: <CoffeeItem />, disabled: !ENABLE_COFFEE },
+  { key: 'themeToggle', item: <ThemeToggleItem /> },
+].filter((item) => !item.disabled);

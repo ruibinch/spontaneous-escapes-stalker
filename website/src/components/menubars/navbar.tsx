@@ -1,6 +1,6 @@
 import { Navbar, NavbarContent } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
-import { endBarItems, startBarItems } from './bar-items';
+import { additionalEndBarItems, endBarItems, startBarItems } from './bar-items';
 import { NavbarItem } from './navbar-item';
 import { CoffeeItem } from './coffee-item';
 import { ENABLE_COFFEE } from '@/common/env';
@@ -51,7 +51,9 @@ export const NavbarWrapper = () => {
             />
           ))}
 
-          {ENABLE_COFFEE && <CoffeeItem />}
+          {additionalEndBarItems.map((item) => (
+            <div key={item.key}>{item.item}</div>
+          ))}
         </div>
       </NavbarContent>
     </Navbar>
