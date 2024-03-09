@@ -1,13 +1,26 @@
-import axios from 'axios';
+import axios, { isAxiosError } from 'axios';
 import { NextRequest } from 'next/server';
 
-const FEEDBACK_URL =
-  'https://htfvnmlw0h.execute-api.ap-southeast-1.amazonaws.com/feedback';
+const { APIGW_ID, APIGW_KEY } = process.env;
+
+const FEEDBACK_URL = `https://${APIGW_ID}.execute-api.ap-southeast-1.amazonaws.com/dev/feedback`;
 
 export async function POST(req: NextRequest) {
   const feedback = (await req.json()) as { email: string; message: string };
-  const response = await axios.post(FEEDBACK_URL, feedback);
-  return Response.json({
-    statusCode: response.status,
-  });
+
+  try {
+    const response = await axios.post(FEEDBACK_URL, feedback, {
+      headers: {
+        'X-API-KEY': APIGW_KEY,
+      },
+    });
+    return Response.json({
+      statusCode: response.status,
+    });
+  } catch (err) {
+    const statusCode = isAxiosError(err) ? err.response?.status : 500;
+    return Response.json({
+      statusCode,
+    });
+  }
 }

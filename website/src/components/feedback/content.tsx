@@ -21,10 +21,11 @@ export function FeedbackContent() {
     setSubmitted(true); // avoid double-pressing of Submit button
 
     const response = await axios.post('/api/feedback', { email, message });
-    if (response.status === 200) {
+    if (response.data.statusCode === 204) {
       setFeedbackSent(true);
     } else {
       setError(true);
+      setSubmitted(false);
     }
   };
 
