@@ -14,9 +14,12 @@ interface FeedbackFormFields {
 
 export function FeedbackContent() {
   const [isFeedbackSent, setFeedbackSent] = useState(false);
+  const [isSubmitted, setSubmitted] = useState(false);
   const [isError, setError] = useState(false);
 
   const handleSubmit = async ({ email, message }: FeedbackFormFields) => {
+    setSubmitted(true); // avoid double-pressing of Submit button
+
     const response = await axios.post('/api/feedback', { email, message });
     if (response.status === 200) {
       setFeedbackSent(true);
@@ -33,7 +36,11 @@ export function FeedbackContent() {
         {isFeedbackSent ? (
           <AlertInfo content="Thanks for your feedback!" />
         ) : (
-          <FeedbackForm isError={isError} handleSubmit={handleSubmit} />
+          <FeedbackForm
+            isSubmitted={isSubmitted}
+            isError={isError}
+            handleSubmit={handleSubmit}
+          />
         )}
       </div>
     </div>
@@ -42,14 +49,15 @@ export function FeedbackContent() {
 
 function FeedbackForm({
   isError,
+  isSubmitted,
   handleSubmit,
 }: {
   isError: boolean;
+  isSubmitted: boolean;
   handleSubmit: (fields: FeedbackFormFields) => void;
 }) {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  console.log('disabled:', !email || !message);
 
   const onSubmit = () => {
     handleSubmit({ email, message });
@@ -98,7 +106,7 @@ function FeedbackForm({
         radius="sm"
         color="primary"
         className="mt-8"
-        isDisabled={!email || !message}
+        isDisabled={!email || !message || isSubmitted}
         onPress={onSubmit}
       >
         Submit
