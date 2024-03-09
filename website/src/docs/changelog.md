@@ -1,3 +1,7 @@
+# 2.2.1 - 2024-03-09
+
+- Add API protections
+
 # 2.2.0 - 2024-03-08
 
 - Add dark theme
