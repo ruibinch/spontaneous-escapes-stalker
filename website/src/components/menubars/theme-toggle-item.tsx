@@ -3,7 +3,6 @@ import { TooltipCustom } from '../common/tooltip-custom';
 import { useTheme } from '../common/use-theme';
 import { MoonIcon } from '../icons/moon';
 import { SunIcon } from '../icons/sun';
-import { BarStyles } from './bar.styles';
 
 export function ThemeToggleItem() {
   const { setTheme, isDarkTheme } = useTheme();
@@ -20,7 +19,10 @@ export function ThemeToggleItem() {
         variant="light"
         isIconOnly
         onPress={toggleTheme}
-        className={cn('w-full', BarStyles.BarItem({ isActive: false }))}
+        className={cn(
+          'w-full',
+          'text-neutral-300/75 lg:hover:bg-neutral-300/25 lg:hover:dark:bg-neutral-300/25 lg:hover:text-white', // BarStyles.Active without the hover: classes in navbar display
+        )}
       >
         {isDarkTheme ? <MoonIcon /> : <SunIcon />}
       </Button>
