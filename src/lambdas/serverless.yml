@@ -12,11 +12,19 @@ provider:
   environment:
     KFSEANALYSIS_BOT_TOKEN: ${env:KFSEANALYSIS_BOT_TOKEN}
     TELEGRAM_CHAT_ID: ${env:TELEGRAM_CHAT_ID}
+  apiGateway:
+    apiKeys:
+      - kfseanalysis-feedback
+    usagePlan:
+      throttle:
+        burstLimit: 4
+        rateLimit: 2
 
 functions:
   feedback:
     handler: feedback.handler
     events:
-      - httpApi:
+      - http:
           path: /feedback
           method: post
+          private: true
