@@ -87,7 +87,6 @@ export async function scrape() {
 
   if (doesRedemptionPeriodExist && newRedemptions.length === 0) {
     // no changes, return early
-    // TODO: only for debugging, to remove
     await sendMessageToChannels({
       message: escapeCharacters(`${datePrefix()} 🚫 No changes`),
       shouldSendToProdChannel: false,
@@ -118,7 +117,7 @@ export async function scrape() {
     travelPeriod: redemptionTravelPeriod,
   });
 
-  // data has changed, so we save the new files
+  // update data files
   saveDataFiles({
     html: isNewHtml ? html : undefined,
     redemptions,

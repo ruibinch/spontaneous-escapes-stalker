@@ -38,6 +38,14 @@ export async function getDiffFilenames({ staged }: { staged?: boolean }) {
   }
 }
 
+export async function gitPullWithRebase() {
+  try {
+    await execPromise(`git pull --rebase`);
+  } catch (e) {
+    throw new Error('Failed to git pull');
+  }
+}
+
 export async function gitAdd(pathspec?: string) {
   try {
     await execPromise(`git add ${pathspec ?? '--all'}`);

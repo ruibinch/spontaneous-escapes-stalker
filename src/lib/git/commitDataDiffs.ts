@@ -1,4 +1,11 @@
-import { checkHasDiffs, getDiffFilenames, gitAdd, gitCommit, gitPush } from '.';
+import {
+  checkHasDiffs,
+  getDiffFilenames,
+  gitAdd,
+  gitCommit,
+  gitPullWithRebase,
+  gitPush,
+} from '.';
 
 const DATA_FOLDER_PATHSPEC = 'data';
 const GIT_REPOSITORY_URL =
@@ -33,6 +40,9 @@ export async function commitDataDiffs() {
       email: GIT_COMMITTER_NAME,
     },
   });
+
+  // pull changes from remote before pushing
+  await gitPullWithRebase();
 
   await gitPush({ repository: GIT_REPOSITORY_URL });
 }
