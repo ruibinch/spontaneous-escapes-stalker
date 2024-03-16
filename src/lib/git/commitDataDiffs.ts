@@ -8,22 +8,27 @@ import {
 } from '.';
 
 const DATA_FOLDER_PATHSPEC = 'data';
+const WEBSITE_STATIC_FOLDER_PATHSPEC = 'website/src/static';
 const GIT_REPOSITORY_URL =
   'git@github.com-spontaneous-escapes-stalker:ruibinch/spontaneous-escapes-stalker.git';
 const GIT_COMMITTER_NAME = 'spontaneous-escapes-stalker-deploy-token';
 
 /**
- * Checks for any diffs in the /data folder.
+ * Checks for any diffs in the `data` and `website/src/static` folders.
  * If so, commit and push them using the deploy token.
  */
 export async function commitDataDiffs() {
-  const hasDiffs = await checkHasDiffs(DATA_FOLDER_PATHSPEC);
-  if (!hasDiffs) {
-    console.log('No diffs in data folder to commit');
+  const hasDataDiffs = await checkHasDiffs(DATA_FOLDER_PATHSPEC);
+  const hasWebsiteStaticDiffs = await checkHasDiffs(
+    WEBSITE_STATIC_FOLDER_PATHSPEC,
+  );
+  if (!hasDataDiffs && !hasWebsiteStaticDiffs) {
+    console.log('No diffs in data or website/src/static folders to commit');
     return;
   }
 
   await gitAdd(DATA_FOLDER_PATHSPEC);
+  await gitAdd(WEBSITE_STATIC_FOLDER_PATHSPEC);
 
   const stagedFilenames = await getDiffFilenames({ staged: true });
   const yearMonth = stagedFilenames.match(/\d{6}/);

@@ -19,6 +19,7 @@ import {
   sendRedemptionsInfoNotification,
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
+import { updateWebsiteDataFiles } from './scripts/updateWebsiteDataFiles';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
@@ -26,7 +27,6 @@ const SPONTANEOUS_ESCAPES_URL =
 // env var configs
 process.env.TZ = 'UTC';
 const shouldUseAws = !!process.env['USE_AWS'];
-const shouldRunPostAnalysis = !!process.env['RUN_POST_ANALYSIS'];
 const htmlFilepath = process.env['HTML_FILEPATH'];
 const isBasicRun = !!process.env['BASIC_RUN'];
 
@@ -94,6 +94,15 @@ export async function scrape() {
     return;
   }
 
+  /**
+   * If new redemption period exists,
+   * - send Telegram notifications
+   * - save data files
+   * - re-run postprocessing and analysis scripts
+   * - update website data files with new JSONs
+   * - commit changes and push to git repo
+   * - TODO: redeploy website to incorporate data files changes (figure out setting up Vercel on RPI)
+   */
   if (!doesRedemptionPeriodExist) {
     log(`Redemption period "${redemptionEndDate}" does not exist`);
     if (shouldUseAws) {
@@ -111,25 +120,21 @@ export async function scrape() {
   if (shouldUseAws) {
     await Redemption.upload(newRedemptions);
   }
+
   await sendRedemptionsInfoNotification({
     redemptions: newRedemptions,
     redemptionEndDate,
     travelPeriod: redemptionTravelPeriod,
   });
 
-  // update data files
   saveDataFiles({
     html: isNewHtml ? html : undefined,
     redemptions,
     redemptionTravelPeriod,
   });
-
-  if (shouldRunPostAnalysis) {
-    postprocessing();
-    analyse();
-  }
-
-  // commit new HTML/JSON and updated analysis files
+  postprocessing();
+  analyse();
+  await updateWebsiteDataFiles();
   await commitDataDiffs();
 }
 
