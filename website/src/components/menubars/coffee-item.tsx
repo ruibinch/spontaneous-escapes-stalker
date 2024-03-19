@@ -21,7 +21,8 @@ export function CoffeeItem() {
         radius="sm"
         variant="light"
         isIconOnly
-        onPress={onOpen}
+        // onPress prop doesn't work on mobile
+        onClick={onOpen}
         className="w-full text-neutral-300/75 hover:text-white"
       >
         <CoffeeIcon />

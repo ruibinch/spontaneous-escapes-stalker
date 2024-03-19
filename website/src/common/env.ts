@@ -1,1 +1,1 @@
-export const ENABLE_COFFEE = false;
+export const ENABLE_COFFEE = true;
