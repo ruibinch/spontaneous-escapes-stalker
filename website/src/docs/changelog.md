@@ -1,19 +1,24 @@
+# 2.2.2 - 2024-03-19
+
+- Added Covid separator line on analysis page charts for better visualisation
+- Added buymeacoffee link
+
 # 2.2.1 - 2024-03-09
 
-- Add API protections
+- Added API protections
 
 # 2.2.0 - 2024-03-08
 
-- Add dark theme
+- Added dark theme
 
 # 2.1.2 - 2024-03-04
 
-- Add Average/Total toggle to "Redemptions by month and flight class" chart
-- Add "Show routes as separate/combined" toggle to playground details table
+- Added Average/Total toggle to "Redemptions by month and flight class" chart
+- Added "Show routes as separate/combined" toggle to playground details table
 
 # 2.1.1 - 2024-02-29
 
-- Update count of playground details table to be based on number of redemption months without taking flight class into account
+- Updated count of playground details table to be based on number of redemption months without taking flight class into account
 
 # 2.1.0 - 2024-02-28
 
