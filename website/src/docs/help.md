@@ -16,7 +16,7 @@ Each individual redemption is parsed into a JSON structure to facilitate further
   "blackoutPeriod": [
     {
       "from": "2022-05-26",
-      "to": "2022-05-06"
+      "to": "2022-05-26"
     }
   ],
   "region": "South East Asia",

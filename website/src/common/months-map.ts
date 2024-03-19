@@ -1,3 +1,5 @@
+export const LAST_PRE_COVID_MONTH = '202003';
+
 export const monthNameToNumMap: Record<string, string> = {
   January: '01',
   February: '02',

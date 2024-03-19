@@ -31,6 +31,9 @@ interface ChartOptions {
     drawOnXAxis: boolean;
     drawOnYAxis: boolean;
   }>;
+  covidLineOptions?: {
+    lineIndex: number | undefined;
+  };
 }
 
 export const makeChartOptions = <T extends ChartType>(
@@ -123,6 +126,12 @@ export const makeChartOptions = <T extends ChartType>(
         intersect: false,
       },
       lineOnHover: inputOptions.lineOnHoverPluginOptions,
+      covidLine: {
+        ...inputOptions.covidLineOptions,
+        color: isDarkTheme
+          ? '#9ca3af' // gray-400
+          : '#6b7280', // gray-500
+      },
     },
     scales: {
       x: {

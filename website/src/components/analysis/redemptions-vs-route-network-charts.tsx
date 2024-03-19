@@ -1,14 +1,15 @@
+import { LAST_PRE_COVID_MONTH } from '@/common/months-map';
 import { roundToDp } from '@/common/round-to-dp';
 import { MonthSummaryAnalysisEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
-import { useContext } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
 import { makeChartOptions } from '../common/chart/chart-options';
 import { ChartWrapper } from '../common/chart/chart-wrapper';
+import { covidLinePlugin } from '../common/chart/covid-line-plugin';
 import { lineOnHoverPlugin } from '../common/chart/line-on-hover-plugin';
+import { useTheme } from '../common/use-theme';
 import { getMonthsWithRouteNetworkData } from './helpers/get-months-with-route-network-data';
 import { useSilkairRoutesToggleContext } from './silkair-routes-toggle';
-import { useTheme } from '../common/use-theme';
 
 export function RedemptionsVsRouteNetworkCharts() {
   const { isDarkTheme } = useTheme();
@@ -17,6 +18,12 @@ export function RedemptionsVsRouteNetworkCharts() {
   const monthSummaryAnalysisList =
     monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
   const monthsWithRouteNetworkData = getMonthsWithRouteNetworkData();
+  const lastPreCovidMonthIdx = (() => {
+    const _lastPreCovidMonthIdx = Array.from(
+      monthsWithRouteNetworkData,
+    ).findIndex((month) => month === LAST_PRE_COVID_MONTH);
+    return _lastPreCovidMonthIdx === -1 ? undefined : _lastPreCovidMonthIdx;
+  })();
 
   // only include up to the last month with route network size data
   const monthSummaryAnalysisListForMonthsWithRouteNetworkData =
@@ -95,8 +102,11 @@ export function RedemptionsVsRouteNetworkCharts() {
               axesTicksOnChartArea: { x: false, y: true },
               axesTickMaxLimit: { x: 10, y: 6 },
               showTooltipLabelIndicator: true,
+              covidLineOptions: {
+                lineIndex: lastPreCovidMonthIdx,
+              },
             })}
-            plugins={[lineOnHoverPlugin]}
+            plugins={[lineOnHoverPlugin, covidLinePlugin]}
             data={comparisonChartData}
           />
         }
@@ -116,10 +126,15 @@ export function RedemptionsVsRouteNetworkCharts() {
                 y: (value) => `${value}%`,
               },
               tooltipLabelSuffix: '%',
+              covidLineOptions: {
+                lineIndex: lastPreCovidMonthIdx,
+              },
             })}
+            plugins={[covidLinePlugin]}
             data={pctComparisonChartData}
           />
         }
+        tooltip="Number of routes available for SE redemptions / Total number of routes in the route network"
       />
     </div>
   );
