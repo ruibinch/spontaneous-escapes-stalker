@@ -1,12 +1,13 @@
 import fs from 'fs';
 import path from 'path';
-import { RedemptionJson } from './utils/types';
-import { cleanupCityFields } from './postprocessing/cleanupCityFields';
-import { standardiseRegionField } from './postprocessing/standardiseRegionField';
 import { appendAndRemoveFields } from './postprocessing/appendAndRemoveFields';
-import { removeRedemptionsMissingFromOagRoutesDataset } from './postprocessing/removeRedemptionsMissingFromOagRoutesDataset';
-import { formatFlightNosField } from './postprocessing/formatFlightNosField';
+import { cleanupCityFields } from './postprocessing/cleanupCityFields';
 import { combineRedemptionsForSameRoute } from './postprocessing/combineRedemptionsForSameRoute';
+import { formatFlightNosField } from './postprocessing/formatFlightNosField';
+import { mergeRedemptionsWithBaseSet } from './postprocessing/mergeRedemptionsWithBaseSet';
+import { removeRedemptionsMissingFromOagRoutesDataset } from './postprocessing/removeRedemptionsMissingFromOagRoutesDataset';
+import { standardiseRegionField } from './postprocessing/standardiseRegionField';
+import { RedemptionJson } from './utils/types';
 
 /**
  * Reads in the full list of redemptions.json files and generates a redemptions-postprocessed.json version.
@@ -16,6 +17,9 @@ export function postprocessing() {
     .readdirSync('data')
     .filter((filename) => filename.endsWith('redemptions.json'));
 
+  console.log(
+    '🧹 Postprocessing - merging redemptions with base set, if applicable',
+  );
   console.log('🧹 Postprocessing - cleaning up city fields');
   console.log('🧹 Postprocessing - combining redemptions for the same route');
   console.log('🧹 Postprocessing - standardising region fields');
@@ -27,8 +31,14 @@ export function postprocessing() {
 
   redemptionsFilenames.forEach((filename) => {
     const month = filename.split('-')[0];
-    const { redemptions } = getRedemptionsFilesForMonth(month);
+    const { redemptions: _redemptions, redemptionsBase } =
+      getRedemptionsFilesForMonth(month);
 
+    const redemptions = mergeRedemptionsWithBaseSet({
+      month,
+      redemptions: _redemptions,
+      redemptionsBase,
+    });
     const redemptionsPostprocessed1 = cleanupCityFields(redemptions);
     const redemptionsPostprocessed2 = combineRedemptionsForSameRoute(
       redemptionsPostprocessed1,
