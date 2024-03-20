@@ -8,6 +8,7 @@ import { mergeRedemptionsWithBaseSet } from './postprocessing/mergeRedemptionsWi
 import { removeRedemptionsMissingFromOagRoutesDataset } from './postprocessing/removeRedemptionsMissingFromOagRoutesDataset';
 import { standardiseRegionField } from './postprocessing/standardiseRegionField';
 import { RedemptionJson } from './utils/types';
+import { sortRedemptionsList } from './postprocessing/sortRedemptionsList';
 
 /**
  * Reads in the full list of redemptions.json files and generates a redemptions-postprocessed.json version.
@@ -28,6 +29,7 @@ export function postprocessing() {
   console.log(
     '🧹 Postprocessing - removing redemptions missing from OAG dataset\n',
   );
+  console.log('🧹 Postprocessing - sorting redemptions list\n');
 
   redemptionsFilenames.forEach((filename) => {
     const month = filename.split('-')[0];
@@ -58,11 +60,14 @@ export function postprocessing() {
         redemptions: redemptionsPostprocessed5,
         month,
       });
+    const redemptionsPostprocessed7 = sortRedemptionsList({
+      redemptions: redemptionsPostprocessed6,
+    });
 
     const redemptionPostprocessedFilename = `data/${month}-redemptions-postprocessed.json`;
     fs.writeFileSync(
       redemptionPostprocessedFilename,
-      JSON.stringify(redemptionsPostprocessed6, null, 2),
+      JSON.stringify(redemptionsPostprocessed7, null, 2),
     );
   });
 }
