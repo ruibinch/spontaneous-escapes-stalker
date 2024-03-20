@@ -59,6 +59,88 @@
     "redemptionMonth": "202212"
   },
   {
+    "origin": "Bali",
+    "originIata": "DPS",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ947"
+    ],
+    "milesRequired": 5950,
+    "blackoutPeriod": [
+      {
+        "from": "2022-12-23",
+        "to": "2022-12-31"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202212"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Ho Chi Minh City",
+    "destinationIata": "SGN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ184",
+      "SQ186"
+    ],
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-12-22",
+        "to": "2022-12-25"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202212"
+  },
+  {
+    "origin": "Ho Chi Minh City",
+    "originIata": "SGN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ177",
+      "SQ183",
+      "SQ185"
+    ],
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-12-25",
+        "to": "2022-12-31"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202212"
+  },
+  {
+    "origin": "Manila",
+    "originIata": "MNL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ915",
+      "SQ917",
+      "SQ919",
+      "SQ921"
+    ],
+    "milesRequired": 9450,
+    "blackoutPeriod": [
+      {
+        "from": "2022-12-23",
+        "to": "2022-12-31"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202212"
+  },
+  {
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Bali",
@@ -86,25 +168,6 @@
     "originIata": "DPS",
     "destination": "Singapore",
     "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ947"
-    ],
-    "milesRequired": 5950,
-    "blackoutPeriod": [
-      {
-        "from": "2022-12-23",
-        "to": "2022-12-31"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202212"
-  },
-  {
-    "origin": "Bali",
-    "originIata": "DPS",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNos": [
       "SQ947"
@@ -114,26 +177,6 @@
       {
         "from": "2022-12-25",
         "to": "2022-12-31"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202212"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Ho Chi Minh City",
-    "destinationIata": "SGN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ184",
-      "SQ186"
-    ],
-    "milesRequired": 9450,
-    "blackoutPeriod": [
-      {
-        "from": "2022-12-22",
-        "to": "2022-12-25"
       }
     ],
     "region": "South East Asia",
@@ -164,27 +207,6 @@
     "originIata": "SGN",
     "destination": "Singapore",
     "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ177",
-      "SQ183",
-      "SQ185"
-    ],
-    "milesRequired": 9450,
-    "blackoutPeriod": [
-      {
-        "from": "2022-12-25",
-        "to": "2022-12-31"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202212"
-  },
-  {
-    "origin": "Ho Chi Minh City",
-    "originIata": "SGN",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNos": [
       "SQ177",
@@ -195,28 +217,6 @@
     "blackoutPeriod": [
       {
         "from": "2022-12-28",
-        "to": "2022-12-31"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202212"
-  },
-  {
-    "origin": "Manila",
-    "originIata": "MNL",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ915",
-      "SQ917",
-      "SQ919",
-      "SQ921"
-    ],
-    "milesRequired": 9450,
-    "blackoutPeriod": [
-      {
-        "from": "2022-12-23",
         "to": "2022-12-31"
       }
     ],
@@ -255,6 +255,41 @@
       "SQ882"
     ],
     "milesRequired": 11550,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202212"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Hong Kong",
+    "destinationIata": "HKG",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ882",
+      "SQ894"
+    ],
+    "milesRequired": 18550,
+    "blackoutPeriod": [
+      {
+        "from": "2022-12-01",
+        "to": "2022-12-05"
+      }
+    ],
+    "region": "North Asia",
+    "redemptionMonth": "202212"
+  },
+  {
+    "origin": "Hong Kong",
+    "originIata": "HKG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ883",
+      "SQ895"
+    ],
+    "milesRequired": 18550,
     "blackoutPeriod": [],
     "region": "North Asia",
     "redemptionMonth": "202212"
@@ -311,25 +346,6 @@
     "redemptionMonth": "202212"
   },
   {
-    "origin": "Frankfurt",
-    "originIata": "FRA",
-    "destination": "New York",
-    "destinationIata": "NYC",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ26"
-    ],
-    "milesRequired": 17500,
-    "blackoutPeriod": [
-      {
-        "from": "2022-12-22",
-        "to": "2022-12-31"
-      }
-    ],
-    "region": "North America",
-    "redemptionMonth": "202212"
-  },
-  {
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Frankfurt",
@@ -351,55 +367,6 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "Hong Kong",
-    "destinationIata": "HKG",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ882",
-      "SQ894"
-    ],
-    "milesRequired": 18550,
-    "blackoutPeriod": [
-      {
-        "from": "2022-12-01",
-        "to": "2022-12-05"
-      }
-    ],
-    "region": "North Asia",
-    "redemptionMonth": "202212"
-  },
-  {
-    "origin": "Hong Kong",
-    "originIata": "HKG",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ883",
-      "SQ895"
-    ],
-    "milesRequired": 18550,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "202212"
-  },
-  {
-    "origin": "Frankfurt",
-    "originIata": "FRA",
-    "destination": "New York",
-    "destinationIata": "NYC",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ26"
-    ],
-    "milesRequired": 36400,
-    "blackoutPeriod": [],
-    "region": "North America",
-    "redemptionMonth": "202212"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
     "destination": "Frankfurt",
     "destinationIata": "FRA",
     "flightClass": "Premium Economy",
@@ -414,6 +381,39 @@
       }
     ],
     "region": "Europe",
+    "redemptionMonth": "202212"
+  },
+  {
+    "origin": "Frankfurt",
+    "originIata": "FRA",
+    "destination": "New York",
+    "destinationIata": "NYC",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ26"
+    ],
+    "milesRequired": 17500,
+    "blackoutPeriod": [
+      {
+        "from": "2022-12-22",
+        "to": "2022-12-31"
+      }
+    ],
+    "region": "North America",
+    "redemptionMonth": "202212"
+  },
+  {
+    "origin": "Frankfurt",
+    "originIata": "FRA",
+    "destination": "New York",
+    "destinationIata": "NYC",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ26"
+    ],
+    "milesRequired": 36400,
+    "blackoutPeriod": [],
+    "region": "North America",
     "redemptionMonth": "202212"
   }
 ]

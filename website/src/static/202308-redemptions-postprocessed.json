@@ -24,33 +24,6 @@
     "redemptionMonth": "202308"
   },
   {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Kuala Lumpur",
-    "destinationIata": "KUL",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ118"
-    ],
-    "milesRequired": 14700,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-05",
-        "to": "2023-08-05"
-      },
-      {
-        "from": "2023-08-09",
-        "to": "2023-08-09"
-      },
-      {
-        "from": "2023-08-14",
-        "to": "2023-08-15"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
     "origin": "Kuala Lumpur",
     "originIata": "KUL",
     "destination": "Singapore",
@@ -61,29 +34,6 @@
       "SQ105"
     ],
     "milesRequired": 5950,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-09",
-        "to": "2023-08-09"
-      },
-      {
-        "from": "2023-08-13",
-        "to": "2023-08-13"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Kuala Lumpur",
-    "originIata": "KUL",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ105"
-    ],
-    "milesRequired": 14700,
     "blackoutPeriod": [
       {
         "from": "2023-08-09",
@@ -131,56 +81,6 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "Jakarta",
-    "destinationIata": "CGK",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ950"
-    ],
-    "milesRequired": 14700,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-01",
-        "to": "2023-08-03"
-      },
-      {
-        "from": "2023-08-06",
-        "to": "2023-08-07"
-      },
-      {
-        "from": "2023-08-21",
-        "to": "2023-08-21"
-      },
-      {
-        "from": "2023-08-28",
-        "to": "2023-08-28"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Jakarta",
-    "originIata": "CGK",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ951"
-    ],
-    "milesRequired": 14700,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-16",
-        "to": "2023-08-17"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
     "destination": "Surabaya",
     "destinationIata": "SUB",
     "flightClass": "Economy",
@@ -196,43 +96,6 @@
       {
         "from": "2023-08-09",
         "to": "2023-08-09"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Surabaya",
-    "destinationIata": "SUB",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ922"
-    ],
-    "milesRequired": 14700,
-    "blackoutPeriod": [],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Surabaya",
-    "originIata": "SUB",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ923"
-    ],
-    "milesRequired": 14700,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-09",
-        "to": "2023-08-09"
-      },
-      {
-        "from": "2023-08-16",
-        "to": "2023-08-16"
       }
     ],
     "region": "South East Asia",
@@ -307,30 +170,6 @@
     "redemptionMonth": "202308"
   },
   {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Manila",
-    "destinationIata": "MNL",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ916",
-      "SQ918"
-    ],
-    "milesRequired": 16800,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-01",
-        "to": "2023-08-02"
-      },
-      {
-        "from": "2023-08-05",
-        "to": "2023-08-06"
-      }
-    ],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
     "origin": "Manila",
     "originIata": "MNL",
     "destination": "Singapore",
@@ -346,20 +185,6 @@
         "to": "2023-08-06"
       }
     ],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Manila",
-    "originIata": "MNL",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ921"
-    ],
-    "milesRequired": 16800,
-    "blackoutPeriod": [],
     "region": "South East Asia",
     "redemptionMonth": "202308"
   },
@@ -388,21 +213,6 @@
     "redemptionMonth": "202308"
   },
   {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Ho Chi Minh City",
-    "destinationIata": "SGN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ184",
-      "SQ186"
-    ],
-    "milesRequired": 16800,
-    "blackoutPeriod": [],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
     "origin": "Ho Chi Minh City",
     "originIata": "SGN",
     "destination": "Singapore",
@@ -423,21 +233,6 @@
         "to": "2023-08-13"
       }
     ],
-    "region": "South East Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Ho Chi Minh City",
-    "originIata": "SGN",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ177",
-      "SQ183"
-    ],
-    "milesRequired": 16800,
-    "blackoutPeriod": [],
     "region": "South East Asia",
     "redemptionMonth": "202308"
   },
@@ -485,6 +280,211 @@
         "to": "2023-08-14"
       }
     ],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kuala Lumpur",
+    "destinationIata": "KUL",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ118"
+    ],
+    "milesRequired": 14700,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-05",
+        "to": "2023-08-05"
+      },
+      {
+        "from": "2023-08-09",
+        "to": "2023-08-09"
+      },
+      {
+        "from": "2023-08-14",
+        "to": "2023-08-15"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Kuala Lumpur",
+    "originIata": "KUL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ105"
+    ],
+    "milesRequired": 14700,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-09",
+        "to": "2023-08-09"
+      },
+      {
+        "from": "2023-08-13",
+        "to": "2023-08-13"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Jakarta",
+    "destinationIata": "CGK",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ950"
+    ],
+    "milesRequired": 14700,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-01",
+        "to": "2023-08-03"
+      },
+      {
+        "from": "2023-08-06",
+        "to": "2023-08-07"
+      },
+      {
+        "from": "2023-08-21",
+        "to": "2023-08-21"
+      },
+      {
+        "from": "2023-08-28",
+        "to": "2023-08-28"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Jakarta",
+    "originIata": "CGK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ951"
+    ],
+    "milesRequired": 14700,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-16",
+        "to": "2023-08-17"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Surabaya",
+    "destinationIata": "SUB",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ922"
+    ],
+    "milesRequired": 14700,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Surabaya",
+    "originIata": "SUB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ923"
+    ],
+    "milesRequired": 14700,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-09",
+        "to": "2023-08-09"
+      },
+      {
+        "from": "2023-08-16",
+        "to": "2023-08-16"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Manila",
+    "destinationIata": "MNL",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ916",
+      "SQ918"
+    ],
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-01",
+        "to": "2023-08-02"
+      },
+      {
+        "from": "2023-08-05",
+        "to": "2023-08-06"
+      }
+    ],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Manila",
+    "originIata": "MNL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ921"
+    ],
+    "milesRequired": 16800,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Ho Chi Minh City",
+    "destinationIata": "SGN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ184",
+      "SQ186"
+    ],
+    "milesRequired": 16800,
+    "blackoutPeriod": [],
+    "region": "South East Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Ho Chi Minh City",
+    "originIata": "SGN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ177",
+      "SQ183"
+    ],
+    "milesRequired": 16800,
+    "blackoutPeriod": [],
     "region": "South East Asia",
     "redemptionMonth": "202308"
   },
@@ -546,6 +546,123 @@
     "redemptionMonth": "202308"
   },
   {
+    "origin": "Beijing",
+    "originIata": "PEK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ801",
+      "SQ807"
+    ],
+    "milesRequired": 15050,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Shanghai",
+    "destinationIata": "PVG",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ826",
+      "SQ830",
+      "SQ836"
+    ],
+    "milesRequired": 15050,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Shanghai",
+    "originIata": "PVG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ825",
+      "SQ827",
+      "SQ833"
+    ],
+    "milesRequired": 15050,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Chengdu",
+    "destinationIata": "CTU",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ842"
+    ],
+    "milesRequired": 18550,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Chengdu",
+    "originIata": "CTU",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ843"
+    ],
+    "milesRequired": 18550,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Shanghai",
+    "originIata": "PVG",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ833"
+    ],
+    "milesRequired": 18550,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Shanghai",
+    "destinationIata": "PVG",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ830"
+    ],
+    "milesRequired": 24150,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Los Angeles",
+    "originIata": "LAX",
+    "destination": "Tokyo",
+    "destinationIata": "TYO",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ11"
+    ],
+    "milesRequired": 51100,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "202308"
+  },
+  {
     "origin": "Singapore",
     "originIata": "SIN",
     "destination": "Beijing",
@@ -565,43 +682,12 @@
     "originIata": "PEK",
     "destination": "Singapore",
     "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ801",
-      "SQ807"
-    ],
-    "milesRequired": 15050,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Beijing",
-    "originIata": "PEK",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNos": [
       "SQ801",
       "SQ807"
     ],
     "milesRequired": 30100,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Shanghai",
-    "destinationIata": "PVG",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ826",
-      "SQ830",
-      "SQ836"
-    ],
-    "milesRequired": 15050,
     "blackoutPeriod": [],
     "region": "North Asia",
     "redemptionMonth": "202308"
@@ -618,22 +704,6 @@
       "SQ836"
     ],
     "milesRequired": 30100,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Shanghai",
-    "originIata": "PVG",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ825",
-      "SQ827",
-      "SQ833"
-    ],
-    "milesRequired": 15050,
     "blackoutPeriod": [],
     "region": "North Asia",
     "redemptionMonth": "202308"
@@ -680,48 +750,6 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "Ahmedabad",
-    "destinationIata": "AMD",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ504"
-    ],
-    "milesRequired": 30100,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-15",
-        "to": "2023-08-18"
-      },
-      {
-        "from": "2023-08-24",
-        "to": "2023-08-24"
-      }
-    ],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Ahmedabad",
-    "originIata": "AMD",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ505"
-    ],
-    "milesRequired": 30100,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-08",
-        "to": "2023-08-11"
-      }
-    ],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
     "destination": "Kolkata",
     "destinationIata": "CCU",
     "flightClass": "Economy",
@@ -759,21 +787,6 @@
     "redemptionMonth": "202308"
   },
   {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Bangalore",
-    "destinationIata": "BLR",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ510",
-      "SQ512"
-    ],
-    "milesRequired": 30100,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
     "origin": "Bangalore",
     "originIata": "BLR",
     "destination": "Singapore",
@@ -783,20 +796,6 @@
       "SQ513"
     ],
     "milesRequired": 14000,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Bangalore",
-    "originIata": "BLR",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ513"
-    ],
-    "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
     "redemptionMonth": "202308"
@@ -835,20 +834,6 @@
     "redemptionMonth": "202308"
   },
   {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Dhaka",
-    "destinationIata": "DAC",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ446"
-    ],
-    "milesRequired": 30100,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
     "origin": "Dhaka",
     "originIata": "DAC",
     "destination": "Singapore",
@@ -864,20 +849,6 @@
         "to": "2023-08-13"
       }
     ],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Dhaka",
-    "originIata": "DAC",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ447"
-    ],
-    "milesRequired": 30100,
-    "blackoutPeriod": [],
     "region": "South Asia",
     "redemptionMonth": "202308"
   },
@@ -948,6 +919,203 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
+    "destination": "Chennai",
+    "destinationIata": "MAA",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ526",
+      "SQ528"
+    ],
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Chennai",
+    "originIata": "MAA",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ527"
+    ],
+    "milesRequired": 14000,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "New Delhi",
+    "destinationIata": "DEL",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ402"
+    ],
+    "milesRequired": 14000,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-05",
+        "to": "2023-08-05"
+      },
+      {
+        "from": "2023-08-19",
+        "to": "2023-08-21"
+      },
+      {
+        "from": "2023-08-28",
+        "to": "2023-08-31"
+      }
+    ],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Mumbai",
+    "destinationIata": "BOM",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ424",
+      "SQ428"
+    ],
+    "milesRequired": 24150,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-05",
+        "to": "2023-08-05"
+      },
+      {
+        "from": "2023-08-15",
+        "to": "2023-08-15"
+      },
+      {
+        "from": "2023-08-20",
+        "to": "2023-08-20"
+      }
+    ],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "New Delhi",
+    "destinationIata": "DEL",
+    "flightClass": "Premium Economy",
+    "flightNos": [
+      "SQ406"
+    ],
+    "milesRequired": 24150,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Ahmedabad",
+    "destinationIata": "AMD",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ504"
+    ],
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-15",
+        "to": "2023-08-18"
+      },
+      {
+        "from": "2023-08-24",
+        "to": "2023-08-24"
+      }
+    ],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Ahmedabad",
+    "originIata": "AMD",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ505"
+    ],
+    "milesRequired": 30100,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-08",
+        "to": "2023-08-11"
+      }
+    ],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Bangalore",
+    "destinationIata": "BLR",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ510",
+      "SQ512"
+    ],
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Bangalore",
+    "originIata": "BLR",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ513"
+    ],
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Dhaka",
+    "destinationIata": "DAC",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ446"
+    ],
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Dhaka",
+    "originIata": "DAC",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ447"
+    ],
+    "milesRequired": 30100,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Mumbai",
     "destinationIata": "BOM",
     "flightClass": "Business",
@@ -984,21 +1152,6 @@
     "originIata": "SIN",
     "destination": "Chennai",
     "destinationIata": "MAA",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ526",
-      "SQ528"
-    ],
-    "milesRequired": 14000,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Chennai",
-    "destinationIata": "MAA",
     "flightClass": "Business",
     "flightNos": [
       "SQ526",
@@ -1014,53 +1167,12 @@
     "originIata": "MAA",
     "destination": "Singapore",
     "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ527"
-    ],
-    "milesRequired": 14000,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Chennai",
-    "originIata": "MAA",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
     "flightClass": "Business",
     "flightNos": [
       "SQ527"
     ],
     "milesRequired": 30100,
     "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "New Delhi",
-    "destinationIata": "DEL",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ402"
-    ],
-    "milesRequired": 14000,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-05",
-        "to": "2023-08-05"
-      },
-      {
-        "from": "2023-08-19",
-        "to": "2023-08-21"
-      },
-      {
-        "from": "2023-08-28",
-        "to": "2023-08-31"
-      }
-    ],
     "region": "South Asia",
     "redemptionMonth": "202308"
   },
@@ -1077,88 +1189,6 @@
     "milesRequired": 30100,
     "blackoutPeriod": [],
     "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Sydney",
-    "destinationIata": "SYD",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ231"
-    ],
-    "milesRequired": 47950,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-01",
-        "to": "2023-08-06"
-      },
-      {
-        "from": "2023-08-09",
-        "to": "2023-08-09"
-      },
-      {
-        "from": "2023-08-12",
-        "to": "2023-08-12"
-      },
-      {
-        "from": "2023-08-16",
-        "to": "2023-08-16"
-      },
-      {
-        "from": "2023-08-19",
-        "to": "2023-08-19"
-      },
-      {
-        "from": "2023-08-22",
-        "to": "2023-08-22"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Sydney",
-    "originIata": "SYD",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ212"
-    ],
-    "milesRequired": 47950,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-01",
-        "to": "2023-08-03"
-      },
-      {
-        "from": "2023-08-05",
-        "to": "2023-08-05"
-      },
-      {
-        "from": "2023-08-12",
-        "to": "2023-08-12"
-      },
-      {
-        "from": "2023-08-15",
-        "to": "2023-08-17"
-      },
-      {
-        "from": "2023-08-19",
-        "to": "2023-08-23"
-      },
-      {
-        "from": "2023-08-25",
-        "to": "2023-08-25"
-      },
-      {
-        "from": "2023-08-28",
-        "to": "2023-08-28"
-      }
-    ],
-    "region": "Southwest Pacific",
     "redemptionMonth": "202308"
   },
   {
@@ -1202,104 +1232,6 @@
       }
     ],
     "region": "Southwest Pacific",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Chengdu",
-    "destinationIata": "CTU",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ842"
-    ],
-    "milesRequired": 18550,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Chengdu",
-    "originIata": "CTU",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ843"
-    ],
-    "milesRequired": 18550,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Shanghai",
-    "destinationIata": "PVG",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ830"
-    ],
-    "milesRequired": 24150,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Shanghai",
-    "originIata": "PVG",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ833"
-    ],
-    "milesRequired": 18550,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Mumbai",
-    "destinationIata": "BOM",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ424",
-      "SQ428"
-    ],
-    "milesRequired": 24150,
-    "blackoutPeriod": [
-      {
-        "from": "2023-08-05",
-        "to": "2023-08-05"
-      },
-      {
-        "from": "2023-08-15",
-        "to": "2023-08-15"
-      },
-      {
-        "from": "2023-08-20",
-        "to": "2023-08-20"
-      }
-    ],
-    "region": "South Asia",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "New Delhi",
-    "destinationIata": "DEL",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ406"
-    ],
-    "milesRequired": 24150,
-    "blackoutPeriod": [],
-    "region": "South Asia",
     "redemptionMonth": "202308"
   },
   {
@@ -1465,6 +1397,88 @@
     "redemptionMonth": "202308"
   },
   {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Sydney",
+    "destinationIata": "SYD",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ231"
+    ],
+    "milesRequired": 47950,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-01",
+        "to": "2023-08-06"
+      },
+      {
+        "from": "2023-08-09",
+        "to": "2023-08-09"
+      },
+      {
+        "from": "2023-08-12",
+        "to": "2023-08-12"
+      },
+      {
+        "from": "2023-08-16",
+        "to": "2023-08-16"
+      },
+      {
+        "from": "2023-08-19",
+        "to": "2023-08-19"
+      },
+      {
+        "from": "2023-08-22",
+        "to": "2023-08-22"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "202308"
+  },
+  {
+    "origin": "Sydney",
+    "originIata": "SYD",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ212"
+    ],
+    "milesRequired": 47950,
+    "blackoutPeriod": [
+      {
+        "from": "2023-08-01",
+        "to": "2023-08-03"
+      },
+      {
+        "from": "2023-08-05",
+        "to": "2023-08-05"
+      },
+      {
+        "from": "2023-08-12",
+        "to": "2023-08-12"
+      },
+      {
+        "from": "2023-08-15",
+        "to": "2023-08-17"
+      },
+      {
+        "from": "2023-08-19",
+        "to": "2023-08-23"
+      },
+      {
+        "from": "2023-08-25",
+        "to": "2023-08-25"
+      },
+      {
+        "from": "2023-08-28",
+        "to": "2023-08-28"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "202308"
+  },
+  {
     "origin": "New York",
     "originIata": "NYC",
     "destination": "Frankfurt",
@@ -1476,20 +1490,6 @@
     "milesRequired": 36400,
     "blackoutPeriod": [],
     "region": "Europe",
-    "redemptionMonth": "202308"
-  },
-  {
-    "origin": "Los Angeles",
-    "originIata": "LAX",
-    "destination": "Tokyo",
-    "destinationIata": "TYO",
-    "flightClass": "Premium Economy",
-    "flightNos": [
-      "SQ11"
-    ],
-    "milesRequired": 51100,
-    "blackoutPeriod": [],
-    "region": "North Asia",
     "redemptionMonth": "202308"
   },
   {

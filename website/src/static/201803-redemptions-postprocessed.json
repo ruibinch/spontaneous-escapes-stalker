@@ -52,475 +52,6 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "Guangzhou",
-    "destinationIata": "CAN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ852"
-    ],
-    "milesRequired": 19250,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Guangzhou",
-    "originIata": "CAN",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ853"
-    ],
-    "milesRequired": 19250,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Beijing",
-    "destinationIata": "PEK",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ802"
-    ],
-    "milesRequired": 24500,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Beijing",
-    "originIata": "PEK",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ807"
-    ],
-    "milesRequired": 24500,
-    "blackoutPeriod": [],
-    "region": "North Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Dhaka",
-    "destinationIata": "DAC",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ446",
-      "SQ448"
-    ],
-    "milesRequired": 12950,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Dhaka",
-    "destinationIata": "DAC",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ448"
-    ],
-    "milesRequired": 24500,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Dhaka",
-    "originIata": "DAC",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ449"
-    ],
-    "milesRequired": 12950,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Dhaka",
-    "originIata": "DAC",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ449"
-    ],
-    "milesRequired": 24500,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Kolkata",
-    "destinationIata": "CCU",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ516"
-    ],
-    "milesRequired": 12950,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Kolkata",
-    "destinationIata": "CCU",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ516"
-    ],
-    "milesRequired": 24500,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Kolkata",
-    "originIata": "CCU",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ517"
-    ],
-    "milesRequired": 12950,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Kolkata",
-    "originIata": "CCU",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ517"
-    ],
-    "milesRequired": 24500,
-    "blackoutPeriod": [],
-    "region": "South Asia",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Adelaide",
-    "destinationIata": "ADL",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ279"
-    ],
-    "milesRequired": 19600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Adelaide",
-    "destinationIata": "ADL",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ279"
-    ],
-    "milesRequired": 40600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Adelaide",
-    "originIata": "ADL",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ278"
-    ],
-    "milesRequired": 19600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Adelaide",
-    "originIata": "ADL",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ278"
-    ],
-    "milesRequired": 40600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Brisbane",
-    "destinationIata": "BNE",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ235",
-      "SQ245",
-      "SQ255",
-      "SQ265"
-    ],
-    "milesRequired": 19600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Brisbane",
-    "destinationIata": "BNE",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ235",
-      "SQ245",
-      "SQ255",
-      "SQ265"
-    ],
-    "milesRequired": 40600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Brisbane",
-    "originIata": "BNE",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ236",
-      "SQ246",
-      "SQ256",
-      "SQ266"
-    ],
-    "milesRequired": 19600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Brisbane",
-    "originIata": "BNE",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ236",
-      "SQ246",
-      "SQ256",
-      "SQ266"
-    ],
-    "milesRequired": 40600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Sydney",
-    "destinationIata": "SYD",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ221",
-      "SQ231"
-    ],
-    "milesRequired": 19600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-28",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Sydney",
-    "destinationIata": "SYD",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ221",
-      "SQ231"
-    ],
-    "milesRequired": 40600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-28",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Sydney",
-    "originIata": "SYD",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ222",
-      "SQ232"
-    ],
-    "milesRequired": 19600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-28",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Sydney",
-    "originIata": "SYD",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ222",
-      "SQ232"
-    ],
-    "milesRequired": 40600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-28",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Dubai",
-    "destinationIata": "DXB",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ494"
-    ],
-    "milesRequired": 31500,
-    "blackoutPeriod": [],
-    "region": "Middle East & Africa",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Dubai",
-    "originIata": "DXB",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ495"
-    ],
-    "milesRequired": 31500,
-    "blackoutPeriod": [],
-    "region": "Middle East & Africa",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Düsseldorf",
-    "destinationIata": "DUS",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ338"
-    ],
-    "milesRequired": 59500,
-    "blackoutPeriod": [],
-    "region": "Europe",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Düsseldorf",
-    "originIata": "DUS",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ337"
-    ],
-    "milesRequired": 59500,
-    "blackoutPeriod": [],
-    "region": "Europe",
-    "redemptionMonth": "201803"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
     "destination": "Balikpapan",
     "destinationIata": "BPN",
     "flightClass": "Economy",
@@ -683,6 +214,119 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
+    "destination": "Guangzhou",
+    "destinationIata": "CAN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ852"
+    ],
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Guangzhou",
+    "originIata": "CAN",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ853"
+    ],
+    "milesRequired": 19250,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Beijing",
+    "destinationIata": "PEK",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ802"
+    ],
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Beijing",
+    "originIata": "PEK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ807"
+    ],
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "North Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Dhaka",
+    "destinationIata": "DAC",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ446",
+      "SQ448"
+    ],
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Dhaka",
+    "originIata": "DAC",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ449"
+    ],
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kolkata",
+    "destinationIata": "CCU",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ516"
+    ],
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Kolkata",
+    "originIata": "CCU",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ517"
+    ],
+    "milesRequired": 12950,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
     "destination": "Bangalore",
     "destinationIata": "BLR",
     "flightClass": "Economy",
@@ -739,41 +383,85 @@
   {
     "origin": "Singapore",
     "originIata": "SIN",
-    "destination": "Cairns",
-    "destinationIata": "CNS",
-    "flightClass": "Economy",
+    "destination": "Dhaka",
+    "destinationIata": "DAC",
+    "flightClass": "Business",
     "flightNos": [
-      "MI811",
-      "MI813"
+      "SQ448"
     ],
-    "milesRequired": 19600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
-    ],
-    "region": "Southwest Pacific",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
     "redemptionMonth": "201803"
   },
   {
-    "origin": "Cairns",
-    "originIata": "CNS",
+    "origin": "Dhaka",
+    "originIata": "DAC",
     "destination": "Singapore",
     "destinationIata": "SIN",
-    "flightClass": "Economy",
+    "flightClass": "Business",
     "flightNos": [
-      "MI812",
-      "MI814"
+      "SQ449"
     ],
-    "milesRequired": 19600,
-    "blackoutPeriod": [
-      {
-        "from": "2018-03-27",
-        "to": "2018-03-31"
-      }
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Kolkata",
+    "destinationIata": "CCU",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ516"
     ],
-    "region": "Southwest Pacific",
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Kolkata",
+    "originIata": "CCU",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ517"
+    ],
+    "milesRequired": 24500,
+    "blackoutPeriod": [],
+    "region": "South Asia",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Dubai",
+    "destinationIata": "DXB",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ494"
+    ],
+    "milesRequired": 31500,
+    "blackoutPeriod": [],
+    "region": "Middle East & Africa",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Dubai",
+    "originIata": "DXB",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ495"
+    ],
+    "milesRequired": 31500,
+    "blackoutPeriod": [],
+    "region": "Middle East & Africa",
     "redemptionMonth": "201803"
   },
   {
@@ -814,6 +502,318 @@
       }
     ],
     "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Adelaide",
+    "destinationIata": "ADL",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ279"
+    ],
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Adelaide",
+    "originIata": "ADL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ278"
+    ],
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Brisbane",
+    "destinationIata": "BNE",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ235",
+      "SQ245",
+      "SQ255",
+      "SQ265"
+    ],
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Brisbane",
+    "originIata": "BNE",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ236",
+      "SQ246",
+      "SQ256",
+      "SQ266"
+    ],
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Sydney",
+    "destinationIata": "SYD",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ221",
+      "SQ231"
+    ],
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-28",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Sydney",
+    "originIata": "SYD",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ222",
+      "SQ232"
+    ],
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-28",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Cairns",
+    "destinationIata": "CNS",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI811",
+      "MI813"
+    ],
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Cairns",
+    "originIata": "CNS",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI812",
+      "MI814"
+    ],
+    "milesRequired": 19600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Adelaide",
+    "destinationIata": "ADL",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ279"
+    ],
+    "milesRequired": 40600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Adelaide",
+    "originIata": "ADL",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ278"
+    ],
+    "milesRequired": 40600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Brisbane",
+    "destinationIata": "BNE",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ235",
+      "SQ245",
+      "SQ255",
+      "SQ265"
+    ],
+    "milesRequired": 40600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Brisbane",
+    "originIata": "BNE",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ236",
+      "SQ246",
+      "SQ256",
+      "SQ266"
+    ],
+    "milesRequired": 40600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-27",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Sydney",
+    "destinationIata": "SYD",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ221",
+      "SQ231"
+    ],
+    "milesRequired": 40600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-28",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Sydney",
+    "originIata": "SYD",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ222",
+      "SQ232"
+    ],
+    "milesRequired": 40600,
+    "blackoutPeriod": [
+      {
+        "from": "2018-03-28",
+        "to": "2018-03-31"
+      }
+    ],
+    "region": "Southwest Pacific",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Düsseldorf",
+    "destinationIata": "DUS",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ338"
+    ],
+    "milesRequired": 59500,
+    "blackoutPeriod": [],
+    "region": "Europe",
+    "redemptionMonth": "201803"
+  },
+  {
+    "origin": "Düsseldorf",
+    "originIata": "DUS",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ337"
+    ],
+    "milesRequired": 59500,
+    "blackoutPeriod": [],
+    "region": "Europe",
     "redemptionMonth": "201803"
   }
 ]
