@@ -1,3 +1,7 @@
+# 2.2.3 - 2024-03-20
+
+- Standardised sorting logic of redemptions list in by-month view
+
 # 2.2.2 - 2024-03-19
 
 - Added Covid separator line on analysis page charts for better visualisation
