@@ -4,34 +4,6 @@
     "originIata": "SIN",
     "destination": "Los Angeles",
     "destinationIata": "LAX",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ36"
-    ],
-    "milesRequired": 61600,
-    "blackoutPeriod": [],
-    "region": "North America",
-    "redemptionMonth": "201902"
-  },
-  {
-    "origin": "Los Angeles",
-    "originIata": "LAX",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ35"
-    ],
-    "milesRequired": 61600,
-    "blackoutPeriod": [],
-    "region": "North America",
-    "redemptionMonth": "201902"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "destination": "Los Angeles",
-    "destinationIata": "LAX",
     "flightClass": "Premium Economy",
     "flightNos": [
       "SQ36",
@@ -109,6 +81,34 @@
       "SQ21"
     ],
     "milesRequired": 49000,
+    "blackoutPeriod": [],
+    "region": "North America",
+    "redemptionMonth": "201902"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "destination": "Los Angeles",
+    "destinationIata": "LAX",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ36"
+    ],
+    "milesRequired": 61600,
+    "blackoutPeriod": [],
+    "region": "North America",
+    "redemptionMonth": "201902"
+  },
+  {
+    "origin": "Los Angeles",
+    "originIata": "LAX",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ35"
+    ],
+    "milesRequired": 61600,
     "blackoutPeriod": [],
     "region": "North America",
     "redemptionMonth": "201902"

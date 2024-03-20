@@ -6,17 +6,20 @@ import { combineRedemptionsForSameRoute } from './postprocessing/combineRedempti
 import { formatFlightNosField } from './postprocessing/formatFlightNosField';
 import { mergeRedemptionsWithBaseSet } from './postprocessing/mergeRedemptionsWithBaseSet';
 import { removeRedemptionsMissingFromOagRoutesDataset } from './postprocessing/removeRedemptionsMissingFromOagRoutesDataset';
-import { standardiseRegionField } from './postprocessing/standardiseRegionField';
-import { RedemptionJson } from './utils/types';
 import { sortRedemptionsList } from './postprocessing/sortRedemptionsList';
+import { standardiseRegionField } from './postprocessing/standardiseRegionField';
+import { notEmpty } from './utils';
+import { RedemptionJson } from './utils/types';
 
 /**
- * Reads in the full list of redemptions.json files and generates a redemptions-postprocessed.json version.
+ * Reads in the the redemptions files for each month and generates a redemptions-postprocessed.json version.
  */
 export function postprocessing() {
-  const redemptionsFilenames = fs
+  const monthsList = fs
     .readdirSync('data')
-    .filter((filename) => filename.endsWith('redemptions.json'));
+    .map((filename) => filename.match(/^\d{6}/)?.[0])
+    .filter(notEmpty);
+  const monthsListUnique = Array.from(new Set(monthsList));
 
   console.log(
     '🧹 Postprocessing - merging redemptions with base set, if applicable',
@@ -31,10 +34,14 @@ export function postprocessing() {
   );
   console.log('🧹 Postprocessing - sorting redemptions list\n');
 
-  redemptionsFilenames.forEach((filename) => {
-    const month = filename.split('-')[0];
+  monthsListUnique.forEach((month) => {
     const { redemptions: _redemptions, redemptionsBase } =
       getRedemptionsFilesForMonth(month);
+
+    if (!_redemptions) {
+      // should never reach here
+      throw new Error(`Missing redemptions for month ${month}`);
+    }
 
     const redemptions = mergeRedemptionsWithBaseSet({
       month,
@@ -104,10 +111,11 @@ function getRedemptionsFilesForMonth(month: string) {
     ) as RedemptionJson[];
   })();
 
-  const redemptionsFilepath = path.join('data', `${month}-redemptions.json`);
-  const redemptions = JSON.parse(
-    fs.readFileSync(redemptionsFilepath).toString(),
-  ) as RedemptionJson[];
+  const redemptions = (() => {
+    const filepath = path.join('data', `${month}-redemptions.json`);
+    if (!fs.existsSync(filepath)) return null;
+    return JSON.parse(fs.readFileSync(filepath).toString()) as RedemptionJson[];
+  })();
 
   return {
     redemptions: redemptionsOverride ?? redemptions,
