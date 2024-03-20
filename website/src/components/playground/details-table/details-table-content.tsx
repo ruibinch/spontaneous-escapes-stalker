@@ -207,7 +207,7 @@ function renderCell({
                     route: `${item.fromIata}${item.toIata}`,
                   });
                 }}
-                className="text-xs text-blue-500"
+                className="text-xs text-blue-500 dark:text-blue-400"
               >
                 {`${item.fromIata}-${item.toIata}`}
               </Link>
@@ -224,7 +224,7 @@ function renderCell({
                         route: routeIata,
                       });
                     }}
-                    className="text-xs text-blue-500"
+                    className="text-xs text-blue-500 dark:text-blue-400"
                   >
                     {routeIata}
                   </Link>

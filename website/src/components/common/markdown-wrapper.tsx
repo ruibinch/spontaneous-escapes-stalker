@@ -58,7 +58,7 @@ const P = ({ children, ...restProps }: Props) => (
 const A = ({ children, ...restProps }: Props) => (
   <a
     {...restProps}
-    className="text-blue-500 hover:text-blue-600 underline cursor-pointer"
+    className="text-blue-500 dark:text-blue-400 hover:text-blue-600 underline cursor-pointer"
   >
     {children}
   </a>
