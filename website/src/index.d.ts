@@ -33,6 +33,10 @@ export type RouteAnalysisEntry = {
   to: string;
   fromIata: string;
   toIata: string;
+  fromCountry: string;
+  toCountry: string;
+  fromCountryCode: string;
+  toCountryCode: string;
   region: string;
   details: Array<{
     month: string;

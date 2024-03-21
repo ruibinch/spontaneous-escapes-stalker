@@ -10,7 +10,7 @@ import { isApplicableMonth } from './is-applicable-month';
 export function filterRouteAnalysisList({
   data,
   filters: {
-    searchTerm,
+    searchTerms,
     flightClassOption,
     regions,
     startDate,
@@ -20,7 +20,7 @@ export function filterRouteAnalysisList({
 }: {
   data: RouteAnalysisEntry[];
   filters: {
-    searchTerm: string;
+    searchTerms: string[];
     flightClassOption: FlightClassSelectOption;
     regions: string[];
     startDate: Date;
@@ -32,11 +32,27 @@ export function filterRouteAnalysisList({
 
   return data
     .filter((d) => {
+      const isAnySearchTermMatching =
+        searchTerms.length > 0
+          ? searchTerms.some((searchTerm) =>
+              isSearchTermMatch({
+                searchTerm,
+                strings: [
+                  d.from,
+                  d.fromIata,
+                  d.to,
+                  d.toIata,
+                  d.fromCountry,
+                  d.fromCountryCode,
+                  d.toCountry,
+                  d.toCountryCode,
+                ],
+              }),
+            )
+          : true;
+
       return (
-        isSearchTermMatch({
-          searchTerm,
-          strings: [d.from, d.fromIata, d.to, d.toIata],
-        }) &&
+        isAnySearchTermMatching &&
         isRegionMatch({
           regionsFiltered: regions,
           region: d.region,

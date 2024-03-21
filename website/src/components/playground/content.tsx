@@ -56,7 +56,7 @@ export function PlaygroundContent() {
   const routeAnalysisListFiltered = filterRouteAnalysisList({
     data: routeAnalysisList,
     filters: {
-      searchTerm: searchTerm.toLowerCase(),
+      searchTerms: searchTerm.split(',').filter(Boolean),
       flightClassOption,
       regions: regions.split(','),
       startDate,

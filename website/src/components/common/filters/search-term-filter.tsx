@@ -8,7 +8,7 @@ import { CommonStyles } from '../styles';
 export interface SearchTermFilterProps {
   searchTerm: string;
   setSearchTerm: Dispatch<SetStateAction<string>>;
-  placeholder?: string;
+  placeholder: string;
   useBasicDesign?: boolean;
 }
 
@@ -62,7 +62,7 @@ export function SearchTermFilter({
     <Input
       size="sm"
       classNames={{
-        input: 'w-full',
+        input: 'w-full placeholder:text-xs placeholder:sm:text-sm',
         inputWrapper: useBasicDesign
           ? cn(
               CommonStyles.Border,
@@ -78,7 +78,7 @@ export function SearchTermFilter({
           </kbd>
         )
       }
-      placeholder={placeholder ?? 'Search by city/IATA'}
+      placeholder={placeholder}
       ref={searchRef}
       value={value}
       onValueChange={onValueChange}
