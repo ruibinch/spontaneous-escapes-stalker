@@ -1,5 +1,6 @@
+import { countryCodeMappings } from '../lib/iata/countryCodeMappings';
 import { iata } from '../lib/iata/iata';
-import { iataMappings } from '../lib/iata/mappings';
+import { cityMappings, iataMappings } from '../lib/iata/mappings';
 import { OagDataAnalysisEntry } from '../scripts/generateOagData';
 import { FlightClass, RedemptionJsonPostprocessed } from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
@@ -128,6 +129,21 @@ export function generateRouteAnalysis({
       const [from, to] = route.split('-');
       const [fromIata, toIata] = getRouteIata(route).split('-');
       const region = routeToRegionMap[route];
+      const fromCountryCode = cityMappings[from].countryCode;
+      const fromCountry = countryCodeMappings[fromCountryCode];
+      const toCountryCode = cityMappings[to].countryCode;
+      const toCountry = countryCodeMappings[toCountryCode];
+      if (!fromCountryCode || !fromCountry) {
+        throw new Error(
+          `Missing fromCountryCode=${fromCountryCode}/fromCountry=${fromCountry} for "${from}"`,
+        );
+      }
+      if (!toCountryCode || !toCountry) {
+        throw new Error(
+          `Missing toCountryCode=${toCountryCode}/toCountry=${toCountry} for "${to}"`,
+        );
+      }
+
       const detailsList = Object.entries(details).reduce(
         (_detailsList, [month, detailsInfo]) => {
           _detailsList.push({
@@ -144,6 +160,10 @@ export function generateRouteAnalysis({
         to,
         fromIata,
         toIata,
+        fromCountry,
+        fromCountryCode,
+        toCountry,
+        toCountryCode,
         region,
         details: detailsList,
       };
