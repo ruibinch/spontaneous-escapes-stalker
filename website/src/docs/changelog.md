@@ -1,3 +1,8 @@
+# 2.3.0 - 2024-03-23
+
+- Implemented searching by country name/code on playground page
+- Added Count/% toggle to "Redemptions by flight clas per month" chart
+
 # 2.2.3 - 2024-03-20
 
 - Standardised sorting logic of redemptions list in by-month view
