@@ -26,8 +26,6 @@ export function RedemptionsByMonthAndFlightClassChart({
   routeAnalysisListFiltered,
 }: Props) {
   const { isDarkTheme } = useTheme();
-
-  // TODO: implement this logic
   const [displayAs, setDisplayAs] = useState<AverageOrTotal>('average');
 
   const monthToFlightClassToCountDict: Record<
@@ -150,7 +148,7 @@ export function RedemptionsByMonthAndFlightClassChart({
             axesStacked: { x: true, y: true },
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },
-            axesTickMaxLimit: { x: 12, y: 5 },
+            axesTickMaxLimit: { x: 12, y: 6 },
             showTooltipLabelIndicator: true,
             tooltipTitleOverrideMap: monthShortNameToNameMap,
           })}
