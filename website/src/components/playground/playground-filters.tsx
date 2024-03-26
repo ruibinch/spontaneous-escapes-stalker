@@ -1,5 +1,9 @@
 import { trackEvent } from '@/analytics';
 import {
+  AutocompleteSearchTermFilter,
+  AutocompleteSearchTermFilterProps,
+} from '../common/filters/autocomplete-search-term-filter';
+import {
   DateRangeFilter,
   DateRangeFilterProps,
 } from '../common/filters/month-range-filter';
@@ -20,7 +24,7 @@ import {
 import { HelpCircleIcon } from '../icons/help-circle';
 import { TooltipCustom } from '../common/tooltip-custom';
 
-type Props = Pick<SearchTermFilterProps, 'searchTerm' | 'setSearchTerm'> &
+type Props = AutocompleteSearchTermFilterProps &
   FlightClassFilterProps &
   RegionFilterProps &
   DateRangeFilterProps &
@@ -29,7 +33,7 @@ type Props = Pick<SearchTermFilterProps, 'searchTerm' | 'setSearchTerm'> &
 export function Filters(props: Props) {
   const resetAllFilters = () => {
     trackEvent(['playground', 'resetAllFilters']);
-    props.setSearchTerm('');
+    props.setSearchTerms([]);
     props.setFlightClassOption('ALL');
     props.setRegions('All');
     props.setMonthRange([
@@ -44,18 +48,10 @@ export function Filters(props: Props) {
       <div className="flex items-center gap-4">
         <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-2">
           <div className="col-span-2 md:col-span-3 flex flex-row gap-2 items-center">
-            <SearchTermFilter
-              searchTerm={props.searchTerm}
-              setSearchTerm={props.setSearchTerm}
-              placeholder="Search by city, IATA, country name/code"
+            <AutocompleteSearchTermFilter
+              searchTerms={props.searchTerms}
+              setSearchTerms={props.setSearchTerms}
             />
-            <TooltipCustom
-              content={'Separate multiple search terms with commas'}
-            >
-              <div className="cursor-pointer">
-                <HelpCircleIcon width={20} height={20} />
-              </div>
-            </TooltipCustom>
           </div>
 
           <RegionFilter regions={props.regions} setRegions={props.setRegions} />

@@ -23,6 +23,7 @@ import { DetailsTable } from './details-table';
 import { FilterInfo } from './filter-info';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { Filters } from './playground-filters';
+import { SelectOptions } from '../common/filters/autocomplete-search-term-filter';
 
 ChartJS.register(
   CategoryScale,
@@ -40,7 +41,7 @@ const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 const monthsList = getMonthsList();
 
 export function PlaygroundContent() {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerms, setSearchTerms] = useState<SelectOptions>([]);
   const [flightClassOption, setFlightClassOption] =
     useState<FlightClassSelectOption>('ALL');
   const [regions, setRegions] = useState<string>('All'); // comma-separated list of regions
@@ -56,7 +57,7 @@ export function PlaygroundContent() {
   const routeAnalysisListFiltered = filterRouteAnalysisList({
     data: routeAnalysisList,
     filters: {
-      searchTerms: searchTerm.split(',').filter(Boolean),
+      searchTerms: searchTerms.map((term) => term.value),
       flightClassOption,
       regions: regions.split(','),
       startDate,
@@ -76,8 +77,8 @@ export function PlaygroundContent() {
         <Filters
           flightClassOption={flightClassOption}
           setFlightClassOption={setFlightClassOption}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
+          searchTerms={searchTerms}
+          setSearchTerms={setSearchTerms}
           regions={regions}
           setRegions={setRegions}
           monthRange={dateRange}
