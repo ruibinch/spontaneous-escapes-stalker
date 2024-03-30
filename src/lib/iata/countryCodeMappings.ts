@@ -1,5 +1,5 @@
 export const countryCodeMappings: Record<string, string> = {
-  AE: 'United Arab Emirates',
+  AE: 'UAE',
   AU: 'Australia',
   BD: 'Bangladesh',
   BE: 'Belgium',
@@ -17,7 +17,7 @@ export const countryCodeMappings: Record<string, string> = {
   IT: 'Italy',
   JP: 'Japan',
   KH: 'Cambodia',
-  KR: 'Korea',
+  KR: 'South Korea',
   LA: 'Laos',
   LK: 'Sri Lanka',
   MM: 'Myanmar',
@@ -33,8 +33,8 @@ export const countryCodeMappings: Record<string, string> = {
   TL: 'Timor-Leste',
   TR: 'Turkey',
   TW: 'Taiwan',
-  UK: 'United Kingdom',
-  US: 'United States of America',
+  UK: 'UK',
+  US: 'USA',
   VN: 'Vietnam',
   ZA: 'South Africa',
 };
