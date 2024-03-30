@@ -193,3 +193,18 @@ function getSearchOptionsList() {
     value: term,
   }));
 }
+
+/**
+ * Helper function to check for an exact search term match with any of the input strings.
+ */
+export function isSearchTermExactMatch({
+  searchTerm,
+  strings,
+}: {
+  searchTerm: string;
+  strings: string[];
+}) {
+  if (searchTerm === '') return true;
+
+  return strings.some((str) => str === searchTerm);
+}

@@ -6,6 +6,7 @@ import {
   RouteAnalysisEntry,
 } from '@/index';
 import { isApplicableMonth } from './is-applicable-month';
+import { isSearchTermExactMatch } from '@/components/common/filters/autocomplete-search-term-filter';
 
 export function filterRouteAnalysisList({
   data,
@@ -32,10 +33,10 @@ export function filterRouteAnalysisList({
 
   return data
     .filter((d) => {
-      const isAnySearchTermMatching =
+      const isAnySearchTermExactMatch =
         searchTerms.length > 0
           ? searchTerms.some((searchTerm) =>
-              isSearchTermMatch({
+              isSearchTermExactMatch({
                 searchTerm,
                 strings: [
                   d.from,
@@ -43,16 +44,14 @@ export function filterRouteAnalysisList({
                   d.to,
                   d.toIata,
                   d.fromCountry,
-                  d.fromCountryCode,
                   d.toCountry,
-                  d.toCountryCode,
                 ],
               }),
             )
           : true;
 
       return (
-        isAnySearchTermMatching &&
+        isAnySearchTermExactMatch &&
         isRegionMatch({
           regionsFiltered: regions,
           region: d.region,
