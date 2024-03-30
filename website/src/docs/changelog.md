@@ -1,7 +1,11 @@
+# 2.4.0 - 2024-03-30
+
+- Revamped search on playground page to support autocomplete feature
+
 # 2.3.0 - 2024-03-23
 
 - Implemented searching by country name/code on playground page
-- Added Count/% toggle to "Redemptions by flight clas per month" chart
+- Added Count/% toggle to "Redemptions by flight class per month" chart
 
 # 2.2.3 - 2024-03-20
 
