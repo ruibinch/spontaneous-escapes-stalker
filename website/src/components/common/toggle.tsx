@@ -1,6 +1,7 @@
 import { cn } from '@nextui-org/react';
 import { Dispatch, SetStateAction } from 'react';
 import { CommonStyles } from './styles';
+import { trackEvent } from '@/analytics';
 
 export interface ToggleProps<T> {
   size?: 'sm' | 'md';
@@ -14,7 +15,7 @@ export interface ToggleProps<T> {
   setSelValue: Dispatch<SetStateAction<T>>;
 }
 
-export function Toggle<T>({
+export function Toggle<T extends string>({
   size = 'md',
   options,
   title,
@@ -25,7 +26,12 @@ export function Toggle<T>({
     throw new Error('Too many options for a Toggle component');
   }
 
+  const analyticsEventName = [
+    'toggle',
+    options.map(({ key }) => key).join('/'),
+  ];
   const handleToggle = (value: T) => {
+    trackEvent(analyticsEventName, { value });
     setSelValue(value);
   };
 

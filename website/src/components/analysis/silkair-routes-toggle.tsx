@@ -1,3 +1,4 @@
+import { trackEvent } from '@/analytics';
 import { Switch, cn } from '@nextui-org/react';
 import React, { ReactNode, createContext, useContext, useState } from 'react';
 import { CheckIcon } from '../icons/check';
@@ -24,7 +25,11 @@ export const SilkairRoutesToggleContextProvider = (props: {
   const value = {
     showSilkairRoutes,
     toggleShowSilkairRoutes: () => {
-      setShowSilkairRoutes(!showSilkairRoutes);
+      const showSilkairRoutesUpd = !showSilkairRoutes;
+      trackEvent(['silkairRoutesToggle'], {
+        showSilkairRoutes: showSilkairRoutesUpd,
+      });
+      setShowSilkairRoutes(showSilkairRoutesUpd);
     },
   };
 

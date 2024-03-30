@@ -1,6 +1,5 @@
 import { trackEvent } from '@/analytics';
 import { Select, SelectItem } from '@nextui-org/react';
-import { usePathname } from 'next/navigation';
 import { Dispatch, SetStateAction } from 'react';
 
 export interface RegionFilterProps {
@@ -20,8 +19,6 @@ const regionsList = [
 const regionsListWithAll = ['All', ...regionsList] as const;
 
 export function RegionFilter({ regions, setRegions }: RegionFilterProps) {
-  const pathname = usePathname();
-
   // Do some manual tweaking of the selected regions list so that "All" option is correctly handled
   const tweakSelectedRegions = (value: string) => {
     if (value === '') {
@@ -53,7 +50,7 @@ export function RegionFilter({ regions, setRegions }: RegionFilterProps) {
       selectedKeys={regions.split(',')}
       onChange={(e) => {
         const selectedRegions = tweakSelectedRegions(e.target.value);
-        trackEvent(['regionFilter'], { pathname, selectedRegions });
+        trackEvent(['regionFilter'], { selectedRegions });
         setRegions(selectedRegions);
       }}
     >

@@ -1,3 +1,4 @@
+import { trackEvent } from '@/analytics';
 import { Button, cn } from '@nextui-org/react';
 import { TooltipCustom } from '../common/tooltip-custom';
 import { useTheme } from '../common/use-theme';
@@ -8,7 +9,9 @@ export function ThemeToggleItem() {
   const { setTheme, isDarkTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(isDarkTheme ? 'light' : 'dark');
+    const themeUpd = isDarkTheme ? 'light' : 'dark';
+    trackEvent(['theme', themeUpd]);
+    setTheme(themeUpd);
   };
 
   return (

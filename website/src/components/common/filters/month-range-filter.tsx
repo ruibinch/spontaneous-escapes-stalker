@@ -1,3 +1,4 @@
+import { trackEvent } from '@/analytics';
 import { Input } from '@nextui-org/react';
 import { Dispatch, SetStateAction } from 'react';
 
@@ -22,7 +23,12 @@ export function DateRangeFilter({
     const valueInYyyymm = value.replace('-', '');
     const startMonthUpd = field === 'start' ? valueInYyyymm : monthRange[0];
     const endMonthUpd = field === 'end' ? valueInYyyymm : monthRange[1];
-    setMonthRange([startMonthUpd, endMonthUpd]);
+    const selectedMonthRange = [startMonthUpd, endMonthUpd] as [string, string];
+
+    trackEvent(['monthRangeFilter'], {
+      selectedMonthRange: selectedMonthRange.join('-'),
+    });
+    setMonthRange(selectedMonthRange);
   };
 
   return (

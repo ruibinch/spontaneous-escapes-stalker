@@ -1,28 +1,21 @@
-import { trackEvent } from '@/analytics';
 import {
   AutocompleteSearchTermFilter,
   AutocompleteSearchTermFilterProps,
 } from '../common/filters/autocomplete-search-term-filter';
-import {
-  DateRangeFilter,
-  DateRangeFilterProps,
-} from '../common/filters/month-range-filter';
 import {
   FlightClassFilter,
   FlightClassFilterProps,
 } from '../common/filters/flight-class-filter';
 import { MonthFilter, MonthFilterProps } from '../common/filters/month-filter';
 import {
+  DateRangeFilter,
+  DateRangeFilterProps,
+} from '../common/filters/month-range-filter';
+import {
   RegionFilter,
   RegionFilterProps,
 } from '../common/filters/region-filter';
 import { ResetAllFiltersButton } from '../common/filters/reset-all-filters';
-import {
-  SearchTermFilter,
-  SearchTermFilterProps,
-} from '../common/filters/search-term-filter';
-import { HelpCircleIcon } from '../icons/help-circle';
-import { TooltipCustom } from '../common/tooltip-custom';
 
 type Props = AutocompleteSearchTermFilterProps &
   FlightClassFilterProps &
@@ -32,7 +25,6 @@ type Props = AutocompleteSearchTermFilterProps &
 
 export function Filters(props: Props) {
   const resetAllFilters = () => {
-    trackEvent(['playground', 'resetAllFilters']);
     props.setSearchTerms([]);
     props.setFlightClassOption('ALL');
     props.setRegions('All');

@@ -2,7 +2,6 @@ import { trackEvent } from '@/analytics';
 import { FlightClassIndicator } from '@/components/common/flight-class-indicator';
 import { FlightClassSelectOption } from '@/index';
 import { Select, SelectItem, SelectedItems } from '@nextui-org/react';
-import { usePathname } from 'next/navigation';
 import { Dispatch, SetStateAction } from 'react';
 
 export interface FlightClassFilterProps {
@@ -33,8 +32,6 @@ export function FlightClassFilter({
   flightClassOption,
   setFlightClassOption,
 }: FlightClassFilterProps) {
-  const pathname = usePathname();
-
   return (
     <Select
       size="sm"
@@ -56,7 +53,6 @@ export function FlightClassFilter({
         const selectedFlightClassOption = e.target
           .value as FlightClassSelectOption;
         trackEvent(['flightClassFilter'], {
-          pathname,
           selectedFlightClassOption,
         });
         setFlightClassOption(selectedFlightClassOption);

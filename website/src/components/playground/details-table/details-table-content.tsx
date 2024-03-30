@@ -1,6 +1,6 @@
 import { trackEvent } from '@/analytics';
 import { TooltipCustom } from '@/components/common/tooltip-custom';
-import { FlightClass, RouteAnalysisEntry } from '@/index';
+import { FlightClass } from '@/index';
 import {
   Link,
   SortDescriptor,
@@ -13,7 +13,6 @@ import {
   cn,
   getKeyValue,
 } from '@nextui-org/react';
-import NextLink from 'next/link';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { FlightClassIndicator } from '../../common/flight-class-indicator';
 import { TablePagination } from '../../common/table/table-pagination';
@@ -22,7 +21,6 @@ import {
   sortByNumericField,
   sortByStringField,
 } from '../../common/table/sorters';
-import { EyeIcon } from '../../icons/eye';
 import { getColumns } from './columns';
 import { MonthColumnOrder, ShowRoutesAs, TopContent } from './top-content';
 import { CommonStyles } from '@/components/common/styles';

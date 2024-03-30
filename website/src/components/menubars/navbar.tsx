@@ -2,8 +2,6 @@ import { Navbar, NavbarContent } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
 import { additionalEndBarItems, endBarItems, startBarItems } from './bar-items';
 import { NavbarItem } from './navbar-item';
-import { CoffeeItem } from './coffee-item';
-import { ENABLE_COFFEE } from '@/common/env';
 
 export const NavbarWrapper = () => {
   const pathname = usePathname();

@@ -1,5 +1,3 @@
-import { trackEvent } from '@/analytics';
-import { Button } from '@nextui-org/react';
 import {
   FlightClassFilter,
   FlightClassFilterProps,
@@ -11,7 +9,6 @@ type Props = FlightClassFilterProps & YearFilterProps;
 
 export function ByRouteFilters(props: Props) {
   const resetAllFilters = () => {
-    trackEvent(['routeDisplay', 'resetAllFilters']);
     props.setFlightClassOption('ALL');
     props.setYears('All');
   };

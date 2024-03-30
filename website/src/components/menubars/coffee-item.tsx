@@ -1,3 +1,4 @@
+import { trackEvent } from '@/analytics';
 import React from 'react';
 import {
   Modal,
@@ -22,8 +23,11 @@ export function CoffeeItem() {
         variant="light"
         isIconOnly
         // onPress prop doesn't work on mobile
-        onClick={onOpen}
-        className="w-full text-neutral-300/75 hover:text-white"
+        onClick={() => {
+          trackEvent(['coffee']);
+          onOpen();
+        }}
+        className="w-full text-neutral-300/75 hover:bg-neutral-300/25 hover:dark:bg-neutral-300/25 hover:text-white"
       >
         <CoffeeIcon />
       </Button>
@@ -38,6 +42,9 @@ export function CoffeeItem() {
               href="https://www.buymeacoffee.com/ruibinch"
               as={Link}
               color="primary"
+              onClick={() => {
+                trackEvent(['coffeeExternal']);
+              }}
               isExternal
             >
               Buy me a Kopi

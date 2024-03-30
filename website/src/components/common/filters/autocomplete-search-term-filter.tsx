@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@/components/icons/chevron-down';
+import { trackEvent } from '@/analytics';
 import { XIcon } from '@/components/icons/x';
 import { RouteAnalysisEntry } from '@/index';
 import { cn } from '@nextui-org/react';
@@ -7,7 +7,6 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import ReactSelect, {
   components,
   ClearIndicatorProps,
-  DropdownIndicatorProps,
   MultiValue,
 } from 'react-select';
 
@@ -32,12 +31,19 @@ export function AutocompleteSearchTermFilter({
   const [inputValue, setInputValue] = useState('');
   const [isSlashTrigger, setSlashTrigger] = useState(false);
 
-  const onInputValueChange = (value: string) => {
+  const onInputChange = (value: string) => {
     if (isSlashTrigger) {
       setSlashTrigger(false);
       return;
     }
     setInputValue(value);
+  };
+
+  const onChange = (searchTerms: SelectOptions) => {
+    trackEvent(['autocompleteSearchTermFilter'], {
+      searchTerms: searchTerms.map((term) => term.value).join(','),
+    });
+    setSearchTerms(searchTerms);
   };
 
   useEffect(() => {
@@ -69,9 +75,9 @@ export function AutocompleteSearchTermFilter({
         </>
       }
       inputValue={inputValue}
-      onInputChange={onInputValueChange}
+      onInputChange={onInputChange}
       value={searchTerms}
-      onChange={setSearchTerms}
+      onChange={onChange}
       noOptionsMessage={() => <span>{'No results found'}</span>}
       unstyled
       className="w-full"

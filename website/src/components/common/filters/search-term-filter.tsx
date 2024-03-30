@@ -1,7 +1,6 @@
 import { trackEvent } from '@/analytics';
 import useDebounce from '@/hooks/use-debounce';
 import { Input, cn } from '@nextui-org/react';
-import { usePathname } from 'next/navigation';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { CommonStyles } from '../styles';
 
@@ -18,7 +17,6 @@ export function SearchTermFilter({
   placeholder,
   useBasicDesign = false,
 }: SearchTermFilterProps) {
-  const pathname = usePathname();
   const [value, setValue] = useState('');
   const searchRef = useRef<HTMLInputElement>(null);
   const [isSlashTrigger, setSlashTrigger] = useState(false);
@@ -30,7 +28,7 @@ export function SearchTermFilter({
   useDebounce(
     () => {
       const searchKeyword = value.toLowerCase();
-      trackEvent(['searchTermFilter'], { pathname, searchKeyword });
+      trackEvent(['searchTermFilter'], { searchKeyword });
       setSearchTerm(searchKeyword);
     },
     400,

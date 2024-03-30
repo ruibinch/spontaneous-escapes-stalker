@@ -11,7 +11,6 @@ import {
   SearchTermFilterProps,
   SearchTermFilter,
 } from '../common/filters/search-term-filter';
-import { trackEvent } from '@/analytics';
 import { ResetAllFiltersButton } from '../common/filters/reset-all-filters';
 
 type Props = Pick<SearchTermFilterProps, 'searchTerm' | 'setSearchTerm'> &
@@ -20,7 +19,6 @@ type Props = Pick<SearchTermFilterProps, 'searchTerm' | 'setSearchTerm'> &
 
 export function ByMonthFilters(props: Props) {
   const resetAllFilters = () => {
-    trackEvent(['byMonth', 'resetAllFilters']);
     props.setSearchTerm('');
     props.setRegions('All');
     props.setFlightClassOption('ALL');
