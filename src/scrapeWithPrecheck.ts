@@ -7,7 +7,7 @@ import { sendLogs } from './utils/log';
 import { sendMessageToChannels } from './utils/sender';
 
 process.env.TZ = 'UTC';
-const MAX_DELAY_SECS = Number(process.env['MAX_DELAY_SECS']) ?? 600; // 10m
+const MAX_DELAY_SECS = Number(process.env['MAX_DELAY_SECS'] ?? 0);
 
 function checkNextMonthRedemptionsAlreadyPublished() {
   const redemptionsFiles = fs
