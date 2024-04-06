@@ -10,6 +10,8 @@ import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
 import { postprocessing } from './postprocessing';
+import { deployWebsiteProd } from './scripts/deployWebsiteProd';
+import { updateWebsiteDataFiles } from './scripts/updateWebsiteDataFiles';
 import { dateInYYYYMM, datePrefix } from './utils';
 import { log, sendLogs } from './utils/log';
 import {
@@ -19,7 +21,6 @@ import {
   sendRedemptionsInfoNotification,
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
-import { updateWebsiteDataFiles } from './scripts/updateWebsiteDataFiles';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
@@ -94,15 +95,6 @@ export async function scrape() {
     return;
   }
 
-  /**
-   * If new redemption period exists,
-   * - send Telegram notifications
-   * - save data files
-   * - re-run postprocessing and analysis scripts
-   * - update website data files with new JSONs
-   * - commit changes and push to git repo
-   * - TODO: redeploy website to incorporate data files changes (figure out setting up Vercel on RPI)
-   */
   if (!doesRedemptionPeriodExist) {
     log(`Redemption period "${redemptionEndDate}" does not exist`);
     if (shouldUseAws) {
@@ -121,6 +113,16 @@ export async function scrape() {
     await Redemption.upload(newRedemptions);
   }
 
+  /**
+   * If new redemption period exists,
+   * - send Telegram notifications
+   * - save data files
+   * - re-run postprocessing and analysis scripts
+   * - update website data files with new JSONs
+   * - commit changes and push to git repo
+   * - deploy website to incorporate data files changes
+   */
+
   await sendRedemptionsInfoNotification({
     redemptions: newRedemptions,
     redemptionEndDate,
@@ -136,6 +138,7 @@ export async function scrape() {
   analyse();
   await updateWebsiteDataFiles();
   await commitDataDiffs();
+  await deployWebsiteProd();
 }
 
 /**
