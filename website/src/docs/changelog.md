@@ -1,3 +1,7 @@
+# 2.4.1 - 2024-04-07
+
+- Updated search on by-month page to also support autocomplete feature
+
 # 2.4.0 - 2024-03-30
 
 - Revamped search on playground page to support autocomplete feature
