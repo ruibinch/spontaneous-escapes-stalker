@@ -1,19 +1,36 @@
+import { isSearchTermExactMatch } from '@/components/common/filters/autocomplete-search-term-filter';
 import { isRegionMatch } from '@/components/common/filters/region-filter';
-import { isSearchTermMatch } from '@/components/common/filters/search-term-filter';
 import { FlightClassSelectOption, RedemptionEntry } from '@/index';
 
 export function filterRedemptionEntryList({
   data,
-  filters: { searchTerm, regions, flightClassOption },
+  filters: { searchTerms, regions, flightClassOption },
 }: {
   data: RedemptionEntry[];
   filters: {
-    searchTerm: string;
+    searchTerms: string[];
     regions: string[];
     flightClassOption: FlightClassSelectOption;
   };
 }) {
   return data.filter((d) => {
+    const isAnySearchTermExactMatch =
+      searchTerms.length > 0
+        ? searchTerms.some((searchTerm) =>
+            isSearchTermExactMatch({
+              searchTerm,
+              strings: [
+                d.origin,
+                d.originIata,
+                d.originCountry,
+                d.destination,
+                d.destinationIata,
+                d.destinationCountry,
+              ],
+            }),
+          )
+        : true;
+
     const isFlightClassMatch =
       flightClassOption === 'ALL' ||
       (flightClassOption === 'Y' && d.flightClass === 'Economy') ||
@@ -21,10 +38,7 @@ export function filterRedemptionEntryList({
       (flightClassOption === 'J' && d.flightClass === 'Business');
 
     return (
-      isSearchTermMatch({
-        searchTerm,
-        strings: [d.origin, d.originIata, d.destination, d.destinationIata],
-      }) &&
+      isAnySearchTermExactMatch &&
       isRegionMatch({
         regionsFiltered: regions,
         region: d.region,

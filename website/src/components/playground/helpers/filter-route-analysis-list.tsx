@@ -41,9 +41,9 @@ export function filterRouteAnalysisList({
                 strings: [
                   d.from,
                   d.fromIata,
+                  d.fromCountry,
                   d.to,
                   d.toIata,
-                  d.fromCountry,
                   d.toCountry,
                 ],
               }),

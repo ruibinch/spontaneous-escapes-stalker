@@ -26,6 +26,7 @@ import { CommonStyles } from '../common/styles';
 import { FlightClassDistributionChart } from './charts/flight-class-distribution-chart';
 import { RoutesRegionDistributionChart } from './charts/routes-region-distribution-chart';
 import { AlertInfo } from '../common/alert-info';
+import { SelectOptions } from '../common/filters/autocomplete-search-term-filter';
 
 ChartJS.register(
   CategoryScale,
@@ -47,7 +48,7 @@ export function ByMonthContent({
   redemptions: RedemptionEntry[];
   monthSummaryAnalysisEntry: MonthSummaryAnalysisEntry;
 }) {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerms, setSearchTerms] = useState<SelectOptions>([]);
   const [flightClassOption, setFlightClassOption] =
     useState<FlightClassSelectOption>('ALL');
   const [regions, setRegions] = useState<string>('All'); // comma-separated list of regions
@@ -55,7 +56,7 @@ export function ByMonthContent({
   const redemptionsFiltered = filterRedemptionEntryList({
     data: redemptions,
     filters: {
-      searchTerm,
+      searchTerms: searchTerms.map((term) => term.value),
       regions: regions.split(','),
       flightClassOption,
     },
@@ -86,8 +87,9 @@ export function ByMonthContent({
         <ByMonthFilters
           flightClassOption={flightClassOption}
           setFlightClassOption={setFlightClassOption}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
+          searchTerms={searchTerms}
+          setSearchTerms={setSearchTerms}
+          redemptions={redemptions}
           regions={regions}
           setRegions={setRegions}
         />

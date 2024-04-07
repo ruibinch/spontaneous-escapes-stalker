@@ -1,6 +1,6 @@
 import { trackEvent } from '@/analytics';
 import { XIcon } from '@/components/icons/x';
-import { RouteAnalysisEntry } from '@/index';
+import { RedemptionEntry, RouteAnalysisEntry } from '@/index';
 import { cn } from '@nextui-org/react';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
@@ -20,13 +20,15 @@ interface SelectOption {
 export interface AutocompleteSearchTermFilterProps {
   searchTerms: SelectOptions;
   setSearchTerms: Dispatch<SetStateAction<SelectOptions>>;
+  redemptions?: RedemptionEntry[];
 }
 
 export function AutocompleteSearchTermFilter({
   searchTerms,
   setSearchTerms,
+  redemptions,
 }: AutocompleteSearchTermFilterProps) {
-  const searchOptionsList = getSearchOptionsList();
+  const searchOptionsList = getSearchOptionsList(redemptions);
   const searchRef = useRef<HTMLInputElement>(null);
   const [inputValue, setInputValue] = useState('');
   const [isSlashTrigger, setSlashTrigger] = useState(false);
@@ -153,33 +155,54 @@ export function AutocompleteSearchTermFilter({
   );
 }
 
-function getSearchOptionsList() {
-  const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
+/**
+ * Returns a list of city/country/IATA search terms.
+ *
+ * @param redemptions Optional list of redemptions to extract search terms from; if not specified, the full route analysis file is used.
+ */
+function getSearchOptionsList(inputRedemptions: RedemptionEntry[] | undefined) {
+  // TODO: can be tidied up by standardising field names in RedemptionEntry/RouteAnalysisEntry
+  const redemptions =
+    inputRedemptions ?? (routeAnalysisFile as RouteAnalysisEntry[]);
 
-  const citiesList = routeAnalysisList.reduce(
-    (_citiesList: Set<string>, routeAnalysisEntry) => {
-      _citiesList.add(routeAnalysisEntry.from);
-      _citiesList.add(routeAnalysisEntry.to);
+  const citiesList = redemptions.reduce(
+    (_citiesList: Set<string>, redemption) => {
+      _citiesList.add(
+        'from' in redemption ? redemption.from : redemption.origin,
+      );
+      _citiesList.add(
+        'to' in redemption ? redemption.to : redemption.destination,
+      );
       return _citiesList;
     },
     new Set(''),
   );
-  const countriesList = routeAnalysisList.reduce(
-    (_countriesList: Set<string>, routeAnalysisEntry) => {
-      _countriesList.add(routeAnalysisEntry.fromCountry);
-      _countriesList.add(routeAnalysisEntry.toCountry);
+  const countriesList = redemptions.reduce(
+    (_countriesList: Set<string>, redemption) => {
+      _countriesList.add(
+        'fromCountry' in redemption
+          ? redemption.fromCountry
+          : redemption.originCountry,
+      );
+      _countriesList.add(
+        'toCountry' in redemption
+          ? redemption.toCountry
+          : redemption.destinationCountry,
+      );
       return _countriesList;
     },
     new Set(''),
   );
-  const iataList = routeAnalysisList.reduce(
-    (_iataList: Set<string>, routeAnalysisEntry) => {
-      _iataList.add(routeAnalysisEntry.fromIata);
-      _iataList.add(routeAnalysisEntry.toIata);
-      return _iataList;
-    },
-    new Set(''),
-  );
+  const iataList = redemptions.reduce((_iataList: Set<string>, redemption) => {
+    _iataList.add(
+      'fromIata' in redemption ? redemption.fromIata : redemption.originIata,
+    );
+    _iataList.add(
+      'toIata' in redemption ? redemption.toIata : redemption.destinationIata,
+    );
+    return _iataList;
+  }, new Set(''));
+
   const searchTermsList = Array.from(
     new Set([
       ...Array.from(citiesList).sort(),

@@ -15,8 +15,10 @@ export enum Region {
 export type RedemptionEntry = {
   origin: string;
   originIata: string;
+  originCountry: string;
   destination: string;
   destinationIata: string;
+  destinationCountry: string;
   flightClass: string;
   flightNos: string[];
   milesRequired: number;

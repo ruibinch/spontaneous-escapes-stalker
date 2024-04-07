@@ -1,25 +1,27 @@
-import { Button } from '@nextui-org/react';
+import { RedemptionEntry } from '@/index';
 import {
-  FlightClassFilterProps,
+  AutocompleteSearchTermFilter,
+  AutocompleteSearchTermFilterProps,
+} from '../common/filters/autocomplete-search-term-filter';
+import {
   FlightClassFilter,
+  FlightClassFilterProps,
 } from '../common/filters/flight-class-filter';
 import {
-  RegionFilterProps,
   RegionFilter,
+  RegionFilterProps,
 } from '../common/filters/region-filter';
-import {
-  SearchTermFilterProps,
-  SearchTermFilter,
-} from '../common/filters/search-term-filter';
 import { ResetAllFiltersButton } from '../common/filters/reset-all-filters';
 
-type Props = Pick<SearchTermFilterProps, 'searchTerm' | 'setSearchTerm'> &
+type Props = {
+  redemptions: RedemptionEntry[];
+} & AutocompleteSearchTermFilterProps &
   FlightClassFilterProps &
   RegionFilterProps;
 
 export function ByMonthFilters(props: Props) {
   const resetAllFilters = () => {
-    props.setSearchTerm('');
+    props.setSearchTerms([]);
     props.setRegions('All');
     props.setFlightClassOption('ALL');
   };
@@ -27,12 +29,14 @@ export function ByMonthFilters(props: Props) {
   return (
     <div>
       <div className="flex items-center gap-4">
-        <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-2">
-          <SearchTermFilter
-            searchTerm={props.searchTerm}
-            setSearchTerm={props.setSearchTerm}
-            placeholder="Search by city/IATA"
-          />
+        <div className="flex-1 grid grid-cols-2 gap-2">
+          <div className="col-span-2">
+            <AutocompleteSearchTermFilter
+              searchTerms={props.searchTerms}
+              setSearchTerms={props.setSearchTerms}
+              redemptions={props.redemptions}
+            />
+          </div>
 
           <RegionFilter regions={props.regions} setRegions={props.setRegions} />
 
