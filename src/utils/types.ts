@@ -33,7 +33,9 @@ export type RedemptionJsonPostprocessed = Omit<
 > & {
   flightNos: string[];
   originIata: string;
+  originCountry: string;
   destinationIata: string;
+  destinationCountry: string;
   redemptionMonth: string;
 };
 
