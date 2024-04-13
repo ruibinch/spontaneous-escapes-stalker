@@ -28,8 +28,10 @@ export function SearchTermFilter({
   useDebounce(
     () => {
       const searchKeyword = value.toLowerCase();
-      trackEvent(['searchTermFilter'], { searchKeyword });
       setSearchTerm(searchKeyword);
+      if (searchKeyword) {
+        trackEvent(['searchTermFilter'], { searchKeyword });
+      }
     },
     400,
     [value],
