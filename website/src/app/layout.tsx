@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Providers } from '../providers';
 
 export const metadata: Metadata = {
@@ -15,6 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+        src="https://umami-tawny-phi.vercel.app/script.js"
+        data-website-id="72c90a3b-768b-4f5e-af4e-87b45cb0d3ce"
+      />
+
       <body>
         <Providers>{children}</Providers>
         <Analytics />
