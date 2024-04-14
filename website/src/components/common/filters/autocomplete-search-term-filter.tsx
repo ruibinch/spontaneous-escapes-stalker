@@ -42,9 +42,11 @@ export function AutocompleteSearchTermFilter({
   };
 
   const onChange = (searchTerms: SelectOptions) => {
-    trackEvent(['autocompleteSearchTermFilter'], {
-      searchTerms: searchTerms.map((term) => term.value).join(','),
-    });
+    if (searchTerms.length > 0) {
+      trackEvent(['autocompleteSearchTermFilter'], {
+        searchTerms: searchTerms.map((term) => term.value).join(','),
+      });
+    }
     setSearchTerms(searchTerms);
   };
 
