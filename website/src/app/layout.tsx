@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script
-        src="https://umami-tawny-phi.vercel.app/script.js"
+        src="/stats/script.js"
         data-website-id="72c90a3b-768b-4f5e-af4e-87b45cb0d3ce"
       />
 
