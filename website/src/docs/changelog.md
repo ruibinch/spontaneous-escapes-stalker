@@ -1,3 +1,7 @@
+# 2.4.2 - 2024-04-14
+
+- Updated help content
+
 # 2.4.1 - 2024-04-07
 
 - Updated search on by-month page to also support autocomplete feature
