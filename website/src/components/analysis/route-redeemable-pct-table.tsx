@@ -114,7 +114,7 @@ export function RouteRedeemablePctTable() {
           <SearchTermFilter
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
-            placeholder="Filter by city/IATA"
+            placeholder="Filter by city / IATA"
             useBasicDesign
           />
         </div>

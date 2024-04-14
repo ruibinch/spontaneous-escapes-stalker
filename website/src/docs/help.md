@@ -1,6 +1,14 @@
+## What is this site about?
+
+SIA runs a monthly Spontaneous Escapes (SE) promotion, where the number of miles required for a ticket redemption in the following month is reduced, typically by 30%. The routes available for redemption vary on a monthly basis as they are determined by load factor, i.e. the greater the number of unsold seats on the route, the higher the chance of the route appearing on SE.
+
+This site collates the historical SE redemptions data and presents it in an easily accessible and searchable format with accompanying charts for derivation of insights and potentially predictions of future redemptions.
+
+A more in-depth writeup of this site is featured in [this MileLion article](https://milelion.com/2024/04/07/now-live-krisflyer-spontaneous-escapes-analysis-tool-seat/).
+
 ## Where does this data come from?
 
-A combination of scraping the [KrisFlyer Spontaneous Escapes page](https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/) as well as parsing the data published on the [MileLion](https://milelion.com/?s=spontaneous)/[MainlyMiles](https://mainlymiles.com/?s=spontaneous) blogs for older releases.
+A combination of scraping the live and archived versions of the [KrisFlyer Spontaneous Escapes page](https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/) as well as parsing the data published on the [MileLion](https://milelion.com/?s=spontaneous)/[MainlyMiles](https://mainlymiles.com/?s=spontaneous) blogs for older releases.
 
 Each individual redemption is parsed into a JSON structure to facilitate further data manipulation and analysis.
 
@@ -8,8 +16,10 @@ Each individual redemption is parsed into a JSON structure to facilitate further
 {
   "origin": "Singapore",
   "originIata": "SIN",
+  "originCountry": "Singapore",
   "destination": "Bali",
   "destinationIata": "DPS",
+  "destinationCountry": "Indonesia",
   "flightClass": "Economy",
   "flightNos": ["SQ938", "SQ944"],
   "milesRequired": 5250,
