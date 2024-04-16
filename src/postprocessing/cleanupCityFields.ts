@@ -4,6 +4,7 @@ const cityMapper: Record<string, string> = {
   Bengaluru: 'Bangalore',
   Brunei: 'Bandar Seri Begawan',
   Chiangmai: 'Chiang Mai',
+  'Chong Qing': 'Chongqing',
   'Davao City': 'Davao',
   Delhi: 'New Delhi',
   Denpasar: 'Bali',
