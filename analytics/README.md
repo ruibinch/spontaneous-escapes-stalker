@@ -45,6 +45,8 @@ website_id,name,domain,share_id,reset_at,user_id,created_at,updated_at,deleted_a
 
 ### `website_event`
 
+Combination of path visits (`event_type = 1`) + custom events (`event_type = 2`).
+
 | Name            | Type         | Nullable? | Description                                               |
 | --------------- | ------------ | --------- | --------------------------------------------------------- |
 | event_id        | uuid         | NO        | Unique UUID                                               |

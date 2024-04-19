@@ -1,32 +1,15 @@
-import fs from 'fs';
-import path from 'path';
 import { v4 as uuid } from 'uuid';
 import { HOSTNAME, WEBSITE_ID } from './constants';
 import { getStatsData, getStatsProbabilityMap } from './getVercelStats';
+import { Session } from './types';
 import { generateFromProbabilityMap } from './utils';
-
-interface Session {
-  session_id: string;
-  website_id: string;
-  hostname?: string;
-  browser?: string;
-  os?: string;
-  device?: string;
-  screen?: string;
-  language?: string;
-  country?: string;
-  subdivision1?: string;
-  subdivision2?: string;
-  city?: string;
-  created_at?: string;
-}
 
 function getSessionsCount() {
   const timeseriesData = getStatsData('timeseries');
   return timeseriesData.reduce((_total, stat) => _total + stat.total, 0);
 }
 
-function generateSessions() {
+export function generateSessions() {
   const sessionsCount = getSessionsCount();
   const clientNameProbabilityMap = getStatsProbabilityMap('client_name');
   const countryProbabilityMap = getStatsProbabilityMap('country');
@@ -60,14 +43,7 @@ function generateSessions() {
   // verifySessionDataForField(osNameProbabilityMap, sessions, 'os');
   // verifySessionDataForField(timeseriesProbabilityMap, sessions, 'created_at');
 
-  const keys = Object.keys(sessions[0]) as (keyof Session)[];
-  const sessionsCsv = [
-    keys.join(','),
-    ...sessions.map((session) => keys.map((key) => session[key]).join(',')),
-  ].join('\r\n');
-
-  const sessionsFilepath = path.join('analytics', 'output', 'sessions.csv');
-  fs.writeFileSync(sessionsFilepath, sessionsCsv);
+  return sessions;
 }
 
 function mapBrowser(browser: string) {
@@ -152,7 +128,3 @@ function verifySessionDataForField(
   );
   console.log(fieldValuesProbabilityCombinedMap);
 }
-
-(() => {
-  generateSessions();
-})();
