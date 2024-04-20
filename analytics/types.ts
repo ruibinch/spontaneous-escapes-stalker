@@ -29,3 +29,15 @@ export interface WebsiteEvent {
   event_name?: string;
   visit_id: string;
 }
+
+export interface EventDatum {
+  event_data_id: string;
+  website_id: string;
+  website_event_id: string;
+  event_key: string;
+  string_value?: string;
+  number_value?: number; // all null
+  date_value?: string; // all null
+  data_type: number;
+  created_at?: string;
+}

@@ -1,3 +1,4 @@
+import { generateEventData } from './generateEventData';
 import { generateSessions } from './generateSessions';
 import {
   generateCustomEvents,
@@ -13,12 +14,16 @@ function runAnalyticsBackfill() {
   const customEvents = generateCustomEvents(sessionIds);
   const websiteEvents = [...pathEvents, ...customEvents];
 
+  const eventData = generateEventData(customEvents);
+
   console.log(`\nSaving ${sessions.length} sessions to sessions.csv`);
   console.log(
     `Saving ${websiteEvents.length} website events to websiteEvents.csv`,
   );
+  console.log(`Saving ${eventData.length} sessions to eventData.csv`);
   saveGeneratedOutput(sessions, 'sessions.csv');
   saveGeneratedOutput(websiteEvents, 'websiteEvents.csv');
+  saveGeneratedOutput(eventData, 'eventData.csv');
 }
 
 (() => {

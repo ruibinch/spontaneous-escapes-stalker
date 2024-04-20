@@ -1,11 +1,10 @@
 import fs from 'fs';
 import path from 'path';
-import { Session, WebsiteEvent } from './types';
+import { EventDatum, Session, WebsiteEvent } from './types';
 
-export function saveGeneratedOutput<T extends Session | WebsiteEvent>(
-  data: T[],
-  filename: string,
-) {
+export function saveGeneratedOutput<
+  T extends Session | WebsiteEvent | EventDatum,
+>(data: T[], filename: string) {
   const keys = Object.keys(data[0]) as (keyof T)[];
   const csv = [
     keys.join(','),

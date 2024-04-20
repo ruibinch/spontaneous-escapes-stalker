@@ -1,7 +1,13 @@
 import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
-import { ENVIRONMENT, LIMIT, PROJECT_ID, TEAM_ID } from './constants';
+import {
+  ENVIRONMENT,
+  EVENT_NAME_TO_KEY_MAP,
+  LIMIT,
+  PROJECT_ID,
+  TEAM_ID,
+} from './constants';
 
 interface Stat {
   key: string;
@@ -105,6 +111,57 @@ export function getEventNameToPathProbabilityMap(): Record<
 }
 
 /**
+ * Returns a mapping of event name to data to probability.
+ */
+export function getEventNameToDataProbabilityMap() {
+  const eventNamesWithData = Object.keys(EVENT_NAME_TO_KEY_MAP).filter(
+    (eventName) => !!EVENT_NAME_TO_KEY_MAP[eventName],
+  );
+
+  const eventNameToDataProbabilityMap = eventNamesWithData.reduce(
+    (
+      _eventNameToDataProbabilityMap: Record<string, Record<string, number>>,
+      eventName,
+    ) => {
+      const eventDataFilepath = path.join(
+        'analytics',
+        'data',
+        `event-${eventName.replace(/\/|:/g, '')}.json`,
+      );
+      const eventDataFile = JSON.parse(
+        fs.readFileSync(eventDataFilepath).toString(),
+      ) as StatsFile;
+
+      const eventDataToCountMap = eventDataFile.data.reduce(
+        (_eventDataToCountMap: Record<string, number>, { key, total }) => {
+          _eventDataToCountMap[key] = total;
+          return _eventDataToCountMap;
+        },
+        {},
+      );
+
+      const total = Object.values(eventDataToCountMap).reduce(
+        (_total, count) => _total + count,
+        0,
+      );
+      _eventNameToDataProbabilityMap[eventName] = Object.entries(
+        eventDataToCountMap,
+      ).reduce(
+        (_eventDataToProbabilityMap: Record<string, number>, [path, count]) => {
+          _eventDataToProbabilityMap[path] = count / total;
+          return _eventDataToProbabilityMap;
+        },
+        {},
+      );
+
+      return _eventNameToDataProbabilityMap;
+    },
+    {},
+  );
+  return eventNameToDataProbabilityMap;
+}
+
+/**
  * Creates a mapping of path to event names for all existing paths,
  * and saves it to analytics/data/event_names_for_path.json.
  */
@@ -115,7 +172,7 @@ export async function extractEventNamesForPaths() {
 
   await Promise.all(
     paths.map(async (_path) => {
-      console.log(`Extracting event names for path: ${_path}`);
+      console.log(`Extracting event names for path "${_path}"`);
       const response = await axios.get(
         'https://vercel.com/api/web-analytics/stats',
         {
@@ -150,8 +207,58 @@ export async function extractEventNamesForPaths() {
   );
 }
 
+export async function extractEventData() {
+  const eventNameData = getStatsData('event_name');
+  const eventNames = eventNameData.map((stat) => stat.key);
+
+  eventNames.forEach(async (eventName) => {
+    const eventNameKey = EVENT_NAME_TO_KEY_MAP[eventName];
+    if (!eventNameKey) {
+      return;
+    }
+
+    console.log(
+      `\Extracting event data for eventName "${eventName}" and key "${eventNameKey}"`,
+    );
+    const response = await axios.get(
+      'https://vercel.com/api/web-analytics/stats',
+      {
+        params: {
+          environment: ENVIRONMENT,
+          projectId: PROJECT_ID,
+          teamId: TEAM_ID,
+          limit: LIMIT,
+          from: '2024-04-06T00:00:00.000+00:00',
+          to: '2024-04-14T16:00:00.000+00:00',
+          type: 'event_data',
+          filter: `{"event_name":{"values":["${eventName}"],"operator":"eq"}}`,
+          jsonProperty: eventNameKey,
+        },
+        headers: {
+          Authorization: `Bearer ${process.env['VERCEL_AUTH_TOKEN']}`,
+        },
+      },
+    );
+    const responseData = response.data as StatsFile;
+
+    const eventDataFilepath = path.join(
+      'analytics',
+      'data',
+      `event-${eventName.replace(/\/|:/g, '')}.json`,
+    );
+    console.log(
+      `Saving ${responseData.data.length} entries to ${eventDataFilepath}\n`,
+    );
+    fs.writeFileSync(eventDataFilepath, JSON.stringify(responseData, null, 4));
+  });
+}
+
 (async () => {
   if (!!process.env['EXTRACT_EVENT_NAMES_FOR_PATHS']) {
     await extractEventNamesForPaths();
+  }
+
+  if (!!process.env['EXTRACT_EVENT_DATA']) {
+    await extractEventData();
   }
 })();
