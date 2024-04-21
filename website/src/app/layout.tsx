@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Providers } from '../providers';
@@ -23,7 +22,6 @@ export default function RootLayout({
 
       <body>
         <Providers>{children}</Providers>
-        <Analytics />
       </body>
     </html>
   );

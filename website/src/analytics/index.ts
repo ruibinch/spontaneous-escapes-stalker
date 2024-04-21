@@ -1,11 +1,8 @@
-import { track } from '@vercel/analytics';
-
 export function trackEvent(
   eventNameInput: string[],
   data?: Record<string, string | number | boolean | null>,
 ) {
   const eventName = eventNameInput.map(camelCase).join(':');
-  track(eventName, data);
   // @ts-expect-error window.umami is defined
   window.umami.track(eventName, data);
 }
