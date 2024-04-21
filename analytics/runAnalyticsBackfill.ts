@@ -17,12 +17,14 @@ function runAnalyticsBackfill() {
   const eventData = generateEventData(customEvents);
 
   console.log(`\nSaving ${sessions.length} sessions to sessions.tsv`);
+  saveGeneratedOutputToTsv(sessions, 'sessions.tsv');
+
   console.log(
     `Saving ${websiteEvents.length} website events to websiteEvents.tsv`,
   );
-  console.log(`Saving ${eventData.length} sessions to eventData.tsv`);
-  saveGeneratedOutputToTsv(sessions, 'sessions.tsv');
   saveGeneratedOutputToTsv(websiteEvents, 'websiteEvents.tsv');
+
+  console.log(`Saving ${eventData.length} sessions to eventData.tsv`);
   saveGeneratedOutputToTsv(eventData, 'eventData.tsv');
 }
 

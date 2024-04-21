@@ -33,10 +33,10 @@ export function getStatsProbabilityMap(
   category: Category,
 ): Record<string, number> {
   const statsData = getStatsData(category);
-  const total = statsData.reduce((_total, stat) => _total + stat.total, 0);
+  const total = statsData.reduce((_total, stat) => _total + stat.devices, 0);
 
   return statsData.reduce((_map: Record<string, number>, stat) => {
-    _map[stat.key] = stat.total / total;
+    _map[stat.key] = stat.devices / total;
     return _map;
   }, {});
 }
@@ -111,16 +111,19 @@ export function getEventNameToPathProbabilityMap(): Record<
 }
 
 /**
- * Returns a mapping of event name to data to probability.
+ * Returns a mapping of event name to event data to probability.
  */
-export function getEventNameToDataProbabilityMap() {
+export function getEventNameToEventDataProbabilityMap() {
   const eventNamesWithData = Object.keys(EVENT_NAME_TO_KEY_MAP).filter(
     (eventName) => !!EVENT_NAME_TO_KEY_MAP[eventName],
   );
 
-  const eventNameToDataProbabilityMap = eventNamesWithData.reduce(
+  const eventNameToEventDataProbabilityMap = eventNamesWithData.reduce(
     (
-      _eventNameToDataProbabilityMap: Record<string, Record<string, number>>,
+      _eventNameToEventDataProbabilityMap: Record<
+        string,
+        Record<string, number>
+      >,
       eventName,
     ) => {
       const eventDataFilepath = path.join(
@@ -144,21 +147,26 @@ export function getEventNameToDataProbabilityMap() {
         (_total, count) => _total + count,
         0,
       );
-      _eventNameToDataProbabilityMap[eventName] = Object.entries(
+      _eventNameToEventDataProbabilityMap[eventName] = Object.entries(
         eventDataToCountMap,
       ).reduce(
-        (_eventDataToProbabilityMap: Record<string, number>, [path, count]) => {
-          _eventDataToProbabilityMap[path] = count / total;
+        (
+          _eventDataToProbabilityMap: Record<string, number>,
+          [_eventDatumValue, count],
+        ) => {
+          // some values have random "\t" characters which mess up the TSV parsing
+          const eventDatumValue = _eventDatumValue.replace('\t', '');
+          _eventDataToProbabilityMap[eventDatumValue] = count / total;
           return _eventDataToProbabilityMap;
         },
         {},
       );
 
-      return _eventNameToDataProbabilityMap;
+      return _eventNameToEventDataProbabilityMap;
     },
     {},
   );
-  return eventNameToDataProbabilityMap;
+  return eventNameToEventDataProbabilityMap;
 }
 
 /**

@@ -6,7 +6,7 @@ import { generateFromProbabilityMap } from './utils';
 
 function getSessionsCount() {
   const timeseriesData = getStatsData('timeseries');
-  return timeseriesData.reduce((_total, stat) => _total + stat.total, 0);
+  return timeseriesData.reduce((_total, stat) => _total + stat.devices, 0);
 }
 
 export function generateSessions() {
@@ -55,7 +55,7 @@ function mapBrowser(browser: string) {
     'Chrome Mobile iOS': 'crios',
     Safari: 'safari',
     Facebook: 'facebook',
-    // 'Microsoft Edge': '',
+    'Microsoft Edge': 'edge-chromium',
     'Samsung Browser': 'samsung',
     Firefox: 'firefox',
     // 'Google Search App': '',

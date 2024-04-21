@@ -13,7 +13,7 @@ const makeGetRandomSessionId = (sessionIds: string[]) => () =>
 
 function getPathEventsCount() {
   const pathData = getStatsData('path');
-  return pathData.reduce((_total, stat) => _total + stat.total, 0);
+  return pathData.reduce((_total, stat) => _total + stat.devices, 0);
 }
 
 export function generatePathEvents(sessionIds: string[]) {
@@ -34,6 +34,8 @@ export function generatePathEvents(sessionIds: string[]) {
         generateFromProbabilityMap(timeseriesProbabilityMap),
       ).toISOString(),
       url_path: generateFromProbabilityMap(pathProbabilityMap),
+      referrer_query: '',
+      referrer_domain: '',
       page_title: PAGE_TITLE,
       event_type: 1,
       // use random UUID as there is no way of mapping to a specific visit
@@ -46,7 +48,7 @@ export function generatePathEvents(sessionIds: string[]) {
 
 function getCustomEventsCount() {
   const eventNameData = getStatsData('event_name');
-  return eventNameData.reduce((_total, stat) => _total + stat.total, 0);
+  return eventNameData.reduce((_total, stat) => _total + stat.devices, 0);
 }
 
 export function generateCustomEvents(sessionIds: string[]) {
@@ -73,11 +75,13 @@ export function generateCustomEvents(sessionIds: string[]) {
         generateFromProbabilityMap(timeseriesProbabilityMap),
       ).toISOString(),
       url_path: urlPath,
+      referrer_query: '',
+      referrer_domain: '',
       page_title: PAGE_TITLE,
       event_type: 2,
+      event_name: eventName,
       // use random UUID as there is no way of mapping to a specific visit
       visit_id: uuid(),
-      event_name: eventName,
     });
   }
 

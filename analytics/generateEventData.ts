@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 import { EVENT_NAME_TO_KEY_MAP, WEBSITE_ID } from './constants';
-import { getEventNameToDataProbabilityMap } from './getVercelStats';
+import { getEventNameToEventDataProbabilityMap } from './getVercelStats';
 import { EventDatum, WebsiteEvent } from './types';
 import { generateFromProbabilityMap } from './utils';
 
@@ -14,7 +14,7 @@ export function generateEventData(customEvents: WebsiteEvent[]) {
       eventNamesWithData.includes(customEvent.event_name),
   );
 
-  const eventNameToDataProbabilityMap = getEventNameToDataProbabilityMap();
+  const eventNameToDataProbabilityMap = getEventNameToEventDataProbabilityMap();
   const eventData: EventDatum[] = [];
   console.log(`Generating ${customEventsWithData.length} event data entries`);
   customEventsWithData.forEach((customEvent) => {
