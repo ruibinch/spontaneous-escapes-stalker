@@ -1,8 +1,11 @@
 import { LAST_PRE_COVID_MONTH } from '@/common/months-map';
 import { roundToDp } from '@/common/round-to-dp';
 import { MonthSummaryAnalysisEntry } from '@/index';
-import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
+import { Skeleton } from '@nextui-org/react';
+import { getMonthSummaryAnalysis } from '@/queries/getMonthSummaryAnalysis';
+import { useQuery } from '@tanstack/react-query';
 import { Bar, Line } from 'react-chartjs-2';
+import { AlertApiError } from '../common/alert-api-error';
 import { makeChartOptions } from '../common/chart/chart-options';
 import { ChartWrapper } from '../common/chart/chart-wrapper';
 import { covidLinePlugin } from '../common/chart/covid-line-plugin';
@@ -12,11 +15,44 @@ import { getMonthsWithRouteNetworkData } from './helpers/get-months-with-route-n
 import { useSilkairRoutesToggleContext } from './silkair-routes-toggle';
 
 export function RedemptionsVsRouteNetworkCharts() {
+  const {
+    data: monthSummaryAnalysisList,
+    isLoading,
+    isError,
+    refetch,
+  } = useQuery({
+    queryKey: ['month-summary-analysis'],
+    queryFn: getMonthSummaryAnalysis,
+  });
+
+  return (
+    <>
+      {isLoading && (
+        <div className="flex flex-col gap-4">
+          <Skeleton className="h-52 rounded-md" />
+          <Skeleton className="h-52 rounded-md" />
+        </div>
+      )}
+
+      {isError && <AlertApiError refetch={refetch} />}
+
+      {monthSummaryAnalysisList && (
+        <RedemptionsVsRouteNetworkChartsContent
+          monthSummaryAnalysisList={monthSummaryAnalysisList}
+        />
+      )}
+    </>
+  );
+}
+
+function RedemptionsVsRouteNetworkChartsContent({
+  monthSummaryAnalysisList,
+}: {
+  monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
+}) {
   const { isDarkTheme } = useTheme();
   const { showSilkairRoutes } = useSilkairRoutesToggleContext();
 
-  const monthSummaryAnalysisList =
-    monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
   const monthsWithRouteNetworkData = getMonthsWithRouteNetworkData();
   const lastPreCovidMonthIdx = (() => {
     const _lastPreCovidMonthIdx = Array.from(

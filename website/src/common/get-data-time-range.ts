@@ -1,5 +1,6 @@
 import routeAnalysisFile from '@/static/route-analysis.json';
 
+// TODO: create separate JSON for months list
 /**
  * Returns the list of months present in the dataset.
  */

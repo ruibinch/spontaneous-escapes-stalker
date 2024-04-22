@@ -1,18 +1,21 @@
 import { roundToDp } from '@/common/round-to-dp';
 import { HelpCircleIcon } from '@/components/icons/help-circle';
 import { RouteAnalysisEntry } from '@/index';
-import routeAnalysisFile from '@/static/route-analysis.json';
+import { getRouteAnalysis } from '@/queries/getRouteAnalysis';
 import {
-  cn,
+  Skeleton,
   Table,
   TableBody,
   TableCell,
   TableColumn,
   TableHeader,
   TableRow,
+  cn,
   getKeyValue,
 } from '@nextui-org/react';
+import { useQuery } from '@tanstack/react-query';
 import { Dispatch, SetStateAction, useState } from 'react';
+import { AlertApiError } from '../common/alert-api-error';
 import {
   SearchTermFilter,
   isSearchTermMatch,
@@ -26,9 +29,35 @@ import {
 import { TooltipCustom } from '../common/tooltip-custom';
 import { useSilkairRoutesToggleContext } from './silkair-routes-toggle';
 
-const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
-
 export function RouteRedeemablePctTable() {
+  const {
+    data: routeAnalysisList,
+    isLoading,
+    isError,
+    refetch,
+  } = useQuery({
+    queryKey: ['route-analysis'],
+    queryFn: getRouteAnalysis,
+  });
+
+  return (
+    <>
+      {isLoading && <Skeleton className="h-96 rounded-md" />}
+
+      {isError && <AlertApiError refetch={refetch} />}
+
+      {routeAnalysisList && (
+        <RouteRedeemablePctTableContent routeAnalysisList={routeAnalysisList} />
+      )}
+    </>
+  );
+}
+
+function RouteRedeemablePctTableContent({
+  routeAnalysisList,
+}: {
+  routeAnalysisList: RouteAnalysisEntry[];
+}) {
   const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -128,7 +157,7 @@ export function RouteRedeemablePctTable() {
         </div>
       </div>
 
-      <RouteRedeemablePctTableContent
+      <RouteRedeemablePctTableDetails
         data={dataSorted.slice(startIdx, endIdx)}
         currPage={currPage}
         setCurrPage={setCurrPage}
@@ -143,7 +172,7 @@ const columns = [
   { key: 'redeemablePct', label: 'Redeemable %', width: 150 },
 ];
 
-function RouteRedeemablePctTableContent({
+function RouteRedeemablePctTableDetails({
   data,
   pages,
   currPage,

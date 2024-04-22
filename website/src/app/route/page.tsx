@@ -1,6 +1,6 @@
 'use client';
-import { RouteOverviewContent } from '@/components/route-overview/content';
+import { RouteOverview } from '@/components/route-overview/content';
 
-export default function RouteOverview() {
-  return <RouteOverviewContent />;
+export default function RouteOverviewPage() {
+  return <RouteOverview />;
 }

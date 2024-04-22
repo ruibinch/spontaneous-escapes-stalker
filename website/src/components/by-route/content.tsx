@@ -22,6 +22,8 @@ import { filterRouteDetailsList } from './helpers/filter-route-details-list';
 import { RouteAnalysisEntryWithDetailsList } from './helpers/make-route-details-list';
 import { MonthYearFrequencyTable } from './month-year-frequency-table';
 import { RouteHistoryTable } from './route-history-table';
+import { useQuery } from '@tanstack/react-query';
+import { getRouteAnalysisForRoute } from '@/queries/getRouteAnalysisForRoute';
 
 ChartJS.register(
   CategoryScale,
@@ -34,6 +36,7 @@ ChartJS.register(
   Legend,
 );
 
+// TODO: continue
 export function ByRouteContent({
   routeInfo,
 }: {

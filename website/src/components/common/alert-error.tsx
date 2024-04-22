@@ -1,8 +1,15 @@
 import { cn } from '@nextui-org/react';
 import { InfoIcon } from '../icons/info';
 import { useTheme } from './use-theme';
+import React from 'react';
 
-export function AlertError({ content }: { content: string | string[] }) {
+export function AlertError({
+  content,
+  rightComponent,
+}: {
+  content: string | string[];
+  rightComponent?: React.ReactNode;
+}) {
   const { isDarkTheme } = useTheme();
   const contentToRender = Array.isArray(content) ? content : [content];
 
@@ -28,6 +35,8 @@ export function AlertError({ content }: { content: string | string[] }) {
           <div key={contentLine}>{contentLine}</div>
         ))}
       </div>
+
+      {rightComponent}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
-import { PlaygroundContent } from '@/components/playground/content';
+import { Playground } from '@/components/playground/content';
 
-export default function Playground() {
-  return <PlaygroundContent />;
+export default function PlaygroundPage() {
+  return <Playground />;
 }

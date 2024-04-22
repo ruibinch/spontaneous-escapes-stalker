@@ -1,4 +1,5 @@
-import axios, { isAxiosError } from 'axios';
+import { getErrorStatusCode } from '@/queries/common';
+import axios from 'axios';
 import { NextRequest } from 'next/server';
 
 const { APIGW_ID, APIGW_KEY } = process.env;
@@ -18,9 +19,8 @@ export async function POST(req: NextRequest) {
       statusCode: response.status,
     });
   } catch (err) {
-    const statusCode = isAxiosError(err) ? err.response?.status : 500;
     return Response.json({
-      statusCode,
+      statusCode: getErrorStatusCode(err),
     });
   }
 }

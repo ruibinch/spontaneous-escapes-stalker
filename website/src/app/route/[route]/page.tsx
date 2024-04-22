@@ -6,7 +6,7 @@ import routeAnalysisFile from '@/static/route-analysis.json';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
-export default function ByRoute({ params }: { params: { route: string } }) {
+export default function ByRoutePage({ params }: { params: { route: string } }) {
   const route = params.route.toUpperCase();
   const routeAnalysisEntry = routeAnalysisList.find(
     (d) => d.fromIata === route.slice(0, 3) && d.toIata === route.slice(3, 6),

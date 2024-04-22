@@ -36,36 +36,34 @@ export function Filters(props: Props) {
   };
 
   return (
-    <div>
-      <div className="flex items-center gap-4">
-        <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-2">
-          <div className="col-span-2 md:col-span-3 flex flex-row gap-2 items-center">
-            <AutocompleteSearchTermFilter
-              searchTerms={props.searchTerms}
-              setSearchTerms={props.setSearchTerms}
-            />
-          </div>
-
-          <RegionFilter regions={props.regions} setRegions={props.setRegions} />
-
-          <FlightClassFilter
-            flightClassOption={props.flightClassOption}
-            setFlightClassOption={props.setFlightClassOption}
+    <div className="flex items-center gap-4">
+      <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div className="col-span-2 md:col-span-3 flex flex-row items-center">
+          <AutocompleteSearchTermFilter
+            searchTerms={props.searchTerms}
+            setSearchTerms={props.setSearchTerms}
           />
-
-          <MonthFilter months={props.months} setMonths={props.setMonths} />
-
-          <div className="col-span-2">
-            <DateRangeFilter
-              monthRange={props.monthRange}
-              setMonthRange={props.setMonthRange}
-              monthsList={props.monthsList}
-            />
-          </div>
         </div>
 
-        <ResetAllFiltersButton resetAllFilters={resetAllFilters} />
+        <RegionFilter regions={props.regions} setRegions={props.setRegions} />
+
+        <FlightClassFilter
+          flightClassOption={props.flightClassOption}
+          setFlightClassOption={props.setFlightClassOption}
+        />
+
+        <MonthFilter months={props.months} setMonths={props.setMonths} />
+
+        <div className="col-span-2">
+          <DateRangeFilter
+            monthRange={props.monthRange}
+            setMonthRange={props.setMonthRange}
+            monthsList={props.monthsList}
+          />
+        </div>
       </div>
+
+      <ResetAllFiltersButton resetAllFilters={resetAllFilters} />
     </div>
   );
 }
