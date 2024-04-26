@@ -2,7 +2,6 @@ import axios, { isAxiosError } from 'axios';
 import fs from 'fs';
 import { HTMLElement, parse } from 'node-html-parser';
 import { analyse } from './analyse';
-import { commitDataDiffs } from './lib/git/commitDataDiffs';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { Redemption } from './models/Redemption';
 import { RedemptionPeriod } from './models/RedemptionPeriod';
@@ -10,8 +9,7 @@ import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
 import { postprocessing } from './postprocessing';
-import { deployWebsiteProd } from './scripts/deployWebsiteProd';
-import { updateWebsiteDataFiles } from './scripts/updateWebsiteDataFiles';
+import { updateDataFiles } from './updateDataFiles';
 import { dateInYYYYMM, datePrefix } from './utils';
 import { log, sendLogs } from './utils/log';
 import {
@@ -136,9 +134,8 @@ export async function scrape() {
   });
   postprocessing();
   analyse();
-  await updateWebsiteDataFiles();
-  await commitDataDiffs();
-  await deployWebsiteProd();
+
+  await updateDataFiles();
 }
 
 /**
