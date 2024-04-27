@@ -1,8 +1,17 @@
+'use client';
+import { useContext, useEffect } from 'react';
 import { MarkdownWrapper } from '../common/markdown-wrapper';
 import { PageHeader } from '../common/page-header';
+import { NewChangelogItemContext } from '../common/use-new-changelog-item-context';
 
-// TODO: add notification icon beside changelog icon when there's a new entry
 export function ChangelogContent({ content }: { content: string }) {
+  const { markItemAsViewed } = useContext(NewChangelogItemContext);
+
+  useEffect(() => {
+    markItemAsViewed();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div>
       <PageHeader title="Changelog" />

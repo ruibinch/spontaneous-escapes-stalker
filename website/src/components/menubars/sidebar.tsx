@@ -1,5 +1,7 @@
 import { usePathname } from 'next/navigation';
+import { useContext } from 'react';
 import { useSidebarContext } from '../../layout/layout-context';
+import { NewChangelogItemContext } from '../common/use-new-changelog-item-context';
 import { additionalEndBarItems, endBarItems, startBarItems } from './bar-items';
 import { BarStyles } from './bar.styles';
 import { SidebarItem } from './sidebar-item';
@@ -7,6 +9,7 @@ import { SidebarItem } from './sidebar-item';
 export const SidebarWrapper = () => {
   const pathname = usePathname();
   const { collapsed } = useSidebarContext();
+  const { hasNewItem } = useContext(NewChangelogItemContext);
 
   const isItemActive = (item: { href: string }) => {
     return item.href === '/'
@@ -47,6 +50,7 @@ export const SidebarWrapper = () => {
                 icon={item.icon}
                 isActive={isItemActive(item)}
                 href={item.href}
+                showRedDot={item.title === 'Changelog' && hasNewItem}
               />
             ))}
 

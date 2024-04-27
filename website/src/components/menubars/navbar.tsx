@@ -1,10 +1,13 @@
 import { Navbar, NavbarContent } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
+import { useContext } from 'react';
+import { NewChangelogItemContext } from '../common/use-new-changelog-item-context';
 import { additionalEndBarItems, endBarItems, startBarItems } from './bar-items';
 import { NavbarItem } from './navbar-item';
 
 export const NavbarWrapper = () => {
   const pathname = usePathname();
+  const { hasNewItem } = useContext(NewChangelogItemContext);
 
   const isItemActive = (item: { href: string }) => {
     return item.href === '/'
@@ -46,6 +49,7 @@ export const NavbarWrapper = () => {
               icon={item.icon}
               isActive={isItemActive(item)}
               href={item.href}
+              showRedDot={item.title === 'Changelog' && hasNewItem}
             />
           ))}
 
