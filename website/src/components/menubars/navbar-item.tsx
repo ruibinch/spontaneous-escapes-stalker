@@ -10,9 +10,16 @@ interface Props {
   icon: React.ReactNode;
   isActive?: boolean;
   href?: string;
+  showRedDot?: boolean;
 }
 
-export function NavbarItem({ title, icon, isActive, href = '' }: Props) {
+export function NavbarItem({
+  title,
+  icon,
+  isActive,
+  href = '',
+  showRedDot,
+}: Props) {
   return (
     <NextLink
       href={href}
@@ -28,6 +35,10 @@ export function NavbarItem({ title, icon, isActive, href = '' }: Props) {
         alwaysUseTooltip
       >
         <div className={cn(BarStyles.BarItem({ isActive }), 'p-2 rounded-md')}>
+          {showRedDot && (
+            // slightly hacky implementation as can't get absolute positioning to work properly
+            <div className="w-2 h-2 rounded-lg bg-red-600 -mt-2 -ml-1" />
+          )}
           <div className="text-inherit">{icon}</div>
         </div>
       </TooltipCustom>
