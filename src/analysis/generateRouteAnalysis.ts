@@ -1,7 +1,6 @@
-import { countryCodeMappings } from '../lib/iata/countryCodeMappings';
 import { getCountryFromCity } from '../lib/iata/getCountryFromCity';
 import { iata } from '../lib/iata/iata';
-import { cityMappings, iataMappings } from '../lib/iata/mappings';
+import { iataMappings } from '../lib/iata/mappings';
 import { OagDataAnalysisEntry } from '../scripts/generateOagData';
 import { FlightClass, RedemptionJsonPostprocessed } from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
