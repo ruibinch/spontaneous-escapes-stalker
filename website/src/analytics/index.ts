@@ -4,7 +4,7 @@ export function trackEvent(
 ) {
   const eventName = eventNameInput.map(camelCase).join(':');
   // @ts-expect-error window.umami is defined
-  window.umami.track(eventName, data);
+  window.umami?.track(eventName, data);
 }
 
 function camelCase(str: string) {

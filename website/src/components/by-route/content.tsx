@@ -1,5 +1,5 @@
 'use client';
-import { FlightClassSelectOption } from '@/index';
+import { BlackoutPeriod, FlightClassSelectOption } from '@/index';
 import { BreadcrumbItem, Breadcrumbs, cn } from '@nextui-org/react';
 import {
   BarElement,
@@ -15,6 +15,7 @@ import {
 import { useState } from 'react';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
+import { MonthView } from './month-view';
 import { ByRouteFilters } from './by-route-filters';
 import { MilesRequiredOverTimeChart } from './charts/miles-required-over-time-chart';
 import { MonthsDistributionChart } from './charts/months-distribution-chart';
@@ -52,6 +53,7 @@ export function ByRouteContent({
       flightClassOption,
     },
   });
+
   return (
     <div>
       <PageHeader
@@ -92,10 +94,17 @@ export function ByRouteContent({
           </div>
         </div>
 
-        <MonthYearFrequencyTable
-          data={detailsListFiltered}
-          years={years.split(',')}
-        />
+        <div className="grid grid-cols-2 gap-2">
+          <div className="col-span-2 xl:col-span-1">
+            <MonthView detailsListFiltered={detailsListFiltered} />
+          </div>
+          <div className="col-span-2 xl:col-span-1">
+            <MonthYearFrequencyTable
+              data={detailsListFiltered}
+              years={years.split(',')}
+            />
+          </div>
+        </div>
 
         <RouteHistoryTable data={detailsList} />
       </div>

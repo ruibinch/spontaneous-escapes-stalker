@@ -11,7 +11,7 @@ export function filterRouteDetailsList({
     years: string[];
     flightClassOption: FlightClassSelectOption;
   };
-}) {
+}): RouteDetailDatum[] {
   return detailsList.filter((detail) => {
     const isFlightClassMatch =
       flightClassOption === 'ALL' || flightClassOption === detail.flightClass;

@@ -1,15 +1,18 @@
 import { ByRouteContent } from '@/components/by-route/content';
 import { makeRouteDetailsList } from '@/components/by-route/helpers/make-route-details-list';
 import { NoDataIllustration } from '@/components/icons/no-data';
-import { RouteAnalysisEntry } from '@/index';
+import { BlackoutPeriod, RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
 export default function ByRoute({ params }: { params: { route: string } }) {
   const route = params.route.toUpperCase();
+  const fromIata = route.slice(0, 3);
+  const toIata = route.slice(3, 6);
+
   const routeAnalysisEntry = routeAnalysisList.find(
-    (d) => d.fromIata === route.slice(0, 3) && d.toIata === route.slice(3, 6),
+    (d) => d.fromIata === fromIata && d.toIata === toIata,
   );
 
   if (!routeAnalysisEntry) {

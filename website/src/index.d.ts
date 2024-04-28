@@ -101,3 +101,9 @@ export type RedemptionInfoSingle = {
     flightNos?: string[];
   }>;
 };
+
+export interface BlackoutPeriod {
+  from: string;
+  to: string;
+  flightNos?: string[]; // if undefined, then it's applicable for all flights
+}

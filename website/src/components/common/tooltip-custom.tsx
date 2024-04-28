@@ -18,6 +18,11 @@ type Props = Omit<TooltipProps, 'content'> & {
 export function TooltipCustom(props: Props) {
   const windowSize = useWindowSize();
 
+  // don't render tooltip if content is empty
+  if (!props.content) {
+    return props.children;
+  }
+
   if (
     windowSize.width !== undefined &&
     windowSize.width < BREAKPOINTS.sm &&
