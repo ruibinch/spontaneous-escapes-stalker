@@ -1,5 +1,8 @@
 import { flightClassColors } from '@/components/common/colors';
-import { flightClassCodeToName } from '@/components/common/flight-class-code-to-name';
+import {
+  flightClassCodeOrder,
+  flightClassCodeToName,
+} from '@/components/common/flight-class-code-to-name';
 import { FlightClassIndicator } from '@/components/common/flight-class-indicator';
 import { TooltipCustom } from '@/components/common/tooltip-custom';
 import { ArrowDownIcon } from '@/components/icons/arrow-down';
@@ -147,7 +150,7 @@ function ComparisonTable({
           </tr>
         </thead>
         <tbody>
-          {['Y', 'W', 'J'].map((flightClass, idx) => {
+          {flightClassCodeOrder.map((flightClass, idx) => {
             const monthValue = flightClassDistributionPctInMonth[flightClass];
             const averageValue = averageFlightClassDistributionPct[flightClass];
             const diffValue = monthValue - averageValue;

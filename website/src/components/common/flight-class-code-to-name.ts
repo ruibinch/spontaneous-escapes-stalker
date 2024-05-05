@@ -3,3 +3,5 @@ export const flightClassCodeToName: Record<string, string> = {
   W: 'Premium Economy',
   J: 'Business',
 };
+
+export const flightClassCodeOrder = ['Y', 'W', 'J'];

@@ -10,6 +10,12 @@ const config: Config = {
   ],
   theme: {
     extend: {},
+    fontSize: {
+      '2xs': '0.625rem',
+    },
+    lineHeight: {
+      '2xs': '0.75rem',
+    },
   },
   darkMode: 'class',
   plugins: [nextui()],

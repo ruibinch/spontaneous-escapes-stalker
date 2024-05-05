@@ -2,9 +2,10 @@ import { makeChartOptions } from '@/components/common/chart/chart-options';
 import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
 import { lineOnHoverPlugin } from '@/components/common/chart/line-on-hover-plugin';
 import { flightClassColors } from '@/components/common/colors';
+import { flightClassCodeOrder } from '@/components/common/flight-class-code-to-name';
+import { useTheme } from '@/components/common/use-theme';
 import { Line } from 'react-chartjs-2';
 import { RouteDetailDatum } from '../helpers/make-route-details-list';
-import { useTheme } from '@/components/common/use-theme';
 
 export function MilesRequiredOverTimeChart({
   detailsListFiltered,
@@ -22,7 +23,7 @@ export function MilesRequiredOverTimeChart({
     new Set(detailsListFiltered.map((d) => d.month)),
   );
 
-  ['Y', 'W', 'J'].forEach((flightClass) => {
+  flightClassCodeOrder.forEach((flightClass) => {
     const detailsListForFlightClass = detailsListFiltered.filter(
       (d) => d.flightClass === flightClass,
     );

@@ -1,4 +1,4 @@
-import { BlackoutPeriod } from '@/index';
+import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { Button, cn } from '@nextui-org/react';
 import {
   addMonths,
@@ -12,33 +12,36 @@ import {
   subYears,
 } from 'date-fns';
 import { useState } from 'react';
+import {
+  FlightClassIndicator,
+  getFlightClassIndicatorColor,
+} from '../common/flight-class-indicator';
 import { CommonStyles } from '../common/styles';
+import { TooltipCustom } from '../common/tooltip-custom';
 import { ChevronLeftIcon } from '../icons/chevron-left';
 import { ChevronRightIcon } from '../icons/chevron-right';
 import { ChevronsLeftIcon } from '../icons/chevrons-left';
 import { ChevronsRightIcon } from '../icons/chevrons-right';
+import {
+  BlackoutPeriodsByDayDict,
+  makeBlackoutPeriodsByDayDict,
+} from './helpers/make-blackout-periods-by-day-dict';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
-import { yyyymmToDate } from '@/common/yyyymm-to-date';
-import { TooltipCustom } from '../common/tooltip-custom';
-import { FlightClassIndicator } from '../common/flight-class-indicator';
 
 export function MonthView({
   detailsListFiltered,
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
-  const today = new Date();
+  const today = new Date('2024-01-01');
   const [date, setDate] = useState(today);
 
   const redemptionsInMonth = detailsListFiltered.filter((detail) =>
     isSameMonth(yyyymmToDate(detail.month), date),
   );
-  const blackoutPeriodsInMonth = redemptionsInMonth.reduce(
-    (_blackoutPeriodsInMonth: BlackoutPeriod[], detail) => {
-      _blackoutPeriodsInMonth.push(...detail.blackoutPeriod);
-      return _blackoutPeriodsInMonth;
-    },
-    [],
+  const blackoutPeriodsByDayDict = makeBlackoutPeriodsByDayDict(
+    redemptionsInMonth,
+    date,
   );
 
   const isBeforeCurrentMonth =
@@ -91,7 +94,7 @@ export function MonthView({
         <MonthCalendar
           date={date}
           hasRedemptionInMonth={redemptionsInMonth.length > 0}
-          blackoutPeriodsInMonth={blackoutPeriodsInMonth}
+          blackoutPeriodsByDayDict={blackoutPeriodsByDayDict}
         />
       </div>
     </div>
@@ -104,11 +107,11 @@ const DAYS_OF_WEEK_ORDER = [1, 2, 3, 4, 5, 6, 0];
 function MonthCalendar({
   date,
   hasRedemptionInMonth,
-  blackoutPeriodsInMonth,
+  blackoutPeriodsByDayDict,
 }: {
   date: Date;
   hasRedemptionInMonth: boolean;
-  blackoutPeriodsInMonth: BlackoutPeriod[];
+  blackoutPeriodsByDayDict: BlackoutPeriodsByDayDict;
 }) {
   const CalendarStyles = {
     Borders: cn('border-neutral-300 dark:border-neutral-400'),
@@ -130,7 +133,7 @@ function MonthCalendar({
             key={weekIdx}
             className={cn(
               CalendarStyles.Borders,
-              'min-h-20 flex flex-row border-b',
+              'min-h-24 flex flex-row border-b',
               weekIdx === 0 && 'border-t',
             )}
           >
@@ -150,31 +153,29 @@ function MonthCalendar({
               })();
 
               return (
-                <div
+                <TooltipCustom
                   key={`${weekIdx}-${dayOfWeek}`}
-                  className={cn(
-                    'flex-1',
-                    CalendarStyles.Borders,
-                    'border-r',
-                    dayIdx === 0 && 'border-l',
-                    (() => {
-                      if (dayValue === null) {
-                        return 'bg-gray-700/10 dark:bg-sky-900/40';
-                      }
-                      return hasRedemptionInMonth
-                        ? ''
-                        : 'bg-gray-700 dark:bg-gray-800';
-                    })(),
-                  )}
+                  content={hasRedemptionInMonth ? '' : 'No redemption in month'}
                 >
-                  <TooltipCustom
-                    content={
-                      hasRedemptionInMonth ? '' : 'No redemption in month'
-                    }
+                  <div
+                    className={cn(
+                      'flex-1',
+                      CalendarStyles.Borders,
+                      'border-r',
+                      dayIdx === 0 && 'border-l',
+                      (() => {
+                        if (dayValue === null) {
+                          return 'bg-gray-700/10 dark:bg-sky-900/40';
+                        }
+                        return hasRedemptionInMonth
+                          ? ''
+                          : 'bg-gray-700 dark:bg-gray-800';
+                      })(),
+                    )}
                   >
                     <div
                       className={cn(
-                        'mr-1 mt-1 text-right text-xs',
+                        'mr-1 my-1 text-right text-xs',
                         (() => {
                           if (dayOfWeek === 6 || dayOfWeek === 0) {
                             // weekends
@@ -190,8 +191,64 @@ function MonthCalendar({
                     >
                       <span>{dayValue}</span>
                     </div>
-                  </TooltipCustom>
-                </div>
+
+                    {dayValue !== null &&
+                      (() => {
+                        const blackoutPeriodsForDay =
+                          blackoutPeriodsByDayDict[
+                            `${dayValue < 10 ? '0' : ''}${dayValue}`
+                          ];
+                        // console.log(
+                        //   dayValue,
+                        //   JSON.stringify(blackoutPeriodsForDay),
+                        // );
+
+                        return (
+                          <div className="flex flex-col gap-0.5">
+                            {blackoutPeriodsForDay.map(
+                              (blackoutPeriod, idx) => (
+                                <>
+                                  {Array(
+                                    Math.max(
+                                      // blackoutPeriod.renderLevel - idx,
+                                      0,
+                                      0,
+                                    ),
+                                  )
+                                    .fill(null)
+                                    .map((_, blankIdx) => (
+                                      <div
+                                        key={`${dayValue}-${idx}-${blankIdx}`}
+                                        className="h-4"
+                                      />
+                                    ))}
+                                  <div
+                                    key={`${dayValue}-${idx}`}
+                                    className={cn(
+                                      'flex items-center',
+                                      'w-full h-4',
+                                      getFlightClassIndicatorColor({
+                                        flightClassCode:
+                                          blackoutPeriod.flightClass,
+                                      }),
+                                    )}
+                                  >
+                                    <span className="text-2xs text-amber-200 ml-0.5">
+                                      {blackoutPeriod.flightNos
+                                        .map((flightNo) =>
+                                          flightNo.replace('SQ', ''),
+                                        )
+                                        .join(',')}
+                                    </span>
+                                  </div>
+                                </>
+                              ),
+                            )}
+                          </div>
+                        );
+                      })()}
+                  </div>
+                </TooltipCustom>
               );
             })}
           </div>
