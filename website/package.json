@@ -11,6 +11,7 @@
     "update-data-files": "cp ../data/route-analysis.json src/static/ && cp ../data/month-summary-analysis.json src/static/ && cp ../data/*-redemptions-postprocessed.json src/static"
   },
   "dependencies": {
+    "@date-fns/utc": "^1.2.0",
     "@nextui-org/react": "^2.2.9",
     "axios": "^1.6.7",
     "chart.js": "^4.4.1",

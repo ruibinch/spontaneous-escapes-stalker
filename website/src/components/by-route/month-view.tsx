@@ -33,7 +33,7 @@ export function MonthView({
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
-  const today = new Date('2024-01-01');
+  const today = new Date();
   const [date, setDate] = useState(today);
 
   const redemptionsInMonth = detailsListFiltered.filter((detail) =>
@@ -175,7 +175,7 @@ function MonthCalendar({
                   >
                     <div
                       className={cn(
-                        'mr-1 my-1 text-right text-xs',
+                        'mr-1 mt-0.5 text-right text-xs',
                         (() => {
                           if (dayOfWeek === 6 || dayOfWeek === 0) {
                             // weekends
@@ -198,52 +198,57 @@ function MonthCalendar({
                           blackoutPeriodsByDayDict[
                             `${dayValue < 10 ? '0' : ''}${dayValue}`
                           ];
-                        // console.log(
-                        //   dayValue,
-                        //   JSON.stringify(blackoutPeriodsForDay),
-                        // );
+                        if (blackoutPeriodsForDay.length === 0) {
+                          return null;
+                        }
+
+                        const maxRenderLevel = Math.max(
+                          ...blackoutPeriodsForDay.map(
+                            (period) => period.renderLevel,
+                          ),
+                        );
 
                         return (
-                          <div className="flex flex-col gap-0.5">
-                            {blackoutPeriodsForDay.map(
-                              (blackoutPeriod, idx) => (
-                                <>
-                                  {Array(
-                                    Math.max(
-                                      // blackoutPeriod.renderLevel - idx,
-                                      0,
-                                      0,
-                                    ),
-                                  )
-                                    .fill(null)
-                                    .map((_, blankIdx) => (
-                                      <div
-                                        key={`${dayValue}-${idx}-${blankIdx}`}
-                                        className="h-4"
-                                      />
-                                    ))}
+                          <div className="flex flex-col gap-0.5 mb-1">
+                            {new Array(maxRenderLevel + 1)
+                              .fill(null)
+                              .map((_, level) => {
+                                const blackoutPeriodForLevel =
+                                  blackoutPeriodsForDay.find(
+                                    (period) => period.renderLevel === level,
+                                  );
+
+                                if (!blackoutPeriodForLevel) {
+                                  return (
+                                    <div
+                                      key={`${dayValue}-${level}`}
+                                      className="h-4"
+                                    />
+                                  );
+                                }
+
+                                return (
                                   <div
-                                    key={`${dayValue}-${idx}`}
+                                    key={`${dayValue}-${level}`}
                                     className={cn(
                                       'flex items-center',
                                       'w-full h-4',
                                       getFlightClassIndicatorColor({
                                         flightClassCode:
-                                          blackoutPeriod.flightClass,
+                                          blackoutPeriodForLevel.flightClass,
                                       }),
                                     )}
                                   >
                                     <span className="text-2xs text-amber-200 ml-0.5">
-                                      {blackoutPeriod.flightNos
+                                      {blackoutPeriodForLevel.flightNos
                                         .map((flightNo) =>
                                           flightNo.replace('SQ', ''),
                                         )
                                         .join(',')}
                                     </span>
                                   </div>
-                                </>
-                              ),
-                            )}
+                                );
+                              })}
                           </div>
                         );
                       })()}
