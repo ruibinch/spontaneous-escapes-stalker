@@ -3,6 +3,7 @@ import { BlackoutPeriod } from '@/index';
 import { UTCDate } from '@date-fns/utc';
 import {
   addDays,
+  areIntervalsOverlapping,
   differenceInCalendarDays,
   eachDayOfInterval,
   endOfMonth,
@@ -108,11 +109,17 @@ function getPeriodRenderLevel(
     (_renderLevelsByDateDict: Record<string, number>, date) => {
       const dateString = date.toISOString().split('T')[0];
 
-      const overlappingBlackoutPeriodsWithDate = otherBlackoutPeriods.filter(
-        (period) => isBlackoutPeriodOverlappingDate(period, dateString),
-      );
+      const overlappingBlackoutPeriodsWithThisPeriod =
+        otherBlackoutPeriods.filter((period) =>
+          areIntervalsOverlapping(
+            { start: new Date(period.from), end: new Date(period.to) },
+            { start: new Date(thisPeriod.from), end: new Date(thisPeriod.to) },
+            { inclusive: true },
+          ),
+        );
+
       const blackoutPeriodsAtLowerLevelsOnDate =
-        overlappingBlackoutPeriodsWithDate.filter((period) => {
+        overlappingBlackoutPeriodsWithThisPeriod.filter((period) => {
           const periodFlightClassIdx = flightClassCodeOrder.indexOf(
             period.flightClass,
           );
@@ -125,17 +132,7 @@ function getPeriodRenderLevel(
             return false;
           }
 
-          // same flight class with longer blackout period at a lower level
-          if (
-            differenceInCalendarDays(
-              new Date(period.to),
-              new Date(period.from),
-            ) > thisPeriodBlackoutPeriodDuration
-          ) {
-            return true;
-          }
-
-          // same flight class + same blackout period duration with greater starting flight number at a lower level
+          // same flight class with greater starting flight number at a lower level
           return period.flightNos[0] < thisPeriod.flightNos[0];
         });
 

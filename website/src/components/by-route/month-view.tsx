@@ -12,12 +12,12 @@ import {
   subYears,
 } from 'date-fns';
 import { useState } from 'react';
+import { flightClassCodeOrder } from '../common/flight-class-code-to-name';
 import {
   FlightClassIndicator,
   getFlightClassIndicatorColor,
 } from '../common/flight-class-indicator';
 import { CommonStyles } from '../common/styles';
-import { TooltipCustom } from '../common/tooltip-custom';
 import { ChevronLeftIcon } from '../icons/chevron-left';
 import { ChevronRightIcon } from '../icons/chevron-right';
 import { ChevronsLeftIcon } from '../icons/chevrons-left';
@@ -63,22 +63,12 @@ export function MonthView({
           'flex flex-col p-4 gap-4 border rounded-md',
         )}
       >
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center items-center gap-4">
           <MonthSwitchButton icon={<ChevronsLeftIcon />} onClick={toPrevYear} />
           <MonthSwitchButton icon={<ChevronLeftIcon />} onClick={toPrevMonth} />
-          <div className="flex flex-col gap-2 pt-1">
-            <span onClick={resetToCurrMonth} className="cursor-pointer">
-              {format(date, 'MMM yyyy')}
-            </span>
-            <div className="flex justify-center gap-2">
-              {redemptionsInMonth.map((redemption) => (
-                <FlightClassIndicator
-                  key={redemption.flightClass}
-                  flightClassCode={redemption.flightClass}
-                />
-              ))}
-            </div>
-          </div>
+          <span onClick={resetToCurrMonth} className="cursor-pointer">
+            {format(date, 'MMM yyyy')}
+          </span>
           <MonthSwitchButton
             icon={<ChevronRightIcon />}
             onClick={toNextMonth}
@@ -89,6 +79,59 @@ export function MonthView({
             onClick={toNextYear}
             hideButton={!isBeforeCurrentMonth}
           />
+        </div>
+
+        <div className="flex flex-row justify-between items-center text-xs">
+          <div className="flex flex-col gap-1">
+            <span>Flights applicable for redemption:</span>
+            {redemptionsInMonth.length === 0 ? (
+              <span>-</span>
+            ) : (
+              flightClassCodeOrder.map((flightClassCode) => {
+                const flightNosForFlightClass = redemptionsInMonth
+                  .find(({ flightClass }) => flightClass === flightClassCode)
+                  ?.flightNos.join(', ');
+
+                if (!flightNosForFlightClass) return null;
+                return (
+                  <div
+                    key={flightClassCode}
+                    className="flex gap-2 items-center"
+                  >
+                    <FlightClassIndicator flightClassCode={flightClassCode} />
+                    <span>{flightNosForFlightClass}</span>
+                  </div>
+                );
+              })
+            )}
+          </div>
+          {/* legend */}
+          <div className="flex flex-col gap-1 items-end">
+            <div className="flex flex-row gap-1">
+              <span>No redemption</span>
+              <div className="w-6 h-4 bg-gray-700 dark:bg-gray-800" />
+            </div>
+            <div className="flex flex-row gap-1">
+              <span>Blackout day</span>
+              <div
+                className={cn(
+                  'w-6 h-4 border border-neutral-300 dark:border-neutral-400',
+                  'bg-gray-700/10 dark:bg-sky-900/40 bg-stripes bg-stripes-white dark:bg-stripes-sky-900',
+                )}
+              />
+            </div>
+            <div className="flex flex-row gap-1">
+              <span>Blackout period for flight(s)</span>
+              <div
+                className={cn(
+                  'flex items-center justify-center',
+                  'w-6 h-4 bg-green-600 rounded-md',
+                )}
+              >
+                <span className="text-2xs text-amber-200 ml-0.5">228</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <MonthCalendar
@@ -151,109 +194,129 @@ function MonthCalendar({
                 currentDay += 1;
                 return currentDay - 1;
               })();
+              const blackoutPeriodsForDay = dayValue
+                ? blackoutPeriodsByDayDict[
+                    `${dayValue < 10 ? '0' : ''}${dayValue}`
+                  ]
+                : [];
+              const maxRenderLevel =
+                blackoutPeriodsForDay.length > 0
+                  ? Math.max(
+                      ...blackoutPeriodsForDay.map(
+                        (period) => period.renderLevel,
+                      ),
+                    )
+                  : 0;
 
               return (
-                <TooltipCustom
+                <div
                   key={`${weekIdx}-${dayOfWeek}`}
-                  content={hasRedemptionInMonth ? '' : 'No redemption in month'}
+                  className={cn(
+                    'flex-1',
+                    CalendarStyles.Borders,
+                    'border-r',
+                    dayIdx === 0 && 'border-l',
+                    (() => {
+                      if (dayValue === null) {
+                        return 'bg-gray-700/10 dark:bg-sky-900/40';
+                      }
+                      if (blackoutPeriodsForDay.length > 0) {
+                        return 'bg-gray-700/10 dark:bg-sky-900/40 bg-stripes bg-stripes-white dark:bg-stripes-sky-900';
+                      }
+                      if (!hasRedemptionInMonth) {
+                        return 'bg-gray-700 dark:bg-gray-800';
+                      }
+                      return '';
+                    })(),
+                  )}
                 >
                   <div
                     className={cn(
-                      'flex-1',
-                      CalendarStyles.Borders,
-                      'border-r',
-                      dayIdx === 0 && 'border-l',
+                      'mr-1 mt-0.5 text-right text-xs',
                       (() => {
-                        if (dayValue === null) {
-                          return 'bg-gray-700/10 dark:bg-sky-900/40';
+                        if (dayOfWeek === 6 || dayOfWeek === 0) {
+                          // weekends
+                          return hasRedemptionInMonth
+                            ? 'text-rose-600 dark:text-rose-400'
+                            : 'text-rose-600/75 dark:text-rose-400/50';
                         }
                         return hasRedemptionInMonth
-                          ? ''
-                          : 'bg-gray-700 dark:bg-gray-800';
+                          ? 'text-neutral-600/80 dark:text-neutral-400/80'
+                          : 'text-neutral-500/80 dark:text-neutral-500/80';
                       })(),
                     )}
                   >
-                    <div
-                      className={cn(
-                        'mr-1 mt-0.5 text-right text-xs',
-                        (() => {
-                          if (dayOfWeek === 6 || dayOfWeek === 0) {
-                            // weekends
-                            return hasRedemptionInMonth
-                              ? 'text-rose-600 dark:text-rose-400'
-                              : 'text-rose-600/75 dark:text-rose-400/50';
-                          }
-                          return hasRedemptionInMonth
-                            ? 'text-neutral-600/80 dark:text-neutral-400/80'
-                            : 'text-neutral-500/80 dark:text-neutral-500/80';
-                        })(),
-                      )}
-                    >
-                      <span>{dayValue}</span>
-                    </div>
+                    <span>{dayValue}</span>
+                  </div>
 
-                    {dayValue !== null &&
-                      (() => {
-                        const blackoutPeriodsForDay =
-                          blackoutPeriodsByDayDict[
-                            `${dayValue < 10 ? '0' : ''}${dayValue}`
-                          ];
-                        if (blackoutPeriodsForDay.length === 0) {
-                          return null;
+                  <div className="flex flex-col gap-0.5 mb-1">
+                    {new Array(maxRenderLevel + 1)
+                      .fill(null)
+                      .map((_, level) => {
+                        const blackoutPeriodForLevel =
+                          blackoutPeriodsForDay.find(
+                            (period) => period.renderLevel === level,
+                          );
+                        const isStartOfBlackoutPeriod =
+                          dayValue ===
+                          Number(blackoutPeriodForLevel?.from.split('-')[2]);
+                        const isEndOfBlackoutPeriod =
+                          dayValue ===
+                          Number(blackoutPeriodForLevel?.to.split('-')[2]);
+
+                        if (!blackoutPeriodForLevel) {
+                          return (
+                            <div key={`${dayValue}-${level}`} className="h-4" />
+                          );
                         }
 
-                        const maxRenderLevel = Math.max(
-                          ...blackoutPeriodsForDay.map(
-                            (period) => period.renderLevel,
-                          ),
-                        );
-
                         return (
-                          <div className="flex flex-col gap-0.5 mb-1">
-                            {new Array(maxRenderLevel + 1)
-                              .fill(null)
-                              .map((_, level) => {
-                                const blackoutPeriodForLevel =
-                                  blackoutPeriodsForDay.find(
-                                    (period) => period.renderLevel === level,
-                                  );
-
-                                if (!blackoutPeriodForLevel) {
-                                  return (
-                                    <div
-                                      key={`${dayValue}-${level}`}
-                                      className="h-4"
-                                    />
-                                  );
-                                }
-
-                                return (
-                                  <div
-                                    key={`${dayValue}-${level}`}
-                                    className={cn(
-                                      'flex items-center',
-                                      'w-full h-4',
-                                      getFlightClassIndicatorColor({
-                                        flightClassCode:
-                                          blackoutPeriodForLevel.flightClass,
-                                      }),
-                                    )}
-                                  >
-                                    <span className="text-2xs text-amber-200 ml-0.5">
-                                      {blackoutPeriodForLevel.flightNos
-                                        .map((flightNo) =>
-                                          flightNo.replace('SQ', ''),
-                                        )
-                                        .join(',')}
-                                    </span>
-                                  </div>
-                                );
-                              })}
+                          <div
+                            key={`${dayValue}-${level}`}
+                            className="flex flex-row"
+                          >
+                            <div
+                              className={cn(
+                                'flex items-center',
+                                'w-full h-4',
+                                getFlightClassIndicatorColor({
+                                  flightClassCode:
+                                    blackoutPeriodForLevel.flightClass,
+                                }),
+                                isStartOfBlackoutPeriod && 'rounded-l-md',
+                                isEndOfBlackoutPeriod && 'rounded-r-md',
+                              )}
+                            >
+                              <span className="text-2xs text-amber-200 ml-0.5">
+                                {(isStartOfBlackoutPeriod || dayValue === 1) &&
+                                  // only show flight numbers on the 1st day of blackout period
+                                  // or if it's the first day of the month, as the blackout period might be spanning from the previous month
+                                  blackoutPeriodForLevel.flightNos
+                                    .map((flightNo) =>
+                                      flightNo.replace('SQ', ''),
+                                    )
+                                    .join(',')}
+                              </span>
+                            </div>
+                            {
+                              // override calendar grid border if period is spanning to the next day
+                              !isEndOfBlackoutPeriod && (
+                                <div
+                                  className={cn(
+                                    '-mr-px w-px h-4',
+                                    getFlightClassIndicatorColor({
+                                      flightClassCode:
+                                        blackoutPeriodForLevel.flightClass,
+                                    }),
+                                  )}
+                                />
+                              )
+                            }
                           </div>
                         );
-                      })()}
+                      })}
                   </div>
-                </TooltipCustom>
+                </div>
               );
             })}
           </div>

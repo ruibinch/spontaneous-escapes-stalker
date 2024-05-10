@@ -82,12 +82,7 @@ export function MonthYearFrequencyTable({
                     idx !== 0 ? cn(TableStyles.Borders, 'border-t') : undefined
                   }
                 >
-                  <td
-                    className={cn(
-                      TableStyles.HeaderCols,
-                      'py-1 text-xs sm:text-sm',
-                    )}
-                  >
+                  <td className={cn(TableStyles.HeaderCols, 'py-1 text-xs')}>
                     {tableDatum.year}
                   </td>
                   {columns.slice(1).map((col) => {
