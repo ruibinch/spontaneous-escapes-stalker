@@ -1,4 +1,4 @@
-import { RedemptionJson } from '../utils/types';
+import { BlackoutPeriod, RedemptionJson } from '../utils/types';
 
 /**
  * After the cleanup of city fields, there might be multiple redemption entries for the same route and flight class.
@@ -20,31 +20,40 @@ export function combineRedemptionsForSameRoute(
 
     if (redemptionExistingIdx === -1) {
       redemptionsCombined.push(redemption);
-    } else {
-      const redemptionExisting = redemptionsCombined[redemptionExistingIdx];
-
-      const flightNosCombined = [
-        redemptionExisting.flightNo,
-        redemption.flightNo,
-      ].join(',');
-      const blackoutPeriodCombined = [
-        ...redemptionExisting.blackoutPeriod.map((blackoutPeriod) => ({
-          ...blackoutPeriod,
-          flightNo: redemptionExisting.flightNo,
-        })),
-        ...redemption.blackoutPeriod.map((blackoutPeriod) => ({
-          ...blackoutPeriod,
-          flightNo: redemption.flightNo,
-        })),
-      ];
-      const redemptionCombined: RedemptionJson = {
-        ...redemptionExisting,
-        flightNo: flightNosCombined,
-        blackoutPeriod: blackoutPeriodCombined,
-      };
-
-      redemptionsCombined.splice(redemptionExistingIdx, 1, redemptionCombined);
+      return;
     }
+
+    const redemptionExisting = redemptionsCombined[redemptionExistingIdx];
+
+    const flightNosCombined = [
+      redemptionExisting.flightNo,
+      redemption.flightNo,
+    ].join(',');
+    const blackoutPeriodCombined: BlackoutPeriod[] = [
+      ...redemptionExisting.blackoutPeriod.map(
+        (blackoutPeriod) =>
+          ({
+            from: blackoutPeriod.from,
+            to: blackoutPeriod.to,
+            flightNos: [redemptionExisting.flightNo],
+          } satisfies BlackoutPeriod),
+      ),
+      ...redemption.blackoutPeriod.map(
+        (blackoutPeriod) =>
+          ({
+            from: blackoutPeriod.from,
+            to: blackoutPeriod.to,
+            flightNos: [redemption.flightNo],
+          } satisfies BlackoutPeriod),
+      ),
+    ];
+    const redemptionCombined: RedemptionJson = {
+      ...redemptionExisting,
+      flightNo: flightNosCombined,
+      blackoutPeriod: blackoutPeriodCombined,
+    };
+
+    redemptionsCombined.splice(redemptionExistingIdx, 1, redemptionCombined);
   });
 
   return redemptionsCombined;

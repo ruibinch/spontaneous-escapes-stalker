@@ -804,12 +804,16 @@
       {
         "from": "2022-10-01",
         "to": "2022-10-03",
-        "flightNo": "SQ24"
+        "flightNos": [
+          "SQ24"
+        ]
       },
       {
         "from": "2022-10-01",
         "to": "2022-10-03",
-        "flightNo": "SQ22"
+        "flightNos": [
+          "SQ22"
+        ]
       }
     ],
     "region": "North America",
@@ -832,7 +836,9 @@
       {
         "from": "2022-10-01",
         "to": "2022-10-09",
-        "flightNo": "SQ23"
+        "flightNos": [
+          "SQ23"
+        ]
       }
     ],
     "region": "North America",
