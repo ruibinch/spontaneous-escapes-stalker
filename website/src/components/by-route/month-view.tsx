@@ -39,10 +39,8 @@ export function MonthView({
   const redemptionsInMonth = detailsListFiltered.filter((detail) =>
     isSameMonth(yyyymmToDate(detail.month), date),
   );
-  const blackoutPeriodsByDayDict = makeBlackoutPeriodsByDayDict(
-    redemptionsInMonth,
-    date,
-  );
+  const blackoutPeriodsByDayDict =
+    makeBlackoutPeriodsByDayDict(redemptionsInMonth);
 
   const isBeforeCurrentMonth =
     isBefore(date, today) && !isSameMonth(date, today);
@@ -197,7 +195,7 @@ function MonthCalendar({
               const blackoutPeriodsForDay = dayValue
                 ? blackoutPeriodsByDayDict[
                     `${dayValue < 10 ? '0' : ''}${dayValue}`
-                  ]
+                  ] ?? []
                 : [];
               const maxRenderLevel =
                 blackoutPeriodsForDay.length > 0

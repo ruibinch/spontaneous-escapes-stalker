@@ -1,17 +1,6 @@
 import { flightClassCodeOrder } from '@/components/common/flight-class-code-to-name';
-import { BlackoutPeriod } from '@/index';
 import { UTCDate } from '@date-fns/utc';
-import {
-  addDays,
-  areIntervalsOverlapping,
-  differenceInCalendarDays,
-  eachDayOfInterval,
-  endOfMonth,
-  getDaysInMonth,
-  isAfter,
-  isBefore,
-  startOfMonth,
-} from 'date-fns';
+import { eachDayOfInterval } from 'date-fns';
 import { RouteDetailDatum } from './make-route-details-list';
 
 type BlackoutPeriodWithMetadata = {
@@ -31,16 +20,10 @@ export type BlackoutPeriodsByDayDict = Record<
  */
 export function makeBlackoutPeriodsByDayDict(
   redemptions: RouteDetailDatum[],
-  date: Date,
 ): BlackoutPeriodsByDayDict {
-  const dateStringsInMonth = eachDayOfInterval({
-    start: new UTCDate(startOfMonth(date)),
-    end: new UTCDate(endOfMonth(date)),
-  }).map((date) => date.toISOString().split('T')[0]);
-
-  // get list of all blackout periods in the month
-  const allBlackoutPeriods = redemptions.reduce(
-    (_allBlackoutPeriods: BlackoutPeriodWithMetadata[], redemption) => {
+  // get sorted list of all blackout periods in the month
+  const allBlackoutPeriods = redemptions
+    .reduce((_allBlackoutPeriods: BlackoutPeriodWithMetadata[], redemption) => {
       const blackoutPeriodsForRedemption = redemption.blackoutPeriod.map(
         (period) => ({
           from: period.from,
@@ -50,113 +33,56 @@ export function makeBlackoutPeriodsByDayDict(
         }),
       );
       return [..._allBlackoutPeriods, ...blackoutPeriodsForRedemption];
-    },
-    [],
-  );
+    }, [])
+    .sort((a, b) => {
+      // sort by flightClassOrder first
+      const aFlightClassIdx = flightClassCodeOrder.indexOf(a.flightClass);
+      const bFlightClassIdx = flightClassCodeOrder.indexOf(b.flightClass);
+      if (aFlightClassIdx !== bFlightClassIdx) {
+        return aFlightClassIdx - bFlightClassIdx;
+      }
 
-  // add render level to all blackout periods
-  const allBlackoutPeriodsWithRenderLevel = allBlackoutPeriods.map(
-    (period, idx) => ({
-      ...period,
-      renderLevel: getPeriodRenderLevel(allBlackoutPeriods, idx),
-    }),
-  );
+      // then sort by starting flight number
+      return a.flightNos[0] < b.flightNos[0] ? -1 : 1;
+    });
 
-  // then construct a mapping of day to blackout periods applicable on that day
-  const blackoutPeriodsByDayDict = dateStringsInMonth.reduce(
-    (_blackoutPeriodsByDayDict: BlackoutPeriodsByDayDict, dateString) => {
-      const day = dateString.split('-')[2];
-      _blackoutPeriodsByDayDict[day] = allBlackoutPeriodsWithRenderLevel
-        .filter((period) => isBlackoutPeriodOverlappingDate(period, dateString))
-        .sort((a, b) => a.renderLevel - b.renderLevel);
-      return _blackoutPeriodsByDayDict;
-    },
-    {},
-  );
+  const blackoutPeriodsByDayDict: BlackoutPeriodsByDayDict = {};
+  const dateToDayString = (date: Date) =>
+    date.toISOString().split('T')[0].split('-')[2];
+
+  allBlackoutPeriods.forEach((period) => {
+    const datesInPeriod = eachDayOfInterval({
+      start: new UTCDate(period.from),
+      end: new UTCDate(period.to),
+    });
+    // first iteration through the dates list is to get the max render level for the period across all dates
+    const periodRenderLevelForDates = datesInPeriod.map((date) => {
+      const dayString = dateToDayString(date);
+      // no existing periods on that day, so render at level 0
+      if (!blackoutPeriodsByDayDict[dayString]) {
+        return 0;
+      }
+
+      // else render 1 level higher than the current max render level on that day
+      const existingRenderLevelsForDate = blackoutPeriodsByDayDict[
+        dayString
+      ].map((period) => period.renderLevel);
+      return Math.max(...existingRenderLevelsForDate) + 1;
+    });
+    const maxPeriodRenderLevel = Math.max(...periodRenderLevelForDates);
+
+    // second iteration through the dates list is to add the period entry to the dict
+    datesInPeriod.forEach((date) => {
+      const dayString = dateToDayString(date);
+      blackoutPeriodsByDayDict[dayString] = [
+        ...(blackoutPeriodsByDayDict[dayString] ?? []),
+        {
+          ...period,
+          renderLevel: maxPeriodRenderLevel,
+        },
+      ];
+    });
+  });
 
   return blackoutPeriodsByDayDict;
-}
-
-/**
- * Returns the render level for the blackout period cell corresponding to the input index of the full blackout periods list.
- *
- * The level will be bumped up if there are other overlapping periods with this blackout period that are:
- * - of a lower flight class
- * - of the same flight class, but with a greater number of flights
- * - of the same flight class and the same number of flights, but with a greater starting flight number
- */
-function getPeriodRenderLevel(
-  allBlackoutPeriods: BlackoutPeriodWithMetadata[],
-  periodIdx: number,
-): number {
-  const thisPeriod = allBlackoutPeriods[periodIdx];
-  const thisPeriodFlightClassidx = flightClassCodeOrder.indexOf(
-    thisPeriod.flightClass,
-  );
-  const thisPeriodBlackoutPeriodDuration = differenceInCalendarDays(
-    new Date(thisPeriod.to),
-    new Date(thisPeriod.from),
-  );
-  const otherBlackoutPeriods = allBlackoutPeriods.filter(
-    (_, idx) => idx !== periodIdx,
-  );
-
-  const datesInPeriod = eachDayOfInterval({
-    start: new UTCDate(thisPeriod.from),
-    end: new UTCDate(thisPeriod.to),
-  });
-  const renderLevelsByDateDict = datesInPeriod.reduce(
-    (_renderLevelsByDateDict: Record<string, number>, date) => {
-      const dateString = date.toISOString().split('T')[0];
-
-      const overlappingBlackoutPeriodsWithThisPeriod =
-        otherBlackoutPeriods.filter((period) =>
-          areIntervalsOverlapping(
-            { start: new Date(period.from), end: new Date(period.to) },
-            { start: new Date(thisPeriod.from), end: new Date(thisPeriod.to) },
-            { inclusive: true },
-          ),
-        );
-
-      const blackoutPeriodsAtLowerLevelsOnDate =
-        overlappingBlackoutPeriodsWithThisPeriod.filter((period) => {
-          const periodFlightClassIdx = flightClassCodeOrder.indexOf(
-            period.flightClass,
-          );
-          // lower flight class at a lower level
-          if (periodFlightClassIdx < thisPeriodFlightClassidx) {
-            return true;
-          }
-          // higher flight class at a higher level
-          if (periodFlightClassIdx > thisPeriodFlightClassidx) {
-            return false;
-          }
-
-          // same flight class with greater starting flight number at a lower level
-          return period.flightNos[0] < thisPeriod.flightNos[0];
-        });
-
-      _renderLevelsByDateDict[dateString] =
-        blackoutPeriodsAtLowerLevelsOnDate.length;
-      return _renderLevelsByDateDict;
-    },
-    {},
-  );
-
-  return Math.max(...Object.values(renderLevelsByDateDict));
-}
-
-/**
- * Returns if the input redemption's blackout period overlaps with the input date.
- */
-function isBlackoutPeriodOverlappingDate(
-  blackoutPeriod: BlackoutPeriod,
-  dateString: string,
-) {
-  return (
-    blackoutPeriod.from === dateString ||
-    blackoutPeriod.to === dateString ||
-    (isAfter(new Date(dateString), blackoutPeriod.from) &&
-      isBefore(new Date(dateString), blackoutPeriod.to))
-  );
 }
