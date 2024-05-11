@@ -1,4 +1,5 @@
 import {
+  addMilliseconds,
   areIntervalsOverlapping,
   endOfDay,
   isAfter,
@@ -38,12 +39,14 @@ export function combineOverlappingBlackoutPeriods(
             isThisPeriodOverlapping = areIntervalsOverlapping(
               {
                 start: startOfDay(new Date(period.from)),
-                end: endOfDay(new Date(period.to)),
+                // add 1ms so that continguous periods will also be considered overlapping, e.g. 01-01 to 01-02, and 01-02 to 01-03
+                end: addMilliseconds(endOfDay(new Date(period.to)), 1),
               },
               {
                 start: startOfDay(new Date(thisPeriod.from)),
                 end: endOfDay(new Date(thisPeriod.to)),
               },
+              { inclusive: true },
             );
           } catch (err) {
             console.error(
