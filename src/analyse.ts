@@ -1,17 +1,14 @@
 import fs from 'fs';
 import path from 'path';
-import { appendMonthMetadata } from './analysis/appendMonthMetadata';
-import { generateBlackoutPeriodsByRoute } from './analysis/generateBlackoutPeriodsByRoute';
 import { generateMonthSummaryAnalysis } from './analysis/generateMonthSummaryAnalysis';
 import { generateRouteAnalysis } from './analysis/generateRouteAnalysis';
-import { OagDataAnalysisEntry } from './scripts/generateOagData';
 import { RedemptionJsonPostprocessed } from './utils/types';
+import { appendMonthMetadata } from './analysis/appendMonthMetadata';
+import { OagDataAnalysisEntry } from './scripts/generateOagData';
 
 const ROUTE_ANALYSIS_OUTPUT_FILENAME = 'data/route-analysis.json';
 const MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME =
   'data/month-summary-analysis.json';
-const BLACKOUT_PERIODS_BY_ROUTE_OUTPUT_FILENAME =
-  'data/blackout-periods-by-route.json';
 
 export function analyse() {
   const oagDataAnalysisFileContent = fs
@@ -63,15 +60,6 @@ export function analyse() {
   fs.writeFileSync(
     MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME,
     JSON.stringify(monthSummaryAnalysisWithMetadata, null, 2),
-  );
-
-  const blackoutPeriodsByRoute = generateBlackoutPeriodsByRoute({
-    redemptions,
-  });
-  console.log(`📄 Writing to ${BLACKOUT_PERIODS_BY_ROUTE_OUTPUT_FILENAME}\n`);
-  fs.writeFileSync(
-    BLACKOUT_PERIODS_BY_ROUTE_OUTPUT_FILENAME,
-    JSON.stringify(blackoutPeriodsByRoute, null, 2),
   );
 }
 
