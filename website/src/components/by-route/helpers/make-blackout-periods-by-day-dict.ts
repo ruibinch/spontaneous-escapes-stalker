@@ -1,6 +1,6 @@
 import { flightClassCodeOrder } from '@/components/common/flight-class-code-to-name';
 import { UTCDate } from '@date-fns/utc';
-import { eachDayOfInterval } from 'date-fns';
+import { eachDayOfInterval, isSameMonth } from 'date-fns';
 import { RouteDetailDatum } from './make-route-details-list';
 
 type BlackoutPeriodWithMetadata = {
@@ -10,9 +10,14 @@ type BlackoutPeriodWithMetadata = {
   flightClass: string;
 };
 
+export type BlackoutPeriodWithMetadataAndRenderLevel =
+  BlackoutPeriodWithMetadata & {
+    renderLevel: number;
+  };
+
 export type BlackoutPeriodsByDayDict = Record<
   string,
-  Array<BlackoutPeriodWithMetadata & { renderLevel: number }>
+  BlackoutPeriodWithMetadataAndRenderLevel[]
 >;
 
 /**
@@ -20,6 +25,7 @@ export type BlackoutPeriodsByDayDict = Record<
  */
 export function makeBlackoutPeriodsByDayDict(
   redemptions: RouteDetailDatum[],
+  monthDate: Date,
 ): BlackoutPeriodsByDayDict {
   // get sorted list of all blackout periods in the month
   const allBlackoutPeriods = redemptions
@@ -54,7 +60,8 @@ export function makeBlackoutPeriodsByDayDict(
     const datesInPeriod = eachDayOfInterval({
       start: new UTCDate(period.from),
       end: new UTCDate(period.to),
-    });
+    }).filter((date) => isSameMonth(date, monthDate));
+
     // first iteration through the dates list is to get the max render level for the period across all dates
     const periodRenderLevelForDates = datesInPeriod.map((date) => {
       const dayString = dateToDayString(date);

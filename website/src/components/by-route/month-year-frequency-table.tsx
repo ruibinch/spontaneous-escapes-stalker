@@ -41,7 +41,7 @@ export function MonthYearFrequencyTable({
 
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="text-lg font-semibold">Calendar view</h3>
+      <h3 className="text-lg font-semibold">Year view</h3>
 
       <div
         className={cn(
