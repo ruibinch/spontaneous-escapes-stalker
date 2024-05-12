@@ -10,7 +10,7 @@ import { sortRedemptionsList } from './postprocessing/sortRedemptionsList';
 import { standardiseRegionField } from './postprocessing/standardiseRegionField';
 import { notEmpty } from './utils';
 import { RedemptionJson } from './utils/types';
-import { combineOverlappingBlackoutPeriods } from './postprocessing/combineOverlappingBlackoutPeriods';
+import { formatAndCombineOverlappingBlackoutPeriods } from './postprocessing/formatAndCombineOverlappingBlackoutPeriods';
 
 /**
  * Reads in the the redemptions files for each month and generates a redemptions-postprocessed.json version.
@@ -60,10 +60,11 @@ export function postprocessing() {
     const redemptionsPostprocessed4 = formatFlightNosField(
       redemptionsPostprocessed3,
     );
-    const redemptionsPostprocessed5 = combineOverlappingBlackoutPeriods({
-      redemptions: redemptionsPostprocessed4,
-      month,
-    });
+    const redemptionsPostprocessed5 =
+      formatAndCombineOverlappingBlackoutPeriods({
+        redemptions: redemptionsPostprocessed4,
+        month,
+      });
     const redemptionsPostprocessed6 = appendAndRemoveFields({
       redemptions: redemptionsPostprocessed5,
       month,
