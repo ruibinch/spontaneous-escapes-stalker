@@ -4,6 +4,7 @@ import {
   endOfDay,
   isAfter,
   isBefore,
+  isSameMonth,
   startOfDay,
 } from 'date-fns';
 import { BlackoutPeriod, RedemptionJson } from '../utils/types';
@@ -13,12 +14,18 @@ import { BlackoutPeriod, RedemptionJson } from '../utils/types';
  *
  * This function combines overlapping periods together for a more accurate representation.
  * Only periods with the same flightNos field are combined.
+ *
+ * Also removes blackout periods where both from/to are outside of the current month.
  */
-export function combineOverlappingBlackoutPeriods(
+export function combineOverlappingBlackoutPeriods({
+  redemptions,
+  month,
+}: {
   redemptions: Array<
     Omit<RedemptionJson, 'flightNo'> & { flightNos: string[] }
-  >,
-): Array<Omit<RedemptionJson, 'flightNo'> & { flightNos: string[] }> {
+  >;
+  month: string;
+}): Array<Omit<RedemptionJson, 'flightNo'> & { flightNos: string[] }> {
   return redemptions.map((redemption) => {
     const blackoutPeriodsCombined: BlackoutPeriod[] = [];
 
@@ -88,9 +95,16 @@ export function combineOverlappingBlackoutPeriods(
       );
     });
 
+    const monthDate = new Date(`${month.slice(0, 4)}-${month.slice(4, 6)}-01`);
+    const blackoutPeriodsFiltered = blackoutPeriodsCombined.filter(
+      (period) =>
+        isSameMonth(new Date(period.from), monthDate) ||
+        isSameMonth(new Date(period.to), monthDate),
+    );
+
     return {
       ...redemption,
-      blackoutPeriod: sortBlackoutPeriods(blackoutPeriodsCombined),
+      blackoutPeriod: sortBlackoutPeriods(blackoutPeriodsFiltered),
     };
   });
 }

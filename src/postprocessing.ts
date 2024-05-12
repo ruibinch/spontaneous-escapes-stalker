@@ -60,9 +60,10 @@ export function postprocessing() {
     const redemptionsPostprocessed4 = formatFlightNosField(
       redemptionsPostprocessed3,
     );
-    const redemptionsPostprocessed5 = combineOverlappingBlackoutPeriods(
-      redemptionsPostprocessed4,
-    );
+    const redemptionsPostprocessed5 = combineOverlappingBlackoutPeriods({
+      redemptions: redemptionsPostprocessed4,
+      month,
+    });
     const redemptionsPostprocessed6 = appendAndRemoveFields({
       redemptions: redemptionsPostprocessed5,
       month,
