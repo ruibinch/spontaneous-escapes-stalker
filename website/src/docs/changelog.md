@@ -1,3 +1,7 @@
+# 2.5.0 - 2024-05-13
+
+- Added month calendar view to by-route page for better visualisation of redemption months and blackout periods ([example](https://www.kfseanalysis.com/route/SINDPS))
+
 # 2.4.2 - 2024-04-14
 
 - Updated help content
