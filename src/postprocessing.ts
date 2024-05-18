@@ -3,6 +3,8 @@ import path from 'path';
 import { appendAndRemoveFields } from './postprocessing/appendAndRemoveFields';
 import { cleanupCityFields } from './postprocessing/cleanupCityFields';
 import { combineRedemptionsForSameRoute } from './postprocessing/combineRedemptionsForSameRoute';
+import { computeBlackoutPct } from './postprocessing/computeBlackoutPct';
+import { formatAndCombineOverlappingBlackoutPeriods } from './postprocessing/formatAndCombineOverlappingBlackoutPeriods';
 import { formatFlightNosField } from './postprocessing/formatFlightNosField';
 import { mergeRedemptionsWithBaseSet } from './postprocessing/mergeRedemptionsWithBaseSet';
 import { removeRedemptionsMissingFromOagRoutesDataset } from './postprocessing/removeRedemptionsMissingFromOagRoutesDataset';
@@ -10,7 +12,6 @@ import { sortRedemptionsList } from './postprocessing/sortRedemptionsList';
 import { standardiseRegionField } from './postprocessing/standardiseRegionField';
 import { notEmpty } from './utils';
 import { RedemptionJson } from './utils/types';
-import { formatAndCombineOverlappingBlackoutPeriods } from './postprocessing/formatAndCombineOverlappingBlackoutPeriods';
 
 /**
  * Reads in the the redemptions files for each month and generates a redemptions-postprocessed.json version.
@@ -65,23 +66,26 @@ export function postprocessing() {
         redemptions: redemptionsPostprocessed4,
         month,
       });
-    const redemptionsPostprocessed6 = appendAndRemoveFields({
-      redemptions: redemptionsPostprocessed5,
+    const redemptionsPostprocessed6 = computeBlackoutPct(
+      redemptionsPostprocessed5,
+    );
+    const redemptionsPostprocessed7 = appendAndRemoveFields({
+      redemptions: redemptionsPostprocessed6,
       month,
     });
-    const redemptionsPostprocessed7 =
+    const redemptionsPostprocessed8 =
       removeRedemptionsMissingFromOagRoutesDataset({
-        redemptions: redemptionsPostprocessed6,
+        redemptions: redemptionsPostprocessed7,
         month,
       });
-    const redemptionsPostprocessed8 = sortRedemptionsList({
-      redemptions: redemptionsPostprocessed7,
+    const redemptionsPostprocessed9 = sortRedemptionsList({
+      redemptions: redemptionsPostprocessed8,
     });
 
     const redemptionPostprocessedFilename = `data/${month}-redemptions-postprocessed.json`;
     fs.writeFileSync(
       redemptionPostprocessedFilename,
-      JSON.stringify(redemptionsPostprocessed8, null, 2),
+      JSON.stringify(redemptionsPostprocessed9, null, 2),
     );
   });
 }

@@ -41,6 +41,7 @@ export type RedemptionJsonPostprocessed = Pick<
   destinationIata: string;
   destinationCountry: string;
   flightNos: string[];
+  blackoutPct: number;
   redemptionMonth: string;
 };
 

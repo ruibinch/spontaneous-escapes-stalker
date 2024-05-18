@@ -1,7 +1,6 @@
-import { countryCodeMappings } from '../lib/iata/countryCodeMappings';
 import { getCountryFromCity } from '../lib/iata/getCountryFromCity';
 import { iata } from '../lib/iata/iata';
-import { cityMappings, iataMappings } from '../lib/iata/mappings';
+import { iataMappings } from '../lib/iata/mappings';
 import { OagDataAnalysisEntry } from '../scripts/generateOagData';
 import {
   BlackoutPeriod,
@@ -15,6 +14,7 @@ type RedemptionInfoSingle = {
   flightNos: string[];
   milesRequired: number;
   blackoutPeriod: BlackoutPeriod[];
+  blackoutPct: number;
 };
 type RedemptionByFlightClass = Record<
   FlightClassCode,
@@ -62,6 +62,7 @@ export function generateRouteAnalysis({
       flightNos: redemption.flightNos,
       milesRequired: redemption.milesRequired,
       blackoutPeriod: redemption.blackoutPeriod,
+      blackoutPct: redemption.blackoutPct,
     };
     // prettier-ignore
     routeAnalysisDict[route] = {
