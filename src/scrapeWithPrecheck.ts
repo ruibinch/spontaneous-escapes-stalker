@@ -1,4 +1,4 @@
-import { addMonths } from 'date-fns';
+import { addMonths, isWithinInterval } from 'date-fns';
 import fs from 'fs';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { scrape } from './scrape';
@@ -34,7 +34,14 @@ function checkNextMonthRedemptionsAlreadyPublished() {
 (async () => {
   const isNextMonthRedemptionsAlreadyPublished =
     checkNextMonthRedemptionsAlreadyPublished();
-  if (isNextMonthRedemptionsAlreadyPublished) {
+  // also allow if redemptions are already published but it's the first run of the day, to cater for updates to the site
+  const todayDate = new Date().toISOString().split('T')[0];
+  const isFirstRunOfDay = isWithinInterval(new Date(), {
+    start: new Date(`${todayDate}T23:00:00.000Z`),
+    end: new Date(`${todayDate}T23:05:00.000Z`),
+  });
+
+  if (isNextMonthRedemptionsAlreadyPublished || isFirstRunOfDay) {
     return;
   }
 
