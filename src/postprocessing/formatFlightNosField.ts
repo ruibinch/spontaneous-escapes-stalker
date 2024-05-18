@@ -1,16 +1,18 @@
 import { RedemptionJson } from '../utils/types';
 
+export type RedemptionJsonWithFlightNos = Omit<RedemptionJson, 'flightNo'> & {
+  flightNos: string[];
+};
+
 /**
  * The flightNo string can contain either "," or "/" separators,
  * hence some parsing is required to render it in a standardised format.
  *
  * Also apply the same sorter to the flightNos field in the blackoutPeriods list.
  */
-export function formatFlightNosField(redemptions: RedemptionJson[]): Array<
-  Omit<RedemptionJson, 'flightNo'> & {
-    flightNos: string[];
-  }
-> {
+export function formatFlightNosField(
+  redemptions: RedemptionJson[],
+): RedemptionJsonWithFlightNos[] {
   return redemptions.map((redemption) => {
     const { flightNo, blackoutPeriod, ...restProps } = redemption;
     return {

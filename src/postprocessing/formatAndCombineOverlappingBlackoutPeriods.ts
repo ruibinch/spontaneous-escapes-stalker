@@ -7,7 +7,8 @@ import {
   isSameMonth,
   startOfDay,
 } from 'date-fns';
-import { BlackoutPeriod, RedemptionJson } from '../utils/types';
+import { BlackoutPeriod } from '../utils/types';
+import { RedemptionJsonWithFlightNos } from './formatFlightNosField';
 
 /**
  * Performs 2 postprocessing steps:
@@ -29,11 +30,9 @@ export function formatAndCombineOverlappingBlackoutPeriods({
   redemptions,
   month,
 }: {
-  redemptions: Array<
-    Omit<RedemptionJson, 'flightNo'> & { flightNos: string[] }
-  >;
+  redemptions: RedemptionJsonWithFlightNos[];
   month: string;
-}): Array<Omit<RedemptionJson, 'flightNo'> & { flightNos: string[] }> {
+}): RedemptionJsonWithFlightNos[] {
   const monthDate = new Date(`${month.slice(0, 4)}-${month.slice(4, 6)}-01`);
 
   return redemptions.map((redemption) => {

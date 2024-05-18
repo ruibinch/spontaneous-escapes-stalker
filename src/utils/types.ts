@@ -27,15 +27,20 @@ export type RedemptionJson = Pick<
   | 'redemptionEndDate'
   | 'sortKey'
 >;
-export type RedemptionJsonPostprocessed = Omit<
+export type RedemptionJsonPostprocessed = Pick<
   RedemptionJson,
-  'flightNo' | 'redemptionEndDate' | 'sortKey'
+  | 'origin'
+  | 'destination'
+  | 'flightClass'
+  | 'milesRequired'
+  | 'region'
+  | 'blackoutPeriod'
 > & {
-  flightNos: string[];
   originIata: string;
   originCountry: string;
   destinationIata: string;
   destinationCountry: string;
+  flightNos: string[];
   redemptionMonth: string;
 };
 
