@@ -3,28 +3,43 @@ import { getCountryFromCity } from '../lib/iata/getCountryFromCity';
 import { iata } from '../lib/iata/iata';
 import { cityMappings, iataMappings } from '../lib/iata/mappings';
 import { OagDataAnalysisEntry } from '../scripts/generateOagData';
-import { FlightClass, RedemptionJsonPostprocessed } from '../utils/types';
+import {
+  BlackoutPeriod,
+  FlightClass,
+  RedemptionJsonPostprocessed,
+} from '../utils/types';
 import { sortRoutesList } from './helpers/sortRoutesList';
 import { FlightClassCode, Month, Route } from './types';
 
 type RedemptionInfoSingle = {
   flightNos: string[];
   milesRequired: number;
-  blackoutPeriod: string[];
+  blackoutPeriod: BlackoutPeriod[];
 };
-type DetailsForMonth = Record<
-  Month,
-  {
-    redemptionDetails?: Partial<
-      Record<FlightClassCode, RedemptionInfoSingle | null>
-    >;
-    flightDetails?: {
-      sia: boolean;
-      silkair: boolean;
-    };
-  }
+type RedemptionByFlightClass = Record<
+  FlightClassCode,
+  RedemptionInfoSingle | null
 >;
-type RouteAnalysis = Record<Route, DetailsForMonth>;
+type Details = {
+  redemptionDetails?: Partial<RedemptionByFlightClass>;
+  flightDetails?: {
+    sia: boolean;
+    silkair: boolean;
+  };
+};
+
+type DetailsForMonth = Details & { month: Month };
+type RouteAnalysisDict = Record<Route, Record<Month, Details>>;
+type RouteAnalysisEntry = {
+  from: string;
+  to: string;
+  fromIata: string;
+  toIata: string;
+  fromCountry: string;
+  toCountry: string;
+  region: string;
+  details: DetailsForMonth[];
+};
 
 export function generateRouteAnalysis({
   redemptions,
@@ -34,8 +49,8 @@ export function generateRouteAnalysis({
   redemptions: RedemptionJsonPostprocessed[];
   months: string[];
   oagDataAnalysis: OagDataAnalysisEntry[];
-}) {
-  const routeAnalysisDict: RouteAnalysis = {};
+}): RouteAnalysisEntry[] {
+  const routeAnalysisDict: RouteAnalysisDict = {};
   const routeToRegionMap: Record<string, string> = {};
 
   // create routeAnalysisDict from redemptions data
@@ -43,18 +58,19 @@ export function generateRouteAnalysis({
     const route = `${redemption.origin}-${redemption.destination}`;
     const flightClassCode = getFlightClassCode(redemption.flightClass);
 
+    const redemptionInfoForFlightClass: RedemptionInfoSingle = {
+      flightNos: redemption.flightNos,
+      milesRequired: redemption.milesRequired,
+      blackoutPeriod: redemption.blackoutPeriod,
+    };
+    // prettier-ignore
     routeAnalysisDict[route] = {
       ...routeAnalysisDict[route],
       [redemption.redemptionMonth]: {
         ...routeAnalysisDict[route]?.[redemption.redemptionMonth],
         redemptionDetails: {
-          ...routeAnalysisDict[route]?.[redemption.redemptionMonth]
-            ?.redemptionDetails,
-          [flightClassCode]: {
-            flightNos: redemption.flightNos,
-            milesRequired: redemption.milesRequired,
-            blackoutPeriod: redemption.blackoutPeriod,
-          },
+          ...routeAnalysisDict[route]?.[redemption.redemptionMonth]?.redemptionDetails,
+          [flightClassCode]: redemptionInfoForFlightClass,
         },
       },
     };
@@ -102,9 +118,9 @@ export function generateRouteAnalysis({
   // 2. add null to redemptionDetails object
   const routesSorted = sortRoutesList(Object.keys(routeAnalysisDict));
   const resultFormatted = routesSorted.reduce(
-    (_result: RouteAnalysis, route) => {
+    (_result: RouteAnalysisDict, route) => {
       const details = routeAnalysisDict[route];
-      const detailsUpdated: DetailsForMonth = {};
+      const detailsUpdated: Record<Month, Details> = {};
 
       // iterate through full list of months
       months.forEach((month) => {
@@ -134,17 +150,17 @@ export function generateRouteAnalysis({
       const toCountry = getCountryFromCity(to);
 
       const detailsList = Object.entries(details).reduce(
-        (_detailsList, [month, detailsInfo]) => {
+        (_detailsList: DetailsForMonth[], [month, detailsInfo]) => {
           _detailsList.push({
             month,
             ...detailsInfo,
           });
           return _detailsList;
         },
-        [] as any[], // lazy to type this
+        [],
       );
 
-      return {
+      const routeAnalysisEntry: RouteAnalysisEntry = {
         from,
         to,
         fromIata,
@@ -154,6 +170,7 @@ export function generateRouteAnalysis({
         region,
         details: detailsList,
       };
+      return routeAnalysisEntry;
     },
   );
   return routeAnalysis;
