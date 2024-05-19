@@ -1,24 +1,47 @@
 [
   {
-    "origin": "Bali",
-    "originIata": "DPS",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Bandung",
+    "destinationIata": "BDO",
+    "destinationCountry": "Indonesia",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI192",
+      "MI194"
+    ],
+    "milesRequired": 5250,
+    "blackoutPeriod": [
+      {
+        "from": "2017-12-14",
+        "to": "2017-12-31"
+      }
+    ],
+    "blackoutPct": 58.1,
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Bandung",
+    "originIata": "BDO",
     "originCountry": "Indonesia",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "destinationCountry": "Singapore",
     "flightClass": "Economy",
     "flightNos": [
-      "5",
-      "250"
+      "MI191",
+      "MI193"
     ],
-    "milesRequired": 175,
+    "milesRequired": 5250,
     "blackoutPeriod": [
       {
-        "from": "2017-12-15",
-        "to": "2017-12-30"
+        "from": "2017-12-14",
+        "to": "2017-12-31"
       }
     ],
-    "blackoutPct": 51.6,
+    "blackoutPct": 58.1,
     "region": "South East Asia",
     "redemptionMonth": "201712"
   },
@@ -31,10 +54,9 @@
     "destinationCountry": "Indonesia",
     "flightClass": "Economy",
     "flightNos": [
-      "5",
-      "250"
+      "MI176"
     ],
-    "milesRequired": 176,
+    "milesRequired": 5250,
     "blackoutPeriod": [
       {
         "from": "2017-12-15",
@@ -46,149 +68,17 @@
     "redemptionMonth": "201712"
   },
   {
-    "origin": "Manado",
-    "originIata": "MDC",
+    "origin": "Bali",
+    "originIata": "DPS",
     "originCountry": "Indonesia",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "destinationCountry": "Singapore",
     "flightClass": "Economy",
     "flightNos": [
-      "5",
-      "250"
+      "MI175"
     ],
-    "milesRequired": 273,
-    "blackoutPeriod": [],
-    "blackoutPct": 0,
-    "region": "South East Asia",
-    "redemptionMonth": "201712"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "originCountry": "Singapore",
-    "destination": "Manado",
-    "destinationIata": "MDC",
-    "destinationCountry": "Indonesia",
-    "flightClass": "Economy",
-    "flightNos": [
-      "5",
-      "250"
-    ],
-    "milesRequired": 274,
-    "blackoutPeriod": [],
-    "blackoutPct": 0,
-    "region": "South East Asia",
-    "redemptionMonth": "201712"
-  },
-  {
-    "origin": "Yangon",
-    "originIata": "RGN",
-    "originCountry": "Myanmar",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "destinationCountry": "Singapore",
-    "flightClass": "Economy",
-    "flightNos": [
-      "8",
-      "750"
-    ],
-    "milesRequired": 511,
-    "blackoutPeriod": [],
-    "blackoutPct": 0,
-    "region": "South East Asia",
-    "redemptionMonth": "201712"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "originCountry": "Singapore",
-    "destination": "Yangon",
-    "destinationIata": "RGN",
-    "destinationCountry": "Myanmar",
-    "flightClass": "Economy",
-    "flightNos": [
-      "8",
-      "750"
-    ],
-    "milesRequired": 512,
-    "blackoutPeriod": [],
-    "blackoutPct": 0,
-    "region": "South East Asia",
-    "redemptionMonth": "201712"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "originCountry": "Singapore",
-    "destination": "Mandalay",
-    "destinationIata": "MDL",
-    "destinationCountry": "Myanmar",
-    "flightClass": "Economy",
-    "flightNos": [
-      "8",
-      "750"
-    ],
-    "milesRequired": 522,
-    "blackoutPeriod": [],
-    "blackoutPct": 0,
-    "region": "South East Asia",
-    "redemptionMonth": "201712"
-  },
-  {
-    "origin": "Mandalay",
-    "originIata": "MDL",
-    "originCountry": "Myanmar",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "destinationCountry": "Singapore",
-    "flightClass": "Economy",
-    "flightNos": [
-      "8",
-      "750"
-    ],
-    "milesRequired": 533,
-    "blackoutPeriod": [],
-    "blackoutPct": 0,
-    "region": "South East Asia",
-    "redemptionMonth": "201712"
-  },
-  {
-    "origin": "Da Nang",
-    "originIata": "DAD",
-    "originCountry": "Vietnam",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "destinationCountry": "Singapore",
-    "flightClass": "Economy",
-    "flightNos": [
-      "8",
-      "750"
-    ],
-    "milesRequired": 631,
-    "blackoutPeriod": [
-      {
-        "from": "2017-12-20",
-        "to": "2017-12-31"
-      }
-    ],
-    "blackoutPct": 38.7,
-    "region": "South East Asia",
-    "redemptionMonth": "201712"
-  },
-  {
-    "origin": "Lombok",
-    "originIata": "LOP",
-    "originCountry": "Indonesia",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "destinationCountry": "Singapore",
-    "flightClass": "Economy",
-    "flightNos": [
-      "5",
-      "250"
-    ],
-    "milesRequired": 123127,
+    "milesRequired": 5250,
     "blackoutPeriod": [
       {
         "from": "2017-12-15",
@@ -208,10 +98,10 @@
     "destinationCountry": "Indonesia",
     "flightClass": "Economy",
     "flightNos": [
-      "5",
-      "250"
+      "MI124",
+      "MI128"
     ],
-    "milesRequired": 124128,
+    "milesRequired": 5250,
     "blackoutPeriod": [
       {
         "from": "2017-12-15",
@@ -223,25 +113,25 @@
     "redemptionMonth": "201712"
   },
   {
-    "origin": "Bandung",
-    "originIata": "BDO",
+    "origin": "Lombok",
+    "originIata": "LOP",
     "originCountry": "Indonesia",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "destinationCountry": "Singapore",
     "flightClass": "Economy",
     "flightNos": [
-      "5",
-      "250"
+      "MI123",
+      "MI127"
     ],
-    "milesRequired": 191193,
+    "milesRequired": 5250,
     "blackoutPeriod": [
       {
-        "from": "2017-12-14",
-        "to": "2017-12-31"
+        "from": "2017-12-15",
+        "to": "2017-12-30"
       }
     ],
-    "blackoutPct": 58.1,
+    "blackoutPct": 51.6,
     "region": "South East Asia",
     "redemptionMonth": "201712"
   },
@@ -249,38 +139,31 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "originCountry": "Singapore",
-    "destination": "Bandung",
-    "destinationIata": "BDO",
+    "destination": "Manado",
+    "destinationIata": "MDC",
     "destinationCountry": "Indonesia",
     "flightClass": "Economy",
     "flightNos": [
-      "5",
-      "250"
+      "MI274"
     ],
-    "milesRequired": 192194,
-    "blackoutPeriod": [
-      {
-        "from": "2017-12-14",
-        "to": "2017-12-31"
-      }
-    ],
-    "blackoutPct": 58.1,
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "blackoutPct": 0,
     "region": "South East Asia",
     "redemptionMonth": "201712"
   },
   {
-    "origin": "Pekanbaru",
-    "originIata": "PKU",
+    "origin": "Manado",
+    "originIata": "MDC",
     "originCountry": "Indonesia",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "destinationCountry": "Singapore",
     "flightClass": "Economy",
     "flightNos": [
-      "5",
-      "250"
+      "MI273"
     ],
-    "milesRequired": 253257,
+    "milesRequired": 5250,
     "blackoutPeriod": [],
     "blackoutPct": 0,
     "region": "South East Asia",
@@ -295,10 +178,28 @@
     "destinationCountry": "Indonesia",
     "flightClass": "Economy",
     "flightNos": [
-      "5",
-      "250"
+      "MI254",
+      "MI258"
     ],
-    "milesRequired": 254258,
+    "milesRequired": 5250,
+    "blackoutPeriod": [],
+    "blackoutPct": 0,
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Pekanbaru",
+    "originIata": "PKU",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI253",
+      "MI257"
+    ],
+    "milesRequired": 5250,
     "blackoutPeriod": [],
     "blackoutPct": 0,
     "region": "South East Asia",
@@ -313,10 +214,10 @@
     "destinationCountry": "Vietnam",
     "flightClass": "Economy",
     "flightNos": [
-      "8",
-      "750"
+      "MI632",
+      "MI636"
     ],
-    "milesRequired": 632636,
+    "milesRequired": 8750,
     "blackoutPeriod": [
       {
         "from": "2017-12-20",
@@ -324,6 +225,96 @@
       }
     ],
     "blackoutPct": 38.7,
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Da Nang",
+    "originIata": "DAD",
+    "originCountry": "Vietnam",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI631"
+    ],
+    "milesRequired": 8750,
+    "blackoutPeriod": [
+      {
+        "from": "2017-12-20",
+        "to": "2017-12-31"
+      }
+    ],
+    "blackoutPct": 38.7,
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Mandalay",
+    "destinationIata": "MDL",
+    "destinationCountry": "Myanmar",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI522"
+    ],
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "blackoutPct": 0,
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Mandalay",
+    "originIata": "MDL",
+    "originCountry": "Myanmar",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI533"
+    ],
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "blackoutPct": 0,
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Yangon",
+    "destinationIata": "RGN",
+    "destinationCountry": "Myanmar",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI512"
+    ],
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "blackoutPct": 0,
+    "region": "South East Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Yangon",
+    "originIata": "RGN",
+    "originCountry": "Myanmar",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI511"
+    ],
+    "milesRequired": 8750,
+    "blackoutPeriod": [],
+    "blackoutPct": 0,
     "region": "South East Asia",
     "redemptionMonth": "201712"
   },
@@ -440,24 +431,6 @@
     "redemptionMonth": "201712"
   },
   {
-    "origin": "Chengdu",
-    "originIata": "CTU",
-    "originCountry": "China",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "destinationCountry": "Singapore",
-    "flightClass": "Economy",
-    "flightNos": [
-      "10",
-      "500"
-    ],
-    "milesRequired": 935937,
-    "blackoutPeriod": [],
-    "blackoutPct": 0,
-    "region": "North Asia",
-    "redemptionMonth": "201712"
-  },
-  {
     "origin": "Singapore",
     "originIata": "SIN",
     "originCountry": "Singapore",
@@ -466,28 +439,28 @@
     "destinationCountry": "China",
     "flightClass": "Economy",
     "flightNos": [
-      "10",
-      "500"
+      "MI936",
+      "MI938"
     ],
-    "milesRequired": 936938,
+    "milesRequired": 10500,
     "blackoutPeriod": [],
     "blackoutPct": 0,
     "region": "North Asia",
     "redemptionMonth": "201712"
   },
   {
-    "origin": "Wuhan",
-    "originIata": "WUH",
+    "origin": "Chengdu",
+    "originIata": "CTU",
     "originCountry": "China",
     "destination": "Singapore",
     "destinationIata": "SIN",
     "destinationCountry": "Singapore",
     "flightClass": "Economy",
     "flightNos": [
-      "10",
-      "500"
+      "MI935",
+      "MI937"
     ],
-    "milesRequired": 985987,
+    "milesRequired": 10500,
     "blackoutPeriod": [],
     "blackoutPct": 0,
     "region": "North Asia",
@@ -502,10 +475,28 @@
     "destinationCountry": "China",
     "flightClass": "Economy",
     "flightNos": [
-      "10",
-      "500"
+      "MI986",
+      "MI988"
     ],
-    "milesRequired": 986988,
+    "milesRequired": 10500,
+    "blackoutPeriod": [],
+    "blackoutPct": 0,
+    "region": "North Asia",
+    "redemptionMonth": "201712"
+  },
+  {
+    "origin": "Wuhan",
+    "originIata": "WUH",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
+    "flightClass": "Economy",
+    "flightNos": [
+      "MI985",
+      "MI987"
+    ],
+    "milesRequired": 10500,
     "blackoutPeriod": [],
     "blackoutPct": 0,
     "region": "North Asia",
