@@ -594,45 +594,6 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "originCountry": "Singapore",
-    "destination": "Ho Chi Minh City",
-    "destinationIata": "SGN",
-    "destinationCountry": "Vietnam",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ186"
-    ],
-    "milesRequired": 9450,
-    "blackoutPeriod": [],
-    "blackoutPct": 0,
-    "region": "South East Asia",
-    "redemptionMonth": "202407"
-  },
-  {
-    "origin": "Ho Chi Minh City",
-    "originIata": "SGN",
-    "originCountry": "Vietnam",
-    "destination": "Singapore",
-    "destinationIata": "SIN",
-    "destinationCountry": "Singapore",
-    "flightClass": "Business",
-    "flightNos": [
-      "SQ185"
-    ],
-    "milesRequired": 9450,
-    "blackoutPeriod": [
-      {
-        "from": "2024-07-14",
-        "to": "2024-07-16"
-      }
-    ],
-    "blackoutPct": 9.7,
-    "region": "South East Asia",
-    "redemptionMonth": "202407"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "originCountry": "Singapore",
     "destination": "Kuala Lumpur",
     "destinationIata": "KUL",
     "destinationCountry": "Malaysia",
@@ -900,6 +861,45 @@
     "milesRequired": 16800,
     "blackoutPeriod": [],
     "blackoutPct": 0,
+    "region": "South East Asia",
+    "redemptionMonth": "202407"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Ho Chi Minh City",
+    "destinationIata": "SGN",
+    "destinationCountry": "Vietnam",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ186"
+    ],
+    "milesRequired": 16800,
+    "blackoutPeriod": [],
+    "blackoutPct": 0,
+    "region": "South East Asia",
+    "redemptionMonth": "202407"
+  },
+  {
+    "origin": "Ho Chi Minh City",
+    "originIata": "SGN",
+    "originCountry": "Vietnam",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
+    "flightClass": "Business",
+    "flightNos": [
+      "SQ185"
+    ],
+    "milesRequired": 16800,
+    "blackoutPeriod": [
+      {
+        "from": "2024-07-14",
+        "to": "2024-07-16"
+      }
+    ],
+    "blackoutPct": 9.7,
     "region": "South East Asia",
     "redemptionMonth": "202407"
   },
