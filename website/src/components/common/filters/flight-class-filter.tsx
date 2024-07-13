@@ -6,11 +6,6 @@ import { Select, SelectItem, SelectedItems } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import { Dispatch, SetStateAction } from 'react';
 
-export interface FlightClassFilterProps {
-  flightClassOption: FlightClassSelectOption;
-  setFlightClassOption: Dispatch<SetStateAction<FlightClassSelectOption>>;
-}
-
 export const FLIGHT_CLASS_ALL = 'All';
 
 const flightClassOptions = [

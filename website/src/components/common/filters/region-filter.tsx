@@ -2,12 +2,6 @@ import { trackEvent } from '@/analytics';
 import { useSearchParams } from '@/hooks/use-search-params';
 import { Select, SelectItem } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
-import { Dispatch, SetStateAction } from 'react';
-
-export interface RegionFilterProps {
-  regions: string;
-  setRegions: Dispatch<SetStateAction<string>>;
-}
 
 export const REGION_ALL = 'All';
 

@@ -12,8 +12,7 @@ import ReactSelect, {
   components,
 } from 'react-select';
 
-export type SelectOptions = MultiValue<SelectOption>;
-
+type SelectOptions = MultiValue<SelectOption>;
 interface SelectOption {
   label: string;
   value: string;
