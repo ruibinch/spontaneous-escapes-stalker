@@ -1,10 +1,6 @@
 'use client';
 import { monthNumToNameMap } from '@/common/months-map';
-import {
-  FlightClassSelectOption,
-  MonthSummaryAnalysisEntry,
-  RedemptionEntry,
-} from '@/index';
+import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import { BreadcrumbItem, Breadcrumbs, cn } from '@nextui-org/react';
 import {
   ArcElement,
@@ -17,16 +13,17 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
-import { useState } from 'react';
-import { RedemptionsTable } from './redemptions-table';
-import { ByMonthFilters } from './by-month-filters';
-import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
+import { useSearchParams } from 'next/navigation';
+import { AlertInfo } from '../common/alert-info';
+import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
+import { REGION_ALL } from '../common/filters/region-filter';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
+import { ByMonthFilters } from './by-month-filters';
 import { FlightClassDistributionChart } from './charts/flight-class-distribution-chart';
 import { RoutesRegionDistributionChart } from './charts/routes-region-distribution-chart';
-import { AlertInfo } from '../common/alert-info';
-import { SelectOptions } from '../common/filters/autocomplete-search-term-filter';
+import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
+import { RedemptionsTable } from './redemptions-table';
 
 ChartJS.register(
   CategoryScale,
@@ -48,17 +45,17 @@ export function ByMonthContent({
   redemptions: RedemptionEntry[];
   monthSummaryAnalysisEntry: MonthSummaryAnalysisEntry;
 }) {
-  const [searchTerms, setSearchTerms] = useState<SelectOptions>([]);
-  const [flightClassOption, setFlightClassOption] =
-    useState<FlightClassSelectOption>('ALL');
-  const [regions, setRegions] = useState<string>('All'); // comma-separated list of regions
+  const searchParams = useSearchParams();
+  const searchTerm = searchParams.get('searchTerm') ?? '';
+  const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
+  const region = searchParams.get('region') ?? REGION_ALL;
 
   const redemptionsFiltered = filterRedemptionEntryList({
     data: redemptions,
     filters: {
-      searchTerms: searchTerms.map((term) => term.value),
-      regions: regions.split(','),
-      flightClassOption,
+      searchTerms: searchTerm.split(',').filter(Boolean),
+      regions: region.split(','),
+      flightClass,
     },
   });
 
@@ -84,15 +81,7 @@ export function ByMonthContent({
           <AlertInfo content={monthSummaryAnalysisEntry.metadata.remarks} />
         )}
 
-        <ByMonthFilters
-          flightClassOption={flightClassOption}
-          setFlightClassOption={setFlightClassOption}
-          searchTerms={searchTerms}
-          setSearchTerms={setSearchTerms}
-          redemptions={redemptions}
-          regions={regions}
-          setRegions={setRegions}
-        />
+        <ByMonthFilters redemptions={redemptions} />
 
         <div className="flex flex-col gap-4">
           <div>
