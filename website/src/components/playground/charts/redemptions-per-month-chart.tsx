@@ -49,6 +49,7 @@ export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
             axesBorder: { x: true },
             axesTicksOnChartArea: { x: false, y: true },
             axesTickMaxLimit: { x: 4, y: 4 },
+            axesMinValue: { y: 0 },
           })}
           plugins={[lineOnHoverPlugin]}
           data={data}
