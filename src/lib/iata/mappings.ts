@@ -68,7 +68,7 @@ export const cityMappings: Record<
   Kunming: { iata: 'KMG', countryCode: 'CN', region: Region.NORTH_ASIA },
   Langkawi: { iata: 'LGK', countryCode: 'MY', region: Region.SOUTH_EAST_ASIA },
   Lombok: { iata: 'LOP', countryCode: 'ID', region: Region.SOUTH_EAST_ASIA },
-  London: { iata: 'LHR', countryCode: 'UK', region: Region.EUROPE },
+  London: { iata: 'LON', countryCode: 'UK', region: Region.EUROPE },
   'Los Angeles': { iata: 'LAX', countryCode: 'US', region: Region.NORTH_AMERICA },
   'Luang Prabang': { iata: 'LPQ', countryCode: 'LA', region: Region.SOUTH_EAST_ASIA },
   Malé: { iata: 'MLE', countryCode: 'MV', region: Region.SOUTH_ASIA },
@@ -124,6 +124,9 @@ export const cityMappings: Record<
  * Mapping from either:
  * - old airport IATAs to new airport IATAs
  * - specific airport IATAs to the collective city IATA, for cities that have multiple international airports
+ *
+ * Note: when adding a new mapping here, probably need to rerun `generate-oag-data` too,
+ * to ensure that the OAG dataset is updated with the new IATA mappings.
  */
 export const iataToIataMappings: Record<string, string> = {
   REP: 'SAI', // Siem Reap
@@ -135,6 +138,8 @@ export const iataToIataMappings: Record<string, string> = {
   EWR: 'NYC', // New York
   DME: 'MOW', // Moscow
   SVO: 'MOW', // Moscow
+  LHR: 'LON', // London
+  LGW: 'LON', // London
 };
 
 export const iataMappings = Object.entries(cityMappings).reduce(

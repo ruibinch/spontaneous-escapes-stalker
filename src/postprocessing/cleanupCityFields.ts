@@ -13,6 +13,7 @@ const cityMapper: Record<string, string> = {
   Haneda: 'Tokyo',
   'Ho Chi Minh': 'Ho Chi Minh City',
   'Kuala lumpur': 'Kuala Lumpur',
+  'London (Gatwick)': 'London',
   Male: 'Malé',
   Myanmar: 'Yangon',
   Kalimantan: 'Balikpapan',
