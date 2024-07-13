@@ -3,7 +3,7 @@ import routeAnalysisFile from '@/static/route-analysis.json';
 /**
  * Returns the list of months present in the dataset.
  */
-export function getMonthsList() {
+export function getMonthsList(): string[] {
   return routeAnalysisFile[0].details.map(({ month }) => month);
 }
 

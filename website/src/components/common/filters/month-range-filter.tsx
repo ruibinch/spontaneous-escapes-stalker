@@ -1,34 +1,46 @@
 import { trackEvent } from '@/analytics';
+import { getMonthsList } from '@/common/get-data-time-range';
+import { useSearchParams } from '@/hooks/use-search-params';
 import { Input } from '@nextui-org/react';
-import { Dispatch, SetStateAction } from 'react';
+import { useRouter } from 'next/navigation';
 
-export interface DateRangeFilterProps {
-  monthRange: [string, string];
-  setMonthRange: Dispatch<SetStateAction<[string, string]>>;
-  monthsList: string[];
-}
+const monthsList = getMonthsList();
 
-export function DateRangeFilter({
-  monthRange,
-  setMonthRange,
-  monthsList,
-}: DateRangeFilterProps) {
-  const formatMonthDisplay = (month: string) =>
-    `${month.slice(0, 4)}-${month.slice(4, 6)}`;
+const formatMonthDisplay = (month: string) =>
+  `${month.slice(0, 4)}-${month.slice(4, 6)}`;
+
+export function MonthRangeFilter() {
+  const { searchParams, generateUrlWithUpdatedSearchParams } =
+    useSearchParams();
+  const router = useRouter();
+  const startMonth = searchParams.get('startMonth') ?? monthsList[0];
+  const endMonth =
+    searchParams.get('endMonth') ?? monthsList[monthsList.length - 1];
 
   const monthMin = formatMonthDisplay(monthsList[0]);
   const monthMax = formatMonthDisplay(monthsList[monthsList.length - 1]);
 
   const handleValueChange = (value: string, field: 'start' | 'end') => {
     const valueInYyyymm = value.replace('-', '');
-    const startMonthUpd = field === 'start' ? valueInYyyymm : monthRange[0];
-    const endMonthUpd = field === 'end' ? valueInYyyymm : monthRange[1];
-    const selectedMonthRange = [startMonthUpd, endMonthUpd] as [string, string];
 
+    let startMonthUpd = startMonth;
+    let endMonthUpd = endMonth;
+    let newUrl;
+    if (field === 'start') {
+      startMonthUpd = valueInYyyymm;
+      newUrl = generateUrlWithUpdatedSearchParams('startMonth', startMonthUpd);
+    } else if (field === 'end') {
+      endMonthUpd = valueInYyyymm;
+      newUrl = generateUrlWithUpdatedSearchParams('endMonth', endMonthUpd);
+    }
+
+    const selectedMonthRange = [startMonthUpd, endMonthUpd];
     trackEvent(['monthRangeFilter'], {
       selectedMonthRange: selectedMonthRange.join('-'),
     });
-    setMonthRange(selectedMonthRange);
+    if (newUrl) {
+      router.push(newUrl);
+    }
   };
 
   return (
@@ -40,7 +52,7 @@ export function DateRangeFilter({
         radius="none"
         min={monthMin}
         max={monthMax}
-        value={formatMonthDisplay(monthRange[0])}
+        value={formatMonthDisplay(startMonth)}
         onValueChange={(value) => {
           handleValueChange(value, 'start');
         }}
@@ -55,7 +67,7 @@ export function DateRangeFilter({
         radius="none"
         min={monthMin}
         max={monthMax}
-        value={formatMonthDisplay(monthRange[1])}
+        value={formatMonthDisplay(endMonth)}
         onValueChange={(value) => {
           handleValueChange(value, 'end');
         }}

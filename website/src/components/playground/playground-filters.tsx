@@ -1,38 +1,17 @@
-import {
-  AutocompleteSearchTermFilter,
-  AutocompleteSearchTermFilterProps,
-} from '../common/filters/autocomplete-search-term-filter';
-import {
-  FlightClassFilter,
-  FlightClassFilterProps,
-} from '../common/filters/flight-class-filter';
-import { MonthFilter, MonthFilterProps } from '../common/filters/month-filter';
-import {
-  DateRangeFilter,
-  DateRangeFilterProps,
-} from '../common/filters/month-range-filter';
-import {
-  RegionFilter,
-  RegionFilterProps,
-} from '../common/filters/region-filter';
+import { usePathname, useRouter } from 'next/navigation';
+import { AutocompleteSearchTermFilter } from '../common/filters/autocomplete-search-term-filter';
+import { FlightClassFilter } from '../common/filters/flight-class-filter';
+import { MonthFilter } from '../common/filters/month-filter';
+import { MonthRangeFilter } from '../common/filters/month-range-filter';
+import { RegionFilter } from '../common/filters/region-filter';
 import { ResetAllFiltersButton } from '../common/filters/reset-all-filters';
 
-type Props = AutocompleteSearchTermFilterProps &
-  FlightClassFilterProps &
-  RegionFilterProps &
-  DateRangeFilterProps &
-  MonthFilterProps;
+export function PlaygroundFilters() {
+  const router = useRouter();
+  const pathname = usePathname();
 
-export function Filters(props: Props) {
   const resetAllFilters = () => {
-    props.setSearchTerms([]);
-    props.setFlightClassOption('ALL');
-    props.setRegions('All');
-    props.setMonthRange([
-      props.monthsList[0],
-      props.monthsList[props.monthsList.length - 1],
-    ]);
-    props.setMonths('All');
+    router.push(pathname);
   };
 
   return (
@@ -40,27 +19,17 @@ export function Filters(props: Props) {
       <div className="flex items-center gap-4">
         <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-2">
           <div className="col-span-2 md:col-span-3 flex flex-row gap-2 items-center">
-            <AutocompleteSearchTermFilter
-              searchTerms={props.searchTerms}
-              setSearchTerms={props.setSearchTerms}
-            />
+            <AutocompleteSearchTermFilter />
           </div>
 
-          <RegionFilter regions={props.regions} setRegions={props.setRegions} />
+          <RegionFilter />
 
-          <FlightClassFilter
-            flightClassOption={props.flightClassOption}
-            setFlightClassOption={props.setFlightClassOption}
-          />
+          <FlightClassFilter />
 
-          <MonthFilter months={props.months} setMonths={props.setMonths} />
+          <MonthFilter />
 
           <div className="col-span-2">
-            <DateRangeFilter
-              monthRange={props.monthRange}
-              setMonthRange={props.setMonthRange}
-              monthsList={props.monthsList}
-            />
+            <MonthRangeFilter />
           </div>
         </div>
 

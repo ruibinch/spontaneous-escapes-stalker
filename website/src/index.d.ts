@@ -1,6 +1,6 @@
 export type Month = string;
 export type FlightClass = 'Y' | 'W' | 'J';
-export type FlightClassSelectOption = FlightClass | 'ALL';
+export type FlightClassSelectOption = FlightClass | 'All';
 
 export enum Region {
   SOUTH_EAST_ASIA = 'South East Asia',

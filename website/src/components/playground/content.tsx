@@ -1,6 +1,6 @@
 import { getMonthsList } from '@/common/get-data-time-range';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
-import { FlightClassSelectOption, RouteAnalysisEntry } from '@/index';
+import { RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import { cn } from '@nextui-org/react';
 import {
@@ -15,15 +15,17 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
-import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
+import { REGION_ALL } from '../common/filters/region-filter';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
 import { AnalysisCharts } from './analysis-charts';
 import { DetailsTable } from './details-table';
 import { FilterInfo } from './filter-info';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
-import { Filters } from './playground-filters';
-import { SelectOptions } from '../common/filters/autocomplete-search-term-filter';
+import { PlaygroundFilters } from './playground-filters';
+import { MONTH_ALL } from '../common/filters/month-filter';
 
 ChartJS.register(
   CategoryScale,
@@ -41,28 +43,27 @@ const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 const monthsList = getMonthsList();
 
 export function PlaygroundContent() {
-  const [searchTerms, setSearchTerms] = useState<SelectOptions>([]);
-  const [flightClassOption, setFlightClassOption] =
-    useState<FlightClassSelectOption>('ALL');
-  const [regions, setRegions] = useState<string>('All'); // comma-separated list of regions
-  const [dateRange, setDateRange] = useState<[string, string]>([
-    monthsList[0],
-    monthsList[monthsList.length - 1],
-  ]);
-  const [months, setMonths] = useState<string>('All'); // comma-separated list of months
+  const searchParams = useSearchParams();
+  const searchTerm = searchParams.get('searchTerm') ?? '';
+  const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
+  const region = searchParams.get('region') ?? REGION_ALL;
+  const month = searchParams.get('month') ?? MONTH_ALL;
+  const startMonth = searchParams.get('startMonth') ?? monthsList[0];
+  const endMonth =
+    searchParams.get('endMonth') ?? monthsList[monthsList.length - 1];
 
-  const startDate = yyyymmToDate(dateRange[0]);
-  const endDate = yyyymmToDate(dateRange[1]);
+  const startDate = yyyymmToDate(startMonth);
+  const endDate = yyyymmToDate(endMonth);
 
   const routeAnalysisListFiltered = filterRouteAnalysisList({
     data: routeAnalysisList,
     filters: {
-      searchTerms: searchTerms.map((term) => term.value),
-      flightClassOption,
-      regions: regions.split(','),
+      searchTerms: searchTerm.split(',').filter(Boolean),
+      flightClass,
+      regions: region.split(','),
       startDate,
       endDate,
-      months: months.split(','),
+      months: month.split(','),
     },
   });
 
@@ -74,19 +75,7 @@ export function PlaygroundContent() {
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-8')}>
-        <Filters
-          flightClassOption={flightClassOption}
-          setFlightClassOption={setFlightClassOption}
-          searchTerms={searchTerms}
-          setSearchTerms={setSearchTerms}
-          regions={regions}
-          setRegions={setRegions}
-          monthRange={dateRange}
-          setMonthRange={setDateRange}
-          monthsList={monthsList}
-          months={months}
-          setMonths={setMonths}
-        />
+        <PlaygroundFilters />
 
         <div className="flex flex-col gap-4">
           <FilterInfo
@@ -94,7 +83,7 @@ export function PlaygroundContent() {
             routeAnalysisListFiltered={routeAnalysisListFiltered}
             startDate={startDate}
             endDate={endDate}
-            months={months.split(',')}
+            months={month.split(',')}
           />
 
           <AnalysisCharts
@@ -106,7 +95,7 @@ export function PlaygroundContent() {
           data={routeAnalysisListFiltered}
           startDate={startDate}
           endDate={endDate}
-          months={months.split(',')}
+          months={month.split(',')}
         />
       </div>
     </div>

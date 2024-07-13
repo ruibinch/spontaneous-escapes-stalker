@@ -1,7 +1,9 @@
 import { trackEvent } from '@/analytics';
 import { FlightClassIndicator } from '@/components/common/flight-class-indicator';
+import { useSearchParams } from '@/hooks/use-search-params';
 import { FlightClassSelectOption } from '@/index';
 import { Select, SelectItem, SelectedItems } from '@nextui-org/react';
+import { useRouter } from 'next/navigation';
 import { Dispatch, SetStateAction } from 'react';
 
 export interface FlightClassFilterProps {
@@ -9,10 +11,12 @@ export interface FlightClassFilterProps {
   setFlightClassOption: Dispatch<SetStateAction<FlightClassSelectOption>>;
 }
 
+export const FLIGHT_CLASS_ALL = 'All';
+
 const flightClassOptions = [
   {
     label: 'All',
-    value: 'ALL',
+    value: FLIGHT_CLASS_ALL,
   },
   {
     label: 'Economy',
@@ -28,16 +32,18 @@ const flightClassOptions = [
   },
 ];
 
-export function FlightClassFilter({
-  flightClassOption,
-  setFlightClassOption,
-}: FlightClassFilterProps) {
+export function FlightClassFilter() {
+  const { searchParams, generateUrlWithUpdatedSearchParams } =
+    useSearchParams();
+  const router = useRouter();
+  const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
+
   return (
     <Select
       size="sm"
       items={flightClassOptions}
       label="Flight class"
-      selectedKeys={[flightClassOption]}
+      selectedKeys={[flightClass]}
       renderValue={(items: SelectedItems<(typeof flightClassOptions)[0]>) => {
         return items.map((item) => (
           <div
@@ -50,12 +56,16 @@ export function FlightClassFilter({
         ));
       }}
       onChange={(e) => {
-        const selectedFlightClassOption = e.target
-          .value as FlightClassSelectOption;
-        trackEvent(['flightClassFilter'], {
+        const selectedFlightClassOption = !!e.target.value
+          ? e.target.value
+          : FLIGHT_CLASS_ALL;
+        trackEvent(['flightClassFilter'], { selectedFlightClassOption });
+
+        const url = generateUrlWithUpdatedSearchParams(
+          'flightClass',
           selectedFlightClassOption,
-        });
-        setFlightClassOption(selectedFlightClassOption);
+        );
+        router.push(url);
       }}
     >
       {(option) => (

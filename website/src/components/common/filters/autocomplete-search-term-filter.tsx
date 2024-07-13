@@ -1,13 +1,15 @@
 import { trackEvent } from '@/analytics';
 import { XIcon } from '@/components/icons/x';
+import { useSearchParams } from '@/hooks/use-search-params';
 import { RedemptionEntry, RouteAnalysisEntry } from '@/index';
-import { cn } from '@nextui-org/react';
 import routeAnalysisFile from '@/static/route-analysis.json';
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { cn } from '@nextui-org/react';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import ReactSelect, {
-  components,
   ClearIndicatorProps,
   MultiValue,
+  components,
 } from 'react-select';
 
 export type SelectOptions = MultiValue<SelectOption>;
@@ -18,16 +20,22 @@ interface SelectOption {
 }
 
 export interface AutocompleteSearchTermFilterProps {
-  searchTerms: SelectOptions;
-  setSearchTerms: Dispatch<SetStateAction<SelectOptions>>;
   redemptions?: RedemptionEntry[];
 }
 
 export function AutocompleteSearchTermFilter({
-  searchTerms,
-  setSearchTerms,
   redemptions,
 }: AutocompleteSearchTermFilterProps) {
+  const { searchParams, generateUrlWithUpdatedSearchParams } =
+    useSearchParams();
+  const router = useRouter();
+  const searchTerms = (searchParams.get('searchTerm')?.split(',') ?? []).map(
+    (term) => ({
+      label: term,
+      value: term,
+    }),
+  );
+
   const searchOptionsList = getSearchOptionsList(redemptions);
   const searchRef = useRef<HTMLInputElement>(null);
   const [inputValue, setInputValue] = useState('');
@@ -42,12 +50,18 @@ export function AutocompleteSearchTermFilter({
   };
 
   const onChange = (searchTerms: SelectOptions) => {
+    const searchTermsString = searchTerms.map((term) => term.value).join(',');
     if (searchTerms.length > 0) {
       trackEvent(['autocompleteSearchTermFilter'], {
-        searchTerms: searchTerms.map((term) => term.value).join(','),
+        searchTerms: searchTermsString,
       });
     }
-    setSearchTerms(searchTerms);
+
+    const url = generateUrlWithUpdatedSearchParams(
+      'searchTerm',
+      searchTermsString,
+    );
+    router.push(url);
   };
 
   useEffect(() => {

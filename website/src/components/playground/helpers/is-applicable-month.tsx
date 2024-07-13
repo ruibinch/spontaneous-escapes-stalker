@@ -1,5 +1,6 @@
 import { monthNameToNumMap } from '@/common/months-map';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
+import { MONTH_ALL } from '@/components/common/filters/month-filter';
 import { isAfter, isBefore } from 'date-fns';
 
 /**
@@ -17,14 +18,14 @@ export function isApplicableMonth({
   };
 }) {
   const monthsInNumFormat = months.map((month) =>
-    month === 'All' ? month : monthNameToNumMap[month],
+    month === MONTH_ALL ? month : monthNameToNumMap[month],
   );
 
   const monthDate = yyyymmToDate(month);
   const isOutsideDateBounds =
     isBefore(monthDate, startDate) || isAfter(monthDate, endDate);
   const isValidMonth =
-    monthsInNumFormat.includes('All') ||
+    monthsInNumFormat.includes(MONTH_ALL) ||
     monthsInNumFormat.includes(month.slice(4, 6));
 
   return !isOutsideDateBounds && isValidMonth;
