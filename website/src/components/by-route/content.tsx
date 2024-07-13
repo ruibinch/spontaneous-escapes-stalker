@@ -23,6 +23,9 @@ import { filterRouteDetailsList } from './helpers/filter-route-details-list';
 import { RouteAnalysisEntryWithDetailsList } from './helpers/make-route-details-list';
 import { MonthYearFrequencyTable } from './month-year-frequency-table';
 import { RouteHistoryTable } from './route-history-table';
+import { useSearchParams } from 'next/navigation';
+import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
+import { YEAR_ALL } from '../common/filters/year-filter';
 
 ChartJS.register(
   CategoryScale,
@@ -40,17 +43,17 @@ export function ByRouteContent({
 }: {
   routeInfo: RouteAnalysisEntryWithDetailsList;
 }) {
-  const [years, setYears] = useState<string>('All'); // comma-separated list of years
-  const [flightClassOption, setFlightClassOption] =
-    useState<FlightClassSelectOption>('ALL');
+  const searchParams = useSearchParams();
+  const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
+  const year = searchParams.get('year') ?? YEAR_ALL;
 
   const { from, to, fromIata, toIata, detailsList } = routeInfo;
 
   const detailsListFiltered = filterRouteDetailsList({
     detailsList,
     filters: {
-      years: years.split(','),
-      flightClassOption,
+      years: year.split(','),
+      flightClass,
     },
   });
 
@@ -67,12 +70,7 @@ export function ByRouteContent({
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>
-        <ByRouteFilters
-          years={years}
-          setYears={setYears}
-          flightClassOption={flightClassOption}
-          setFlightClassOption={setFlightClassOption}
-        />
+        <ByRouteFilters />
 
         <div className="flex flex-col gap-4">
           <div>
@@ -101,7 +99,7 @@ export function ByRouteContent({
           <div className="col-span-2 xl:col-span-1">
             <MonthYearFrequencyTable
               data={detailsListFiltered}
-              years={years.split(',')}
+              years={year.split(',')}
             />
           </div>
         </div>

@@ -1,28 +1,23 @@
-import {
-  FlightClassFilter,
-  FlightClassFilterProps,
-} from '../common/filters/flight-class-filter';
-import { YearFilter, YearFilterProps } from '../common/filters/year-filter';
+import { usePathname, useRouter } from 'next/navigation';
+import { FlightClassFilter } from '../common/filters/flight-class-filter';
 import { ResetAllFiltersButton } from '../common/filters/reset-all-filters';
+import { YearFilter } from '../common/filters/year-filter';
 
-type Props = FlightClassFilterProps & YearFilterProps;
+export function ByRouteFilters() {
+  const router = useRouter();
+  const pathname = usePathname();
 
-export function ByRouteFilters(props: Props) {
   const resetAllFilters = () => {
-    props.setFlightClassOption('ALL');
-    props.setYears('All');
+    router.push(pathname);
   };
 
   return (
     <div>
       <div className="flex items-center gap-4">
         <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-2">
-          <YearFilter years={props.years} setYears={props.setYears} />
+          <YearFilter />
 
-          <FlightClassFilter
-            flightClassOption={props.flightClassOption}
-            setFlightClassOption={props.setFlightClassOption}
-          />
+          <FlightClassFilter />
         </div>
 
         <ResetAllFiltersButton resetAllFilters={resetAllFilters} />

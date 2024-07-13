@@ -1,34 +1,37 @@
 import { trackEvent } from '@/analytics';
 import { getYearsList } from '@/common/get-data-time-range';
+import { useSearchParams } from '@/hooks/use-search-params';
 import { Select, SelectItem } from '@nextui-org/react';
-import { Dispatch, SetStateAction } from 'react';
+import { useRouter } from 'next/navigation';
 
-export interface YearFilterProps {
-  years: string;
-  setYears: Dispatch<SetStateAction<string>>;
-}
+export const YEAR_ALL = 'All';
 
 const yearsOptions = getYearsList();
-const yearsOptionsWithAll = ['All', ...yearsOptions] as const;
+const yearsOptionsWithAll = [YEAR_ALL, ...yearsOptions] as const;
 
-export function YearFilter({ years, setYears }: YearFilterProps) {
+export function YearFilter() {
+  const { searchParams, generateUrlWithUpdatedSearchParams } =
+    useSearchParams();
+  const router = useRouter();
+  const year = searchParams.get('year') ?? YEAR_ALL;
+
   // Do some manual tweaking of the selected months list so that "All" option is correctly handled
   const tweakSelectedYears = (value: string) => {
     if (value === '') {
-      return 'All';
+      return YEAR_ALL;
     }
     const selectedYears = value.split(',');
     const lastSelectedYear = selectedYears[selectedYears.length - 1];
-    if (lastSelectedYear === 'All') {
-      return 'All';
+    if (lastSelectedYear === YEAR_ALL) {
+      return lastSelectedYear;
     }
     const isAllYearsSelected = yearsOptions.every((year) =>
       selectedYears.includes(year),
     );
     if (isAllYearsSelected) {
-      return 'All';
+      return YEAR_ALL;
     }
-    return selectedYears.filter((year) => year !== 'All').join(',');
+    return selectedYears.filter((year) => year !== YEAR_ALL).join(',');
   };
 
   return (
@@ -40,11 +43,13 @@ export function YearFilter({ years, setYears }: YearFilterProps) {
       }))}
       label="Filter by specific year"
       selectionMode="multiple"
-      selectedKeys={years.split(',')}
+      selectedKeys={year.split(',')}
       onChange={(e) => {
         const selectedYears = tweakSelectedYears(e.target.value);
         trackEvent(['yearFilter'], { selectedYears });
-        setYears(selectedYears);
+
+        const url = generateUrlWithUpdatedSearchParams('year', selectedYears);
+        router.push(url);
       }}
     >
       {(option) => <SelectItem key={option.label}>{option.label}</SelectItem>}
@@ -59,5 +64,5 @@ export function isYearMatch({
   yearsFiltered: string[];
   year: string;
 }) {
-  return yearsFiltered.includes('All') || yearsFiltered.includes(year);
+  return yearsFiltered.includes(YEAR_ALL) || yearsFiltered.includes(year);
 }

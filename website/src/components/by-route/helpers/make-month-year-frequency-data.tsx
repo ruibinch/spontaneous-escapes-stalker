@@ -1,9 +1,6 @@
 import { getYearsList } from '@/common/get-data-time-range';
-import {
-  FlightClass,
-  RedemptionInfoForMonth,
-  RedemptionInfoSingle,
-} from '@/index';
+import { YEAR_ALL } from '@/components/common/filters/year-filter';
+import { FlightClass, RedemptionInfoSingle } from '@/index';
 import { RouteDetailDatum } from './make-route-details-list';
 
 export interface MonthYearFrequencyDatum {
@@ -29,7 +26,7 @@ export function makeMonthYearFrequencyData({
   data: RouteDetailDatum[];
   years: string[];
 }) {
-  const yearsList = years.includes('All') ? getYearsList() : years;
+  const yearsList = years.includes(YEAR_ALL) ? getYearsList() : years;
 
   return yearsList.map((year) => {
     const datumForYear: MonthYearFrequencyDatum = {
