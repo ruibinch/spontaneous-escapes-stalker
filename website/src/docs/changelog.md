@@ -1,3 +1,7 @@
+# 2.6.0 - 2024-07-13
+
+- Improved ease of sharing filtered results by saving filter params in the URL
+
 # 2.5.0 - 2024-05-13
 
 - Added month calendar view to by-route page for better visualisation of redemption months and blackout periods ([example](https://www.kfseanalysis.com/route/SINDPS))
