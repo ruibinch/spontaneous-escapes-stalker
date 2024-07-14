@@ -100,6 +100,7 @@ export type RedemptionInfoSingle = {
     to: string;
     flightNos?: string[];
   }>;
+  blackoutPct: number;
 };
 
 export interface BlackoutPeriod {

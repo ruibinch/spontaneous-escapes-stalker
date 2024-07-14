@@ -28,6 +28,7 @@ export const getColumns = (filters: {
         ]
       : [{ key: 'cities', label: 'Cities' }]),
     { key: 'count', label: 'Count', allowsSorting: true },
+    { key: 'averageBlackoutPct', label: 'Avg Blackout %', allowsSorting: true },
     ...monthsList
       .filter((month) =>
         isApplicableMonth({

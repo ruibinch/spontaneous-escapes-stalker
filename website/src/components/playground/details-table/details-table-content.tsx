@@ -31,12 +31,14 @@ type DatumForSeparateRoutes = {
   to: string;
   toIata: string;
   count: number;
+  averageBlackoutPct: number | null;
 };
 
 type DatumForCombinedRoutes = {
   cities: string;
   routesIata: string[];
   count: number;
+  averageBlackoutPct: number | null;
 };
 
 export interface DetailsTableContentProps {
@@ -97,8 +99,8 @@ export function DetailsTableContent({
   });
 
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
-    if (column === 'count') {
-      setData(sortByNumericField(inputData, 'count', direction));
+    if (column === 'count' || column === 'averageBlackoutPct') {
+      setData(sortByNumericField(inputData, column, direction));
     } else if (column === 'from' || column === 'to') {
       setData(sortByStringField(inputData, column, direction));
     }
@@ -153,7 +155,7 @@ export function DetailsTableContent({
               className={cn(CommonStyles.Border, 'border-b')}
             >
               {(columnKey) => (
-                <TableCell>
+                <TableCell className="text-xs">
                   {renderCell({
                     item,
                     columnKey: columnKey.toString(),
@@ -180,6 +182,11 @@ function renderCell({
     case 'to':
     case 'count':
       return getKeyValue(item, columnKey);
+    case 'averageBlackoutPct':
+      const averageBlackoutPct = getKeyValue(item, columnKey) as number | null;
+      return averageBlackoutPct === null
+        ? '-'
+        : `${getKeyValue(item, columnKey)}%`;
     case 'cities':
       return (
         <div className="w-32">
