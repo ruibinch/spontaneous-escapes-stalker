@@ -95,10 +95,7 @@ export function ByRouteContent({
             <MonthView detailsListFiltered={detailsListFiltered} />
           </div>
           <div className="col-span-2 xl:col-span-1">
-            <MonthYearFrequencyTable
-              data={detailsListFiltered}
-              years={year.split(',')}
-            />
+            <MonthYearFrequencyTable data={detailsListFiltered} />
           </div>
         </div>
 

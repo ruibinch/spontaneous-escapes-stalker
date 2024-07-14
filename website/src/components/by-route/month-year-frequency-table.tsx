@@ -14,6 +14,8 @@ import {
 } from '@/common/months-data-info';
 import { FlightClassLegend } from '../common/flight-class-legend';
 import { CommonStyles } from '../common/styles';
+import { useSearchParams } from 'next/navigation';
+import { YEAR_ALL } from '../common/filters/year-filter';
 
 const monthsList = getMonthsList();
 
@@ -32,12 +34,15 @@ const TableStyles = {
 
 export function MonthYearFrequencyTable({
   data,
-  years,
 }: {
   data: RouteDetailDatum[];
-  years: string[];
 }) {
-  const tableData = makeMonthYearFrequencyData({ data, years });
+  const searchParams = useSearchParams();
+  const year = searchParams.get('year') ?? YEAR_ALL;
+  const tableData = makeMonthYearFrequencyData({
+    data,
+    years: year.split(','),
+  });
 
   return (
     <div className="flex flex-col gap-2">

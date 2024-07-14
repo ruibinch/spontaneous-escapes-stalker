@@ -28,27 +28,29 @@ export function makeMonthYearFrequencyData({
 }) {
   const yearsList = years.includes(YEAR_ALL) ? getYearsList() : years;
 
-  return yearsList.map((year) => {
-    const datumForYear: MonthYearFrequencyDatum = {
-      year,
-    };
+  return yearsList
+    .sort((a, b) => a.localeCompare(b))
+    .map((year) => {
+      const datumForYear: MonthYearFrequencyDatum = {
+        year,
+      };
 
-    data
-      .filter((d) => d.month.startsWith(year))
-      .forEach((d) => {
-        const month = d.month.slice(4, 6);
-        // @ts-expect-error month is an accepted key
-        datumForYear[month] = {
+      data
+        .filter((d) => d.month.startsWith(year))
+        .forEach((d) => {
+          const month = d.month.slice(4, 6);
           // @ts-expect-error month is an accepted key
-          ...datumForYear[month],
-          [d.flightClass]: {
-            flightNos: d.flightNos,
-            milesRequired: d.milesRequired,
-            blackoutPeriod: d.blackoutPeriod,
-          },
-        };
-      });
+          datumForYear[month] = {
+            // @ts-expect-error month is an accepted key
+            ...datumForYear[month],
+            [d.flightClass]: {
+              flightNos: d.flightNos,
+              milesRequired: d.milesRequired,
+              blackoutPeriod: d.blackoutPeriod,
+            },
+          };
+        });
 
-    return datumForYear;
-  });
+      return datumForYear;
+    });
 }

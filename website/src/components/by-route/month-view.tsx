@@ -1,4 +1,8 @@
+import { dateToYyyymm } from '@/common/date-to-yyyymm';
+import { getMonthsWithRouteNetworkData } from '@/common/get-months-with-route-network-data';
+import { getMostCommonElementInArray } from '@/common/get-most-common-element-in-array';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
+import { useSearchParams } from '@/hooks/use-search-params';
 import { Button, cn } from '@nextui-org/react';
 import {
   addMonths,
@@ -6,14 +10,17 @@ import {
   differenceInCalendarDays,
   format,
   getDaysInMonth,
+  isAfter,
   isBefore,
   isSameMonth,
+  max,
   min,
   startOfMonth as startOfMonthFn,
   subMonths,
   subYears,
 } from 'date-fns';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { YEAR_ALL } from '../common/filters/year-filter';
 import { flightClassCodeOrder } from '../common/flight-class-code-to-name';
 import {
   FlightClassIndicator,
@@ -35,24 +42,44 @@ export function MonthView({
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
+  const { searchParams, generateUrlWithUpdatedSearchParams } =
+    useSearchParams();
+  const router = useRouter();
+
+  const year = searchParams.get('year') ?? YEAR_ALL;
+  const monthsWithRouteNetworkData = getMonthsWithRouteNetworkData(
+    year.split(','),
+  );
+  const minMonth = yyyymmToDate(Array.from(monthsWithRouteNetworkData)[0]);
+
   const today = new Date();
-  const [date, setDate] = useState(today);
+  const monthView = searchParams.get('monthView') ?? dateToYyyymm(today);
+  const currDate = yyyymmToDate(monthView);
+  const updateMonthView = (newDate: Date) => {
+    const url = generateUrlWithUpdatedSearchParams(
+      'monthView',
+      dateToYyyymm(newDate),
+    );
+    router.push(url, { scroll: false });
+  };
 
   const redemptionsInMonth = detailsListFiltered.filter((detail) =>
-    isSameMonth(yyyymmToDate(detail.month), date),
+    isSameMonth(yyyymmToDate(detail.month), currDate),
   );
   const blackoutPeriodsByDayDict = makeBlackoutPeriodsByDayDict(
     redemptionsInMonth,
-    date,
+    currDate,
   );
 
+  const isAfterMinMonth = isAfter(currDate, minMonth);
   const isBeforeCurrentMonth =
-    isBefore(date, today) && !isSameMonth(date, today);
-  const toPrevYear = () => setDate(subYears(date, 1));
-  const toPrevMonth = () => setDate(subMonths(date, 1));
-  const toNextMonth = () => setDate(addMonths(date, 1));
-  const toNextYear = () => setDate(min([addYears(date, 1), today]));
-  const resetToCurrMonth = () => setDate(today);
+    isBefore(currDate, today) && !isSameMonth(currDate, today);
+  const toPrevYear = () =>
+    updateMonthView(max([minMonth, subYears(currDate, 1)]));
+  const toPrevMonth = () => updateMonthView(subMonths(currDate, 1));
+  const toNextMonth = () => updateMonthView(addMonths(currDate, 1));
+  const toNextYear = () => updateMonthView(min([today, addYears(currDate, 1)]));
+  const resetToCurrMonth = () => updateMonthView(today);
 
   return (
     <div className="flex flex-col gap-2">
@@ -66,10 +93,18 @@ export function MonthView({
       >
         {/* month controls */}
         <div className="flex justify-center items-center gap-4">
-          <MonthSwitchButton icon={<ChevronsLeftIcon />} onClick={toPrevYear} />
-          <MonthSwitchButton icon={<ChevronLeftIcon />} onClick={toPrevMonth} />
+          <MonthSwitchButton
+            icon={<ChevronsLeftIcon />}
+            onClick={toPrevYear}
+            hideButton={!isAfterMinMonth}
+          />
+          <MonthSwitchButton
+            icon={<ChevronLeftIcon />}
+            onClick={toPrevMonth}
+            hideButton={!isAfterMinMonth}
+          />
           <span onClick={resetToCurrMonth} className="cursor-pointer">
-            {format(date, 'MMM yyyy')}
+            {format(currDate, 'MMM yyyy')}
           </span>
           <MonthSwitchButton
             icon={<ChevronRightIcon />}
@@ -84,25 +119,28 @@ export function MonthView({
         </div>
 
         {/* info and legend */}
-        <div className="flex flex-row justify-between items-center text-xs">
+        <div className="flex flex-row justify-between items-start text-xs">
           <div className="flex flex-col gap-1">
-            <span>Flights applicable for redemption:</span>
+            <span>Redemption flights, with blackout %:</span>
             {redemptionsInMonth.length === 0 ? (
               <span>-</span>
             ) : (
               flightClassCodeOrder.map((flightClassCode) => {
-                const flightNosForFlightClass = redemptionsInMonth
-                  .find(({ flightClass }) => flightClass === flightClassCode)
-                  ?.flightNos.join(', ');
+                const redemptionForFlightClass = redemptionsInMonth.find(
+                  ({ flightClass }) => flightClass === flightClassCode,
+                );
+                if (!redemptionForFlightClass) return null;
 
-                if (!flightNosForFlightClass) return null;
+                const { flightNos, blackoutPct } = redemptionForFlightClass;
+
                 return (
                   <div
                     key={flightClassCode}
                     className="flex gap-2 items-center"
                   >
                     <FlightClassIndicator flightClassCode={flightClassCode} />
-                    <span>{flightNosForFlightClass}</span>
+                    <span>{flightNos.join(', ')}</span>
+                    <span className="font-semibold">[{blackoutPct}%]</span>
                   </div>
                 );
               })
@@ -130,14 +168,24 @@ export function MonthView({
                   'w-6 h-4 bg-green-600 rounded-md',
                 )}
               >
-                <span className="text-2xs text-amber-200">228</span>
+                <span className="text-2xs text-amber-200">
+                  {(() => {
+                    // use the most occurring flight number as the example
+                    const flightNos = detailsListFiltered
+                      .map(({ flightNos }) => flightNos)
+                      .flat();
+                    const mostOccurringFlightNo =
+                      getMostCommonElementInArray(flightNos);
+                    return mostOccurringFlightNo?.replace('SQ', '');
+                  })()}
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         <MonthCalendar
-          monthDate={date}
+          monthDate={currDate}
           hasRedemptionInMonth={redemptionsInMonth.length > 0}
           blackoutPeriodsByDayDict={blackoutPeriodsByDayDict}
         />
