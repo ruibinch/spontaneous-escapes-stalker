@@ -3,12 +3,12 @@ import { roundToDp } from '@/common/round-to-dp';
 import { MonthSummaryAnalysisEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar, Line } from 'react-chartjs-2';
+import { getMonthsWithRouteNetworkData } from '../../common/get-months-with-route-network-data';
 import { makeChartOptions } from '../common/chart/chart-options';
 import { ChartWrapper } from '../common/chart/chart-wrapper';
 import { covidLinePlugin } from '../common/chart/covid-line-plugin';
 import { lineOnHoverPlugin } from '../common/chart/line-on-hover-plugin';
 import { useTheme } from '../common/use-theme';
-import { getMonthsWithRouteNetworkData } from './helpers/get-months-with-route-network-data';
 import { useSilkairRoutesToggleContext } from './silkair-routes-toggle';
 
 export function RedemptionsVsRouteNetworkCharts() {

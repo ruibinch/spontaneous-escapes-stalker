@@ -1,5 +1,4 @@
 'use client';
-import { BlackoutPeriod, FlightClassSelectOption } from '@/index';
 import { BreadcrumbItem, Breadcrumbs, cn } from '@nextui-org/react';
 import {
   BarElement,
@@ -12,15 +11,14 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
-import { useState } from 'react';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
-import { MonthView } from './month-view';
 import { ByRouteFilters } from './by-route-filters';
-import { MilesRequiredOverTimeChart } from './charts/miles-required-over-time-chart';
+import { BlackoutPctOverTimeChart } from './charts/blackout-pct-over-time-chart';
 import { MonthsDistributionChart } from './charts/months-distribution-chart';
 import { filterRouteDetailsList } from './helpers/filter-route-details-list';
 import { RouteAnalysisEntryWithDetailsList } from './helpers/make-route-details-list';
+import { MonthView } from './month-view';
 import { MonthYearFrequencyTable } from './month-year-frequency-table';
 import { RouteHistoryTable } from './route-history-table';
 import { useSearchParams } from 'next/navigation';
@@ -85,7 +83,7 @@ export function ByRouteContent({
               />
             </div>
             <div className="col-span-2 xl:col-span-1">
-              <MilesRequiredOverTimeChart
+              <BlackoutPctOverTimeChart
                 detailsListFiltered={detailsListFiltered}
               />
             </div>

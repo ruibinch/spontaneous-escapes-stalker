@@ -1,7 +1,8 @@
+import { isYearMatch } from '@/components/common/filters/year-filter';
 import { MonthSummaryAnalysisEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 
-export function getMonthsWithRouteNetworkData() {
+export function getMonthsWithRouteNetworkData(years?: string[]) {
   const monthSummaryAnalysisList =
     monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
 
@@ -9,7 +10,10 @@ export function getMonthsWithRouteNetworkData() {
   monthSummaryAnalysisList.forEach((entry) => {
     if (
       entry.byUniqueRoutes.routeNetworkSize.total !== undefined &&
-      entry.byUniqueRoutes.routeNetworkSize.sia !== undefined
+      entry.byUniqueRoutes.routeNetworkSize.sia !== undefined &&
+      (years
+        ? isYearMatch({ yearsFiltered: years, year: entry.month.slice(0, 4) })
+        : true)
     ) {
       monthsWithRouteNetworkDataSet.add(entry.month);
     }
