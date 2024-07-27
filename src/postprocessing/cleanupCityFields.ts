@@ -14,6 +14,7 @@ const cityMapper: Record<string, string> = {
   'Ho Chi Minh': 'Ho Chi Minh City',
   'Kuala lumpur': 'Kuala Lumpur',
   Male: 'Malé',
+  Myanmar: 'Yangon',
   Kalimantan: 'Balikpapan',
   Narita: 'Tokyo',
   'New York (JFK)': 'New York',
