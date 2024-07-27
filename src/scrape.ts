@@ -94,7 +94,11 @@ export async function scrape() {
   }
 
   if (!doesRedemptionPeriodExist) {
-    log(`Redemption period "${redemptionEndDate}" does not exist`);
+    log(
+      `Redemption period "${
+        redemptionTravelPeriod.from.toISOString().split('T')[0]
+      }" does not exist`,
+    );
     if (shouldUseAws) {
       await RedemptionPeriod.upload({
         redemptionEndDate,
@@ -103,7 +107,11 @@ export async function scrape() {
     }
     await sendNewRedemptionPeriodNotification();
   } else {
-    log(`Changes to existing redemption period "${redemptionEndDate}"`);
+    log(
+      `Changes to existing redemption period "${
+        redemptionTravelPeriod.from.toISOString().split('T')[0]
+      }"`,
+    );
     await sendExistingRedemptionPeriodChangesNotification();
   }
 

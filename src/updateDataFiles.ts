@@ -1,22 +1,25 @@
 import { commitDataDiffs } from './lib/git/commitDataDiffs';
 import { deployWebsiteProd } from './scripts/deployWebsiteProd';
 import { updateWebsiteDataFiles } from './scripts/updateWebsiteDataFiles';
+import { log } from './utils/log';
 
 export async function updateDataFiles() {
-  // copy data files to website folder
+  log('\nCopying data files to website folder...');
   await updateWebsiteDataFiles();
 
-  // git commit and push
+  log('Committing and pushing data diffs...');
   await commitDataDiffs();
 
   // deploy website to prod
+  log('Deploying website to prod...');
   await deployWebsiteProd();
+
+  log('🚀 Deployment complete!');
 }
 
 // execute this manually to update files if manual intervention is required to resolve post-scraping/postprocessing/analysis errors
 (async () => {
   if (require.main === module) {
     await updateDataFiles();
-    console.log('Data files on website updated and deployed');
   }
 })();

@@ -5,6 +5,7 @@ import { generateRouteAnalysis } from './analysis/generateRouteAnalysis';
 import { RedemptionJsonPostprocessed } from './utils/types';
 import { appendMonthMetadata } from './analysis/appendMonthMetadata';
 import { OagDataAnalysisEntry } from './scripts/generateOagData';
+import { log } from './utils/log';
 
 const ROUTE_ANALYSIS_OUTPUT_FILENAME = 'data/route-analysis.json';
 const MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME =
@@ -23,8 +24,8 @@ export function analyse() {
     .filter((filename) => filename.endsWith('redemptions-postprocessed.json'));
   const months = redemptionsFilenames.map((filename) => filename.split('-')[0]);
 
-  console.log(
-    `🧮 Running analysis on ${redemptionsFilenames.length} redemption files\n`,
+  log(
+    `\n🧮 Running analysis on ${redemptionsFilenames.length} redemption files...`,
   );
 
   const redemptions: RedemptionJsonPostprocessed[] = [];
@@ -43,7 +44,7 @@ export function analyse() {
     months,
     oagDataAnalysis,
   });
-  console.log(`📄 Writing to ${ROUTE_ANALYSIS_OUTPUT_FILENAME}\n`);
+  console.log(`📄 Writing to ${ROUTE_ANALYSIS_OUTPUT_FILENAME}`);
   fs.writeFileSync(
     ROUTE_ANALYSIS_OUTPUT_FILENAME,
     JSON.stringify(routeAnalysis, null, 2),
@@ -61,6 +62,8 @@ export function analyse() {
     MONTH_SUMMARY_ANALYSIS_OUTPUT_FILENAME,
     JSON.stringify(monthSummaryAnalysisWithMetadata, null, 2),
   );
+
+  log(`🧮 Analysis complete`);
 }
 
 if (require.main === module) {

@@ -11,6 +11,7 @@ import { removeRedemptionsMissingFromOagRoutesDataset } from './postprocessing/r
 import { sortRedemptionsList } from './postprocessing/sortRedemptionsList';
 import { standardiseRegionField } from './postprocessing/standardiseRegionField';
 import { notEmpty } from './utils';
+import { log } from './utils/log';
 import { RedemptionJson } from './utils/types';
 
 /**
@@ -23,6 +24,7 @@ export function postprocessing() {
     .filter(notEmpty);
   const monthsListUnique = Array.from(new Set(monthsList));
 
+  log('\n🧹 Starting postprocessing...');
   console.log(
     '🧹 Postprocessing - merging redemptions with base set, if applicable',
   );
@@ -88,6 +90,8 @@ export function postprocessing() {
       JSON.stringify(redemptionsPostprocessed9, null, 2),
     );
   });
+
+  log('🧹 Postprocessing complete');
 }
 
 /**

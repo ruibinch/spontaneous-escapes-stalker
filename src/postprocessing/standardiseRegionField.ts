@@ -1,4 +1,5 @@
 import { cityMappings } from '../lib/iata/mappings';
+import { log } from '../utils/log';
 import { RedemptionJson } from '../utils/types';
 
 /**
@@ -28,9 +29,9 @@ export function standardiseRegionField(
     })();
 
     if (!regionOverride) {
-      throw new Error(
-        `No regionOverride found for origin="${origin}"/destination="${destination}"`,
-      );
+      const errorMessage = `No regionOverride found for origin="${origin}"/destination="${destination}"`;
+      log(errorMessage, true);
+      throw new Error(errorMessage);
     }
 
     return {

@@ -54,6 +54,14 @@ function checkNextMonthRedemptionsAlreadyPublished() {
     ),
     shouldSendToProdChannel: false,
   });
-  await scrape();
-  await sendLogs();
+
+  try {
+    await scrape();
+
+    await sendLogs();
+    process.exit(0);
+  } catch (err) {
+    await sendLogs();
+    process.exit(1);
+  }
 })();
