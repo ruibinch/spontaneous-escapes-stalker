@@ -99,7 +99,7 @@ export function BlackoutPctOverTimeChart({
           data={data}
         />
       }
-      tooltip="Equivalent to the total number of blackout days for all flights, divided by total number of days in the month"
+      tooltip="Equivalent to the total number of blackout days for all flights, divided by the number of flights multiplied by the number of days in the month"
       // The limitation is all flights are considered equally in terms of number of seats.
     />
   );

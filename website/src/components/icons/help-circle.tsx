@@ -18,8 +18,8 @@ export const HelpCircleIcon = (props: SvgIconProps) => {
       strokeLinejoin="round"
       color={
         isDarkTheme
-          ? '#d4d4d4' // neutral-300
-          : '#404040' // neutral-700
+          ? '#a3a3a3' // neutral-400
+          : '#737373' // neutral-500
       }
       {...props}
     >

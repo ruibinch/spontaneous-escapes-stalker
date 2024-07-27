@@ -24,7 +24,7 @@ export function ChartWrapper({
       <div
         className={cn('flex justify-between gap-2 items-center', topBarStyle)}
       >
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-start">
           <span className="text-sm">{title}</span>
 
           {tooltip && (
