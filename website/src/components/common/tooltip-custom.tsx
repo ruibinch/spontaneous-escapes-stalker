@@ -12,6 +12,7 @@ import { BREAKPOINTS } from './breakpoints';
 type Props = Omit<TooltipProps, 'content'> & {
   content: string;
   // use when rendering with Popover results in weird layout issues
+  // or if we want to disable the tooltip on mobile
   alwaysUseTooltip?: boolean;
 };
 

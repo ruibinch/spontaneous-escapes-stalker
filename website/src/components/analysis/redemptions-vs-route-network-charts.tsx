@@ -3,7 +3,7 @@ import { roundToDp } from '@/common/round-to-dp';
 import { MonthSummaryAnalysisEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar, Line } from 'react-chartjs-2';
-import { getMonthsWithRouteNetworkData } from '../../common/get-months-with-route-network-data';
+import { getMonthsList } from '../../common/get-months-with-route-network-data';
 import { makeChartOptions } from '../common/chart/chart-options';
 import { ChartWrapper } from '../common/chart/chart-wrapper';
 import { covidLinePlugin } from '../common/chart/covid-line-plugin';
@@ -17,18 +17,20 @@ export function RedemptionsVsRouteNetworkCharts() {
 
   const monthSummaryAnalysisList =
     monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
-  const monthsWithRouteNetworkData = getMonthsWithRouteNetworkData();
+  const monthsWithRouteNetworkData = getMonthsList({
+    includeOnlyMonthsPresentInOagDataset: true,
+  });
   const lastPreCovidMonthIdx = (() => {
-    const _lastPreCovidMonthIdx = Array.from(
-      monthsWithRouteNetworkData,
-    ).findIndex((month) => month === LAST_PRE_COVID_MONTH);
+    const _lastPreCovidMonthIdx = monthsWithRouteNetworkData.findIndex(
+      (month) => month === LAST_PRE_COVID_MONTH,
+    );
     return _lastPreCovidMonthIdx === -1 ? undefined : _lastPreCovidMonthIdx;
   })();
 
   // only include up to the last month with route network size data
   const monthSummaryAnalysisListForMonthsWithRouteNetworkData =
     monthSummaryAnalysisList.filter((entry) =>
-      monthsWithRouteNetworkData.has(entry.month),
+      monthsWithRouteNetworkData.includes(entry.month),
     );
 
   const routeNetworkCountList =

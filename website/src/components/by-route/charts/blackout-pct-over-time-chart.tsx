@@ -1,4 +1,4 @@
-import { getMonthsWithRouteNetworkData } from '@/common/get-months-with-route-network-data';
+import { getMonthsList } from '@/common/get-months-with-route-network-data';
 import { makeChartOptions } from '@/components/common/chart/chart-options';
 import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
 import { covidLinePlugin } from '@/components/common/chart/covid-line-plugin';
@@ -19,9 +19,7 @@ export function BlackoutPctOverTimeChart({
   const year = searchParams.get('year') ?? YEAR_ALL;
 
   const { isDarkTheme } = useTheme();
-  const monthsWithRouteNetworkData = getMonthsWithRouteNetworkData(
-    year.split(','),
-  );
+  const monthsWithRouteNetworkData = getMonthsList({ years: year.split(',') });
   const flightClassToMonthToBlackoutPctDict: Record<
     string,
     Record<string, string | number>
@@ -32,9 +30,7 @@ export function BlackoutPctOverTimeChart({
       (d) => d.flightClass === flightClass,
     );
 
-    const monthToBlackoutPctDict = Array.from(
-      monthsWithRouteNetworkData,
-    ).reduce(
+    const monthToBlackoutPctDict = monthsWithRouteNetworkData.reduce(
       (_monthToBlackoutPctDict: Record<string, string | number>, month) => {
         const detailsForFlightClassAndMonth = detailsListForFlightClass.find(
           (d) => d.month === month,
