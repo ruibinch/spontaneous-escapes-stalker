@@ -68,9 +68,10 @@ export function postprocessing() {
         redemptions: redemptionsPostprocessed4,
         month,
       });
-    const redemptionsPostprocessed6 = computeBlackoutPct(
-      redemptionsPostprocessed5,
-    );
+    const redemptionsPostprocessed6 = computeBlackoutPct({
+      redemptions: redemptionsPostprocessed5,
+      month,
+    });
     const redemptionsPostprocessed7 = appendAndRemoveFields({
       redemptions: redemptionsPostprocessed6,
       month,

@@ -1,4 +1,11 @@
-import { differenceInCalendarDays, getDaysInMonth } from 'date-fns';
+import {
+  differenceInCalendarDays,
+  endOfMonth,
+  getDaysInMonth,
+  max,
+  min,
+  startOfMonth,
+} from 'date-fns';
 import { RedemptionJsonWithFlightNos } from './formatFlightNosField';
 
 export type RedemptionJsonWithFlightNosAndBlackoutPct =
@@ -14,9 +21,17 @@ export type RedemptionJsonWithFlightNosAndBlackoutPct =
  * This is not a perfect calculation as it assumes that all flights have the same number of seats.
  * But it is as good of a proxy as we can get.
  */
-export function computeBlackoutPct(
-  redemptions: RedemptionJsonWithFlightNos[],
-): RedemptionJsonWithFlightNosAndBlackoutPct[] {
+export function computeBlackoutPct({
+  redemptions,
+  month,
+}: {
+  redemptions: RedemptionJsonWithFlightNos[];
+  month: string;
+}): RedemptionJsonWithFlightNosAndBlackoutPct[] {
+  const monthDate = new Date(`${month.slice(0, 4)}-${month.slice(4, 6)}-01`);
+  const monthStart = startOfMonth(monthDate);
+  const monthEnd = endOfMonth(monthDate);
+
   return redemptions.map((redemption) => {
     if (redemption.blackoutPeriod.length === 0) {
       return {
@@ -33,9 +48,15 @@ export function computeBlackoutPct(
     const totalDaysForFlights = numDaysInMonth * numFlights;
     const blackoutDays = redemption.blackoutPeriod.reduce(
       (_blackoutDays, period) => {
+        // min/max is required as blackout periods can span to the previous/next month
         const numDaysInBlackoutPeriod =
-          differenceInCalendarDays(new Date(period.to), new Date(period.from)) +
-          1;
+          differenceInCalendarDays(
+            min([monthEnd, new Date(period.to)]),
+            max([monthStart, new Date(period.from)]),
+          ) + 1;
+        if (numDaysInBlackoutPeriod > numDaysInMonth) {
+          throw new Error(`Invalid blackout days computed for ${redemption.origin}-${redemption.destination} on ${month} for blackout period ${period.from}-${period.to}`)
+        }
         const numDaysInBlackoutPeriodForFlights =
           numDaysInBlackoutPeriod * numFlights;
         return _blackoutDays + numDaysInBlackoutPeriodForFlights;
