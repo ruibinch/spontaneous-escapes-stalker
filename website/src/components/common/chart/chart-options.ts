@@ -199,6 +199,7 @@ export const makeChartOptions = <T extends ChartType>(
       mode: 'nearest',
       intersect: true,
     },
+    clip: false, // prevent line chart points at min/max values from being cut off
     responsive: true,
     maintainAspectRatio: false,
     resizeDelay: 200, // allow DOM to render before attempting redrawing to reduce chances of a weirdly scaled chart
