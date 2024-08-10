@@ -44,8 +44,8 @@ export function computeBlackoutPct({
       new Date(redemption.blackoutPeriod[0].from),
     );
     const numFlights = redemption.flightNos.length;
-
     const totalDaysForFlights = numDaysInMonth * numFlights;
+
     const blackoutDays = redemption.blackoutPeriod.reduce(
       (_blackoutDays, period) => {
         // min/max is required as blackout periods can span to the previous/next month
@@ -55,15 +55,25 @@ export function computeBlackoutPct({
             max([monthStart, new Date(period.from)]),
           ) + 1;
         if (numDaysInBlackoutPeriod > numDaysInMonth) {
-          throw new Error(`Invalid blackout days computed for ${redemption.origin}-${redemption.destination} on ${month} for blackout period ${period.from}-${period.to}`)
+          throw new Error(
+            `Invalid blackout days (${numDaysInBlackoutPeriod}) computed for ${redemption.origin}-${redemption.destination} on ${month} for blackout period ${period.from}-${period.to}`,
+          );
         }
+        const numFlightsForBlackoutPeriod =
+          period.flightNos?.length ?? numFlights;
         const numDaysInBlackoutPeriodForFlights =
-          numDaysInBlackoutPeriod * numFlights;
+          numDaysInBlackoutPeriod * numFlightsForBlackoutPeriod;
         return _blackoutDays + numDaysInBlackoutPeriodForFlights;
       },
       0,
     );
+
     const blackoutPct = roundTo1Dp((blackoutDays / totalDaysForFlights) * 100);
+    if (blackoutPct > 100) {
+      throw new Error(
+        `Invalid blackout pct (${blackoutPct}) computed for ${redemption.origin}-${redemption.destination} on ${month}`,
+      );
+    }
 
     return {
       ...redemption,
