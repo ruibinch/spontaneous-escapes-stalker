@@ -16,6 +16,8 @@ import { FlightClassLegend } from '../common/flight-class-legend';
 import { CommonStyles } from '../common/styles';
 import { useSearchParams } from 'next/navigation';
 import { YEAR_ALL } from '../common/filters/year-filter';
+import { useWindowSize } from '@/hooks/use-window-size';
+import { BREAKPOINTS } from '../common/breakpoints';
 
 const monthsList = getMonthsList();
 
@@ -37,12 +39,16 @@ export function MonthYearFrequencyTable({
 }: {
   data: RouteDetailDatum[];
 }) {
+  const windowSize = useWindowSize();
   const searchParams = useSearchParams();
   const year = searchParams.get('year') ?? YEAR_ALL;
   const tableData = makeMonthYearFrequencyData({
     data,
     years: year.split(','),
   });
+
+  const isSmallWindow =
+    windowSize.width !== undefined && windowSize.width < BREAKPOINTS.sm;
 
   return (
     <div className="flex flex-col gap-2">
@@ -87,7 +93,13 @@ export function MonthYearFrequencyTable({
                     idx !== 0 ? cn(TableStyles.Borders, 'border-t') : undefined
                   }
                 >
-                  <td className={cn(TableStyles.HeaderCols, 'py-1 text-xs')}>
+                  <td
+                    className={cn(
+                      TableStyles.HeaderCols,
+                      isSmallWindow ? 'text-2xs' : 'text-xs',
+                      'py-1',
+                    )}
+                  >
                     {tableDatum.year}
                   </td>
                   {columns.slice(1).map((col) => {
@@ -97,7 +109,11 @@ export function MonthYearFrequencyTable({
                     >;
                     const yyyymm = `${tableDatum.year}${col.key}`;
 
-                    return renderCell(valueAtYearMonth, yyyymm);
+                    return renderCell({
+                      valueAtYearMonth,
+                      yyyymm,
+                      isSmallWindow,
+                    });
                   })}
                 </tr>
               ))}
@@ -109,12 +125,17 @@ export function MonthYearFrequencyTable({
   );
 }
 
-function renderCell(
+function renderCell({
+  valueAtYearMonth,
+  yyyymm,
+  isSmallWindow,
+}: {
   valueAtYearMonth:
     | Partial<Record<FlightClass, RedemptionInfoSingle | null>>
-    | undefined,
-  yyyymm: string,
-) {
+    | undefined;
+  yyyymm: string;
+  isSmallWindow: boolean;
+}) {
   const monthDate = yyyymmToDate(yyyymm);
   const datasetStartDate = yyyymmToDate(monthsList[0]);
   const datasetEndDate = yyyymmToDate(monthsList[monthsList.length - 1]);
@@ -161,13 +182,21 @@ function renderCell(
     );
   }
 
+  const indicatorSize = isSmallWindow ? 'small' : 'normal';
+
   return (
     <td key={yyyymm} className={cn(TableStyles.Borders, 'border-l')}>
       <div className="flex justify-center">
         <div className="flex flex-row gap-0.5 sm:gap-1">
-          {valueAtYearMonth.Y && <FlightClassIndicator flightClassCode="Y" />}
-          {valueAtYearMonth.W && <FlightClassIndicator flightClassCode="W" />}
-          {valueAtYearMonth.J && <FlightClassIndicator flightClassCode="J" />}
+          {valueAtYearMonth.Y && (
+            <FlightClassIndicator flightClassCode="Y" size={indicatorSize} />
+          )}
+          {valueAtYearMonth.W && (
+            <FlightClassIndicator flightClassCode="W" size={indicatorSize} />
+          )}
+          {valueAtYearMonth.J && (
+            <FlightClassIndicator flightClassCode="J" size={indicatorSize} />
+          )}
         </div>
       </div>
     </td>

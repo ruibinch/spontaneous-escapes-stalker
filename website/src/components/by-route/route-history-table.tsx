@@ -114,7 +114,7 @@ export function RouteHistoryTable({
                 className={cn(CommonStyles.Border, 'border-b')}
               >
                 {(columnKey) => (
-                  <TableCell>
+                  <TableCell className="text-xs">
                     {(() => {
                       switch (columnKey) {
                         case 'month': {

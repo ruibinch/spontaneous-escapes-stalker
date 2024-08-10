@@ -24,6 +24,7 @@ import { RouteHistoryTable } from './route-history-table';
 import { useSearchParams } from 'next/navigation';
 import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
 import { YEAR_ALL } from '../common/filters/year-filter';
+import { ByRouteSummary } from './by-route-summary';
 
 ChartJS.register(
   CategoryScale,
@@ -71,10 +72,10 @@ export function ByRouteContent({
         <ByRouteFilters />
 
         <div className="flex flex-col gap-4">
-          <div>
-            <span>Showing </span>
-            <span className="font-bold">{`${detailsListFiltered.length}/${detailsList.length} redemptions`}</span>
-          </div>
+          <ByRouteSummary
+            detailsList={detailsList}
+            detailsListFiltered={detailsListFiltered}
+          />
 
           <div className="grid grid-cols-2 gap-2">
             <div className="col-span-2 xl:col-span-1">
@@ -99,7 +100,7 @@ export function ByRouteContent({
           </div>
         </div>
 
-        <RouteHistoryTable data={detailsList} />
+        <RouteHistoryTable data={detailsListFiltered} />
       </div>
     </div>
   );

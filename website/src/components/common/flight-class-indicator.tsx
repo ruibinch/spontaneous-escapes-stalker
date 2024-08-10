@@ -1,16 +1,27 @@
+import { cn } from '@nextui-org/react';
+
 export function FlightClassIndicator({
   flightClass,
   flightClassCode,
+  size = 'normal',
 }: {
   flightClass?: string;
   flightClassCode?: string;
+  size?: 'small' | 'normal';
 }) {
   const color = getFlightClassIndicatorColor({
     flightClass,
     flightClassCode,
   });
 
-  return color ? <div className={`w-2 h-2 rounded-lg ${color}`} /> : null;
+  return color ? (
+    <div
+      className={cn(
+        size === 'normal' ? 'w-2 h-2' : 'w-1.5 h-1.5',
+        `rounded-lg ${color}`,
+      )}
+    />
+  ) : null;
 }
 
 export function getFlightClassIndicatorColor({
