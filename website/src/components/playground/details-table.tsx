@@ -3,6 +3,7 @@ import { FlightClass, RouteAnalysisEntry } from '@/index';
 import { useState } from 'react';
 import { DetailsTableContent } from './details-table/details-table-content';
 import { ShowRoutesAs } from './details-table/top-content';
+import { notEmpty } from '@/common/not-empty';
 
 type Props = {
   data: RouteAnalysisEntry[];
@@ -49,10 +50,14 @@ export function DetailsTable(props: Props) {
       averageBlackoutPctSumAcrossMonths += averageBlackoutPctForMonth;
     });
 
+    if (numRedemptions === 0 && numMonths === 0) {
+      return null;
+    }
+
     const averageBlackoutPct =
       averageBlackoutPctSumAcrossMonths > 0 && numMonths > 0
         ? roundToDp(averageBlackoutPctSumAcrossMonths / numMonths, 1)
-        : null;
+        : 0;
 
     return {
       from: entry.from,
@@ -93,9 +98,10 @@ export function DetailsTable(props: Props) {
         string,
         Record<FlightClass, boolean>
       > = {};
+      const monthsSet = new Set<string>();
       const routesMetadata: {
         numRedemptions: number;
-        numMonths: number;
+        numRedemptionMonths: number; // non-unique list of months
         averageBlackoutPct: number | null;
       }[] = [];
 
@@ -103,7 +109,7 @@ export function DetailsTable(props: Props) {
         routesIata.push(`${entry.fromIata}-${entry.toIata}`);
         let averageBlackoutPctSumForRouteAcrossMonths = 0;
         let numRedemptionsForRoute = 0;
-        let numMonthsForRoute = 0;
+        let numRedemptionMonthsForRoute = 0;
 
         entry.details.forEach(({ month, redemptionDetails }) => {
           monthToFlightClassToRedemptionDict[month] = {
@@ -125,7 +131,8 @@ export function DetailsTable(props: Props) {
             Object.values(redemptionDetails).filter(Boolean).length;
           numRedemptionsForRoute += numRedemptionsInMonth;
           if (numRedemptionsInMonth > 0) {
-            numMonthsForRoute += 1;
+            numRedemptionMonthsForRoute += 1;
+            monthsSet.add(month);
           }
 
           const blackoutPctSumForMonth =
@@ -142,11 +149,12 @@ export function DetailsTable(props: Props) {
 
         routesMetadata.push({
           numRedemptions: numRedemptionsForRoute,
-          numMonths: numMonthsForRoute,
+          numRedemptionMonths: numRedemptionMonthsForRoute,
           averageBlackoutPct:
-            numMonthsForRoute > 0
+            numRedemptionMonthsForRoute > 0
               ? roundToDp(
-                  averageBlackoutPctSumForRouteAcrossMonths / numMonthsForRoute,
+                  averageBlackoutPctSumForRouteAcrossMonths /
+                    numRedemptionMonthsForRoute,
                   1,
                 )
               : null,
@@ -157,27 +165,36 @@ export function DetailsTable(props: Props) {
         (_numRedemptions, d) => _numRedemptions + d.numRedemptions,
         0,
       );
-      const numMonths = routesMetadata.reduce(
-        (_numMonths, d) => _numMonths + d.numMonths,
+      const numRedemptionMonths = routesMetadata.reduce(
+        (_numRedemptionMonths, d) =>
+          _numRedemptionMonths + d.numRedemptionMonths,
         0,
       );
+      const numUniqueMonths = Array.from(monthsSet).length;
+      if (numRedemptions === 0 && numUniqueMonths === 0) {
+        return null;
+      }
+
       const averageBlackoutPct = (() => {
         const isAllBlackoutPctNull = routesMetadata.every(
           ({ averageBlackoutPct }) => averageBlackoutPct === null,
         );
-        if (isAllBlackoutPctNull) return null;
+        if (isAllBlackoutPctNull) return 0;
 
+        // weighted average blackout % across the 2 routes
         const _averageBlackoutPct = routesMetadata.reduce(
           (
             _averageBlackoutPct: number,
             {
-              numMonths: numMonthsForRoute,
+              numRedemptionMonths: numRedemptionMonthsForRoute,
               averageBlackoutPct: averageBlackoutPctForRoute,
             },
           ) => {
-            const countRatio = numMonthsForRoute / numMonths;
+            const numRedemptionMonthsForRouteRatioOfTotal =
+              numRedemptionMonthsForRoute / numRedemptionMonths;
             _averageBlackoutPct +=
-              (averageBlackoutPctForRoute as number) * countRatio;
+              (averageBlackoutPctForRoute as number) *
+              numRedemptionMonthsForRouteRatioOfTotal;
             return _averageBlackoutPct;
           },
           0,
@@ -189,7 +206,7 @@ export function DetailsTable(props: Props) {
         cities: cityPair,
         routesIata,
         numRedemptions,
-        numMonths,
+        numMonths: numUniqueMonths,
         averageBlackoutPct,
         ...monthToFlightClassToRedemptionDict,
       };
@@ -203,8 +220,8 @@ export function DetailsTable(props: Props) {
       setShowRoutesAs={setShowRoutesAs}
       data={
         showRoutesAs === 'separate'
-          ? dataForSeparateRoutes
-          : dataForCombinedRoutes
+          ? dataForSeparateRoutes.filter(notEmpty)
+          : dataForCombinedRoutes.filter(notEmpty)
       }
     />
   );

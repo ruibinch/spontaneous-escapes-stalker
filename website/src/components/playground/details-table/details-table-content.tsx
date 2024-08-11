@@ -146,8 +146,8 @@ export function DetailsTableContent({
         bottomContentPlacement="outside"
         aria-label="Details table"
         classNames={{
-          th: 'px-2 py-1.5',
-          td: 'px-2 py-1.5',
+          th: 'px-1 py-1.5',
+          td: 'px-1 py-1.5',
         }}
       >
         <TableHeader columns={columns}>
