@@ -15,6 +15,7 @@ import {
 } from '@nextui-org/react';
 import { FileTextIcon } from '@/components/icons/file-text';
 import { trackEvent } from '@/analytics';
+import { GlossaryModal } from './glossary-modal';
 
 export type MonthColumnOrder = 'latest' | 'oldest';
 const monthColumnOrderToggleOptions: ToggleProps<MonthColumnOrder>['options'] =
@@ -91,71 +92,5 @@ export function TopContent(props: {
         />
       </div>
     </div>
-  );
-}
-
-function GlossaryModal({
-  isOpen,
-  onOpenChange,
-}: {
-  isOpen: boolean;
-  onOpenChange: () => void;
-}) {
-  return (
-    <Modal
-      size="lg"
-      isOpen={isOpen}
-      onOpenChange={onOpenChange}
-      placement="center"
-    >
-      <ModalContent>
-        {(onClose) => (
-          <>
-            <ModalHeader>Glossary</ModalHeader>
-            <ModalBody className="flex gap-4">
-              <div className="flex flex-col gap-4">
-              <div className='flex flex-col gap-2'>
-                  <p className="text-sm font-semibold">Count</p>
-                  <span className="text-sm">Number of redemption months.</span>
-                </div>
-
-                <div className='flex flex-col gap-2'>
-                  <p className="text-sm font-semibold">Blackout %</p>
-                  <span className="text-sm">
-                    Equivalent to the total number of blackout days for all
-                    flights, divided by the number of flights multiplied by the
-                    number of days in the month.
-                  </span>
-                  <span className="text-sm">
-                    A day is considered a blackout day as long as it is within
-                    the blackout period for any flight class.
-                  </span>
-                  <span className="text-sm">
-                    e.g. if a route has 2 flights in June, where each flight has
-                    3 blackout days, then blackout % = (3+3)/(2*30) = 10%.
-                  </span>
-                  <span className="text-sm italic">
-                    The limitation of this formula is that all flights are
-                    considered equally in terms of number of seats, which is
-                    inaccurate, but this figure can nevertheless serve as a
-                    decent estimate.
-                  </span>
-                </div>
-
-                <div className='flex flex-col gap-2'>
-                  <p className="text-sm font-semibold">Avg Blackout %</p>
-                  <span className="text-sm">
-                    Sum of blackout % across months, divided by number of months.
-                  </span>
-                </div>
-              </div>
-            </ModalBody>
-            <ModalFooter>
-              <Button onPress={onClose}>Close</Button>
-            </ModalFooter>
-          </>
-        )}
-      </ModalContent>
-    </Modal>
   );
 }

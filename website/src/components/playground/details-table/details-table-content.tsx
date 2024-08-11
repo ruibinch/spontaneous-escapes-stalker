@@ -30,15 +30,15 @@ type DatumForSeparateRoutes = {
   fromIata: string;
   to: string;
   toIata: string;
-  count: number;
-  averageBlackoutPct: number | null;
+  numMonths: number;
+  averageBlackoutPct: number;
 };
 
 type DatumForCombinedRoutes = {
   cities: string;
   routesIata: string[];
-  count: number;
-  averageBlackoutPct: number | null;
+  numMonths: number;
+  averageBlackoutPct: number;
 };
 
 export interface DetailsTableContentProps {
@@ -53,7 +53,7 @@ export interface DetailsTableContentProps {
 const isDatumForSeparateRoutes = (
   d: DatumForSeparateRoutes | DatumForCombinedRoutes,
 ): d is DatumForSeparateRoutes =>
-  'from' in d && 'fromIata' in d && 'to' in d && 'toIata' in d && 'count' in d;
+  'from' in d && 'fromIata' in d && 'to' in d && 'toIata' in d;
 
 export function DetailsTableContent({
   data: inputData,
@@ -79,11 +79,11 @@ export function DetailsTableContent({
   } = useRowsPerPageHandler(inputData);
 
   useEffect(() => {
-    // sort by count descending by default whenever input data changes
-    setData(sortByNumericField(inputData, 'count', 'descending'));
+    // sort by numMonths descending by default whenever input data changes
+    setData(sortByNumericField(inputData, 'numMonths', 'descending'));
 
     setSortDescriptor({
-      column: 'count',
+      column: 'numMonths',
       direction: 'descending',
     });
   }, [inputData]);
@@ -99,9 +99,18 @@ export function DetailsTableContent({
   });
 
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
-    if (column === 'count' || column === 'averageBlackoutPct') {
+    if (typeof column !== 'string') return;
+
+    const columnsWithSortingByNumber = columns
+      .filter((col) => col.sortBy === 'number')
+      .map((col) => col.key);
+    const columnsWithSortingByString = columns
+      .filter((col) => col.sortBy === 'string')
+      .map((col) => col.key);
+
+    if (columnsWithSortingByNumber.includes(column)) {
       setData(sortByNumericField(inputData, column, direction));
-    } else if (column === 'from' || column === 'to') {
+    } else if (columnsWithSortingByString.includes(column)) {
       setData(sortByStringField(inputData, column, direction));
     }
 
@@ -184,7 +193,8 @@ function renderCell({
   switch (columnKey) {
     case 'from':
     case 'to':
-    case 'count':
+    case 'numRedemptions':
+    case 'numMonths':
       return getKeyValue(item, columnKey);
     case 'averageBlackoutPct':
       const averageBlackoutPct = getKeyValue(item, columnKey) as number | null;

@@ -12,6 +12,7 @@ export const getColumns = (filters: {
   key: string;
   label: string;
   allowsSorting?: boolean;
+  sortBy?: 'string' | 'number';
 }> => {
   const monthsListOldestFirst = getMonthsList();
   const monthsList =
@@ -23,12 +24,38 @@ export const getColumns = (filters: {
     { key: 'actions', label: 'Details' },
     ...(filters.showRoutesAs === 'separate'
       ? [
-          { key: 'from', label: 'Origin', allowsSorting: true },
-          { key: 'to', label: 'Destination', allowsSorting: true },
+          {
+            key: 'from',
+            label: 'Origin',
+            allowsSorting: true,
+            sortBy: 'string' as const,
+          },
+          {
+            key: 'to',
+            label: 'Destination',
+            allowsSorting: true,
+            sortBy: 'string' as const,
+          },
         ]
       : [{ key: 'cities', label: 'Cities' }]),
-    { key: 'count', label: 'Count', allowsSorting: true },
-    { key: 'averageBlackoutPct', label: 'Avg Blackout %', allowsSorting: true },
+    {
+      key: 'numMonths',
+      label: 'Months',
+      allowsSorting: true,
+      sortBy: 'number',
+    },
+    {
+      key: 'numRedemptions',
+      label: 'Redemptions',
+      allowsSorting: true,
+      sortBy: 'number',
+    },
+    {
+      key: 'averageBlackoutPct',
+      label: 'Avg Blackout %',
+      allowsSorting: true,
+      sortBy: 'number',
+    },
     ...monthsList
       .filter((month) =>
         isApplicableMonth({

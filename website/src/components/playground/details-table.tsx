@@ -20,7 +20,8 @@ export function DetailsTable(props: Props) {
       string,
       Record<FlightClass, boolean>
     > = {};
-    let count = 0;
+    let numRedemptions = 0;
+    let numMonths = 0;
     let averageBlackoutPctSumAcrossMonths = 0;
 
     entry.details.forEach(({ month, redemptionDetails }) => {
@@ -32,8 +33,9 @@ export function DetailsTable(props: Props) {
 
       const numRedemptionsInMonth =
         Object.values(redemptionDetails).filter(Boolean).length;
+      numRedemptions += numRedemptionsInMonth;
       if (numRedemptionsInMonth > 0) {
-        count += 1;
+        numMonths += 1;
       }
 
       const blackoutPctSumForMonth =
@@ -48,8 +50,8 @@ export function DetailsTable(props: Props) {
     });
 
     const averageBlackoutPct =
-      averageBlackoutPctSumAcrossMonths > 0 && count > 0
-        ? roundToDp(averageBlackoutPctSumAcrossMonths / count, 1)
+      averageBlackoutPctSumAcrossMonths > 0 && numMonths > 0
+        ? roundToDp(averageBlackoutPctSumAcrossMonths / numMonths, 1)
         : null;
 
     return {
@@ -57,7 +59,8 @@ export function DetailsTable(props: Props) {
       fromIata: entry.fromIata,
       to: entry.to,
       toIata: entry.toIata,
-      count,
+      numRedemptions,
+      numMonths,
       averageBlackoutPct,
       ...monthToFlightClassToRedemptionDict,
     };
@@ -91,14 +94,16 @@ export function DetailsTable(props: Props) {
         Record<FlightClass, boolean>
       > = {};
       const routesMetadata: {
-        count: number;
+        numRedemptions: number;
+        numMonths: number;
         averageBlackoutPct: number | null;
       }[] = [];
 
       entries.forEach((entry) => {
         routesIata.push(`${entry.fromIata}-${entry.toIata}`);
         let averageBlackoutPctSumForRouteAcrossMonths = 0;
-        let countForRoute = 0;
+        let numRedemptionsForRoute = 0;
+        let numMonthsForRoute = 0;
 
         entry.details.forEach(({ month, redemptionDetails }) => {
           monthToFlightClassToRedemptionDict[month] = {
@@ -118,8 +123,9 @@ export function DetailsTable(props: Props) {
 
           const numRedemptionsInMonth =
             Object.values(redemptionDetails).filter(Boolean).length;
+          numRedemptionsForRoute += numRedemptionsInMonth;
           if (numRedemptionsInMonth > 0) {
-            countForRoute += 1;
+            numMonthsForRoute += 1;
           }
 
           const blackoutPctSumForMonth =
@@ -135,19 +141,24 @@ export function DetailsTable(props: Props) {
         });
 
         routesMetadata.push({
-          count: countForRoute,
+          numRedemptions: numRedemptionsForRoute,
+          numMonths: numMonthsForRoute,
           averageBlackoutPct:
-            countForRoute > 0
+            numMonthsForRoute > 0
               ? roundToDp(
-                  averageBlackoutPctSumForRouteAcrossMonths / countForRoute,
+                  averageBlackoutPctSumForRouteAcrossMonths / numMonthsForRoute,
                   1,
                 )
               : null,
         });
       });
 
-      const count = routesMetadata.reduce(
-        (_count, { count }) => _count + count,
+      const numRedemptions = routesMetadata.reduce(
+        (_numRedemptions, d) => _numRedemptions + d.numRedemptions,
+        0,
+      );
+      const numMonths = routesMetadata.reduce(
+        (_numMonths, d) => _numMonths + d.numMonths,
         0,
       );
       const averageBlackoutPct = (() => {
@@ -160,11 +171,11 @@ export function DetailsTable(props: Props) {
           (
             _averageBlackoutPct: number,
             {
-              count: countForRoute,
+              numMonths: numMonthsForRoute,
               averageBlackoutPct: averageBlackoutPctForRoute,
             },
           ) => {
-            const countRatio = countForRoute / count;
+            const countRatio = numMonthsForRoute / numMonths;
             _averageBlackoutPct +=
               (averageBlackoutPctForRoute as number) * countRatio;
             return _averageBlackoutPct;
@@ -177,7 +188,8 @@ export function DetailsTable(props: Props) {
       return {
         cities: cityPair,
         routesIata,
-        count,
+        numRedemptions,
+        numMonths,
         averageBlackoutPct,
         ...monthToFlightClassToRedemptionDict,
       };
