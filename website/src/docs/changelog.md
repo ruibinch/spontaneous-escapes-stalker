@@ -1,3 +1,9 @@
+# 2.7.0 - 2024-08-14
+
+- Added blackout % info and analysis on a per-month and per-route level
+- Added summary cards on playground, by-month and by-route pages for a better overview snapshot
+- Improved playground details table with more data columns and excluding of routes with zero entries
+
 # 2.6.0 - 2024-07-13
 
 - Improved ease of sharing filtered results by saving filter params in the URL
