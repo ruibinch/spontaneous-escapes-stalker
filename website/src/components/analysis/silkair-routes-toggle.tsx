@@ -1,40 +1,7 @@
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { Switch, cn } from '@nextui-org/react';
-import React, { ReactNode, createContext, useContext, useState } from 'react';
 import { CheckIcon } from '../icons/check';
 import { XIcon } from '../icons/x';
-
-interface SilkairRoutesToggleContext {
-  showSilkairRoutes: boolean;
-  toggleShowSilkairRoutes: () => void;
-}
-const SilkairRoutesToggleContext = createContext<SilkairRoutesToggleContext>({
-  showSilkairRoutes: true,
-  toggleShowSilkairRoutes: () => {},
-});
-
-export const useSilkairRoutesToggleContext = () => {
-  return useContext(SilkairRoutesToggleContext);
-};
-
-export const SilkairRoutesToggleContextProvider = (props: {
-  children: ReactNode;
-}) => {
-  const [showSilkairRoutes, setShowSilkairRoutes] = useState(true);
-
-  const value = {
-    showSilkairRoutes,
-    toggleShowSilkairRoutes: () => {
-      const showSilkairRoutesUpd = !showSilkairRoutes;
-      setShowSilkairRoutes(showSilkairRoutesUpd);
-    },
-  };
-
-  return (
-    <SilkairRoutesToggleContext.Provider value={value}>
-      {props.children}
-    </SilkairRoutesToggleContext.Provider>
-  );
-};
 
 export function SilkairRoutesToggle() {
   const { showSilkairRoutes, toggleShowSilkairRoutes } =

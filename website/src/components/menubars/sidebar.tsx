@@ -1,7 +1,6 @@
+import { useNewChangelogItemContext } from '@/contexts/new-changelog-item-context';
+import { useSidebarContext } from '@/contexts/sidebar-context';
 import { usePathname } from 'next/navigation';
-import { useContext } from 'react';
-import { useSidebarContext } from '../../layout/layout-context';
-import { NewChangelogItemContext } from '../common/use-new-changelog-item-context';
 import { additionalEndBarItems, endBarItems, startBarItems } from './bar-items';
 import { BarStyles } from './bar.styles';
 import { SidebarItem } from './sidebar-item';
@@ -9,7 +8,7 @@ import { SidebarItem } from './sidebar-item';
 export const SidebarWrapper = () => {
   const pathname = usePathname();
   const { collapsed } = useSidebarContext();
-  const { hasNewItem } = useContext(NewChangelogItemContext);
+  const { hasNewItem } = useNewChangelogItemContext();
 
   const isItemActive = (item: { href: string }) => {
     return item.href === '/'
@@ -22,7 +21,7 @@ export const SidebarWrapper = () => {
     <aside className="h-screen sticky top-0">
       <div
         className={BarStyles.SidebarWrapper({
-          collapsed: collapsed,
+          collapsed,
         })}
       >
         <div className="flex gap-8 items-center px-6">

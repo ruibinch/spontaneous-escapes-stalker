@@ -1,6 +1,6 @@
 import { IS_SERVER } from '@/common/env';
 import { differenceInCalendarDays } from 'date-fns';
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 // TODO: pull this from changelog.md instead of hardcoding here
 const LAST_CHANGELOG_ITEM_DATE = '2024-05-13';
@@ -11,10 +11,14 @@ interface NewChangelogItemContext {
   hasNewItem: boolean;
   markItemAsViewed: () => void;
 }
-export const NewChangelogItemContext = createContext<NewChangelogItemContext>({
+const NewChangelogItemContext = createContext<NewChangelogItemContext>({
   hasNewItem: false,
   markItemAsViewed: () => {},
 });
+
+export const useNewChangelogItemContext = () => {
+  return React.useContext(NewChangelogItemContext);
+};
 
 export const NewChangelogItemContextProvider = (props: {
   children: React.ReactNode;

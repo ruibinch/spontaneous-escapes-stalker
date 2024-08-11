@@ -1,19 +1,17 @@
-import { SilkairRoutesToggleContextProvider } from '@/components/analysis/silkair-routes-toggle';
-import { NewChangelogItemContextProvider } from '@/components/common/use-new-changelog-item-context';
+import { NewChangelogItemContextProvider } from '@/contexts/new-changelog-item-context';
+import { SidebarContextProvider } from '@/contexts/sidebar-context';
+import { SilkairRoutesToggleContextProvider } from '@/contexts/silkair-routes-toggle-context';
 import React from 'react';
 import { NavbarWrapper } from '../components/menubars/navbar';
 import { SidebarWrapper } from '../components/menubars/sidebar';
-import { SidebarContext } from './layout-context';
 
 interface Props {
   children: React.ReactNode;
 }
 
 export const Layout = ({ children }: Props) => {
-  const [sidebarOpen] = React.useState(false);
-
   return (
-    <SidebarContext.Provider value={{ collapsed: sidebarOpen }}>
+    <SidebarContextProvider>
       {/*  NewChangelogItemContextProvider needs to be defined above the Sidebar/Navbar wrappers */}
       <NewChangelogItemContextProvider>
         <section className="flex">
@@ -28,6 +26,6 @@ export const Layout = ({ children }: Props) => {
           </div>
         </section>
       </NewChangelogItemContextProvider>
-    </SidebarContext.Provider>
+    </SidebarContextProvider>
   );
 };

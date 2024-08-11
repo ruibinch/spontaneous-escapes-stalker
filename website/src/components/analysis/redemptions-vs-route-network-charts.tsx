@@ -1,5 +1,6 @@
 import { LAST_PRE_COVID_MONTH } from '@/common/months-map';
 import { roundToDp } from '@/common/round-to-dp';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { MonthSummaryAnalysisEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar, Line } from 'react-chartjs-2';
@@ -9,7 +10,6 @@ import { ChartWrapper } from '../common/chart/chart-wrapper';
 import { covidLinePlugin } from '../common/chart/covid-line-plugin';
 import { lineOnHoverPlugin } from '../common/chart/line-on-hover-plugin';
 import { useTheme } from '../common/use-theme';
-import { useSilkairRoutesToggleContext } from './silkair-routes-toggle';
 
 export function RedemptionsVsRouteNetworkCharts() {
   const { isDarkTheme } = useTheme();

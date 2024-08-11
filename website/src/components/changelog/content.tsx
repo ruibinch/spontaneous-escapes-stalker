@@ -1,11 +1,11 @@
 'use client';
-import { useContext, useEffect } from 'react';
+import { useNewChangelogItemContext } from '@/contexts/new-changelog-item-context';
+import { useEffect } from 'react';
 import { MarkdownWrapper } from '../common/markdown-wrapper';
 import { PageHeader } from '../common/page-header';
-import { NewChangelogItemContext } from '../common/use-new-changelog-item-context';
 
 export function ChangelogContent({ content }: { content: string }) {
-  const { markItemAsViewed } = useContext(NewChangelogItemContext);
+  const { markItemAsViewed } = useNewChangelogItemContext();
 
   useEffect(() => {
     markItemAsViewed();

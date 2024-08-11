@@ -1,13 +1,12 @@
+import { useNewChangelogItemContext } from '@/contexts/new-changelog-item-context';
 import { Navbar, NavbarContent } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
-import { useContext } from 'react';
-import { NewChangelogItemContext } from '../common/use-new-changelog-item-context';
 import { additionalEndBarItems, endBarItems, startBarItems } from './bar-items';
 import { NavbarItem } from './navbar-item';
 
 export const NavbarWrapper = () => {
   const pathname = usePathname();
-  const { hasNewItem } = useContext(NewChangelogItemContext);
+  const { hasNewItem } = useNewChangelogItemContext();
 
   const isItemActive = (item: { href: string }) => {
     return item.href === '/'
