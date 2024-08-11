@@ -18,10 +18,8 @@ enum Region {
 
 export function RoutesRegionDistributionChart({
   redemptionsFiltered,
-  isFilterActive,
 }: {
   redemptionsFiltered: RedemptionEntry[];
-  isFilterActive: boolean;
 }) {
   const { isDarkTheme } = useTheme();
 
@@ -52,21 +50,20 @@ export function RoutesRegionDistributionChart({
     },
     {},
   );
-  const averageRegionDistributionPct = computeAverageRegionDistributionPct();
 
   const data = {
     labels: Object.keys(regionDistributionInMonth),
     datasets: [
-      {
-        label: 'Average',
-        data: Object.values(averageRegionDistributionPct),
-        backgroundColor: '#0369a1', // sky-700
-        stack: 'Average',
-      },
+      // {
+      //   label: 'Average',
+      //   data: Object.values(averageRegionDistributionPct),
+      //   backgroundColor: '#0369a1', // sky-700
+      //   stack: 'Average',
+      // },
       {
         label: 'Month',
-        data: isFilterActive ? [] : Object.values(regionDistributionPctInMonth),
-        backgroundColor: '#d97706', // amber-600
+        data: Object.values(regionDistributionPctInMonth),
+        backgroundColor: '#d97706 ', // amber-600
         stack: 'Month',
       },
     ],
@@ -75,7 +72,7 @@ export function RoutesRegionDistributionChart({
   return (
     <ChartWrapper
       title="Breakdown of routes by region (%)"
-      tooltip="Compares the percentage distribution of routes this month with the overall average"
+      // tooltip="Compares the percentage distribution of routes this month with the overall average"
       chart={
         <Bar
           options={makeChartOptions({

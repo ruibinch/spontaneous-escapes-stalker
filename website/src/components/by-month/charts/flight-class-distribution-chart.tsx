@@ -171,7 +171,7 @@ function ComparisonTable({
                   </TooltipCustom>
                 </td>
                 <td className={cn(CommonStyles.Border, 'py-1 border-r')}>
-                  {isFilterActive ? '-' : toPct(monthValue)}
+                  {toPct(monthValue)}
                 </td>
                 <td className={cn(CommonStyles.Border, 'py-1 border-r')}>
                   {isFilterActive ? '-' : toPct(averageValue)}

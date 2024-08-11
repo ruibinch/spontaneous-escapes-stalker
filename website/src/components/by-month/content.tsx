@@ -100,7 +100,6 @@ export function ByMonthContent({
             <div className="col-span-2 xl:col-span-1">
               <RoutesRegionDistributionChart
                 redemptionsFiltered={redemptionsFiltered}
-                isFilterActive={isFilterActive}
               />
             </div>
           </div>
