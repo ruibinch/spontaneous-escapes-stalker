@@ -20,6 +20,7 @@ import { REGION_ALL } from '../common/filters/region-filter';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
 import { ByMonthFilters } from './by-month-filters';
+import { ByMonthSummary } from './by-month-summary';
 import { FlightClassDistributionChart } from './charts/flight-class-distribution-chart';
 import { RoutesRegionDistributionChart } from './charts/routes-region-distribution-chart';
 import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
@@ -84,10 +85,10 @@ export function ByMonthContent({
         <ByMonthFilters redemptions={redemptions} />
 
         <div className="flex flex-col gap-4">
-          <div>
-            <span>Showing </span>
-            <span className="font-bold">{`${redemptionsFiltered.length}/${redemptions.length} redemptions`}</span>
-          </div>
+          <ByMonthSummary
+            redemptions={redemptions}
+            redemptionsFiltered={redemptionsFiltered}
+          />
 
           <div className="grid grid-cols-2 gap-2">
             <div className="col-span-2 xl:col-span-1">
