@@ -22,7 +22,7 @@ import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
 import { AnalysisCharts } from './analysis-charts';
 import { DetailsTable } from './details-table';
-import { FilterInfo } from './filter-info';
+import { PlaygroundSummary } from './playground-summary';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { PlaygroundFilters } from './playground-filters';
 import { MONTH_ALL } from '../common/filters/month-filter';
@@ -78,7 +78,7 @@ export function PlaygroundContent() {
         <PlaygroundFilters />
 
         <div className="flex flex-col gap-4">
-          <FilterInfo
+          <PlaygroundSummary
             routeAnalysisList={routeAnalysisList}
             routeAnalysisListFiltered={routeAnalysisListFiltered}
             startDate={startDate}

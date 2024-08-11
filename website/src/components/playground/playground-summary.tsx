@@ -1,8 +1,9 @@
 import { getMonthsList } from '@/common/get-data-time-range';
 import { RouteAnalysisEntry } from '@/index';
+import { SummaryEntryCard } from '../common/summary-entry-card';
 import { isApplicableMonth } from './helpers/is-applicable-month';
 
-export function FilterInfo({
+export function PlaygroundSummary({
   routeAnalysisList,
   routeAnalysisListFiltered,
   startDate,
@@ -34,18 +35,23 @@ export function FilterInfo({
   const numMonths = monthsList.length;
   const numFilteredMonths = applicableMonths.length;
 
-  const redemptionsText = `${numFilteredRedemptions}/${numRedemptions} redemptions`;
-  const routesText = `${numFilteredRoutes}/${numRoutes} routes`;
-  const monthsText = `${numFilteredMonths}/${numMonths} months`;
-
   return (
-    <div className="pt-2">
-      <span>Showing </span>
-      <span className="font-bold">{redemptionsText}</span>
-      <span> for </span>
-      <span className="font-bold">{routesText}</span>
-      <span> in </span>
-      <span className="font-bold">{monthsText}</span>
+    <div className="grid grid-cols-3 gap-4 pt-2">
+      <SummaryEntryCard
+        header="Redemptions"
+        content={numFilteredRedemptions}
+        subcontent={`out of ${numRedemptions}`}
+      />
+      <SummaryEntryCard
+        header="Routes"
+        content={numFilteredRoutes}
+        subcontent={`out of ${numRoutes}`}
+      />
+      <SummaryEntryCard
+        header="Months"
+        content={numFilteredMonths}
+        subcontent={`out of ${numMonths}`}
+      />
     </div>
   );
 }
