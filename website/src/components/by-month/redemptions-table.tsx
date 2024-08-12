@@ -72,65 +72,72 @@ export function RedemptionsTable({
   };
 
   return (
-    <div className={cn(CommonStyles.Border, 'border py-4 px-2 rounded-md')}>
-      <Table
-        radius="sm"
-        sortDescriptor={sortDescriptor}
-        onSortChange={handleSortChange}
-        topContent={
-          <TopContent
-            rowsPerPage={rowsPerPage}
-            onRowsPerPageChange={onRowsPerPageChange}
-          />
-        }
-        topContentPlacement="outside"
-        bottomContent={
-          <TablePagination
-            pages={pages}
-            page={currPage}
-            setPage={setCurrPage}
-          />
-        }
-        bottomContentPlacement="outside"
-        aria-label="By-month redemptions table"
-      >
-        <TableHeader columns={columns}>
-          {(column) => (
-            <TableColumn key={column.key} allowsSorting={column.allowsSorting}>
-              {column.label}
-            </TableColumn>
-          )}
-        </TableHeader>
-        <TableBody items={dataToDisplay}>
-          {(item) => (
-            <TableRow
-              key={`${item.flightClass}#${item.origin}#${item.destination}`}
-              className={cn(CommonStyles.Border, 'border-b')}
-            >
-              {(columnKey) => (
-                <TableCell>
-                  {(() => {
-                    switch (columnKey) {
-                      case 'flightClass':
-                        return renderFlightClassCell({
-                          flightClass: item[columnKey],
-                        });
-                      case 'milesRequired':
-                        return item[columnKey].toLocaleString();
-                      case 'blackoutPeriod':
-                        return renderBlackoutPeriodCell(item[columnKey]);
-                      case 'flightNos':
-                        return item[columnKey].join(', ');
-                      default:
-                        return getKeyValue(item, columnKey);
-                    }
-                  })()}
-                </TableCell>
-              )}
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+    <div className="flex flex-col gap-2">
+      <h3 className="text-lg font-semibold">Details</h3>
+
+      <div className={cn(CommonStyles.Border, 'border py-4 px-2 rounded-md')}>
+        <Table
+          radius="sm"
+          sortDescriptor={sortDescriptor}
+          onSortChange={handleSortChange}
+          topContent={
+            <TopContent
+              rowsPerPage={rowsPerPage}
+              onRowsPerPageChange={onRowsPerPageChange}
+            />
+          }
+          topContentPlacement="outside"
+          bottomContent={
+            <TablePagination
+              pages={pages}
+              page={currPage}
+              setPage={setCurrPage}
+            />
+          }
+          bottomContentPlacement="outside"
+          aria-label="By-month redemptions table"
+        >
+          <TableHeader columns={columns}>
+            {(column) => (
+              <TableColumn
+                key={column.key}
+                allowsSorting={column.allowsSorting}
+              >
+                {column.label}
+              </TableColumn>
+            )}
+          </TableHeader>
+          <TableBody items={dataToDisplay}>
+            {(item) => (
+              <TableRow
+                key={`${item.flightClass}#${item.origin}#${item.destination}`}
+                className={cn(CommonStyles.Border, 'border-b')}
+              >
+                {(columnKey) => (
+                  <TableCell>
+                    {(() => {
+                      switch (columnKey) {
+                        case 'flightClass':
+                          return renderFlightClassCell({
+                            flightClass: item[columnKey],
+                          });
+                        case 'milesRequired':
+                          return item[columnKey].toLocaleString();
+                        case 'blackoutPeriod':
+                          return renderBlackoutPeriodCell(item[columnKey]);
+                        case 'flightNos':
+                          return item[columnKey].join(', ');
+                        default:
+                          return getKeyValue(item, columnKey);
+                      }
+                    })()}
+                  </TableCell>
+                )}
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   );
 }

@@ -92,12 +92,12 @@ export function ByRouteContent({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-2">
-          <div className="col-span-2 xl:col-span-1">
-            <MonthView detailsListFiltered={detailsListFiltered} />
-          </div>
+        <div className="grid grid-cols-2 gap-4 xl:gap-2">
           <div className="col-span-2 xl:col-span-1">
             <MonthYearFrequencyTable data={detailsListFiltered} />
+          </div>
+          <div className="col-span-2 xl:col-span-1">
+            <MonthView detailsListFiltered={detailsListFiltered} />
           </div>
         </div>
 
