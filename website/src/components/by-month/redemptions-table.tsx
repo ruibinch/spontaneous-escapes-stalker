@@ -1,5 +1,6 @@
 import { RedemptionEntry } from '@/index';
 import {
+  Link,
   SortDescriptor,
   Table,
   TableBody,
@@ -24,6 +25,7 @@ import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 import { CommonStyles } from '../common/styles';
 
 const columns = [
+  { key: 'actions', label: 'Details' },
   { key: 'origin', label: 'Origin', allowsSorting: true },
   { key: 'destination', label: 'Destination', allowsSorting: true },
   { key: 'flightClass', label: 'Flight Class' },
@@ -114,9 +116,23 @@ export function RedemptionsTable({
                 className={cn(CommonStyles.Border, 'border-b')}
               >
                 {(columnKey) => (
-                  <TableCell>
+                  <TableCell className="text-xs">
                     {(() => {
                       switch (columnKey) {
+                        case 'actions':
+                          return (
+                            <div className="w-14">
+                              <Link
+                                key={`${item.originIata}${item.destinationIata}`}
+                                href={`/route/${item.originIata}${item.destinationIata}`}
+                                size="sm"
+                                underline="hover"
+                                className="w-14 text-xs text-blue-500 dark:text-blue-400"
+                              >
+                                {`${item.originIata}-${item.destinationIata}`}
+                              </Link>
+                            </div>
+                          );
                         case 'flightClass':
                           return renderFlightClassCell({
                             flightClass: item[columnKey],

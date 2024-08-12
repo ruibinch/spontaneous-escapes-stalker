@@ -1,4 +1,5 @@
 import {
+  Link,
   SortDescriptor,
   Table,
   TableBody,
@@ -119,7 +120,16 @@ export function RouteHistoryTable({
                       switch (columnKey) {
                         case 'month': {
                           const value = item[columnKey];
-                          return `${value.slice(0, 4)}-${value.slice(4, 6)}`;
+                          return (
+                            <Link
+                              href={`/month/${value}`}
+                              size="sm"
+                              underline="hover"
+                              className="text-xs text-blue-500 dark:text-blue-400"
+                            >
+                              {`${value.slice(0, 4)}-${value.slice(4, 6)}`}
+                            </Link>
+                          );
                         }
                         case 'flightClass':
                           return renderFlightClassCell({
