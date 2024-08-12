@@ -5,7 +5,7 @@ export function FlightClassLegend({ styles }: { styles?: string }) {
   return (
     <div
       className={cn(
-        'flex flex-col text-default-400 dark:text-default-500 text-small',
+        'flex flex-col text-default-400 dark:text-default-500 text-xs',
         styles,
       )}
     >

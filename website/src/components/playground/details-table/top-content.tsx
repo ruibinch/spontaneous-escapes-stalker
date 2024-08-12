@@ -64,7 +64,7 @@ export function TopContent(props: {
         />
       </div>
 
-      <div className="flex flex-col gap-4 md:items-end">
+      <div className="flex flex-col gap-4 lg:gap-2 md:items-end">
         <div>
           <Button
             color="default"

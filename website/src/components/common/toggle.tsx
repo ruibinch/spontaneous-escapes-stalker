@@ -46,15 +46,12 @@ export function Toggle<T extends string>({
     );
 
   const addTextStyle = (value: T) =>
-    cn(
-      size === 'md' ? 'text-sm' : 'text-xs',
-      value === selValue ? 'font-medium' : '',
-    );
+    cn('text-xs', value === selValue ? 'font-medium' : '');
 
   return (
     <div className="flex flex-col gap-1">
       {title && (
-        <span className="text-default-400 dark:text-default-500 text-small">
+        <span className="text-default-400 dark:text-default-500 text-xs">
           {title}
         </span>
       )}
