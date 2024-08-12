@@ -1,9 +1,9 @@
 import { roundToDp } from '@/common/round-to-dp';
-import React from 'react';
+import { useRoutesStats } from '@/hooks/use-routes-stats';
 import { flightClassCodeOrder } from '../common/flight-class-code-to-name';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
-import { RouteDetailDatum } from './helpers/make-route-details-list';
 import { SummaryEntryCard } from '../common/summary-entry-card';
+import { RouteDetailDatum } from './helpers/make-route-details-list';
 
 export function ByRouteSummary({
   detailsList,
@@ -12,6 +12,8 @@ export function ByRouteSummary({
   detailsList: RouteDetailDatum[];
   detailsListFiltered: RouteDetailDatum[];
 }) {
+  const routesStats = useRoutesStats();
+
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <SummaryEntryCard

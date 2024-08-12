@@ -25,16 +25,17 @@ import { getColumns } from './columns';
 import { MonthColumnOrder, ShowRoutesAs, TopContent } from './top-content';
 import { CommonStyles } from '@/components/common/styles';
 
-type DatumForSeparateRoutes = {
+export type DatumForSeparateRoutes = {
   from: string;
   fromIata: string;
   to: string;
   toIata: string;
+  numRedemptions: number;
   numMonths: number;
   averageBlackoutPct: number;
 };
 
-type DatumForCombinedRoutes = {
+export type DatumForCombinedRoutes = {
   cities: string;
   routesIata: string[];
   numMonths: number;
@@ -42,7 +43,7 @@ type DatumForCombinedRoutes = {
 };
 
 export interface DetailsTableContentProps {
-  data: (DatumForSeparateRoutes | DatumForCombinedRoutes)[];
+  data: (DatumForSeparateRoutes | DatumForCombinedRoutes)[]; // in addition to per-month data
   startDate: Date;
   endDate: Date;
   months: string[];
