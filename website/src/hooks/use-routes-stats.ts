@@ -5,12 +5,18 @@ import routeAnalysisFile from '@/static/route-analysis.json';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
-interface RoutesStats {
+export interface RoutesStats {
   fromIata: string;
   toIata: string;
   numRedemptions: number;
   numMonths: number;
   averageBlackoutPct: number;
+  numRedemptionsRank: number;
+  numMonthsRank: number;
+  averageBlackoutPctRank: number;
+  isNumRedemptionsRankShared: boolean;
+  isNumMonthsRankShared: boolean;
+  isAverageBlackoutPctRankShared: boolean;
 }
 
 export const useRoutesStats = (): RoutesStats[] => {
@@ -58,5 +64,37 @@ export const useRoutesStats = (): RoutesStats[] => {
     })
     .filter(notEmpty);
 
-  return routesStats;
+  const numRedemptionsList = routesStats
+    .map((stats) => stats.numRedemptions)
+    .sort((a, b) => b - a);
+  const numMonthsList = routesStats
+    .map((stats) => stats.numMonths)
+    .sort((a, b) => b - a);
+  const averageBlackoutPctList = routesStats
+    .map((stats) => stats.averageBlackoutPct)
+    .sort((a, b) => b - a);
+
+  return routesStats.map((stats) => ({
+    ...stats,
+    numRedemptionsRank: getRank(numRedemptionsList, stats.numRedemptions),
+    numMonthsRank: getRank(numMonthsList, stats.numMonths),
+    averageBlackoutPctRank: getRank(
+      averageBlackoutPctList,
+      stats.averageBlackoutPct,
+    ),
+    isNumRedemptionsRankShared: getIsRankShared(
+      numRedemptionsList,
+      stats.numRedemptions,
+    ),
+    isNumMonthsRankShared: getIsRankShared(numMonthsList, stats.numMonths),
+    isAverageBlackoutPctRankShared: getIsRankShared(
+      averageBlackoutPctList,
+      stats.averageBlackoutPct,
+    ),
+  }));
 };
+
+const getRank = (list: number[], value: number) => list.indexOf(value) + 1;
+
+const getIsRankShared = (list: number[], value: number) =>
+  list.filter((v) => v === value).length > 1;

@@ -86,6 +86,7 @@ export function ByMonthContent({
 
         <div className="flex flex-col gap-4">
           <ByMonthSummary
+            month={month}
             redemptions={redemptions}
             redemptionsFiltered={redemptionsFiltered}
           />

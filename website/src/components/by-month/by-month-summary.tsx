@@ -2,20 +2,32 @@ import { RedemptionEntry } from '@/index';
 import { SummaryEntryCard } from '../common/summary-entry-card';
 import { flightClassCodeToName } from '../common/flight-class-code-to-name';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
+import { useMonthsStats } from '@/hooks/use-months-stats';
 
 export function ByMonthSummary({
+  month,
   redemptions,
   redemptionsFiltered,
 }: {
+  month: string;
   redemptions: RedemptionEntry[];
   redemptionsFiltered: RedemptionEntry[];
 }) {
+  const monthsStats = useMonthsStats();
+  const monthStats = monthsStats.find((stat) => stat.month === month);
+
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <SummaryEntryCard
         header="Total Redemptions"
         content={redemptionsFiltered.length}
         subcontent={`out of ${redemptions.length}`}
+        badgeContent={
+          monthStats &&
+          `rank ${monthStats.isCountRankShared ? 'T-' : ''}${
+            monthStats.countRank
+          } of ${monthsStats.length}`
+        }
       />
       <SummaryEntryCardWithFlightClass
         redemptions={redemptions}
@@ -61,7 +73,10 @@ function SummaryEntryCardWithFlightClass({
           </span>
         </div>
       }
-      subcontent={`out of ${calcRedemptionsByFlightClass(redemptions, flightClassCode)}`}
+      subcontent={`out of ${calcRedemptionsByFlightClass(
+        redemptions,
+        flightClassCode,
+      )}`}
     />
   );
 }

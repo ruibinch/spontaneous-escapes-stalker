@@ -6,20 +6,33 @@ import { SummaryEntryCard } from '../common/summary-entry-card';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
 
 export function ByRouteSummary({
+  routeMetadata: { fromIata, toIata },
   detailsList,
   detailsListFiltered,
 }: {
+  routeMetadata: { fromIata: string; toIata: string };
   detailsList: RouteDetailDatum[];
   detailsListFiltered: RouteDetailDatum[];
 }) {
   const routesStats = useRoutesStats();
+  const routeStats = routesStats.find(
+    (stat) => stat.fromIata === fromIata && stat.toIata === toIata,
+  );
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <SummaryEntryCard
         header="Redemptions"
         content={detailsListFiltered.length}
-        subcontent={`out of ${detailsList.length}`}
+        subcontent={`out of  ${detailsList.length}`}
+        badgeContent={
+          routeStats &&
+          getBadgeText({
+            rank: routeStats.numRedemptionsRank,
+            isRankShared: routeStats.isNumRedemptionsRankShared,
+            total: routesStats.length,
+          })
+        }
       />
       <SummaryEntryCard
         cardBodyClassName="px-3 md:px-6"
@@ -44,11 +57,27 @@ export function ByRouteSummary({
         header="Redemption months"
         content={calcRedemptionMonthsCount(detailsListFiltered)}
         subcontent={`out of ${calcRedemptionMonthsCount(detailsList)}`}
+        badgeContent={
+          routeStats &&
+          getBadgeText({
+            rank: routeStats.numMonthsRank,
+            isRankShared: routeStats.isNumMonthsRankShared,
+            total: routesStats.length,
+          })
+        }
       />
       <SummaryEntryCard
         header="Average blackout %"
         content={calcAvgBlackoutPct(detailsListFiltered)}
         subcontent={`total average of ${calcAvgBlackoutPct(detailsList)}`}
+        badgeContent={
+          routeStats &&
+          getBadgeText({
+            rank: routeStats.averageBlackoutPctRank,
+            isRankShared: routeStats.isAverageBlackoutPctRankShared,
+            total: routesStats.length,
+          })
+        }
       />
     </div>
   );
@@ -102,4 +131,16 @@ function calcAvgBlackoutPct(list: RouteDetailDatum[]) {
     0,
   );
   return `${roundToDp(blackoutPctSum / avgBlackoutPctList.length, 1)}%`;
+}
+
+function getBadgeText({
+  rank,
+  isRankShared,
+  total,
+}: {
+  rank: number;
+  isRankShared: boolean;
+  total: number;
+}) {
+  return `rank ${isRankShared ? 'T-' : ''}${rank} of ${total}`;
 }

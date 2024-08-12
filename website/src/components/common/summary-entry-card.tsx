@@ -1,4 +1,4 @@
-import { Card, CardHeader, Divider, CardBody } from '@nextui-org/react';
+import { Card, CardHeader, Divider, CardBody, cn } from '@nextui-org/react';
 import React from 'react';
 
 export function SummaryEntryCard({
@@ -7,12 +7,14 @@ export function SummaryEntryCard({
   content,
   contentClassName,
   subcontent,
+  badgeContent,
 }: {
   cardBodyClassName?: string;
   header: string;
   content: string | number | React.ReactNode;
   contentClassName?: string;
   subcontent?: string | number;
+  badgeContent?: string;
 }) {
   return (
     <Card shadow="sm" radius="sm">
@@ -26,7 +28,19 @@ export function SummaryEntryCard({
             {content}
           </span>
         )}
+
         {subcontent && <span className="text-2xs">{subcontent}</span>}
+
+        {badgeContent && (
+          <div
+            className={cn(
+              'mt-1.5 px-2 py-0.5 text-2xs rounded-lg',
+              'bg-amber-700/75 dark:bg-amber-700 text-neutral-50 dark:text-neutral-200',
+            )}
+          >
+            <span>{badgeContent}</span>
+          </div>
+        )}
       </CardBody>
     </Card>
   );

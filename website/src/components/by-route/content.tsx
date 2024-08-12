@@ -73,6 +73,7 @@ export function ByRouteContent({
 
         <div className="flex flex-col gap-4">
           <ByRouteSummary
+            routeMetadata={{ fromIata, toIata }}
             detailsList={detailsList}
             detailsListFiltered={detailsListFiltered}
           />
