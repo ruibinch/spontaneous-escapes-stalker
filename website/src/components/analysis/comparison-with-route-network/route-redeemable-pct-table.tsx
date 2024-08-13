@@ -58,7 +58,7 @@ export function RouteRedeemablePctTable() {
       }).length;
 
       return {
-        route: `${entry.from}-${entry.to}`,
+        route: `${entry.from} - ${entry.to}`,
         routeIata: `${entry.fromIata}-${entry.toIata}`,
         numMonthsWithRedemption,
         numMonthsWithFlight,
@@ -210,7 +210,7 @@ function RouteRedeemablePctTableContent({
             className={cn(CommonStyles.Border, 'border-b')}
           >
             {(columnKey) => (
-              <TableCell className="py-1.5">
+              <TableCell className="py-1.5 text-xs">
                 {(() => {
                   switch (columnKey) {
                     case 'redeemablePct':

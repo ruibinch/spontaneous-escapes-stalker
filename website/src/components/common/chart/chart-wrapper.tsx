@@ -10,6 +10,7 @@ export function ChartWrapper({
   topRightComponent,
   topBarStyle,
   contentStyle,
+  chartComponentStyle,
 }: {
   title: string;
   tooltip?: string;
@@ -18,6 +19,7 @@ export function ChartWrapper({
   topRightComponent?: React.ReactNode;
   topBarStyle?: string;
   contentStyle?: string;
+  chartComponentStyle?: string;
 }) {
   return (
     <div className="flex flex-col gap-2 p-2 border border-neutral-250 dark:border-neutral-500 rounded-md">
@@ -46,6 +48,7 @@ export function ChartWrapper({
           className={cn(
             'h-40 xl:h-48 overflow-hidden w-full',
             rightComponent ? '' : 'w-full',
+            chartComponentStyle,
           )}
         >
           {chart}

@@ -13,6 +13,7 @@ import {
 } from 'chart.js';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
+import { BlackoutPct } from './blackout-pct';
 import { ComparisonWithRouteNetwork } from './comparison-with-route-network';
 
 ChartJS.register(
@@ -36,6 +37,9 @@ export function AnalysisContent() {
         <ComparisonWithRouteNetwork />
 
         <Divider />
+        <BlackoutPct />
+
+        {/* TODO: by region drilldown? */}
       </div>
     </div>
   );

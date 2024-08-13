@@ -61,8 +61,9 @@ export type MonthSummaryAnalysisEntry = {
       sia?: number;
     };
   };
-  byFlightClass: Record<FlightClassCode, number>;
+  byFlightClass: Record<FlightClass, number>;
   byRegion: Record<Region, number>;
+  blackoutPctAverages: Record<FlightClass | 'total', number | null>;
   metadata: {
     remarks?: string[];
   };
