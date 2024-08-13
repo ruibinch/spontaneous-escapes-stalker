@@ -17,14 +17,14 @@ import { Dispatch, SetStateAction, useState } from 'react';
 import {
   SearchTermFilter,
   isSearchTermMatch,
-} from '../common/filters/search-term-filter';
-import { CommonStyles } from '../common/styles';
-import { TablePagination } from '../common/table/table-pagination';
+} from '../../common/filters/search-term-filter';
+import { CommonStyles } from '../../common/styles';
+import { TablePagination } from '../../common/table/table-pagination';
 import {
   TableRowsPerPage,
   useRowsPerPageHandler,
-} from '../common/table/table-rows-per-page';
-import { TooltipCustom } from '../common/tooltip-custom';
+} from '../../common/table/table-rows-per-page';
+import { TooltipCustom } from '../../common/tooltip-custom';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 

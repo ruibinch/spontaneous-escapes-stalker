@@ -4,12 +4,12 @@ import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-
 import { MonthSummaryAnalysisEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar, Line } from 'react-chartjs-2';
-import { getMonthsList } from '../../common/get-months-with-route-network-data';
-import { makeChartOptions } from '../common/chart/chart-options';
-import { ChartWrapper } from '../common/chart/chart-wrapper';
-import { covidLinePlugin } from '../common/chart/covid-line-plugin';
-import { lineOnHoverPlugin } from '../common/chart/line-on-hover-plugin';
-import { useTheme } from '../common/use-theme';
+import { getMonthsList } from '../../../common/get-months-with-route-network-data';
+import { makeChartOptions } from '../../common/chart/chart-options';
+import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { covidLinePlugin } from '../../common/chart/covid-line-plugin';
+import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
+import { useTheme } from '../../common/use-theme';
 
 export function RedemptionsVsRouteNetworkCharts() {
   const { isDarkTheme } = useTheme();

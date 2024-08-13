@@ -1,4 +1,4 @@
-import { cn } from '@nextui-org/react';
+import { Divider, cn } from '@nextui-org/react';
 import {
   ArcElement,
   BarElement,
@@ -11,12 +11,9 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
-import { AlertInfo } from '../common/alert-info';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
-import { RedemptionsVsRouteNetworkCharts } from './redemptions-vs-route-network-charts';
-import { RouteRedeemablePctTable } from './route-redeemable-pct-table';
-import { SilkairRoutesToggle } from './silkair-routes-toggle';
+import { ComparisonWithRouteNetwork } from './comparison-with-route-network';
 
 ChartJS.register(
   CategoryScale,
@@ -31,31 +28,14 @@ ChartJS.register(
 );
 
 export function AnalysisContent() {
-  const explanatoryNotes = [
-    'The SIA/SilkAir route network dataset time range spans from Nov 2017 to Feb 2024.',
-    'SilkAir ceased operations in end-2021; subsequently its flights were split between SIA and Scoot.',
-  ].map((note) => `• ${note}`);
-
   return (
     <div>
-      <PageHeader
-        title="Analysis"
-        subtitle="Compares Spontaneous Escapes redemptions against the SIA/SilkAir route network"
-        rightComponent={<SilkairRoutesToggle />}
-      />
+      <PageHeader title="Analysis" />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-8')}>
-        <AlertInfo content={explanatoryNotes} />
+        <ComparisonWithRouteNetwork />
 
-        <div className="grid grid-cols-3 gap-4">
-          <div className="col-span-3 md:col-span-2">
-            <RedemptionsVsRouteNetworkCharts />
-          </div>
-
-          <div className="col-span-3 md:col-span-1">
-            <RouteRedeemablePctTable />
-          </div>
-        </div>
+        <Divider />
       </div>
     </div>
   );
