@@ -1,6 +1,7 @@
 import { CommonStyles } from '@/components/common/styles';
 import { RoutesStats, useRoutesStats } from '@/hooks/use-routes-stats';
 import {
+  Link,
   Table,
   TableBody,
   TableCell,
@@ -94,7 +95,17 @@ function BlackoutPctTable({
                   {(() => {
                     switch (columnKey) {
                       case 'route':
-                        return `${item.from} - ${item.to}`;
+                        return (
+                          <Link
+                            key={`${item.fromIata}${item.toIata}`}
+                            href={`/route/${item.fromIata}${item.toIata}`}
+                            size="sm"
+                            underline="hover"
+                            className="text-xs text-blue-500 dark:text-blue-400"
+                          >
+                            {`${item.from} - ${item.to}`}
+                          </Link>
+                        );
                       case 'averageBlackoutPct':
                         const averageBlackoutPct = getKeyValue(
                           item,

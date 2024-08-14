@@ -4,6 +4,7 @@ import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-
 import { RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import {
+  Link,
   Table,
   TableBody,
   TableCell,
@@ -59,7 +60,7 @@ export function RouteRedeemablePctTable() {
 
       return {
         route: `${entry.from} - ${entry.to}`,
-        routeIata: `${entry.fromIata}-${entry.toIata}`,
+        routeIata: `${entry.fromIata}${entry.toIata}`,
         numMonthsWithRedemption,
         numMonthsWithFlight,
         redeemablePct: roundToDp(
@@ -213,6 +214,18 @@ function RouteRedeemablePctTableContent({
               <TableCell className="py-1.5 text-xs">
                 {(() => {
                   switch (columnKey) {
+                    case 'route':
+                      return (
+                        <Link
+                          key={item.routeIata}
+                          href={`/route/${item.routeIata}`}
+                          size="sm"
+                          underline="hover"
+                          className="text-xs text-blue-500 dark:text-blue-400"
+                        >
+                          {getKeyValue(item, columnKey)}
+                        </Link>
+                      );
                     case 'redeemablePct':
                       return `${getKeyValue(item, columnKey)}% (${
                         item.numMonthsWithRedemption
