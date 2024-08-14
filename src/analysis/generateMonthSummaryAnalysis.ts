@@ -26,6 +26,7 @@ export type MonthSummaryAnalysisEntry = {
   };
   byFlightClass: Record<FlightClassCode, number>;
   byRegion: Record<Region, number>;
+  blackoutPctAverages: Record<FlightClassCode | 'total', number | null>;
 };
 
 export function generateMonthSummaryAnalysis({
@@ -156,11 +157,43 @@ export function generateMonthSummaryAnalysis({
         Europe: europeRegionCount,
         'North America': northAmericaRegionCount,
       },
+      blackoutPctAverages: calculateBlackoutPctAverages(redemptionsForMonth),
     });
   });
 
   printPercentageOfRoutesAvailableForRedemption(result);
   return result;
+}
+
+function calculateBlackoutPctAverages(
+  redemptions: RedemptionJsonPostprocessed[],
+): MonthSummaryAnalysisEntry['blackoutPctAverages'] {
+  const computeAverage = (rList: RedemptionJsonPostprocessed[]) => {
+    if (rList.length === 0) return null;
+    const blackoutPctSum = rList.reduce(
+      (_blackoutPctSum, redemption) => _blackoutPctSum + redemption.blackoutPct,
+      0,
+    );
+    const factor = Math.pow(10, 1); // round to 1d.p.
+    return Math.round((blackoutPctSum / rList.length) * factor) / factor;
+  };
+
+  const redemptionsEconomy = redemptions.filter(
+    ({ flightClass }) => flightClass === FlightClass.ECONOMY,
+  );
+  const redemptionsPremiumEconomy = redemptions.filter(
+    ({ flightClass }) => flightClass === FlightClass.PREMIUM_ECONOMY,
+  );
+  const redemptionsBusiness = redemptions.filter(
+    ({ flightClass }) => flightClass === FlightClass.BUSINESS,
+  );
+
+  return {
+    total: computeAverage(redemptions),
+    Y: computeAverage(redemptionsEconomy),
+    W: computeAverage(redemptionsPremiumEconomy),
+    J: computeAverage(redemptionsBusiness),
+  };
 }
 
 function printRoutesNotAvailableForRedemption({
