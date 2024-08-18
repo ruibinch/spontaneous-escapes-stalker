@@ -62,7 +62,6 @@ export function AverageBlackoutPctByMonth() {
     },
     {},
   );
-  console.log(monthToAverageBlackoutPctDict);
 
   const data = {
     labels: Object.keys(monthToAverageBlackoutPctDict),

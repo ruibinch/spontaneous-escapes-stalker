@@ -27,7 +27,6 @@ export function BlackoutPctTables() {
   const routesStatsFiltered = routesStats.filter(
     (stats) => stats.numRedemptions > 10,
   );
-  console.log(routesStatsFiltered);
 
   const topRoutesWithHighestBlackoutPct = [...routesStatsFiltered]
     .sort((a, b) => b.averageBlackoutPct - a.averageBlackoutPct)
