@@ -1,7 +1,7 @@
-import '../styles/globals.css';
+import { AnalyticsScript } from '@/analytics';
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Providers } from '../providers';
+import '../styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'KrisFlyer Spontaneous Escapes Analysis',
@@ -15,10 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script
-        src="/stats/script.js"
-        data-website-id="72c90a3b-768b-4f5e-af4e-87b45cb0d3ce"
-      />
+      <AnalyticsScript />
 
       <body>
         <Providers>{children}</Providers>
