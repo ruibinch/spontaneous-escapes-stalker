@@ -93,6 +93,8 @@ export async function scrape() {
     return;
   }
 
+  let isNewRelease = true;
+
   if (!doesRedemptionPeriodExist) {
     log(
       `Redemption period "${
@@ -112,6 +114,7 @@ export async function scrape() {
         redemptionTravelPeriod.from.toISOString().split('T')[0]
       }"`,
     );
+    isNewRelease = false;
     await sendExistingRedemptionPeriodChangesNotification();
   }
 
@@ -143,7 +146,7 @@ export async function scrape() {
   postprocessing();
   analyse();
 
-  await updateDataFiles();
+  await updateDataFiles({ isNewRelease });
 }
 
 /**

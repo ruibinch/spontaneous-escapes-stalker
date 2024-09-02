@@ -17,7 +17,11 @@ const GIT_COMMITTER_NAME = 'spontaneous-escapes-stalker-deploy-token';
  * Checks for any diffs in the `data` and `website/src/static` folders.
  * If so, commit and push them using the deploy token.
  */
-export async function commitDataDiffs() {
+export async function commitDataDiffs({
+  isNewRelease,
+}: {
+  isNewRelease: boolean;
+}) {
   const hasDataDiffs = await checkHasDiffs(DATA_FOLDER_PATHSPEC);
   const hasWebsiteStaticDiffs = await checkHasDiffs(
     WEBSITE_STATIC_FOLDER_PATHSPEC,
@@ -39,7 +43,7 @@ export async function commitDataDiffs() {
   }
 
   await gitCommit({
-    message: `add ${yearMonth[0]} content`,
+    message: `${isNewRelease ? 'add' : 'update'} ${yearMonth[0]} content`,
     overrideCreds: {
       name: GIT_COMMITTER_NAME,
       email: GIT_COMMITTER_NAME,
@@ -53,7 +57,9 @@ export async function commitDataDiffs() {
 }
 
 if (require.main === module) {
-  commitDataDiffs()
+  const args = process.argv.slice(2);
+  const isNewRelease = args[0] ? args[0] === 'true' : true;
+  commitDataDiffs({ isNewRelease })
     .then(() => {
       process.exit(0);
     })
