@@ -8,7 +8,7 @@ export const currentDateInYYYYMMDD = () => format(currentDate(), 'yyyyMMdd');
 
 // used as prefixes in sent messages
 export const datePrefix = () =>
-  `[${format(addHours(new Date(), 8), 'dd/MM/yyyy HH:mm:ss')}]`;
+  `[${format(addHours(new Date(), 8), 'yyyy-MM-dd HH:mm:ss')}]`;
 
 export const dateInYYYYMM = (date: Date) => format(date, 'yyyyMM');
 
