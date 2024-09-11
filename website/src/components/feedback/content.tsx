@@ -87,7 +87,10 @@ function FeedbackForm({
         </div>
 
         <div className="flex flex-col gap-2">
-          <p className="font-semibold">Message</p>
+          <div className="font-semibold">
+            <span>Message</span>
+            <span className="text-red-600"> *</span>
+          </div>
 
           <Textarea
             size="lg"
@@ -107,7 +110,7 @@ function FeedbackForm({
         radius="sm"
         color="primary"
         className="mt-8"
-        isDisabled={!email || !message || isSubmitted}
+        isDisabled={!message || isSubmitted}
         onPress={onSubmit}
       >
         Submit
