@@ -23,12 +23,14 @@ import {
 import { RouteDetailDatum } from './helpers/make-route-details-list';
 import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 import { CommonStyles } from '../common/styles';
+import { formatToDp } from '@/common/format-to-dp';
 
 const columns = [
   { key: 'month', label: 'Month', allowsSorting: true },
   { key: 'flightClass', label: 'Flight Class' },
   { key: 'milesRequired', label: 'Miles Required', allowsSorting: true },
   { key: 'flightNos', label: 'Flight No.' },
+  { key: 'blackoutPct', label: 'Blackout %' },
   { key: 'blackoutPeriod', label: 'Blackout Period' },
 ];
 
@@ -37,6 +39,7 @@ export function RouteHistoryTable({
 }: {
   data: RouteDetailDatum[];
 }) {
+  console.log(inputData);
   const [data, setData] = useState<RouteDetailDatum[]>([]);
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
 
@@ -137,6 +140,8 @@ export function RouteHistoryTable({
                           });
                         case 'milesRequired':
                           return item[columnKey].toLocaleString();
+                        case 'blackoutPct':
+                          return `${formatToDp(item[columnKey], 1)}%`;
                         case 'blackoutPeriod':
                           return renderBlackoutPeriodCell(item[columnKey]);
                         case 'flightNos':

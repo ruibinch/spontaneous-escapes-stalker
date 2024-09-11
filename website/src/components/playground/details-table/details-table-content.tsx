@@ -1,4 +1,6 @@
 import { trackEvent } from '@/analytics';
+import { formatToDp } from '@/common/format-to-dp';
+import { CommonStyles } from '@/components/common/styles';
 import { TooltipCustom } from '@/components/common/tooltip-custom';
 import { FlightClass } from '@/index';
 import {
@@ -15,15 +17,14 @@ import {
 } from '@nextui-org/react';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { FlightClassIndicator } from '../../common/flight-class-indicator';
-import { TablePagination } from '../../common/table/table-pagination';
-import { useRowsPerPageHandler } from '../../common/table/table-rows-per-page';
 import {
   sortByNumericField,
   sortByStringField,
 } from '../../common/table/sorters';
+import { TablePagination } from '../../common/table/table-pagination';
+import { useRowsPerPageHandler } from '../../common/table/table-rows-per-page';
 import { getColumns } from './columns';
 import { MonthColumnOrder, ShowRoutesAs, TopContent } from './top-content';
-import { CommonStyles } from '@/components/common/styles';
 
 export type DatumForSeparateRoutes = {
   from: string;
@@ -201,7 +202,7 @@ function renderCell({
       const averageBlackoutPct = getKeyValue(item, columnKey) as number | null;
       return averageBlackoutPct === null
         ? '-'
-        : `${getKeyValue(item, columnKey)}%`;
+        : `${formatToDp(getKeyValue(item, columnKey), 1)}%`;
     case 'cities':
       return (
         <div className="w-32">
