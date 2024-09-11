@@ -1,3 +1,8 @@
+# 2.8.0 - 2024-09-11
+
+- Added homepage banner for a newly released redemption
+- Ignored filter params during back/forward navigation
+
 # 2.7.0 - 2024-08-14
 
 - Added blackout % info and analysis on a per-month and per-route level
