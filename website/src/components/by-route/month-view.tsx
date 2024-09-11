@@ -103,7 +103,7 @@ export function MonthView({
     const newMonthView = months[newIdx];
     setMonthViewIdx(newIdx);
     const url = generateUrlWithUpdatedSearchParams('monthView', newMonthView);
-    router.push(url, { scroll: false });
+    router.replace(url, { scroll: false });
   };
 
   const redemptionsInMonth = detailsListFiltered.filter((detail) =>

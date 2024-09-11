@@ -49,7 +49,7 @@ export function MonthFilter() {
         trackEvent(['monthFilter'], { selectedMonths });
 
         const url = generateUrlWithUpdatedSearchParams('month', selectedMonths);
-        router.push(url);
+        router.replace(url);
       }}
     >
       {(option) => <SelectItem key={option.label}>{option.label}</SelectItem>}

@@ -60,7 +60,7 @@ export function AutocompleteSearchTermFilter({
       'searchTerm',
       searchTermsString,
     );
-    router.push(url);
+    router.replace(url);
   };
 
   useEffect(() => {

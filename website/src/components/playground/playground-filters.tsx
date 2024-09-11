@@ -11,7 +11,7 @@ export function PlaygroundFilters() {
   const pathname = usePathname();
 
   const resetAllFilters = () => {
-    router.push(pathname);
+    router.replace(pathname);
   };
 
   return (

@@ -60,7 +60,7 @@ export function FlightClassFilter() {
           'flightClass',
           selectedFlightClassOption,
         );
-        router.push(url);
+        router.replace(url);
       }}
     >
       {(option) => (

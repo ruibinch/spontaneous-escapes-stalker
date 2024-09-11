@@ -49,7 +49,7 @@ export function YearFilter() {
         trackEvent(['yearFilter'], { selectedYears });
 
         const url = generateUrlWithUpdatedSearchParams('year', selectedYears);
-        router.push(url);
+        router.replace(url);
       }}
     >
       {(option) => <SelectItem key={option.label}>{option.label}</SelectItem>}

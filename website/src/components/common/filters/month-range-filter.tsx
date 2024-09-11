@@ -39,7 +39,7 @@ export function MonthRangeFilter() {
       selectedMonthRange: selectedMonthRange.join('-'),
     });
     if (newUrl) {
-      router.push(newUrl);
+      router.replace(newUrl);
     }
   };
 

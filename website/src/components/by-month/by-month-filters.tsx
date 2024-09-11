@@ -14,7 +14,7 @@ export function ByMonthFilters(props: Props) {
   const pathname = usePathname();
 
   const resetAllFilters = () => {
-    router.push(pathname);
+    router.replace(pathname);
   };
 
   return (

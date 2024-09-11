@@ -59,7 +59,7 @@ export function RegionFilter() {
           'region',
           selectedRegions,
         );
-        router.push(url);
+        router.replace(url);
       }}
     >
       {(option) => (
