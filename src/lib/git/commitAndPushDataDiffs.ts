@@ -17,7 +17,7 @@ const GIT_COMMITTER_NAME = 'spontaneous-escapes-stalker-deploy-token';
  * Checks for any diffs in the `data` and `website/src/static` folders.
  * If so, commit and push them using the deploy token.
  */
-export async function commitDataDiffs({
+export async function commitAndPushDataDiffs({
   isNewRelease,
 }: {
   isNewRelease: boolean;
@@ -59,7 +59,7 @@ export async function commitDataDiffs({
 if (require.main === module) {
   const args = process.argv.slice(2);
   const isNewRelease = args[0] ? args[0] === 'true' : true;
-  commitDataDiffs({ isNewRelease })
+  commitAndPushDataDiffs({ isNewRelease })
     .then(() => {
       process.exit(0);
     })
