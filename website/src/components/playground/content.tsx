@@ -1,3 +1,4 @@
+'use client';
 import { getMonthsList } from '@/common/get-data-time-range';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { RouteAnalysisEntry } from '@/index';
@@ -26,6 +27,7 @@ import { PlaygroundSummary } from './playground-summary';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { PlaygroundFilters } from './playground-filters';
 import { MONTH_ALL } from '../common/filters/month-filter';
+import { NewRedemptionAlert } from './new-redemption-alert';
 
 ChartJS.register(
   CategoryScale,
@@ -42,7 +44,11 @@ ChartJS.register(
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 const monthsList = getMonthsList();
 
-export function PlaygroundContent() {
+export function PlaygroundContent({
+  isNewRedemption,
+}: {
+  isNewRedemption: boolean;
+}) {
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get('searchTerm') ?? '';
   const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
@@ -75,6 +81,8 @@ export function PlaygroundContent() {
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-8')}>
+        {isNewRedemption && <NewRedemptionAlert />}
+
         <PlaygroundFilters />
 
         <div className="flex flex-col gap-4">
