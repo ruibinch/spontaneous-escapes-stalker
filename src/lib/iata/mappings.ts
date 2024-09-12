@@ -125,12 +125,15 @@ export const cityMappings: Record<
  * - old airport IATAs to new airport IATAs
  * - specific airport IATAs to the collective city IATA, for cities that have multiple international airports
  *
- * Note: when adding a new mapping here, probably need to rerun `generate-oag-data` too,
- * to ensure that the OAG dataset is updated with the new IATA mappings.
+ * Note:
+ * - when adding a new mapping here, probably need to rerun `generate-oag-data` too, to ensure that the OAG dataset is updated with the new IATA mappings
+ * - also needs to be added to iataCustomList in website/src/components/common/filters/autocomplete-search-term-filter.tsx
  */
 export const iataToIataMappings: Record<string, string> = {
+  // old to new airport IATA mappings
   REP: 'SAI', // Siem Reap
   JOG: 'YIA', // Yogyakarta
+  // specific airport IATA to collective city IATA mappings
   TFU: 'CTU', // Chengdu
   HND: 'TYO', // Tokyo
   NRT: 'TYO', // Tokyo
