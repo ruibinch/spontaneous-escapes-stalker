@@ -218,18 +218,37 @@ function getSearchOptionsList(inputRedemptions: RedemptionEntry[] | undefined) {
     return _iataList;
   }, new Set(''));
 
-  const searchTermsList = Array.from(
+  const mainSearchTermsList = Array.from(
     new Set([
       ...Array.from(citiesList).sort(),
       ...Array.from(countriesList).sort(),
       ...Array.from(iataList).sort(),
     ]),
-  );
-
-  return searchTermsList.map((term) => ({
+  ).map((term) => ({
     label: term,
     value: term,
   }));
+
+  // For cities with multiple airports, we only use the IATA corresponding to the city
+  // The individual airport IATAs are thus manually added to facilitate searching
+  const iataCustomList = [
+    'TFU (CTU)',
+    'HND (TYO)',
+    'NRT (TYO)',
+    'JFK (NYC)',
+    'EWR (NYC)',
+    'DME (MOW)',
+    'SVO (MOW)',
+    'LHR (LON)',
+    'LGW (LON)',
+  ].map((term) => ({
+    label: term,
+    value: /(?<=\()\w{3}/g.exec(term)?.[0] ?? '', // extract IATA code within the parentheses
+  }));
+
+  return [...mainSearchTermsList, ...iataCustomList].sort((a, b) =>
+    a.label.localeCompare(b.label),
+  );
 }
 
 /**

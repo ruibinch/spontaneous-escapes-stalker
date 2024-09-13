@@ -39,7 +39,6 @@ export function RouteHistoryTable({
 }: {
   data: RouteDetailDatum[];
 }) {
-  console.log(inputData);
   const [data, setData] = useState<RouteDetailDatum[]>([]);
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>();
 
