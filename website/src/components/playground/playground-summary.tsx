@@ -36,7 +36,7 @@ export function PlaygroundSummary({
   const numFilteredMonths = applicableMonths.length;
 
   return (
-    <div className="grid grid-cols-3 gap-4 pt-2">
+    <div className="grid grid-cols-3 gap-2 pt-2">
       <SummaryEntryCard
         header="Redemptions"
         content={numFilteredRedemptions}

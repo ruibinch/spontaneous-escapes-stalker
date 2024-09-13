@@ -77,7 +77,12 @@ export function RedemptionsTable({
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">Details</h3>
 
-      <div className={cn(CommonStyles.Border, 'border py-4 px-2 rounded-md')}>
+      <div
+        className={cn(
+          CommonStyles.Border,
+          'border py-4 px-2 rounded-md shadow-sm',
+        )}
+      >
         <Table
           radius="sm"
           sortDescriptor={sortDescriptor}

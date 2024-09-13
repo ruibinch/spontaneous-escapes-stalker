@@ -57,7 +57,7 @@ export function MonthYearFrequencyTable({
       <div
         className={cn(
           CommonStyles.Border,
-          'flex flex-col gap-2 py-4 px-1 sm:px-2 border rounded-md',
+          'flex flex-col gap-2 py-4 px-1 sm:px-2 border rounded-md shadow-sm',
         )}
       >
         <FlightClassLegend styles="pl-2" />

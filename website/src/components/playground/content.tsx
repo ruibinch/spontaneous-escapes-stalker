@@ -80,7 +80,7 @@ export function PlaygroundContent({
         subtitle="Explore the dataset of past Spontaneous Escapes redemptions offered"
       />
 
-      <div className={cn(CommonStyles.Page(), 'flex flex-col gap-8')}>
+      <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
         {isNewRedemption && <NewRedemptionAlert />}
 
         <PlaygroundFilters />

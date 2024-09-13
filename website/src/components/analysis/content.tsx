@@ -33,7 +33,7 @@ export function AnalysisContent() {
     <div>
       <PageHeader title="Analysis" />
 
-      <div className={cn(CommonStyles.Page(), 'flex flex-col gap-8')}>
+      <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
         <ComparisonWithRouteNetwork />
 
         <Divider />

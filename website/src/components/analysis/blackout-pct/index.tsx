@@ -8,7 +8,7 @@ export function BlackoutPct() {
     <div className="flex flex-col gap-4">
       <SectionHeader header="Blackout %" />
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-2">
         <div className="col-span-2 xl:col-span-1">
           <AverageBlackoutPctOverTime />
         </div>
@@ -17,8 +17,6 @@ export function BlackoutPct() {
         </div>
       </div>
 
-      {/* TODO: top 5 routes with lowest blackout % */}
-      {/* TODO: top 5 routes with highest blackout % */}
       <BlackoutPctTables />
     </div>
   );

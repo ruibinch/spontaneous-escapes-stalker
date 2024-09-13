@@ -92,7 +92,7 @@ export function RedemptionsVsRouteNetworkCharts() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
       <ChartWrapper
         title="Route network size vs no. of SE redemptions offered each month"
         chart={

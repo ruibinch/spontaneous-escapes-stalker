@@ -37,7 +37,7 @@ export function BlackoutPctTables() {
     .slice(0, NUM_ROUTES_TO_DISPLAY);
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-2">
       <div className="col-span-2 xl:col-span-1">
         <BlackoutPctTable
           title={`Top ${NUM_ROUTES_TO_DISPLAY} routes with highest blackout %`}
@@ -65,7 +65,7 @@ function BlackoutPctTable({
     <div
       className={cn(
         CommonStyles.Border,
-        'flex flex-col gap-4 px-2 pt-2 pb-4 border rounded-md',
+        'flex flex-col gap-4 px-2 pt-2 pb-4 border rounded-md shadow-sm',
       )}
     >
       <div className="flex flex-row gap-2 items-end">

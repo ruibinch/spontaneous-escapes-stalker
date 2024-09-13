@@ -22,7 +22,7 @@ export function ChartWrapper({
   chartComponentStyle?: string;
 }) {
   return (
-    <div className="flex flex-col gap-2 p-2 border border-neutral-250 dark:border-neutral-500 rounded-md">
+    <div className="flex flex-col gap-2 p-2 border border-neutral-250 dark:border-neutral-500 rounded-md shadow-sm">
       <div
         className={cn('flex justify-between gap-2 items-center', topBarStyle)}
       >

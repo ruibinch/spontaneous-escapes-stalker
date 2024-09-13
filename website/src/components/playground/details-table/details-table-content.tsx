@@ -120,7 +120,12 @@ export function DetailsTableContent({
   };
 
   return (
-    <div className={cn(CommonStyles.Border, 'border py-4 px-2 rounded-md')}>
+    <div
+      className={cn(
+        CommonStyles.Border,
+        'border py-4 px-2 rounded-md shadow-sm',
+      )}
+    >
       <Table
         radius="sm"
         isHeaderSticky
