@@ -3,6 +3,7 @@ import { RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import { Link, cn } from '@nextui-org/react';
 import { PageHeader } from '../common/page-header';
+import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
 
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
@@ -64,6 +65,7 @@ export function RouteOverviewContent() {
       <PageHeader
         title="View by Route"
         subtitle="View the history of Spontaneous Escapes redemptions offered for a specific route"
+        rightComponent={<SilkairRoutesToggle />}
       />
 
       <div

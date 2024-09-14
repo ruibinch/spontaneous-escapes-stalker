@@ -18,16 +18,17 @@ import {
 } from 'chart.js';
 import { useSearchParams } from 'next/navigation';
 import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
+import { MONTH_ALL } from '../common/filters/month-filter';
 import { REGION_ALL } from '../common/filters/region-filter';
 import { PageHeader } from '../common/page-header';
+import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
 import { AnalysisCharts } from './analysis-charts';
 import { DetailsTable } from './details-table';
-import { PlaygroundSummary } from './playground-summary';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
-import { PlaygroundFilters } from './playground-filters';
-import { MONTH_ALL } from '../common/filters/month-filter';
 import { NewRedemptionAlert } from './new-redemption-alert';
+import { PlaygroundFilters } from './playground-filters';
+import { PlaygroundSummary } from './playground-summary';
 
 ChartJS.register(
   CategoryScale,
@@ -78,6 +79,7 @@ export function PlaygroundContent({
       <PageHeader
         title="Playground"
         subtitle="Explore the dataset of past Spontaneous Escapes redemptions offered"
+        rightComponent={<SilkairRoutesToggle />}
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>

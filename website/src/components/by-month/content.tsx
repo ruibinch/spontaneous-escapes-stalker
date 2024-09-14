@@ -25,6 +25,7 @@ import { FlightClassDistributionChart } from './charts/flight-class-distribution
 import { RoutesRegionDistributionChart } from './charts/routes-region-distribution-chart';
 import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
 import { RedemptionsTable } from './redemptions-table';
+import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 
 ChartJS.register(
   CategoryScale,
@@ -75,6 +76,7 @@ export function ByMonthContent({
           </Breadcrumbs>
         }
         title={`${month.slice(0, 4)} ${monthNumToNameMap[month.slice(4, 6)]}`}
+        rightComponent={<SilkairRoutesToggle />}
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>

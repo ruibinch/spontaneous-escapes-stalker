@@ -25,6 +25,7 @@ import { useSearchParams } from 'next/navigation';
 import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
 import { YEAR_ALL } from '../common/filters/year-filter';
 import { ByRouteSummary } from './by-route-summary';
+import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 
 ChartJS.register(
   CategoryScale,
@@ -67,6 +68,7 @@ export function ByRouteContent({
           </Breadcrumbs>
         }
         title={`${origin} - ${destination}`}
+        rightComponent={<SilkairRoutesToggle />}
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>

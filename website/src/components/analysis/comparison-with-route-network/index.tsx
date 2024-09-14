@@ -1,7 +1,6 @@
 import { AlertInfo } from '@/components/common/alert-info';
 import { RedemptionsVsRouteNetworkCharts } from './redemptions-vs-route-network-charts';
 import { RouteRedeemablePctTable } from './route-redeemable-pct-table';
-import { SilkairRoutesToggle } from '../silkair-routes-toggle';
 import { SectionHeader } from '../section-header';
 
 export function ComparisonWithRouteNetwork() {
@@ -12,10 +11,7 @@ export function ComparisonWithRouteNetwork() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-row justify-between">
-        <SectionHeader header="Comparison with SIA/SilkAir route network" />
-        <SilkairRoutesToggle />
-      </div>
+      <SectionHeader header="Comparison with SIA/SilkAir route network" />
 
       <AlertInfo content={explanatoryNotes} />
 
