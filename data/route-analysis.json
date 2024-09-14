@@ -1,11 +1,11 @@
 [
   {
-    "from": "Singapore",
-    "to": "Adelaide",
-    "fromIata": "SIN",
-    "toIata": "ADL",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Adelaide",
+    "destinationIata": "ADL",
+    "destinationCountry": "Australia",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -834,12 +834,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Ahmedabad",
-    "fromIata": "SIN",
-    "toIata": "AMD",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Ahmedabad",
+    "destinationIata": "AMD",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -2171,12 +2171,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Amsterdam",
-    "fromIata": "SIN",
-    "toIata": "AMS",
-    "fromCountry": "Singapore",
-    "toCountry": "Netherlands",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Amsterdam",
+    "destinationIata": "AMS",
+    "destinationCountry": "Netherlands",
     "region": "Europe",
     "details": [
       {
@@ -2902,12 +2902,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Auckland",
-    "fromIata": "SIN",
-    "toIata": "AKL",
-    "fromCountry": "Singapore",
-    "toCountry": "New Zealand",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Auckland",
+    "destinationIata": "AKL",
+    "destinationCountry": "New Zealand",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -3679,12 +3679,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Bali",
-    "fromIata": "SIN",
-    "toIata": "DPS",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Bali",
+    "destinationIata": "DPS",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -5114,12 +5114,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Balikpapan",
-    "fromIata": "SIN",
-    "toIata": "BPN",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Balikpapan",
+    "destinationIata": "BPN",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -5798,12 +5798,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Bandar Seri Begawan",
-    "fromIata": "SIN",
-    "toIata": "BWN",
-    "fromCountry": "Singapore",
-    "toCountry": "Brunei",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Bandar Seri Begawan",
+    "destinationIata": "BWN",
+    "destinationCountry": "Brunei",
     "region": "South East Asia",
     "details": [
       {
@@ -6670,12 +6670,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Bandung",
-    "fromIata": "SIN",
-    "toIata": "BDO",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Bandung",
+    "destinationIata": "BDO",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -7366,12 +7366,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Bangalore",
-    "fromIata": "SIN",
-    "toIata": "BLR",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Bangalore",
+    "destinationIata": "BLR",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -8954,12 +8954,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Bangkok",
-    "fromIata": "SIN",
-    "toIata": "BKK",
-    "fromCountry": "Singapore",
-    "toCountry": "Thailand",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Bangkok",
+    "destinationIata": "BKK",
+    "destinationCountry": "Thailand",
     "region": "South East Asia",
     "details": [
       {
@@ -10152,12 +10152,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Barcelona",
-    "fromIata": "SIN",
-    "toIata": "BCN",
-    "fromCountry": "Singapore",
-    "toCountry": "Spain",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Barcelona",
+    "destinationIata": "BCN",
+    "destinationCountry": "Spain",
     "region": "Europe",
     "details": [
       {
@@ -10941,12 +10941,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Beijing",
-    "fromIata": "SIN",
-    "toIata": "PEK",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Beijing",
+    "destinationIata": "PEK",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -12450,12 +12450,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Brisbane",
-    "fromIata": "SIN",
-    "toIata": "BNE",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Brisbane",
+    "destinationIata": "BNE",
+    "destinationCountry": "Australia",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -13450,12 +13450,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Broome",
-    "fromIata": "SIN",
-    "toIata": "BME",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Broome",
+    "destinationIata": "BME",
+    "destinationCountry": "Australia",
     "details": [
       {
         "month": "201711",
@@ -13936,12 +13936,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Busan",
-    "fromIata": "SIN",
-    "toIata": "PUS",
-    "fromCountry": "Singapore",
-    "toCountry": "South Korea",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Busan",
+    "destinationIata": "PUS",
+    "destinationCountry": "South Korea",
     "region": "North Asia",
     "details": [
       {
@@ -14504,12 +14504,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Cairns",
-    "fromIata": "SIN",
-    "toIata": "CNS",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Cairns",
+    "destinationIata": "CNS",
+    "destinationCountry": "Australia",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -15575,12 +15575,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Canberra",
-    "fromIata": "SIN",
-    "toIata": "CBR",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Canberra",
+    "destinationIata": "CBR",
+    "destinationCountry": "Australia",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -16216,12 +16216,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Cape Town",
-    "fromIata": "SIN",
-    "toIata": "CPT",
-    "fromCountry": "Singapore",
-    "toCountry": "South Africa",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Cape Town",
+    "destinationIata": "CPT",
+    "destinationCountry": "South Africa",
     "region": "Middle East & Africa",
     "details": [
       {
@@ -16970,12 +16970,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Cebu",
-    "fromIata": "SIN",
-    "toIata": "CEB",
-    "fromCountry": "Singapore",
-    "toCountry": "Philippines",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Cebu",
+    "destinationIata": "CEB",
+    "destinationCountry": "Philippines",
     "region": "South East Asia",
     "details": [
       {
@@ -17960,12 +17960,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Changsha",
-    "fromIata": "SIN",
-    "toIata": "CSX",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Changsha",
+    "destinationIata": "CSX",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -18577,12 +18577,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Chengdu",
-    "fromIata": "SIN",
-    "toIata": "CTU",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Chengdu",
+    "destinationIata": "CTU",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -19516,12 +19516,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Chennai",
-    "fromIata": "SIN",
-    "toIata": "MAA",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Chennai",
+    "destinationIata": "MAA",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -20989,12 +20989,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Chiang Mai",
-    "fromIata": "SIN",
-    "toIata": "CNX",
-    "fromCountry": "Singapore",
-    "toCountry": "Thailand",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Chiang Mai",
+    "destinationIata": "CNX",
+    "destinationCountry": "Thailand",
     "region": "South East Asia",
     "details": [
       {
@@ -21642,12 +21642,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Chitose",
-    "fromIata": "SIN",
-    "toIata": "CTS",
-    "fromCountry": "Singapore",
-    "toCountry": "Japan",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Chitose",
+    "destinationIata": "CTS",
+    "destinationCountry": "Japan",
     "details": [
       {
         "month": "201711",
@@ -22144,12 +22144,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Chongqing",
-    "fromIata": "SIN",
-    "toIata": "CKG",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Chongqing",
+    "destinationIata": "CKG",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -22973,12 +22973,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Christchurch",
-    "fromIata": "SIN",
-    "toIata": "CHC",
-    "fromCountry": "Singapore",
-    "toCountry": "New Zealand",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Christchurch",
+    "destinationIata": "CHC",
+    "destinationCountry": "New Zealand",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -23754,12 +23754,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Coimbatore",
-    "fromIata": "SIN",
-    "toIata": "CJB",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Coimbatore",
+    "destinationIata": "CJB",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -24412,12 +24412,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Colombo",
-    "fromIata": "SIN",
-    "toIata": "CMB",
-    "fromCountry": "Singapore",
-    "toCountry": "Sri Lanka",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Colombo",
+    "destinationIata": "CMB",
+    "destinationCountry": "Sri Lanka",
     "region": "South Asia",
     "details": [
       {
@@ -25853,12 +25853,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Copenhagen",
-    "fromIata": "SIN",
-    "toIata": "CPH",
-    "fromCountry": "Singapore",
-    "toCountry": "Denmark",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Copenhagen",
+    "destinationIata": "CPH",
+    "destinationCountry": "Denmark",
     "region": "Europe",
     "details": [
       {
@@ -26586,12 +26586,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Da Nang",
-    "fromIata": "SIN",
-    "toIata": "DAD",
-    "fromCountry": "Singapore",
-    "toCountry": "Vietnam",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Da Nang",
+    "destinationIata": "DAD",
+    "destinationCountry": "Vietnam",
     "region": "South East Asia",
     "details": [
       {
@@ -27484,12 +27484,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Darwin",
-    "fromIata": "SIN",
-    "toIata": "DRW",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Darwin",
+    "destinationIata": "DRW",
+    "destinationCountry": "Australia",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -28436,12 +28436,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Davao",
-    "fromIata": "SIN",
-    "toIata": "DVO",
-    "fromCountry": "Singapore",
-    "toCountry": "Philippines",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Davao",
+    "destinationIata": "DVO",
+    "destinationCountry": "Philippines",
     "region": "South East Asia",
     "details": [
       {
@@ -29197,12 +29197,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Dhaka",
-    "fromIata": "SIN",
-    "toIata": "DAC",
-    "fromCountry": "Singapore",
-    "toCountry": "Bangladesh",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Dhaka",
+    "destinationIata": "DAC",
+    "destinationCountry": "Bangladesh",
     "region": "South Asia",
     "details": [
       {
@@ -30565,12 +30565,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Dili",
-    "fromIata": "SIN",
-    "toIata": "DIL",
-    "fromCountry": "Singapore",
-    "toCountry": "Timor-Leste",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Dili",
+    "destinationIata": "DIL",
+    "destinationCountry": "Timor-Leste",
     "details": [
       {
         "month": "201711",
@@ -31103,12 +31103,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Dubai",
-    "fromIata": "SIN",
-    "toIata": "DXB",
-    "fromCountry": "Singapore",
-    "toCountry": "UAE",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Dubai",
+    "destinationIata": "DXB",
+    "destinationCountry": "UAE",
     "region": "Middle East & Africa",
     "details": [
       {
@@ -32060,12 +32060,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Düsseldorf",
-    "fromIata": "SIN",
-    "toIata": "DUS",
-    "fromCountry": "Singapore",
-    "toCountry": "Germany",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Düsseldorf",
+    "destinationIata": "DUS",
+    "destinationCountry": "Germany",
     "region": "Europe",
     "details": [
       {
@@ -32824,12 +32824,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Frankfurt",
-    "fromIata": "SIN",
-    "toIata": "FRA",
-    "fromCountry": "Singapore",
-    "toCountry": "Germany",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Frankfurt",
+    "destinationIata": "FRA",
+    "destinationCountry": "Germany",
     "region": "Europe",
     "details": [
       {
@@ -34098,12 +34098,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Fukuoka",
-    "fromIata": "SIN",
-    "toIata": "FUK",
-    "fromCountry": "Singapore",
-    "toCountry": "Japan",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Fukuoka",
+    "destinationIata": "FUK",
+    "destinationCountry": "Japan",
     "region": "North Asia",
     "details": [
       {
@@ -35123,12 +35123,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Fuzhou",
-    "fromIata": "SIN",
-    "toIata": "FOC",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Fuzhou",
+    "destinationIata": "FOC",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -35798,12 +35798,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Guangzhou",
-    "fromIata": "SIN",
-    "toIata": "CAN",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Guangzhou",
+    "destinationIata": "CAN",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -36823,12 +36823,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Guilin",
-    "fromIata": "SIN",
-    "toIata": "KWL",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Guilin",
+    "destinationIata": "KWL",
+    "destinationCountry": "China",
     "details": [
       {
         "month": "201711",
@@ -37333,12 +37333,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Hanoi",
-    "fromIata": "SIN",
-    "toIata": "HAN",
-    "fromCountry": "Singapore",
-    "toCountry": "Vietnam",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Hanoi",
+    "destinationIata": "HAN",
+    "destinationCountry": "Vietnam",
     "region": "South East Asia",
     "details": [
       {
@@ -38421,12 +38421,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Hiroshima",
-    "fromIata": "SIN",
-    "toIata": "HIJ",
-    "fromCountry": "Singapore",
-    "toCountry": "Japan",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Hiroshima",
+    "destinationIata": "HIJ",
+    "destinationCountry": "Japan",
     "region": "North Asia",
     "details": [
       {
@@ -39201,12 +39201,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Ho Chi Minh City",
-    "fromIata": "SIN",
-    "toIata": "SGN",
-    "fromCountry": "Singapore",
-    "toCountry": "Vietnam",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Ho Chi Minh City",
+    "destinationIata": "SGN",
+    "destinationCountry": "Vietnam",
     "region": "South East Asia",
     "details": [
       {
@@ -40710,12 +40710,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Hong Kong",
-    "fromIata": "SIN",
-    "toIata": "HKG",
-    "fromCountry": "Singapore",
-    "toCountry": "Hong Kong",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Hong Kong",
+    "destinationIata": "HKG",
+    "destinationCountry": "Hong Kong",
     "region": "North Asia",
     "details": [
       {
@@ -42510,12 +42510,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Houston",
-    "fromIata": "SIN",
-    "toIata": "IAH",
-    "fromCountry": "Singapore",
-    "toCountry": "USA",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Houston",
+    "destinationIata": "IAH",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {
@@ -43001,12 +43001,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Hyderabad",
-    "fromIata": "SIN",
-    "toIata": "HYD",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Hyderabad",
+    "destinationIata": "HYD",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -44273,12 +44273,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Istanbul",
-    "fromIata": "SIN",
-    "toIata": "IST",
-    "fromCountry": "Singapore",
-    "toCountry": "Turkey",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Istanbul",
+    "destinationIata": "IST",
+    "destinationCountry": "Turkey",
     "region": "Middle East & Africa",
     "details": [
       {
@@ -44992,12 +44992,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Jakarta",
-    "fromIata": "SIN",
-    "toIata": "CGK",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Jakarta",
+    "destinationIata": "CGK",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -46604,12 +46604,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Johannesburg",
-    "fromIata": "SIN",
-    "toIata": "JNB",
-    "fromCountry": "Singapore",
-    "toCountry": "South Africa",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Johannesburg",
+    "destinationIata": "JNB",
+    "destinationCountry": "South Africa",
     "region": "Middle East & Africa",
     "details": [
       {
@@ -47603,12 +47603,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Kalibo",
-    "fromIata": "SIN",
-    "toIata": "KLO",
-    "fromCountry": "Singapore",
-    "toCountry": "Philippines",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Kalibo",
+    "destinationIata": "KLO",
+    "destinationCountry": "Philippines",
     "region": "South East Asia",
     "details": [
       {
@@ -48126,12 +48126,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Kathmandu",
-    "fromIata": "SIN",
-    "toIata": "KTM",
-    "fromCountry": "Singapore",
-    "toCountry": "Nepal",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Kathmandu",
+    "destinationIata": "KTM",
+    "destinationCountry": "Nepal",
     "region": "South Asia",
     "details": [
       {
@@ -49074,12 +49074,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Kochi",
-    "fromIata": "SIN",
-    "toIata": "COK",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Kochi",
+    "destinationIata": "COK",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -50116,12 +50116,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Koh Samui",
-    "fromIata": "SIN",
-    "toIata": "USM",
-    "fromCountry": "Singapore",
-    "toCountry": "Thailand",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Koh Samui",
+    "destinationIata": "USM",
+    "destinationCountry": "Thailand",
     "region": "South East Asia",
     "details": [
       {
@@ -50765,12 +50765,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Kolkata",
-    "fromIata": "SIN",
-    "toIata": "CCU",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Kolkata",
+    "destinationIata": "CCU",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -52042,12 +52042,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Kota Kinabalu",
-    "fromIata": "SIN",
-    "toIata": "BKI",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Kota Kinabalu",
+    "destinationIata": "BKI",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -52688,12 +52688,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Kuala Lumpur",
-    "fromIata": "SIN",
-    "toIata": "KUL",
-    "fromCountry": "Singapore",
-    "toCountry": "Malaysia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Kuala Lumpur",
+    "destinationIata": "KUL",
+    "destinationCountry": "Malaysia",
     "region": "South East Asia",
     "details": [
       {
@@ -54480,12 +54480,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Kunming",
-    "fromIata": "SIN",
-    "toIata": "KMG",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Kunming",
+    "destinationIata": "KMG",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -55111,12 +55111,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Langkawi",
-    "fromIata": "SIN",
-    "toIata": "LGK",
-    "fromCountry": "Singapore",
-    "toCountry": "Malaysia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Langkawi",
+    "destinationIata": "LGK",
+    "destinationCountry": "Malaysia",
     "region": "South East Asia",
     "details": [
       {
@@ -55620,12 +55620,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Lombok",
-    "fromIata": "SIN",
-    "toIata": "LOP",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Lombok",
+    "destinationIata": "LOP",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -56370,12 +56370,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "London",
-    "fromIata": "SIN",
-    "toIata": "LON",
-    "fromCountry": "Singapore",
-    "toCountry": "UK",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "London",
+    "destinationIata": "LON",
+    "destinationCountry": "UK",
     "region": "Europe",
     "details": [
       {
@@ -57329,12 +57329,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Los Angeles",
-    "fromIata": "SIN",
-    "toIata": "LAX",
-    "fromCountry": "Singapore",
-    "toCountry": "USA",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Los Angeles",
+    "destinationIata": "LAX",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {
@@ -58274,12 +58274,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Luang Prabang",
-    "fromIata": "SIN",
-    "toIata": "LPQ",
-    "fromCountry": "Singapore",
-    "toCountry": "Laos",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Luang Prabang",
+    "destinationIata": "LPQ",
+    "destinationCountry": "Laos",
     "region": "South East Asia",
     "details": [
       {
@@ -58883,12 +58883,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Makassar",
-    "fromIata": "SIN",
-    "toIata": "UPG",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Makassar",
+    "destinationIata": "UPG",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -59568,12 +59568,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Malé",
-    "fromIata": "SIN",
-    "toIata": "MLE",
-    "fromCountry": "Singapore",
-    "toCountry": "Maldives",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Malé",
+    "destinationIata": "MLE",
+    "destinationCountry": "Maldives",
     "region": "South Asia",
     "details": [
       {
@@ -60924,12 +60924,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Manado",
-    "fromIata": "SIN",
-    "toIata": "MDC",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Manado",
+    "destinationIata": "MDC",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -61572,12 +61572,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Manchester",
-    "fromIata": "SIN",
-    "toIata": "MAN",
-    "fromCountry": "Singapore",
-    "toCountry": "UK",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Manchester",
+    "destinationIata": "MAN",
+    "destinationCountry": "UK",
     "region": "Europe",
     "details": [
       {
@@ -62284,12 +62284,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Mandalay",
-    "fromIata": "SIN",
-    "toIata": "MDL",
-    "fromCountry": "Singapore",
-    "toCountry": "Myanmar",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Mandalay",
+    "destinationIata": "MDL",
+    "destinationCountry": "Myanmar",
     "region": "South East Asia",
     "details": [
       {
@@ -62891,12 +62891,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Manila",
-    "fromIata": "SIN",
-    "toIata": "MNL",
-    "fromCountry": "Singapore",
-    "toCountry": "Philippines",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Manila",
+    "destinationIata": "MNL",
+    "destinationCountry": "Philippines",
     "region": "South East Asia",
     "details": [
       {
@@ -64301,12 +64301,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Medan",
-    "fromIata": "SIN",
-    "toIata": "KNO",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Medan",
+    "destinationIata": "KNO",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -65322,12 +65322,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Melbourne",
-    "fromIata": "SIN",
-    "toIata": "MEL",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Melbourne",
+    "destinationIata": "MEL",
+    "destinationCountry": "Australia",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -66531,12 +66531,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Milan",
-    "fromIata": "SIN",
-    "toIata": "MXP",
-    "fromCountry": "Singapore",
-    "toCountry": "Italy",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Milan",
+    "destinationIata": "MXP",
+    "destinationCountry": "Italy",
     "region": "Europe",
     "details": [
       {
@@ -67287,12 +67287,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Moscow",
-    "fromIata": "SIN",
-    "toIata": "MOW",
-    "fromCountry": "Singapore",
-    "toCountry": "Russia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Moscow",
+    "destinationIata": "MOW",
+    "destinationCountry": "Russia",
     "details": [
       {
         "month": "201711",
@@ -67873,12 +67873,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Mumbai",
-    "fromIata": "SIN",
-    "toIata": "BOM",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Mumbai",
+    "destinationIata": "BOM",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -69487,12 +69487,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Munich",
-    "fromIata": "SIN",
-    "toIata": "MUC",
-    "fromCountry": "Singapore",
-    "toCountry": "Germany",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Munich",
+    "destinationIata": "MUC",
+    "destinationCountry": "Germany",
     "region": "Europe",
     "details": [
       {
@@ -70240,12 +70240,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Nagoya",
-    "fromIata": "SIN",
-    "toIata": "NGO",
-    "fromCountry": "Singapore",
-    "toCountry": "Japan",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Nagoya",
+    "destinationIata": "NGO",
+    "destinationCountry": "Japan",
     "region": "North Asia",
     "details": [
       {
@@ -71314,12 +71314,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Naha",
-    "fromIata": "SIN",
-    "toIata": "OKA",
-    "fromCountry": "Singapore",
-    "toCountry": "Japan",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Naha",
+    "destinationIata": "OKA",
+    "destinationCountry": "Japan",
     "details": [
       {
         "month": "201711",
@@ -71796,12 +71796,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "New Delhi",
-    "fromIata": "SIN",
-    "toIata": "DEL",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "New Delhi",
+    "destinationIata": "DEL",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -73235,12 +73235,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "New York",
-    "fromIata": "SIN",
-    "toIata": "NYC",
-    "fromCountry": "Singapore",
-    "toCountry": "USA",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "New York",
+    "destinationIata": "NYC",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {
@@ -74075,12 +74075,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Osaka",
-    "fromIata": "SIN",
-    "toIata": "KIX",
-    "fromCountry": "Singapore",
-    "toCountry": "Japan",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Osaka",
+    "destinationIata": "KIX",
+    "destinationCountry": "Japan",
     "region": "North Asia",
     "details": [
       {
@@ -75111,12 +75111,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Palembang",
-    "fromIata": "SIN",
-    "toIata": "PLM",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Palembang",
+    "destinationIata": "PLM",
+    "destinationCountry": "Indonesia",
     "details": [
       {
         "month": "201711",
@@ -75589,12 +75589,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Paris",
-    "fromIata": "SIN",
-    "toIata": "CDG",
-    "fromCountry": "Singapore",
-    "toCountry": "France",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Paris",
+    "destinationIata": "CDG",
+    "destinationCountry": "France",
     "region": "Europe",
     "details": [
       {
@@ -76470,12 +76470,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Pekanbaru",
-    "fromIata": "SIN",
-    "toIata": "PKU",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Pekanbaru",
+    "destinationIata": "PKU",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -77021,12 +77021,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Penang",
-    "fromIata": "SIN",
-    "toIata": "PEN",
-    "fromCountry": "Singapore",
-    "toCountry": "Malaysia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Penang",
+    "destinationIata": "PEN",
+    "destinationCountry": "Malaysia",
     "region": "South East Asia",
     "details": [
       {
@@ -78417,12 +78417,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Perth",
-    "fromIata": "SIN",
-    "toIata": "PER",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Perth",
+    "destinationIata": "PER",
+    "destinationCountry": "Australia",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -79343,12 +79343,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Phnom Penh",
-    "fromIata": "SIN",
-    "toIata": "PNH",
-    "fromCountry": "Singapore",
-    "toCountry": "Cambodia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Phnom Penh",
+    "destinationIata": "PNH",
+    "destinationCountry": "Cambodia",
     "region": "South East Asia",
     "details": [
       {
@@ -80377,12 +80377,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Phuket",
-    "fromIata": "SIN",
-    "toIata": "HKT",
-    "fromCountry": "Singapore",
-    "toCountry": "Thailand",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Phuket",
+    "destinationIata": "HKT",
+    "destinationCountry": "Thailand",
     "region": "South East Asia",
     "details": [
       {
@@ -81433,12 +81433,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Rome",
-    "fromIata": "SIN",
-    "toIata": "FCO",
-    "fromCountry": "Singapore",
-    "toCountry": "Italy",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Rome",
+    "destinationIata": "FCO",
+    "destinationCountry": "Italy",
     "region": "Europe",
     "details": [
       {
@@ -82210,12 +82210,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "San Francisco",
-    "fromIata": "SIN",
-    "toIata": "SFO",
-    "fromCountry": "Singapore",
-    "toCountry": "USA",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "San Francisco",
+    "destinationIata": "SFO",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {
@@ -83187,12 +83187,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Seattle",
-    "fromIata": "SIN",
-    "toIata": "SEA",
-    "fromCountry": "Singapore",
-    "toCountry": "USA",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Seattle",
+    "destinationIata": "SEA",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {
@@ -83815,12 +83815,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Semarang",
-    "fromIata": "SIN",
-    "toIata": "SRG",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Semarang",
+    "destinationIata": "SRG",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -84493,12 +84493,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Seoul",
-    "fromIata": "SIN",
-    "toIata": "ICN",
-    "fromCountry": "Singapore",
-    "toCountry": "South Korea",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Seoul",
+    "destinationIata": "ICN",
+    "destinationCountry": "South Korea",
     "region": "North Asia",
     "details": [
       {
@@ -85710,12 +85710,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Shanghai",
-    "fromIata": "SIN",
-    "toIata": "PVG",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Shanghai",
+    "destinationIata": "PVG",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -87410,12 +87410,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Shenzhen",
-    "fromIata": "SIN",
-    "toIata": "SZX",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Shenzhen",
+    "destinationIata": "SZX",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -88323,12 +88323,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Siem Reap",
-    "fromIata": "SIN",
-    "toIata": "SAI",
-    "fromCountry": "Singapore",
-    "toCountry": "Cambodia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Siem Reap",
+    "destinationIata": "SAI",
+    "destinationCountry": "Cambodia",
     "region": "South East Asia",
     "details": [
       {
@@ -89399,12 +89399,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Surabaya",
-    "fromIata": "SIN",
-    "toIata": "SUB",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Surabaya",
+    "destinationIata": "SUB",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -90872,12 +90872,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Sydney",
-    "fromIata": "SIN",
-    "toIata": "SYD",
-    "fromCountry": "Singapore",
-    "toCountry": "Australia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Sydney",
+    "destinationIata": "SYD",
+    "destinationCountry": "Australia",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -92666,12 +92666,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Taipei",
-    "fromIata": "SIN",
-    "toIata": "TPE",
-    "fromCountry": "Singapore",
-    "toCountry": "Taiwan",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Taipei",
+    "destinationIata": "TPE",
+    "destinationCountry": "Taiwan",
     "region": "North Asia",
     "details": [
       {
@@ -93560,12 +93560,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Tokyo",
-    "fromIata": "SIN",
-    "toIata": "TYO",
-    "fromCountry": "Singapore",
-    "toCountry": "Japan",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Tokyo",
+    "destinationIata": "TYO",
+    "destinationCountry": "Japan",
     "region": "North Asia",
     "details": [
       {
@@ -94639,12 +94639,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Trivandrum",
-    "fromIata": "SIN",
-    "toIata": "TRV",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Trivandrum",
+    "destinationIata": "TRV",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -95270,12 +95270,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Vancouver",
-    "fromIata": "SIN",
-    "toIata": "YVR",
-    "fromCountry": "Singapore",
-    "toCountry": "Canada",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Vancouver",
+    "destinationIata": "YVR",
+    "destinationCountry": "Canada",
     "region": "North America",
     "details": [
       {
@@ -95850,12 +95850,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Vientiane",
-    "fromIata": "SIN",
-    "toIata": "VTE",
-    "fromCountry": "Singapore",
-    "toCountry": "Laos",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Vientiane",
+    "destinationIata": "VTE",
+    "destinationCountry": "Laos",
     "region": "South East Asia",
     "details": [
       {
@@ -96459,12 +96459,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Visakhapatnam",
-    "fromIata": "SIN",
-    "toIata": "VTZ",
-    "fromCountry": "Singapore",
-    "toCountry": "India",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Visakhapatnam",
+    "destinationIata": "VTZ",
+    "destinationCountry": "India",
     "region": "South Asia",
     "details": [
       {
@@ -97131,12 +97131,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Wellington",
-    "fromIata": "SIN",
-    "toIata": "WLG",
-    "fromCountry": "Singapore",
-    "toCountry": "New Zealand",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Wellington",
+    "destinationIata": "WLG",
+    "destinationCountry": "New Zealand",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -97795,12 +97795,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Wuhan",
-    "fromIata": "SIN",
-    "toIata": "WUH",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Wuhan",
+    "destinationIata": "WUH",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -98436,12 +98436,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Xiamen",
-    "fromIata": "SIN",
-    "toIata": "XMN",
-    "fromCountry": "Singapore",
-    "toCountry": "China",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Xiamen",
+    "destinationIata": "XMN",
+    "destinationCountry": "China",
     "region": "North Asia",
     "details": [
       {
@@ -99277,12 +99277,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Yangon",
-    "fromIata": "SIN",
-    "toIata": "RGN",
-    "fromCountry": "Singapore",
-    "toCountry": "Myanmar",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Yangon",
+    "destinationIata": "RGN",
+    "destinationCountry": "Myanmar",
     "region": "South East Asia",
     "details": [
       {
@@ -100435,12 +100435,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Yogyakarta",
-    "fromIata": "SIN",
-    "toIata": "YIA",
-    "fromCountry": "Singapore",
-    "toCountry": "Indonesia",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Yogyakarta",
+    "destinationIata": "YIA",
+    "destinationCountry": "Indonesia",
     "region": "South East Asia",
     "details": [
       {
@@ -101073,12 +101073,12 @@
     ]
   },
   {
-    "from": "Singapore",
-    "to": "Zürich",
-    "fromIata": "SIN",
-    "toIata": "ZRH",
-    "fromCountry": "Singapore",
-    "toCountry": "Switzerland",
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "Zürich",
+    "destinationIata": "ZRH",
+    "destinationCountry": "Switzerland",
     "region": "Europe",
     "details": [
       {
@@ -101834,12 +101834,12 @@
     ]
   },
   {
-    "from": "Adelaide",
-    "to": "Singapore",
-    "fromIata": "ADL",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Adelaide",
+    "originIata": "ADL",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -102841,12 +102841,12 @@
     ]
   },
   {
-    "from": "Ahmedabad",
-    "to": "Singapore",
-    "fromIata": "AMD",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Ahmedabad",
+    "originIata": "AMD",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -104042,12 +104042,12 @@
     ]
   },
   {
-    "from": "Amsterdam",
-    "to": "Singapore",
-    "fromIata": "AMS",
-    "toIata": "SIN",
-    "fromCountry": "Netherlands",
-    "toCountry": "Singapore",
+    "origin": "Amsterdam",
+    "originIata": "AMS",
+    "originCountry": "Netherlands",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -104801,12 +104801,12 @@
     ]
   },
   {
-    "from": "Auckland",
-    "to": "Singapore",
-    "fromIata": "AKL",
-    "toIata": "SIN",
-    "fromCountry": "New Zealand",
-    "toCountry": "Singapore",
+    "origin": "Auckland",
+    "originIata": "AKL",
+    "originCountry": "New Zealand",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -105597,12 +105597,12 @@
     ]
   },
   {
-    "from": "Bali",
-    "to": "Singapore",
-    "fromIata": "DPS",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Bali",
+    "originIata": "DPS",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -106997,12 +106997,12 @@
     ]
   },
   {
-    "from": "Balikpapan",
-    "to": "Singapore",
-    "fromIata": "BPN",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Balikpapan",
+    "originIata": "BPN",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -107681,12 +107681,12 @@
     ]
   },
   {
-    "from": "Bandar Seri Begawan",
-    "to": "Singapore",
-    "fromIata": "BWN",
-    "toIata": "SIN",
-    "fromCountry": "Brunei",
-    "toCountry": "Singapore",
+    "origin": "Bandar Seri Begawan",
+    "originIata": "BWN",
+    "originCountry": "Brunei",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -108608,12 +108608,12 @@
     ]
   },
   {
-    "from": "Bandung",
-    "to": "Singapore",
-    "fromIata": "BDO",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Bandung",
+    "originIata": "BDO",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -109306,12 +109306,12 @@
     ]
   },
   {
-    "from": "Bangalore",
-    "to": "Singapore",
-    "fromIata": "BLR",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Bangalore",
+    "originIata": "BLR",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -110868,12 +110868,12 @@
     ]
   },
   {
-    "from": "Bangkok",
-    "to": "Singapore",
-    "fromIata": "BKK",
-    "toIata": "SIN",
-    "fromCountry": "Thailand",
-    "toCountry": "Singapore",
+    "origin": "Bangkok",
+    "originIata": "BKK",
+    "originCountry": "Thailand",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -112037,12 +112037,12 @@
     ]
   },
   {
-    "from": "Barcelona",
-    "to": "Singapore",
-    "fromIata": "BCN",
-    "toIata": "SIN",
-    "fromCountry": "Spain",
-    "toCountry": "Singapore",
+    "origin": "Barcelona",
+    "originIata": "BCN",
+    "originCountry": "Spain",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -112812,12 +112812,12 @@
     ]
   },
   {
-    "from": "Beijing",
-    "to": "Singapore",
-    "fromIata": "PEK",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Beijing",
+    "originIata": "PEK",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -114350,12 +114350,12 @@
     ]
   },
   {
-    "from": "Brisbane",
-    "to": "Singapore",
-    "fromIata": "BNE",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Brisbane",
+    "originIata": "BNE",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -115474,12 +115474,12 @@
     ]
   },
   {
-    "from": "Broome",
-    "to": "Singapore",
-    "fromIata": "BME",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Broome",
+    "originIata": "BME",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "details": [
       {
         "month": "201711",
@@ -115960,12 +115960,12 @@
     ]
   },
   {
-    "from": "Brussels",
-    "to": "Singapore",
-    "fromIata": "BRU",
-    "toIata": "SIN",
-    "fromCountry": "Belgium",
-    "toCountry": "Singapore",
+    "origin": "Brussels",
+    "originIata": "BRU",
+    "originCountry": "Belgium",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -116601,12 +116601,12 @@
     ]
   },
   {
-    "from": "Busan",
-    "to": "Singapore",
-    "fromIata": "PUS",
-    "toIata": "SIN",
-    "fromCountry": "South Korea",
-    "toCountry": "Singapore",
+    "origin": "Busan",
+    "originIata": "PUS",
+    "originCountry": "South Korea",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -117176,12 +117176,12 @@
     ]
   },
   {
-    "from": "Cairns",
-    "to": "Singapore",
-    "fromIata": "CNS",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Cairns",
+    "originIata": "CNS",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -118246,12 +118246,12 @@
     ]
   },
   {
-    "from": "Canberra",
-    "to": "Singapore",
-    "fromIata": "CBR",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Canberra",
+    "originIata": "CBR",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -118932,12 +118932,12 @@
     ]
   },
   {
-    "from": "Cape Town",
-    "to": "Singapore",
-    "fromIata": "CPT",
-    "toIata": "SIN",
-    "fromCountry": "South Africa",
-    "toCountry": "Singapore",
+    "origin": "Cape Town",
+    "originIata": "CPT",
+    "originCountry": "South Africa",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Middle East & Africa",
     "details": [
       {
@@ -119686,12 +119686,12 @@
     ]
   },
   {
-    "from": "Cebu",
-    "to": "Singapore",
-    "fromIata": "CEB",
-    "toIata": "SIN",
-    "fromCountry": "Philippines",
-    "toCountry": "Singapore",
+    "origin": "Cebu",
+    "originIata": "CEB",
+    "originCountry": "Philippines",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -120725,12 +120725,12 @@
     ]
   },
   {
-    "from": "Changsha",
-    "to": "Singapore",
-    "fromIata": "CSX",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Changsha",
+    "originIata": "CSX",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -121342,12 +121342,12 @@
     ]
   },
   {
-    "from": "Chengdu",
-    "to": "Singapore",
-    "fromIata": "CTU",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Chengdu",
+    "originIata": "CTU",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -122290,12 +122290,12 @@
     ]
   },
   {
-    "from": "Chennai",
-    "to": "Singapore",
-    "fromIata": "MAA",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Chennai",
+    "originIata": "MAA",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -123487,12 +123487,12 @@
     ]
   },
   {
-    "from": "Chiang Mai",
-    "to": "Singapore",
-    "fromIata": "CNX",
-    "toIata": "SIN",
-    "fromCountry": "Thailand",
-    "toCountry": "Singapore",
+    "origin": "Chiang Mai",
+    "originIata": "CNX",
+    "originCountry": "Thailand",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -124132,12 +124132,12 @@
     ]
   },
   {
-    "from": "Chitose",
-    "to": "Singapore",
-    "fromIata": "CTS",
-    "toIata": "SIN",
-    "fromCountry": "Japan",
-    "toCountry": "Singapore",
+    "origin": "Chitose",
+    "originIata": "CTS",
+    "originCountry": "Japan",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "details": [
       {
         "month": "201711",
@@ -124630,12 +124630,12 @@
     ]
   },
   {
-    "from": "Chongqing",
-    "to": "Singapore",
-    "fromIata": "CKG",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Chongqing",
+    "originIata": "CKG",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -125422,12 +125422,12 @@
     ]
   },
   {
-    "from": "Christchurch",
-    "to": "Singapore",
-    "fromIata": "CHC",
-    "toIata": "SIN",
-    "fromCountry": "New Zealand",
-    "toCountry": "Singapore",
+    "origin": "Christchurch",
+    "originIata": "CHC",
+    "originCountry": "New Zealand",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -126280,12 +126280,12 @@
     ]
   },
   {
-    "from": "Coimbatore",
-    "to": "Singapore",
-    "fromIata": "CJB",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Coimbatore",
+    "originIata": "CJB",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -126917,12 +126917,12 @@
     ]
   },
   {
-    "from": "Colombo",
-    "to": "Singapore",
-    "fromIata": "CMB",
-    "toIata": "SIN",
-    "fromCountry": "Sri Lanka",
-    "toCountry": "Singapore",
+    "origin": "Colombo",
+    "originIata": "CMB",
+    "originCountry": "Sri Lanka",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -128251,12 +128251,12 @@
     ]
   },
   {
-    "from": "Copenhagen",
-    "to": "Singapore",
-    "fromIata": "CPH",
-    "toIata": "SIN",
-    "fromCountry": "Denmark",
-    "toCountry": "Singapore",
+    "origin": "Copenhagen",
+    "originIata": "CPH",
+    "originCountry": "Denmark",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -129127,12 +129127,12 @@
     ]
   },
   {
-    "from": "Da Nang",
-    "to": "Singapore",
-    "fromIata": "DAD",
-    "toIata": "SIN",
-    "fromCountry": "Vietnam",
-    "toCountry": "Singapore",
+    "origin": "Da Nang",
+    "originIata": "DAD",
+    "originCountry": "Vietnam",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -129967,12 +129967,12 @@
     ]
   },
   {
-    "from": "Darwin",
-    "to": "Singapore",
-    "fromIata": "DRW",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Darwin",
+    "originIata": "DRW",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -130957,12 +130957,12 @@
     ]
   },
   {
-    "from": "Davao",
-    "to": "Singapore",
-    "fromIata": "DVO",
-    "toIata": "SIN",
-    "fromCountry": "Philippines",
-    "toCountry": "Singapore",
+    "origin": "Davao",
+    "originIata": "DVO",
+    "originCountry": "Philippines",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -131718,12 +131718,12 @@
     ]
   },
   {
-    "from": "Dhaka",
-    "to": "Singapore",
-    "fromIata": "DAC",
-    "toIata": "SIN",
-    "fromCountry": "Bangladesh",
-    "toCountry": "Singapore",
+    "origin": "Dhaka",
+    "originIata": "DAC",
+    "originCountry": "Bangladesh",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -133039,12 +133039,12 @@
     ]
   },
   {
-    "from": "Dili",
-    "to": "Singapore",
-    "fromIata": "DIL",
-    "toIata": "SIN",
-    "fromCountry": "Timor-Leste",
-    "toCountry": "Singapore",
+    "origin": "Dili",
+    "originIata": "DIL",
+    "originCountry": "Timor-Leste",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "details": [
       {
         "month": "201711",
@@ -133577,12 +133577,12 @@
     ]
   },
   {
-    "from": "Dubai",
-    "to": "Singapore",
-    "fromIata": "DXB",
-    "toIata": "SIN",
-    "fromCountry": "UAE",
-    "toCountry": "Singapore",
+    "origin": "Dubai",
+    "originIata": "DXB",
+    "originCountry": "UAE",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Middle East & Africa",
     "details": [
       {
@@ -134484,12 +134484,12 @@
     ]
   },
   {
-    "from": "Düsseldorf",
-    "to": "Singapore",
-    "fromIata": "DUS",
-    "toIata": "SIN",
-    "fromCountry": "Germany",
-    "toCountry": "Singapore",
+    "origin": "Düsseldorf",
+    "originIata": "DUS",
+    "originCountry": "Germany",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -135243,12 +135243,12 @@
     ]
   },
   {
-    "from": "Frankfurt",
-    "to": "Singapore",
-    "fromIata": "FRA",
-    "toIata": "SIN",
-    "fromCountry": "Germany",
-    "toCountry": "Singapore",
+    "origin": "Frankfurt",
+    "originIata": "FRA",
+    "originCountry": "Germany",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -136301,12 +136301,12 @@
     ]
   },
   {
-    "from": "Fukuoka",
-    "to": "Singapore",
-    "fromIata": "FUK",
-    "toIata": "SIN",
-    "fromCountry": "Japan",
-    "toCountry": "Singapore",
+    "origin": "Fukuoka",
+    "originIata": "FUK",
+    "originCountry": "Japan",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -137304,12 +137304,12 @@
     ]
   },
   {
-    "from": "Fuzhou",
-    "to": "Singapore",
-    "fromIata": "FOC",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Fuzhou",
+    "originIata": "FOC",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -137979,12 +137979,12 @@
     ]
   },
   {
-    "from": "Guangzhou",
-    "to": "Singapore",
-    "fromIata": "CAN",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Guangzhou",
+    "originIata": "CAN",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -139025,12 +139025,12 @@
     ]
   },
   {
-    "from": "Guilin",
-    "to": "Singapore",
-    "fromIata": "KWL",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Guilin",
+    "originIata": "KWL",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "details": [
       {
         "month": "201711",
@@ -139535,12 +139535,12 @@
     ]
   },
   {
-    "from": "Hanoi",
-    "to": "Singapore",
-    "fromIata": "HAN",
-    "toIata": "SIN",
-    "fromCountry": "Vietnam",
-    "toCountry": "Singapore",
+    "origin": "Hanoi",
+    "originIata": "HAN",
+    "originCountry": "Vietnam",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -140629,12 +140629,12 @@
     ]
   },
   {
-    "from": "Hiroshima",
-    "to": "Singapore",
-    "fromIata": "HIJ",
-    "toIata": "SIN",
-    "fromCountry": "Japan",
-    "toCountry": "Singapore",
+    "origin": "Hiroshima",
+    "originIata": "HIJ",
+    "originCountry": "Japan",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -141445,12 +141445,12 @@
     ]
   },
   {
-    "from": "Ho Chi Minh City",
-    "to": "Singapore",
-    "fromIata": "SGN",
-    "toIata": "SIN",
-    "fromCountry": "Vietnam",
-    "toCountry": "Singapore",
+    "origin": "Ho Chi Minh City",
+    "originIata": "SGN",
+    "originCountry": "Vietnam",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -142944,12 +142944,12 @@
     ]
   },
   {
-    "from": "Hong Kong",
-    "to": "Singapore",
-    "fromIata": "HKG",
-    "toIata": "SIN",
-    "fromCountry": "Hong Kong",
-    "toCountry": "Singapore",
+    "origin": "Hong Kong",
+    "originIata": "HKG",
+    "originCountry": "Hong Kong",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -144744,12 +144744,12 @@
     ]
   },
   {
-    "from": "Hyderabad",
-    "to": "Singapore",
-    "fromIata": "HYD",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Hyderabad",
+    "originIata": "HYD",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -145860,12 +145860,12 @@
     ]
   },
   {
-    "from": "Istanbul",
-    "to": "Singapore",
-    "fromIata": "IST",
-    "toIata": "SIN",
-    "fromCountry": "Turkey",
-    "toCountry": "Singapore",
+    "origin": "Istanbul",
+    "originIata": "IST",
+    "originCountry": "Turkey",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Middle East & Africa",
     "details": [
       {
@@ -146567,12 +146567,12 @@
     ]
   },
   {
-    "from": "Jakarta",
-    "to": "Singapore",
-    "fromIata": "CGK",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Jakarta",
+    "originIata": "CGK",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -147959,12 +147959,12 @@
     ]
   },
   {
-    "from": "Johannesburg",
-    "to": "Singapore",
-    "fromIata": "JNB",
-    "toIata": "SIN",
-    "fromCountry": "South Africa",
-    "toCountry": "Singapore",
+    "origin": "Johannesburg",
+    "originIata": "JNB",
+    "originCountry": "South Africa",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Middle East & Africa",
     "details": [
       {
@@ -148917,12 +148917,12 @@
     ]
   },
   {
-    "from": "Kalibo",
-    "to": "Singapore",
-    "fromIata": "KLO",
-    "toIata": "SIN",
-    "fromCountry": "Philippines",
-    "toCountry": "Singapore",
+    "origin": "Kalibo",
+    "originIata": "KLO",
+    "originCountry": "Philippines",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -149440,12 +149440,12 @@
     ]
   },
   {
-    "from": "Kathmandu",
-    "to": "Singapore",
-    "fromIata": "KTM",
-    "toIata": "SIN",
-    "fromCountry": "Nepal",
-    "toCountry": "Singapore",
+    "origin": "Kathmandu",
+    "originIata": "KTM",
+    "originCountry": "Nepal",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -150277,12 +150277,12 @@
     ]
   },
   {
-    "from": "Kochi",
-    "to": "Singapore",
-    "fromIata": "COK",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Kochi",
+    "originIata": "COK",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -151212,12 +151212,12 @@
     ]
   },
   {
-    "from": "Koh Samui",
-    "to": "Singapore",
-    "fromIata": "USM",
-    "toIata": "SIN",
-    "fromCountry": "Thailand",
-    "toCountry": "Singapore",
+    "origin": "Koh Samui",
+    "originIata": "USM",
+    "originCountry": "Thailand",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -151861,12 +151861,12 @@
     ]
   },
   {
-    "from": "Kolkata",
-    "to": "Singapore",
-    "fromIata": "CCU",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Kolkata",
+    "originIata": "CCU",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -152991,12 +152991,12 @@
     ]
   },
   {
-    "from": "Kota Kinabalu",
-    "to": "Singapore",
-    "fromIata": "BKI",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Kota Kinabalu",
+    "originIata": "BKI",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -153637,12 +153637,12 @@
     ]
   },
   {
-    "from": "Kuala Lumpur",
-    "to": "Singapore",
-    "fromIata": "KUL",
-    "toIata": "SIN",
-    "fromCountry": "Malaysia",
-    "toCountry": "Singapore",
+    "origin": "Kuala Lumpur",
+    "originIata": "KUL",
+    "originCountry": "Malaysia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -155365,12 +155365,12 @@
     ]
   },
   {
-    "from": "Kunming",
-    "to": "Singapore",
-    "fromIata": "KMG",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Kunming",
+    "originIata": "KMG",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -155996,12 +155996,12 @@
     ]
   },
   {
-    "from": "Langkawi",
-    "to": "Singapore",
-    "fromIata": "LGK",
-    "toIata": "SIN",
-    "fromCountry": "Malaysia",
-    "toCountry": "Singapore",
+    "origin": "Langkawi",
+    "originIata": "LGK",
+    "originCountry": "Malaysia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -156505,12 +156505,12 @@
     ]
   },
   {
-    "from": "Lombok",
-    "to": "Singapore",
-    "fromIata": "LOP",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Lombok",
+    "originIata": "LOP",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -157247,12 +157247,12 @@
     ]
   },
   {
-    "from": "London",
-    "to": "Singapore",
-    "fromIata": "LON",
-    "toIata": "SIN",
-    "fromCountry": "UK",
-    "toCountry": "Singapore",
+    "origin": "London",
+    "originIata": "LON",
+    "originCountry": "UK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -158221,12 +158221,12 @@
     ]
   },
   {
-    "from": "Los Angeles",
-    "to": "Singapore",
-    "fromIata": "LAX",
-    "toIata": "SIN",
-    "fromCountry": "USA",
-    "toCountry": "Singapore",
+    "origin": "Los Angeles",
+    "originIata": "LAX",
+    "originCountry": "USA",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North America",
     "details": [
       {
@@ -159206,12 +159206,12 @@
     ]
   },
   {
-    "from": "Luang Prabang",
-    "to": "Singapore",
-    "fromIata": "LPQ",
-    "toIata": "SIN",
-    "fromCountry": "Laos",
-    "toCountry": "Singapore",
+    "origin": "Luang Prabang",
+    "originIata": "LPQ",
+    "originCountry": "Laos",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -159815,12 +159815,12 @@
     ]
   },
   {
-    "from": "Makassar",
-    "to": "Singapore",
-    "fromIata": "UPG",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Makassar",
+    "originIata": "UPG",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -160493,12 +160493,12 @@
     ]
   },
   {
-    "from": "Malé",
-    "to": "Singapore",
-    "fromIata": "MLE",
-    "toIata": "SIN",
-    "fromCountry": "Maldives",
-    "toCountry": "Singapore",
+    "origin": "Malé",
+    "originIata": "MLE",
+    "originCountry": "Maldives",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -161838,12 +161838,12 @@
     ]
   },
   {
-    "from": "Manado",
-    "to": "Singapore",
-    "fromIata": "MDC",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Manado",
+    "originIata": "MDC",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -162474,12 +162474,12 @@
     ]
   },
   {
-    "from": "Manchester",
-    "to": "Singapore",
-    "fromIata": "MAN",
-    "toIata": "SIN",
-    "fromCountry": "UK",
-    "toCountry": "Singapore",
+    "origin": "Manchester",
+    "originIata": "MAN",
+    "originCountry": "UK",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "details": [
       {
         "month": "201711",
@@ -163152,12 +163152,12 @@
     ]
   },
   {
-    "from": "Mandalay",
-    "to": "Singapore",
-    "fromIata": "MDL",
-    "toIata": "SIN",
-    "fromCountry": "Myanmar",
-    "toCountry": "Singapore",
+    "origin": "Mandalay",
+    "originIata": "MDL",
+    "originCountry": "Myanmar",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -163779,12 +163779,12 @@
     ]
   },
   {
-    "from": "Manila",
-    "to": "Singapore",
-    "fromIata": "MNL",
-    "toIata": "SIN",
-    "fromCountry": "Philippines",
-    "toCountry": "Singapore",
+    "origin": "Manila",
+    "originIata": "MNL",
+    "originCountry": "Philippines",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -165268,12 +165268,12 @@
     ]
   },
   {
-    "from": "Medan",
-    "to": "Singapore",
-    "fromIata": "KNO",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Medan",
+    "originIata": "KNO",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -166238,12 +166238,12 @@
     ]
   },
   {
-    "from": "Melbourne",
-    "to": "Singapore",
-    "fromIata": "MEL",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Melbourne",
+    "originIata": "MEL",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -168077,12 +168077,12 @@
     ]
   },
   {
-    "from": "Milan",
-    "to": "Singapore",
-    "fromIata": "MXP",
-    "toIata": "SIN",
-    "fromCountry": "Italy",
-    "toCountry": "Singapore",
+    "origin": "Milan",
+    "originIata": "MXP",
+    "originCountry": "Italy",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -168861,12 +168861,12 @@
     ]
   },
   {
-    "from": "Moscow",
-    "to": "Singapore",
-    "fromIata": "MOW",
-    "toIata": "SIN",
-    "fromCountry": "Russia",
-    "toCountry": "Singapore",
+    "origin": "Moscow",
+    "originIata": "MOW",
+    "originCountry": "Russia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "details": [
       {
         "month": "201711",
@@ -169447,12 +169447,12 @@
     ]
   },
   {
-    "from": "Mumbai",
-    "to": "Singapore",
-    "fromIata": "BOM",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Mumbai",
+    "originIata": "BOM",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -170822,12 +170822,12 @@
     ]
   },
   {
-    "from": "Munich",
-    "to": "Singapore",
-    "fromIata": "MUC",
-    "toIata": "SIN",
-    "fromCountry": "Germany",
-    "toCountry": "Singapore",
+    "origin": "Munich",
+    "originIata": "MUC",
+    "originCountry": "Germany",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -171795,12 +171795,12 @@
     ]
   },
   {
-    "from": "Nagoya",
-    "to": "Singapore",
-    "fromIata": "NGO",
-    "toIata": "SIN",
-    "fromCountry": "Japan",
-    "toCountry": "Singapore",
+    "origin": "Nagoya",
+    "originIata": "NGO",
+    "originCountry": "Japan",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -172937,12 +172937,12 @@
     ]
   },
   {
-    "from": "Naha",
-    "to": "Singapore",
-    "fromIata": "OKA",
-    "toIata": "SIN",
-    "fromCountry": "Japan",
-    "toCountry": "Singapore",
+    "origin": "Naha",
+    "originIata": "OKA",
+    "originCountry": "Japan",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "details": [
       {
         "month": "201711",
@@ -173423,12 +173423,12 @@
     ]
   },
   {
-    "from": "New Delhi",
-    "to": "Singapore",
-    "fromIata": "DEL",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "New Delhi",
+    "originIata": "DEL",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -174523,12 +174523,12 @@
     ]
   },
   {
-    "from": "New York",
-    "to": "Singapore",
-    "fromIata": "NYC",
-    "toIata": "SIN",
-    "fromCountry": "USA",
-    "toCountry": "Singapore",
+    "origin": "New York",
+    "originIata": "NYC",
+    "originCountry": "USA",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North America",
     "details": [
       {
@@ -175481,12 +175481,12 @@
     ]
   },
   {
-    "from": "Osaka",
-    "to": "Singapore",
-    "fromIata": "KIX",
-    "toIata": "SIN",
-    "fromCountry": "Japan",
-    "toCountry": "Singapore",
+    "origin": "Osaka",
+    "originIata": "KIX",
+    "originCountry": "Japan",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -176501,12 +176501,12 @@
     ]
   },
   {
-    "from": "Palembang",
-    "to": "Singapore",
-    "fromIata": "PLM",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Palembang",
+    "originIata": "PLM",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "details": [
       {
         "month": "201711",
@@ -176979,12 +176979,12 @@
     ]
   },
   {
-    "from": "Paris",
-    "to": "Singapore",
-    "fromIata": "CDG",
-    "toIata": "SIN",
-    "fromCountry": "France",
-    "toCountry": "Singapore",
+    "origin": "Paris",
+    "originIata": "CDG",
+    "originCountry": "France",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -177921,12 +177921,12 @@
     ]
   },
   {
-    "from": "Pekanbaru",
-    "to": "Singapore",
-    "fromIata": "PKU",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Pekanbaru",
+    "originIata": "PKU",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -178472,12 +178472,12 @@
     ]
   },
   {
-    "from": "Penang",
-    "to": "Singapore",
-    "fromIata": "PEN",
-    "toIata": "SIN",
-    "fromCountry": "Malaysia",
-    "toCountry": "Singapore",
+    "origin": "Penang",
+    "originIata": "PEN",
+    "originCountry": "Malaysia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -179888,12 +179888,12 @@
     ]
   },
   {
-    "from": "Perth",
-    "to": "Singapore",
-    "fromIata": "PER",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Perth",
+    "originIata": "PER",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -180900,12 +180900,12 @@
     ]
   },
   {
-    "from": "Phnom Penh",
-    "to": "Singapore",
-    "fromIata": "PNH",
-    "toIata": "SIN",
-    "fromCountry": "Cambodia",
-    "toCountry": "Singapore",
+    "origin": "Phnom Penh",
+    "originIata": "PNH",
+    "originCountry": "Cambodia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -181944,12 +181944,12 @@
     ]
   },
   {
-    "from": "Phuket",
-    "to": "Singapore",
-    "fromIata": "HKT",
-    "toIata": "SIN",
-    "fromCountry": "Thailand",
-    "toCountry": "Singapore",
+    "origin": "Phuket",
+    "originIata": "HKT",
+    "originCountry": "Thailand",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -183013,12 +183013,12 @@
     ]
   },
   {
-    "from": "Rome",
-    "to": "Singapore",
-    "fromIata": "FCO",
-    "toIata": "SIN",
-    "fromCountry": "Italy",
-    "toCountry": "Singapore",
+    "origin": "Rome",
+    "originIata": "FCO",
+    "originCountry": "Italy",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -183790,12 +183790,12 @@
     ]
   },
   {
-    "from": "San Francisco",
-    "to": "Singapore",
-    "fromIata": "SFO",
-    "toIata": "SIN",
-    "fromCountry": "USA",
-    "toCountry": "Singapore",
+    "origin": "San Francisco",
+    "originIata": "SFO",
+    "originCountry": "USA",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North America",
     "details": [
       {
@@ -184880,12 +184880,12 @@
     ]
   },
   {
-    "from": "Seattle",
-    "to": "Singapore",
-    "fromIata": "SEA",
-    "toIata": "SIN",
-    "fromCountry": "USA",
-    "toCountry": "Singapore",
+    "origin": "Seattle",
+    "originIata": "SEA",
+    "originCountry": "USA",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North America",
     "details": [
       {
@@ -185517,12 +185517,12 @@
     ]
   },
   {
-    "from": "Semarang",
-    "to": "Singapore",
-    "fromIata": "SRG",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Semarang",
+    "originIata": "SRG",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -186194,12 +186194,12 @@
     ]
   },
   {
-    "from": "Seoul",
-    "to": "Singapore",
-    "fromIata": "ICN",
-    "toIata": "SIN",
-    "fromCountry": "South Korea",
-    "toCountry": "Singapore",
+    "origin": "Seoul",
+    "originIata": "ICN",
+    "originCountry": "South Korea",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -187410,12 +187410,12 @@
     ]
   },
   {
-    "from": "Shanghai",
-    "to": "Singapore",
-    "fromIata": "PVG",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Shanghai",
+    "originIata": "PVG",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -189140,12 +189140,12 @@
     ]
   },
   {
-    "from": "Shenzhen",
-    "to": "Singapore",
-    "fromIata": "SZX",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Shenzhen",
+    "originIata": "SZX",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -190062,12 +190062,12 @@
     ]
   },
   {
-    "from": "Siem Reap",
-    "to": "Singapore",
-    "fromIata": "SAI",
-    "toIata": "SIN",
-    "fromCountry": "Cambodia",
-    "toCountry": "Singapore",
+    "origin": "Siem Reap",
+    "originIata": "SAI",
+    "originCountry": "Cambodia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -191005,12 +191005,12 @@
     ]
   },
   {
-    "from": "Surabaya",
-    "to": "Singapore",
-    "fromIata": "SUB",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Surabaya",
+    "originIata": "SUB",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -192566,12 +192566,12 @@
     ]
   },
   {
-    "from": "Sydney",
-    "to": "Singapore",
-    "fromIata": "SYD",
-    "toIata": "SIN",
-    "fromCountry": "Australia",
-    "toCountry": "Singapore",
+    "origin": "Sydney",
+    "originIata": "SYD",
+    "originCountry": "Australia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -194498,12 +194498,12 @@
     ]
   },
   {
-    "from": "Taipei",
-    "to": "Singapore",
-    "fromIata": "TPE",
-    "toIata": "SIN",
-    "fromCountry": "Taiwan",
-    "toCountry": "Singapore",
+    "origin": "Taipei",
+    "originIata": "TPE",
+    "originCountry": "Taiwan",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -195325,12 +195325,12 @@
     ]
   },
   {
-    "from": "Tokyo",
-    "to": "Singapore",
-    "fromIata": "TYO",
-    "toIata": "SIN",
-    "fromCountry": "Japan",
-    "toCountry": "Singapore",
+    "origin": "Tokyo",
+    "originIata": "TYO",
+    "originCountry": "Japan",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -196416,12 +196416,12 @@
     ]
   },
   {
-    "from": "Trivandrum",
-    "to": "Singapore",
-    "fromIata": "TRV",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Trivandrum",
+    "originIata": "TRV",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -197033,12 +197033,12 @@
     ]
   },
   {
-    "from": "Vancouver",
-    "to": "Singapore",
-    "fromIata": "YVR",
-    "toIata": "SIN",
-    "fromCountry": "Canada",
-    "toCountry": "Singapore",
+    "origin": "Vancouver",
+    "originIata": "YVR",
+    "originCountry": "Canada",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North America",
     "details": [
       {
@@ -197622,12 +197622,12 @@
     ]
   },
   {
-    "from": "Vientiane",
-    "to": "Singapore",
-    "fromIata": "VTE",
-    "toIata": "SIN",
-    "fromCountry": "Laos",
-    "toCountry": "Singapore",
+    "origin": "Vientiane",
+    "originIata": "VTE",
+    "originCountry": "Laos",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -198231,12 +198231,12 @@
     ]
   },
   {
-    "from": "Visakhapatnam",
-    "to": "Singapore",
-    "fromIata": "VTZ",
-    "toIata": "SIN",
-    "fromCountry": "India",
-    "toCountry": "Singapore",
+    "origin": "Visakhapatnam",
+    "originIata": "VTZ",
+    "originCountry": "India",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South Asia",
     "details": [
       {
@@ -198896,12 +198896,12 @@
     ]
   },
   {
-    "from": "Wellington",
-    "to": "Singapore",
-    "fromIata": "WLG",
-    "toIata": "SIN",
-    "fromCountry": "New Zealand",
-    "toCountry": "Singapore",
+    "origin": "Wellington",
+    "originIata": "WLG",
+    "originCountry": "New Zealand",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Southwest Pacific",
     "details": [
       {
@@ -199560,12 +199560,12 @@
     ]
   },
   {
-    "from": "Wuhan",
-    "to": "Singapore",
-    "fromIata": "WUH",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Wuhan",
+    "originIata": "WUH",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -200201,12 +200201,12 @@
     ]
   },
   {
-    "from": "Xiamen",
-    "to": "Singapore",
-    "fromIata": "XMN",
-    "toIata": "SIN",
-    "fromCountry": "China",
-    "toCountry": "Singapore",
+    "origin": "Xiamen",
+    "originIata": "XMN",
+    "originCountry": "China",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "North Asia",
     "details": [
       {
@@ -201047,12 +201047,12 @@
     ]
   },
   {
-    "from": "Yangon",
-    "to": "Singapore",
-    "fromIata": "RGN",
-    "toIata": "SIN",
-    "fromCountry": "Myanmar",
-    "toCountry": "Singapore",
+    "origin": "Yangon",
+    "originIata": "RGN",
+    "originCountry": "Myanmar",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -202193,12 +202193,12 @@
     ]
   },
   {
-    "from": "Yogyakarta",
-    "to": "Singapore",
-    "fromIata": "YIA",
-    "toIata": "SIN",
-    "fromCountry": "Indonesia",
-    "toCountry": "Singapore",
+    "origin": "Yogyakarta",
+    "originIata": "YIA",
+    "originCountry": "Indonesia",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "South East Asia",
     "details": [
       {
@@ -202831,12 +202831,12 @@
     ]
   },
   {
-    "from": "Zürich",
-    "to": "Singapore",
-    "fromIata": "ZRH",
-    "toIata": "SIN",
-    "fromCountry": "Switzerland",
-    "toCountry": "Singapore",
+    "origin": "Zürich",
+    "originIata": "ZRH",
+    "originCountry": "Switzerland",
+    "destination": "Singapore",
+    "destinationIata": "SIN",
+    "destinationCountry": "Singapore",
     "region": "Europe",
     "details": [
       {
@@ -203703,12 +203703,12 @@
     ]
   },
   {
-    "from": "Frankfurt",
-    "to": "New York",
-    "fromIata": "FRA",
-    "toIata": "NYC",
-    "fromCountry": "Germany",
-    "toCountry": "USA",
+    "origin": "Frankfurt",
+    "originIata": "FRA",
+    "originCountry": "Germany",
+    "destination": "New York",
+    "destinationIata": "NYC",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {
@@ -205247,12 +205247,12 @@
     ]
   },
   {
-    "from": "Hong Kong",
-    "to": "San Francisco",
-    "fromIata": "HKG",
-    "toIata": "SFO",
-    "fromCountry": "Hong Kong",
-    "toCountry": "USA",
+    "origin": "Hong Kong",
+    "originIata": "HKG",
+    "originCountry": "Hong Kong",
+    "destination": "San Francisco",
+    "destinationIata": "SFO",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {
@@ -205875,12 +205875,12 @@
     ]
   },
   {
-    "from": "Houston",
-    "to": "Manchester",
-    "fromIata": "IAH",
-    "toIata": "MAN",
-    "fromCountry": "USA",
-    "toCountry": "UK",
+    "origin": "Houston",
+    "originIata": "IAH",
+    "originCountry": "USA",
+    "destination": "Manchester",
+    "destinationIata": "MAN",
+    "destinationCountry": "UK",
     "region": "Europe",
     "details": [
       {
@@ -206589,12 +206589,12 @@
     ]
   },
   {
-    "from": "Los Angeles",
-    "to": "Tokyo",
-    "fromIata": "LAX",
-    "toIata": "TYO",
-    "fromCountry": "USA",
-    "toCountry": "Japan",
+    "origin": "Los Angeles",
+    "originIata": "LAX",
+    "originCountry": "USA",
+    "destination": "Tokyo",
+    "destinationIata": "TYO",
+    "destinationCountry": "Japan",
     "region": "North Asia",
     "details": [
       {
@@ -207476,12 +207476,12 @@
     ]
   },
   {
-    "from": "Manchester",
-    "to": "Houston",
-    "fromIata": "MAN",
-    "toIata": "IAH",
-    "fromCountry": "UK",
-    "toCountry": "USA",
+    "origin": "Manchester",
+    "originIata": "MAN",
+    "originCountry": "UK",
+    "destination": "Houston",
+    "destinationIata": "IAH",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {
@@ -208216,12 +208216,12 @@
     ]
   },
   {
-    "from": "New York",
-    "to": "Frankfurt",
-    "fromIata": "NYC",
-    "toIata": "FRA",
-    "fromCountry": "USA",
-    "toCountry": "Germany",
+    "origin": "New York",
+    "originIata": "NYC",
+    "originCountry": "USA",
+    "destination": "Frankfurt",
+    "destinationIata": "FRA",
+    "destinationCountry": "Germany",
     "region": "Europe",
     "details": [
       {
@@ -209440,12 +209440,12 @@
     ]
   },
   {
-    "from": "San Francisco",
-    "to": "Hong Kong",
-    "fromIata": "SFO",
-    "toIata": "HKG",
-    "fromCountry": "USA",
-    "toCountry": "Hong Kong",
+    "origin": "San Francisco",
+    "originIata": "SFO",
+    "originCountry": "USA",
+    "destination": "Hong Kong",
+    "destinationIata": "HKG",
+    "destinationCountry": "Hong Kong",
     "region": "North Asia",
     "details": [
       {
@@ -210045,12 +210045,12 @@
     ]
   },
   {
-    "from": "Tokyo",
-    "to": "Los Angeles",
-    "fromIata": "TYO",
-    "toIata": "LAX",
-    "fromCountry": "Japan",
-    "toCountry": "USA",
+    "origin": "Tokyo",
+    "originIata": "TYO",
+    "originCountry": "Japan",
+    "destination": "Los Angeles",
+    "destinationIata": "LAX",
+    "destinationCountry": "USA",
     "region": "North America",
     "details": [
       {

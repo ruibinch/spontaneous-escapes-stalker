@@ -25,13 +25,13 @@ export const getColumns = (filters: {
     ...(filters.showRoutesAs === 'separate'
       ? [
           {
-            key: 'from',
+            key: 'origin',
             label: 'Origin',
             allowsSorting: true,
             sortBy: 'string' as const,
           },
           {
-            key: 'to',
+            key: 'destination',
             label: 'Destination',
             allowsSorting: true,
             sortBy: 'string' as const,

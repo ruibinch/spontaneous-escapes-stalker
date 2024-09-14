@@ -86,7 +86,7 @@ function BlackoutPctTable({
         <TableBody items={data}>
           {(item) => (
             <TableRow
-              key={`${item.fromIata}-${item.toIata}`}
+              key={`${item.originIata}-${item.destinationIata}`}
               className={cn(CommonStyles.Border, 'border-b')}
             >
               {(columnKey) => (
@@ -96,13 +96,13 @@ function BlackoutPctTable({
                       case 'route':
                         return (
                           <Link
-                            key={`${item.fromIata}${item.toIata}`}
-                            href={`/route/${item.fromIata}${item.toIata}`}
+                            key={`${item.originIata}${item.destinationIata}`}
+                            href={`/route/${item.originIata}${item.destinationIata}`}
                             size="sm"
                             underline="hover"
                             className="text-xs text-blue-500 dark:text-blue-400"
                           >
-                            {`${item.from} - ${item.to}`}
+                            {`${item.origin} - ${item.destination}`}
                           </Link>
                         );
                       case 'averageBlackoutPct':

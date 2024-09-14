@@ -31,12 +31,12 @@ export type RedemptionEntry = {
 };
 
 export type RouteAnalysisEntry = {
-  from: string;
-  to: string;
-  fromIata: string;
-  toIata: string;
-  fromCountry: string;
-  toCountry: string;
+  origin: string;
+  originIata: string;
+  originCountry: string;
+  destination: string;
+  destinationIata: string;
+  destinationCountry: string;
   region: string;
   details: Array<{
     month: string;

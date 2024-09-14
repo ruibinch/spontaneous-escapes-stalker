@@ -37,17 +37,20 @@ export function RouteOverviewContent() {
     Z: [],
   };
 
-  routeAnalysisList.forEach(({ from, fromIata, to, toIata }) => {
-    const classificationLetter = (() => {
-      const classificationCity = to === 'Singapore' ? from : to;
-      return classificationCity[0];
-    })();
+  routeAnalysisList.forEach(
+    ({ origin, originIata, destination, destinationIata }) => {
+      const classificationLetter = (() => {
+        const classificationCity =
+          destination === 'Singapore' ? origin : destination;
+        return classificationCity[0];
+      })();
 
-    routeOverviewDict[classificationLetter].push({
-      label: `${from}-${to}`,
-      href: `/route/${fromIata}${toIata}`,
-    });
-  });
+      routeOverviewDict[classificationLetter].push({
+        label: `${origin}-${destination}`,
+        href: `/route/${originIata}${destinationIata}`,
+      });
+    },
+  );
 
   const routeOverviewList = Object.entries(routeOverviewDict).map(
     ([letter, routes]) => ({

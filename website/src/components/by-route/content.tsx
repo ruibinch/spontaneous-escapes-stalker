@@ -46,7 +46,8 @@ export function ByRouteContent({
   const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
   const year = searchParams.get('year') ?? YEAR_ALL;
 
-  const { from, to, fromIata, toIata, detailsList } = routeInfo;
+  const { origin, destination, originIata, destinationIata, detailsList } =
+    routeInfo;
 
   const detailsListFiltered = filterRouteDetailsList({
     detailsList,
@@ -62,10 +63,10 @@ export function ByRouteContent({
         breadcrumbs={
           <Breadcrumbs size="md">
             <BreadcrumbItem href="/route">View by Route</BreadcrumbItem>
-            <BreadcrumbItem>{`${fromIata}-${toIata}`}</BreadcrumbItem>
+            <BreadcrumbItem>{`${originIata}-${destinationIata}`}</BreadcrumbItem>
           </Breadcrumbs>
         }
-        title={`${from} - ${to}`}
+        title={`${origin} - ${destination}`}
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>
@@ -73,7 +74,7 @@ export function ByRouteContent({
 
         <div className="flex flex-col gap-4">
           <ByRouteSummary
-            routeMetadata={{ fromIata, toIata }}
+            routeMetadata={{ originIata, destinationIata }}
             detailsList={detailsList}
             detailsListFiltered={detailsListFiltered}
           />

@@ -37,7 +37,12 @@ export function RouteRedeemablePctTable() {
     .filter((entry) => {
       return isSearchTermMatch({
         searchTerm,
-        strings: [entry.from, entry.fromIata, entry.to, entry.toIata],
+        strings: [
+          entry.origin,
+          entry.originIata,
+          entry.destination,
+          entry.destinationIata,
+        ],
       });
     })
     .map((entry) => {
@@ -59,8 +64,8 @@ export function RouteRedeemablePctTable() {
       }).length;
 
       return {
-        route: `${entry.from} - ${entry.to}`,
-        routeIata: `${entry.fromIata}${entry.toIata}`,
+        route: `${entry.origin} - ${entry.destination}`,
+        routeIata: `${entry.originIata}${entry.destinationIata}`,
         numMonthsWithRedemption,
         numMonthsWithFlight,
         redeemablePct: roundToDp(

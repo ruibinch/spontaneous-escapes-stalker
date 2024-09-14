@@ -27,10 +27,10 @@ import { getColumns } from './columns';
 import { MonthColumnOrder, ShowRoutesAs, TopContent } from './top-content';
 
 export type DatumForSeparateRoutes = {
-  from: string;
-  fromIata: string;
-  to: string;
-  toIata: string;
+  origin: string;
+  originIata: string;
+  destination: string;
+  destinationIata: string;
   numRedemptions: number;
   numMonths: number;
   averageBlackoutPct: number;
@@ -55,7 +55,10 @@ export interface DetailsTableContentProps {
 const isDatumForSeparateRoutes = (
   d: DatumForSeparateRoutes | DatumForCombinedRoutes,
 ): d is DatumForSeparateRoutes =>
-  'from' in d && 'fromIata' in d && 'to' in d && 'toIata' in d;
+  'origin' in d &&
+  'originIata' in d &&
+  'destination' in d &&
+  'destinationIata' in d;
 
 export function DetailsTableContent({
   data: inputData,
@@ -169,7 +172,7 @@ export function DetailsTableContent({
             <TableRow
               key={
                 isDatumForSeparateRoutes(item)
-                  ? `${item.from}#${item.to}`
+                  ? `${item.origin}#${item.destination}`
                   : item.cities
               }
               className={cn(CommonStyles.Border, 'border-b')}
@@ -198,8 +201,8 @@ function renderCell({
   columnKey: string;
 }) {
   switch (columnKey) {
-    case 'from':
-    case 'to':
+    case 'origin':
+    case 'destination':
     case 'numRedemptions':
     case 'numMonths':
       return getKeyValue(item, columnKey);
@@ -224,18 +227,18 @@ function renderCell({
           <TooltipCustom content="View detailed route info">
             {isDatumForSeparateRoutes(item) ? (
               <Link
-                key={`${item.fromIata}${item.toIata}`}
-                href={`/route/${item.fromIata}${item.toIata}`}
+                key={`${item.originIata}${item.destinationIata}`}
+                href={`/route/${item.originIata}${item.destinationIata}`}
                 size="sm"
                 underline="hover"
                 onClick={() => {
                   trackEvent(['playground', 'detailsTable'], {
-                    route: `${item.fromIata}${item.toIata}`,
+                    route: `${item.originIata}${item.destinationIata}`,
                   });
                 }}
                 className="text-xs text-blue-500 dark:text-blue-400"
               >
-                {`${item.fromIata}-${item.toIata}`}
+                {`${item.originIata}-${item.destinationIata}`}
               </Link>
             ) : (
               <div className="flex flex-col gap-1">

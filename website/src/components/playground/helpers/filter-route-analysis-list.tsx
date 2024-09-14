@@ -28,12 +28,12 @@ export function filterRouteAnalysisList({
               isSearchTermExactMatch({
                 searchTerm,
                 strings: [
-                  d.from,
-                  d.fromIata,
-                  d.fromCountry,
-                  d.to,
-                  d.toIata,
-                  d.toCountry,
+                  d.origin,
+                  d.originIata,
+                  d.originCountry,
+                  d.destination,
+                  d.destinationIata,
+                  d.destinationCountry,
                 ],
               }),
             )

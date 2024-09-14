@@ -6,10 +6,10 @@ import routeAnalysisFile from '@/static/route-analysis.json';
 const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
 export interface RoutesStats {
-  from: string;
-  to: string;
-  fromIata: string;
-  toIata: string;
+  origin: string;
+  originIata: string;
+  destination: string;
+  destinationIata: string;
   numRedemptions: number;
   numMonths: number;
   averageBlackoutPct: number;
@@ -57,10 +57,10 @@ export const useRoutesStats = (): RoutesStats[] => {
           : 0;
 
       return {
-        from: entry.from,
-        to: entry.to,
-        fromIata: entry.fromIata,
-        toIata: entry.toIata,
+        origin: entry.origin,
+        originIata: entry.originIata,
+        destination: entry.destination,
+        destinationIata: entry.destinationIata,
         numRedemptions,
         numMonths,
         averageBlackoutPct,

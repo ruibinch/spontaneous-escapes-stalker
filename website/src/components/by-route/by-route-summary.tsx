@@ -6,17 +6,19 @@ import { SummaryEntryCard } from '../common/summary-entry-card';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
 
 export function ByRouteSummary({
-  routeMetadata: { fromIata, toIata },
+  routeMetadata: { originIata, destinationIata },
   detailsList,
   detailsListFiltered,
 }: {
-  routeMetadata: { fromIata: string; toIata: string };
+  routeMetadata: { originIata: string; destinationIata: string };
   detailsList: RouteDetailDatum[];
   detailsListFiltered: RouteDetailDatum[];
 }) {
   const routesStats = useRoutesStats();
   const routeStats = routesStats.find(
-    (stat) => stat.fromIata === fromIata && stat.toIata === toIata,
+    (stat) =>
+      stat.originIata === originIata &&
+      stat.destinationIata === destinationIata,
   );
 
   return (
@@ -130,7 +132,9 @@ function calcAvgBlackoutPct(list: RouteDetailDatum[]) {
     (_blackoutPctSum, blackoutPct) => _blackoutPctSum + blackoutPct,
     0,
   );
-  return `${roundToDp(blackoutPctSum / avgBlackoutPctList.length, 1)}%`;
+  return avgBlackoutPctList.length > 0
+    ? `${roundToDp(blackoutPctSum / avgBlackoutPctList.length, 1)}%`
+    : '-';
 }
 
 function getBadgeText({

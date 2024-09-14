@@ -8,11 +8,11 @@ const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
 export default function ByRoute({ params }: { params: { route: string } }) {
   const route = params.route.toUpperCase();
-  const fromIata = route.slice(0, 3);
-  const toIata = route.slice(3, 6);
+  const originIata = route.slice(0, 3);
+  const destinationIata = route.slice(3, 6);
 
   const routeAnalysisEntry = routeAnalysisList.find(
-    (d) => d.fromIata === fromIata && d.toIata === toIata,
+    (d) => d.originIata === originIata && d.destinationIata === destinationIata,
   );
 
   if (!routeAnalysisEntry) {

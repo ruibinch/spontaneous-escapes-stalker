@@ -26,7 +26,8 @@ export function DetailsTable(props: Props) {
     (_dataForSeparateRoutes: DatumForSeparateRoutes[], entry) => {
       const routeStats = routesStats.find(
         (stats) =>
-          entry.fromIata === stats.fromIata && entry.toIata === stats.toIata,
+          entry.originIata === stats.originIata &&
+          entry.destinationIata === stats.destinationIata,
       );
       // undefined routeStats indicates no redemptions for the route
       if (!routeStats) return _dataForSeparateRoutes;
@@ -50,10 +51,10 @@ export function DetailsTable(props: Props) {
       );
 
       _dataForSeparateRoutes.push({
-        from: entry.from,
-        fromIata: entry.fromIata,
-        to: entry.to,
-        toIata: entry.toIata,
+        origin: entry.origin,
+        originIata: entry.originIata,
+        destination: entry.destination,
+        destinationIata: entry.destinationIata,
         numRedemptions: routeStats.numRedemptions,
         numMonths: routeStats.numMonths,
         averageBlackoutPct: routeStats.averageBlackoutPct,
@@ -86,7 +87,7 @@ function makeDataForCombinedRoutes(
   return (() => {
     const cityPairToRoutes = data.reduce(
       (_cityPairToRoutes: Record<string, RouteAnalysisEntry[]>, entry) => {
-        const cityPair = [entry.from, entry.to]
+        const cityPair = [entry.origin, entry.destination]
           .sort((a, b) => {
             // Singapore should be the first entry in the 2-tuple
             if (a === 'Singapore') return -1;
@@ -119,7 +120,7 @@ function makeDataForCombinedRoutes(
         }[] = [];
 
         entries.forEach((entry) => {
-          routesIata.push(`${entry.fromIata}-${entry.toIata}`);
+          routesIata.push(`${entry.originIata}-${entry.destinationIata}`);
           let averageBlackoutPctSumForRouteAcrossMonths = 0;
           let numRedemptionsForRoute = 0;
           let numRedemptionMonthsForRoute = 0;

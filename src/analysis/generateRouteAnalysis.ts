@@ -31,12 +31,12 @@ type Details = {
 type DetailsForMonth = Details & { month: Month };
 type RouteAnalysisDict = Record<Route, Record<Month, Details>>;
 type RouteAnalysisEntry = {
-  from: string;
-  to: string;
-  fromIata: string;
-  toIata: string;
-  fromCountry: string;
-  toCountry: string;
+  origin: string;
+  originIata: string;
+  originCountry: string;
+  destination: string;
+  destinationIata: string;
+  destinationCountry: string;
   region: string;
   details: DetailsForMonth[];
 };
@@ -144,11 +144,11 @@ export function generateRouteAnalysis({
 
   const routeAnalysis = Object.entries(resultFormatted).map(
     ([route, details]) => {
-      const [from, to] = route.split('-');
-      const [fromIata, toIata] = getRouteIata(route).split('-');
+      const [origin, destination] = route.split('-');
+      const [originIata, destinationIata] = getRouteIata(route).split('-');
       const region = routeToRegionMap[route];
-      const fromCountry = getCountryFromCity(from);
-      const toCountry = getCountryFromCity(to);
+      const originCountry = getCountryFromCity(origin);
+      const destinationCountry = getCountryFromCity(destination);
 
       const detailsList = Object.entries(details).reduce(
         (_detailsList: DetailsForMonth[], [month, detailsInfo]) => {
@@ -162,12 +162,12 @@ export function generateRouteAnalysis({
       );
 
       const routeAnalysisEntry: RouteAnalysisEntry = {
-        from,
-        to,
-        fromIata,
-        toIata,
-        fromCountry,
-        toCountry,
+        origin,
+        originIata,
+        originCountry,
+        destination,
+        destinationIata,
+        destinationCountry,
         region,
         details: detailsList,
       };
