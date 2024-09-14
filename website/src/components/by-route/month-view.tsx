@@ -195,15 +195,29 @@ export function MonthView({
           </div>
           <div className="flex flex-col gap-1 items-end">
             <div className="flex flex-row gap-1">
-              <span>No redemption</span>
-              <div className="w-6 h-4 bg-gray-700 dark:bg-gray-800" />
-            </div>
-            <div className="flex flex-row gap-1">
-              <span>Blackout day</span>
+              <span>Redemption</span>
               <div
                 className={cn(
-                  'w-6 h-4 border border-neutral-300 dark:border-neutral-400',
-                  'bg-gray-700/10 dark:bg-sky-900/40 bg-stripes bg-stripes-white dark:bg-stripes-sky-900',
+                  'w-6 h-4 border border-neutral-300 dark:border-neutral-500',
+                  'bg-amber-100/50 dark:bg-blue-900',
+                )}
+              />
+            </div>
+            <div className="flex flex-row gap-1">
+              <span>Redemption with blackout</span>
+              <div
+                className={cn(
+                  'w-6 h-4 border border-neutral-300 dark:border-neutral-500',
+                  'bg-amber-200/50 dark:bg-blue-900 bg-stripes bg-stripes-white dark:bg-stripes-black',
+                )}
+              />
+            </div>
+            <div className="flex flex-row gap-1">
+              <span>No redemption</span>
+              <div
+                className={cn(
+                  'w-6 h-4 border border-neutral-300 dark:border-neutral-500',
+                  'bg-slate-200 dark:bg-slate-600',
                 )}
               />
             </div>
@@ -315,15 +329,17 @@ function MonthCalendar({
                       dayIdx === 0 && 'border-l',
                       (() => {
                         if (day === null) {
-                          return 'bg-gray-700/10 dark:bg-sky-900/40';
-                        }
-                        if (blackoutPeriodsForDay.length > 0) {
-                          return 'bg-gray-700/10 dark:bg-sky-900/40 bg-stripes bg-stripes-white dark:bg-stripes-sky-900';
+                          return '';
                         }
                         if (!hasRedemptionInMonth) {
-                          return 'bg-gray-700 dark:bg-gray-800';
+                          return 'bg-slate-200 dark:bg-slate-700';
+                          // return 'bg-gray-700 dark:bg-gray-950';
                         }
-                        return '';
+
+                        // there is a redemption in this month
+                        return blackoutPeriodsForDay.length > 0
+                          ? 'bg-amber-200/50 dark:bg-blue-900 bg-stripes bg-stripes-white dark:bg-stripes-black'
+                          : 'bg-amber-100/50 dark:bg-blue-900/75';
                       })(),
                     )}
                   >

@@ -57,10 +57,42 @@ export function MonthYearFrequencyTable({
       <div
         className={cn(
           CommonStyles.Border,
-          'flex flex-col gap-2 py-4 px-1 sm:px-2 border rounded-md shadow-sm',
+          'flex flex-col gap-4 py-4 px-1 sm:px-2 border rounded-md shadow-sm',
         )}
       >
-        <FlightClassLegend styles="pl-2" />
+        <div className="flex flex-row justify-between items-start text-xs">
+          <FlightClassLegend styles="pl-2" />
+
+          <div className="flex flex-col gap-0.5 items-end">
+            <div className="flex flex-row gap-1">
+              <span>Redemption</span>
+              <div
+                className={cn(
+                  'w-6 h-4 border border-neutral-300 dark:border-neutral-500',
+                  'bg-amber-100/50 dark:bg-blue-900',
+                )}
+              />
+            </div>
+            <div className="flex flex-row gap-1">
+              <span>No redemption</span>
+              <div
+                className={cn(
+                  'w-6 h-4 border border-neutral-300 dark:border-neutral-500',
+                  'bg-slate-200 dark:bg-slate-600',
+                )}
+              />
+            </div>
+            <div className="flex flex-row gap-1">
+              <span>No data</span>
+              <div
+                className={cn(
+                  'w-6 h-4 border border-neutral-300 dark:border-neutral-500',
+                  'bg-gray-700 dark:bg-gray-800',
+                )}
+              />
+            </div>
+          </div>
+        </div>
 
         <div className={cn(TableStyles.Borders, 'border rounded-sm')}>
           <table className="table table-fixed w-full rounded-md text-center">
@@ -139,6 +171,7 @@ function renderCell({
   const monthDate = yyyymmToDate(yyyymm);
   const datasetStartDate = yyyymmToDate(monthsList[0]);
   const datasetEndDate = yyyymmToDate(monthsList[monthsList.length - 1]);
+  const isMonthInFuture = isAfter(monthDate, datasetEndDate);
 
   const noDataMessage = (() => {
     if (MONTHS_WITH_MISSING_DATA.includes(yyyymm)) {
@@ -150,7 +183,7 @@ function renderCell({
     if (isBefore(monthDate, datasetStartDate)) {
       return 'Pre-Spontaneous Escapes era';
     }
-    if (isAfter(monthDate, datasetEndDate)) {
+    if (isMonthInFuture) {
       return "We aren't there yet";
     }
     if (!monthsList.includes(yyyymm)) {
@@ -168,37 +201,40 @@ function renderCell({
           className={cn(
             TableStyles.Borders,
             'border-l',
-            isAfter(monthDate, datasetEndDate)
-              ? 'bg-gray-700/30 dark:bg-sky-900'
-              : 'bg-gray-700 dark:bg-sky-900/50',
+            'bg-gray-700 dark:bg-gray-900',
           )}
         />
       </TooltipCustom>
     );
   }
-  if (!valueAtYearMonth) {
-    return (
-      <td key={yyyymm} className={cn(TableStyles.Borders, 'border-l')}></td>
-    );
-  }
 
   const indicatorSize = isSmallWindow ? 'small' : 'normal';
-
   return (
-    <td key={yyyymm} className={cn(TableStyles.Borders, 'border-l')}>
-      <div className="flex justify-center">
-        <div className="flex flex-row gap-0.5 sm:gap-1">
-          {valueAtYearMonth.Y && (
-            <FlightClassIndicator flightClassCode="Y" size={indicatorSize} />
-          )}
-          {valueAtYearMonth.W && (
-            <FlightClassIndicator flightClassCode="W" size={indicatorSize} />
-          )}
-          {valueAtYearMonth.J && (
-            <FlightClassIndicator flightClassCode="J" size={indicatorSize} />
-          )}
+    <td
+      key={yyyymm}
+      className={cn(
+        TableStyles.Borders,
+        'border-l',
+        valueAtYearMonth
+          ? 'bg-amber-100/50 dark:bg-blue-900/75'
+          : 'bg-slate-200 dark:bg-slate-600',
+      )}
+    >
+      {valueAtYearMonth && (
+        <div className="flex justify-center">
+          <div className="flex flex-row gap-0.5 sm:gap-1">
+            {valueAtYearMonth.Y && (
+              <FlightClassIndicator flightClassCode="Y" size={indicatorSize} />
+            )}
+            {valueAtYearMonth.W && (
+              <FlightClassIndicator flightClassCode="W" size={indicatorSize} />
+            )}
+            {valueAtYearMonth.J && (
+              <FlightClassIndicator flightClassCode="J" size={indicatorSize} />
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </td>
   );
 }
