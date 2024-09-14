@@ -21,16 +21,18 @@ type RedemptionByFlightClass = Record<
   FlightClassCode,
   RedemptionInfoSingle | null
 >;
+
 type Details = {
   redemptionDetails: Partial<RedemptionByFlightClass>;
-  flightDetails?: {
-    sia: boolean;
-    silkair: boolean;
+  // if there are SIA/SilkAir flights operating this route for the month, based on OAG dataset
+  oagData?: {
+    hasSiaFlights: boolean;
+    hasSilkairFlights: boolean;
   };
 };
-
-type DetailsForMonth = Details & { month: Month };
+type DetailsWithMonth = Details & { month: Month };
 type RouteAnalysisDict = Record<Route, Record<Month, Details>>;
+
 type RouteAnalysisEntry = {
   origin: string;
   originIata: string;
@@ -39,7 +41,7 @@ type RouteAnalysisEntry = {
   destinationIata: string;
   destinationCountry: string;
   region: string;
-  details: DetailsForMonth[];
+  details: DetailsWithMonth[];
 };
 
 export function generateRouteAnalysis({
@@ -103,9 +105,9 @@ export function generateRouteAnalysis({
         ...routeAnalysisDict[routeFullname],
         [month]: {
           ...routeAnalysisDict[routeFullname]?.[month],
-          flightDetails: {
-            sia: hasSiaFlights,
-            silkair: hasSilkairFlights,
+          oagData: {
+            hasSiaFlights,
+            hasSilkairFlights,
           },
         },
       };
@@ -154,7 +156,7 @@ export function generateRouteAnalysis({
       const destinationCountry = getCountryFromCity(destination);
 
       const detailsList = Object.entries(details).reduce(
-        (_detailsList: DetailsForMonth[], [month, detailsInfo]) => {
+        (_detailsList: DetailsWithMonth[], [month, detailsInfo]) => {
           _detailsList.push({
             month,
             ...detailsInfo,

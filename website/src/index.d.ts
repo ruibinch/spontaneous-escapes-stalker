@@ -42,9 +42,9 @@ export type RouteAnalysisEntry = {
   details: Array<{
     month: string;
     redemptionDetails: Record<FlightClass, RedemptionInfoSingle | null>;
-    flightDetails?: {
-      sia: boolean;
-      silkair: boolean;
+    oagData?: {
+      hasSiaFlights: boolean;
+      hasSilkairFlights: boolean;
     };
   }>;
 };

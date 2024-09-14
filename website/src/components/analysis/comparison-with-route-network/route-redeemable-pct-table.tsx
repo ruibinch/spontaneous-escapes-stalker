@@ -59,8 +59,10 @@ export function RouteRedeemablePctTable() {
         );
       }).length;
       const numMonthsWithFlight = details.filter((detail) => {
-        const { sia, silkair } = detail.flightDetails ?? {};
-        return showSilkairRoutes ? sia || silkair : sia;
+        const { hasSiaFlights, hasSilkairFlights } = detail.oagData ?? {};
+        return showSilkairRoutes
+          ? hasSiaFlights || hasSilkairFlights
+          : hasSiaFlights;
       }).length;
 
       return {
@@ -252,5 +254,5 @@ function RouteRedeemablePctTableContent({
  * Months not part of the OAG dataset should be excluded to avoid skewing the comparison percentage.
  */
 function excludeMonthsNotInOagDataset(details: RouteAnalysisEntry['details']) {
-  return details.filter((detail) => !!detail.flightDetails);
+  return details.filter((detail) => !!detail.oagData);
 }
