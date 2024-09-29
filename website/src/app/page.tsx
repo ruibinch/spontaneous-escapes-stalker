@@ -1,10 +1,7 @@
 import { PlaygroundContent } from '@/components/playground/content';
-import { differenceInCalendarDays } from 'date-fns';
 import fs from 'fs';
 import path from 'path';
 import { Suspense } from 'react';
-
-const NEW_REDEMPTION_WITHIN_NUM_DAYS = 5;
 
 export default function Playground() {
   const latestRedemptionAtFilepath = path.join(
@@ -17,13 +14,10 @@ export default function Playground() {
     latestRedemptionAtFilepath,
     'utf8',
   );
-  const isNewRedemption =
-    differenceInCalendarDays(new Date(), new Date(latestRedemptionAt)) <=
-    NEW_REDEMPTION_WITHIN_NUM_DAYS;
 
   return (
     <Suspense>
-      <PlaygroundContent isNewRedemption={isNewRedemption} />;
+      <PlaygroundContent latestRedemptionAt={new Date(latestRedemptionAt)} />;
     </Suspense>
   );
 }

@@ -1,10 +1,24 @@
 import { Link, cn } from '@nextui-org/react';
 import { getMonthsList } from '@/common/get-data-time-range';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
-import { format } from 'date-fns';
+import { differenceInCalendarDays, format } from 'date-fns';
 import { trackEvent } from '@/analytics';
 
-export function NewRedemptionAlert() {
+const NEW_REDEMPTION_WITHIN_NUM_DAYS = 7;
+
+export function NewRedemptionAlert({
+  latestRedemptionAt,
+}: {
+  latestRedemptionAt: Date;
+}) {
+  const isNewRedemption =
+    differenceInCalendarDays(new Date(), new Date(latestRedemptionAt)) <=
+    NEW_REDEMPTION_WITHIN_NUM_DAYS;
+
+  if (!isNewRedemption) {
+    return null;
+  }
+
   const monthsList = getMonthsList();
   const latestMonth = monthsList[monthsList.length - 1];
 

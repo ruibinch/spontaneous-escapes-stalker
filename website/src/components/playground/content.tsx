@@ -45,9 +45,9 @@ const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 const monthsList = getMonthsList();
 
 export function PlaygroundContent({
-  isNewRedemption,
+  latestRedemptionAt,
 }: {
-  isNewRedemption: boolean;
+  latestRedemptionAt: Date;
 }) {
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get('searchTerm') ?? '';
@@ -81,7 +81,7 @@ export function PlaygroundContent({
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
-        {isNewRedemption && <NewRedemptionAlert />}
+        <NewRedemptionAlert latestRedemptionAt={latestRedemptionAt} />
 
         <PlaygroundFilters />
 
