@@ -1,4 +1,4 @@
-import { addMonths, isWithinInterval, subDays } from 'date-fns';
+import { addMonths, isWithinInterval } from 'date-fns';
 import fs from 'fs';
 import { escapeCharacters } from './lib/telegram/helpers';
 import { scrape } from './scrape';
@@ -35,10 +35,10 @@ function checkNextMonthRedemptionsAlreadyPublished() {
   const isNextMonthRedemptionsAlreadyPublished =
     checkNextMonthRedemptionsAlreadyPublished();
   // also allow if redemptions are already published but it's the first run of the day (i.e. before 0710), to cater for updates to the site
-  const yesterdayDate = subDays(new Date(), 1).toISOString().split('T')[0];
+  const dateString = new Date().toISOString().split('T')[0]; // YYYY-MM-DD in UTC
   const isFirstRunOfDay = isWithinInterval(new Date(), {
-    start: new Date(`${yesterdayDate}T23:00:00.000Z`),
-    end: new Date(`${yesterdayDate}T23:10:00.000Z`),
+    start: new Date(`${dateString}T23:00:00.000Z`),
+    end: new Date(`${dateString}T23:05:00.000Z`),
   });
 
   if (isNextMonthRedemptionsAlreadyPublished && !isFirstRunOfDay) {
