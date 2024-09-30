@@ -29,6 +29,7 @@ Each individual redemption is parsed into a JSON structure to facilitate further
       "to": "2022-05-26"
     }
   ],
+  "blackoutPct": 3.2,
   "region": "South East Asia",
   "redemptionMonth": "202205"
 }
