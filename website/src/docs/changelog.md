@@ -1,3 +1,9 @@
+# 2.8.1 - 2024-09-30
+
+- Implemented searching by both airport and city IATA codes for cities with multiple international airports, e.g. NYC, TYO
+- Add blackout % to by-month details table
+- Tweaked colours for year/month view calendars on by-route page
+
 # 2.8.0 - 2024-09-11
 
 - Added homepage banner for a newly released redemption
