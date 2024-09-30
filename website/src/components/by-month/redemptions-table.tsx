@@ -23,15 +23,17 @@ import {
 } from '../common/table/table-rows-per-page';
 import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 import { CommonStyles } from '../common/styles';
+import { formatToDp } from '@/common/format-to-dp';
 
 const columns = [
-  { key: 'actions', label: 'Details' },
+  { key: 'actions', label: 'Route' },
   { key: 'origin', label: 'Origin', allowsSorting: true },
   { key: 'destination', label: 'Destination', allowsSorting: true },
   { key: 'flightClass', label: 'Flight Class' },
   { key: 'flightNos', label: 'Flight No.' },
   { key: 'milesRequired', label: 'Miles Required', allowsSorting: true },
   { key: 'blackoutPeriod', label: 'Blackout Period' },
+  { key: 'blackoutPct', label: 'Blackout %', allowsSorting: true },
   { key: 'region', label: 'Region' },
 ];
 
@@ -62,10 +64,10 @@ export function RedemptionsTable({
   const handleSortChange = ({ column, direction }: SortDescriptor) => {
     let sortDirection = direction;
 
-    if (column === 'milesRequired') {
+    if (column === 'milesRequired' || column === 'blackoutPct') {
       // if this is the first sort, sort descending by default
       sortDirection = sortDescriptor?.direction ? direction : 'descending';
-      setData(sortByNumericField(inputData, 'milesRequired', sortDirection));
+      setData(sortByNumericField(inputData, column, sortDirection));
     } else if (column === 'origin' || column === 'destination') {
       setData(sortByStringField(inputData, column, direction));
     }
@@ -146,6 +148,8 @@ export function RedemptionsTable({
                           return item[columnKey].toLocaleString();
                         case 'blackoutPeriod':
                           return renderBlackoutPeriodCell(item[columnKey]);
+                        case 'blackoutPct':
+                          return `${formatToDp(item[columnKey], 1)}%`;
                         case 'flightNos':
                           return item[columnKey].join(', ');
                         default:

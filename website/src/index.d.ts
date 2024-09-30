@@ -27,6 +27,7 @@ export type RedemptionEntry = {
     to: string;
     flightNos?: string[];
   }>;
+  blackoutPct: number;
   region: string;
 };
 
