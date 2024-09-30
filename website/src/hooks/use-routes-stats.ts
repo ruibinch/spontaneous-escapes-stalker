@@ -1,6 +1,7 @@
 import { notEmpty } from '@/common/not-empty';
 import { roundToDp } from '@/common/round-to-dp';
-import { RouteAnalysisEntry } from '@/index';
+import { flightClassCodeOrder } from '@/components/common/flight-class-code-to-name';
+import { BlackoutPeriodData, RouteAnalysisEntry } from '@/index';
 
 export interface RoutesStats {
   origin: string;
@@ -10,6 +11,7 @@ export interface RoutesStats {
   numRedemptions: number;
   numMonths: number;
   averageBlackoutPct: number;
+  blackoutPeriodsData: BlackoutPeriodData[];
   numRedemptionsRank: number;
   numMonthsRank: number;
   averageBlackoutPctRank: number;
@@ -26,8 +28,9 @@ export const useRoutesStats = (
       let numRedemptions = 0;
       let numMonths = 0;
       let averageBlackoutPctSumAcrossMonths = 0;
+      let blackoutPeriodsData: BlackoutPeriodData[] = [];
 
-      entry.details.forEach(({ redemptionDetails }) => {
+      entry.details.forEach(({ month, redemptionDetails }) => {
         const numRedemptionsInMonth =
           Object.values(redemptionDetails).filter(Boolean).length;
         numRedemptions += numRedemptionsInMonth;
@@ -44,6 +47,19 @@ export const useRoutesStats = (
             ? blackoutPctSumForMonth / numRedemptionsInMonth
             : 0;
         averageBlackoutPctSumAcrossMonths += averageBlackoutPctForMonth;
+
+        flightClassCodeOrder.forEach((flightClass) => {
+          const blackoutPeriod = redemptionDetails[flightClass]?.blackoutPeriod;
+          const blackoutPct = redemptionDetails[flightClass]?.blackoutPct;
+          if (blackoutPeriod && blackoutPct) {
+            blackoutPeriodsData.push({
+              month,
+              flightClass,
+              blackoutPeriod,
+              blackoutPct,
+            });
+          }
+        });
       });
 
       if (numRedemptions === 0 && numMonths === 0) {
@@ -63,6 +79,9 @@ export const useRoutesStats = (
         numRedemptions,
         numMonths,
         averageBlackoutPct,
+        blackoutPeriodsData: blackoutPeriodsData.sort(
+          (a, b) => b.blackoutPct - a.blackoutPct,
+        ),
       };
     })
     .filter(notEmpty);

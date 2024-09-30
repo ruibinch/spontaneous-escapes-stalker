@@ -115,3 +115,11 @@ export interface BlackoutPeriod {
   to: string;
   flightNos?: string[]; // if undefined, then it's applicable for all flights
 }
+
+// Used in analysis page
+export interface BlackoutPeriodData {
+  month: string;
+  flightClass: string;
+  blackoutPeriod: BlackoutPeriod[];
+  blackoutPct: number;
+}

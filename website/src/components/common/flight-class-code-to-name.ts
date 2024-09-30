@@ -4,4 +4,4 @@ export const flightClassCodeToName: Record<string, string> = {
   J: 'Business',
 };
 
-export const flightClassCodeOrder = ['Y', 'W', 'J'];
+export const flightClassCodeOrder = ['Y', 'W', 'J'] as const;

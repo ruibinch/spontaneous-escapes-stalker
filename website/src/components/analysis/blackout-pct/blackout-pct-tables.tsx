@@ -1,6 +1,6 @@
 import { CommonStyles } from '@/components/common/styles';
 import { RoutesStats, useRoutesStats } from '@/hooks/use-routes-stats';
-import { RouteAnalysisEntry } from '@/index';
+import { BlackoutPeriodData, RouteAnalysisEntry } from '@/index';
 import {
   Link,
   Table,
@@ -28,29 +28,67 @@ export function BlackoutPctTables({
   routeAnalysisList: RouteAnalysisEntry[];
 }) {
   const routesStats = useRoutesStats(routeAnalysisList);
-  // only include routes with a decent set of redemptions
-  const routesStatsFiltered = routesStats.filter(
-    (stats) => stats.numRedemptions > 10,
-  );
 
-  const topRoutesWithHighestBlackoutPct = [...routesStatsFiltered]
-    .sort((a, b) => b.averageBlackoutPct - a.averageBlackoutPct)
-    .slice(0, NUM_ROUTES_TO_DISPLAY);
-  const topRoutesWithLowestBlackoutPct = [...routesStatsFiltered]
-    .filter((stats) => stats.averageBlackoutPct > 0)
-    .sort((a, b) => a.averageBlackoutPct - b.averageBlackoutPct)
-    .slice(0, NUM_ROUTES_TO_DISPLAY);
+  const { topRoutesWithHighestBlackoutPct, topRoutesWithLowestBlackoutPct } =
+    (() => {
+      // only include routes with a decent set of redemptions
+      const routesStatsFiltered = routesStats.filter(
+        (stats) => stats.numRedemptions > 10,
+      );
+
+      const _topRoutesWithHighestBlackoutPct = [...routesStatsFiltered]
+        .sort((a, b) => b.averageBlackoutPct - a.averageBlackoutPct)
+        .slice(0, NUM_ROUTES_TO_DISPLAY);
+      const _topRoutesWithLowestBlackoutPct = [...routesStatsFiltered]
+        .filter((stats) => stats.averageBlackoutPct > 0)
+        .sort((a, b) => a.averageBlackoutPct - b.averageBlackoutPct)
+        .slice(0, NUM_ROUTES_TO_DISPLAY);
+      return {
+        topRoutesWithHighestBlackoutPct: _topRoutesWithHighestBlackoutPct,
+        topRoutesWithLowestBlackoutPct: _topRoutesWithLowestBlackoutPct,
+      };
+    })();
+
+  const redemptionsWithOver50PctBlackout = routesStats.reduce(
+    (
+      _redemptionsWithOver50PctBlackout: (BlackoutPeriodData & {
+        origin: string;
+        originIata: string;
+        destination: string;
+        destinationIata: string;
+      })[],
+      stats,
+    ) => {
+      // TODO: exclude months in dual-month releases
+      const blackoutPeriodsDataWithOver50PctBlackoutForRoute =
+        stats.blackoutPeriodsData.filter((period) => period.blackoutPct >= 70);
+      _redemptionsWithOver50PctBlackout.push(
+        ...blackoutPeriodsDataWithOver50PctBlackoutForRoute.map(
+          (blackoutPeriodsData) => ({
+            ...blackoutPeriodsData,
+            origin: stats.origin,
+            originIata: stats.originIata,
+            destination: stats.destination,
+            destinationIata: stats.destinationIata,
+          }),
+        ),
+      );
+      return _redemptionsWithOver50PctBlackout;
+    },
+    [],
+  );
+  console.log(redemptionsWithOver50PctBlackout);
 
   return (
     <div className="grid grid-cols-2 gap-2">
       <div className="col-span-2 xl:col-span-1">
-        <BlackoutPctTable
+        <AverageBlackoutPctTable
           title={`Top ${NUM_ROUTES_TO_DISPLAY} routes with highest blackout %`}
           data={topRoutesWithHighestBlackoutPct}
         />
       </div>
       <div className="col-span-2 xl:col-span-1">
-        <BlackoutPctTable
+        <AverageBlackoutPctTable
           title={`Top ${NUM_ROUTES_TO_DISPLAY} routes with lowest blackout %`}
           data={topRoutesWithLowestBlackoutPct}
         />
@@ -59,7 +97,7 @@ export function BlackoutPctTables({
   );
 }
 
-function BlackoutPctTable({
+function AverageBlackoutPctTable({
   title,
   data,
 }: {
