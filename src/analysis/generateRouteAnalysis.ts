@@ -41,6 +41,8 @@ type RouteAnalysisEntry = {
   destinationIata: string;
   destinationCountry: string;
   region: string;
+  isSiaOnlyRoute: boolean;
+  isSilkairOnlyRoute: boolean;
   details: DetailsWithMonth[];
 };
 
@@ -173,6 +175,23 @@ export function generateRouteAnalysis({
         return null;
       }
 
+      const isSilkairOnlyRoute = (() => {
+        const hasSiaFlightsValues = Object.values(details).map((detail) =>
+          detail.oagData ? detail.oagData.hasSiaFlights : undefined,
+        );
+        // no values at all, so we cannot assume it is a Silkair-only route
+        if (hasSiaFlightsValues.every((v) => v === undefined)) return false;
+        return hasSiaFlightsValues.every((v) => !v);
+      })();
+      const isSiaOnlyRoute = Object.values(details).every((detail) =>
+        detail.oagData ? !detail.oagData.hasSilkairFlights : true,
+      );
+      if (isSilkairOnlyRoute && isSiaOnlyRoute) {
+        throw new Error(
+          `Route ${route} cannot be both SIA-only and Silkair-only`,
+        );
+      }
+
       return {
         origin,
         originIata,
@@ -181,6 +200,8 @@ export function generateRouteAnalysis({
         destinationIata,
         destinationCountry,
         region,
+        isSiaOnlyRoute,
+        isSilkairOnlyRoute,
         details: detailsList,
       };
     })
