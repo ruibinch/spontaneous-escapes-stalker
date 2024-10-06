@@ -1,6 +1,6 @@
 import { trackEvent } from '@/analytics';
 import { Button, cn } from '@nextui-org/react';
-import { TooltipCustom } from '../common/tooltip-custom';
+import { Tooltip } from '../common/tooltip';
 import { useTheme } from '../common/use-theme';
 import { MoonIcon } from '../icons/moon';
 import { SunIcon } from '../icons/sun';
@@ -15,7 +15,7 @@ export function ThemeToggleItem() {
   };
 
   return (
-    <TooltipCustom content="Toggle theme" alwaysUseTooltip>
+    <Tooltip content="Toggle theme">
       <Button
         size="sm"
         radius="sm"
@@ -29,6 +29,6 @@ export function ThemeToggleItem() {
       >
         {isDarkTheme ? <MoonIcon /> : <SunIcon />}
       </Button>
-    </TooltipCustom>
+    </Tooltip>
   );
 }

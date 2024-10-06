@@ -4,7 +4,7 @@ import {
   flightClassCodeToName,
 } from '@/components/common/flight-class-code-to-name';
 import { FlightClassIndicator } from '@/components/common/flight-class-indicator';
-import { TooltipCustom } from '@/components/common/tooltip-custom';
+import { TooltipOrPopover } from '@/components/common/tooltip-or-popover';
 import { ArrowDownIcon } from '@/components/icons/arrow-down';
 import { ArrowUpIcon } from '@/components/icons/arrow-up';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
@@ -15,6 +15,7 @@ import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { CommonStyles } from '../../common/styles';
 import { useTheme } from '@/components/common/use-theme';
+import { Tooltip } from '@/components/common/tooltip';
 
 type FlightClassToCountDict = Record<string, number>;
 
@@ -126,10 +127,9 @@ function ComparisonTable({
             >
               Month
             </th>
-            <TooltipCustom
+            <Tooltip
               content="Average percentage breakdown of all redemptions"
               showArrow
-              alwaysUseTooltip
             >
               <th
                 className={cn(
@@ -139,14 +139,13 @@ function ComparisonTable({
               >
                 Average
               </th>
-            </TooltipCustom>
-            <TooltipCustom
+            </Tooltip>
+            <Tooltip
               content="Comparison of this month's percentage breakdown against the average"
               showArrow
-              alwaysUseTooltip
             >
               <th className="px-2 py-2 font-semibold">Comparison</th>
-            </TooltipCustom>
+            </Tooltip>
           </tr>
         </thead>
         <tbody>
@@ -163,12 +162,14 @@ function ComparisonTable({
                 }
               >
                 <td className={cn(CommonStyles.Border, 'px-2 border-r')}>
-                  <TooltipCustom content={flightClassCodeToName[flightClass]}>
+                  <TooltipOrPopover
+                    content={flightClassCodeToName[flightClass]}
+                  >
                     <div className="flex flex-row items-center gap-1">
                       <FlightClassIndicator flightClassCode={flightClass} />
                       {flightClass}
                     </div>
-                  </TooltipCustom>
+                  </TooltipOrPopover>
                 </td>
                 <td className={cn(CommonStyles.Border, 'py-1 border-r')}>
                   {toPct(monthValue)}

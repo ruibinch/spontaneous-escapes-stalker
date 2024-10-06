@@ -24,7 +24,7 @@ import {
   TableRowsPerPage,
   useRowsPerPageHandler,
 } from '../../common/table/table-rows-per-page';
-import { TooltipCustom } from '../../common/tooltip-custom';
+import { TooltipOrPopover } from '../../common/tooltip-or-popover';
 
 export function RouteRedeemablePctTable({
   routeAnalysisList,
@@ -102,7 +102,7 @@ export function RouteRedeemablePctTable({
       <div className="flex gap-2">
         <span className="text-sm">{'Percentage of routes featured on SE'}</span>
 
-        <TooltipCustom
+        <TooltipOrPopover
           content={
             'Flight class is not taken into account here, i.e. a route is considered featured on SE if at least one flight class is present in the month.'
           }
@@ -110,7 +110,7 @@ export function RouteRedeemablePctTable({
           <div className="cursor-pointer">
             <HelpCircleIcon width={16} height={16} />
           </div>
-        </TooltipCustom>
+        </TooltipOrPopover>
       </div>
 
       <div className="grid grid-cols-3 items-center">
@@ -189,7 +189,7 @@ function RouteRedeemablePctTableContent({
                     <div className="flex gap-2">
                       <span>{column.label}</span>
 
-                      <TooltipCustom
+                      <TooltipOrPopover
                         content={
                           '# months with route featured on SE / # months with flight route'
                         }
@@ -197,7 +197,7 @@ function RouteRedeemablePctTableContent({
                         <div className="cursor-pointer">
                           <HelpCircleIcon width={16} height={16} />
                         </div>
-                      </TooltipCustom>
+                      </TooltipOrPopover>
                     </div>
                   );
                 default:

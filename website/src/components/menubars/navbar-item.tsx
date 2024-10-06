@@ -2,7 +2,7 @@ import { trackEvent } from '@/analytics';
 import { cn } from '@nextui-org/react';
 import NextLink from 'next/link';
 import React from 'react';
-import { TooltipCustom } from '../common/tooltip-custom';
+import { Tooltip } from '../common/tooltip';
 import { BarStyles } from './bar.styles';
 
 interface Props {
@@ -27,13 +27,7 @@ export function NavbarItem({
         trackEvent(['navbar'], { page: title });
       }}
     >
-      <TooltipCustom
-        size="lg"
-        radius="sm"
-        content={title}
-        placement="bottom"
-        alwaysUseTooltip
-      >
+      <Tooltip size="lg" radius="sm" content={title} placement="bottom">
         <div className={cn(BarStyles.BarItem({ isActive }), 'p-2 rounded-md')}>
           {showRedDot && (
             // slightly hacky implementation as can't get absolute positioning to work properly
@@ -41,7 +35,7 @@ export function NavbarItem({
           )}
           <div className="text-inherit">{icon}</div>
         </div>
-      </TooltipCustom>
+      </Tooltip>
     </NextLink>
   );
 }

@@ -26,7 +26,7 @@ import {
   getFlightClassIndicatorColor,
 } from '../common/flight-class-indicator';
 import { CommonStyles } from '../common/styles';
-import { TooltipCustom } from '../common/tooltip-custom';
+import { TooltipOrPopover } from '../common/tooltip-or-popover';
 import { ChevronLeftIcon } from '../icons/chevron-left';
 import { ChevronRightIcon } from '../icons/chevron-right';
 import { ChevronsLeftIcon } from '../icons/chevrons-left';
@@ -36,6 +36,7 @@ import {
   makeBlackoutPeriodsByDayDict,
 } from './helpers/make-blackout-periods-by-day-dict';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
+import { Tooltip } from '../common/tooltip';
 
 /**
  * Returns the index in the months list corresponding to the input date.
@@ -472,7 +473,7 @@ function MonthSwitchButton({
   }
 
   return (
-    <TooltipCustom content={tooltip} alwaysUseTooltip>
+    <Tooltip content={tooltip}>
       <Button
         size="sm"
         variant="ghost"
@@ -482,6 +483,6 @@ function MonthSwitchButton({
       >
         {icon}
       </Button>
-    </TooltipCustom>
+    </Tooltip>
   );
 }

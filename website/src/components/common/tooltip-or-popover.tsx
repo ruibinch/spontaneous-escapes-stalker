@@ -11,24 +11,20 @@ import { BREAKPOINTS } from './breakpoints';
 
 type Props = Omit<TooltipProps, 'content'> & {
   content: string;
-  // use when rendering with Popover results in weird layout issues
-  // or if we want to disable the tooltip on mobile
-  alwaysUseTooltip?: boolean;
 };
 
-export function TooltipCustom(props: Props) {
+/**
+ * Use Tooltip when we always want to show a tooltip.
+ * Use TooltipOrPopover when we want to show a tooltip on hover on desktop, and a popover on click on mobile.
+ */
+export function TooltipOrPopover(props: Props) {
   const windowSize = useWindowSize();
 
-  // don't render tooltip if content is empty
   if (!props.content) {
     return props.children;
   }
 
-  if (
-    windowSize.width !== undefined &&
-    windowSize.width < BREAKPOINTS.sm &&
-    !props.alwaysUseTooltip
-  ) {
+  if (windowSize.width !== undefined && windowSize.width < BREAKPOINTS.sm) {
     return (
       <Popover
         radius="sm"

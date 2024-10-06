@@ -1,6 +1,6 @@
 import { HelpCircleIcon } from '@/components/icons/help-circle';
 import { cn } from '@nextui-org/react';
-import { TooltipCustom } from '../tooltip-custom';
+import { TooltipOrPopover } from '../tooltip-or-popover';
 
 export function ChartWrapper({
   title,
@@ -30,11 +30,11 @@ export function ChartWrapper({
           <span className="text-sm">{title}</span>
 
           {tooltip && (
-            <TooltipCustom content={tooltip}>
+            <TooltipOrPopover content={tooltip}>
               <div className="cursor-pointer">
                 <HelpCircleIcon width={16} height={16} />
               </div>
-            </TooltipCustom>
+            </TooltipOrPopover>
           )}
         </div>
 

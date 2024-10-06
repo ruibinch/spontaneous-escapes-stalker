@@ -1,23 +1,23 @@
-import { monthShortNameToNumMap } from '@/common/months-map';
-import { yyyymmToDate } from '@/common/yyyymm-to-date';
-import { FlightClass, RedemptionInfoSingle } from '@/index';
-import { cn } from '@nextui-org/react';
-import { isBefore, isAfter } from 'date-fns';
-import { FlightClassIndicator } from '../common/flight-class-indicator';
-import { makeMonthYearFrequencyData } from './helpers/make-month-year-frequency-data';
-import { RouteDetailDatum } from './helpers/make-route-details-list';
 import { getMonthsList } from '@/common/get-data-time-range';
-import { TooltipCustom } from '../common/tooltip-custom';
 import {
   MONTHS_WITH_MISSING_DATA,
   MONTHS_WITH_NO_REDEMPTION,
 } from '@/common/months-data-info';
+import { monthShortNameToNumMap } from '@/common/months-map';
+import { yyyymmToDate } from '@/common/yyyymm-to-date';
+import { useWindowSize } from '@/hooks/use-window-size';
+import { FlightClass, RedemptionInfoSingle } from '@/index';
+import { cn } from '@nextui-org/react';
+import { isAfter, isBefore } from 'date-fns';
+import { useSearchParams } from 'next/navigation';
+import { BREAKPOINTS } from '../common/breakpoints';
+import { YEAR_ALL } from '../common/filters/year-filter';
+import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { FlightClassLegend } from '../common/flight-class-legend';
 import { CommonStyles } from '../common/styles';
-import { useSearchParams } from 'next/navigation';
-import { YEAR_ALL } from '../common/filters/year-filter';
-import { useWindowSize } from '@/hooks/use-window-size';
-import { BREAKPOINTS } from '../common/breakpoints';
+import { Tooltip } from '../common/tooltip';
+import { makeMonthYearFrequencyData } from './helpers/make-month-year-frequency-data';
+import { RouteDetailDatum } from './helpers/make-route-details-list';
 
 const monthsList = getMonthsList();
 
@@ -195,7 +195,7 @@ function renderCell({
   if (noDataMessage) {
     // FIXME: popover doesn't work here so tooltip is not viewable on mobile
     return (
-      <TooltipCustom key={yyyymm} content={noDataMessage} alwaysUseTooltip>
+      <Tooltip key={yyyymm} content={noDataMessage}>
         <td
           key={yyyymm}
           className={cn(
@@ -204,7 +204,7 @@ function renderCell({
             'bg-gray-700 dark:bg-gray-900',
           )}
         />
-      </TooltipCustom>
+      </Tooltip>
     );
   }
 

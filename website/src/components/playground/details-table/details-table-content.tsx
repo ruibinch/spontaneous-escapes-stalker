@@ -1,7 +1,7 @@
 import { trackEvent } from '@/analytics';
 import { formatToDp } from '@/common/format-to-dp';
 import { CommonStyles } from '@/components/common/styles';
-import { TooltipCustom } from '@/components/common/tooltip-custom';
+import { TooltipOrPopover } from '@/components/common/tooltip-or-popover';
 import { FlightClass } from '@/index';
 import {
   Link,
@@ -224,7 +224,7 @@ function renderCell({
     case 'actions': {
       return (
         <div className="w-14">
-          <TooltipCustom content="View detailed route info">
+          <TooltipOrPopover content="View detailed route info">
             {isDatumForSeparateRoutes(item) ? (
               <Link
                 key={`${item.originIata}${item.destinationIata}`}
@@ -260,7 +260,7 @@ function renderCell({
                 ))}
               </div>
             )}
-          </TooltipCustom>
+          </TooltipOrPopover>
         </div>
       );
     }
