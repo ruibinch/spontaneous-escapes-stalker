@@ -25,6 +25,7 @@ import {
   useRowsPerPageHandler,
 } from '../../common/table/table-rows-per-page';
 import { TooltipOrPopover } from '../../common/tooltip-or-popover';
+import { Skeleton } from '@/components/common/skeleton';
 
 export function RouteRedeemablePctTable({
   routeAnalysisList,
@@ -115,29 +116,35 @@ export function RouteRedeemablePctTable({
 
       <div className="grid grid-cols-3 items-center">
         <div className="col-span-2">
-          <SearchTermFilter
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            placeholder="Filter by city / IATA"
-            useBasicDesign
-          />
+          <Skeleton>
+            <SearchTermFilter
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              placeholder="Filter by city / IATA"
+              useBasicDesign
+            />
+          </Skeleton>
         </div>
 
         <div className="justify-self-end">
-          <TableRowsPerPage
-            rowsPerPage={rowsPerPage}
-            onRowsPerPageChange={onRowsPerPageChange}
-            label="Show:"
-          />
+          <Skeleton>
+            <TableRowsPerPage
+              rowsPerPage={rowsPerPage}
+              onRowsPerPageChange={onRowsPerPageChange}
+              label="Show:"
+            />
+          </Skeleton>
         </div>
       </div>
 
-      <RouteRedeemablePctTableContent
-        data={dataSorted.slice(startIdx, endIdx)}
-        currPage={currPage}
-        setCurrPage={setCurrPage}
-        pages={pages}
-      />
+      <Skeleton>
+        <RouteRedeemablePctTableContent
+          data={dataSorted.slice(startIdx, endIdx)}
+          currPage={currPage}
+          setCurrPage={setCurrPage}
+          pages={pages}
+        />
+      </Skeleton>
     </div>
   );
 }

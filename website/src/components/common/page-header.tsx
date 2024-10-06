@@ -1,4 +1,5 @@
 import { cn } from '@nextui-org/react';
+import { Skeleton } from './skeleton';
 import { CommonStyles } from './styles';
 
 interface Props {
@@ -30,7 +31,10 @@ export function PageHeader({
         </div>
       </div>
 
-      <div className="justify-self-end">{rightComponent}</div>
+      {/* assumes that all rightComponent types are SilkairRoutesToggle; tweak if not so */}
+      <Skeleton className="justify-self-end">
+        <div>{rightComponent}</div>
+      </Skeleton>
     </div>
   );
 }

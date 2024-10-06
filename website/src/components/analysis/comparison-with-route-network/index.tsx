@@ -3,6 +3,7 @@ import { RedemptionsVsRouteNetworkCharts } from './redemptions-vs-route-network-
 import { RouteRedeemablePctTable } from './route-redeemable-pct-table';
 import { SectionHeader } from '../section-header';
 import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
+import { Skeleton } from '@/components/common/skeleton';
 
 export function ComparisonWithRouteNetwork({
   monthSummaryAnalysisList,
@@ -20,7 +21,9 @@ export function ComparisonWithRouteNetwork({
     <div className="flex flex-col gap-4">
       <SectionHeader header="Comparison with SIA/SilkAir route network" />
 
-      <AlertInfo content={explanatoryNotes} />
+      <Skeleton>
+        <AlertInfo content={explanatoryNotes} />
+      </Skeleton>
 
       <div className="grid grid-cols-3 gap-2">
         <div className="col-span-3 md:col-span-2">

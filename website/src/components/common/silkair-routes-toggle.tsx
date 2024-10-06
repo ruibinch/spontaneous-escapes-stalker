@@ -15,7 +15,7 @@ export function SilkairRoutesToggle() {
       isSelected={showSilkairRoutes}
       onValueChange={handleValueChange}
     >
-      Show SilkAir routes
+      Show SilkAir entries
     </Checkbox>
   );
 }

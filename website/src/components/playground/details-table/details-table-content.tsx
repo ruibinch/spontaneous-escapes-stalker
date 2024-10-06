@@ -25,6 +25,7 @@ import { TablePagination } from '../../common/table/table-pagination';
 import { useRowsPerPageHandler } from '../../common/table/table-rows-per-page';
 import { getColumns } from './columns';
 import { MonthColumnOrder, ShowRoutesAs, TopContent } from './top-content';
+import { Skeleton } from '@/components/common/skeleton';
 
 export type DatumForSeparateRoutes = {
   origin: string;

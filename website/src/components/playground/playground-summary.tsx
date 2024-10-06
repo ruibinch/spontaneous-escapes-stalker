@@ -2,6 +2,8 @@ import { getMonthsList } from '@/common/get-data-time-range';
 import { RouteAnalysisEntry } from '@/index';
 import { SummaryEntryCard } from '../common/summary-entry-card';
 import { isApplicableMonth } from './helpers/is-applicable-month';
+import { IS_CLIENT } from '@/common/env';
+import { Skeleton } from '../common/skeleton';
 
 export function PlaygroundSummary({
   routeAnalysisList,

@@ -12,7 +12,7 @@ import React, {
 const STORAGE_KEY = 'showSilkairRoutes';
 
 interface SilkairRoutesToggleContext {
-  showSilkairRoutes: boolean;
+  showSilkairRoutes: boolean | undefined;
   setShowSilkairRoutes: (value: boolean) => void;
 }
 
@@ -79,7 +79,7 @@ export const SilkairRoutesToggleContextProvider = (props: {
  */
 const getShowSilkairRoutes = () => {
   // check relies on localStorage so can only be done on client-side
-  if (IS_SERVER) return true;
+  if (IS_SERVER) return undefined;
 
   try {
     const savedValue = localStorage.getItem(STORAGE_KEY);
