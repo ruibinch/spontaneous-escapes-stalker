@@ -1,5 +1,6 @@
 import { CommonStyles } from '@/components/common/styles';
 import { RoutesStats, useRoutesStats } from '@/hooks/use-routes-stats';
+import { RouteAnalysisEntry } from '@/index';
 import {
   Link,
   Table,
@@ -21,8 +22,12 @@ const columns = [
   { key: 'averageBlackoutPct', label: 'Average blackout %' },
 ];
 
-export function BlackoutPctTables() {
-  const routesStats = useRoutesStats();
+export function BlackoutPctTables({
+  routeAnalysisList,
+}: {
+  routeAnalysisList: RouteAnalysisEntry[];
+}) {
+  const routesStats = useRoutesStats(routeAnalysisList);
   // only include routes with a decent set of redemptions
   const routesStatsFiltered = routesStats.filter(
     (stats) => stats.numRedemptions > 10,

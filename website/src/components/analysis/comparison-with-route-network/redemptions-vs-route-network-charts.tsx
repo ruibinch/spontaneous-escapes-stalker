@@ -11,12 +11,14 @@ import { covidLinePlugin } from '../../common/chart/covid-line-plugin';
 import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
 import { useTheme } from '../../common/use-theme';
 
-export function RedemptionsVsRouteNetworkCharts() {
+export function RedemptionsVsRouteNetworkCharts({
+  monthSummaryAnalysisList,
+}: {
+  monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
+}) {
   const { isDarkTheme } = useTheme();
   const { showSilkairRoutes } = useSilkairRoutesToggleContext();
 
-  const monthSummaryAnalysisList =
-    monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
   const monthsWithRouteNetworkData = getMonthsList({
     includeOnlyMonthsPresentInOagDataset: true,
   });

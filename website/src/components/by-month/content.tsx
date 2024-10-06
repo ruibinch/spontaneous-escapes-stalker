@@ -26,6 +26,7 @@ import { RoutesRegionDistributionChart } from './charts/routes-region-distributi
 import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
 import { RedemptionsTable } from './redemptions-table';
 import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 ChartJS.register(
   CategoryScale,
@@ -40,13 +41,20 @@ ChartJS.register(
 
 export function ByMonthContent({
   month,
-  redemptions,
+  redemptionsFull,
+  redemptionsSiaOnly,
   monthSummaryAnalysisEntry,
 }: {
   month: string;
-  redemptions: RedemptionEntry[];
+  redemptionsFull: RedemptionEntry[];
+  redemptionsSiaOnly: RedemptionEntry[];
   monthSummaryAnalysisEntry: MonthSummaryAnalysisEntry;
 }) {
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const redemptions = showSilkairRoutes ? redemptionsFull : redemptionsSiaOnly;
+  const shouldShowSilkairRoutesToggle =
+    redemptionsFull.length !== redemptionsSiaOnly.length;
+
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get('searchTerm') ?? '';
   const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
@@ -60,7 +68,6 @@ export function ByMonthContent({
       flightClass,
     },
   });
-
   const isFilterActive = redemptions.length !== redemptionsFiltered.length;
 
   return (
@@ -76,7 +83,9 @@ export function ByMonthContent({
           </Breadcrumbs>
         }
         title={`${month.slice(0, 4)} ${monthNumToNameMap[month.slice(4, 6)]}`}
-        rightComponent={<SilkairRoutesToggle />}
+        rightComponent={
+          shouldShowSilkairRoutesToggle && <SilkairRoutesToggle />
+        }
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>

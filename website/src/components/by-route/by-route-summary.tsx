@@ -4,17 +4,20 @@ import { flightClassCodeOrder } from '../common/flight-class-code-to-name';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { SummaryEntryCard } from '../common/summary-entry-card';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
+import { RouteAnalysisEntry } from '@/index';
 
 export function ByRouteSummary({
   routeMetadata: { originIata, destinationIata },
+  routeAnalysisList,
   detailsList,
   detailsListFiltered,
 }: {
   routeMetadata: { originIata: string; destinationIata: string };
+  routeAnalysisList: RouteAnalysisEntry[];
   detailsList: RouteDetailDatum[];
   detailsListFiltered: RouteDetailDatum[];
 }) {
-  const routesStats = useRoutesStats();
+  const routesStats = useRoutesStats(routeAnalysisList);
   const routeStats = routesStats.find(
     (stat) =>
       stat.originIata === originIata &&

@@ -1,15 +1,14 @@
+import { excludeSilkairFlightsFromMonthRedemptionList } from '@/common/exclude-silkair-flights';
 import { getMonthsList } from '@/common/get-data-time-range';
+import { getStaticFileContent } from '@/common/get-static-file-content';
 import { MONTHS_WITH_MISSING_DATA } from '@/common/months-data-info';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { ByMonthContent } from '@/components/by-month/content';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
-import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import patienceMyYoungPadawanImg from '@/static/patience-my-young-padawan.jpg';
 import { isAfter, isBefore } from 'date-fns';
-import { promises as fs } from 'fs';
 import Image from 'next/image';
-import path from 'path';
 
 export default async function ByMonth({
   params: { month },
@@ -56,17 +55,16 @@ export default async function ByMonth({
     );
   }
 
-  const redemptionsFilepath = path.join(
-    process.cwd(),
-    'src',
-    'static',
-    `${month}-redemptions-postprocessed.json`,
-  );
-  const redemptionsFile = await fs.readFile(redemptionsFilepath, 'utf8');
-  const redemptions = JSON.parse(redemptionsFile) as RedemptionEntry[];
-
-  const monthSummaryAnalysisList =
-    monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
+  const redemptionsFull = getStaticFileContent<RedemptionEntry[]>({
+    filename: `${month}-redemptions-postprocessed.json`,
+  });
+  const redemptionsSiaOnly =
+    excludeSilkairFlightsFromMonthRedemptionList(redemptionsFull);
+  const monthSummaryAnalysisList = getStaticFileContent<
+    MonthSummaryAnalysisEntry[]
+  >({
+    filename: 'month-summary-analysis.json',
+  });
   const monthSummaryAnalysisEntry = monthSummaryAnalysisList.find(
     (entry) => entry.month === month,
   ) as MonthSummaryAnalysisEntry;
@@ -74,7 +72,8 @@ export default async function ByMonth({
   return (
     <ByMonthContent
       month={month}
-      redemptions={redemptions}
+      redemptionsFull={redemptionsFull}
+      redemptionsSiaOnly={redemptionsSiaOnly}
       monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
     />
   );

@@ -4,13 +4,13 @@ import { lineOnHoverPlugin } from '@/components/common/chart/line-on-hover-plugi
 import { flightClassColors } from '@/components/common/colors';
 import { useTheme } from '@/components/common/use-theme';
 import { MonthSummaryAnalysisEntry } from '@/index';
-import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Line } from 'react-chartjs-2';
 
-const monthSummaryAnalysisList =
-  monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
-
-export function AverageBlackoutPctOverTime() {
+export function AverageBlackoutPctOverTime({
+  monthSummaryAnalysisList,
+}: {
+  monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
+}) {
   const { isDarkTheme } = useTheme();
   const averageBlackoutPctList = monthSummaryAnalysisList.map((entry) => ({
     month: entry.month,

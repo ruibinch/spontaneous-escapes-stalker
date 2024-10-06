@@ -39,6 +39,8 @@ export type RouteAnalysisEntry = {
   destinationIata: string;
   destinationCountry: string;
   region: string;
+  isSiaOnlyRoute: boolean;
+  isSilkairOnlyRoute: boolean;
   details: Array<{
     month: string;
     redemptionDetails: Record<FlightClass, RedemptionInfoSingle | null>;

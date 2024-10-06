@@ -2,7 +2,6 @@ import { roundToDp } from '@/common/round-to-dp';
 import { HelpCircleIcon } from '@/components/icons/help-circle';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RouteAnalysisEntry } from '@/index';
-import routeAnalysisFile from '@/static/route-analysis.json';
 import {
   Link,
   Table,
@@ -27,9 +26,11 @@ import {
 } from '../../common/table/table-rows-per-page';
 import { TooltipCustom } from '../../common/tooltip-custom';
 
-const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
-
-export function RouteRedeemablePctTable() {
+export function RouteRedeemablePctTable({
+  routeAnalysisList,
+}: {
+  routeAnalysisList: RouteAnalysisEntry[];
+}) {
   const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -50,12 +51,7 @@ export function RouteRedeemablePctTable() {
 
       const numMonthsWithRedemption = details.filter((detail) => {
         return Object.values(detail.redemptionDetails).some(
-          (redemptionInfo) => {
-            if (showSilkairRoutes) return !!redemptionInfo;
-            return redemptionInfo?.flightNos?.every((flightNo) =>
-              flightNo.startsWith('SQ'),
-            );
-          },
+          (redemptionInfo) => !!redemptionInfo,
         );
       }).length;
       const numMonthsWithFlight = details.filter((detail) => {

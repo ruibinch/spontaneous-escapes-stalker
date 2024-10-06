@@ -1,56 +1,44 @@
+'use client';
 import { trackEvent } from '@/analytics';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RouteAnalysisEntry } from '@/index';
-import routeAnalysisFile from '@/static/route-analysis.json';
 import { Link, cn } from '@nextui-org/react';
 import { PageHeader } from '../common/page-header';
 import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
 
-const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
+type RouteOverviewDict = Record<string, { label: string; href: string }[]>;
 
-export function RouteOverviewContent() {
-  const routeOverviewDict: Record<string, { label: string; href: string }[]> = {
-    A: [],
-    B: [],
-    C: [],
-    D: [],
-    E: [],
-    F: [],
-    G: [],
-    H: [],
-    I: [],
-    J: [],
-    K: [],
-    L: [],
-    M: [],
-    N: [],
-    O: [],
-    P: [],
-    Q: [],
-    R: [],
-    S: [],
-    T: [],
-    U: [],
-    V: [],
-    W: [],
-    X: [],
-    Y: [],
-    Z: [],
-  };
+export function RouteOverviewContent({
+  routeAnalysisListFull,
+  routeAnalysisListSiaOnly,
+}: {
+  routeAnalysisListFull: RouteAnalysisEntry[];
+  routeAnalysisListSiaOnly: RouteAnalysisEntry[];
+}) {
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const routeAnalysisList = showSilkairRoutes
+    ? routeAnalysisListFull
+    : routeAnalysisListSiaOnly;
 
-  routeAnalysisList.forEach(
-    ({ origin, originIata, destination, destinationIata }) => {
+  const routeOverviewDict = routeAnalysisList.reduce(
+    (
+      _routeOverviewDict: RouteOverviewDict,
+      { origin, originIata, destination, destinationIata },
+    ) => {
       const classificationLetter = (() => {
         const classificationCity =
           destination === 'Singapore' ? origin : destination;
         return classificationCity[0];
       })();
 
-      routeOverviewDict[classificationLetter].push({
+      _routeOverviewDict[classificationLetter].push({
         label: `${origin}-${destination}`,
         href: `/route/${originIata}${destinationIata}`,
       });
+      return _routeOverviewDict;
     },
+    getInitialRouteOverviewDict(),
   );
 
   const routeOverviewList = Object.entries(routeOverviewDict).map(
@@ -99,4 +87,35 @@ export function RouteOverviewContent() {
       </div>
     </div>
   );
+}
+
+function getInitialRouteOverviewDict(): RouteOverviewDict {
+  return {
+    A: [],
+    B: [],
+    C: [],
+    D: [],
+    E: [],
+    F: [],
+    G: [],
+    H: [],
+    I: [],
+    J: [],
+    K: [],
+    L: [],
+    M: [],
+    N: [],
+    O: [],
+    P: [],
+    Q: [],
+    R: [],
+    S: [],
+    T: [],
+    U: [],
+    V: [],
+    W: [],
+    X: [],
+    Y: [],
+    Z: [],
+  };
 }

@@ -2,8 +2,15 @@ import { AlertInfo } from '@/components/common/alert-info';
 import { RedemptionsVsRouteNetworkCharts } from './redemptions-vs-route-network-charts';
 import { RouteRedeemablePctTable } from './route-redeemable-pct-table';
 import { SectionHeader } from '../section-header';
+import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
 
-export function ComparisonWithRouteNetwork() {
+export function ComparisonWithRouteNetwork({
+  monthSummaryAnalysisList,
+  routeAnalysisList,
+}: {
+  monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
+  routeAnalysisList: RouteAnalysisEntry[];
+}) {
   const explanatoryNotes = [
     'The SIA/SilkAir route network dataset time range spans from Nov 2017 to Feb 2024.',
     'SilkAir ceased operations in end-2021; subsequently its flights were split between SIA and Scoot.',
@@ -17,11 +24,13 @@ export function ComparisonWithRouteNetwork() {
 
       <div className="grid grid-cols-3 gap-2">
         <div className="col-span-3 md:col-span-2">
-          <RedemptionsVsRouteNetworkCharts />
+          <RedemptionsVsRouteNetworkCharts
+            monthSummaryAnalysisList={monthSummaryAnalysisList}
+          />
         </div>
 
         <div className="col-span-3 md:col-span-1">
-          <RouteRedeemablePctTable />
+          <RouteRedeemablePctTable routeAnalysisList={routeAnalysisList} />
         </div>
       </div>
     </div>

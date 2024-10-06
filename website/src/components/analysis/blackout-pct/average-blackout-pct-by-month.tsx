@@ -7,13 +7,13 @@ import { makeChartOptions } from '@/components/common/chart/chart-options';
 import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
 import { useTheme } from '@/components/common/use-theme';
 import { MonthSummaryAnalysisEntry } from '@/index';
-import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar } from 'react-chartjs-2';
 
-const monthSummaryAnalysisList =
-  monthSummaryAnalysisFile as MonthSummaryAnalysisEntry[];
-
-export function AverageBlackoutPctByMonth() {
+export function AverageBlackoutPctByMonth({
+  monthSummaryAnalysisList,
+}: {
+  monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
+}) {
   const { isDarkTheme } = useTheme();
 
   const monthToBlackoutPctSumDict: Record<

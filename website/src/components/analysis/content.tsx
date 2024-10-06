@@ -1,3 +1,5 @@
+'use client';
+import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
 import { Divider, cn } from '@nextui-org/react';
 import {
   ArcElement,
@@ -16,6 +18,7 @@ import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
 import { BlackoutPct } from './blackout-pct';
 import { ComparisonWithRouteNetwork } from './comparison-with-route-network';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 ChartJS.register(
   CategoryScale,
@@ -29,16 +32,35 @@ ChartJS.register(
   Legend,
 );
 
-export function AnalysisContent() {
+export function AnalysisContent({
+  monthSummaryAnalysisList,
+  routeAnalysisListFull,
+  routeAnalysisListSiaOnly,
+}: {
+  monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
+  routeAnalysisListFull: RouteAnalysisEntry[];
+  routeAnalysisListSiaOnly: RouteAnalysisEntry[];
+}) {
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const routeAnalysisList = showSilkairRoutes
+    ? routeAnalysisListFull
+    : routeAnalysisListSiaOnly;
+
   return (
     <div>
       <PageHeader title="Analysis" rightComponent={<SilkairRoutesToggle />} />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
-        <ComparisonWithRouteNetwork />
+        <ComparisonWithRouteNetwork
+          monthSummaryAnalysisList={monthSummaryAnalysisList}
+          routeAnalysisList={routeAnalysisList}
+        />
 
         <Divider />
-        <BlackoutPct />
+        <BlackoutPct
+          monthSummaryAnalysisList={monthSummaryAnalysisList}
+          routeAnalysisList={routeAnalysisList}
+        />
 
         {/* TODO: by region drilldown? */}
       </div>

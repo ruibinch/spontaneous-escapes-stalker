@@ -1,8 +1,7 @@
 'use client';
-import { getMonthsList } from '@/common/get-data-time-range';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RouteAnalysisEntry } from '@/index';
-import routeAnalysisFile from '@/static/route-analysis.json';
 import { cn } from '@nextui-org/react';
 import {
   ArcElement,
@@ -42,14 +41,22 @@ ChartJS.register(
   Legend,
 );
 
-const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
-const monthsList = getMonthsList();
-
 export function PlaygroundContent({
   latestRedemptionAt,
+  routeAnalysisListFull,
+  routeAnalysisListSiaOnly,
+  monthsList,
 }: {
   latestRedemptionAt: Date;
+  routeAnalysisListFull: RouteAnalysisEntry[];
+  routeAnalysisListSiaOnly: RouteAnalysisEntry[];
+  monthsList: string[];
 }) {
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const routeAnalysisList = showSilkairRoutes
+    ? routeAnalysisListFull
+    : routeAnalysisListSiaOnly;
+
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get('searchTerm') ?? '';
   const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
@@ -102,7 +109,8 @@ export function PlaygroundContent({
         </div>
 
         <DetailsTable
-          data={routeAnalysisListFiltered}
+          routeAnalysisList={routeAnalysisList}
+          tableData={routeAnalysisListFiltered}
           startDate={startDate}
           endDate={endDate}
           months={month.split(',')}

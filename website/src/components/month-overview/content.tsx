@@ -1,3 +1,4 @@
+'use client';
 import { trackEvent } from '@/analytics';
 import { getMonthsList, getYearsList } from '@/common/get-data-time-range';
 import { monthNumToNameMap } from '@/common/months-map';

@@ -11,18 +11,19 @@ import { notEmpty } from '@/common/not-empty';
 import { useRoutesStats } from '@/hooks/use-routes-stats';
 
 type Props = {
-  data: RouteAnalysisEntry[];
+  routeAnalysisList: RouteAnalysisEntry[];
+  tableData: RouteAnalysisEntry[];
   startDate: Date;
   endDate: Date;
   months: string[];
 };
 
 export function DetailsTable(props: Props) {
-  const { data, ...restProps } = props;
+  const { routeAnalysisList, tableData, ...restProps } = props;
   const [showRoutesAs, setShowRoutesAs] = useState<ShowRoutesAs>('separate');
-  const routesStats = useRoutesStats();
+  const routesStats = useRoutesStats(routeAnalysisList);
 
-  const dataForSeparateRoutes = data.reduce(
+  const dataForSeparateRoutes = tableData.reduce(
     (_dataForSeparateRoutes: DatumForSeparateRoutes[], entry) => {
       const routeStats = routesStats.find(
         (stats) =>
@@ -65,7 +66,7 @@ export function DetailsTable(props: Props) {
     [],
   );
 
-  const dataForCombinedRoutes = makeDataForCombinedRoutes(data);
+  const dataForCombinedRoutes = makeDataForCombinedRoutes(tableData);
 
   return (
     <DetailsTableContent
@@ -82,10 +83,10 @@ export function DetailsTable(props: Props) {
 }
 
 function makeDataForCombinedRoutes(
-  data: Props['data'],
+  tableData: Props['tableData'],
 ): DatumForCombinedRoutes[] {
   return (() => {
-    const cityPairToRoutes = data.reduce(
+    const cityPairToRoutes = tableData.reduce(
       (_cityPairToRoutes: Record<string, RouteAnalysisEntry[]>, entry) => {
         const cityPair = [entry.origin, entry.destination]
           .sort((a, b) => {

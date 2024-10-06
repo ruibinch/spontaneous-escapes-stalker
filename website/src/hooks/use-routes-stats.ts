@@ -1,9 +1,6 @@
 import { notEmpty } from '@/common/not-empty';
 import { roundToDp } from '@/common/round-to-dp';
 import { RouteAnalysisEntry } from '@/index';
-import routeAnalysisFile from '@/static/route-analysis.json';
-
-const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
 
 export interface RoutesStats {
   origin: string;
@@ -21,7 +18,9 @@ export interface RoutesStats {
   isAverageBlackoutPctRankShared: boolean;
 }
 
-export const useRoutesStats = (): RoutesStats[] => {
+export const useRoutesStats = (
+  routeAnalysisList: RouteAnalysisEntry[],
+): RoutesStats[] => {
   const routesStats = routeAnalysisList
     .map((entry) => {
       let numRedemptions = 0;

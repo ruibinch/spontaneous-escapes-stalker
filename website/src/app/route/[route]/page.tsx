@@ -1,20 +1,24 @@
+import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair-flights';
+import { getStaticFileContent } from '@/common/get-static-file-content';
 import { ByRouteContent } from '@/components/by-route/content';
-import { makeRouteDetailsList } from '@/components/by-route/helpers/make-route-details-list';
 import { NoDataIllustration } from '@/components/icons/no-data';
-import { BlackoutPeriod, RouteAnalysisEntry } from '@/index';
-import routeAnalysisFile from '@/static/route-analysis.json';
-
-const routeAnalysisList = routeAnalysisFile as RouteAnalysisEntry[];
+import { RouteAnalysisEntry } from '@/index';
 
 export default function ByRoute({ params }: { params: { route: string } }) {
   const route = params.route.toUpperCase();
   const originIata = route.slice(0, 3);
   const destinationIata = route.slice(3, 6);
 
-  const routeAnalysisEntry = routeAnalysisList.find(
-    (d) => d.originIata === originIata && d.destinationIata === destinationIata,
+  const routeAnalysisListFull = getStaticFileContent<RouteAnalysisEntry[]>({
+    filename: 'route-analysis.json',
+  });
+  const routeAnalysisListSiaOnly = excludeSilkairFlightsFromRouteAnalysis(
+    routeAnalysisListFull,
   );
 
+  const routeAnalysisEntry = routeAnalysisListFull.find(
+    (d) => d.originIata === originIata && d.destinationIata === destinationIata,
+  );
   if (!routeAnalysisEntry) {
     return (
       <div className="pt-12 px-4">
@@ -27,6 +31,16 @@ export default function ByRoute({ params }: { params: { route: string } }) {
     );
   }
 
-  const routeInfo = makeRouteDetailsList(routeAnalysisEntry);
-  return <ByRouteContent routeInfo={routeInfo} />;
+  return (
+    <ByRouteContent
+      routeMetadata={{
+        origin: routeAnalysisEntry.origin,
+        destination: routeAnalysisEntry.destination,
+        originIata,
+        destinationIata,
+      }}
+      routeAnalysisListFull={routeAnalysisListFull}
+      routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
+    />
+  );
 }
