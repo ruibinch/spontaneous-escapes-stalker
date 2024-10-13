@@ -1,5 +1,3 @@
-import Script from 'next/script';
-
 const NEXT_PUBLIC_VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV as
   | 'production'
   | 'preview'
@@ -13,10 +11,11 @@ export function AnalyticsScript() {
   }
 
   return (
-    <Script
-      src="/stats/script.js"
+    <script
+      defer
+      src="https://umami-production-bb5d.up.railway.app/script.js"
       data-website-id="72c90a3b-768b-4f5e-af4e-87b45cb0d3ce"
-    />
+    ></script>
   );
 }
 
