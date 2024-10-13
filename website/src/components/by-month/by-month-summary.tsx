@@ -8,10 +8,12 @@ export function ByMonthSummary({
   month,
   redemptions,
   redemptionsFiltered,
+  disableSkeleton,
 }: {
   month: string;
   redemptions: RedemptionEntry[];
   redemptionsFiltered: RedemptionEntry[];
+  disableSkeleton: boolean;
 }) {
   const monthsStats = useMonthsStats();
   const monthStats = monthsStats.find((stat) => stat.month === month);
@@ -28,24 +30,28 @@ export function ByMonthSummary({
             monthStats.countRank
           } of ${monthsStats.length}`
         }
+        disableSkeleton={disableSkeleton}
       />
       <SummaryEntryCardWithFlightClass
         redemptions={redemptions}
         redemptionsFiltered={redemptionsFiltered}
         header="Economy"
         flightClassCode="Y"
+        disableSkeleton={disableSkeleton}
       />
       <SummaryEntryCardWithFlightClass
         redemptions={redemptions}
         redemptionsFiltered={redemptionsFiltered}
         header="Premium Economy"
         flightClassCode="W"
+        disableSkeleton={disableSkeleton}
       />
       <SummaryEntryCardWithFlightClass
         redemptions={redemptions}
         redemptionsFiltered={redemptionsFiltered}
         header="Business"
         flightClassCode="J"
+        disableSkeleton={disableSkeleton}
       />
     </div>
   );
@@ -56,14 +62,17 @@ function SummaryEntryCardWithFlightClass({
   redemptionsFiltered,
   header,
   flightClassCode,
+  disableSkeleton,
 }: {
   redemptions: RedemptionEntry[];
   redemptionsFiltered: RedemptionEntry[];
   header: string;
   flightClassCode: string;
+  disableSkeleton: boolean;
 }) {
   return (
     <SummaryEntryCard
+      disableSkeleton={disableSkeleton}
       header={header}
       content={
         <div className="flex flex-row items-center gap-2">

@@ -9,6 +9,7 @@ export function SummaryEntryCard({
   contentClassName,
   subcontent,
   badgeContent,
+  disableSkeleton,
 }: {
   cardBodyClassName?: string;
   header: string;
@@ -16,14 +17,20 @@ export function SummaryEntryCard({
   contentClassName?: string;
   subcontent?: string | number;
   badgeContent?: string;
+  disableSkeleton?: boolean;
 }) {
   return (
     <Card shadow="sm" radius="sm">
       <CardHeader className="justify-center text-sm">{header}</CardHeader>
       <Divider />
       <CardBody className={cardBodyClassName ?? 'items-center'}>
-        <Skeleton>
-          <div className="flex flex-col items-center">
+        <Skeleton isLoaded={disableSkeleton}>
+          <div
+            // disable styling if content is a React element as content might have its own styling
+            className={
+              React.isValidElement(content) ? '' : 'flex flex-col items-center'
+            }
+          >
             {React.isValidElement(content) ? (
               content
             ) : (

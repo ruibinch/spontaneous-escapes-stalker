@@ -12,6 +12,7 @@ export function ChartWrapper({
   topBarStyle,
   contentStyle,
   chartComponentStyle,
+  disableSkeleton = false,
 }: {
   title: string;
   tooltip?: string;
@@ -21,6 +22,7 @@ export function ChartWrapper({
   topBarStyle?: string;
   contentStyle?: string;
   chartComponentStyle?: string;
+  disableSkeleton?: boolean;
 }) {
   return (
     <div className="flex flex-col gap-2 p-2 border border-neutral-250 dark:border-neutral-500 rounded-md shadow-sm">
@@ -44,7 +46,7 @@ export function ChartWrapper({
         )}
       </div>
 
-      <Skeleton>
+      <Skeleton isLoaded={disableSkeleton}>
         <div className={cn('flex', contentStyle)}>
           <div
             className={cn(

@@ -18,8 +18,10 @@ enum Region {
 
 export function RoutesRegionDistributionChart({
   redemptionsFiltered,
+  disableSkeleton,
 }: {
   redemptionsFiltered: RedemptionEntry[];
+  disableSkeleton: boolean;
 }) {
   const { isDarkTheme } = useTheme();
 
@@ -89,6 +91,7 @@ export function RoutesRegionDistributionChart({
           data={data}
         />
       }
+      disableSkeleton={disableSkeleton}
     />
   );
 }

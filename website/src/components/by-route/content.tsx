@@ -40,6 +40,7 @@ ChartJS.register(
   Legend,
 );
 
+// TODO: clarify on disableSkeleton behaviour
 export function ByRouteContent({
   routeMetadata: { origin, destination, originIata, destinationIata },
   routeAnalysisListFull,

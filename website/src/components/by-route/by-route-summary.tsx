@@ -38,6 +38,7 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
+        disableSkeleton
       />
       <SummaryEntryCard
         cardBodyClassName="px-3 md:px-6"
@@ -57,6 +58,7 @@ export function ByRouteSummary({
             ))}
           </div>
         }
+        disableSkeleton
       />
       <SummaryEntryCard
         header="Redemption months"
@@ -70,6 +72,7 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
+        disableSkeleton
       />
       <SummaryEntryCard
         header="Average blackout %"
@@ -83,6 +86,7 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
+        disableSkeleton
       />
     </div>
   );

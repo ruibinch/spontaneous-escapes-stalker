@@ -22,9 +22,11 @@ type FlightClassToCountDict = Record<string, number>;
 export function FlightClassDistributionChart({
   redemptionsFiltered,
   isFilterActive,
+  disableSkeleton,
 }: {
   redemptionsFiltered: RedemptionEntry[];
   isFilterActive: boolean;
+  disableSkeleton: boolean;
 }) {
   const { isDarkTheme } = useTheme();
 
@@ -98,6 +100,7 @@ export function FlightClassDistributionChart({
           isFilterActive={isFilterActive}
         />
       }
+      disableSkeleton={disableSkeleton}
     />
   );
 }

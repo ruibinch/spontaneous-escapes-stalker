@@ -39,6 +39,7 @@ ChartJS.register(
   Legend,
 );
 
+// TODO: clarify on disableSkeleton behaviour
 export function ByMonthContent({
   month,
   redemptionsFull,
@@ -100,6 +101,7 @@ export function ByMonthContent({
             month={month}
             redemptions={redemptions}
             redemptionsFiltered={redemptionsFiltered}
+            disableSkeleton
           />
 
           <div className="grid grid-cols-2 gap-2">
@@ -107,11 +109,13 @@ export function ByMonthContent({
               <FlightClassDistributionChart
                 redemptionsFiltered={redemptionsFiltered}
                 isFilterActive={isFilterActive}
+                disableSkeleton
               />
             </div>
             <div className="col-span-2 xl:col-span-1">
               <RoutesRegionDistributionChart
                 redemptionsFiltered={redemptionsFiltered}
+                disableSkeleton
               />
             </div>
           </div>
