@@ -84,7 +84,6 @@ export function MonthsDistributionChart({
           data={data}
         />
       }
-      disableSkeleton
     />
   );
 }

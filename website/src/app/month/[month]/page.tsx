@@ -9,6 +9,7 @@ import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import patienceMyYoungPadawanImg from '@/static/patience-my-young-padawan.jpg';
 import { isAfter, isBefore } from 'date-fns';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 export default async function ByMonth({
   params: { month },
@@ -70,11 +71,13 @@ export default async function ByMonth({
   ) as MonthSummaryAnalysisEntry;
 
   return (
-    <ByMonthContent
-      month={month}
-      redemptionsFull={redemptionsFull}
-      redemptionsSiaOnly={redemptionsSiaOnly}
-      monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
-    />
+    <Suspense>
+      <ByMonthContent
+        month={month}
+        redemptionsFull={redemptionsFull}
+        redemptionsSiaOnly={redemptionsSiaOnly}
+        monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
+      />
+    </Suspense>
   );
 }

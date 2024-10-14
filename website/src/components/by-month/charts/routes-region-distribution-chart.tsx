@@ -1,10 +1,10 @@
 import { roundToDp } from '@/common/round-to-dp';
+import { useTheme } from '@/components/common/use-theme';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
-import { useTheme } from '@/components/common/use-theme';
 
 enum Region {
   SOUTH_EAST_ASIA = 'South East Asia',
@@ -18,10 +18,8 @@ enum Region {
 
 export function RoutesRegionDistributionChart({
   redemptionsFiltered,
-  disableSkeleton,
 }: {
   redemptionsFiltered: RedemptionEntry[];
-  disableSkeleton: boolean;
 }) {
   const { isDarkTheme } = useTheme();
 
@@ -91,7 +89,6 @@ export function RoutesRegionDistributionChart({
           data={data}
         />
       }
-      disableSkeleton={disableSkeleton}
     />
   );
 }

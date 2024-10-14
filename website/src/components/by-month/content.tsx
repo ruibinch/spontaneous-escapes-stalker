@@ -109,13 +109,11 @@ export function ByMonthContent({
               <FlightClassDistributionChart
                 redemptionsFiltered={redemptionsFiltered}
                 isFilterActive={isFilterActive}
-                disableSkeleton
               />
             </div>
             <div className="col-span-2 xl:col-span-1">
               <RoutesRegionDistributionChart
                 redemptionsFiltered={redemptionsFiltered}
-                disableSkeleton
               />
             </div>
           </div>

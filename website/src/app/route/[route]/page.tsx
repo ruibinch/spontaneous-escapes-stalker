@@ -3,6 +3,7 @@ import { getStaticFileContent } from '@/common/get-static-file-content';
 import { ByRouteContent } from '@/components/by-route/content';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { RouteAnalysisEntry } from '@/index';
+import { Suspense } from 'react';
 
 export default function ByRoute({ params }: { params: { route: string } }) {
   const route = params.route.toUpperCase();
@@ -32,15 +33,17 @@ export default function ByRoute({ params }: { params: { route: string } }) {
   }
 
   return (
-    <ByRouteContent
-      routeMetadata={{
-        origin: routeAnalysisEntry.origin,
-        destination: routeAnalysisEntry.destination,
-        originIata,
-        destinationIata,
-      }}
-      routeAnalysisListFull={routeAnalysisListFull}
-      routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
-    />
+    <Suspense>
+      <ByRouteContent
+        routeMetadata={{
+          origin: routeAnalysisEntry.origin,
+          destination: routeAnalysisEntry.destination,
+          originIata,
+          destinationIata,
+        }}
+        routeAnalysisListFull={routeAnalysisListFull}
+        routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
+      />
+    </Suspense>
   );
 }

@@ -4,7 +4,9 @@ import {
   flightClassCodeToName,
 } from '@/components/common/flight-class-code-to-name';
 import { FlightClassIndicator } from '@/components/common/flight-class-indicator';
+import { Tooltip } from '@/components/common/tooltip';
 import { TooltipOrPopover } from '@/components/common/tooltip-or-popover';
+import { useTheme } from '@/components/common/use-theme';
 import { ArrowDownIcon } from '@/components/icons/arrow-down';
 import { ArrowUpIcon } from '@/components/icons/arrow-up';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
@@ -14,19 +16,15 @@ import { Pie } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { CommonStyles } from '../../common/styles';
-import { useTheme } from '@/components/common/use-theme';
-import { Tooltip } from '@/components/common/tooltip';
 
 type FlightClassToCountDict = Record<string, number>;
 
 export function FlightClassDistributionChart({
   redemptionsFiltered,
   isFilterActive,
-  disableSkeleton,
 }: {
   redemptionsFiltered: RedemptionEntry[];
   isFilterActive: boolean;
-  disableSkeleton: boolean;
 }) {
   const { isDarkTheme } = useTheme();
 
@@ -100,7 +98,6 @@ export function FlightClassDistributionChart({
           isFilterActive={isFilterActive}
         />
       }
-      disableSkeleton={disableSkeleton}
     />
   );
 }

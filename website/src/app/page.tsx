@@ -27,7 +27,6 @@ export default function Playground() {
         routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
         monthsList={monthsList}
       />
-      ;
     </Suspense>
   );
 }

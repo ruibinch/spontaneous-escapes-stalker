@@ -2,6 +2,7 @@ import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair
 import { getStaticFileContent } from '@/common/get-static-file-content';
 import { AnalysisContent } from '@/components/analysis/content';
 import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
+import { Suspense } from 'react';
 
 export default function Analysis() {
   const monthSummaryAnalysisList = getStaticFileContent<
@@ -17,10 +18,12 @@ export default function Analysis() {
   );
 
   return (
-    <AnalysisContent
-      monthSummaryAnalysisList={monthSummaryAnalysisList}
-      routeAnalysisListFull={routeAnalysisListFull}
-      routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
-    />
+    <Suspense>
+      <AnalysisContent
+        monthSummaryAnalysisList={monthSummaryAnalysisList}
+        routeAnalysisListFull={routeAnalysisListFull}
+        routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
+      />
+    </Suspense>
   );
 }
