@@ -1,5 +1,6 @@
 import { trackEvent } from '@/analytics';
 import { Button, cn } from '@nextui-org/react';
+import { Skeleton } from '../common/skeleton';
 import { Tooltip } from '../common/tooltip';
 import { useTheme } from '../common/use-theme';
 import { MoonIcon } from '../icons/moon';
@@ -27,7 +28,9 @@ export function ThemeToggleItem() {
           'text-neutral-300/75 lg:hover:bg-neutral-300/25 lg:hover:dark:bg-neutral-300/25 lg:hover:text-white', // BarStyles.Active without the hover: classes in navbar display
         )}
       >
-        {isDarkTheme ? <MoonIcon /> : <SunIcon />}
+        <Skeleton className="bg-neutral-400 px-1.5 py-1">
+          {isDarkTheme ? <MoonIcon /> : <SunIcon />}
+        </Skeleton>
       </Button>
     </Tooltip>
   );
