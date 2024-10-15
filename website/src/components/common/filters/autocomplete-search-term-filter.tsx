@@ -224,6 +224,8 @@ function getSearchOptionsList(inputRedemptions: RedemptionEntry[] | undefined) {
     'SVO (MOW)',
     'LHR (LON)',
     'LGW (LON)',
+    'PEK (BJS)',
+    'PKX (BJS)',
   ].map((term) => ({
     label: term,
     value: /(?<=\()\w{3}/g.exec(term)?.[0] ?? '', // extract IATA code within the parentheses

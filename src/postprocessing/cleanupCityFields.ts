@@ -2,6 +2,8 @@ import { RedemptionJson } from '../utils/types';
 
 const cityMapper: Record<string, string> = {
   Adaleide: 'Adelaide',
+  'Beijing (PEK)': 'Beijing',
+  'Beijing (PKX)': 'Beijing',
   Bengaluru: 'Bangalore',
   Brunei: 'Bandar Seri Begawan',
   Chiangmai: 'Chiang Mai',

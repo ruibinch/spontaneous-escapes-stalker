@@ -16,7 +16,7 @@ export const cityMappings: Record<
   Bandung: { iata: 'BDO', countryCode: 'ID', region: Region.SOUTH_EAST_ASIA },
   Bangkok: { iata: 'BKK', countryCode: 'TH', region: Region.SOUTH_EAST_ASIA },
   Barcelona: { iata: 'BCN', countryCode: 'ES', region: Region.EUROPE },
-  Beijing: { iata: 'PEK', countryCode: 'CN', region: Region.NORTH_ASIA },
+  Beijing: { iata: 'BJS', countryCode: 'CN', region: Region.NORTH_ASIA },
   Bangalore: { iata: 'BLR', countryCode: 'IN', region: Region.SOUTH_ASIA },
   Brisbane: { iata: 'BNE', countryCode: 'AU', region: Region.SOUTHWEST_PACIFIC },
   Broome: { iata: 'BME', countryCode: 'AU', region: Region.SOUTHWEST_PACIFIC },
@@ -143,6 +143,8 @@ export const iataToIataMappings: Record<string, string> = {
   SVO: 'MOW', // Moscow
   LHR: 'LON', // London
   LGW: 'LON', // London
+  PEK: 'BJS', // Beijing
+  PKX: 'BJS', // Beijing
 };
 
 export const iataMappings = Object.entries(cityMappings).reduce(
