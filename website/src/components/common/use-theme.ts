@@ -9,5 +9,6 @@ export const useTheme = () => {
     ...useNextThemeProps,
     resolvedTheme,
     isDarkTheme: resolvedTheme === 'dark',
+    isThemeLoaded: useNextThemeProps.resolvedTheme !== undefined,
   };
 };

@@ -8,12 +8,14 @@ import { flightClassColors } from '@/components/common/colors';
 import { useTheme } from '@/components/common/use-theme';
 import { Bar } from 'react-chartjs-2';
 import { RouteDetailDatum } from '../helpers/make-route-details-list';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 export function MonthsDistributionChart({
   detailsListFiltered,
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
 
   const monthToFlightClassToCountDict: Record<
@@ -84,6 +86,7 @@ export function MonthsDistributionChart({
           data={data}
         />
       }
+      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

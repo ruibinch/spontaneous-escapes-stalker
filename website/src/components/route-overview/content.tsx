@@ -17,7 +17,8 @@ export function RouteOverviewContent({
   routeAnalysisListFull: RouteAnalysisEntry[];
   routeAnalysisListSiaOnly: RouteAnalysisEntry[];
 }) {
-  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
+    useSilkairRoutesToggleContext();
 
   const routeAnalysisList = showSilkairRoutes
     ? routeAnalysisListFull
@@ -68,7 +69,7 @@ export function RouteOverviewContent({
           <div key={letter} className="flex flex-col gap-2">
             <h1 className="text-2xl font-bold">{letter}</h1>
 
-            <Skeleton>
+            <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
               <div className="flex flex-col gap-1">
                 {routes.map((route) => (
                   <Link

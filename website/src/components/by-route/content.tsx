@@ -40,7 +40,6 @@ ChartJS.register(
   Legend,
 );
 
-// TODO: clarify on disableSkeleton behaviour
 export function ByRouteContent({
   routeMetadata: { origin, destination, originIata, destinationIata },
   routeAnalysisListFull,
@@ -56,7 +55,8 @@ export function ByRouteContent({
   routeAnalysisListSiaOnly: RouteAnalysisEntry[];
 }) {
   const searchParams = useSearchParams();
-  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
+    useSilkairRoutesToggleContext();
   const routeAnalysisList = showSilkairRoutes
     ? routeAnalysisListFull
     : routeAnalysisListSiaOnly;
@@ -93,6 +93,9 @@ export function ByRouteContent({
         title={`${origin} - ${destination}`}
         rightComponent={
           shouldShowSilkairRoutesToggle && <SilkairRoutesToggle />
+        }
+        isLoaded={
+          shouldShowSilkairRoutesToggle ? isSilkairRoutesContextLoaded : true
         }
       />
 

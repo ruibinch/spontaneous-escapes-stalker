@@ -7,7 +7,7 @@ import { MoonIcon } from '../icons/moon';
 import { SunIcon } from '../icons/sun';
 
 export function ThemeToggleItem() {
-  const { setTheme, isDarkTheme } = useTheme();
+  const { setTheme, isDarkTheme, isThemeLoaded } = useTheme();
 
   const toggleTheme = () => {
     const themeUpd = isDarkTheme ? 'light' : 'dark';
@@ -28,7 +28,10 @@ export function ThemeToggleItem() {
           'text-neutral-300/75 lg:hover:bg-neutral-300/25 lg:hover:dark:bg-neutral-300/25 lg:hover:text-white', // BarStyles.Active without the hover: classes in navbar display
         )}
       >
-        <Skeleton className="bg-neutral-400 px-1.5 py-1">
+        <Skeleton
+          className="bg-neutral-400 px-1.5 py-1"
+          isLoaded={isThemeLoaded}
+        >
           {isDarkTheme ? <MoonIcon /> : <SunIcon />}
         </Skeleton>
       </Button>

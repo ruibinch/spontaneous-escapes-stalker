@@ -4,12 +4,14 @@ import { makeChartOptions } from '../../common/chart/chart-options';
 import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { useTheme } from '@/components/common/use-theme';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
 }
 
 export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
   const monthToCountDict: Record<string, number> = {};
 
@@ -55,6 +57,7 @@ export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
           data={data}
         />
       }
+      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

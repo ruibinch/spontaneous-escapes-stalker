@@ -11,6 +11,7 @@ import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { flightClassColors } from '../../common/colors';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -25,6 +26,7 @@ const displayToggleOptions: ToggleProps<AverageOrTotal>['options'] = [
 export function RedemptionsByMonthAndFlightClassChart({
   routeAnalysisListFiltered,
 }: Props) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
   const [displayAs, setDisplayAs] = useState<AverageOrTotal>('average');
 
@@ -163,6 +165,7 @@ export function RedemptionsByMonthAndFlightClassChart({
           setSelValue={setDisplayAs}
         />
       }
+      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

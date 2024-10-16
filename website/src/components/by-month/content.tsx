@@ -51,7 +51,8 @@ export function ByMonthContent({
   redemptionsSiaOnly: RedemptionEntry[];
   monthSummaryAnalysisEntry: MonthSummaryAnalysisEntry;
 }) {
-  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
+    useSilkairRoutesToggleContext();
   const redemptions = showSilkairRoutes ? redemptionsFull : redemptionsSiaOnly;
   const shouldShowSilkairRoutesToggle =
     redemptionsFull.length !== redemptionsSiaOnly.length;
@@ -87,6 +88,9 @@ export function ByMonthContent({
         rightComponent={
           shouldShowSilkairRoutesToggle && <SilkairRoutesToggle />
         }
+        isLoaded={
+          shouldShowSilkairRoutesToggle ? isSilkairRoutesContextLoaded : true
+        }
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>
@@ -101,7 +105,6 @@ export function ByMonthContent({
             month={month}
             redemptions={redemptions}
             redemptionsFiltered={redemptionsFiltered}
-            disableSkeleton
           />
 
           <div className="grid grid-cols-2 gap-2">

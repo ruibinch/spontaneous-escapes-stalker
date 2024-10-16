@@ -1,5 +1,6 @@
 import { Skeleton } from '@/components/common/skeleton';
 import { CommonStyles } from '@/components/common/styles';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RoutesStats, useRoutesStats } from '@/hooks/use-routes-stats';
 import { RouteAnalysisEntry } from '@/index';
 import {
@@ -67,6 +68,8 @@ function BlackoutPctTable({
   title: string;
   data: RoutesStats[];
 }) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
+
   return (
     <div
       className={cn(
@@ -79,7 +82,7 @@ function BlackoutPctTable({
         <span className="text-2xs italic">(min 10 redemptions)</span>
       </div>
 
-      <Skeleton>
+      <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
         <Table
           radius="sm"
           aria-label="Percentage of redeemable routes table"

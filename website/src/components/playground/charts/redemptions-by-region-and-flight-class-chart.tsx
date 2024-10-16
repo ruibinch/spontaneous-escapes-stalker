@@ -4,6 +4,7 @@ import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { flightClassColors } from '../../common/colors';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -12,6 +13,7 @@ interface Props {
 export function RedemptionsByRegionAndFlightClassChart({
   routeAnalysisListFiltered,
 }: Props) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
 
   const regionToFlightClassToCountDict: Record<
@@ -84,6 +86,7 @@ export function RedemptionsByRegionAndFlightClassChart({
           data={data}
         />
       }
+      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

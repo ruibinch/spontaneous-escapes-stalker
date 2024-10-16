@@ -3,18 +3,18 @@ import { SummaryEntryCard } from '../common/summary-entry-card';
 import { flightClassCodeToName } from '../common/flight-class-code-to-name';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { useMonthsStats } from '@/hooks/use-months-stats';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 export function ByMonthSummary({
   month,
   redemptions,
   redemptionsFiltered,
-  disableSkeleton,
 }: {
   month: string;
   redemptions: RedemptionEntry[];
   redemptionsFiltered: RedemptionEntry[];
-  disableSkeleton: boolean;
 }) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const monthsStats = useMonthsStats();
   const monthStats = monthsStats.find((stat) => stat.month === month);
 
@@ -30,28 +30,28 @@ export function ByMonthSummary({
             monthStats.countRank
           } of ${monthsStats.length}`
         }
-        disableSkeleton={disableSkeleton}
+        isLoaded={isSilkairRoutesContextLoaded}
       />
       <SummaryEntryCardWithFlightClass
         redemptions={redemptions}
         redemptionsFiltered={redemptionsFiltered}
         header="Economy"
         flightClassCode="Y"
-        disableSkeleton={disableSkeleton}
+        isLoaded={isSilkairRoutesContextLoaded}
       />
       <SummaryEntryCardWithFlightClass
         redemptions={redemptions}
         redemptionsFiltered={redemptionsFiltered}
         header="Premium Economy"
         flightClassCode="W"
-        disableSkeleton={disableSkeleton}
+        isLoaded={isSilkairRoutesContextLoaded}
       />
       <SummaryEntryCardWithFlightClass
         redemptions={redemptions}
         redemptionsFiltered={redemptionsFiltered}
         header="Business"
         flightClassCode="J"
-        disableSkeleton={disableSkeleton}
+        isLoaded={isSilkairRoutesContextLoaded}
       />
     </div>
   );
@@ -62,17 +62,17 @@ function SummaryEntryCardWithFlightClass({
   redemptionsFiltered,
   header,
   flightClassCode,
-  disableSkeleton,
+  isLoaded,
 }: {
   redemptions: RedemptionEntry[];
   redemptionsFiltered: RedemptionEntry[];
   header: string;
   flightClassCode: string;
-  disableSkeleton: boolean;
+  isLoaded: boolean;
 }) {
   return (
     <SummaryEntryCard
-      disableSkeleton={disableSkeleton}
+      isLoaded={isLoaded}
       header={header}
       content={
         <div className="flex flex-row items-center gap-2">

@@ -32,7 +32,8 @@ export function RouteRedeemablePctTable({
 }: {
   routeAnalysisList: RouteAnalysisEntry[];
 }) {
-  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
+    useSilkairRoutesToggleContext();
   const [searchTerm, setSearchTerm] = useState('');
 
   const data = routeAnalysisList
@@ -116,7 +117,7 @@ export function RouteRedeemablePctTable({
 
       <div className="grid grid-cols-3 items-center">
         <div className="col-span-2">
-          <Skeleton>
+          <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
             <SearchTermFilter
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
@@ -127,7 +128,7 @@ export function RouteRedeemablePctTable({
         </div>
 
         <div className="justify-self-end">
-          <Skeleton>
+          <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
             <TableRowsPerPage
               rowsPerPage={rowsPerPage}
               onRowsPerPageChange={onRowsPerPageChange}
@@ -137,7 +138,7 @@ export function RouteRedeemablePctTable({
         </div>
       </div>
 
-      <Skeleton>
+      <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
         <RouteRedeemablePctTableContent
           data={dataSorted.slice(startIdx, endIdx)}
           currPage={currPage}

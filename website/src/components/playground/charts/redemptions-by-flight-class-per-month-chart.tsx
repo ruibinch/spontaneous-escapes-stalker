@@ -8,6 +8,7 @@ import { flightClassColors } from '../../common/colors';
 import { Toggle, ToggleProps } from '@/components/common/toggle';
 import { useState } from 'react';
 import { roundToDp } from '@/common/round-to-dp';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -22,6 +23,7 @@ const displayToggleOptions: ToggleProps<CountOrPct>['options'] = [
 export function RedemptionsByFlightClassPerMonthChart({
   routeAnalysisListFiltered,
 }: Props) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
   const [displayAs, setDisplayAs] = useState<CountOrPct>('count');
 
@@ -151,6 +153,7 @@ export function RedemptionsByFlightClassPerMonthChart({
           setSelValue={setDisplayAs}
         />
       }
+      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

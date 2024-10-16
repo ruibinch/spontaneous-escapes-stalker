@@ -17,7 +17,8 @@ export function RedemptionsVsRouteNetworkCharts({
   monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
 }) {
   const { isDarkTheme } = useTheme();
-  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
+    useSilkairRoutesToggleContext();
 
   const monthsWithRouteNetworkData = getMonthsList({
     includeOnlyMonthsPresentInOagDataset: true,
@@ -114,6 +115,7 @@ export function RedemptionsVsRouteNetworkCharts({
             data={comparisonChartData}
           />
         }
+        isLoaded={isSilkairRoutesContextLoaded}
       />
 
       <ChartWrapper
@@ -139,6 +141,7 @@ export function RedemptionsVsRouteNetworkCharts({
           />
         }
         tooltip="Number of routes available for SE redemptions / Total number of routes in the route network"
+        isLoaded={isSilkairRoutesContextLoaded}
       />
     </div>
   );

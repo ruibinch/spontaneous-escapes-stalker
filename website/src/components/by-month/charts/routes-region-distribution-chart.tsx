@@ -5,6 +5,7 @@ import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 enum Region {
   SOUTH_EAST_ASIA = 'South East Asia',
@@ -21,6 +22,7 @@ export function RoutesRegionDistributionChart({
 }: {
   redemptionsFiltered: RedemptionEntry[];
 }) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
 
   const regionDistributionInMonth: Record<string, number> = {
@@ -89,6 +91,7 @@ export function RoutesRegionDistributionChart({
           data={data}
         />
       }
+      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

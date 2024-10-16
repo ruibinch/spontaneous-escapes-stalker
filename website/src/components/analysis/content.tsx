@@ -41,14 +41,19 @@ export function AnalysisContent({
   routeAnalysisListFull: RouteAnalysisEntry[];
   routeAnalysisListSiaOnly: RouteAnalysisEntry[];
 }) {
-  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
+  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
+    useSilkairRoutesToggleContext();
   const routeAnalysisList = showSilkairRoutes
     ? routeAnalysisListFull
     : routeAnalysisListSiaOnly;
 
   return (
     <div>
-      <PageHeader title="Analysis" rightComponent={<SilkairRoutesToggle />} />
+      <PageHeader
+        title="Analysis"
+        rightComponent={<SilkairRoutesToggle />}
+        isLoaded={isSilkairRoutesContextLoaded}
+      />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
         <ComparisonWithRouteNetwork

@@ -9,12 +9,14 @@ import { useTheme } from '@/components/common/use-theme';
 import { useSearchParams } from 'next/navigation';
 import { Line } from 'react-chartjs-2';
 import { RouteDetailDatum } from '../helpers/make-route-details-list';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 export function BlackoutPctOverTimeChart({
   detailsListFiltered,
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const searchParams = useSearchParams();
   const year = searchParams.get('year') ?? YEAR_ALL;
 
@@ -101,6 +103,7 @@ export function BlackoutPctOverTimeChart({
       }
       tooltip="Equivalent to the total number of blackout days for all flights, divided by the number of flights multiplied by the number of days in the month"
       // The limitation is all flights are considered equally in terms of number of seats.
+      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

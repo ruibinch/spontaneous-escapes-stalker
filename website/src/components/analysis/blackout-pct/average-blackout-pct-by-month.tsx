@@ -6,6 +6,7 @@ import { roundToDp } from '@/common/round-to-dp';
 import { makeChartOptions } from '@/components/common/chart/chart-options';
 import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
 import { useTheme } from '@/components/common/use-theme';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { MonthSummaryAnalysisEntry } from '@/index';
 import { Bar } from 'react-chartjs-2';
 
@@ -14,6 +15,7 @@ export function AverageBlackoutPctByMonth({
 }: {
   monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
 }) {
+  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
 
   const monthToBlackoutPctSumDict: Record<
@@ -93,6 +95,7 @@ export function AverageBlackoutPctByMonth({
           data={data}
         />
       }
+      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

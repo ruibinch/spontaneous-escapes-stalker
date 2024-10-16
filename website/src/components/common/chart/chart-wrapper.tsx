@@ -1,6 +1,7 @@
 import { HelpCircleIcon } from '@/components/icons/help-circle';
 import { cn } from '@nextui-org/react';
 import { TooltipOrPopover } from '../tooltip-or-popover';
+import { Skeleton } from '../skeleton';
 
 export function ChartWrapper({
   title,
@@ -11,6 +12,7 @@ export function ChartWrapper({
   topBarStyle,
   contentStyle,
   chartComponentStyle,
+  isLoaded,
 }: {
   title: string;
   tooltip?: string;
@@ -20,6 +22,7 @@ export function ChartWrapper({
   topBarStyle?: string;
   contentStyle?: string;
   chartComponentStyle?: string;
+  isLoaded: boolean;
 }) {
   return (
     <div className="flex flex-col gap-2 p-2 border border-neutral-250 dark:border-neutral-500 rounded-md shadow-sm">
@@ -43,19 +46,21 @@ export function ChartWrapper({
         )}
       </div>
 
-      <div className={cn('flex', contentStyle)}>
-        <div
-          className={cn(
-            'h-40 xl:h-48 overflow-hidden w-full',
-            rightComponent ? '' : 'w-full',
-            chartComponentStyle,
-          )}
-        >
-          {chart}
-        </div>
+      <Skeleton isLoaded={isLoaded}>
+        <div className={cn('flex', contentStyle)}>
+          <div
+            className={cn(
+              'h-40 xl:h-48 overflow-hidden w-full',
+              rightComponent ? '' : 'w-full',
+              chartComponentStyle,
+            )}
+          >
+            {chart}
+          </div>
 
-        {rightComponent}
-      </div>
+          {rightComponent}
+        </div>
+      </Skeleton>
     </div>
   );
 }
