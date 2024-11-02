@@ -1,7 +1,7 @@
 import { commitAndPushDataDiffs } from './lib/git/commitAndPushDataDiffs';
+import { copyDataFilesToWebsiteFolder } from './scripts/copyDataFilesToWebsiteFolder';
 import { deployWebsiteProd } from './scripts/deployWebsiteProd';
 import { updateLatestRedemptionAtTimestamp } from './scripts/updateLatestRedemptionAtTimestamp';
-import { updateWebsiteDataFiles } from './scripts/updateWebsiteDataFiles';
 import { log } from './utils/log';
 
 export async function updateDataFiles({
@@ -10,7 +10,7 @@ export async function updateDataFiles({
   isNewRelease: boolean;
 }) {
   log('\nCopying data files to website folder...');
-  await updateWebsiteDataFiles();
+  await copyDataFilesToWebsiteFolder();
 
   if (isNewRelease) {
     log('Updating website/src/static/.latest-redemption-at');

@@ -7,6 +7,7 @@
     "run:scrape-with-precheck": "ts-node src/scrapeWithPrecheck.ts",
     "run:postprocessing": "ts-node src/postprocessing.ts",
     "run:analyse": "ts-node src/analyse.ts",
+    "run:copy-data-files-to-website-folder": "ts-node src/scripts/copyDataFilesToWebsiteFolder.ts",
     "run:update-data-files": "ts-node src/updateDataFiles.ts",
     "parse-from-tsv": "ts-node src/parsers/parseFromTsvFile.ts",
     "generate-oag-data": "ts-node src/scripts/generateOagData.ts",
