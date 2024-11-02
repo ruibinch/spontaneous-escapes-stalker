@@ -4,6 +4,7 @@ const WEBSITE_DATA_FILES = [
   /route-analysis.json/,
   /month-summary-analysis.json/,
   /.*-redemptions-postprocessed.json/,
+  /route-.*.json/,
 ];
 
 export async function copyDataFilesToWebsiteFolder() {

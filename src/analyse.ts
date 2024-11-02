@@ -49,6 +49,14 @@ export function analyse() {
     ROUTE_ANALYSIS_OUTPUT_FILENAME,
     JSON.stringify(routeAnalysis, null, 2),
   );
+  console.log('📄 Writing to individual route files');
+  routeAnalysis.forEach((routeAnalysisEntry) => {
+    const routeFilename = `data/route-${routeAnalysisEntry.originIata}${routeAnalysisEntry.destinationIata}.json`;
+    fs.writeFileSync(
+      routeFilename,
+      JSON.stringify(routeAnalysisEntry, null, 2),
+    );
+  });
 
   const monthSummaryAnalysis = generateMonthSummaryAnalysis({
     redemptions,
