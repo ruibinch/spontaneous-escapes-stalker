@@ -2,6 +2,7 @@ import { getCountryFromCity } from '../lib/iata/getCountryFromCity';
 import { iata } from '../lib/iata/iata';
 import { iataMappings } from '../lib/iata/mappings';
 import { OagDataAnalysisEntry } from '../scripts/generateOagData';
+import { notEmpty } from '../utils';
 import {
   BlackoutPeriod,
   FlightClass,
@@ -21,7 +22,7 @@ type RedemptionByFlightClass = Record<
   RedemptionInfoSingle | null
 >;
 type Details = {
-  redemptionDetails?: Partial<RedemptionByFlightClass>;
+  redemptionDetails: Partial<RedemptionByFlightClass>;
   flightDetails?: {
     sia: boolean;
     silkair: boolean;
@@ -142,8 +143,10 @@ export function generateRouteAnalysis({
     {},
   );
 
-  const routeAnalysis = Object.entries(resultFormatted).map(
-    ([route, details]) => {
+  // format routeAnalysisDict into an array of RouteAnalysisEntry objects,
+  // excluding routes with no redemption data
+  const routeAnalysis = Object.entries(resultFormatted)
+    .map(([route, details]) => {
       const [origin, destination] = route.split('-');
       const [originIata, destinationIata] = getRouteIata(route).split('-');
       const region = routeToRegionMap[route];
@@ -161,7 +164,14 @@ export function generateRouteAnalysis({
         [],
       );
 
-      const routeAnalysisEntry: RouteAnalysisEntry = {
+      const hasAtLeastOneRedemption = detailsList.some((details) =>
+        Object.values(details.redemptionDetails).some(Boolean),
+      );
+      if (!hasAtLeastOneRedemption) {
+        return null;
+      }
+
+      return {
         origin,
         originIata,
         originCountry,
@@ -171,9 +181,9 @@ export function generateRouteAnalysis({
         region,
         details: detailsList,
       };
-      return routeAnalysisEntry;
-    },
-  );
+    })
+    .filter(notEmpty);
+
   return routeAnalysis;
 }
 
