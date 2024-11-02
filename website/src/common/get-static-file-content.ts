@@ -12,7 +12,11 @@ export function getStaticFileContent<T>({
   filename: string;
   filetype?: 'string' | 'json';
 }): T {
-  const filepath = path.join(process.cwd(), 'src', 'static', filename);
+  const filepath = getStaticFilepath(filename);
   const file = fs.readFileSync(filepath, 'utf8');
   return filetype === 'json' ? (JSON.parse(file) as T) : (file as T);
+}
+
+export function getStaticFilepath(filename: string) {
+  return path.join(process.cwd(), 'src', 'static', filename);
 }

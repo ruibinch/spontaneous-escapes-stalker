@@ -1,6 +1,7 @@
 import { notEmpty } from '@/common/not-empty';
 import { roundToDp } from '@/common/round-to-dp';
 import { RouteAnalysisEntry } from '@/index';
+import { useMemo } from 'react';
 
 export interface RoutesStats {
   origin: string;
@@ -21,6 +22,14 @@ export interface RoutesStats {
 export const useRoutesStats = (
   routeAnalysisList: RouteAnalysisEntry[],
 ): RoutesStats[] => {
+  return useMemo(
+    () => calculateRoutesStats(routeAnalysisList),
+    [routeAnalysisList],
+  );
+};
+
+const calculateRoutesStats = (routeAnalysisList: RouteAnalysisEntry[]) => {
+  console.log('[calculateRoutesStats] running');
   const routesStats = routeAnalysisList
     .map((entry) => {
       let numRedemptions = 0;
