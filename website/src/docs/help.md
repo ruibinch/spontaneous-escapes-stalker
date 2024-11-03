@@ -52,7 +52,21 @@ The list of redemptions is typically published in the previous month from the tr
 
 ## Does the dataset include SilkAir redemptions before it merged with SIA in end-2021?
 
-Yes, so as to have a more representative dataset, especially for months further back in the past where SilkAir redemptions formed the majority of the redemptions list.
+Yes, so as to have a more complete dataset, especially for months further back in the past where SilkAir redemptions formed the majority of the redemptions list.
+
+SIA and SilkAir have different redemption patterns though, so you may choose to exclude them from the dataset via the "Show SilkAir entries" toggle for a potentially more representative view of current patterns.
+
+## How are cities with multiple international airports shown in the dataset? (e.g. Tokyo with HND and NRT)
+
+The redemptions are displayed on a by-city level instead of a by-airport level, with the idea that a redemption being available from/to the city is more relevant than the specific airport.
+
+Currently, there are 5 cities in the dataset with multiple international airports. The collective city IATA code, if it exists, will be used for such cases instead of the individual airport codes.
+
+- Beijing (BJS) - PEK, PKX
+- Chengdu (CTU) - CTU, TFU
+- London (LON) - LHR, LGW
+- New York (NYC) - JFK, EWR
+- Tokyo (TYO) - HND, NRT
 
 ## Is this site affliated with SIA?
 
