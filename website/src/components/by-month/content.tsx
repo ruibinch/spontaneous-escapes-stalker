@@ -1,5 +1,6 @@
 'use client';
 import { monthNumToNameMap } from '@/common/months-map';
+import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import { BreadcrumbItem, Breadcrumbs, cn } from '@nextui-org/react';
 import {
@@ -18,6 +19,7 @@ import { AlertInfo } from '../common/alert-info';
 import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
 import { REGION_ALL } from '../common/filters/region-filter';
 import { PageHeader } from '../common/page-header';
+import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
 import { ByMonthFilters } from './by-month-filters';
 import { ByMonthSummary } from './by-month-summary';
@@ -25,8 +27,6 @@ import { FlightClassDistributionChart } from './charts/flight-class-distribution
 import { RoutesRegionDistributionChart } from './charts/routes-region-distribution-chart';
 import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
 import { RedemptionsTable } from './redemptions-table';
-import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
-import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 ChartJS.register(
   CategoryScale,
@@ -39,7 +39,6 @@ ChartJS.register(
   Legend,
 );
 
-// TODO: clarify on disableSkeleton behaviour
 export function ByMonthContent({
   month,
   redemptionsFull,
@@ -51,8 +50,7 @@ export function ByMonthContent({
   redemptionsSiaOnly: RedemptionEntry[];
   monthSummaryAnalysisEntry: MonthSummaryAnalysisEntry;
 }) {
-  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
-    useSilkairRoutesToggleContext();
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const redemptions = showSilkairRoutes ? redemptionsFull : redemptionsSiaOnly;
   const shouldShowSilkairRoutesToggle =
     redemptionsFull.length !== redemptionsSiaOnly.length;
@@ -87,9 +85,6 @@ export function ByMonthContent({
         title={`${month.slice(0, 4)} ${monthNumToNameMap[month.slice(4, 6)]}`}
         rightComponent={
           shouldShowSilkairRoutesToggle && <SilkairRoutesToggle />
-        }
-        isLoaded={
-          shouldShowSilkairRoutesToggle ? isSilkairRoutesContextLoaded : true
         }
       />
 

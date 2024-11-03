@@ -17,7 +17,6 @@ export function PlaygroundSummary({
   endDate: Date;
   months: string[];
 }) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const monthsList = getMonthsList();
   const applicableMonths = monthsList.filter((month) =>
     isApplicableMonth({
@@ -43,19 +42,16 @@ export function PlaygroundSummary({
         header="Redemptions"
         content={numFilteredRedemptions}
         subcontent={`out of ${numRedemptions}`}
-        isLoaded={isSilkairRoutesContextLoaded}
       />
       <SummaryEntryCard
         header="Routes"
         content={numFilteredRoutes}
         subcontent={`out of ${numRoutes}`}
-        isLoaded={isSilkairRoutesContextLoaded}
       />
       <SummaryEntryCard
         header="Months"
         content={numFilteredMonths}
         subcontent={`out of ${numMonths}`}
-        isLoaded={isSilkairRoutesContextLoaded}
       />
     </div>
   );

@@ -5,7 +5,6 @@ import { RouteAnalysisEntry } from '@/index';
 import { Link, cn } from '@nextui-org/react';
 import { PageHeader } from '../common/page-header';
 import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
-import { Skeleton } from '../common/skeleton';
 import { CommonStyles } from '../common/styles';
 
 type RouteOverviewDict = Record<string, { label: string; href: string }[]>;
@@ -17,8 +16,7 @@ export function RouteOverviewContent({
   routeAnalysisListFull: RouteAnalysisEntry[];
   routeAnalysisListSiaOnly: RouteAnalysisEntry[];
 }) {
-  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
-    useSilkairRoutesToggleContext();
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
 
   const routeAnalysisList = showSilkairRoutes
     ? routeAnalysisListFull
@@ -69,24 +67,22 @@ export function RouteOverviewContent({
           <div key={letter} className="flex flex-col gap-2">
             <h1 className="text-2xl font-bold">{letter}</h1>
 
-            <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
-              <div className="flex flex-col gap-1">
-                {routes.map((route) => (
-                  <Link
-                    key={route.label}
-                    href={route.href}
-                    size="sm"
-                    underline="hover"
-                    onClick={() => {
-                      trackEvent(['routeOverview'], { route: route.label });
-                    }}
-                    className="text-blue-500 dark:text-blue-400"
-                  >
-                    {route.label}
-                  </Link>
-                ))}
-              </div>
-            </Skeleton>
+            <div className="flex flex-col gap-1">
+              {routes.map((route) => (
+                <Link
+                  key={route.label}
+                  href={route.href}
+                  size="sm"
+                  underline="hover"
+                  onClick={() => {
+                    trackEvent(['routeOverview'], { route: route.label });
+                  }}
+                  className="text-blue-500 dark:text-blue-400"
+                >
+                  {route.label}
+                </Link>
+              ))}
+            </div>
           </div>
         ))}
       </div>

@@ -6,14 +6,12 @@ import { flightClassCodeOrder } from '@/components/common/flight-class-code-to-n
 import { useTheme } from '@/components/common/use-theme';
 import { Line } from 'react-chartjs-2';
 import { RouteDetailDatum } from '../helpers/make-route-details-list';
-import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 export function MilesRequiredOverTimeChart({
   detailsListFiltered,
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
 
   const flightClassToMonthToMilesRequiredDict: Record<
@@ -97,7 +95,6 @@ export function MilesRequiredOverTimeChart({
           data={data}
         />
       }
-      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

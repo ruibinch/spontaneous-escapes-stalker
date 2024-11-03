@@ -3,7 +3,6 @@ import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
 import { lineOnHoverPlugin } from '@/components/common/chart/line-on-hover-plugin';
 import { flightClassColors } from '@/components/common/colors';
 import { useTheme } from '@/components/common/use-theme';
-import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { MonthSummaryAnalysisEntry } from '@/index';
 import { Line } from 'react-chartjs-2';
 
@@ -12,7 +11,6 @@ export function AverageBlackoutPctOverTime({
 }: {
   monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
 }) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
   const averageBlackoutPctList = monthSummaryAnalysisList.map((entry) => ({
     month: entry.month,
@@ -91,7 +89,6 @@ export function AverageBlackoutPctOverTime({
           data={data}
         />
       }
-      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

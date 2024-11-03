@@ -1,8 +1,8 @@
 import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair-flights';
 import { getStaticFileContent } from '@/common/get-static-file-content';
+import ClientOnly from '@/components/common/client-only';
 import { RouteOverviewContent } from '@/components/route-overview/content';
 import { RouteAnalysisEntry } from '@/index';
-import { Suspense } from 'react';
 
 export default function RouteOverview() {
   const routeAnalysisListFull = getStaticFileContent<RouteAnalysisEntry[]>({
@@ -13,11 +13,11 @@ export default function RouteOverview() {
   );
 
   return (
-    <Suspense>
+    <ClientOnly>
       <RouteOverviewContent
         routeAnalysisListFull={routeAnalysisListFull}
         routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
       />
-    </Suspense>
+    </ClientOnly>
   );
 }

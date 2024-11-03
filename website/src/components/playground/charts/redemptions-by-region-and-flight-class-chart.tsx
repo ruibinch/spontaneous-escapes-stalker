@@ -13,7 +13,6 @@ interface Props {
 export function RedemptionsByRegionAndFlightClassChart({
   routeAnalysisListFiltered,
 }: Props) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
 
   const regionToFlightClassToCountDict: Record<
@@ -86,7 +85,6 @@ export function RedemptionsByRegionAndFlightClassChart({
           data={data}
         />
       }
-      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

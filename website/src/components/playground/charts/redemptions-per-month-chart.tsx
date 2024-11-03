@@ -11,7 +11,6 @@ interface Props {
 }
 
 export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
   const monthToCountDict: Record<string, number> = {};
 
@@ -57,7 +56,6 @@ export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
           data={data}
         />
       }
-      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

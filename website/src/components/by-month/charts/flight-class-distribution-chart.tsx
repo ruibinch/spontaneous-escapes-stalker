@@ -16,7 +16,6 @@ import { Pie } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { ChartWrapper } from '../../common/chart/chart-wrapper';
 import { CommonStyles } from '../../common/styles';
-import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 type FlightClassToCountDict = Record<string, number>;
 
@@ -27,7 +26,6 @@ export function FlightClassDistributionChart({
   redemptionsFiltered: RedemptionEntry[];
   isFilterActive: boolean;
 }) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
 
   const flightClassDistributionInMonth = redemptionsFiltered.reduce(
@@ -100,7 +98,6 @@ export function FlightClassDistributionChart({
           isFilterActive={isFilterActive}
         />
       }
-      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

@@ -60,5 +60,8 @@ export const endBarItems = [
 
 export const additionalEndBarItems = [
   { key: 'coffee', item: <CoffeeItem />, disabled: !ENABLE_COFFEE },
-  { key: 'themeToggle', item: <ThemeToggleItem /> },
+  {
+    key: 'themeToggle',
+    item: <ThemeToggleItem />,
+  },
 ].filter((item) => !item.disabled);

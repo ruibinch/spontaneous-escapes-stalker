@@ -2,7 +2,6 @@ import { LAST_PRE_COVID_MONTH } from '@/common/months-map';
 import { roundToDp } from '@/common/round-to-dp';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { MonthSummaryAnalysisEntry } from '@/index';
-import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar, Line } from 'react-chartjs-2';
 import { getMonthsList } from '../../../common/get-months-with-route-network-data';
 import { makeChartOptions } from '../../common/chart/chart-options';
@@ -17,8 +16,7 @@ export function RedemptionsVsRouteNetworkCharts({
   monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
 }) {
   const { isDarkTheme } = useTheme();
-  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
-    useSilkairRoutesToggleContext();
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
 
   const monthsWithRouteNetworkData = getMonthsList({
     includeOnlyMonthsPresentInOagDataset: true,
@@ -115,7 +113,6 @@ export function RedemptionsVsRouteNetworkCharts({
             data={comparisonChartData}
           />
         }
-        isLoaded={isSilkairRoutesContextLoaded}
       />
 
       <ChartWrapper
@@ -141,7 +138,6 @@ export function RedemptionsVsRouteNetworkCharts({
           />
         }
         tooltip="Number of routes available for SE redemptions / Total number of routes in the route network"
-        isLoaded={isSilkairRoutesContextLoaded}
       />
     </div>
   );

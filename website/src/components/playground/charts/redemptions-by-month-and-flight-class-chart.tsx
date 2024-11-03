@@ -26,7 +26,6 @@ const displayToggleOptions: ToggleProps<AverageOrTotal>['options'] = [
 export function RedemptionsByMonthAndFlightClassChart({
   routeAnalysisListFiltered,
 }: Props) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
   const [displayAs, setDisplayAs] = useState<AverageOrTotal>('average');
 
@@ -165,7 +164,6 @@ export function RedemptionsByMonthAndFlightClassChart({
           setSelValue={setDisplayAs}
         />
       }
-      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

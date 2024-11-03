@@ -4,12 +4,12 @@ import { getStaticFileContent } from '@/common/get-static-file-content';
 import { MONTHS_WITH_MISSING_DATA } from '@/common/months-data-info';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { ByMonthContent } from '@/components/by-month/content';
+import ClientOnly from '@/components/common/client-only';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import patienceMyYoungPadawanImg from '@/static/patience-my-young-padawan.jpg';
 import { isAfter, isBefore } from 'date-fns';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
 export default async function ByMonth({
   params: { month },
@@ -71,13 +71,13 @@ export default async function ByMonth({
   ) as MonthSummaryAnalysisEntry;
 
   return (
-    <Suspense>
+    <ClientOnly>
       <ByMonthContent
         month={month}
         redemptionsFull={redemptionsFull}
         redemptionsSiaOnly={redemptionsSiaOnly}
         monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
       />
-    </Suspense>
+    </ClientOnly>
   );
 }

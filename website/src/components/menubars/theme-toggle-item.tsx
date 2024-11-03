@@ -1,13 +1,19 @@
+'use client';
 import { trackEvent } from '@/analytics';
-import { Button, cn } from '@nextui-org/react';
-import { Skeleton } from '../common/skeleton';
+import { Button, Skeleton, cn } from '@nextui-org/react';
 import { Tooltip } from '../common/tooltip';
 import { useTheme } from '../common/use-theme';
 import { MoonIcon } from '../icons/moon';
 import { SunIcon } from '../icons/sun';
+import { useEffect, useState } from 'react';
 
 export function ThemeToggleItem() {
   const { setTheme, isDarkTheme, isThemeLoaded } = useTheme();
+  const [isThemeLoadedLocal, setIsThemeLoadedLocal] = useState(false);
+
+  useEffect(() => {
+    setIsThemeLoadedLocal(isThemeLoaded);
+  }, [isThemeLoaded]);
 
   const toggleTheme = () => {
     const themeUpd = isDarkTheme ? 'light' : 'dark';
@@ -29,8 +35,8 @@ export function ThemeToggleItem() {
         )}
       >
         <Skeleton
-          className="bg-neutral-400 px-1.5 py-1"
-          isLoaded={isThemeLoaded}
+          className="rounded-lg bg-neutral-400"
+          isLoaded={isThemeLoadedLocal}
         >
           {isDarkTheme ? <MoonIcon /> : <SunIcon />}
         </Skeleton>

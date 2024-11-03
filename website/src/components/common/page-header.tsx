@@ -1,14 +1,11 @@
 import { cn } from '@nextui-org/react';
-import { Skeleton } from './skeleton';
 import { CommonStyles } from './styles';
 
 interface Props {
   breadcrumbs?: React.ReactNode;
   title: string;
   subtitle?: string;
-  // if rightComponent is present, then isLoaded must also be present
   rightComponent?: React.ReactNode;
-  isLoaded?: boolean;
 }
 
 export function PageHeader({
@@ -16,7 +13,6 @@ export function PageHeader({
   title,
   subtitle,
   rightComponent,
-  isLoaded,
 }: Props) {
   return (
     <div
@@ -34,12 +30,7 @@ export function PageHeader({
         </div>
       </div>
 
-      {/* assumes that all rightComponent types are SilkairRoutesToggle; tweak if not so */}
-      {rightComponent && (
-        <Skeleton className="justify-self-end" isLoaded={isLoaded ?? true}>
-          <div>{rightComponent}</div>
-        </Skeleton>
-      )}
+      <div className="justify-self-end">{rightComponent}</div>
     </div>
   );
 }

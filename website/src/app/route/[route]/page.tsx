@@ -1,9 +1,9 @@
 import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair-flights';
 import { getStaticFileContent } from '@/common/get-static-file-content';
 import { ByRouteContent } from '@/components/by-route/content';
+import ClientOnly from '@/components/common/client-only';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { RouteAnalysisEntry } from '@/index';
-import { Suspense } from 'react';
 
 export default function ByRoute({ params }: { params: { route: string } }) {
   const route = params.route.toUpperCase();
@@ -33,7 +33,7 @@ export default function ByRoute({ params }: { params: { route: string } }) {
   }
 
   return (
-    <Suspense>
+    <ClientOnly>
       <ByRouteContent
         routeMetadata={{
           origin: routeAnalysisEntry.origin,
@@ -44,6 +44,6 @@ export default function ByRoute({ params }: { params: { route: string } }) {
         routeAnalysisListFull={routeAnalysisListFull}
         routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
       />
-    </Suspense>
+    </ClientOnly>
   );
 }

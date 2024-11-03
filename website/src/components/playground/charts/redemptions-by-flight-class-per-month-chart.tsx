@@ -23,7 +23,6 @@ const displayToggleOptions: ToggleProps<CountOrPct>['options'] = [
 export function RedemptionsByFlightClassPerMonthChart({
   routeAnalysisListFiltered,
 }: Props) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
   const [displayAs, setDisplayAs] = useState<CountOrPct>('count');
 
@@ -153,7 +152,6 @@ export function RedemptionsByFlightClassPerMonthChart({
           setSelValue={setDisplayAs}
         />
       }
-      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

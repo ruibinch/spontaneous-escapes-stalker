@@ -4,7 +4,6 @@ import { RoutesByRegionChart } from './charts/routes-by-region-chart';
 import { RedemptionsByMonthAndFlightClassChart } from './charts/redemptions-by-month-and-flight-class-chart';
 import { RedemptionsByRegionAndFlightClassChart } from './charts/redemptions-by-region-and-flight-class-chart';
 import { RedemptionsByFlightClassPerMonthChart } from './charts/redemptions-by-flight-class-per-month-chart';
-import { Skeleton } from '../common/skeleton';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];

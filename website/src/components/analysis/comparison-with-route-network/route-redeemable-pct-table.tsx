@@ -25,15 +25,13 @@ import {
   useRowsPerPageHandler,
 } from '../../common/table/table-rows-per-page';
 import { TooltipOrPopover } from '../../common/tooltip-or-popover';
-import { Skeleton } from '@/components/common/skeleton';
 
 export function RouteRedeemablePctTable({
   routeAnalysisList,
 }: {
   routeAnalysisList: RouteAnalysisEntry[];
 }) {
-  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
-    useSilkairRoutesToggleContext();
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const [searchTerm, setSearchTerm] = useState('');
 
   const data = routeAnalysisList
@@ -117,35 +115,29 @@ export function RouteRedeemablePctTable({
 
       <div className="grid grid-cols-3 items-center">
         <div className="col-span-2">
-          <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
-            <SearchTermFilter
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              placeholder="Filter by city / IATA"
-              useBasicDesign
-            />
-          </Skeleton>
+          <SearchTermFilter
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            placeholder="Filter by city / IATA"
+            useBasicDesign
+          />
         </div>
 
         <div className="justify-self-end">
-          <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
-            <TableRowsPerPage
-              rowsPerPage={rowsPerPage}
-              onRowsPerPageChange={onRowsPerPageChange}
-              label="Show:"
-            />
-          </Skeleton>
+          <TableRowsPerPage
+            rowsPerPage={rowsPerPage}
+            onRowsPerPageChange={onRowsPerPageChange}
+            label="Show:"
+          />
         </div>
       </div>
 
-      <Skeleton isLoaded={isSilkairRoutesContextLoaded}>
-        <RouteRedeemablePctTableContent
-          data={dataSorted.slice(startIdx, endIdx)}
-          currPage={currPage}
-          setCurrPage={setCurrPage}
-          pages={pages}
-        />
-      </Skeleton>
+      <RouteRedeemablePctTableContent
+        data={dataSorted.slice(startIdx, endIdx)}
+        currPage={currPage}
+        setCurrPage={setCurrPage}
+        pages={pages}
+      />
     </div>
   );
 }

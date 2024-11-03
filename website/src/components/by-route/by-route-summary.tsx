@@ -1,11 +1,10 @@
 import { roundToDp } from '@/common/round-to-dp';
 import { useRoutesStats } from '@/hooks/use-routes-stats';
+import { RouteAnalysisEntry } from '@/index';
 import { flightClassCodeOrder } from '../common/flight-class-code-to-name';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { SummaryEntryCard } from '../common/summary-entry-card';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
-import { RouteAnalysisEntry } from '@/index';
-import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 export function ByRouteSummary({
   routeMetadata: { originIata, destinationIata },
@@ -18,7 +17,6 @@ export function ByRouteSummary({
   detailsList: RouteDetailDatum[];
   detailsListFiltered: RouteDetailDatum[];
 }) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const routesStats = useRoutesStats(routeAnalysisList);
   const routeStats = routesStats.find(
     (stat) =>
@@ -40,7 +38,6 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
-        isLoaded={isSilkairRoutesContextLoaded}
       />
       <SummaryEntryCard
         cardBodyClassName="px-3 md:px-6"
@@ -60,7 +57,6 @@ export function ByRouteSummary({
             ))}
           </div>
         }
-        isLoaded={isSilkairRoutesContextLoaded}
       />
       <SummaryEntryCard
         header="Redemption months"
@@ -74,7 +70,6 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
-        isLoaded={isSilkairRoutesContextLoaded}
       />
       <SummaryEntryCard
         header="Average blackout %"
@@ -88,7 +83,6 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
-        isLoaded={isSilkairRoutesContextLoaded}
       />
     </div>
   );

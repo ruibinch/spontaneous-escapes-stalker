@@ -21,7 +21,6 @@ interface Props {
 }
 
 export function RoutesByRegionChart({ routeAnalysisListFiltered }: Props) {
-  const { isSilkairRoutesContextLoaded } = useSilkairRoutesToggleContext();
   const { isDarkTheme } = useTheme();
   const regionToCountDict: Record<string, number> = {
     [Region.SOUTH_EAST_ASIA]: 0,
@@ -76,7 +75,6 @@ export function RoutesByRegionChart({ routeAnalysisListFiltered }: Props) {
           data={data}
         />
       }
-      isLoaded={isSilkairRoutesContextLoaded}
     />
   );
 }

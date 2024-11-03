@@ -55,8 +55,7 @@ export function ByRouteContent({
   routeAnalysisListSiaOnly: RouteAnalysisEntry[];
 }) {
   const searchParams = useSearchParams();
-  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
-    useSilkairRoutesToggleContext();
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const routeAnalysisList = showSilkairRoutes
     ? routeAnalysisListFull
     : routeAnalysisListSiaOnly;
@@ -93,9 +92,6 @@ export function ByRouteContent({
         title={`${origin} - ${destination}`}
         rightComponent={
           shouldShowSilkairRoutesToggle && <SilkairRoutesToggle />
-        }
-        isLoaded={
-          shouldShowSilkairRoutesToggle ? isSilkairRoutesContextLoaded : true
         }
       />
 

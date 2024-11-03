@@ -52,8 +52,7 @@ export function PlaygroundContent({
   routeAnalysisListSiaOnly: RouteAnalysisEntry[];
   monthsList: string[];
 }) {
-  const { showSilkairRoutes, isSilkairRoutesContextLoaded } =
-    useSilkairRoutesToggleContext();
+  const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const routeAnalysisList = showSilkairRoutes
     ? routeAnalysisListFull
     : routeAnalysisListSiaOnly;
@@ -88,7 +87,6 @@ export function PlaygroundContent({
         title="Playground"
         subtitle="Explore the dataset of past Spontaneous Escapes redemptions offered"
         rightComponent={<SilkairRoutesToggle />}
-        isLoaded={isSilkairRoutesContextLoaded}
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>

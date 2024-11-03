@@ -1,3 +1,4 @@
+import { formatToDp } from '@/common/format-to-dp';
 import {
   Link,
   SortDescriptor,
@@ -10,20 +11,19 @@ import {
   cn,
   getKeyValue,
 } from '@nextui-org/react';
+import { useEffect, useState } from 'react';
+import { CommonStyles } from '../common/styles';
 import {
   renderBlackoutPeriodCell,
   renderFlightClassCell,
 } from '../common/table/render-table-cells';
+import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 import { TablePagination } from '../common/table/table-pagination';
-import { useState, useEffect, useCallback, useMemo } from 'react';
 import {
   TableRowsPerPage,
   useRowsPerPageHandler,
 } from '../common/table/table-rows-per-page';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
-import { sortByNumericField, sortByStringField } from '../common/table/sorters';
-import { CommonStyles } from '../common/styles';
-import { formatToDp } from '@/common/format-to-dp';
 
 const columns = [
   { key: 'month', label: 'Month', allowsSorting: true },

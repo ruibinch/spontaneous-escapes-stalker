@@ -12,13 +12,11 @@ import React, {
 const STORAGE_KEY = 'showSilkairRoutes';
 
 interface SilkairRoutesToggleContext {
-  isSilkairRoutesContextLoaded: boolean;
   showSilkairRoutes: boolean | undefined;
   setShowSilkairRoutes: (value: boolean) => void;
 }
 
 const SilkairRoutesToggleContext = createContext<SilkairRoutesToggleContext>({
-  isSilkairRoutesContextLoaded: false,
   showSilkairRoutes: true,
   setShowSilkairRoutes: () => {},
 });
@@ -63,7 +61,6 @@ export const SilkairRoutesToggleContextProvider = (props: {
 
   const providerValue = useMemo(
     () => ({
-      isSilkairRoutesContextLoaded: showSilkairRoutes !== undefined,
       showSilkairRoutes,
       setShowSilkairRoutes,
     }),
