@@ -32,6 +32,7 @@ const isBasicRun = !!process.env['BASIC_RUN'];
 export async function scrape() {
   let html: HTMLElement | undefined;
   let isNewHtml: boolean;
+  const isOverrideHtml = !!htmlFilepath && htmlFilepath.includes('override');
 
   try {
     const loadHtmlResult = await loadHtml();
@@ -61,6 +62,7 @@ export async function scrape() {
   if (isBasicRun) {
     saveDataFiles({
       html: isNewHtml ? html : undefined,
+      isOverrideHtml,
       redemptions,
       redemptionTravelPeriod,
     });
@@ -140,6 +142,7 @@ export async function scrape() {
 
   saveDataFiles({
     html: isNewHtml ? html : undefined,
+    isOverrideHtml,
     redemptions,
     redemptionTravelPeriod,
   });
@@ -178,10 +181,12 @@ async function loadHtml() {
  */
 function saveDataFiles({
   html,
+  isOverrideHtml,
   redemptions,
   redemptionTravelPeriod,
 }: {
   html: HTMLElement | undefined;
+  isOverrideHtml: boolean;
   redemptions: Redemption[];
   redemptionTravelPeriod: TimePeriod;
 }) {
@@ -195,7 +200,7 @@ function saveDataFiles({
 
   const redemptionsFilename = `data/${dateInYYYYMM(
     redemptionTravelPeriod.from,
-  )}-redemptions.json`;
+  )}-redemptions${isOverrideHtml ? '-override' : ''}.json`;
   log(`📄 Writing to ${redemptionsFilename}`);
   fs.writeFileSync(redemptionsFilename, JSON.stringify(redemptions, null, 2));
 }

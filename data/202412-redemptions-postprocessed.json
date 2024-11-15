@@ -1869,6 +1869,62 @@
     "origin": "Singapore",
     "originIata": "SIN",
     "originCountry": "Singapore",
+    "destination": "Brussels",
+    "destinationIata": "BRU",
+    "destinationCountry": "Belgium",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ304"
+    ],
+    "milesRequired": 29400,
+    "blackoutPeriod": [
+      {
+        "from": "2024-12-01",
+        "to": "2024-12-01"
+      },
+      {
+        "from": "2024-12-13",
+        "to": "2024-12-22"
+      }
+    ],
+    "blackoutPct": 35.5,
+    "region": "Europe",
+    "redemptionMonth": "202412"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
+    "destination": "London",
+    "destinationIata": "LON",
+    "destinationCountry": "UK",
+    "flightClass": "Economy",
+    "flightNos": [
+      "SQ308"
+    ],
+    "milesRequired": 29400,
+    "blackoutPeriod": [
+      {
+        "from": "2024-12-01",
+        "to": "2024-12-01"
+      },
+      {
+        "from": "2024-12-12",
+        "to": "2024-12-21"
+      },
+      {
+        "from": "2024-12-30",
+        "to": "2024-12-31"
+      }
+    ],
+    "blackoutPct": 41.9,
+    "region": "Europe",
+    "redemptionMonth": "202412"
+  },
+  {
+    "origin": "Singapore",
+    "originIata": "SIN",
+    "originCountry": "Singapore",
     "destination": "Milan",
     "destinationIata": "MXP",
     "destinationCountry": "Italy",
@@ -1901,62 +1957,6 @@
       }
     ],
     "blackoutPct": 58.1,
-    "region": "Europe",
-    "redemptionMonth": "202412"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "originCountry": "Singapore",
-    "destination": "Brussels",
-    "destinationIata": "BRU",
-    "destinationCountry": "Belgium",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ304"
-    ],
-    "milesRequired": 49700,
-    "blackoutPeriod": [
-      {
-        "from": "2024-12-01",
-        "to": "2024-12-01"
-      },
-      {
-        "from": "2024-12-13",
-        "to": "2024-12-22"
-      }
-    ],
-    "blackoutPct": 35.5,
-    "region": "Europe",
-    "redemptionMonth": "202412"
-  },
-  {
-    "origin": "Singapore",
-    "originIata": "SIN",
-    "originCountry": "Singapore",
-    "destination": "London",
-    "destinationIata": "LON",
-    "destinationCountry": "UK",
-    "flightClass": "Economy",
-    "flightNos": [
-      "SQ308"
-    ],
-    "milesRequired": 49700,
-    "blackoutPeriod": [
-      {
-        "from": "2024-12-01",
-        "to": "2024-12-01"
-      },
-      {
-        "from": "2024-12-12",
-        "to": "2024-12-21"
-      },
-      {
-        "from": "2024-12-30",
-        "to": "2024-12-31"
-      }
-    ],
-    "blackoutPct": 41.9,
     "region": "Europe",
     "redemptionMonth": "202412"
   },
