@@ -2,8 +2,7 @@ import { IS_SERVER } from '@/common/env';
 import { differenceInCalendarDays } from 'date-fns';
 import React, { createContext, useState } from 'react';
 
-// TODO: pull this from changelog.md instead of hardcoding here
-const LAST_CHANGELOG_ITEM_DATE = '2024-09-11';
+const LAST_CHANGELOG_ITEM_DATE = '2024-11-17';
 const VIEWED_CHANGELOG_STORAGE_KEY = 'viewed-changelog';
 const NEW_ITEM_VALIDITY_DAYS = 30;
 
