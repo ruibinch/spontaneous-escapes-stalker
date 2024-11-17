@@ -10,6 +10,7 @@ import {
   format,
   getDaysInMonth,
   isAfter,
+  isBefore,
   isSameMonth,
   max,
   min,
@@ -17,7 +18,6 @@ import {
   subMonths,
   subYears,
 } from 'date-fns';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { YEAR_ALL } from '../common/filters/year-filter';
 import { flightClassCodeOrder } from '../common/flight-class-code-to-name';
@@ -37,74 +37,17 @@ import {
 } from './helpers/make-blackout-periods-by-day-dict';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
 
-/**
- * Returns the index in the months list corresponding to the input date.
- *
- * If an exact match is not found, return either the last index before the date (if direction is 'prev'),
- * or the first index after the date (if direction is 'next').
- */
-const getMonthViewIdx = ({
-  months,
-  date,
-  direction,
-}: {
-  months: string[]; // in YYYYMM format
-  date: Date;
-  direction: 'prev' | 'next';
-}) => {
-  for (let i = 0; i < months.length; i++) {
-    // return index if the month is an exact match
-    if (isSameMonth(yyyymmToDate(months[i]), date)) {
-      return i;
-    }
-    // if the search month has gone past the search date, break early
-    if (isAfter(yyyymmToDate(months[i]), date)) {
-      return direction === 'prev' ? i - 1 : i;
-    }
-  }
-  // should never reach here; default to latest month
-  console.error(
-    `cannot find ${date.toISOString().split('T')[0]} in months list`,
-  );
-  return months.length - 1;
-};
-
 export function MonthView({
   detailsListFiltered,
 }: {
   detailsListFiltered: RouteDetailDatum[];
 }) {
-  const { searchParams, generateUrlWithUpdatedSearchParams } =
-    useSearchParams();
-  const router = useRouter();
-
+  const { searchParams } = useSearchParams();
   const year = searchParams.get('year') ?? YEAR_ALL;
   const months = getMonthsList({ years: year.split(',') });
   const minMonth = yyyymmToDate(months[0]);
   const maxMonth = yyyymmToDate(months[months.length - 1]);
-
-  // default to latest month
-  const monthView = searchParams.get('monthView') ?? months[months.length - 1];
-  const [monthViewIdx, setMonthViewIdx] = useState(
-    months.findIndex((month) => month === monthView),
-  );
-  const currDate = yyyymmToDate(monthView);
-
-  const updateMonthView = (newDate: Date, direction: 'prev' | 'next') => {
-    const newMonthViewIdx = getMonthViewIdx({
-      months: months,
-      date: newDate,
-      direction,
-    });
-    updateMonthViewIdx(newMonthViewIdx);
-  };
-
-  const updateMonthViewIdx = (newIdx: number) => {
-    const newMonthView = months[newIdx];
-    setMonthViewIdx(newIdx);
-    const url = generateUrlWithUpdatedSearchParams('monthView', newMonthView);
-    router.replace(url, { scroll: false });
-  };
+  const [currDate, setCurrDate] = useState(maxMonth);
 
   const redemptionsInMonth = detailsListFiltered.filter((detail) =>
     isSameMonth(yyyymmToDate(detail.month), currDate),
@@ -114,15 +57,13 @@ export function MonthView({
     currDate,
   );
 
-  const isAfterMinMonth = monthViewIdx > 0;
-  const isBeforeMaxMonth = monthViewIdx < months.length - 1;
-  const toPrevYear = () =>
-    updateMonthView(max([minMonth, subYears(currDate, 1)]), 'prev');
-  const toPrevMonth = () => updateMonthView(subMonths(currDate, 1), 'prev');
-  const toNextMonth = () => updateMonthView(addMonths(currDate, 1), 'next');
-  const toNextYear = () =>
-    updateMonthView(min([maxMonth, addYears(currDate, 1)]), 'next');
-  const resetToLatestMonth = () => updateMonthViewIdx(months.length - 1);
+  const isAfterMinMonth = isAfter(currDate, minMonth);
+  const isBeforeMaxMonth = isBefore(currDate, maxMonth);
+  const toPrevYear = () => setCurrDate(max([minMonth, subYears(currDate, 1)]));
+  const toPrevMonth = () => setCurrDate(subMonths(currDate, 1));
+  const toNextMonth = () => setCurrDate(addMonths(currDate, 1));
+  const toNextYear = () => setCurrDate(min([maxMonth, addYears(currDate, 1)]));
+  const resetToLatestMonth = () => setCurrDate(maxMonth);
 
   return (
     <div className="flex flex-col gap-2">
