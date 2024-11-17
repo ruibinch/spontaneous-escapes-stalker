@@ -37,6 +37,7 @@ export function ThemeToggleItem() {
         <Skeleton
           className="rounded-lg bg-neutral-400"
           isLoaded={isThemeLoadedLocal}
+          disableAnimation
         >
           {isDarkTheme ? <MoonIcon /> : <SunIcon />}
         </Skeleton>

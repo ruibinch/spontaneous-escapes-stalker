@@ -1,6 +1,6 @@
 import { AnalyticsScript } from '@/analytics';
 import type { Metadata } from 'next';
-import { Providers } from '../providers';
+import { Providers } from './providers';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <AnalyticsScript />
 
       <body>
