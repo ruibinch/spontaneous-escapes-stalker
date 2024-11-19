@@ -34,11 +34,11 @@ function checkNextMonthRedemptionsAlreadyPublished() {
 (async () => {
   const isNextMonthRedemptionsAlreadyPublished =
     checkNextMonthRedemptionsAlreadyPublished();
-  // also allow if redemptions are already published but it's the first run of the day (i.e. before 0710), to cater for updates to the site
+  // also allow if redemptions are already published but it's the first run of the day (i.e. before 0703), to cater for updates to the site
   const dateString = new Date().toISOString().split('T')[0]; // YYYY-MM-DD in UTC
   const isFirstRunOfDay = isWithinInterval(new Date(), {
     start: new Date(`${dateString}T23:00:00.000Z`),
-    end: new Date(`${dateString}T23:05:00.000Z`),
+    end: new Date(`${dateString}T23:03:00.000Z`),
   });
 
   if (isNextMonthRedemptionsAlreadyPublished && !isFirstRunOfDay) {
