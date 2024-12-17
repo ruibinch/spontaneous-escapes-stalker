@@ -3,7 +3,10 @@ import path from 'path';
 import { generateMonthSummaryAnalysis } from './analysis/generateMonthSummaryAnalysis';
 import { generateRouteAnalysis } from './analysis/generateRouteAnalysis';
 import { RedemptionJsonPostprocessed } from './utils/types';
-import { appendMonthMetadata } from './analysis/appendMonthMetadata';
+import {
+  appendMonthMetadata,
+  appendRouteMetadata,
+} from './analysis/appendMetadata';
 import { OagDataAnalysisEntry } from './scripts/generateOagData';
 import { log } from './utils/log';
 
@@ -44,10 +47,11 @@ export function analyse() {
     months,
     oagDataAnalysis,
   });
+  const routeAnalysisWithMetadata = appendRouteMetadata(routeAnalysis);
   console.log(`📄 Writing to ${ROUTE_ANALYSIS_OUTPUT_FILENAME}`);
   fs.writeFileSync(
     ROUTE_ANALYSIS_OUTPUT_FILENAME,
-    JSON.stringify(routeAnalysis, null, 2),
+    JSON.stringify(routeAnalysisWithMetadata, null, 2),
   );
 
   const monthSummaryAnalysis = generateMonthSummaryAnalysis({

@@ -33,7 +33,7 @@ type Details = {
 type DetailsWithMonth = Details & { month: Month };
 type RouteAnalysisDict = Record<Route, Record<Month, Details>>;
 
-type RouteAnalysisEntry = {
+export type RouteAnalysisEntry = {
   origin: string;
   originIata: string;
   originCountry: string;
