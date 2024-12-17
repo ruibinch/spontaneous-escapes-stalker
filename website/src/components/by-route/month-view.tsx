@@ -144,7 +144,7 @@ export function MonthView({
                 )}
               />
             </div>
-            <div className="flex flex-row gap-1">
+            {/* <div className="flex flex-row gap-1">
               <span>Redemption with blackout</span>
               <div
                 className={cn(
@@ -152,7 +152,7 @@ export function MonthView({
                   'bg-amber-200/50 dark:bg-blue-900 bg-stripes bg-stripes-white dark:bg-stripes-black',
                 )}
               />
-            </div>
+            </div> */}
             <div className="flex flex-row gap-1">
               <span>No redemption</span>
               <div
@@ -257,9 +257,9 @@ function MonthCalendar({
               )}
             >
               {week.map((day, dayIdx) => {
-                const blackoutPeriodsForDay = day
-                  ? blackoutPeriodsByDayDict[day] ?? []
-                  : [];
+                // const blackoutPeriodsForDay = day
+                //   ? blackoutPeriodsByDayDict[day] ?? []
+                //   : [];
 
                 return (
                   <div
@@ -278,9 +278,10 @@ function MonthCalendar({
                         }
 
                         // there is a redemption in this month
-                        return blackoutPeriodsForDay.length > 0
-                          ? 'bg-amber-200/50 dark:bg-blue-900 bg-stripes bg-stripes-white dark:bg-stripes-black'
-                          : 'bg-amber-100/50 dark:bg-blue-900/75';
+                        // return blackoutPeriodsForDay.length > 0
+                        //   ? 'bg-amber-200/50 dark:bg-blue-900 bg-stripes bg-stripes-white dark:bg-stripes-black'
+                        //   : 'bg-amber-100/50 dark:bg-blue-900/75';
+                        return 'bg-amber-100/50 dark:bg-blue-900/75';
                       })(),
                     )}
                   >

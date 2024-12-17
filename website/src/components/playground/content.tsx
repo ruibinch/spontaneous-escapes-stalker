@@ -109,7 +109,6 @@ export function PlaygroundContent({
         </div>
 
         <DetailsTable
-          routeAnalysisList={routeAnalysisList}
           tableData={routeAnalysisListFiltered}
           startDate={startDate}
           endDate={endDate}

@@ -11,7 +11,6 @@ import { notEmpty } from '@/common/not-empty';
 import { useRoutesStats } from '@/hooks/use-routes-stats';
 
 type Props = {
-  routeAnalysisList: RouteAnalysisEntry[];
   tableData: RouteAnalysisEntry[];
   startDate: Date;
   endDate: Date;
@@ -19,9 +18,9 @@ type Props = {
 };
 
 export function DetailsTable(props: Props) {
-  const { routeAnalysisList, tableData, ...restProps } = props;
+  const { tableData, ...restProps } = props;
   const [showRoutesAs, setShowRoutesAs] = useState<ShowRoutesAs>('separate');
-  const routesStats = useRoutesStats(routeAnalysisList);
+  const routesStats = useRoutesStats(tableData);
 
   const dataForSeparateRoutes = tableData.reduce(
     (_dataForSeparateRoutes: DatumForSeparateRoutes[], entry) => {
