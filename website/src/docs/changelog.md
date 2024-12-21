@@ -1,3 +1,7 @@
+# 2.10.0 - 2024-12-21
+
+- Added explanatory remarks on some by-route pages
+
 # 2.9.0 - 2024-11-17
 
 - Added global "Show SilkAir entries" toggle to support an SIA-only view, which could be more relevant for current usage
