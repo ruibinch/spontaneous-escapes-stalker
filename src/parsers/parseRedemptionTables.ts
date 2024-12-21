@@ -45,6 +45,8 @@ const SILKAIR_SECTION_NAME = />SilkAir</i;
  *   - Terms and Conditions,
  * from which we extract the first 2 accordions.
  *
+ * This scraping method is valid for pages up to 2024-12-16.
+ *
  * @param root
  * @returns
  */
@@ -85,6 +87,20 @@ export function parseRedemptionTables(root: HTMLElement) {
     silkairDestinationsSection,
   );
   const redemptionsForSilkairSection = parseSection(silkairSection);
+
+  // return early if nothing can be scraped by-section
+  if (
+    [
+      redemptionsForBusinessAndEconomyClassSection,
+      redemptionsForSingaporeAirlinesDestinationsSection,
+      redemptionsForSingaporeAirlinesSection,
+      redemptionsForPremiumEconomyClassSection,
+      redemptionsForSilkairDestinationsSection,
+      redemptionsForSilkairSection,
+    ].every((section) => section.length === 0)
+  ) {
+    return null;
+  }
 
   log(
     [

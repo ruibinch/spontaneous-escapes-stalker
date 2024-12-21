@@ -19,6 +19,7 @@ import {
   sendRedemptionsInfoNotification,
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
+import { parseRedemptionTablesV2 } from './parsers/parseRedemptionTablesV2';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
@@ -48,7 +49,17 @@ export async function scrape() {
   }
 
   // extract the latest info from the page first
-  const redemptionTablesInfo = parseRedemptionTables(html);
+  const redemptionTablesInfo =
+    parseRedemptionTables(html) ?? parseRedemptionTablesV2(html);
+  if (!redemptionTablesInfo) {
+    await sendMessageToChannels({
+      message: escapeCharacters(
+        `${datePrefix()} 🔥 Unable to scrape any redemptions data`,
+      ),
+      shouldSendToProdChannel: false,
+    });
+    return;
+  }
   const redemptionEndDate = parseRedemptionEndDate(html);
   const redemptionTravelPeriod = parseRedemptionTravelPeriod(html);
   const redemptions = redemptionTablesInfo.map((redemptionInfo) =>

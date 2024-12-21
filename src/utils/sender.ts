@@ -36,6 +36,7 @@ export async function sendMessageToChannels(props: {
     props.shouldSendToProdChannel;
 
   if (shouldSendToDebugChannel) {
+    console.info(`ℹ️ Sending message to debug channel`);
     await sendMessage({
       botToken: TELEGRAM_DEBUG_BOT_TOKEN,
       chatId: TELEGRAM_DEBUG_CHANNEL_ID,
@@ -44,6 +45,7 @@ export async function sendMessageToChannels(props: {
   }
 
   if (shouldSendToProdChannel) {
+    console.info(`ℹ️ Sending message to prod channel`);
     await sendMessage({
       botToken: TELEGRAM_PROD_BOT_TOKEN,
       chatId: TELEGRAM_PROD_CHANNEL_ID,
