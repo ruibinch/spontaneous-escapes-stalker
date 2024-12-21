@@ -161,8 +161,8 @@ export class Redemption {
       this.origin === otherRedemption.origin &&
       this.destination === otherRedemption.destination &&
       this.flightClass === otherRedemption.flightClass &&
-      this.flightNo === otherRedemption.flightNo &&
-      this.milesRequired === otherRedemption.milesRequired
+      this.flightNo === otherRedemption.flightNo
+      // skip checking equivalence of milesRequired as SQ site gets it wrong now and then, and it results in a false positive
       // skip checking equivalence of blackoutPeriod because it's a pain and doesn't add much value
     );
   }
