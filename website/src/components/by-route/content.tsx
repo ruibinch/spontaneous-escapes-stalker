@@ -28,6 +28,7 @@ import { makeRouteDetailsList } from './helpers/make-route-details-list';
 import { MonthView } from './month-view';
 import { MonthYearFrequencyTable } from './month-year-frequency-table';
 import { RouteHistoryTable } from './route-history-table';
+import { AlertInfo } from '../common/alert-info';
 
 ChartJS.register(
   CategoryScale,
@@ -96,6 +97,10 @@ export function ByRouteContent({
       />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>
+        {routeAnalysisEntry?.metadata.remarks && (
+          <AlertInfo content={routeAnalysisEntry.metadata.remarks} />
+        )}
+
         <ByRouteFilters />
 
         <div className="flex flex-col gap-4">

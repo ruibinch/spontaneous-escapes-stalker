@@ -49,6 +49,9 @@ export type RouteAnalysisEntry = {
       hasSilkairFlights: boolean;
     };
   }>;
+  metadata: {
+    remarks?: string[];
+  };
 };
 
 export type MonthSummaryAnalysisEntry = {
