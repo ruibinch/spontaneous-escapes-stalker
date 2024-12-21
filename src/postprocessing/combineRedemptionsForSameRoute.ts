@@ -26,8 +26,8 @@ export function combineRedemptionsForSameRoute(
     const redemptionExisting = redemptionsCombined[redemptionExistingIdx];
 
     const flightNosCombined = [
-      redemptionExisting.flightNo,
-      redemption.flightNo,
+      ...redemptionExisting.flightNo.split(','),
+      ...redemption.flightNo.split(','),
     ].join(',');
     const blackoutPeriodCombined: BlackoutPeriod[] = [
       ...redemptionExisting.blackoutPeriod.map(
@@ -35,7 +35,7 @@ export function combineRedemptionsForSameRoute(
           ({
             from: blackoutPeriod.from,
             to: blackoutPeriod.to,
-            flightNos: [redemptionExisting.flightNo],
+            flightNos: redemptionExisting.flightNo.split(','),
           } satisfies BlackoutPeriod),
       ),
       ...redemption.blackoutPeriod.map(
@@ -43,7 +43,7 @@ export function combineRedemptionsForSameRoute(
           ({
             from: blackoutPeriod.from,
             to: blackoutPeriod.to,
-            flightNos: [redemption.flightNo],
+            flightNos: redemption.flightNo.split(','),
           } satisfies BlackoutPeriod),
       ),
     ];

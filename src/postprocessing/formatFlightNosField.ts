@@ -25,7 +25,7 @@ export function formatFlightNosField(
       blackoutPeriod: blackoutPeriod.map((period) => ({
         ...period,
         ...(period.flightNos && {
-          flightNos: period.flightNos.sort(sortFlightNos),
+          flightNos: period.flightNos.map((s) => s.trim()).sort(sortFlightNos),
         }),
       })),
     };
