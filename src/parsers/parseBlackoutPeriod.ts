@@ -1,5 +1,5 @@
 import { spellcheckMonth } from '../lib/spellcheck';
-import { BlackoutPeriod } from '../utils/types';
+import { BlackoutPeriod, FlightClass } from '../utils/types';
 import { parseDateStringToISO8601 } from '../utils';
 import { log } from '../utils/log';
 
@@ -13,7 +13,14 @@ interface BlackoutPeriodStringByFlightNo {
   flightNo?: string;
 }
 
-export function parseBlackoutPeriod(blackoutPeriodString: string) {
+export function parseBlackoutPeriod(
+  blackoutPeriodString: string,
+  metadata?: {
+    origin: string;
+    destination: string;
+    flightClass: FlightClass;
+  },
+) {
   // if input value is just a dash, there is no blackout period
   const hasNoBlackoutPeriod =
     POSSIBLE_DASHES.some((dash) => blackoutPeriodString.trim() === dash) ||
@@ -31,7 +38,10 @@ export function parseBlackoutPeriod(blackoutPeriodString: string) {
     return blackoutPeriods;
   } catch (err) {
     if (err instanceof Error) {
-      const errorMessage = `[parseBlackoutPeriod] "${blackoutPeriodString}": ${err.message}`;
+      const metadataString = metadata
+        ? `[${metadata.origin}-${metadata.destination};${metadata.flightClass}]`
+        : '';
+      const errorMessage = `[parseBlackoutPeriod]${metadataString} "${blackoutPeriodString}": ${err.message}`;
       log(errorMessage, true);
     }
     return [];

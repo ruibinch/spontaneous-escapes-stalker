@@ -177,7 +177,11 @@ function parseSingleEntry({
   }
 
   const milesRequired = toNumber(milesRequiredText);
-  const blackoutPeriod = parseBlackoutPeriod(blackoutPeriodText);
+  const blackoutPeriod = parseBlackoutPeriod(blackoutPeriodText, {
+    origin,
+    destination,
+    flightClass,
+  });
 
   const isRedemptionDetailsValid =
     milesRequired > 0 && POSSIBLE_DASHES.every((dash) => flightNo !== dash);
