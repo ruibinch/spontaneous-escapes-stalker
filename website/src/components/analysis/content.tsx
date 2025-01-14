@@ -19,6 +19,7 @@ import { CommonStyles } from '../common/styles';
 import { BlackoutPct } from './blackout-pct';
 import { ComparisonWithRouteNetwork } from './comparison-with-route-network';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
+import { Tabs, Tab } from '@nextui-org/react';
 
 ChartJS.register(
   CategoryScale,
@@ -51,16 +52,23 @@ export function AnalysisContent({
       <PageHeader title="Analysis" rightComponent={<SilkairRoutesToggle />} />
 
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
-        <ComparisonWithRouteNetwork
-          monthSummaryAnalysisList={monthSummaryAnalysisList}
-          routeAnalysisList={routeAnalysisList}
-        />
-
-        <Divider />
-        <BlackoutPct
-          monthSummaryAnalysisList={monthSummaryAnalysisList}
-          routeAnalysisList={routeAnalysisList}
-        />
+        <Tabs aria-label="Analysis tabs" size="lg">
+          <Tab
+            key="comparisonWithRouteNetwork"
+            title="% of route network available for redemption"
+          >
+            <ComparisonWithRouteNetwork
+              monthSummaryAnalysisList={monthSummaryAnalysisList}
+              routeAnalysisList={routeAnalysisList}
+            />
+          </Tab>
+          <Tab key="blackoutPct" title="Blackout %">
+            <BlackoutPct
+              monthSummaryAnalysisList={monthSummaryAnalysisList}
+              routeAnalysisList={routeAnalysisList}
+            />
+          </Tab>
+        </Tabs>
 
         {/* TODO: by region drilldown? */}
       </div>
