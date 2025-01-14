@@ -21,10 +21,11 @@ export function parseBlackoutPeriod(
     flightClass: FlightClass;
   },
 ) {
-  // if input value is just a dash, there is no blackout period
   const hasNoBlackoutPeriod =
+    // if input value is just a dash, there is no blackout period
     POSSIBLE_DASHES.some((dash) => blackoutPeriodString.trim() === dash) ||
-    new RegExp(/^\s+$/g).test(blackoutPeriodString);
+    // empty string
+    !blackoutPeriodString.trim();
   if (hasNoBlackoutPeriod) return [];
 
   try {
