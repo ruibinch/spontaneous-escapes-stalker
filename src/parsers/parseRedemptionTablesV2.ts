@@ -202,11 +202,8 @@ function parseSingleEntry({
 }
 
 /**
- * The cell value can contain the column name in addition to the value, e.g.
- * "FROM Singapore to Bali" instead of "Singapore to Bali".
- *
- * In such cases, we remove the column name from the cell.
+ * Strips any surrounding whitespace, and replaces non-breaking spaces (Unicode \xa0) with regular spaces.
  */
 function cleanCellContent(content: string) {
-  return content.trim();
+  return content.trim().replace(/\xa0/g, ' ');
 }
