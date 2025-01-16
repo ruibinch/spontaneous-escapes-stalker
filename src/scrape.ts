@@ -29,6 +29,8 @@ process.env.TZ = 'UTC';
 const shouldUseAws = !!process.env['USE_AWS'];
 const htmlFilepath = process.env['HTML_FILEPATH'];
 const isBasicRun = !!process.env['BASIC_RUN'];
+const shouldSendRedemptionsChangeNotificationToProd =
+  !!process.env['SEND_REDEMPTIONS_CHANGE_NOTIFICATION'];
 
 export async function scrape() {
   let html: HTMLElement | undefined;
@@ -122,13 +124,15 @@ export async function scrape() {
     }
     await sendNewRedemptionPeriodNotification();
   } else {
+    isNewRelease = false;
     log(
       `Changes to existing redemption period "${
         redemptionTravelPeriod.from.toISOString().split('T')[0]
       }"`,
     );
-    isNewRelease = false;
-    await sendExistingRedemptionPeriodChangesNotification();
+    if (shouldSendRedemptionsChangeNotificationToProd) {
+      await sendExistingRedemptionPeriodChangesNotification();
+    }
   }
 
   if (shouldUseAws) {
@@ -145,11 +149,13 @@ export async function scrape() {
    * - deploy website to incorporate data files changes
    */
 
-  await sendRedemptionsInfoNotification({
-    redemptions: newRedemptions,
-    redemptionEndDate,
-    travelPeriod: redemptionTravelPeriod,
-  });
+  if (isNewRelease || shouldSendRedemptionsChangeNotificationToProd) {
+    await sendRedemptionsInfoNotification({
+      redemptions: newRedemptions,
+      redemptionEndDate,
+      travelPeriod: redemptionTravelPeriod,
+    });
+  }
 
   saveDataFiles({
     html: isNewHtml ? html : undefined,

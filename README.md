@@ -36,11 +36,12 @@ The detailed scraping logic is as follows:
 
 This file execution accepts the following optional environment variables:
 
-| Env var         | Purpose                                                                                                              | Example                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `USE_AWS`       | Whether to connect to AWS DDB or check local /data folder (default)                                                  | `USE_AWS=1`                              |
-| `HTML_FILEPATH` | Specify a HTML file to read from instead of scraping the live SE page; useful for scraping past versions of the page | `HTML_FILEPATH=data/202306-content.html` |
-| `BASIC_RUN`     | Performs a basic scrape of the HTML page and saves the HTML/JSON files locally without interacting with AWS          | `BASIC_RUN=1`                            |
+| Env var                                | Purpose                                                                                                                                                  | Example                                  |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `USE_AWS`                              | Whether to connect to AWS DDB or check local /data folder (default)                                                                                      | `USE_AWS=1`                              |
+| `HTML_FILEPATH`                        | Specify a HTML file to read from instead of scraping the live SE page; useful for scraping past versions of the page                                     | `HTML_FILEPATH=data/202306-content.html` |
+| `BASIC_RUN`                            | Performs a basic scrape of the HTML page and saves the HTML/JSON files locally without interacting with AWS                                              | `BASIC_RUN=1`                            |
+| `SEND_REDEMPTIONS_CHANGE_NOTIFICATION` | The "changes to existing redemption period" message is not sent to prod channel by default to prevent false/irrelevant alerts; use this flag to override | `SEND_REDEMPTIONS_CHANGE_NOTIFICATION=1` |
 
 ### Scraper with pre-check
 
