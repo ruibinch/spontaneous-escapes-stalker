@@ -16,10 +16,9 @@ const TELEGRAM_DEBUG_CHANNEL_ID = makeTelegramChannelId(
 const TELEGRAM_PROD_CHANNEL_ID = makeTelegramChannelId(
   process.env['TELEGRAM_PROD_CHANNEL_ID'],
 );
-const shouldUseDebugChannel = !!process.env['USE_DEBUG_CHANNEL'];
 
 /**
- * Do not send messages to debug channel, unless USE_DEBUG_CHANNEL env var is specified.
+ * Always send messages to debug channel, as long as bot token is provided.
  * Do not send messages to prod channel, unless specified via the shouldSendToProdChannel prop.
  */
 export async function sendMessageToChannels(props: {
@@ -27,9 +26,7 @@ export async function sendMessageToChannels(props: {
   shouldSendToProdChannel: boolean;
 }) {
   const shouldSendToDebugChannel =
-    TELEGRAM_DEBUG_BOT_TOKEN &&
-    TELEGRAM_DEBUG_CHANNEL_ID &&
-    shouldUseDebugChannel;
+    TELEGRAM_DEBUG_BOT_TOKEN && TELEGRAM_DEBUG_CHANNEL_ID;
   const shouldSendToProdChannel =
     TELEGRAM_PROD_BOT_TOKEN &&
     TELEGRAM_PROD_CHANNEL_ID &&
