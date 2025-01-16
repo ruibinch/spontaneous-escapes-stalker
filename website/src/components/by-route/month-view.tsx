@@ -252,7 +252,23 @@ function MonthCalendar({
             <div
               className={cn(
                 CalendarStyles.Borders,
-                'min-h-24 flex flex-row border-b',
+                (() => {
+                  // derive the cell height dynamically to avoid overflow of the blackout period bars to the next week
+                  const maxNumOfBlackoutPeriodsInDay = Math.max(
+                    ...Object.values(blackoutPeriodsByDayDict).map(
+                      (blackoutPeriods) => blackoutPeriods.length,
+                    ),
+                  );
+
+                  if (maxNumOfBlackoutPeriodsInDay === 6) {
+                    return 'min-h-36';
+                  }
+                  if (maxNumOfBlackoutPeriodsInDay === 5) {
+                    return 'min-h-32';
+                  }
+                  return 'min-h-28';
+                })(),
+                'flex flex-row border-b',
                 weekIdx === 0 && 'border-t',
               )}
             >
