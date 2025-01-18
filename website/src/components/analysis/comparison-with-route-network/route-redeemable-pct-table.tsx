@@ -25,6 +25,7 @@ import {
   useRowsPerPageHandler,
 } from '../../common/table/table-rows-per-page';
 import { TooltipOrPopover } from '../../common/tooltip-or-popover';
+import { CardWrapper } from '@/components/common/card-wrapper';
 
 export function RouteRedeemablePctTable({
   routeAnalysisList,
@@ -93,52 +94,41 @@ export function RouteRedeemablePctTable({
   } = useRowsPerPageHandler(dataSorted, false);
 
   return (
-    <div
-      className={cn(
-        CommonStyles.Border,
-        'flex flex-col gap-4 px-2 pt-2 pb-4 border rounded-md shadow-md',
-      )}
-    >
-      <div className="flex gap-2">
-        <span className="text-sm">{'Percentage of routes featured on SE'}</span>
+    <CardWrapper
+      title="Percentage of routes featured on SE"
+      tooltip="Flight class is not taken into account here, i.e. a route is considered featured on SE if at least one flight class is present in the month."
+      style="gap-4 pb-4"
+      contentStyle="flex-col"
+      content={
+        <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-3 items-center">
+            <div className="col-span-2">
+              <SearchTermFilter
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                placeholder="Filter by city / IATA"
+                useBasicDesign
+              />
+            </div>
 
-        <TooltipOrPopover
-          content={
-            'Flight class is not taken into account here, i.e. a route is considered featured on SE if at least one flight class is present in the month.'
-          }
-        >
-          <div className="cursor-pointer">
-            <HelpCircleIcon width={16} height={16} />
+            <div className="justify-self-end">
+              <TableRowsPerPage
+                rowsPerPage={rowsPerPage}
+                onRowsPerPageChange={onRowsPerPageChange}
+                label="Show:"
+              />
+            </div>
           </div>
-        </TooltipOrPopover>
-      </div>
 
-      <div className="grid grid-cols-3 items-center">
-        <div className="col-span-2">
-          <SearchTermFilter
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            placeholder="Filter by city / IATA"
-            useBasicDesign
+          <RouteRedeemablePctTableContent
+            data={dataSorted.slice(startIdx, endIdx)}
+            currPage={currPage}
+            setCurrPage={setCurrPage}
+            pages={pages}
           />
         </div>
-
-        <div className="justify-self-end">
-          <TableRowsPerPage
-            rowsPerPage={rowsPerPage}
-            onRowsPerPageChange={onRowsPerPageChange}
-            label="Show:"
-          />
-        </div>
-      </div>
-
-      <RouteRedeemablePctTableContent
-        data={dataSorted.slice(startIdx, endIdx)}
-        currPage={currPage}
-        setCurrPage={setCurrPage}
-        pages={pages}
-      />
-    </div>
+      }
+    />
   );
 }
 

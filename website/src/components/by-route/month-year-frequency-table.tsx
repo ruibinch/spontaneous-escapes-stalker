@@ -54,12 +54,7 @@ export function MonthYearFrequencyTable({
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">Year view</h3>
 
-      <div
-        className={cn(
-          CommonStyles.Border,
-          'flex flex-col gap-4 py-4 px-1 sm:px-2 border rounded-md shadow-md',
-        )}
-      >
+      <div className={cn(CommonStyles.CardWrapper, 'gap-4 py-4 px-1 sm:px-2')}>
         <div className="flex flex-row justify-between items-start text-xs">
           <FlightClassLegend styles="pl-2" />
 

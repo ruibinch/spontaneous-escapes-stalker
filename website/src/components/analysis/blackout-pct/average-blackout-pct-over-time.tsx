@@ -1,5 +1,5 @@
 import { makeChartOptions } from '@/components/common/chart/chart-options';
-import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
+import { CardWrapper } from '@/components/common/card-wrapper';
 import { lineOnHoverPlugin } from '@/components/common/chart/line-on-hover-plugin';
 import { flightClassColors } from '@/components/common/colors';
 import { useTheme } from '@/components/common/use-theme';
@@ -58,7 +58,7 @@ export function AverageBlackoutPctOverTime({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Average blackout % over time"
       chartComponentStyle="h-52 xl:h-52"
       chart={

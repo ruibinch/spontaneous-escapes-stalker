@@ -4,6 +4,11 @@ const Page = tv({
   base: 'max-w-[90rem] pt-6 pb-12 px-4 lg:px-6',
 });
 
-const Border = cn('border-neutral-200 dark:border-neutral-500');
+const Border = cn('border-neutral-250 dark:border-neutral-500');
 
-export const CommonStyles = { Page, Border };
+const CardWrapper = cn(
+  'flex flex-col gap-2 p-2 rounded-md shadow-md border',
+  Border,
+);
+
+export const CommonStyles = { Page, Border, CardWrapper };

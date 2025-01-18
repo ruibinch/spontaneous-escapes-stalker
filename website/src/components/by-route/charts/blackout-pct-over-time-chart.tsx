@@ -1,6 +1,6 @@
 import { getMonthsList } from '@/common/get-months-with-route-network-data';
 import { makeChartOptions } from '@/components/common/chart/chart-options';
-import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
+import { CardWrapper } from '@/components/common/card-wrapper';
 import { covidLinePlugin } from '@/components/common/chart/covid-line-plugin';
 import { flightClassColors } from '@/components/common/colors';
 import { YEAR_ALL } from '@/components/common/filters/year-filter';
@@ -78,7 +78,7 @@ export function BlackoutPctOverTimeChart({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Blackout % over time"
       chart={
         <Line

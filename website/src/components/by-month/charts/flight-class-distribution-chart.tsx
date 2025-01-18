@@ -14,7 +14,7 @@ import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { cn } from '@nextui-org/react';
 import { Pie } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CardWrapper } from '../../common/card-wrapper';
 import { CommonStyles } from '../../common/styles';
 
 type FlightClassToCountDict = Record<string, number>;
@@ -79,7 +79,7 @@ export function FlightClassDistributionChart({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       contentStyle="px-2"
       title="Breakdown by flight class"
       chart={
@@ -91,7 +91,7 @@ export function FlightClassDistributionChart({
           })}
         />
       }
-      rightComponent={
+      chartRightComponent={
         <ComparisonTable
           flightClassDistributionPctInMonth={flightClassDistributionPctInMonth}
           averageFlightClassDistributionPct={averageFlightClassDistributionPct}
@@ -114,7 +114,7 @@ function ComparisonTable({
   const toPct = (value: number, dp = 1) => `${(value * 100).toFixed(dp)}%`;
 
   return (
-    <div className={cn(CommonStyles.Border, 'h-min border rounded-sm')}>
+    <div className={cn(CommonStyles.Border, 'border h-min rounded-sm')}>
       <table className="table rounded-md text-xs text-center">
         <thead>
           <tr className={cn(CommonStyles.Border, 'border-b')}>

@@ -24,6 +24,7 @@ import {
 import { sortByNumericField, sortByStringField } from '../common/table/sorters';
 import { CommonStyles } from '../common/styles';
 import { formatToDp } from '@/common/format-to-dp';
+import { CardWrapper } from '../common/card-wrapper';
 
 const columns = [
   { key: 'actions', label: 'Route' },
@@ -79,90 +80,87 @@ export function RedemptionsTable({
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">Details</h3>
 
-      <div
-        className={cn(
-          CommonStyles.Border,
-          'border py-4 px-2 rounded-md shadow-md',
-        )}
-      >
-        <Table
-          radius="sm"
-          sortDescriptor={sortDescriptor}
-          onSortChange={handleSortChange}
-          topContent={
-            <TopContent
-              rowsPerPage={rowsPerPage}
-              onRowsPerPageChange={onRowsPerPageChange}
-            />
-          }
-          topContentPlacement="outside"
-          bottomContent={
-            <TablePagination
-              pages={pages}
-              page={currPage}
-              setPage={setCurrPage}
-            />
-          }
-          bottomContentPlacement="outside"
-          aria-label="By-month redemptions table"
-        >
-          <TableHeader columns={columns}>
-            {(column) => (
-              <TableColumn
-                key={column.key}
-                allowsSorting={column.allowsSorting}
-              >
-                {column.label}
-              </TableColumn>
-            )}
-          </TableHeader>
-          <TableBody items={dataToDisplay}>
-            {(item) => (
-              <TableRow
-                key={`${item.flightClass}#${item.origin}#${item.destination}`}
-                className={cn(CommonStyles.Border, 'border-b')}
-              >
-                {(columnKey) => (
-                  <TableCell className="text-xs">
-                    {(() => {
-                      switch (columnKey) {
-                        case 'actions':
-                          return (
-                            <div className="w-14">
-                              <Link
-                                key={`${item.originIata}${item.destinationIata}`}
-                                href={`/route/${item.originIata}${item.destinationIata}`}
-                                size="sm"
-                                underline="hover"
-                                className="w-14 text-xs text-blue-500 dark:text-blue-400"
-                              >
-                                {`${item.originIata}-${item.destinationIata}`}
-                              </Link>
-                            </div>
-                          );
-                        case 'flightClass':
-                          return renderFlightClassCell({
-                            flightClass: item[columnKey],
-                          });
-                        case 'milesRequired':
-                          return item[columnKey].toLocaleString();
-                        case 'blackoutPeriod':
-                          return renderBlackoutPeriodCell(item[columnKey]);
-                        case 'blackoutPct':
-                          return `${formatToDp(item[columnKey], 1)}%`;
-                        case 'flightNos':
-                          return item[columnKey].join(', ');
-                        default:
-                          return getKeyValue(item, columnKey);
-                      }
-                    })()}
-                  </TableCell>
-                )}
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
+      <CardWrapper
+        content={
+          <Table
+            radius="sm"
+            sortDescriptor={sortDescriptor}
+            onSortChange={handleSortChange}
+            topContent={
+              <TopContent
+                rowsPerPage={rowsPerPage}
+                onRowsPerPageChange={onRowsPerPageChange}
+              />
+            }
+            topContentPlacement="outside"
+            bottomContent={
+              <TablePagination
+                pages={pages}
+                page={currPage}
+                setPage={setCurrPage}
+              />
+            }
+            bottomContentPlacement="outside"
+            aria-label="By-month redemptions table"
+          >
+            <TableHeader columns={columns}>
+              {(column) => (
+                <TableColumn
+                  key={column.key}
+                  allowsSorting={column.allowsSorting}
+                >
+                  {column.label}
+                </TableColumn>
+              )}
+            </TableHeader>
+            <TableBody items={dataToDisplay}>
+              {(item) => (
+                <TableRow
+                  key={`${item.flightClass}#${item.origin}#${item.destination}`}
+                  className={cn(CommonStyles.Border, 'border-b')}
+                >
+                  {(columnKey) => (
+                    <TableCell className="text-xs">
+                      {(() => {
+                        switch (columnKey) {
+                          case 'actions':
+                            return (
+                              <div className="w-14">
+                                <Link
+                                  key={`${item.originIata}${item.destinationIata}`}
+                                  href={`/route/${item.originIata}${item.destinationIata}`}
+                                  size="sm"
+                                  underline="hover"
+                                  className="w-14 text-xs text-blue-500 dark:text-blue-400"
+                                >
+                                  {`${item.originIata}-${item.destinationIata}`}
+                                </Link>
+                              </div>
+                            );
+                          case 'flightClass':
+                            return renderFlightClassCell({
+                              flightClass: item[columnKey],
+                            });
+                          case 'milesRequired':
+                            return item[columnKey].toLocaleString();
+                          case 'blackoutPeriod':
+                            return renderBlackoutPeriodCell(item[columnKey]);
+                          case 'blackoutPct':
+                            return `${formatToDp(item[columnKey], 1)}%`;
+                          case 'flightNos':
+                            return item[columnKey].join(', ');
+                          default:
+                            return getKeyValue(item, columnKey);
+                        }
+                      })()}
+                    </TableCell>
+                  )}
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        }
+      />
     </div>
   );
 }

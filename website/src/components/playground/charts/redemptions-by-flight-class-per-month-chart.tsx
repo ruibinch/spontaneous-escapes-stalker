@@ -2,7 +2,7 @@ import { useTheme } from '@/components/common/use-theme';
 import { Month, RouteAnalysisEntry } from '@/index';
 import { Line } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CardWrapper } from '../../common/card-wrapper';
 import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
 import { flightClassColors } from '../../common/colors';
 import { Toggle, ToggleProps } from '@/components/common/toggle';
@@ -110,7 +110,7 @@ export function RedemptionsByFlightClassPerMonthChart({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Redemptions by flight class per month"
       chart={
         <Line

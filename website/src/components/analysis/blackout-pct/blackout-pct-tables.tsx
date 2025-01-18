@@ -1,3 +1,4 @@
+import { CardWrapper } from '@/components/common/card-wrapper';
 import { CommonStyles } from '@/components/common/styles';
 import { RoutesStats, useRoutesStats } from '@/hooks/use-routes-stats';
 import { RouteAnalysisEntry } from '@/index';
@@ -67,67 +68,63 @@ function BlackoutPctTable({
   data: RoutesStats[];
 }) {
   return (
-    <div
-      className={cn(
-        CommonStyles.Border,
-        'flex flex-col gap-4 px-2 pt-2 pb-4 border rounded-md shadow-md',
-      )}
-    >
-      <div className="flex flex-row gap-2 items-end">
-        <h3 className="text-sm">{title}</h3>
-        <span className="text-2xs italic">(min 10 redemptions)</span>
-      </div>
-
-      <Table
-        radius="sm"
-        aria-label="Percentage of redeemable routes table"
-        removeWrapper
-      >
-        <TableHeader columns={columns}>
-          {(column) => (
-            <TableColumn key={column.key}>{column.label}</TableColumn>
-          )}
-        </TableHeader>
-        <TableBody items={data}>
-          {(item) => (
-            <TableRow
-              key={`${item.originIata}-${item.destinationIata}`}
-              className={cn(CommonStyles.Border, 'border-b')}
-            >
-              {(columnKey) => (
-                <TableCell className="py-1.5 text-xs">
-                  {(() => {
-                    switch (columnKey) {
-                      case 'route':
-                        return (
-                          <Link
-                            key={`${item.originIata}${item.destinationIata}`}
-                            href={`/route/${item.originIata}${item.destinationIata}`}
-                            size="sm"
-                            underline="hover"
-                            className="text-xs text-blue-500 dark:text-blue-400"
-                          >
-                            {`${item.origin} - ${item.destination}`}
-                          </Link>
-                        );
-                      case 'averageBlackoutPct':
-                        const averageBlackoutPct = getKeyValue(
-                          item,
-                          columnKey,
-                        ) as number | null;
-                        return averageBlackoutPct === null
-                          ? '-'
-                          : `${getKeyValue(item, columnKey)}%`;
-                      default:
-                        return getKeyValue(item, columnKey);
-                    }
-                  })()}
-                </TableCell>
-              )}
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-    </div>
+    <CardWrapper
+      title={title}
+      subtitle="(min 10 redemptions)"
+      style="gap-4 pb-4"
+      headerStyle="items-end"
+      content={
+        <Table
+          radius="sm"
+          aria-label="Percentage of redeemable routes table"
+          removeWrapper
+        >
+          <TableHeader columns={columns}>
+            {(column) => (
+              <TableColumn key={column.key}>{column.label}</TableColumn>
+            )}
+          </TableHeader>
+          <TableBody items={data}>
+            {(item) => (
+              <TableRow
+                key={`${item.originIata}-${item.destinationIata}`}
+                className={cn(CommonStyles.Border, 'border-b')}
+              >
+                {(columnKey) => (
+                  <TableCell className="py-1.5 text-xs">
+                    {(() => {
+                      switch (columnKey) {
+                        case 'route':
+                          return (
+                            <Link
+                              key={`${item.originIata}${item.destinationIata}`}
+                              href={`/route/${item.originIata}${item.destinationIata}`}
+                              size="sm"
+                              underline="hover"
+                              className="text-xs text-blue-500 dark:text-blue-400"
+                            >
+                              {`${item.origin} - ${item.destination}`}
+                            </Link>
+                          );
+                        case 'averageBlackoutPct':
+                          const averageBlackoutPct = getKeyValue(
+                            item,
+                            columnKey,
+                          ) as number | null;
+                          return averageBlackoutPct === null
+                            ? '-'
+                            : `${getKeyValue(item, columnKey)}%`;
+                        default:
+                          return getKeyValue(item, columnKey);
+                      }
+                    })()}
+                  </TableCell>
+                )}
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      }
+    />
   );
 }

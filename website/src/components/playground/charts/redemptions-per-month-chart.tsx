@@ -2,7 +2,7 @@ import { RouteAnalysisEntry } from '@/index';
 import { Line } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
-import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CardWrapper } from '../../common/card-wrapper';
 import { useTheme } from '@/components/common/use-theme';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
@@ -40,7 +40,7 @@ export function RedemptionsPerMonthChart({ routeAnalysisListFiltered }: Props) {
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Redemptions per month"
       chart={
         <Line

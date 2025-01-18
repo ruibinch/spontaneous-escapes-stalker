@@ -69,12 +69,7 @@ export function MonthView({
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">Month view</h3>
 
-      <div
-        className={cn(
-          CommonStyles.Border,
-          'flex flex-col py-4 px-1 sm:px-2 gap-4 border rounded-md shadow-md',
-        )}
-      >
+      <div className={cn(CommonStyles.CardWrapper, 'gap-4 py-4 px-1 sm:px-2')}>
         {/* month controls */}
         <div className="flex justify-center items-center gap-4">
           <MonthSwitchButton

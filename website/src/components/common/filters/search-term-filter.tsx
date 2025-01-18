@@ -66,7 +66,7 @@ export function SearchTermFilter({
         inputWrapper: useBasicDesign
           ? cn(
               CommonStyles.Border,
-              'bg-default-50 data-[hover=true]:bg-default-100 border h-8',
+              'border bg-default-50 data-[hover=true]:bg-default-100 h-8',
             )
           : '',
         mainWrapper: 'w-full',

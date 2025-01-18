@@ -4,7 +4,7 @@ import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CardWrapper } from '../../common/card-wrapper';
 
 enum Region {
   SOUTH_EAST_ASIA = 'South East Asia',
@@ -70,7 +70,7 @@ export function RoutesRegionDistributionChart({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Breakdown of routes by region (%)"
       // tooltip="Compares the percentage distribution of routes this month with the overall average"
       chart={

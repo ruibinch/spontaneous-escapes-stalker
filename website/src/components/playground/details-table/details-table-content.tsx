@@ -25,6 +25,7 @@ import { TablePagination } from '../../common/table/table-pagination';
 import { useRowsPerPageHandler } from '../../common/table/table-rows-per-page';
 import { getColumns } from './columns';
 import { MonthColumnOrder, ShowRoutesAs, TopContent } from './top-content';
+import { CardWrapper } from '@/components/common/card-wrapper';
 
 export type DatumForSeparateRoutes = {
   origin: string;
@@ -123,73 +124,73 @@ export function DetailsTableContent({
   };
 
   return (
-    <div
-      className={cn(
-        CommonStyles.Border,
-        'border py-4 px-2 rounded-md shadow-md',
-      )}
-    >
-      <Table
-        radius="sm"
-        isHeaderSticky
-        // removeWrapper
-        sortDescriptor={sortDescriptor}
-        onSortChange={handleSortChange}
-        topContent={
-          <TopContent
-            rowsPerPage={rowsPerPage}
-            onRowsPerPageChange={onRowsPerPageChange}
-            monthColumnOrder={monthColumnOrder}
-            setMonthColumnOrder={setMonthColumnOrder}
-            showRoutesAs={showRoutesAs}
-            setShowRoutesAs={setShowRoutesAs}
-          />
-        }
-        topContentPlacement="outside"
-        bottomContent={
-          <TablePagination
-            pages={pages}
-            page={currPage}
-            setPage={setCurrPage}
-          />
-        }
-        bottomContentPlacement="outside"
-        aria-label="Details table"
-        classNames={{
-          th: 'px-1 py-1.5',
-          td: 'px-1 py-1.5',
-        }}
-      >
-        <TableHeader columns={columns}>
-          {(column) => (
-            <TableColumn key={column.key} allowsSorting={column.allowsSorting}>
-              {column.label}
-            </TableColumn>
-          )}
-        </TableHeader>
-        <TableBody items={dataToDisplay}>
-          {(item) => (
-            <TableRow
-              key={
-                isDatumForSeparateRoutes(item)
-                  ? `${item.origin}#${item.destination}`
-                  : item.cities
-              }
-              className={cn(CommonStyles.Border, 'border-b')}
-            >
-              {(columnKey) => (
-                <TableCell className="text-xs">
-                  {renderCell({
-                    item,
-                    columnKey: columnKey.toString(),
-                  })}
-                </TableCell>
-              )}
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-    </div>
+    <CardWrapper
+      content={
+        <Table
+          radius="sm"
+          isHeaderSticky
+          // removeWrapper
+          sortDescriptor={sortDescriptor}
+          onSortChange={handleSortChange}
+          topContent={
+            <TopContent
+              rowsPerPage={rowsPerPage}
+              onRowsPerPageChange={onRowsPerPageChange}
+              monthColumnOrder={monthColumnOrder}
+              setMonthColumnOrder={setMonthColumnOrder}
+              showRoutesAs={showRoutesAs}
+              setShowRoutesAs={setShowRoutesAs}
+            />
+          }
+          topContentPlacement="outside"
+          bottomContent={
+            <TablePagination
+              pages={pages}
+              page={currPage}
+              setPage={setCurrPage}
+            />
+          }
+          bottomContentPlacement="outside"
+          aria-label="Details table"
+          classNames={{
+            th: 'px-1 py-1.5',
+            td: 'px-1 py-1.5',
+          }}
+        >
+          <TableHeader columns={columns}>
+            {(column) => (
+              <TableColumn
+                key={column.key}
+                allowsSorting={column.allowsSorting}
+              >
+                {column.label}
+              </TableColumn>
+            )}
+          </TableHeader>
+          <TableBody items={dataToDisplay}>
+            {(item) => (
+              <TableRow
+                key={
+                  isDatumForSeparateRoutes(item)
+                    ? `${item.origin}#${item.destination}`
+                    : item.cities
+                }
+                className={cn(CommonStyles.Border, 'border-b')}
+              >
+                {(columnKey) => (
+                  <TableCell className="text-xs">
+                    {renderCell({
+                      item,
+                      columnKey: columnKey.toString(),
+                    })}
+                  </TableCell>
+                )}
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      }
+    />
   );
 }
 

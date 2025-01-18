@@ -5,7 +5,7 @@ import { MonthSummaryAnalysisEntry } from '@/index';
 import { Bar, Line } from 'react-chartjs-2';
 import { getMonthsList } from '../../../common/get-months-with-route-network-data';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CardWrapper } from '../../common/card-wrapper';
 import { covidLinePlugin } from '../../common/chart/covid-line-plugin';
 import { lineOnHoverPlugin } from '../../common/chart/line-on-hover-plugin';
 import { useTheme } from '../../common/use-theme';
@@ -94,7 +94,7 @@ export function RedemptionsVsRouteNetworkCharts({
 
   return (
     <div className="flex flex-col gap-2">
-      <ChartWrapper
+      <CardWrapper
         title="Route network size vs no. of SE redemptions offered each month"
         chart={
           <Line
@@ -115,7 +115,7 @@ export function RedemptionsVsRouteNetworkCharts({
         }
       />
 
-      <ChartWrapper
+      <CardWrapper
         title="Percentage of route network available for SE redemptions"
         chart={
           <Bar

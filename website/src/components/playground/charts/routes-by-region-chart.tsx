@@ -2,7 +2,7 @@ import { useTheme } from '@/components/common/use-theme';
 import { RouteAnalysisEntry } from '@/index';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CardWrapper } from '../../common/card-wrapper';
 import { regionColors } from '../../common/colors';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
@@ -61,7 +61,7 @@ export function RoutesByRegionChart({ routeAnalysisListFiltered }: Props) {
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Routes by region"
       chart={
         <Bar

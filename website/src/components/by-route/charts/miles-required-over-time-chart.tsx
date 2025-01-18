@@ -1,5 +1,5 @@
 import { makeChartOptions } from '@/components/common/chart/chart-options';
-import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
+import { CardWrapper } from '@/components/common/card-wrapper';
 import { lineOnHoverPlugin } from '@/components/common/chart/line-on-hover-plugin';
 import { flightClassColors } from '@/components/common/colors';
 import { flightClassCodeOrder } from '@/components/common/flight-class-code-to-name';
@@ -77,7 +77,7 @@ export function MilesRequiredOverTimeChart({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Miles required over time"
       chart={
         <Line

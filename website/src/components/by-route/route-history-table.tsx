@@ -24,6 +24,7 @@ import {
   useRowsPerPageHandler,
 } from '../common/table/table-rows-per-page';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
+import { CardWrapper } from '../common/card-wrapper';
 
 const columns = [
   { key: 'month', label: 'Month', allowsSorting: true },
@@ -78,89 +79,86 @@ export function RouteHistoryTable({
     <div className="flex flex-col gap-2">
       <h3 className="text-lg font-semibold">History</h3>
 
-      <div
-        className={cn(
-          CommonStyles.Border,
-          'border py-4 px-2 rounded-md shadow-md',
-        )}
-      >
-        <Table
-          radius="sm"
-          aria-label="Month/year frequency table for a specific route"
-          sortDescriptor={sortDescriptor}
-          onSortChange={handleSortChange}
-          topContent={
-            <TopContent
-              rowsPerPage={rowsPerPage}
-              onRowsPerPageChange={onRowsPerPageChange}
-            />
-          }
-          topContentPlacement="outside"
-          bottomContent={
-            <TablePagination
-              pages={pages}
-              page={currPage}
-              setPage={setCurrPage}
-            />
-          }
-          bottomContentPlacement="outside"
-        >
-          <TableHeader columns={columns}>
-            {(column) => (
-              <TableColumn
-                key={column.key}
-                allowsSorting={column.allowsSorting}
-              >
-                {column.label}
-              </TableColumn>
-            )}
-          </TableHeader>
-          <TableBody items={dataToDisplay}>
-            {(item) => (
-              <TableRow
-                key={`${item.month}#${item.flightClass}`}
-                className={cn(CommonStyles.Border, 'border-b')}
-              >
-                {(columnKey) => (
-                  <TableCell className="text-xs">
-                    {(() => {
-                      switch (columnKey) {
-                        case 'month': {
-                          const value = item[columnKey];
-                          return (
-                            <Link
-                              href={`/month/${value}`}
-                              size="sm"
-                              underline="hover"
-                              className="text-xs text-blue-500 dark:text-blue-400"
-                            >
-                              {`${value.slice(0, 4)}-${value.slice(4, 6)}`}
-                            </Link>
-                          );
+      <CardWrapper
+        content={
+          <Table
+            radius="sm"
+            aria-label="Month/year frequency table for a specific route"
+            sortDescriptor={sortDescriptor}
+            onSortChange={handleSortChange}
+            topContent={
+              <TopContent
+                rowsPerPage={rowsPerPage}
+                onRowsPerPageChange={onRowsPerPageChange}
+              />
+            }
+            topContentPlacement="outside"
+            bottomContent={
+              <TablePagination
+                pages={pages}
+                page={currPage}
+                setPage={setCurrPage}
+              />
+            }
+            bottomContentPlacement="outside"
+          >
+            <TableHeader columns={columns}>
+              {(column) => (
+                <TableColumn
+                  key={column.key}
+                  allowsSorting={column.allowsSorting}
+                >
+                  {column.label}
+                </TableColumn>
+              )}
+            </TableHeader>
+            <TableBody items={dataToDisplay}>
+              {(item) => (
+                <TableRow
+                  key={`${item.month}#${item.flightClass}`}
+                  className={cn(CommonStyles.Border, 'border-b')}
+                >
+                  {(columnKey) => (
+                    <TableCell className="text-xs">
+                      {(() => {
+                        switch (columnKey) {
+                          case 'month': {
+                            const value = item[columnKey];
+                            return (
+                              <Link
+                                href={`/month/${value}`}
+                                size="sm"
+                                underline="hover"
+                                className="text-xs text-blue-500 dark:text-blue-400"
+                              >
+                                {`${value.slice(0, 4)}-${value.slice(4, 6)}`}
+                              </Link>
+                            );
+                          }
+                          case 'flightClass':
+                            return renderFlightClassCell({
+                              flightClassCode: item[columnKey],
+                            });
+                          case 'milesRequired':
+                            return item[columnKey].toLocaleString();
+                          case 'blackoutPct':
+                            return `${formatToDp(item[columnKey], 1)}%`;
+                          case 'blackoutPeriod':
+                            return renderBlackoutPeriodCell(item[columnKey]);
+                          case 'flightNos':
+                            return item[columnKey].join(', ');
+                          default:
+                            return getKeyValue(item, columnKey);
                         }
-                        case 'flightClass':
-                          return renderFlightClassCell({
-                            flightClassCode: item[columnKey],
-                          });
-                        case 'milesRequired':
-                          return item[columnKey].toLocaleString();
-                        case 'blackoutPct':
-                          return `${formatToDp(item[columnKey], 1)}%`;
-                        case 'blackoutPeriod':
-                          return renderBlackoutPeriodCell(item[columnKey]);
-                        case 'flightNos':
-                          return item[columnKey].join(', ');
-                        default:
-                          return getKeyValue(item, columnKey);
-                      }
-                    })()}
-                  </TableCell>
-                )}
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
+                      })()}
+                    </TableCell>
+                  )}
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        }
+      />
     </div>
   );
 }

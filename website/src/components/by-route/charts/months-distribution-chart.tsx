@@ -3,7 +3,7 @@ import {
   monthShortNameToNameMap,
 } from '@/common/months-map';
 import { makeChartOptions } from '@/components/common/chart/chart-options';
-import { ChartWrapper } from '@/components/common/chart/chart-wrapper';
+import { CardWrapper } from '@/components/common/card-wrapper';
 import { flightClassColors } from '@/components/common/colors';
 import { useTheme } from '@/components/common/use-theme';
 import { Bar } from 'react-chartjs-2';
@@ -68,7 +68,7 @@ export function MonthsDistributionChart({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Breakdown by month and flight class"
       chart={
         <Bar

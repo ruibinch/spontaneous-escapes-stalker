@@ -9,7 +9,7 @@ import { RouteAnalysisEntry } from '@/index';
 import { useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CardWrapper } from '../../common/card-wrapper';
 import { flightClassColors } from '../../common/colors';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
@@ -140,7 +140,7 @@ export function RedemptionsByMonthAndFlightClassChart({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Redemptions by month and flight class"
       chart={
         <Bar

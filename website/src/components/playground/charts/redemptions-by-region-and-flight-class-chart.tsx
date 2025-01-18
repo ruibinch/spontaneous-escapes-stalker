@@ -2,9 +2,8 @@ import { useTheme } from '@/components/common/use-theme';
 import { RouteAnalysisEntry } from '@/index';
 import { Bar } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
-import { ChartWrapper } from '../../common/chart/chart-wrapper';
+import { CardWrapper } from '../../common/card-wrapper';
 import { flightClassColors } from '../../common/colors';
-import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 interface Props {
   routeAnalysisListFiltered: RouteAnalysisEntry[];
@@ -69,9 +68,9 @@ export function RedemptionsByRegionAndFlightClassChart({
   };
 
   return (
-    <ChartWrapper
+    <CardWrapper
       title="Redemptions by region and flight class"
-      topBarStyle="pb-1.5"
+      style="gap-4"
       chart={
         <Bar
           options={makeChartOptions({
