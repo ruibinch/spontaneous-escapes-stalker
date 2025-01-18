@@ -96,7 +96,7 @@ export function RouteRedeemablePctTable({
     <div
       className={cn(
         CommonStyles.Border,
-        'flex flex-col gap-4 px-2 pt-2 pb-4 border rounded-md shadow-sm',
+        'flex flex-col gap-4 px-2 pt-2 pb-4 border rounded-md shadow-md',
       )}
     >
       <div className="flex gap-2">

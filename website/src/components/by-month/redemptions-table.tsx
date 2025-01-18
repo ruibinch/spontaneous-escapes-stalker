@@ -82,7 +82,7 @@ export function RedemptionsTable({
       <div
         className={cn(
           CommonStyles.Border,
-          'border py-4 px-2 rounded-md shadow-sm',
+          'border py-4 px-2 rounded-md shadow-md',
         )}
       >
         <Table

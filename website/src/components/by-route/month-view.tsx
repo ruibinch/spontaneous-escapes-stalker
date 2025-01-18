@@ -72,7 +72,7 @@ export function MonthView({
       <div
         className={cn(
           CommonStyles.Border,
-          'flex flex-col py-4 px-1 sm:px-2 gap-4 border rounded-md shadow-sm',
+          'flex flex-col py-4 px-1 sm:px-2 gap-4 border rounded-md shadow-md',
         )}
       >
         {/* month controls */}
