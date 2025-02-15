@@ -101,6 +101,7 @@ export async function scrape() {
 
   if (doesRedemptionPeriodExist && newRedemptions.length === 0) {
     // no changes, return early
+    log('🚫 No changes');
     await sendMessageToChannels({
       message: escapeCharacters(`${datePrefix()} 🚫 No changes`),
       shouldSendToProdChannel: false,

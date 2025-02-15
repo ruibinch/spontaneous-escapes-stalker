@@ -11,8 +11,8 @@ const logFilename = `${today}.log`;
 export function log(_message: string, isError = false) {
   let message = _message;
   if (isError) {
-    console.error(message);
     message = `🚨 ${message}`;
+    console.error(message);
   } else {
     console.log(message);
   }
