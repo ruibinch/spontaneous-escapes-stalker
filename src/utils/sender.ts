@@ -6,6 +6,8 @@ import {
 } from '../lib/telegram/helpers';
 import { sendMessage } from '../lib/telegram/methods';
 import { Redemption } from '../models/Redemption';
+import { FLIGHT_CLASS_SORT_ORDER, REGION_SORT_ORDER } from '../postprocessing/sortRedemptionsList';
+import { getRegion } from '../postprocessing/standardiseRegionField';
 import { FlightClass, TimePeriod } from './types';
 
 dotenv.config();
@@ -124,23 +126,6 @@ export async function sendRedemptionsInfoNotification({
  * // TODO: consider another level of sorting
  */
 function sortRedemptionsByClass(redemptions: Redemption[]) {
-  const FLIGHT_CLASS_SORT_ORDER = [
-    FlightClass.ECONOMY,
-    FlightClass.PREMIUM_ECONOMY,
-    FlightClass.BUSINESS,
-    FlightClass.FIRST,
-  ];
-  // TODO: convert to Region enum
-  const REGION_SORT_ORDER = [
-    'South East Asia',
-    'North Asia',
-    'West Asia & Africa',
-    'Australia',
-    'Southwest Pacific',
-    'Europe',
-    'USA',
-  ];
-
   return [...redemptions].sort((a, b) => {
     const aFlightClassIndex = FLIGHT_CLASS_SORT_ORDER.indexOf(a.flightClass);
     const bFlightClassIndex = FLIGHT_CLASS_SORT_ORDER.indexOf(b.flightClass);
@@ -148,8 +133,8 @@ function sortRedemptionsByClass(redemptions: Redemption[]) {
       return aFlightClassIndex - bFlightClassIndex;
     }
 
-    const aRegionIndex = REGION_SORT_ORDER.indexOf(a.region);
-    const bRegionIndex = REGION_SORT_ORDER.indexOf(b.region);
+    const aRegionIndex = REGION_SORT_ORDER.indexOf(getRegion(a));
+    const bRegionIndex = REGION_SORT_ORDER.indexOf(getRegion(b));
     if (aRegionIndex !== bRegionIndex) {
       return aRegionIndex - bRegionIndex;
     }

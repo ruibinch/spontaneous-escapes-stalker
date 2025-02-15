@@ -4,7 +4,7 @@ import {
   Region,
 } from '../utils/types';
 
-const REGION_SORT_ORDER: string[] = [
+export const REGION_SORT_ORDER: string[] = [
   Region.SOUTH_EAST_ASIA,
   Region.NORTH_ASIA,
   Region.SOUTH_ASIA,
@@ -14,7 +14,7 @@ const REGION_SORT_ORDER: string[] = [
   Region.NORTH_AMERICA,
 ];
 
-const FLIGHT_CLASS_SORT_ORDER: string[] = [
+export const FLIGHT_CLASS_SORT_ORDER: string[] = [
   FlightClass.ECONOMY,
   FlightClass.PREMIUM_ECONOMY,
   FlightClass.BUSINESS,

@@ -1,3 +1,4 @@
+// @ts-ignore ignore importing type declaration for the sake of it
 import { v4 as uuid } from 'uuid';
 import { EVENT_NAME_TO_KEY_MAP, WEBSITE_ID } from './constants';
 import { getEventNameToEventDataProbabilityMap } from './getVercelStats';

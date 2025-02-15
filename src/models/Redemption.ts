@@ -19,7 +19,7 @@ interface RedemptionProps {
   flightNo: string;
   milesRequired: number;
   blackoutPeriod: BlackoutPeriod[];
-  region?: string;
+  region?: string | undefined;
   redemptionEndDate: string;
   sortKey: string;
 }
@@ -44,7 +44,7 @@ export class Redemption {
 
   blackoutPeriod: BlackoutPeriod[];
 
-  region: string;
+  region: string | undefined;
 
   redemptionEndDate: string;
 
@@ -57,7 +57,7 @@ export class Redemption {
     this.flightNo = props.flightNo;
     this.milesRequired = props.milesRequired;
     this.blackoutPeriod = props.blackoutPeriod;
-    this.region = props.region ?? ''; // new change to ignore region during the scraping step and only append during postprocessing
+    this.region = props.region, // new change to ignore region during the scraping step and only append during postprocessing
     this.redemptionEndDate = props.redemptionEndDate;
     this.sortKey = props.sortKey;
   }

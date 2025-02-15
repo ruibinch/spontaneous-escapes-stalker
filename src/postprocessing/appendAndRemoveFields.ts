@@ -1,7 +1,7 @@
 import { getCountryFromCity } from '../lib/iata/getCountryFromCity';
 import { iata } from '../lib/iata/iata';
 import { RedemptionJsonPostprocessed } from '../utils/types';
-import { RedemptionJsonWithFlightNosAndBlackoutPct } from './computeBlackoutPct';
+import { RedemptionJsonWithRegionAndFlightNosAndBlackoutPct } from './computeBlackoutPct';
 
 /**
  * Appends the following fields:
@@ -18,7 +18,7 @@ export function appendAndRemoveFields({
   redemptions,
   month,
 }: {
-  redemptions: RedemptionJsonWithFlightNosAndBlackoutPct[];
+  redemptions: RedemptionJsonWithRegionAndFlightNosAndBlackoutPct[];
   month: string;
 }): RedemptionJsonPostprocessed[] {
   return redemptions.map((redemption) => {

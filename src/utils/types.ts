@@ -33,7 +33,6 @@ export type RedemptionJsonPostprocessed = Pick<
   | 'destination'
   | 'flightClass'
   | 'milesRequired'
-  | 'region'
   | 'blackoutPeriod'
 > & {
   originIata: string;
@@ -41,6 +40,7 @@ export type RedemptionJsonPostprocessed = Pick<
   destinationIata: string;
   destinationCountry: string;
   flightNos: string[];
+  region: string;
   blackoutPct: number;
   redemptionMonth: string;
 };
