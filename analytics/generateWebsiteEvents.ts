@@ -1,3 +1,4 @@
+// @ts-ignore ignore importing type declaration for the sake of it
 import { v4 as uuid } from 'uuid';
 import { PAGE_TITLE, WEBSITE_ID } from './constants';
 import {

@@ -1,6 +1,9 @@
-import { RedemptionJson } from '../utils/types';
+import { RedemptionJsonWithRegion } from './standardiseRegionField';
 
-export type RedemptionJsonWithFlightNos = Omit<RedemptionJson, 'flightNo'> & {
+export type RedemptionJsonWithRegionAndFlightNos = Omit<
+  RedemptionJsonWithRegion,
+  'flightNo'
+> & {
   flightNos: string[];
 };
 
@@ -11,8 +14,8 @@ export type RedemptionJsonWithFlightNos = Omit<RedemptionJson, 'flightNo'> & {
  * Also apply the same sorter to the flightNos field in the blackoutPeriods list.
  */
 export function formatFlightNosField(
-  redemptions: RedemptionJson[],
-): RedemptionJsonWithFlightNos[] {
+  redemptions: RedemptionJsonWithRegion[],
+): RedemptionJsonWithRegionAndFlightNos[] {
   return redemptions.map((redemption) => {
     const { flightNo, blackoutPeriod, ...restProps } = redemption;
     return {

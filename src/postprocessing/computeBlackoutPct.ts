@@ -6,11 +6,11 @@ import {
   min,
   startOfMonth,
 } from 'date-fns';
-import { RedemptionJsonWithFlightNos } from './formatFlightNosField';
+import { RedemptionJsonWithRegionAndFlightNos } from './formatFlightNosField';
 import { BlackoutPeriod } from '../utils/types';
 
-export type RedemptionJsonWithFlightNosAndBlackoutPct =
-  RedemptionJsonWithFlightNos & {
+export type RedemptionJsonWithRegionAndFlightNosAndBlackoutPct =
+  RedemptionJsonWithRegionAndFlightNos & {
     blackoutPct: number;
     // null if there are no SIA flights for redemption in the month
     blackoutPctSiaOnly?: number | null;
@@ -28,9 +28,9 @@ export function computeBlackoutPct({
   redemptions,
   month,
 }: {
-  redemptions: RedemptionJsonWithFlightNos[];
+  redemptions: RedemptionJsonWithRegionAndFlightNos[];
   month: string;
-}): RedemptionJsonWithFlightNosAndBlackoutPct[] {
+}): RedemptionJsonWithRegionAndFlightNosAndBlackoutPct[] {
   return redemptions.map((redemption) => {
     if (redemption.blackoutPeriod.length === 0) {
       return {
