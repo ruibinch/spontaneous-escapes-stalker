@@ -3,7 +3,6 @@ import { log } from '../utils/log';
 import {
   FlightClass,
   RedemptionTableInfo,
-  RedemptionTableInfoWithRegion,
 } from '../utils/types';
 import { toNumber } from '../utils';
 import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
@@ -30,30 +29,13 @@ const PREMIUM_ECONOMY_SECTION_COLUMNS = [
  */
 export function parseRedemptionTablesV2(
   root: HTMLElement,
-): RedemptionTableInfoWithRegion[] | null {
-  const h3Elements = root.getElementsByTagName('h3');
-  const regions = h3Elements.filter(
-    (e) => e.rawAttrs === '' && !!e.text.trim(),
-  );
+): RedemptionTableInfo[] | null {
   const tables = root.getElementsByTagName('table');
-  if (regions.length !== tables.length) {
-    log(
-      `Number of regions (${regions.length}) does not match number of tables (${tables.length})`,
-      true,
-    );
-    return null;
-  }
 
   const redemptions = tables.reduce(
-    (_redemptions: RedemptionTableInfoWithRegion[], table, idx) => {
+    (_redemptions: RedemptionTableInfo[], table) => {
       const redemptionsTableInfo = parseRedemptionTableV2(table);
-      const region = regions[idx].text;
-      const redemptionsTableInfoWithRegion = redemptionsTableInfo.map((r) => ({
-        ...r,
-        region,
-      }));
-
-      _redemptions.push(...redemptionsTableInfoWithRegion);
+      _redemptions.push(...redemptionsTableInfo);
       return _redemptions;
     },
     [],
@@ -63,9 +45,7 @@ export function parseRedemptionTablesV2(
     return null;
   }
 
-  log(
-    `⛏️ Scraped ${redemptions.length} redemptions from ${tables.length} tables`,
-  );
+  log(`⛏️ Scraped ${redemptions.length} redemptions from ${tables.length} tables`);
   return redemptions;
 }
 
