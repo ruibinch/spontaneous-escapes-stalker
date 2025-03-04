@@ -32,7 +32,7 @@ const isBasicRun = !!process.env['BASIC_RUN'];
 const shouldSendRedemptionsChangeNotificationToProd =
   !!process.env['SEND_REDEMPTIONS_CHANGE_NOTIFICATION'];
 
-export async function scrape() {
+export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
   let html: HTMLElement | undefined;
   let isNewHtml: boolean;
   const isOverrideHtml = !!htmlFilepath && htmlFilepath.includes('override');
@@ -47,7 +47,7 @@ export async function scrape() {
       message: escapeCharacters(`${datePrefix()} 🔥 ${errorMessage}`),
       shouldSendToProdChannel: false,
     });
-    return;
+    return { shouldSendLogs: true };
   }
 
   // extract the latest info from the page first
@@ -60,7 +60,7 @@ export async function scrape() {
       ),
       shouldSendToProdChannel: false,
     });
-    return;
+    return { shouldSendLogs: true };
   }
   const redemptionEndDate = parseRedemptionEndDate(html);
   const redemptionTravelPeriod = parseRedemptionTravelPeriod(html);
@@ -79,7 +79,7 @@ export async function scrape() {
       redemptions,
       redemptionTravelPeriod,
     });
-    return;
+    return { shouldSendLogs: true };
   }
 
   // check saved data
@@ -102,11 +102,7 @@ export async function scrape() {
   if (doesRedemptionPeriodExist && newRedemptions.length === 0) {
     // no changes, return early
     log('🚫 No changes');
-    await sendMessageToChannels({
-      message: escapeCharacters(`${datePrefix()} 🚫 No changes`),
-      shouldSendToProdChannel: false,
-    });
-    return;
+    return { shouldSendLogs: false };
   }
 
   let isNewRelease = true;
@@ -166,8 +162,9 @@ export async function scrape() {
   });
   postprocessing();
   analyse();
-
   await updateDataFiles({ isNewRelease });
+
+  return { shouldSendLogs: true };
 }
 
 /**

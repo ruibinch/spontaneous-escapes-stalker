@@ -1,10 +1,8 @@
 import { addMonths, isWithinInterval } from 'date-fns';
 import fs from 'fs';
-import { escapeCharacters } from './lib/telegram/helpers';
 import { scrape } from './scrape';
-import { datePrefix, sleep } from './utils';
-import { sendLogs } from './utils/log';
-import { sendMessageToChannels } from './utils/sender';
+import { sleep } from './utils';
+import { deleteLogs, sendLogs } from './utils/log';
 
 process.env.TZ = 'UTC';
 const MAX_DELAY_SECS = Number(process.env['MAX_DELAY_SECS'] ?? 0);
@@ -48,17 +46,14 @@ function checkNextMonthRedemptionsAlreadyPublished() {
   // add some delay to avoid calling the SE page at the same time everyday
   await sleep(Math.random() * MAX_DELAY_SECS);
 
-  await sendMessageToChannels({
-    message: escapeCharacters(
-      `${datePrefix()} 🔍 Scraping KF SE page for new redemptions!`,
-    ),
-    shouldSendToProdChannel: false,
-  });
-
   try {
-    await scrape();
+    const { shouldSendLogs } = await scrape();
 
-    await sendLogs();
+    if (shouldSendLogs) {
+      await sendLogs();
+    } else {
+      deleteLogs();
+    }
     process.exit(0);
   } catch (err) {
     await sendLogs();

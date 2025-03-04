@@ -28,8 +28,12 @@ export async function sendLogs() {
       message: escapeCharacters(content),
       shouldSendToProdChannel: false,
     });
-    fs.rmSync(logFilename);
+    deleteLogs();
   } catch (err) {
     console.error(`❌ Unable to send contents for ${logFilename} log file`);
   }
+}
+
+export function deleteLogs() {
+  fs.rmSync(logFilename);
 }
