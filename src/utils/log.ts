@@ -21,6 +21,11 @@ export function log(_message: string, isError = false) {
 }
 
 export async function sendLogs() {
+  if (!fs.existsSync(logFilename)) {
+    // no logs to send
+    return;
+  }
+
   const content = fs.readFileSync(logFilename).toString();
 
   try {
