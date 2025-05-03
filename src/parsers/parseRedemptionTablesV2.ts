@@ -1,9 +1,6 @@
 import { HTMLElement } from 'node-html-parser';
 import { log } from '../utils/log';
-import {
-  FlightClass,
-  RedemptionTableInfo,
-} from '../utils/types';
+import { FlightClass, RedemptionTableInfo } from '../utils/types';
 import { toNumber } from '../utils';
 import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
 import { formatCity } from './parseRedemptionTables';
@@ -45,7 +42,9 @@ export function parseRedemptionTablesV2(
     return null;
   }
 
-  log(`⛏️ Scraped ${redemptions.length} redemptions from ${tables.length} tables`);
+  log(
+    `⛏️ Scraped ${redemptions.length} redemptions from ${tables.length} tables`,
+  );
   return redemptions;
 }
 

@@ -1,16 +1,19 @@
-import axios, { isAxiosError } from 'axios';
+import { isAxiosError } from 'axios';
 import fs from 'fs';
-import { HTMLElement, parse } from 'node-html-parser';
+import { HTMLElement } from 'node-html-parser';
 import { analyse } from './analyse';
 import { escapeCharacters } from './lib/telegram/helpers';
+import { loadHtml } from './loadHtml';
 import { Redemption } from './models/Redemption';
 import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTables } from './parsers/parseRedemptionTables';
+import { parseRedemptionTablesV2 } from './parsers/parseRedemptionTablesV2';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
 import { postprocessing } from './postprocessing';
 import { updateDataFiles } from './updateDataFiles';
 import { dateInYYYYMM, datePrefix } from './utils';
+import { getCurrentMonth } from './utils/getCurrentMonth';
 import { log, sendLogs } from './utils/log';
 import {
   sendExistingRedemptionPeriodChangesNotification,
@@ -19,15 +22,11 @@ import {
   sendRedemptionsInfoNotification,
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
-import { parseRedemptionTablesV2 } from './parsers/parseRedemptionTablesV2';
-import { getCurrentMonth } from './utils/getCurrentMonth';
-
-const SPONTANEOUS_ESCAPES_URL =
-  'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
 
 // env var configs
 process.env.TZ = 'UTC';
 const shouldUseAws = !!process.env['USE_AWS'];
+const shouldUsePuppeteer = !!process.env['USE_PUPPETEER'];
 const htmlFilepath = process.env['HTML_FILEPATH'];
 const isBasicRun = !!process.env['BASIC_RUN'];
 const shouldSendRedemptionsChangeNotificationToProd =
@@ -39,7 +38,10 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
   const isOverrideHtml = !!htmlFilepath && htmlFilepath.includes('override');
 
   try {
-    const loadHtmlResult = await loadHtml();
+    const loadHtmlResult = await loadHtml({
+      htmlFilepath,
+      shouldUsePuppeteer,
+    });
     html = loadHtmlResult.html;
     isNewHtml = loadHtmlResult.isNewHtml;
   } catch (err) {
@@ -171,30 +173,6 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
   await updateDataFiles({ isNewRelease });
 
   return { shouldSendLogs: true };
-}
-
-/**
- * Fetches the latest HTML content from the SE webpage, or loads a local HTML file specified by the HTML_FILEPATH env var.
- */
-async function loadHtml() {
-  let html: HTMLElement;
-  let isNewHtml = true;
-
-  if (htmlFilepath) {
-    const htmlFileContent = fs.readFileSync(htmlFilepath).toString();
-    html = parse(htmlFileContent);
-    isNewHtml = false;
-  } else {
-    const response = await axios.get(SPONTANEOUS_ESCAPES_URL, {
-      headers: {
-        'User-Agent': 'PostmanRuntime/7.33.0',
-      },
-      timeout: 20000,
-    });
-    html = parse(response.data);
-  }
-
-  return { html, isNewHtml };
 }
 
 /**
