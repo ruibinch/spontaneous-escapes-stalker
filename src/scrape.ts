@@ -20,6 +20,7 @@ import {
 } from './utils/sender';
 import { TimePeriod } from './utils/types';
 import { parseRedemptionTablesV2 } from './parsers/parseRedemptionTablesV2';
+import { getCurrentMonth } from './utils/getCurrentMonth';
 
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
@@ -62,8 +63,13 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
     });
     return { shouldSendLogs: true };
   }
-  const redemptionEndDate = parseRedemptionEndDate(html);
-  const redemptionTravelPeriod = parseRedemptionTravelPeriod(html);
+
+  const currentMonth = getCurrentMonth(redemptionTablesInfo);
+  const redemptionEndDate = parseRedemptionEndDate(html, currentMonth);
+  const redemptionTravelPeriod = parseRedemptionTravelPeriod(
+    html,
+    currentMonth,
+  );
   const redemptions = redemptionTablesInfo.map((redemptionInfo) =>
     Redemption.create({
       ...redemptionInfo,
