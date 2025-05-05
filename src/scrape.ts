@@ -26,7 +26,6 @@ import { TimePeriod } from './utils/types';
 // env var configs
 process.env.TZ = 'UTC';
 const shouldUseAws = !!process.env['USE_AWS'];
-const shouldUsePuppeteer = !!process.env['USE_PUPPETEER'];
 const htmlFilepath = process.env['HTML_FILEPATH'];
 const isBasicRun = !!process.env['BASIC_RUN'];
 const shouldSendRedemptionsChangeNotificationToProd =
@@ -38,14 +37,12 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
   const isOverrideHtml = !!htmlFilepath && htmlFilepath.includes('override');
 
   try {
-    const loadHtmlResult = await loadHtml({
-      htmlFilepath,
-      shouldUsePuppeteer,
-    });
+    const loadHtmlResult = await loadHtml({ htmlFilepath });
     html = loadHtmlResult.html;
     isNewHtml = loadHtmlResult.isNewHtml;
   } catch (err) {
-    const errorMessage = isAxiosError(err) ? err.message : 'Unknown error';
+    const errorMessage =
+      err instanceof Error && 'message' in err ? err.message : 'Unknown error';
     await sendMessageToChannels({
       message: escapeCharacters(`${datePrefix()} 🔥 ${errorMessage}`),
       shouldSendToProdChannel: false,
@@ -223,6 +220,7 @@ function compareRedemptions(
 if (require.main === module) {
   scrape()
     .then(async () => {
+      // always send logs when running this file directly, regardless of returned shouldSendLogs prop
       await sendLogs();
       process.exit(0);
     })

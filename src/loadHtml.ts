@@ -4,6 +4,12 @@ import { HTMLElement, parse } from 'node-html-parser';
 import * as puppeteer from 'puppeteer';
 import { log } from './utils/log';
 
+const USE_PUPPETEER = !!process.env['USE_PUPPETEER'];
+// `/usr/bin/chromium-browser` is the path for Chromium on rpi; setting as default value to avoid it being forgotten
+// when installing via brew, the path is `/usr/local/bin/chromium`
+const PUPPETEER_EXECUTABLE_PATH =
+  process.env['PUPPETEER_EXECUTABLE_PATH'] ?? '/usr/bin/chromium-browser';
+
 const SPONTANEOUS_ESCAPES_URL =
   'https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/kfescapes/';
 
@@ -12,10 +18,8 @@ const SPONTANEOUS_ESCAPES_URL =
  */
 export async function loadHtml({
   htmlFilepath,
-  shouldUsePuppeteer,
 }: {
   htmlFilepath: string | undefined;
-  shouldUsePuppeteer: boolean;
 }): Promise<{
   html: HTMLElement;
   isNewHtml: boolean;
@@ -25,7 +29,7 @@ export async function loadHtml({
     return { html: parse(htmlFileContent), isNewHtml: false };
   }
 
-  if (shouldUsePuppeteer) {
+  if (USE_PUPPETEER) {
     const html = await loadHtmlViaPuppeteer();
     if (html) {
       return { html, isNewHtml: true };
@@ -47,10 +51,17 @@ export async function loadHtml({
  * Load HTML via Puppeteer, and extract out only the table elements.
  */
 async function loadHtmlViaPuppeteer() {
-  log('Loading HTML via Puppeteer');
+  log('🧦 Loading HTML via Puppeteer');
   const browser = await puppeteer.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    executablePath: PUPPETEER_EXECUTABLE_PATH,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+      '--disable-accelerated-2d-canvas',
+    ],
   });
 
   const page = await browser.newPage();

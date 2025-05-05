@@ -20,10 +20,8 @@ export function parseRedemptionEndDate(
   if (redemptionEndDateMatch) {
     const redemptionEndDateStr = redemptionEndDateMatch[0];
     return parseDateString(redemptionEndDateStr);
-  } else {
-    log(
-      'Unable to find redemption end date, falling back to end of current month',
-    );
-    return endOfMonth(currentMonth);
   }
+
+  // fallback to deriving based on scraped redemptions data
+  return endOfMonth(currentMonth);
 }

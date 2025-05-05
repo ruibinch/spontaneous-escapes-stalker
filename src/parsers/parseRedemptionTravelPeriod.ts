@@ -1,6 +1,5 @@
 import { addMonths, endOfMonth, startOfMonth } from 'date-fns';
 import { HTMLElement } from 'node-html-parser';
-import { log } from '../utils/log';
 import { parseDateText } from './parseBlackoutPeriod';
 
 /**
@@ -22,23 +21,19 @@ export function parseRedemptionTravelPeriod(
     .find(Boolean);
 
   if (periodMatch) {
-    const periodText = periodMatch[0];
-    const periodDates = parseDateText(periodText);
+    const periodDates = parseDateText(periodMatch[0]);
 
     return {
       from: new Date(periodDates.from),
       to: new Date(periodDates.to),
     };
-  } else {
-    log(
-      'Unable to find redemption travel period, falling back to start/end of next month',
-    );
-
-    const startOfNextMonth = startOfMonth(addMonths(currentMonth, 1));
-    const endOfNextMonth = endOfMonth(addMonths(currentMonth, 1));
-    return {
-      from: new Date(startOfNextMonth.toISOString().split('T')[0]),
-      to: new Date(endOfNextMonth.toISOString().split('T')[0]),
-    };
   }
+
+  // fallback to deriving based on scraped redemptions data
+  const startOfNextMonth = startOfMonth(addMonths(currentMonth, 1));
+  const endOfNextMonth = endOfMonth(addMonths(currentMonth, 1));
+  return {
+    from: new Date(startOfNextMonth.toISOString().split('T')[0]),
+    to: new Date(endOfNextMonth.toISOString().split('T')[0]),
+  };
 }
