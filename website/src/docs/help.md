@@ -35,6 +35,10 @@ Each individual redemption is parsed into a JSON structure to facilitate further
 }
 ```
 
+## Can I be notified of upcoming SE releases?
+
+You can subscribe to the [KFSpontaneousEscapes Telegram channel](https://t.me/kfspontaneousescapes), where a notification will be sent upon an update on SIA's SE page.
+
 ## What is the timeframe of this dataset?
 
 The Spontaneous Escapes program began in Sep-2017.
