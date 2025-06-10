@@ -1,14 +1,13 @@
 org: ruibinch
 app: kfseanalysis
 service: kfseanalysis
-frameworkVersion: '3'
 
-useDotenv: true
+frameworkVersion: ^4.17.0
 
 # docs ref: https://www.serverless.com/framework/docs/providers/aws/events/apigateway
 provider:
   name: aws
-  runtime: nodejs18.x
+  runtime: nodejs22.x
   region: ap-southeast-1
   endpointType: REGIONAL # reduces latency if requests originate from the same region as the API
   environment:
