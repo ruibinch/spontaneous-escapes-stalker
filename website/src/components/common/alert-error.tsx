@@ -1,4 +1,4 @@
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import { InfoIcon } from '../icons/info';
 import { useTheme } from './use-theme';
 

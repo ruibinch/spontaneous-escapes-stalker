@@ -1,7 +1,7 @@
 'use client';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RouteAnalysisEntry } from '@/index';
-import { BreadcrumbItem, Breadcrumbs, cn } from '@nextui-org/react';
+import { BreadcrumbItem, Breadcrumbs, cn } from '@heroui/react';
 import {
   BarElement,
   CategoryScale,

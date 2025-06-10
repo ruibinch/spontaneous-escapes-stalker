@@ -10,7 +10,7 @@ import {
   TableRow,
   cn,
   getKeyValue,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { useEffect, useState } from 'react';
 import { CommonStyles } from '../common/styles';
 import {

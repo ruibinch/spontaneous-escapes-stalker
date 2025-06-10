@@ -1,4 +1,4 @@
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import { Dispatch, SetStateAction } from 'react';
 import { CommonStyles } from './styles';
 import { trackEvent } from '@/analytics';

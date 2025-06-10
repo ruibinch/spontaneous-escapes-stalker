@@ -12,7 +12,7 @@ import {
   ModalFooter,
   ModalHeader,
   useDisclosure,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { FileTextIcon } from '@/components/icons/file-text';
 import { trackEvent } from '@/analytics';
 import { GlossaryModal } from './glossary-modal';

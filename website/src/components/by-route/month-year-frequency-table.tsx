@@ -7,7 +7,7 @@ import { monthShortNameToNumMap } from '@/common/months-map';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { useWindowSize } from '@/hooks/use-window-size';
 import { FlightClass, RedemptionInfoSingle } from '@/index';
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import { isAfter, isBefore } from 'date-fns';
 import { useSearchParams } from 'next/navigation';
 import { BREAKPOINTS } from '../common/breakpoints';

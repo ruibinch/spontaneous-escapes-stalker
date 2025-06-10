@@ -1,4 +1,4 @@
-import { Tooltip as NextUITooltip, TooltipProps } from '@nextui-org/react';
+import { Tooltip as NextUITooltip, TooltipProps } from '@heroui/react';
 
 type Props = Omit<TooltipProps, 'content'> & {
   content: string;

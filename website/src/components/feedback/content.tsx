@@ -1,5 +1,5 @@
 'use client';
-import { Button, Input, Textarea, cn } from '@nextui-org/react';
+import { Button, Input, Textarea, cn } from '@heroui/react';
 import axios from 'axios';
 import { useState } from 'react';
 import { PageHeader } from '../common/page-header';

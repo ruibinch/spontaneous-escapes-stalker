@@ -1,4 +1,4 @@
-import { Code, cn } from '@nextui-org/react';
+import { Code, cn } from '@heroui/react';
 import Markdown from 'markdown-to-jsx';
 import { CommonStyles } from './styles';
 

@@ -1,6 +1,6 @@
 'use client';
 import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
-import { Divider, cn } from '@nextui-org/react';
+import { Divider, cn } from '@heroui/react';
 import {
   ArcElement,
   BarElement,

@@ -1,5 +1,5 @@
 import { HelpCircleIcon } from '@/components/icons/help-circle';
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import { TooltipOrPopover } from './tooltip-or-popover';
 import { CommonStyles } from './styles';
 

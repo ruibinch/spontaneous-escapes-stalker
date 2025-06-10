@@ -1,5 +1,5 @@
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
-import { Checkbox } from '@nextui-org/react';
+import { Checkbox } from '@heroui/react';
 
 export function SilkairRoutesToggle() {
   const { showSilkairRoutes, setShowSilkairRoutes } =

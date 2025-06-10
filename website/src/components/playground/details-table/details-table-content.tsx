@@ -14,7 +14,7 @@ import {
   TableRow,
   cn,
   getKeyValue,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { FlightClassIndicator } from '../../common/flight-class-indicator';
 import {

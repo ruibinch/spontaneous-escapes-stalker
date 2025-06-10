@@ -5,7 +5,7 @@ import {
   PopoverTrigger,
   Tooltip,
   TooltipProps,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import React from 'react';
 import { BREAKPOINTS } from './breakpoints';
 

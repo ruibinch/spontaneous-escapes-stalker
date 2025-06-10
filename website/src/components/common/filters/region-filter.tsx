@@ -1,6 +1,6 @@
 import { trackEvent } from '@/analytics';
 import { useSearchParams } from '@/hooks/use-search-params';
-import { Select, SelectItem } from '@nextui-org/react';
+import { Select, SelectItem } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 
 export const REGION_ALL = 'All';
@@ -62,11 +62,7 @@ export function RegionFilter() {
         router.replace(url);
       }}
     >
-      {(option) => (
-        <SelectItem key={option.label} value={option.value}>
-          {option.value}
-        </SelectItem>
-      )}
+      {(option) => <SelectItem key={option.label}>{option.value}</SelectItem>}
     </Select>
   );
 }

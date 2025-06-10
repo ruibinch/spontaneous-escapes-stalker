@@ -12,7 +12,7 @@ import {
   TableRow,
   cn,
   getKeyValue,
-} from '@nextui-org/react';
+} from '@heroui/react';
 
 const NUM_ROUTES_TO_DISPLAY = 10;
 

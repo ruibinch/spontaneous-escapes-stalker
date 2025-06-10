@@ -2,7 +2,7 @@
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RouteAnalysisEntry } from '@/index';
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import {
   ArcElement,
   BarElement,

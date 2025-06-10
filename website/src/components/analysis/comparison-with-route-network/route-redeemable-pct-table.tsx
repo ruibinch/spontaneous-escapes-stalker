@@ -12,7 +12,7 @@ import {
   TableRow,
   cn,
   getKeyValue,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { Dispatch, SetStateAction, useState } from 'react';
 import {
   SearchTermFilter,

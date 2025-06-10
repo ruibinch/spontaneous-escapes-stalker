@@ -1,7 +1,7 @@
 import { trackEvent } from '@/analytics';
 import { getMonthsList } from '@/common/get-data-time-range';
 import { useSearchParams } from '@/hooks/use-search-params';
-import { Input } from '@nextui-org/react';
+import { Input } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 
 const monthsList = getMonthsList();

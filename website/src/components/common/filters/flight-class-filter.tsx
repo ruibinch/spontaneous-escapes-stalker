@@ -2,7 +2,7 @@ import { trackEvent } from '@/analytics';
 import { FlightClassIndicator } from '@/components/common/flight-class-indicator';
 import { useSearchParams } from '@/hooks/use-search-params';
 import { FlightClassSelectOption } from '@/index';
-import { Select, SelectItem, SelectedItems } from '@nextui-org/react';
+import { Select, SelectItem, SelectedItems } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 import { Dispatch, SetStateAction } from 'react';
 

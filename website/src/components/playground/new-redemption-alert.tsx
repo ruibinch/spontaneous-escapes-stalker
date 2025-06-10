@@ -1,7 +1,7 @@
 import { trackEvent } from '@/analytics';
 import { getMonthsList } from '@/common/get-data-time-range';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
-import { Link } from '@nextui-org/react';
+import { Link } from '@heroui/react';
 import { differenceInCalendarDays, format } from 'date-fns';
 import { AlertNotification } from '../common/alert-notification';
 import { CommonStyles } from '../common/styles';

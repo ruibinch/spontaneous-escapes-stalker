@@ -1,5 +1,5 @@
 import { useNewChangelogItemContext } from '@/contexts/new-changelog-item-context';
-import { Navbar, NavbarContent } from '@nextui-org/react';
+import { Navbar, NavbarContent } from '@heroui/react';
 import { usePathname } from 'next/navigation';
 import { additionalEndBarItems, endBarItems, startBarItems } from './bar-items';
 import { NavbarItem } from './navbar-item';

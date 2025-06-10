@@ -1,5 +1,5 @@
 import { trackEvent } from '@/analytics';
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import { Tooltip } from '../common/tooltip';

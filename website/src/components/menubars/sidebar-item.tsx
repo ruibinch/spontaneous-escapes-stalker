@@ -1,5 +1,5 @@
 import { trackEvent } from '@/analytics';
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import NextLink from 'next/link';
 import { BarItemProps } from './bar-items';
 import { BarStyles } from './bar.styles';

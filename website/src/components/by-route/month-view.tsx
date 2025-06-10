@@ -2,7 +2,7 @@ import { getMonthsList } from '@/common/get-months-with-route-network-data';
 import { getMostCommonElementInArray } from '@/common/get-most-common-element-in-array';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { useSearchParams } from '@/hooks/use-search-params';
-import { Button, cn } from '@nextui-org/react';
+import { Button, cn } from '@heroui/react';
 import {
   addMonths,
   addYears,

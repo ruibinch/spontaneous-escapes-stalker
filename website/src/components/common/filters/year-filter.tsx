@@ -1,7 +1,7 @@
 import { trackEvent } from '@/analytics';
 import { getYearsList } from '@/common/get-data-time-range';
 import { useSearchParams } from '@/hooks/use-search-params';
-import { Select, SelectItem } from '@nextui-org/react';
+import { Select, SelectItem } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 
 export const YEAR_ALL = 'All';

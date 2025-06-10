@@ -1,4 +1,4 @@
-import { cn, tv } from '@nextui-org/react';
+import { cn, tv } from '@heroui/react';
 
 export const SidebarWrapper = tv({
   base: cn(

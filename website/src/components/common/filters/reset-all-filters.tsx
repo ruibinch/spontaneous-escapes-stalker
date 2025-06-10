@@ -1,4 +1,4 @@
-import { Button, cn } from '@nextui-org/react';
+import { Button, cn } from '@heroui/react';
 import { RefreshIcon } from '../../icons/refresh';
 import { TooltipOrPopover } from '../tooltip-or-popover';
 import { CommonStyles } from '../styles';

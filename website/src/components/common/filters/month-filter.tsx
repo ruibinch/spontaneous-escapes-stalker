@@ -1,7 +1,7 @@
 import { trackEvent } from '@/analytics';
 import { monthNameToNumMap } from '@/common/months-map';
 import { useSearchParams } from '@/hooks/use-search-params';
-import { Select, SelectItem } from '@nextui-org/react';
+import { Select, SelectItem } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 
 export const MONTH_ALL = 'All';

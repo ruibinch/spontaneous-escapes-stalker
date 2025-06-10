@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Divider, cn } from '@nextui-org/react';
+import { Card, CardBody, CardHeader, Divider, cn } from '@heroui/react';
 import React from 'react';
 
 export function SummaryEntryCard({

@@ -11,7 +11,7 @@ import { ArrowDownIcon } from '@/components/icons/arrow-down';
 import { ArrowUpIcon } from '@/components/icons/arrow-up';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
 import monthSummaryAnalysisFile from '@/static/month-summary-analysis.json';
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import { Pie } from 'react-chartjs-2';
 import { makeChartOptions } from '../../common/chart/chart-options';
 import { CardWrapper } from '../../common/card-wrapper';

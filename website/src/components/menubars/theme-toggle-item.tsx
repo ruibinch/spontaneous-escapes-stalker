@@ -1,6 +1,6 @@
 'use client';
 import { trackEvent } from '@/analytics';
-import { Button, Skeleton, cn } from '@nextui-org/react';
+import { Button, Skeleton, cn } from '@heroui/react';
 import { Tooltip } from '../common/tooltip';
 import { useTheme } from '../common/use-theme';
 import { MoonIcon } from '../icons/moon';

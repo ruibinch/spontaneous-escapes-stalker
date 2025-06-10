@@ -2,7 +2,7 @@
 import { trackEvent } from '@/analytics';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RouteAnalysisEntry } from '@/index';
-import { Link, cn } from '@nextui-org/react';
+import { Link, cn } from '@heroui/react';
 import { PageHeader } from '../common/page-header';
 import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';

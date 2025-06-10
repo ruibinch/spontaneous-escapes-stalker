@@ -2,7 +2,7 @@
 import { monthNumToNameMap } from '@/common/months-map';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
-import { BreadcrumbItem, Breadcrumbs, cn } from '@nextui-org/react';
+import { BreadcrumbItem, Breadcrumbs, cn } from '@heroui/react';
 import {
   ArcElement,
   BarElement,

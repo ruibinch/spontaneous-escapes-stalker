@@ -1,6 +1,6 @@
 import { trackEvent } from '@/analytics';
 import useDebounce from '@/hooks/use-debounce';
-import { Input, cn } from '@nextui-org/react';
+import { Input, cn } from '@heroui/react';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { CommonStyles } from '../styles';
 

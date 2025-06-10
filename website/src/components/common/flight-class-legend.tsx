@@ -1,4 +1,4 @@
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import { FlightClassIndicator } from './flight-class-indicator';
 
 export function FlightClassLegend({ styles }: { styles?: string }) {

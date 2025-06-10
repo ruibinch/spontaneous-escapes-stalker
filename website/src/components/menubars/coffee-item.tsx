@@ -9,7 +9,7 @@ import {
   Button,
   useDisclosure,
   Link,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { CoffeeIcon } from '../icons/coffee';
 
 export function CoffeeItem() {

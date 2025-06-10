@@ -3,7 +3,7 @@ import { XIcon } from '@/components/icons/x';
 import { useSearchParams } from '@/hooks/use-search-params';
 import { RedemptionEntry, RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
-import { cn } from '@nextui-org/react';
+import { cn } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import ReactSelect, {
