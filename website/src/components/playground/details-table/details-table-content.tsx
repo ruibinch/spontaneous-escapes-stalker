@@ -237,7 +237,7 @@ function renderCell({
                     route: `${item.originIata}${item.destinationIata}`,
                   });
                 }}
-                className="text-xs text-blue-500 dark:text-blue-400"
+                className={cn(CommonStyles.Link, 'text-xs')}
               >
                 {`${item.originIata}-${item.destinationIata}`}
               </Link>
@@ -254,7 +254,7 @@ function renderCell({
                         route: routeIata,
                       });
                     }}
-                    className="text-xs text-blue-500 dark:text-blue-400"
+                    className={cn(CommonStyles.Link, 'text-xs')}
                   >
                     {routeIata}
                   </Link>

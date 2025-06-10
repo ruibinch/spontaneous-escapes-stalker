@@ -2,6 +2,7 @@ import { Link } from '@nextui-org/react';
 import { AlertNotification } from '../common/alert-notification';
 import { MarkdownWrapper } from '../common/markdown-wrapper';
 import { PageHeader } from '../common/page-header';
+import { CommonStyles } from '../common/styles';
 
 export function HelpContent({ content }: { content: string }) {
   return (
@@ -20,7 +21,7 @@ export function HelpContent({ content }: { content: string }) {
                   href={'https://t.me/kfspontaneousescapes'}
                   target="_blank"
                   underline="always"
-                  className="text-blue-500 dark:text-blue-400"
+                  className={CommonStyles.Link}
                 >
                   {'KFSpontaneousEscapes Telegram channel'}
                 </Link>
@@ -31,7 +32,7 @@ export function HelpContent({ content }: { content: string }) {
                   }
                   target="_blank"
                   underline="always"
-                  className="text-blue-500 dark:text-blue-400"
+                  className={CommonStyles.Link}
                 >
                   {"SIA's SE page"}
                 </Link>

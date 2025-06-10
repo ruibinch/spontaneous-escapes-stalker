@@ -77,7 +77,7 @@ export function RouteOverviewContent({
                   onClick={() => {
                     trackEvent(['routeOverview'], { route: route.label });
                   }}
-                  className="text-blue-500 dark:text-blue-400"
+                  className={CommonStyles.Link}
                 >
                   {route.label}
                 </Link>

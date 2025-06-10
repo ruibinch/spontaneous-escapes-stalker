@@ -214,7 +214,7 @@ function RouteRedeemablePctTableContent({
                           href={`/route/${item.routeIata}`}
                           size="sm"
                           underline="hover"
-                          className="text-xs text-blue-500 dark:text-blue-400"
+                          className={CommonStyles.Link}
                         >
                           {getKeyValue(item, columnKey)}
                         </Link>

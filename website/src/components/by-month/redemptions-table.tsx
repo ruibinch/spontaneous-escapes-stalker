@@ -131,7 +131,10 @@ export function RedemptionsTable({
                                   href={`/route/${item.originIata}${item.destinationIata}`}
                                   size="sm"
                                   underline="hover"
-                                  className="w-14 text-xs text-blue-500 dark:text-blue-400"
+                                  className={cn(
+                                    CommonStyles.Link,
+                                    'text-xs w-14',
+                                  )}
                                 >
                                   {`${item.originIata}-${item.destinationIata}`}
                                 </Link>

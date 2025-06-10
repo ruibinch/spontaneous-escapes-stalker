@@ -11,4 +11,6 @@ const CardWrapper = cn(
   Border,
 );
 
-export const CommonStyles = { Page, Border, CardWrapper };
+const Link = cn('text-blue-500 dark:text-blue-400 hover:text-blue-600');
+
+export const CommonStyles = { Page, Border, CardWrapper, Link };

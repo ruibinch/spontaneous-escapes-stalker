@@ -101,7 +101,7 @@ function BlackoutPctTable({
                               href={`/route/${item.originIata}${item.destinationIata}`}
                               size="sm"
                               underline="hover"
-                              className="text-xs text-blue-500 dark:text-blue-400"
+                              className={cn(CommonStyles.Link, 'text-xs')}
                             >
                               {`${item.origin} - ${item.destination}`}
                             </Link>

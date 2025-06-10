@@ -1,5 +1,6 @@
-import { Code } from '@nextui-org/react';
+import { Code, cn } from '@nextui-org/react';
 import Markdown from 'markdown-to-jsx';
+import { CommonStyles } from './styles';
 
 export function MarkdownWrapper({ content }: { content: string }) {
   return (
@@ -58,7 +59,7 @@ const P = ({ children, ...restProps }: Props) => (
 const A = ({ children, ...restProps }: Props) => (
   <a
     {...restProps}
-    className="text-blue-500 dark:text-blue-400 hover:text-blue-600 underline cursor-pointer"
+    className={cn(CommonStyles.Link, 'underline cursor-pointer')}
   >
     {children}
   </a>

@@ -129,7 +129,7 @@ export function RouteHistoryTable({
                                 href={`/month/${value}`}
                                 size="sm"
                                 underline="hover"
-                                className="text-xs text-blue-500 dark:text-blue-400"
+                                className={cn(CommonStyles.Link, 'text-xs')}
                               >
                                 {`${value.slice(0, 4)}-${value.slice(4, 6)}`}
                               </Link>

@@ -4,6 +4,7 @@ import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { Link } from '@nextui-org/react';
 import { differenceInCalendarDays, format } from 'date-fns';
 import { AlertNotification } from '../common/alert-notification';
+import { CommonStyles } from '../common/styles';
 
 const NEW_REDEMPTION_WITHIN_NUM_DAYS = 7;
 
@@ -36,7 +37,7 @@ export function NewRedemptionAlert({
             onClick={() => {
               trackEvent(['playground', 'newRedemptionAlert']);
             }}
-            className="text-blue-500 dark:text-blue-400"
+            className={CommonStyles.Link}
           >
             {format(yyyymmToDate(latestMonth), 'MMMM yyyy')}
           </Link>
