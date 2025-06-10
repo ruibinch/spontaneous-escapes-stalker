@@ -1,3 +1,7 @@
+# 2.10.1 - 2025-06-10
+
+- Added link to KFSpontaneousEscapes Telegram channel from help page
+
 # 2.10.0 - 2024-12-21
 
 - Added explanatory remarks on some by-route pages
