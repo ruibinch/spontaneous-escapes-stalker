@@ -1,8 +1,9 @@
-import { Link, cn } from '@nextui-org/react';
+import { trackEvent } from '@/analytics';
 import { getMonthsList } from '@/common/get-data-time-range';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
+import { Link } from '@nextui-org/react';
 import { differenceInCalendarDays, format } from 'date-fns';
-import { trackEvent } from '@/analytics';
+import { AlertNotification } from '../common/alert-notification';
 
 const NEW_REDEMPTION_WITHIN_NUM_DAYS = 7;
 
@@ -23,29 +24,24 @@ export function NewRedemptionAlert({
   const latestMonth = monthsList[monthsList.length - 1];
 
   return (
-    <div
-      className={cn(
-        'flex flex-col gap-2 p-3 rounded-md',
-        'bg-amber-200/30 dark:bg-indigo-950',
-        'border border-amber-300 dark:border-indigo-700',
-      )}
-    >
-      <h2 className="font-semibold">❗️ New redemption alert</h2>
-
-      <span className="text-sm">
-        {`Spontaneous Escapes redemptions released for `}
-        <Link
-          href={`/month/${latestMonth}`}
-          size="sm"
-          underline="always"
-          onClick={() => {
-            trackEvent(['playground', 'newRedemptionAlert']);
-          }}
-          className="text-blue-500 dark:text-blue-400"
-        >
-          {format(yyyymmToDate(latestMonth), 'MMMM yyyy')}
-        </Link>
-      </span>
-    </div>
+    <AlertNotification
+      title={'❗️ New redemption alert'}
+      content={
+        <span className="text-sm">
+          {`Spontaneous Escapes redemptions released for `}
+          <Link
+            href={`/month/${latestMonth}`}
+            size="sm"
+            underline="always"
+            onClick={() => {
+              trackEvent(['playground', 'newRedemptionAlert']);
+            }}
+            className="text-blue-500 dark:text-blue-400"
+          >
+            {format(yyyymmToDate(latestMonth), 'MMMM yyyy')}
+          </Link>
+        </span>
+      }
+    />
   );
 }

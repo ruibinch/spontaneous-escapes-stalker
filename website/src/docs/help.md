@@ -1,6 +1,6 @@
 ## What is this site about?
 
-SIA runs a monthly Spontaneous Escapes (SE) promotion, where the number of miles required for a ticket redemption in the following month is reduced, typically by 30%. The routes available for redemption vary on a monthly basis as they are determined by load factor, i.e. the greater the number of unsold seats on the route, the higher the chance of the route appearing on SE.
+Singapore Airlines (SIA) runs a monthly Spontaneous Escapes (SE) promotion, where the number of miles required for a ticket redemption in the following month is reduced, typically by 30%. The routes available for redemption vary on a monthly basis as they are determined by load factor, i.e. the greater the number of unsold seats on the route, the higher the chance of the route appearing on SE.
 
 This site collates the historical SE redemptions data and presents it in an easily accessible and searchable format with accompanying charts for derivation of insights and potentially predictions of future redemptions.
 
@@ -34,10 +34,6 @@ Each individual redemption is parsed into a JSON structure to facilitate further
   "redemptionMonth": "202205"
 }
 ```
-
-## Can I be notified of upcoming SE releases?
-
-You can subscribe to the [KFSpontaneousEscapes Telegram channel](https://t.me/kfspontaneousescapes), where a notification will be sent upon an update on SIA's SE page.
 
 ## What is the timeframe of this dataset?
 
