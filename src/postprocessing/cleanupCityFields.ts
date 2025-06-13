@@ -40,9 +40,32 @@ const cityMapper: Record<string, string> = {
 export function cleanupCityFields(
   redemptions: RedemptionJson[],
 ): RedemptionJson[] {
-  return redemptions.map((redemption) => ({
-    ...redemption,
-    origin: cityMapper[redemption.origin] ?? redemption.origin,
-    destination: cityMapper[redemption.destination] ?? redemption.destination,
-  }));
+  return redemptions.map((redemption) => {
+    const origin = standardiseCityName(redemption.origin);
+    const destination = standardiseCityName(redemption.destination);
+
+    return {
+      ...redemption,
+      origin: cityMapper[origin] ?? origin,
+      destination: cityMapper[destination] ?? destination,
+    };
+  });
+}
+
+/**
+ * Standardises the city name to uppercase first letter of each word.
+ *
+ * Bracketed values are preserved to avoid messing up any intentional capitalisation, e.g. "New York (JFK)".
+ */
+function standardiseCityName(city: string) {
+  const bracketedValuesRegex = /\(.*?\)/;
+  const bracketedValues = city.match(bracketedValuesRegex);
+  const cityWithoutBracketedValues = city.replace(bracketedValuesRegex, '');
+
+  const cityStandardised = cityWithoutBracketedValues
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+
+  return `${cityStandardised}${bracketedValues?.[0] ?? ''}`;
 }
