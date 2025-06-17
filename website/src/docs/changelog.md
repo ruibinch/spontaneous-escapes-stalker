@@ -1,3 +1,7 @@
+# 2.11.0 - 2025-06-17
+
+- Updated favicon
+
 # 2.10.1 - 2025-06-10
 
 - Added link to KFSpontaneousEscapes Telegram channel from help page
@@ -33,7 +37,7 @@
 
 # 2.5.0 - 2024-05-13
 
-- Added month calendar view to by-route page for better visualisation of redemption months and blackout periods ([example](https://www.kfseanalysis.com/route/SINDPS))
+- Added month calendar view to by-route page for better visualisation of redemption months and blackout periods
 
 # 2.4.2 - 2024-04-14
 
