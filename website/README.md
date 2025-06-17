@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# KrisFlyer Spontaneous Escapes Analysis Tool (SEAT)
+
+A site for analysing historical KrisFlyer Spontaneous Escapes flight redemptions.
+
+The list of redemptions is scraped from the live and archived versions of the KrisFlyer Spontaneous Escapes page as well as parsing the data published on the MileLion/MainlyMiles blogs for older releases.
+
+## Features
+
+- **Playground**
+  - Explore the full dataset of past SE redemptions with filters on:
+    - City
+    - Country
+    - Airport IATA code
+    - Region
+    - Flight class
+    - Month
+    - Period range
+- **Analysis**
+  - Provides analysis on segments of the data, e.g. comparison of SE trends, blackout percentages, and route network coverage
+- **View by Month**
+  - Explore redemptions for a specific month, with similar accompanying filters as that available on the Playground page
+- **View by Route**
+  - Drill down on specific city pairs to check how often and when they appeared in Spontaneous Escapes, along with route-specific stats
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   yarn install
+   ```
+2. Run the development server:
+   ```bash
+   yarn dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js 14
+- React 18
+- Tailwind CSS
+- Chart.js (via react-chartjs-2)
