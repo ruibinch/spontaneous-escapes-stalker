@@ -8,7 +8,7 @@ import {
   RedemptionTableInfoWithRegion,
 } from '../utils/types';
 import { subDays } from 'date-fns';
-import { formatCity } from './parseRedemptionTables';
+import { formatCity } from './parseRedemptionTablesV1';
 import { dedupeRedemptions } from './dedupeRedemptions';
 
 process.env.TZ = 'UTC';

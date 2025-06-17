@@ -3,7 +3,7 @@ import { log } from '../utils/log';
 import { FlightClass, RedemptionTableInfo } from '../utils/types';
 import { toNumber } from '../utils';
 import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
-import { formatCity } from './parseRedemptionTables';
+import { formatCity } from './parseRedemptionTablesV1';
 
 const ECONOMY_AND_BUSINESS_SECTION_COLUMNS = [
   'FROM',

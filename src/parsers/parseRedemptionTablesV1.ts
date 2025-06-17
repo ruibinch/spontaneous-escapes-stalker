@@ -50,7 +50,7 @@ const SILKAIR_SECTION_NAME = />SilkAir</i;
  * @param root
  * @returns
  */
-export function parseRedemptionTables(root: HTMLElement) {
+export function parseRedemptionTablesV1(root: HTMLElement) {
   const accordions = root.querySelectorAll(ACCORDIONS_CLASS_NAME);
   const businessAndEconomyClassRedemptionsSection = accordions.find((e) =>
     e.toString().match(BUSINESS_AND_ECONOMY_CLASS_SECTION_NAME),
