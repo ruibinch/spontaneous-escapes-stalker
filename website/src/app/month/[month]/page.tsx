@@ -7,7 +7,6 @@ import { ByMonthContent } from '@/components/by-month/content';
 import ClientOnly from '@/components/common/client-only';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
-import patienceMyYoungPadawanImg from '@/static/patience-my-young-padawan.jpg';
 import { isAfter, isBefore } from 'date-fns';
 import Image from 'next/image';
 
@@ -28,8 +27,10 @@ export default async function ByMonth({
         {isMonthInFuture ? (
           <div className="flex justify-center">
             <Image
-              src={patienceMyYoungPadawanImg}
+              src="/patience-my-young-padawan.jpg"
               alt="Patience my young padawan"
+              height="900"
+              width="442"
             />
           </div>
         ) : (
