@@ -1,4 +1,3 @@
-import { isAxiosError } from 'axios';
 import fs from 'fs';
 import { HTMLElement } from 'node-html-parser';
 import { analyse } from './analyse';
@@ -7,7 +6,7 @@ import { loadHtml } from './loadHtml';
 import { Redemption } from './models/Redemption';
 import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
-import { parseRedemptionTables } from './parsers/parseRedemptionTables';
+import { parseRedemptionTablesV1 } from './parsers/parseRedemptionTablesV1';
 import { parseRedemptionTablesV2 } from './parsers/parseRedemptionTablesV2';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
 import { postprocessing } from './postprocessing';
@@ -21,7 +20,6 @@ import {
   sendNewRedemptionPeriodNotification,
   sendRedemptionsInfoNotification,
 } from './utils/sender';
-import { TimePeriod } from './utils/types';
 
 // env var configs
 process.env.TZ = 'UTC';
@@ -52,7 +50,7 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
 
   // extract the latest info from the page first
   const redemptionTablesInfo =
-    parseRedemptionTables(html) ?? parseRedemptionTablesV2(html);
+    parseRedemptionTablesV1(html) ?? parseRedemptionTablesV2(html);
   if (!redemptionTablesInfo) {
     await sendMessageToChannels({
       message: escapeCharacters(
@@ -69,6 +67,7 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
     html,
     currentMonth,
   );
+  const redemptionMonth = dateInYYYYMM(redemptionTravelPeriod.from);
   const redemptions = redemptionTablesInfo.map((redemptionInfo) =>
     Redemption.create({
       ...redemptionInfo,
@@ -82,7 +81,7 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
       html: isNewHtml ? html : undefined,
       isOverrideHtml,
       redemptions,
-      redemptionTravelPeriod,
+      redemptionMonth,
     });
     return { shouldSendLogs: true };
   }
@@ -163,11 +162,12 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
     html: isNewHtml ? html : undefined,
     isOverrideHtml,
     redemptions,
-    redemptionTravelPeriod,
+    redemptionMonth,
   });
   postprocessing();
   analyse();
-  await updateDataFiles({ isNewRelease });
+
+  await updateDataFiles({ redemptionMonth, isNewRelease });
 
   return { shouldSendLogs: true };
 }
@@ -179,24 +179,22 @@ function saveDataFiles({
   html,
   isOverrideHtml,
   redemptions,
-  redemptionTravelPeriod,
+  redemptionMonth,
 }: {
   html: HTMLElement | undefined;
   isOverrideHtml: boolean;
   redemptions: Redemption[];
-  redemptionTravelPeriod: TimePeriod;
+  redemptionMonth: string;
 }) {
   if (html) {
-    const htmlFilename = `data/${dateInYYYYMM(
-      redemptionTravelPeriod.from,
-    )}-content.html`;
+    const htmlFilename = `data/${redemptionMonth}-content.html`;
     log(`📄 Writing to ${htmlFilename}`);
     fs.writeFileSync(htmlFilename, html.toString());
   }
 
-  const redemptionsFilename = `data/${dateInYYYYMM(
-    redemptionTravelPeriod.from,
-  )}-redemptions${isOverrideHtml ? '-override' : ''}.json`;
+  const redemptionsFilename = `data/${redemptionMonth}-redemptions${
+    isOverrideHtml ? '-override' : ''
+  }.json`;
   log(`📄 Writing to ${redemptionsFilename}`);
   fs.writeFileSync(redemptionsFilename, JSON.stringify(redemptions, null, 2));
 }
