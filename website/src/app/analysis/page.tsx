@@ -2,17 +2,16 @@ import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair
 import { getStaticFileContent } from '@/common/get-static-file-content';
 import { AnalysisContent } from '@/components/analysis/content';
 import ClientOnly from '@/components/common/client-only';
-import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
+import { MonthSummaryAnalysisEntry } from '@/index';
+import { fetchRouteAnalysis } from '../lib/fetchRouteAnalysis';
 
-export default function Analysis() {
+export default async function Analysis() {
   const monthSummaryAnalysisList = getStaticFileContent<
     MonthSummaryAnalysisEntry[]
   >({
     filename: 'month-summary-analysis.json',
   });
-  const routeAnalysisListFull = getStaticFileContent<RouteAnalysisEntry[]>({
-    filename: 'route-analysis.json',
-  });
+  const routeAnalysisListFull = await fetchRouteAnalysis();
   const routeAnalysisListSiaOnly = excludeSilkairFlightsFromRouteAnalysis(
     routeAnalysisListFull,
   );

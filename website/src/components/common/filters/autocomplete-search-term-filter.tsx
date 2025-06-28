@@ -2,7 +2,6 @@ import { trackEvent } from '@/analytics';
 import { XIcon } from '@/components/icons/x';
 import { useSearchParams } from '@/hooks/use-search-params';
 import { RedemptionEntry, RouteAnalysisEntry } from '@/index';
-import routeAnalysisFile from '@/static/route-analysis.json';
 import { cn } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -18,13 +17,17 @@ interface SelectOption {
   value: string;
 }
 
-export interface AutocompleteSearchTermFilterProps {
-  redemptions?: RedemptionEntry[];
-}
+export type AutocompleteSearchTermFilterProps =
+  | {
+      redemptions: RedemptionEntry[];
+    }
+  | {
+      routeAnalysisList: RouteAnalysisEntry[];
+    };
 
-export function AutocompleteSearchTermFilter({
-  redemptions,
-}: AutocompleteSearchTermFilterProps) {
+export function AutocompleteSearchTermFilter(
+  props: AutocompleteSearchTermFilterProps,
+) {
   const { searchParams, generateUrlWithUpdatedSearchParams } =
     useSearchParams();
   const router = useRouter();
@@ -35,7 +38,7 @@ export function AutocompleteSearchTermFilter({
     }),
   );
 
-  const searchOptionsList = getSearchOptionsList(redemptions);
+  const searchOptionsList = getSearchOptionsList(props);
   const searchRef = useRef<HTMLInputElement>(null);
   const [inputValue, setInputValue] = useState('');
   const [isSlashTrigger, setSlashTrigger] = useState(false);
@@ -172,12 +175,10 @@ export function AutocompleteSearchTermFilter({
 
 /**
  * Returns a list of city/country/IATA search terms.
- *
- * @param redemptions Optional list of redemptions to extract search terms from; if not specified, the full route analysis file is used.
  */
-function getSearchOptionsList(inputRedemptions: RedemptionEntry[] | undefined) {
+function getSearchOptionsList(props: AutocompleteSearchTermFilterProps) {
   const redemptions =
-    inputRedemptions ?? (routeAnalysisFile as RouteAnalysisEntry[]);
+    'redemptions' in props ? props.redemptions : props.routeAnalysisList;
 
   const citiesList = redemptions.reduce(
     (_citiesList: Set<string>, redemption) => {

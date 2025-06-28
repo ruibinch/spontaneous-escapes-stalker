@@ -92,7 +92,7 @@ export function PlaygroundContent({
       <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
         <NewRedemptionAlert latestRedemptionAt={latestRedemptionAt} />
 
-        <PlaygroundFilters />
+        <PlaygroundFilters routeAnalysisList={routeAnalysisList} />
 
         <div className="flex flex-col gap-4">
           <PlaygroundSummary

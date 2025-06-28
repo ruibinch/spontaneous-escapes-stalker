@@ -1,13 +1,10 @@
 import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair-flights';
-import { getStaticFileContent } from '@/common/get-static-file-content';
 import ClientOnly from '@/components/common/client-only';
 import { RouteOverviewContent } from '@/components/route-overview/content';
-import { RouteAnalysisEntry } from '@/index';
+import { fetchRouteAnalysis } from '../lib/fetchRouteAnalysis';
 
-export default function RouteOverview() {
-  const routeAnalysisListFull = getStaticFileContent<RouteAnalysisEntry[]>({
-    filename: 'route-analysis.json',
-  });
+export default async function RouteOverview() {
+  const routeAnalysisListFull = await fetchRouteAnalysis();
   const routeAnalysisListSiaOnly = excludeSilkairFlightsFromRouteAnalysis(
     routeAnalysisListFull,
   );

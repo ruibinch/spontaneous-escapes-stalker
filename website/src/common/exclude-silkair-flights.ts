@@ -1,7 +1,7 @@
 import { RedemptionEntry, RedemptionInfoSingle, RouteAnalysisEntry } from '..';
 
 /**
- * Excludes Silkair-only routes and Silkair flights from the route-analysis.json list.
+ * Excludes Silkair-only routes and Silkair flights from the full route analysis list.
  */
 export function excludeSilkairFlightsFromRouteAnalysis(
   routeAnalysisList: RouteAnalysisEntry[],

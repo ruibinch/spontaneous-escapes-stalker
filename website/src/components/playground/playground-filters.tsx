@@ -1,3 +1,4 @@
+import { RouteAnalysisEntry } from '@/index';
 import { usePathname, useRouter } from 'next/navigation';
 import { AutocompleteSearchTermFilter } from '../common/filters/autocomplete-search-term-filter';
 import { FlightClassFilter } from '../common/filters/flight-class-filter';
@@ -6,7 +7,11 @@ import { MonthRangeFilter } from '../common/filters/month-range-filter';
 import { RegionFilter } from '../common/filters/region-filter';
 import { ResetAllFiltersButton } from '../common/filters/reset-all-filters';
 
-export function PlaygroundFilters() {
+export function PlaygroundFilters({
+  routeAnalysisList,
+}: {
+  routeAnalysisList: RouteAnalysisEntry[];
+}) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -19,7 +24,9 @@ export function PlaygroundFilters() {
       <div className="flex items-center gap-4">
         <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-2">
           <div className="col-span-2 md:col-span-3 flex flex-row gap-2 items-center">
-            <AutocompleteSearchTermFilter />
+            <AutocompleteSearchTermFilter
+              routeAnalysisList={routeAnalysisList}
+            />
           </div>
 
           <RegionFilter />
