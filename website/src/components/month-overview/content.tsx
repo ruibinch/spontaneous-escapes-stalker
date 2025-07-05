@@ -2,8 +2,7 @@
 import { trackEvent } from '@/analytics';
 import { getMonthsList, getYearsList } from '@/common/get-data-time-range';
 import { monthNumToNameMap } from '@/common/months-map';
-import { Button, cn } from '@heroui/react';
-import NextLink from 'next/link';
+import { Button, Link, cn } from '@heroui/react';
 import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
 
@@ -38,7 +37,7 @@ export function MonthOverviewContent() {
 
             <div className="grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-2">
               {entry.months.map((month) => (
-                <NextLink
+                <Link
                   key={month}
                   href={`/month/${month}`}
                   onClick={() => {
@@ -54,7 +53,7 @@ export function MonthOverviewContent() {
                   >
                     {monthNumToNameMap[month.slice(4, 6)]}
                   </Button>
-                </NextLink>
+                </Link>
               ))}
             </div>
           </div>

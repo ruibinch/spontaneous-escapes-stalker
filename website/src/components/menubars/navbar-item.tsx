@@ -1,6 +1,5 @@
 import { trackEvent } from '@/analytics';
-import { cn } from '@heroui/react';
-import NextLink from 'next/link';
+import { Link, cn } from '@heroui/react';
 import React from 'react';
 import { Tooltip } from '../common/tooltip';
 import { BarStyles } from './bar.styles';
@@ -21,7 +20,7 @@ export function NavbarItem({
   showRedDot,
 }: Props) {
   return (
-    <NextLink
+    <Link
       href={href}
       onClick={() => {
         trackEvent(['navbar'], { page: title });
@@ -36,6 +35,6 @@ export function NavbarItem({
           <div className="text-inherit">{icon}</div>
         </div>
       </Tooltip>
-    </NextLink>
+    </Link>
   );
 }

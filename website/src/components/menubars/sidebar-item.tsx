@@ -1,6 +1,5 @@
 import { trackEvent } from '@/analytics';
-import { cn } from '@heroui/react';
-import NextLink from 'next/link';
+import { Link, cn } from '@heroui/react';
 import { BarItemProps } from './bar-items';
 import { BarStyles } from './bar.styles';
 
@@ -12,7 +11,7 @@ export function SidebarItem({
   showRedDot,
 }: BarItemProps) {
   return (
-    <NextLink
+    <Link
       href={href}
       onClick={() => {
         trackEvent(['sidebar'], { page: title });
@@ -31,6 +30,6 @@ export function SidebarItem({
         <div className="text-inherit">{icon}</div>
         <span className="text-inherit">{title}</span>
       </div>
-    </NextLink>
+    </Link>
   );
 }
