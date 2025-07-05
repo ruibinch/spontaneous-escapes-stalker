@@ -4,10 +4,13 @@ import { ByRouteContent } from '@/components/by-route/content';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { RouteAnalysisEntry } from '@/index';
 
-export default function ByRoute({ params }: { params: { route: string } }) {
-  const route = params.route.toUpperCase();
-  const originIata = route.slice(0, 3);
-  const destinationIata = route.slice(3, 6);
+type ByRouteParams = Promise<{ route: string }>;
+
+export default async function ByRoute({ params }: { params: ByRouteParams }) {
+  const { route } = await params;
+  const routeUpper = route.toUpperCase();
+  const originIata = routeUpper.slice(0, 3);
+  const destinationIata = routeUpper.slice(3, 6);
 
   const routeAnalysisListFull = getStaticFileContent<RouteAnalysisEntry[]>({
     filename: 'route-analysis.json',
