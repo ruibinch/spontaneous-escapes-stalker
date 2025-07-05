@@ -1,6 +1,7 @@
 import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair-flights';
 import { getStaticFileContent } from '@/common/get-static-file-content';
 import { PlaygroundContent } from '@/components/playground/content';
+import { Suspense } from 'react';
 import { RouteAnalysisEntry } from '..';
 
 export default function Playground() {
@@ -19,11 +20,13 @@ export default function Playground() {
   const monthsList = routeAnalysisListFull[0].details.map(({ month }) => month);
 
   return (
-    <PlaygroundContent
-      latestRedemptionAt={new Date(latestRedemptionAt)}
-      routeAnalysisListFull={routeAnalysisListFull}
-      routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
-      monthsList={monthsList}
-    />
+    <Suspense>
+      <PlaygroundContent
+        latestRedemptionAt={new Date(latestRedemptionAt)}
+        routeAnalysisListFull={routeAnalysisListFull}
+        routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
+        monthsList={monthsList}
+      />
+    </Suspense>
   );
 }

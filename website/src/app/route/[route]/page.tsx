@@ -3,6 +3,7 @@ import { getStaticFileContent } from '@/common/get-static-file-content';
 import { ByRouteContent } from '@/components/by-route/content';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { RouteAnalysisEntry } from '@/index';
+import { Suspense } from 'react';
 
 type ByRouteParams = Promise<{ route: string }>;
 
@@ -35,15 +36,17 @@ export default async function ByRoute({ params }: { params: ByRouteParams }) {
   }
 
   return (
-    <ByRouteContent
-      routeMetadata={{
-        origin: routeAnalysisEntry.origin,
-        destination: routeAnalysisEntry.destination,
-        originIata,
-        destinationIata,
-      }}
-      routeAnalysisListFull={routeAnalysisListFull}
-      routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
-    />
+    <Suspense>
+      <ByRouteContent
+        routeMetadata={{
+          origin: routeAnalysisEntry.origin,
+          destination: routeAnalysisEntry.destination,
+          originIata,
+          destinationIata,
+        }}
+        routeAnalysisListFull={routeAnalysisListFull}
+        routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
+      />
+    </Suspense>
   );
 }

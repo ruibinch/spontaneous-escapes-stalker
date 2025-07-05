@@ -9,6 +9,7 @@ import { MonthSummaryAnalysisEntry } from '@/index';
 import { fetchMonthRedemptions } from '@/lib/fetchMonthRedemptions';
 import { isAfter, isBefore } from 'date-fns';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 type ByMonthParams = Promise<{ month: string }>;
 
@@ -32,12 +33,14 @@ export default async function ByMonth({ params }: { params: ByMonthParams }) {
   ) as MonthSummaryAnalysisEntry;
 
   return (
-    <ByMonthContent
-      month={month}
-      redemptionsFull={redemptionsFull}
-      redemptionsSiaOnly={redemptionsSiaOnly}
-      monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
-    />
+    <Suspense>
+      <ByMonthContent
+        month={month}
+        redemptionsFull={redemptionsFull}
+        redemptionsSiaOnly={redemptionsSiaOnly}
+        monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
+      />
+    </Suspense>
   );
 }
 
