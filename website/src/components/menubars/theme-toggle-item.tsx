@@ -1,11 +1,11 @@
 'use client';
 import { trackEvent } from '@/analytics';
 import { Button, Skeleton, cn } from '@heroui/react';
+import { useEffect, useState } from 'react';
 import { Tooltip } from '../common/tooltip';
 import { useTheme } from '../common/use-theme';
 import { MoonIcon } from '../icons/moon';
 import { SunIcon } from '../icons/sun';
-import { useEffect, useState } from 'react';
 
 export function ThemeToggleItem() {
   const { setTheme, isDarkTheme, isThemeLoaded } = useTheme();
@@ -34,13 +34,12 @@ export function ThemeToggleItem() {
           'text-neutral-300/75 lg:hover:bg-neutral-300/25 lg:hover:dark:bg-neutral-300/25 lg:hover:text-white', // BarStyles.Active without the hover: classes in navbar display
         )}
       >
-        <Skeleton
-          className="rounded-lg bg-neutral-400"
-          isLoaded={isThemeLoadedLocal}
-          disableAnimation
-        >
-          {isDarkTheme ? <MoonIcon /> : <SunIcon />}
-        </Skeleton>
+        {(() => {
+          if (!isThemeLoadedLocal) {
+            return <Skeleton className="h-4 w-4 rounded-md bg-neutral-500" />;
+          }
+          return isDarkTheme ? <MoonIcon /> : <SunIcon />;
+        })()}
       </Button>
     </Tooltip>
   );
