@@ -14,6 +14,7 @@ export function SidebarItem({
   return (
     <NextLink
       href={href}
+      prefetch={false}
       onClick={() => {
         trackEvent(['sidebar'], { page: title });
       }}
