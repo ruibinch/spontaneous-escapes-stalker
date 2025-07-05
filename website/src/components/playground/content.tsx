@@ -2,7 +2,7 @@
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RouteAnalysisEntry } from '@/index';
-import { cn } from '@heroui/react';
+import { Skeleton, cn } from '@heroui/react';
 import {
   ArcElement,
   BarElement,
@@ -15,6 +15,7 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
 import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
 import { MONTH_ALL } from '../common/filters/month-filter';
@@ -23,7 +24,6 @@ import { PageHeader } from '../common/page-header';
 import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
 import { AnalysisCharts } from './analysis-charts';
-import { DetailsTable } from './details-table';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { NewRedemptionAlert } from './new-redemption-alert';
 import { PlaygroundFilters } from './playground-filters';
@@ -39,6 +39,16 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
+);
+
+const DetailsTable = dynamic(
+  () => import('./details-table').then((mod) => mod.DetailsTable),
+  {
+    ssr: false,
+    loading: () => (
+      <Skeleton className={cn(CommonStyles.Skeleton, 'w-full h-48')} />
+    ),
+  },
 );
 
 export function PlaygroundContent({
