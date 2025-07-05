@@ -23,7 +23,6 @@ import { REGION_ALL } from '../common/filters/region-filter';
 import { PageHeader } from '../common/page-header';
 import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
-import { AnalysisCharts } from './analysis-charts';
 import { filterRouteAnalysisList } from './helpers/filter-route-analysis-list';
 import { NewRedemptionAlert } from './new-redemption-alert';
 import { PlaygroundFilters } from './playground-filters';
@@ -41,6 +40,21 @@ ChartJS.register(
   Legend,
 );
 
+const AnalysisCharts = dynamic(
+  () => import('./analysis-charts').then((mod) => mod.AnalysisCharts),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="grid grid-cols-6 gap-2">
+        {[...Array(5)].map((_, i) => (
+          <div key={i} className="col-span-6 md:col-span-3 xl:col-span-2">
+            <Skeleton className={cn(CommonStyles.Skeleton, 'w-full h-60')} />
+          </div>
+        ))}
+      </div>
+    ),
+  },
+);
 const DetailsTable = dynamic(
   () => import('./details-table').then((mod) => mod.DetailsTable),
   {
