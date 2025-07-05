@@ -1,7 +1,6 @@
 import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair-flights';
 import { getStaticFileContent } from '@/common/get-static-file-content';
 import { ByRouteContent } from '@/components/by-route/content';
-import ClientOnly from '@/components/common/client-only';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { RouteAnalysisEntry } from '@/index';
 
@@ -33,17 +32,15 @@ export default function ByRoute({ params }: { params: { route: string } }) {
   }
 
   return (
-    <ClientOnly>
-      <ByRouteContent
-        routeMetadata={{
-          origin: routeAnalysisEntry.origin,
-          destination: routeAnalysisEntry.destination,
-          originIata,
-          destinationIata,
-        }}
-        routeAnalysisListFull={routeAnalysisListFull}
-        routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
-      />
-    </ClientOnly>
+    <ByRouteContent
+      routeMetadata={{
+        origin: routeAnalysisEntry.origin,
+        destination: routeAnalysisEntry.destination,
+        originIata,
+        destinationIata,
+      }}
+      routeAnalysisListFull={routeAnalysisListFull}
+      routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
+    />
   );
 }

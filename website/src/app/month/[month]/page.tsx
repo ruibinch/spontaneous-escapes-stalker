@@ -4,7 +4,6 @@ import { getStaticFileContent } from '@/common/get-static-file-content';
 import { MONTHS_WITH_MISSING_DATA } from '@/common/months-data-info';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { ByMonthContent } from '@/components/by-month/content';
-import ClientOnly from '@/components/common/client-only';
 import { NoDataIllustration } from '@/components/icons/no-data';
 import { MonthSummaryAnalysisEntry } from '@/index';
 import { fetchMonthRedemptions } from '@/lib/fetchMonthRedemptions';
@@ -34,14 +33,12 @@ export default async function ByMonth({
   ) as MonthSummaryAnalysisEntry;
 
   return (
-    <ClientOnly>
-      <ByMonthContent
-        month={month}
-        redemptionsFull={redemptionsFull}
-        redemptionsSiaOnly={redemptionsSiaOnly}
-        monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
-      />
-    </ClientOnly>
+    <ByMonthContent
+      month={month}
+      redemptionsFull={redemptionsFull}
+      redemptionsSiaOnly={redemptionsSiaOnly}
+      monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
+    />
   );
 }
 

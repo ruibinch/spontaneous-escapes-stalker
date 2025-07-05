@@ -1,6 +1,5 @@
 import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair-flights';
 import { getStaticFileContent } from '@/common/get-static-file-content';
-import ClientOnly from '@/components/common/client-only';
 import { RouteOverviewContent } from '@/components/route-overview/content';
 import { RouteAnalysisEntry } from '@/index';
 
@@ -13,11 +12,9 @@ export default function RouteOverview() {
   );
 
   return (
-    <ClientOnly>
-      <RouteOverviewContent
-        routeAnalysisListFull={routeAnalysisListFull}
-        routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
-      />
-    </ClientOnly>
+    <RouteOverviewContent
+      routeAnalysisListFull={routeAnalysisListFull}
+      routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
+    />
   );
 }

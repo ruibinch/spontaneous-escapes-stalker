@@ -1,3 +1,4 @@
+'use client';
 import { Link } from '@heroui/react';
 import { AlertNotification } from '../common/alert-notification';
 import { MarkdownWrapper } from '../common/markdown-wrapper';
