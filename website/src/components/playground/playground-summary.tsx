@@ -2,7 +2,6 @@ import { getMonthsList } from '@/common/get-data-time-range';
 import { RouteAnalysisEntry } from '@/index';
 import { SummaryEntryCard } from '../common/summary-entry-card';
 import { isApplicableMonth } from './helpers/is-applicable-month';
-import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 
 export function PlaygroundSummary({
   routeAnalysisList,
@@ -42,16 +41,22 @@ export function PlaygroundSummary({
         header="Redemptions"
         content={numFilteredRedemptions}
         subcontent={`out of ${numRedemptions}`}
+        showSkeletonOnCard
+        skeletonCardClassName="h-12"
       />
       <SummaryEntryCard
         header="Routes"
         content={numFilteredRoutes}
         subcontent={`out of ${numRoutes}`}
+        showSkeletonOnCard
+        skeletonCardClassName="h-12"
       />
       <SummaryEntryCard
         header="Months"
         content={numFilteredMonths}
         subcontent={`out of ${numMonths}`}
+        showSkeletonOnCard
+        skeletonCardClassName="h-12"
       />
     </div>
   );

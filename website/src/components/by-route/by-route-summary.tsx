@@ -38,6 +38,7 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
+        showSkeletonOnBadge
       />
       <SummaryEntryCard
         cardBodyClassName="px-3 md:px-6"
@@ -70,6 +71,7 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
+        showSkeletonOnBadge
       />
       <SummaryEntryCard
         header="Average blackout %"
@@ -83,6 +85,7 @@ export function ByRouteSummary({
             total: routesStats.length,
           })
         }
+        showSkeletonOnBadge
       />
     </div>
   );
