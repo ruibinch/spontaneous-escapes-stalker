@@ -10,11 +10,10 @@ import { fetchMonthRedemptions } from '@/lib/fetchMonthRedemptions';
 import { isAfter, isBefore } from 'date-fns';
 import Image from 'next/image';
 
-export default async function ByMonth({
-  params: { month },
-}: {
-  params: { month: string };
-}) {
+type ByMonthParams = Promise<{ month: string }>;
+
+export default async function ByMonth({ params }: { params: ByMonthParams }) {
+  const { month } = await params;
   const monthsList = getMonthsList();
 
   if (!monthsList.includes(month)) {
