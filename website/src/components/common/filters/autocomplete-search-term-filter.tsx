@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import ReactSelect, {
   ClearIndicatorProps,
   MultiValue,
+  SelectInstance,
   components,
 } from 'react-select';
 
@@ -36,7 +37,7 @@ export function AutocompleteSearchTermFilter({
   );
 
   const searchOptionsList = getSearchOptionsList(redemptions);
-  const searchRef = useRef<HTMLInputElement>(null);
+  const searchRef = useRef<SelectInstance<SelectOption, true>>(null);
   const [inputValue, setInputValue] = useState('');
   const [isSlashTrigger, setSlashTrigger] = useState(false);
 
@@ -77,7 +78,6 @@ export function AutocompleteSearchTermFilter({
 
   return (
     <ReactSelect<SelectOption, true>
-      // @ts-expect-error ref type does not match
       ref={searchRef}
       options={searchOptionsList}
       isMulti
@@ -134,6 +134,7 @@ export function AutocompleteSearchTermFilter({
         DropdownIndicator: () => null,
         IndicatorSeparator: () => null,
         ClearIndicator: (props: ClearIndicatorProps<SelectOption, true>) => (
+          // @ts-expect-error Type 'Element' is not assignable to type 'ReactNode | Promise<ReactNode>'
           <components.ClearIndicator {...props}>
             <XIcon width={16} height={16} />
           </components.ClearIndicator>
