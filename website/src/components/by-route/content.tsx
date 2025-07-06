@@ -1,7 +1,7 @@
 'use client';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
 import { RouteAnalysisEntry } from '@/index';
-import { BreadcrumbItem, Breadcrumbs, cn } from '@heroui/react';
+import { BreadcrumbItem, Breadcrumbs, Skeleton, cn } from '@heroui/react';
 import {
   BarElement,
   CategoryScale,
@@ -13,7 +13,9 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
+import { AlertInfo } from '../common/alert-info';
 import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
 import { YEAR_ALL } from '../common/filters/year-filter';
 import { PageHeader } from '../common/page-header';
@@ -21,14 +23,10 @@ import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
 import { ByRouteFilters } from './by-route-filters';
 import { ByRouteSummary } from './by-route-summary';
-import { BlackoutPctOverTimeChart } from './charts/blackout-pct-over-time-chart';
-import { MonthsDistributionChart } from './charts/months-distribution-chart';
 import { filterRouteDetailsList } from './helpers/filter-route-details-list';
 import { makeRouteDetailsList } from './helpers/make-route-details-list';
 import { MonthView } from './month-view';
 import { MonthYearFrequencyTable } from './month-year-frequency-table';
-import { RouteHistoryTable } from './route-history-table';
-import { AlertInfo } from '../common/alert-info';
 
 ChartJS.register(
   CategoryScale,
@@ -39,6 +37,31 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
+);
+
+const ByRouteCharts = dynamic(
+  () => import('./by-route-charts').then((mod) => mod.ByRouteCharts),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="grid grid-cols-2 gap-2">
+        {[...Array(2)].map((_, i) => (
+          <div key={i} className="col-span-2 xl:col-span-1">
+            <Skeleton className={cn(CommonStyles.Skeleton, 'w-full h-60')} />
+          </div>
+        ))}
+      </div>
+    ),
+  },
+);
+const RouteHistoryTable = dynamic(
+  () => import('./route-history-table').then((mod) => mod.RouteHistoryTable),
+  {
+    ssr: false,
+    loading: () => (
+      <Skeleton className={cn(CommonStyles.Skeleton, 'w-full h-48')} />
+    ),
+  },
 );
 
 export function ByRouteContent({
@@ -111,18 +134,7 @@ export function ByRouteContent({
             detailsListFiltered={detailsListFiltered}
           />
 
-          <div className="grid grid-cols-2 gap-2">
-            <div className="col-span-2 xl:col-span-1">
-              <MonthsDistributionChart
-                detailsListFiltered={detailsListFiltered}
-              />
-            </div>
-            <div className="col-span-2 xl:col-span-1">
-              <BlackoutPctOverTimeChart
-                detailsListFiltered={detailsListFiltered}
-              />
-            </div>
-          </div>
+          <ByRouteCharts detailsListFiltered={detailsListFiltered} />
         </div>
 
         <div className="grid grid-cols-2 gap-4 xl:gap-2">

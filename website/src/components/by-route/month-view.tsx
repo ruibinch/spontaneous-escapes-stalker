@@ -274,7 +274,7 @@ function MonthCalendar({
 
                 return (
                   <div
-                    key={day}
+                    key={`${day}-${dayIdx}`}
                     className={cn(
                       CalendarStyles.Borders,
                       'flex-1 border-r',
