@@ -60,7 +60,7 @@ const DetailsTable = dynamic(
   {
     ssr: false,
     loading: () => (
-      <Skeleton className={cn(CommonStyles.Skeleton, 'w-full h-48')} />
+      <Skeleton className={cn(CommonStyles.Skeleton, 'w-full h-60')} />
     ),
   },
 );
