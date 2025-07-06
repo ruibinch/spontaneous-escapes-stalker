@@ -1,3 +1,7 @@
+# 2.12.0 - 2025-07-06
+
+- Improved page loading behaviour
+
 # 2.11.0 - 2025-06-17
 
 - Updated favicon
