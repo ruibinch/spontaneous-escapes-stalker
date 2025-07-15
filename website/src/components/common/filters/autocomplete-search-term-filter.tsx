@@ -5,7 +5,7 @@ import { RedemptionEntry, RouteAnalysisEntry } from '@/index';
 import routeAnalysisFile from '@/static/route-analysis.json';
 import { cn } from '@heroui/react';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useTransition } from 'react';
 import ReactSelect, {
   ClearIndicatorProps,
   MultiValue,
@@ -29,15 +29,12 @@ export function AutocompleteSearchTermFilter({
   const { searchParams, generateUrlWithUpdatedSearchParams } =
     useSearchParams();
   const router = useRouter();
-  const searchTerms = (searchParams.get('searchTerm')?.split(',') ?? []).map(
-    (term) => ({
-      label: term,
-      value: term,
-    }),
-  );
+  const [isPending, startTransition] = useTransition();
 
   const searchOptionsList = getSearchOptionsList(redemptions);
   const searchRef = useRef<SelectInstance<SelectOption, true>>(null);
+
+  const [searchTermsLocal, setSearchTermsLocal] = useState<SelectOptions>([]);
   const [inputValue, setInputValue] = useState('');
   const [isSlashTrigger, setSlashTrigger] = useState(false);
 
@@ -49,20 +46,40 @@ export function AutocompleteSearchTermFilter({
     setInputValue(value);
   };
 
+  /**
+   * Handles any change in the search terms.
+   *
+   * Optimistically update the local state to show the updated search terms, then update the URL.
+   * Upon the URL update, the results will then be filtered accordingly.
+   */
   const onChange = (searchTerms: SelectOptions) => {
-    const searchTermsString = searchTerms.map((term) => term.value).join(',');
-    if (searchTerms.length > 0) {
-      trackEvent(['autocompleteSearchTermFilter'], {
-        searchTerms: searchTermsString,
-      });
-    }
+    setSearchTermsLocal(searchTerms);
 
-    const url = generateUrlWithUpdatedSearchParams(
-      'searchTerm',
-      searchTermsString,
-    );
-    router.replace(url);
+    startTransition(() => {
+      const searchTermsString = searchTerms.map((term) => term.value).join(',');
+      if (searchTerms.length > 0) {
+        trackEvent(['autocompleteSearchTermFilter'], {
+          searchTerms: searchTermsString,
+        });
+      }
+
+      const url = generateUrlWithUpdatedSearchParams(
+        'searchTerm',
+        searchTermsString,
+      );
+      router.replace(url);
+    });
   };
+
+  useEffect(() => {
+    const searchTerms = (searchParams.get('searchTerm')?.split(',') ?? []).map(
+      (term) => ({
+        label: term,
+        value: term,
+      }),
+    );
+    setSearchTermsLocal(searchTerms);
+  }, [searchParams]);
 
   useEffect(() => {
     function handleKeyDown(e: DocumentEventMap['keydown']) {
@@ -93,7 +110,7 @@ export function AutocompleteSearchTermFilter({
       }
       inputValue={inputValue}
       onInputChange={onInputChange}
-      value={searchTerms}
+      value={searchTermsLocal}
       onChange={onChange}
       noOptionsMessage={() => <span>{'No results found'}</span>}
       unstyled
