@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["chromium", "chromedriver", "nodejs"]
+
+[phases.install]
+cmds = ["npm install"]
+
+[start]
+cmd = "npm run run:scrape-with-precheck"

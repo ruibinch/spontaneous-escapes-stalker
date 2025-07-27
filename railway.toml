@@ -1,0 +1,33 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+
+# Global environment variables
+[env]
+TZ = "UTC"
+NODE_ENV = "production"
+
+[[services]]
+name = "spontaneous-escapes-stalker"
+type = "cron"
+
+[services.cron]
+schedule = "*/30 7-22 * * 1-5"
+command = "npm run run:scrape-with-precheck"
+
+[services.env]
+MAX_DELAY_SECS = "300"
+USE_PUPPETEER = "1"
+
+[[services]]
+name = "spontaneous-escapes-stalker-intensive"
+type = "cron"
+
+[services.cron]
+schedule = "*/5 7-22 15-31 * 1-5"
+command = "npm run run:scrape-with-precheck"
+
+[services.env]
+MAX_DELAY_SECS = "80"
+USE_PUPPETEER = "1"

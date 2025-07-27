@@ -1,0 +1,14 @@
+node_modules/
+.git/
+.vscode/
+.DS_Store
+*.log
+website/
+analytics/
+data/
+assets/
+*.tsv
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
