@@ -27,6 +27,7 @@ export async function sendLogs() {
   }
 
   const content = fs.readFileSync(logFilename).toString();
+  console.log(content);
 
   try {
     await sendMessageToChannels({
