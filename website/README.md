@@ -26,11 +26,11 @@ The list of redemptions is scraped from the live and archived versions of the Kr
 
 1. Install dependencies:
    ```bash
-   yarn install
+   npm install
    ```
 2. Run the development server:
    ```bash
-   yarn dev
+   npm run dev
    ```
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
