@@ -23,7 +23,7 @@ This section details the 3 sub-components under the scraper component - scraping
 
 ## Scraping
 
-The scraper lives in `src/scrape.ts` (`yarn run:scrape`) and leverages on the parsers defined under `src/parsers`.
+The scraper lives in `src/scrape.ts` (`npm run run:scrape`) and leverages on the parsers defined under `src/parsers`.
 
 The scraping flow runs as follows:
 
@@ -46,7 +46,7 @@ This file execution accepts the following optional environment variables:
 
 ### Scraper with pre-check
 
-The `src/scrapeWithPrecheck.ts` file (`yarn run:scrape-with-precheck`) is an extension of the scraper file.
+The `src/scrapeWithPrecheck.ts` file (`npm run run:scrape-with-precheck`) is an extension of the scraper file.
 
 It performs a simple check to ensure that the redemptions for next month are not yet published (by checking the JSON files in the `/data` folder) before attempting to scrape the live SE page. This helps to avoid unnecessary calls to the SE page.
 
@@ -72,7 +72,7 @@ The other parsers in the `src/parsers` folder are either deprecated or used for 
 
 ## Postprocessing
 
-The postprocessing step lives in `src/postprocessing.ts` (`yarn run:postprocessing`), with the individual postprocessing steps in the `src/postprocessing` folder.
+The postprocessing step lives in `src/postprocessing.ts` (`npm run run:postprocessing`), with the individual postprocessing steps in the `src/postprocessing` folder.
 
 There are 9 postprocessing steps in total:
 
@@ -118,7 +118,7 @@ At the end of postprocessing, all entries across all months will be in the same 
 
 ## Analysis
 
-The analysis step lives in `src/analyse.ts` (`yarn run:analyse`), with the individual analysis steps in the `src/analysis` folder.
+The analysis step lives in `src/analyse.ts` (`npm run run:analyse`), with the individual analysis steps in the `src/analysis` folder.
 
 It parses through all past redemptions and outputs 3 files:
 
