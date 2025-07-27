@@ -40,3 +40,4 @@ The list of redemptions is scraped from the live and archived versions of the Kr
 - React 18
 - Tailwind CSS
 - Chart.js (via react-chartjs-2)
+- Deployed on Vercel
