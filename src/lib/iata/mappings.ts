@@ -4,7 +4,7 @@ import { Region } from '../../utils/types';
 // prettier-ignore
 export const cityMappings: Record<
   string,
-  { iata: string; countryCode: string; region: string }
+  { iata: string; countryCode: string; region: Region }
 > = {
   Adelaide: { iata: 'ADL', countryCode: 'AU', region: Region.SOUTHWEST_PACIFIC },
   Ahmedabad: { iata: 'AMD', countryCode: 'IN', region: Region.SOUTH_ASIA },
