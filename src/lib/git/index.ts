@@ -42,7 +42,7 @@ export async function gitPullWithRebase() {
   try {
     await execPromise(`git pull --rebase`);
   } catch (e) {
-    throw new Error('Failed to git pull');
+    throw new Error('Failed to git pull --rebase');
   }
 }
 

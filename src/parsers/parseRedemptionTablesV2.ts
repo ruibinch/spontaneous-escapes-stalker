@@ -52,23 +52,9 @@ export function parseRedemptionTablesV2(
  * Parses the redemption table info into an array of RedemptionTableInfo objects.
  * Each redemption table contains the details for a single region.
  *
- * Headers (for Business and Economy Class Redemptions table):
- * - FROM
- * - MILES REQUIRED FOR ECONOMY CLASS
- * - FLIGHT NO.
- * - BLACKOUT PERIOD
- * - MILES REQUIRED FOR BUSINESS CLASS
- * - FLIGHT NO.
- * - BLACKOUT PERIOD
- *
- * Headers (for Premium Economy Class Redemptions table):
- * - FROM
- * - MILES REQUIRED FOR PREMIUM ECONOMY CLASS
- * - FLIGHT NO.
- * - BLACKOUT PERIOD
- *
- * V2 cells no longer contain any `<div class="data-title"></div>` elements, so we just check the length of each row to deteremine the
- * table type and the corresponding flight class.
+ * In this layout, economy/business redemptions are grouped together in a single table,
+ * while premium economy redemptions are in a separate table. Thus, the number of cells in each
+ * row is used to determine the flight class.
  */
 function parseRedemptionTableV2(table: HTMLElement): RedemptionTableInfo[] {
   const bodyElements = table.getElementsByTagName('tbody');
@@ -91,36 +77,37 @@ function parseRedemptionTableV2(table: HTMLElement): RedemptionTableInfo[] {
 
   rows.forEach((row) => {
     const cells = row.getElementsByTagName('td');
+    const cellTexts = cells.map((e) => cleanCellContent(e.text));
 
     if (cells.length === ECONOMY_AND_BUSINESS_SECTION_COLUMNS.length) {
       const economyRedemption = parseSingleEntry({
-        from: cleanCellContent(cells[0].text),
+        from: cellTexts[0],
         flightClass: FlightClass.ECONOMY,
-        milesRequiredText: cleanCellContent(cells[1].text),
-        flightNo: cleanCellContent(cells[2].text),
-        blackoutPeriodText: cleanCellContent(cells[3].text),
+        milesRequiredText: cellTexts[1],
+        flightNo: cellTexts[2],
+        blackoutPeriodText: cellTexts[3],
       });
       if (economyRedemption) {
         redemptions.push(economyRedemption);
       }
 
       const businessRedemption = parseSingleEntry({
-        from: cleanCellContent(cells[0].text),
+        from: cellTexts[0],
         flightClass: FlightClass.BUSINESS,
-        milesRequiredText: cleanCellContent(cells[4].text),
-        flightNo: cleanCellContent(cells[5].text),
-        blackoutPeriodText: cleanCellContent(cells[6].text),
+        milesRequiredText: cellTexts[4],
+        flightNo: cellTexts[5],
+        blackoutPeriodText: cellTexts[6],
       });
       if (businessRedemption) {
         redemptions.push(businessRedemption);
       }
     } else if (cells.length === PREMIUM_ECONOMY_SECTION_COLUMNS.length) {
       const premiumEconomyRedemption = parseSingleEntry({
-        from: cleanCellContent(cells[0].text),
+        from: cellTexts[0],
         flightClass: FlightClass.PREMIUM_ECONOMY,
-        milesRequiredText: cleanCellContent(cells[1].text),
-        flightNo: cleanCellContent(cells[2].text),
-        blackoutPeriodText: cleanCellContent(cells[3].text),
+        milesRequiredText: cellTexts[1],
+        flightNo: cellTexts[2],
+        blackoutPeriodText: cellTexts[3],
       });
       if (premiumEconomyRedemption) {
         redemptions.push(premiumEconomyRedemption);

@@ -10,7 +10,8 @@ export async function fetchMonthRedemptions(
     // caching is configured on CF distribution
     const response = await fetch(`${CLOUDFRONT_URL}/${filename}`);
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${filename}`);
+      const error = await response.json();
+      throw new Error(`Failed to fetch ${filename}. error=${error}`);
     }
 
     const data = (await response.json()) as RedemptionEntry[];
