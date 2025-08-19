@@ -202,7 +202,7 @@ export function parseDateText(_dateText: string) {
   // use a regex to extract only the date component from the string, in case the string contains irrelevant extra chars
   const blackoutPeriodString = (() => {
     // monthOptionalRegex/yearOptionalRegex is to cover cases like "4 July 2023 - 6 July 2023"
-    const dayRangeRegex = `${dayRegex}${monthOptionalRegex}${yearOptionalRegex}\\s?${separator}\\s?${dayRegex}`;
+    const dayRangeRegex = `${dayRegex}${monthOptionalRegex}${yearOptionalRegex}\\s*${separator}\\s*${dayRegex}`;
     const re = new RegExp(
       separator
         ? `${dayRangeRegex}${monthRegex}${yearOptionalRegex}`
