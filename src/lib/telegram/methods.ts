@@ -11,13 +11,17 @@ export async function sendMessage(props: {
   chatId: number | string;
   message?: string | undefined;
   messageParams?: TelegramSendMessageParams | undefined;
+  shouldTruncateLongMessage?: boolean;
 }): Promise<void> {
   const { botToken, chatId, message: _message, messageParams } = props;
   const message = _message ?? messageParams?.text;
   if (!message) return;
 
   const telegramSendMessageUrl = `${makeTelegramApiBase(botToken)}/sendMessage`;
-  const telegramMessages = composeTelegramMessages(message);
+  const telegramMessages = composeTelegramMessages({
+    message,
+    shouldTruncateLongMessage: props.shouldTruncateLongMessage ?? false,
+  });
 
   const responses = await telegramMessages.reduce(
     (promise, telegramMessage) =>
@@ -60,10 +64,23 @@ export async function sendMessage(props: {
 
 /**
  * Splits the message into multiple messages if it exceeds the Telegram message length limit.
+ *
+ * @param message - The full message
+ * @param shouldTruncateLongMessage - Whether to truncate or split up the message if it exceeds the Telegram message length limit.
+ * @returns An array of messages to send to the Telegram API.
  */
-function composeTelegramMessages(message: string): string[] {
+function composeTelegramMessages({
+  message,
+  shouldTruncateLongMessage,
+}: {
+  message: string;
+  shouldTruncateLongMessage: boolean;
+}): string[] {
   if (message.length <= TELEGRAM_MESSAGE_MAX_LENGTH) {
     return [message];
+  }
+  if (shouldTruncateLongMessage) {
+    return [message.slice(0, TELEGRAM_MESSAGE_MAX_LENGTH)];
   }
 
   const delimiter = '\n\n';

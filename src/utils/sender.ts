@@ -40,6 +40,7 @@ export async function sendMessageToChannels(props: {
       botToken: TELEGRAM_DEBUG_BOT_TOKEN,
       chatId: TELEGRAM_DEBUG_CHANNEL_ID,
       message: props.message,
+      shouldTruncateLongMessage: true,
     });
   }
 
