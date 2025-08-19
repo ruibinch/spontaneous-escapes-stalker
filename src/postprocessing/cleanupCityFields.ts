@@ -1,9 +1,10 @@
 import { RedemptionJson } from '../utils/types';
 
-const cityMapper: Record<string, string> = {
+const cityNameOverride: Record<string, string> = {
   Adaleide: 'Adelaide',
   'Beijing (PEK)': 'Beijing',
   'Beijing (PKX)': 'Beijing',
+  'Beijing Daxing': 'Beijing',
   Bengaluru: 'Bangalore',
   Brunei: 'Bandar Seri Begawan',
   Chiangmai: 'Chiang Mai',
@@ -46,8 +47,8 @@ export function cleanupCityFields(
 
     return {
       ...redemption,
-      origin: cityMapper[origin] ?? origin,
-      destination: cityMapper[destination] ?? destination,
+      origin: cityNameOverride[origin] ?? origin,
+      destination: cityNameOverride[destination] ?? destination,
     };
   });
 }
