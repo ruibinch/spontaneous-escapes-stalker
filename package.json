@@ -5,6 +5,7 @@
   "scripts": {
     "run:scrape": "ts-node src/scrape.ts",
     "run:scrape-with-precheck": "ts-node src/scrapeWithPrecheck.ts",
+    "run:postscrape": "ts-node src/scrape.ts postscrape",
     "run:postprocessing": "ts-node src/postprocessing.ts",
     "run:analyse": "ts-node src/analyse.ts",
     "run:copy-data-files-to-website-folder": "ts-node src/scripts/copyDataFilesToWebsiteFolder.ts",

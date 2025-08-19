@@ -22,7 +22,11 @@ export async function updateDataFiles({
   }
 
   log('Committing and pushing data diffs...');
-  await commitAndPushDataDiffs({ isNewRelease });
+  const { hasDiffs } = await commitAndPushDataDiffs({ isNewRelease });
+  if (!hasDiffs) {
+    log('Skipping deployment')
+    return;
+  }
 
   // deploy website to prod
   log('Deploying website to prod...');

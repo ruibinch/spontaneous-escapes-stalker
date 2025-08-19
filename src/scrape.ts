@@ -113,8 +113,7 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
 
   if (!doesRedemptionPeriodExist) {
     log(
-      `Redemption period "${
-        redemptionTravelPeriod.from.toISOString().split('T')[0]
+      `Redemption period "${redemptionTravelPeriod.from.toISOString().split('T')[0]
       }" does not exist`,
     );
     if (shouldUseAws) {
@@ -127,8 +126,7 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
   } else {
     isNewRelease = false;
     log(
-      `Changes to existing redemption period "${
-        redemptionTravelPeriod.from.toISOString().split('T')[0]
+      `Changes to existing redemption period "${redemptionTravelPeriod.from.toISOString().split('T')[0]
       }"`,
     );
     if (shouldSendRedemptionsChangeNotificationToProd) {
@@ -164,12 +162,16 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
     redemptions,
     redemptionMonth,
   });
-  postprocessing();
-  analyse();
-
-  await updateDataFiles({ redemptionMonth, isNewRelease });
+  await postScrape({ redemptionMonth, isNewRelease });
 
   return { shouldSendLogs: true };
+}
+
+async function postScrape({ redemptionMonth, isNewRelease }: { redemptionMonth: string, isNewRelease: boolean }) {
+  postprocessing();
+  analyse();
+  await updateDataFiles({ redemptionMonth, isNewRelease });
+
 }
 
 /**
@@ -192,9 +194,8 @@ function saveDataFiles({
     fs.writeFileSync(htmlFilename, html.toString());
   }
 
-  const redemptionsFilename = `data/${redemptionMonth}-redemptions${
-    isOverrideHtml ? '-override' : ''
-  }.json`;
+  const redemptionsFilename = `data/${redemptionMonth}-redemptions${isOverrideHtml ? '-override' : ''
+    }.json`;
   log(`📄 Writing to ${redemptionsFilename}`);
   fs.writeFileSync(redemptionsFilename, JSON.stringify(redemptions, null, 2));
 }
@@ -215,18 +216,32 @@ function compareRedemptions(
   });
 }
 
-if (require.main === module) {
-  scrape()
-    .then(async () => {
-      // always send logs when running this file directly, regardless of returned shouldSendLogs prop
-      await sendLogs();
-      process.exit(0);
-    })
-    .catch(async (err) => {
-      if (err instanceof Error) {
-        log(err.message, true);
+(async () => {
+  if (require.main === module) {
+    const args = process.argv.slice(2);
+
+    // By default, run scrape fn
+    if (args.length === 0) {
+      try {
+        await scrape();
+        // always send logs when running this file directly, regardless of returned shouldSendLogs prop from scrape fn
+        await sendLogs();
+        process.exit(0);
+      } catch (err) {
+        if (err instanceof Error) {
+          log(err.message, true);
+        }
+        await sendLogs();
+        process.exit(1);
       }
-      await sendLogs();
-      process.exit(1);
-    });
-}
+    } else {
+      // Else, run postscrape fn if the number of args is correct
+      if (args.length !== 3) {
+        throw new Error(
+          'Usage: run:postscrape postscrape <redemptionMonth> <isNewRelease> (e.g. run:postscrape postscrape 202506 true)',
+        );
+      }
+      await postScrape({ redemptionMonth: args[1], isNewRelease: args[2] === 'true' });
+    }
+  }
+})();

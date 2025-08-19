@@ -21,14 +21,14 @@ export async function commitAndPushDataDiffs({
   isNewRelease,
 }: {
   isNewRelease: boolean;
-}) {
+}): Promise<{ hasDiffs: boolean }> {
   const hasDataDiffs = await checkHasDiffs(DATA_FOLDER_PATHSPEC);
   const hasWebsiteStaticDiffs = await checkHasDiffs(
     WEBSITE_STATIC_FOLDER_PATHSPEC,
   );
   if (!hasDataDiffs && !hasWebsiteStaticDiffs) {
     console.log('No diffs in data or website/src/static folders to commit');
-    return;
+    return { hasDiffs: false };
   }
 
   await gitAdd(DATA_FOLDER_PATHSPEC);
@@ -54,17 +54,19 @@ export async function commitAndPushDataDiffs({
   await gitPullWithRebase();
 
   await gitPush({ repository: GIT_REPOSITORY_URL });
+
+  return { hasDiffs: true };
 }
 
 if (require.main === module) {
   const args = process.argv.slice(2);
   const isNewRelease = args[0] ? args[0] === 'true' : true;
-  commitAndPushDataDiffs({ isNewRelease })
-    .then(() => {
-      process.exit(0);
-    })
-    .catch((err) => {
-      console.error(err);
-      process.exit(1);
-    });
+
+  try {
+    commitAndPushDataDiffs({ isNewRelease });
+    process.exit(0);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
 }
