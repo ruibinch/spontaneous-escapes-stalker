@@ -8,12 +8,13 @@ import { RedemptionPeriod } from './models/RedemptionPeriod';
 import { parseRedemptionEndDate } from './parsers/parseRedemptionEndDate';
 import { parseRedemptionTablesV1 } from './parsers/parseRedemptionTablesV1';
 import { parseRedemptionTablesV2 } from './parsers/parseRedemptionTablesV2';
+import { parseRedemptionTablesV3 } from './parsers/parseRedemptionTablesV3';
 import { parseRedemptionTravelPeriod } from './parsers/parseRedemptionTravelPeriod';
 import { postprocessing } from './postprocessing';
 import { updateDataFiles } from './updateDataFiles';
 import { dateInYYYYMM, datePrefix } from './utils';
 import { getCurrentMonth } from './utils/getCurrentMonth';
-import { log, sendLogs } from './utils/log';
+import { log, sendLogs, clearParserErrors, commitParserErrors } from './utils/log';
 import {
   sendExistingRedemptionPeriodChangesNotification,
   sendMessageToChannels,
@@ -50,8 +51,10 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
 
   // extract the latest info from the page first
   const redemptionTablesInfo =
-    parseRedemptionTablesV1(html) ?? parseRedemptionTablesV2(html);
+    parseRedemptionTablesV1(html) ?? parseRedemptionTablesV2(html) ?? parseRedemptionTablesV3(html);
   if (!redemptionTablesInfo) {
+    // All parsers failed, commit the accumulated parser errors to the main log
+    commitParserErrors();
     await sendMessageToChannels({
       message: escapeCharacters(
         `${datePrefix()} 🔥 Unable to scrape any redemptions data`,
@@ -60,6 +63,9 @@ export async function scrape(): Promise<{ shouldSendLogs: boolean }> {
     });
     return { shouldSendLogs: true };
   }
+
+  // Reset parser errors after successful parsing
+  clearParserErrors();
 
   const currentMonth = getCurrentMonth(redemptionTablesInfo);
   const redemptionEndDate = parseRedemptionEndDate(html, currentMonth);

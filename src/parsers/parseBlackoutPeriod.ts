@@ -1,7 +1,7 @@
 import { spellcheckMonth } from '../lib/spellcheck';
 import { BlackoutPeriod, FlightClass } from '../utils/types';
 import { parseDateStringToISO8601 } from '../utils';
-import { log } from '../utils/log';
+import { log, logParserError } from '../utils/log';
 
 // SQ website doesn't standardise their dashes
 // TODO: check for other possible Unicode dash characters
@@ -43,7 +43,7 @@ export function parseBlackoutPeriod(
         ? `[${metadata.origin}-${metadata.destination};${metadata.flightClass}]`
         : '';
       const errorMessage = `[parseBlackoutPeriod]${metadataString} "${blackoutPeriodString}": ${err.message}`;
-      log(errorMessage, true);
+      logParserError(errorMessage);
     }
     return [];
   }

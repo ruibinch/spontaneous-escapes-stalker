@@ -1,5 +1,5 @@
 import { HTMLElement } from 'node-html-parser';
-import { log } from '../utils/log';
+import { log, logParserError } from '../utils/log';
 import { FlightClass, RedemptionTableInfo } from '../utils/types';
 import { toNumber } from '../utils';
 import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
@@ -68,7 +68,7 @@ function parseRedemptionTableV2(table: HTMLElement): RedemptionTableInfo[] {
     return !hasRowHeader;
   });
   if (!body) {
-    log('Unable to find body element in table', true);
+    logParserError('Unable to find body element in table');
     return [];
   }
 
@@ -113,9 +113,8 @@ function parseRedemptionTableV2(table: HTMLElement): RedemptionTableInfo[] {
         redemptions.push(premiumEconomyRedemption);
       }
     } else {
-      log(
+      logParserError(
         `Unexpected number of cells in row (${cells.length}), unable to parse`,
-        true,
       );
     }
   });
@@ -138,7 +137,7 @@ function parseSingleEntry({
 }): RedemptionTableInfo | null {
   const [origin, destination] = from.split(' to ');
   if (!origin || !destination) {
-    log(`Unable to obtain origin/destination from "${from}"`, true);
+    logParserError(`Unable to obtain origin/destination from "${from}"`);
     return null;
   }
 

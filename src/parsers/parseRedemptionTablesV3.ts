@@ -1,6 +1,6 @@
 import { HTMLElement } from 'node-html-parser';
 import { toNumber } from '../utils';
-import { log } from '../utils/log';
+import { log, logParserError } from '../utils/log';
 import { FlightClass, RedemptionTableInfo } from '../utils/types';
 import { POSSIBLE_DASHES, parseBlackoutPeriod } from './parseBlackoutPeriod';
 import { formatCity } from './parseRedemptionTablesV1';
@@ -28,9 +28,9 @@ const PREMIUM_ECONOMY_SECTION_COLUMNS = [
 ]
 
 /**
- * The page layout was updated for the 2025-09 redemptions as part of the SG60 promotion initiative.
+ * The page layout was updated for the 2025-09 redemptions as part of the SG60 promotion initiative,
+ * and the set of table columns is a one-off event.
  *
- * This set of table columns is a one-off event, hence this is not permanently referenced in the scrape script.
  * To monitor if this similar page layout (where each flight class has its own section and tables)
  * is continued to be used in future months.
  */
@@ -68,7 +68,7 @@ function parseRedemptionTableV3(table: HTMLElement): RedemptionTableInfo[] {
   const head = table.getElementsByTagName('thead')[0];
   const body = table.getElementsByTagName('tbody')[0];
   if (!head || !body) {
-    log('Unable to find head or body element in table', true);
+    logParserError('Unable to find head or body element in table');
     return [];
   }
 
@@ -92,7 +92,7 @@ function parseRedemptionTableV3(table: HTMLElement): RedemptionTableInfo[] {
   })();
 
   if (!flightClass) {
-    log(`Unable to determine flight class from table headers: ${headers.join(',')}`, true);
+    logParserError(`Unable to determine flight class from table headers: ${headers.join(',')}`);
     return [];
   }
 
@@ -140,7 +140,7 @@ function parseSingleEntry({
 }): RedemptionTableInfo | null {
   const [origin, destination] = from.split(' to ');
   if (!origin || !destination) {
-    log(`Unable to obtain origin/destination from "${from}"`, true);
+    logParserError(`Unable to obtain origin/destination from "${from}"`);
     return null;
   }
 
