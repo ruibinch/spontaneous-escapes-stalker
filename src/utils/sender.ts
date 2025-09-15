@@ -77,15 +77,14 @@ export async function sendRedemptionsInfoNotification({
   redemptionEndDate: Date;
   travelPeriod: TimePeriod;
 }) {
-  const redemptionsSorted = sortRedemptionsByClass(redemptions);
-
   const generateRedemptionsInfo = (flightClass: FlightClass) => {
-    const redemptionsForFlightClass = redemptionsSorted.filter(
+    const redemptionsForFlightClass = redemptions.filter(
       (r) => r.flightClass === flightClass,
     );
     if (redemptionsForFlightClass.length === 0) return undefined;
 
-    const redemptionsInfoForFlightClass = redemptionsForFlightClass
+    const redemptionsInfoForFlightClass = [...redemptionsForFlightClass]
+      .sort((a, b) => a.milesRequired - b.milesRequired)
       .map(({ origin, destination, milesRequired }) => {
         // consider IATA codes
         return escapeCharacters(
@@ -116,30 +115,5 @@ export async function sendRedemptionsInfoNotification({
   await sendMessageToChannels({
     message: redemptionsInfo,
     shouldSendToProdChannel: true,
-  });
-}
-
-/**
- * Sort by:
- * 1. Flight class
- * 2. Region
- * 3. Miles required
- * // TODO: consider another level of sorting
- */
-function sortRedemptionsByClass(redemptions: Redemption[]) {
-  return [...redemptions].sort((a, b) => {
-    const aFlightClassIndex = FLIGHT_CLASS_SORT_ORDER.indexOf(a.flightClass);
-    const bFlightClassIndex = FLIGHT_CLASS_SORT_ORDER.indexOf(b.flightClass);
-    if (aFlightClassIndex !== bFlightClassIndex) {
-      return aFlightClassIndex - bFlightClassIndex;
-    }
-
-    const aRegionIndex = REGION_SORT_ORDER.indexOf(getRegion(a));
-    const bRegionIndex = REGION_SORT_ORDER.indexOf(getRegion(b));
-    if (aRegionIndex !== bRegionIndex) {
-      return aRegionIndex - bRegionIndex;
-    }
-
-    return a.milesRequired - b.milesRequired;
   });
 }
