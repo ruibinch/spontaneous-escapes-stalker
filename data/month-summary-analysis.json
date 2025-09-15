@@ -2445,5 +2445,37 @@
         "The number of miles required shown on this page reflect the standard 30% discount rate and not the upsized 40% discount rate."
       ]
     }
+  },
+  {
+    "month": "202510",
+    "count": 100,
+    "byUniqueRoutes": {
+      "availableForRedemption": {
+        "total": 67,
+        "sia": 67
+      },
+      "routeNetworkSize": {}
+    },
+    "byFlightClass": {
+      "Y": 53,
+      "W": 17,
+      "J": 30
+    },
+    "byRegion": {
+      "South East Asia": 42,
+      "North Asia": 21,
+      "South Asia": 10,
+      "Middle East & Africa": 4,
+      "Southwest Pacific": 7,
+      "Europe": 9,
+      "North America": 7
+    },
+    "blackoutPctAverages": {
+      "total": 27.2,
+      "Y": 29.1,
+      "W": 26,
+      "J": 24.5
+    },
+    "metadata": {}
   }
 ]
