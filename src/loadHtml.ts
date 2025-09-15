@@ -71,15 +71,14 @@ async function loadHtmlViaPuppeteer() {
   );
   await page.goto(SPONTANEOUS_ESCAPES_URL);
 
-  const tableHandles = await page.$$('.table-inner');
+  const tableHandles = await page.$$('table');
   const tables = await Promise.all(
-    tableHandles.map(async (container) => {
-      const tableHtml: string = await container.$eval('table', (table) => {
-        // returns <thead> and <tbody> elements
-        return table.innerHTML;
+    tableHandles.map(async (tableHandle) => {
+      const tableHtml: string = await tableHandle.evaluate((table) => {
+        // returns the complete table element including <table> tags
+        return table.outerHTML;
       });
-      // re-wrap with <table> tags
-      return `<table>${tableHtml}</table>`;
+      return tableHtml;
     }),
   );
   await browser.close();
