@@ -114,7 +114,7 @@ function parseRedemptionTableV2(table: HTMLElement): RedemptionTableInfo[] {
       }
     } else {
       logParserError(
-        `Unexpected number of cells in row (${cells.length}), unable to parse`,
+        `Unexpected number of cells (${cells.length}) in row ${index}, unable to parse. cells=${cells.join('\n')}`,
       );
     }
   });

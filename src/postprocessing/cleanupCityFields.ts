@@ -9,6 +9,7 @@ const cityNameOverride: Record<string, string> = {
   Brunei: 'Bandar Seri Begawan',
   Chiangmai: 'Chiang Mai',
   'Chong Qing': 'Chongqing',
+  'Danang': 'Da Nang',
   'Davao City': 'Davao',
   Delhi: 'New Delhi',
   Denpasar: 'Bali',
