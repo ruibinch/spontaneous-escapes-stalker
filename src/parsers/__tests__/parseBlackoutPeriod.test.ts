@@ -32,6 +32,13 @@ describe('parseBlackoutPeriod', () => {
       },
     ],
     [
+      'single date range entry, with varying amounts of whitespace',
+      {
+        input: '2 - 3  November 2025',
+        expected: [{ from: '2025-11-02', to: '2025-11-03' }],
+      },
+    ],
+    [
       'single date range entry, with different months attached to both from/to dates',
       {
         input: '31 March – 15 April 2024',

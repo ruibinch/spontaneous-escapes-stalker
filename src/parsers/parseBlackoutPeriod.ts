@@ -194,8 +194,8 @@ export function parseDateText(_dateText: string) {
   const dateText = _dateText.replace(dashBeforeYearRegex, '');
 
   const separator = POSSIBLE_SEPARATORS.find((sep) => dateText.includes(sep));
-  const yearOptionalRegex = '(\\s\\d{4})?';
-  const monthRegex = '\\s[a-zA-Z]+';
+  const yearOptionalRegex = '(\\s+\\d{4})?';
+  const monthRegex = '\\s+[a-zA-Z]+';
   const monthOptionalRegex = `(${monthRegex})?`;
   const dayRegex = '\\d{1,2}';
 
@@ -236,11 +236,11 @@ export function parseDateText(_dateText: string) {
   // alternatively, the from/to months can also be different, e.g. "31 June - 5 July"
   const [fromSegment, toSegment] = blackoutPeriodString.split(separator);
 
-  const fromDateSplit = fromSegment.trim().split(' ');
+  const fromDateSplit = fromSegment.trim().split(/\s+/);
   const fromDay = fromDateSplit[0];
   const fromMonth = fromDateSplit[1] ? spellcheckMonth(fromDateSplit[1]) : null;
 
-  const toDateSplit = toSegment.trim().split(' ');
+  const toDateSplit = toSegment.trim().split(/\s+/);
   const toDay = toDateSplit[0];
   const toMonth = spellcheckMonth(toDateSplit[1]);
   const toYear = toDateSplit[2] ?? getYearInNextMonth();
