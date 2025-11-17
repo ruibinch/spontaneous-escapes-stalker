@@ -13,6 +13,7 @@ const cityNameOverride: Record<string, string> = {
   'Davao City': 'Davao',
   Delhi: 'New Delhi',
   Denpasar: 'Bali',
+  Denpansar: 'Bali',
   Dusseldorf: 'Düsseldorf',
   Haneda: 'Tokyo',
   'Ho Chi Minh': 'Ho Chi Minh City',

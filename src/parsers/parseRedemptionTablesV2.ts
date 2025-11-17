@@ -75,7 +75,7 @@ function parseRedemptionTableV2(table: HTMLElement): RedemptionTableInfo[] {
   const rows = body.getElementsByTagName('tr');
   const redemptions: RedemptionTableInfo[] = [];
 
-  rows.forEach((row) => {
+  rows.forEach((row, idx) => {
     const cells = row.getElementsByTagName('td');
     const cellTexts = cells.map((e) => cleanCellContent(e.text));
 
@@ -114,7 +114,7 @@ function parseRedemptionTableV2(table: HTMLElement): RedemptionTableInfo[] {
       }
     } else {
       logParserError(
-        `Unexpected number of cells (${cells.length}) in row ${index}, unable to parse. cells=${cells.join('\n')}`,
+        `Unexpected number of cells (${cells.length}) in row ${idx}, unable to parse. cells=${cells.join('\n')}`,
       );
     }
   });
