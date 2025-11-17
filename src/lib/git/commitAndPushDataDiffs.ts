@@ -1,10 +1,9 @@
 import {
   checkHasDiffs,
-  getDiffFilenames,
   gitAdd,
   gitCommit,
   gitPullWithRebase,
-  gitPush,
+  gitPush
 } from '.';
 
 const DATA_FOLDER_PATHSPEC = 'data';
@@ -16,10 +15,15 @@ const GIT_COMMITTER_NAME = 'spontaneous-escapes-stalker-deploy-token';
 /**
  * Checks for any diffs in the `data` and `website/src/static` folders.
  * If so, commit and push them using the deploy token.
+ *
+ * @param redemptionMonth - YYYYMM of the redemption period
+ * @param isNewRelease - If the redemption is a new release
  */
 export async function commitAndPushDataDiffs({
+  redemptionMonth,
   isNewRelease,
 }: {
+  redemptionMonth: string;
   isNewRelease: boolean;
 }): Promise<{ hasDiffs: boolean }> {
   const hasDataDiffs = await checkHasDiffs(DATA_FOLDER_PATHSPEC);
@@ -34,16 +38,8 @@ export async function commitAndPushDataDiffs({
   await gitAdd(DATA_FOLDER_PATHSPEC);
   await gitAdd(WEBSITE_STATIC_FOLDER_PATHSPEC);
 
-  const stagedFilenames = await getDiffFilenames({ staged: true });
-  const yearMonth = stagedFilenames.match(/\d{6}/);
-  if (!yearMonth) {
-    throw new Error(
-      `Unable to extract year/month value from staged filenames: ${stagedFilenames}`,
-    );
-  }
-
   await gitCommit({
-    message: `${isNewRelease ? 'add' : 'update'} ${yearMonth[0]} content`,
+    message: `${isNewRelease ? 'add' : 'update'} ${redemptionMonth} content`,
     overrideCreds: {
       name: GIT_COMMITTER_NAME,
       email: GIT_COMMITTER_NAME,
@@ -56,17 +52,4 @@ export async function commitAndPushDataDiffs({
   await gitPush({ repository: GIT_REPOSITORY_URL });
 
   return { hasDiffs: true };
-}
-
-if (require.main === module) {
-  const args = process.argv.slice(2);
-  const isNewRelease = args[0] ? args[0] === 'true' : true;
-
-  try {
-    commitAndPushDataDiffs({ isNewRelease });
-    process.exit(0);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
 }

@@ -7,7 +7,7 @@ const s3Client = new S3Client({
 });
 
 /**
- * Copies files from the data folder to the S3 bucket.
+ * Copies files from the data folder to the S3 bucket, in the format of {{yyyymm}}-redemptions-postprocessed.json
  *
  * Only supports the month redemption file for now.
  */

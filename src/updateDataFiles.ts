@@ -5,6 +5,12 @@ import { deployWebsiteProd } from './scripts/deployWebsiteProd';
 import { updateLatestRedemptionAtTimestamp } from './scripts/updateLatestRedemptionAtTimestamp';
 import { log } from './utils/log';
 
+/**
+ * Updates the data files on the website and triggers a redeployment.
+ *
+ * @param redemptionMonth - YYYYMM of the redemption period
+ * @param isNewRelease - If the redemption is a new release
+ */
 export async function updateDataFiles({
   redemptionMonth,
   isNewRelease,
@@ -22,7 +28,7 @@ export async function updateDataFiles({
   }
 
   log('Committing and pushing data diffs...');
-  const { hasDiffs } = await commitAndPushDataDiffs({ isNewRelease });
+  const { hasDiffs } = await commitAndPushDataDiffs({ redemptionMonth, isNewRelease });
   if (!hasDiffs) {
     log('Skipping deployment')
     return;
