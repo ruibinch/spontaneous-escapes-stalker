@@ -135,11 +135,13 @@ function parseSingleEntry({
   flightNo: string;
   blackoutPeriodText: string;
 }): RedemptionTableInfo | null {
-  const [origin, destination] = from.split(' to ');
-  if (!origin || !destination) {
+  const fromSplit = from.split(' to ');
+  if (fromSplit.length !== 2) {
     logParserError(`Unable to obtain origin/destination from "${from}"`);
     return null;
   }
+  const origin = fromSplit[0].trim();
+  const destination = fromSplit[1].trim();
 
   const milesRequired = toNumber(milesRequiredText);
   const blackoutPeriod = parseBlackoutPeriod(blackoutPeriodText, {
