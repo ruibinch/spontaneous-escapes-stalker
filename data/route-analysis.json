@@ -1024,6 +1024,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -2854,6 +2862,38 @@
             "blackoutPct": 35.5
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ504"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-04"
+              },
+              {
+                "from": "2026-01-07",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-12",
+                "to": "2026-01-13"
+              },
+              {
+                "from": "2026-01-25",
+                "to": "2026-01-25"
+              }
+            ],
+            "blackoutPct": 25.8
+          }
+        }
       }
     ],
     "metadata": {}
@@ -3703,6 +3743,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -4696,6 +4744,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -6810,6 +6866,36 @@
             "blackoutPct": 19.4
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ934",
+              "SQ946",
+              "SQ948"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ934",
+              "SQ944"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-02"
+              }
+            ],
+            "blackoutPct": 6.5
+          }
+        }
       }
     ],
     "metadata": {}
@@ -7612,6 +7698,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -8832,6 +8926,26 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ148"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-11"
+              }
+            ],
+            "blackoutPct": 35.5
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -9646,6 +9760,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -11527,6 +11649,64 @@
             "blackoutPct": 61.3
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ508",
+              "SQ510"
+            ],
+            "milesRequired": 13300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-11",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 38.7
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ508",
+              "SQ510"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-11",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-18",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-21",
+                "to": "2026-01-21"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 35.5
+          }
+        }
       }
     ],
     "metadata": {}
@@ -13159,6 +13339,30 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ714",
+              "SQ720"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ714",
+              "SQ720"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          }
+        }
       }
     ],
     "metadata": {}
@@ -14146,6 +14350,27 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ378",
+              "SQ388"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-03",
+                "to": "2026-01-17"
+              }
+            ],
+            "blackoutPct": 48.4
+          },
           "W": null,
           "J": null
         }
@@ -16571,6 +16796,54 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ800",
+              "SQ802",
+              "SQ806"
+            ],
+            "milesRequired": 14350,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "W": {
+            "flightNos": [
+              "SQ802"
+            ],
+            "milesRequired": 25200,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "J": {
+            "flightNos": [
+              "SQ806"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-12",
+                "to": "2026-01-12"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-16"
+              }
+            ],
+            "blackoutPct": 32.3
+          }
+        }
       }
     ],
     "metadata": {
@@ -17838,6 +18111,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -18860,6 +19141,42 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ304"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-09"
+              }
+            ],
+            "blackoutPct": 29
+          },
+          "W": {
+            "flightNos": [
+              "SQ304"
+            ],
+            "milesRequired": 52150,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-14",
+                "to": "2026-01-14"
+              }
+            ],
+            "blackoutPct": 32.3
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -19546,6 +19863,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -20909,6 +21234,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -21668,6 +22001,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -22545,6 +22886,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -23860,6 +24209,30 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ902"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-05",
+                "to": "2026-01-05"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-09"
+              }
+            ],
+            "blackoutPct": 6.5
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -24595,6 +24968,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -25803,6 +26184,31 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ842",
+              "SQ846"
+            ],
+            "milesRequired": 10850,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-13",
+                "to": "2026-01-13"
+              }
+            ],
+            "blackoutPct": 22.6
+          },
           "W": null,
           "J": null
         }
@@ -27571,6 +27977,48 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ524",
+              "SQ528"
+            ],
+            "milesRequired": 13300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-13"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-21"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ524",
+              "SQ528"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-20"
+              }
+            ],
+            "blackoutPct": 38.7
+          }
+        }
       }
     ],
     "metadata": {}
@@ -28342,6 +28790,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -29338,6 +29794,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -30242,6 +30706,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -31018,6 +31490,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -32734,6 +33214,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -33700,6 +34188,14 @@
             ],
             "blackoutPct": 71
           },
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
           "J": null
         }
       }
@@ -34754,6 +35250,46 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ174"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-03"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-14",
+                "to": "2026-01-16"
+              },
+              {
+                "from": "2026-01-25",
+                "to": "2026-01-26"
+              },
+              {
+                "from": "2026-01-29",
+                "to": "2026-01-29"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 35.5
+          },
           "W": null,
           "J": null
         }
@@ -35951,6 +36487,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -36830,6 +37374,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -38575,6 +39127,33 @@
             "blackoutPct": 0
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ446"
+            ],
+            "milesRequired": 13300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-19",
+                "to": "2026-01-19"
+              }
+            ],
+            "blackoutPct": 3.2
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ446"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          }
+        }
       }
     ],
     "metadata": {}
@@ -39871,6 +40450,38 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ494"
+            ],
+            "milesRequired": 36050,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-05"
+              },
+              {
+                "from": "2026-01-08",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-25"
+              },
+              {
+                "from": "2026-01-27",
+                "to": "2026-01-27"
+              }
+            ],
+            "blackoutPct": 38.7
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -40753,6 +41364,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -42449,6 +43068,44 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ326",
+              "SQ330"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-20",
+                "to": "2026-01-20"
+              }
+            ],
+            "blackoutPct": 38.7
+          },
+          "W": {
+            "flightNos": [
+              "SQ326",
+              "SQ330"
+            ],
+            "milesRequired": 52150,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-11"
+              }
+            ],
+            "blackoutPct": 35.5
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -43604,6 +44261,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -44397,6 +45062,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -45670,6 +46343,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -47172,6 +47853,51 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ192",
+              "SQ194"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-04"
+              },
+              {
+                "from": "2026-01-06",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-08",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-11",
+                "to": "2026-01-12"
+              },
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-22",
+                "to": "2026-01-22"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-25"
+              }
+            ],
+            "blackoutPct": 48.4
+          }
+        }
       }
     ],
     "metadata": {}
@@ -48070,6 +48796,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -50003,6 +50737,30 @@
               }
             ],
             "blackoutPct": 16.1
+          }
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ184",
+              "SQ186"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ184",
+              "SQ186"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
           }
         }
       }
@@ -52604,6 +53362,22 @@
           },
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ874",
+              "SQ898"
+            ],
+            "milesRequired": 19600,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -53213,6 +53987,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -54844,6 +55626,47 @@
             "blackoutPct": 22.6
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ518",
+              "SQ522"
+            ],
+            "milesRequired": 13300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-02"
+              },
+              {
+                "from": "2026-01-17",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 12.9
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ522"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-17",
+                "to": "2026-01-17"
+              }
+            ],
+            "blackoutPct": 22.6
+          }
+        }
       }
     ],
     "metadata": {}
@@ -55724,6 +56547,33 @@
         "redemptionDetails": {
           "Y": null,
           "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ392"
+            ],
+            "milesRequired": 22400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-28",
+                "to": "2026-01-30"
+              }
+            ],
+            "blackoutPct": 9.7
+          },
+          "W": {
+            "flightNos": [
+              "SQ392"
+            ],
+            "milesRequired": 36050,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
           "J": null
         }
       }
@@ -57959,6 +58809,38 @@
             "blackoutPct": 0
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ950"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-13"
+              }
+            ],
+            "blackoutPct": 41.9
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ950"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-13"
+              }
+            ],
+            "blackoutPct": 41.9
+          }
+        }
       }
     ],
     "metadata": {}
@@ -59399,6 +60281,38 @@
           },
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ482"
+            ],
+            "milesRequired": 22400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-17"
+              }
+            ],
+            "blackoutPct": 54.8
+          },
+          "W": {
+            "flightNos": [
+              "SQ482"
+            ],
+            "milesRequired": 36050,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-12"
+              }
+            ],
+            "blackoutPct": 38.7
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -60040,6 +60954,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -61272,6 +62194,74 @@
             "blackoutPct": 19.4
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ442"
+            ],
+            "milesRequired": 13300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-11",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-20",
+                "to": "2026-01-20"
+              },
+              {
+                "from": "2026-01-22",
+                "to": "2026-01-28"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ442"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-04"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-11",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-14",
+                "to": "2026-01-15"
+              },
+              {
+                "from": "2026-01-22",
+                "to": "2026-01-22"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              }
+            ],
+            "blackoutPct": 32.3
+          }
+        }
       }
     ],
     "metadata": {}
@@ -62482,6 +63472,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -63249,6 +64247,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -64874,6 +65880,54 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ516"
+            ],
+            "milesRequired": 13300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-08",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-12",
+                "to": "2026-01-12"
+              },
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-16"
+              },
+              {
+                "from": "2026-01-19",
+                "to": "2026-01-20"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-23"
+              },
+              {
+                "from": "2026-01-26",
+                "to": "2026-01-26"
+              },
+              {
+                "from": "2026-01-29",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 58.1
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -65638,6 +66692,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -68142,6 +69204,42 @@
             "blackoutPct": 0
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ108",
+              "SQ122",
+              "SQ126"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-04"
+              }
+            ],
+            "blackoutPct": 12.9
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ106",
+              "SQ108",
+              "SQ122"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-05",
+                "to": "2026-01-05"
+              }
+            ],
+            "blackoutPct": 3.2
+          }
+        }
       }
     ],
     "metadata": {}
@@ -68896,6 +69994,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -69523,6 +70629,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -70396,6 +71510,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -71650,6 +72772,32 @@
               }
             ],
             "blackoutPct": 41.9
+          },
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ308",
+              "SQ312",
+              "SQ318"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-13"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 51.6
           },
           "W": null,
           "J": null
@@ -72930,6 +74078,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -73657,6 +74813,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -74465,6 +75629,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -76154,6 +77326,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -76920,6 +78100,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -77760,6 +78948,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -78485,6 +79681,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -80540,6 +81744,43 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ914",
+              "SQ916"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-05"
+              }
+            ],
+            "blackoutPct": 16.1
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ914"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-02",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-23"
+              }
+            ],
+            "blackoutPct": 19.4
+          }
+        }
       }
     ],
     "metadata": {}
@@ -81878,6 +83119,14 @@
             ],
             "blackoutPct": 35.5
           },
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
           "W": null,
           "J": null
         }
@@ -83307,6 +84556,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -84437,6 +85694,35 @@
               }
             ],
             "blackoutPct": 35.5
+          },
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ356",
+              "SQ378"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-21",
+                "to": "2026-01-21"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 61.3
           },
           "W": null,
           "J": null
@@ -86544,6 +87830,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -87433,6 +88727,30 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ328"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 64.5
+          },
           "W": null,
           "J": null
         }
@@ -88637,6 +89955,38 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ672"
+            ],
+            "milesRequired": 17850,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-14"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-25"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 64.5
+          },
           "W": null,
           "J": null
         }
@@ -90456,6 +91806,38 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ402"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-08"
+              },
+              {
+                "from": "2026-01-12",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 51.6
+          }
+        }
       }
     ],
     "metadata": {}
@@ -91503,6 +92885,26 @@
         "redemptionDetails": {
           "Y": null,
           "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ24"
+            ],
+            "milesRequired": 59150,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-19"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
           "J": null
         }
       }
@@ -92720,6 +94122,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -93947,6 +95357,42 @@
           },
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ338"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 38.7
+          },
+          "W": {
+            "flightNos": [
+              "SQ338"
+            ],
+            "milesRequired": 52150,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-05"
+              }
+            ],
+            "blackoutPct": 16.1
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -94616,6 +96062,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -96568,6 +98022,31 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ132",
+              "SQ138"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-16"
+              }
+            ],
+            "blackoutPct": 41.9
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -97800,6 +99279,14 @@
             ],
             "blackoutPct": 19.4
           },
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
           "W": null,
           "J": null
         }
@@ -99473,6 +100960,67 @@
             "blackoutPct": 64.5
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ154",
+              "SQ156",
+              "SQ158"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ158"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-02",
+                "to": "2026-01-03"
+              },
+              {
+                "from": "2026-01-06",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-13",
+                "to": "2026-01-14"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-19",
+                "to": "2026-01-21"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-27",
+                "to": "2026-01-28"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 61.3
+          }
+        }
       }
     ],
     "metadata": {}
@@ -100971,6 +102519,28 @@
             "blackoutPct": 64.5
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ724",
+              "SQ736",
+              "SQ740"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-16"
+              }
+            ],
+            "blackoutPct": 6.5
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -101959,6 +103529,26 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ366"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-14"
+              }
+            ],
+            "blackoutPct": 45.2
+          },
           "W": null,
           "J": null
         }
@@ -103376,6 +104966,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -104275,6 +105873,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -105071,6 +106677,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -106426,6 +108040,34 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ606"
+            ],
+            "milesRequired": 17850,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-01"
+              },
+              {
+                "from": "2026-01-13",
+                "to": "2026-01-13"
+              },
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
           "W": null,
           "J": null
         }
@@ -108722,6 +110364,32 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ826",
+              "SQ828",
+              "SQ830",
+              "SQ836"
+            ],
+            "milesRequired": 14350,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "W": {
+            "flightNos": [
+              "SQ828",
+              "SQ830"
+            ],
+            "milesRequired": 25200,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -109976,6 +111644,21 @@
           "Y": null,
           "W": null,
           "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ856"
+            ],
+            "milesRequired": 24850,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          }
         }
       }
     ],
@@ -111474,6 +113157,30 @@
               }
             ],
             "blackoutPct": 41.9
+          },
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ166"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-02",
+                "to": "2026-01-02"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-23"
+              }
+            ],
+            "blackoutPct": 6.5
           },
           "W": null,
           "J": null
@@ -113414,6 +115121,26 @@
               }
             ],
             "blackoutPct": 25.8
+          }
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ922"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-12"
+              }
+            ],
+            "blackoutPct": 38.7
           }
         }
       }
@@ -115740,6 +117467,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -116920,6 +118655,42 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ878"
+            ],
+            "milesRequired": 10850,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-02"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-17",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 25.8
+          },
           "W": null,
           "J": null
         }
@@ -118249,6 +120020,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {
@@ -119007,6 +120786,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -119705,6 +121492,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -120437,6 +122232,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -121237,6 +123040,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -122024,6 +123835,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -122783,6 +124602,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -123832,6 +125659,21 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ868"
+            ],
+            "milesRequired": 10850,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
           "W": null,
           "J": null
         }
@@ -125272,6 +127114,30 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ762"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-11",
+                "to": "2026-01-11"
+              }
+            ],
+            "blackoutPct": 22.6
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -126028,6 +127894,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -126926,6 +128800,30 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ346"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
           "W": null,
           "J": null
         }
@@ -128140,6 +130038,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -129783,6 +131689,14 @@
             "blackoutPct": 29
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -130712,6 +132626,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -131675,6 +133597,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -133736,6 +135666,45 @@
             "blackoutPct": 12.9
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ935",
+              "SQ947",
+              "SQ949"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              }
+            ],
+            "blackoutPct": 19.4
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ935",
+              "SQ937"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-11"
+              }
+            ],
+            "blackoutPct": 32.3
+          }
+        }
       }
     ],
     "metadata": {}
@@ -134538,6 +136507,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -135782,6 +137759,21 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ147"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [],
+            "blackoutPct": 0
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -136598,6 +138590,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -138390,6 +140390,14 @@
             "blackoutPct": 58.1
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -139990,6 +141998,40 @@
             "blackoutPct": 67.7
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ705",
+              "SQ719"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-05"
+              }
+            ],
+            "blackoutPct": 16.1
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ705",
+              "SQ719"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              }
+            ],
+            "blackoutPct": 19.4
+          }
+        }
       }
     ],
     "metadata": {}
@@ -140947,6 +142989,35 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ377",
+              "SQ387"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-15"
+              },
+              {
+                "from": "2026-01-21",
+                "to": "2026-01-21"
+              },
+              {
+                "from": "2026-01-25",
+                "to": "2026-01-25"
+              }
+            ],
+            "blackoutPct": 54.8
+          },
           "W": null,
           "J": null
         }
@@ -143573,6 +145644,50 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ807"
+            ],
+            "milesRequired": 14350,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-14"
+              },
+              {
+                "from": "2026-01-18",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-25"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
+          "W": {
+            "flightNos": [
+              "SQ807"
+            ],
+            "milesRequired": 25200,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              }
+            ],
+            "blackoutPct": 19.4
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {
@@ -144919,6 +147034,38 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ266"
+            ],
+            "milesRequired": 20300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 58.1
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ266"
+            ],
+            "milesRequired": 50400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 58.1
+          }
+        }
       }
     ],
     "metadata": {}
@@ -146139,6 +148286,62 @@
           },
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ303"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-08"
+              },
+              {
+                "from": "2026-01-17",
+                "to": "2026-01-20"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-27",
+                "to": "2026-01-27"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 48.4
+          },
+          "W": {
+            "flightNos": [
+              "SQ303"
+            ],
+            "milesRequired": 52150,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-08"
+              },
+              {
+                "from": "2026-01-12",
+                "to": "2026-01-15"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 41.9
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -146832,6 +149035,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -148198,6 +150409,38 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ204"
+            ],
+            "milesRequired": 20300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 58.1
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ204"
+            ],
+            "milesRequired": 50400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 58.1
+          }
+        }
       }
     ],
     "metadata": {}
@@ -149002,6 +151245,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -149879,6 +152130,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -151165,6 +153424,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -151900,6 +154167,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -153134,6 +155409,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -154588,6 +156871,14 @@
             "blackoutPct": 45.2
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -155351,6 +157642,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -156314,6 +158613,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -157312,6 +159619,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -158067,6 +160382,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -159762,6 +162085,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -160957,6 +163288,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -161929,6 +164268,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -163208,6 +165555,39 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ252",
+              "SQ254"
+            ],
+            "milesRequired": 14350,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 58.1
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ252"
+            ],
+            "milesRequired": 29750,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-10"
+              }
+            ],
+            "blackoutPct": 32.3
+          }
+        }
       }
     ],
     "metadata": {}
@@ -164087,6 +166467,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -165832,6 +168220,50 @@
             "blackoutPct": 3.2
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ447"
+            ],
+            "milesRequired": 13300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-02",
+                "to": "2026-01-05"
+              },
+              {
+                "from": "2026-01-07",
+                "to": "2026-01-12"
+              },
+              {
+                "from": "2026-01-14",
+                "to": "2026-01-15"
+              },
+              {
+                "from": "2026-01-20",
+                "to": "2026-01-20"
+              }
+            ],
+            "blackoutPct": 41.9
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ447"
+            ],
+            "milesRequired": 31500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              }
+            ],
+            "blackoutPct": 3.2
+          }
+        }
       }
     ],
     "metadata": {}
@@ -167122,6 +169554,54 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ495"
+            ],
+            "milesRequired": 22400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-26"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 77.4
+          },
+          "W": {
+            "flightNos": [
+              "SQ495"
+            ],
+            "milesRequired": 36050,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 29
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -167999,6 +170479,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -169380,6 +171868,46 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ25",
+              "SQ325",
+              "SQ329"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 35.5
+          },
+          "W": {
+            "flightNos": [
+              "SQ25",
+              "SQ325",
+              "SQ329"
+            ],
+            "milesRequired": 52150,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 58.1
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -170513,6 +173041,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -171306,6 +173842,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -172550,6 +175094,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -174079,6 +176631,47 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ191",
+              "SQ193"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-08"
+              },
+              {
+                "from": "2026-01-10",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-16"
+              },
+              {
+                "from": "2026-01-18",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-25",
+                "to": "2026-01-25"
+              },
+              {
+                "from": "2026-01-29",
+                "to": "2026-01-30"
+              }
+            ],
+            "blackoutPct": 48.4
+          }
+        }
       }
     ],
     "metadata": {}
@@ -175013,6 +177606,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -177057,6 +179658,52 @@
               {
                 "from": "2025-12-29",
                 "to": "2025-12-31"
+              }
+            ],
+            "blackoutPct": 22.6
+          }
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ177",
+              "SQ185"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-11"
+              }
+            ],
+            "blackoutPct": 32.3
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ183",
+              "SQ185"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-05"
+              },
+              {
+                "from": "2026-01-10",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-13",
+                "to": "2026-01-13"
               }
             ],
             "blackoutPct": 22.6
@@ -179639,6 +182286,27 @@
           },
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ875",
+              "SQ899"
+            ],
+            "milesRequired": 19600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              }
+            ],
+            "blackoutPct": 19.4
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -181016,6 +183684,14 @@
             "blackoutPct": 0
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -181872,6 +184548,38 @@
         "redemptionDetails": {
           "Y": null,
           "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ391"
+            ],
+            "milesRequired": 22400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-11"
+              }
+            ],
+            "blackoutPct": 35.5
+          },
+          "W": {
+            "flightNos": [
+              "SQ391"
+            ],
+            "milesRequired": 36050,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-02",
+                "to": "2026-01-09"
+              }
+            ],
+            "blackoutPct": 25.8
+          },
           "J": null
         }
       }
@@ -183822,6 +186530,56 @@
             "blackoutPct": 67.7
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ961",
+              "SQ963",
+              "SQ965"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-05"
+              },
+              {
+                "from": "2026-01-08",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-16"
+              },
+              {
+                "from": "2026-01-22",
+                "to": "2026-01-23"
+              }
+            ],
+            "blackoutPct": 35.5
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ951",
+              "SQ953",
+              "SQ961",
+              "SQ963",
+              "SQ965"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-14",
+                "to": "2026-01-16"
+              }
+            ],
+            "blackoutPct": 9.7
+          }
+        }
       }
     ],
     "metadata": {}
@@ -185171,6 +187929,42 @@
           },
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ481"
+            ],
+            "milesRequired": 22400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-16"
+              },
+              {
+                "from": "2026-01-20",
+                "to": "2026-01-20"
+              }
+            ],
+            "blackoutPct": 54.8
+          },
+          "W": {
+            "flightNos": [
+              "SQ481"
+            ],
+            "milesRequired": 36050,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-09"
+              }
+            ],
+            "blackoutPct": 29
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -185812,6 +188606,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -186834,6 +189636,46 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ441"
+            ],
+            "milesRequired": 13300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-20",
+                "to": "2026-01-20"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-28",
+                "to": "2026-01-29"
+              }
+            ],
+            "blackoutPct": 58.1
+          },
           "W": null,
           "J": null
         }
@@ -187951,6 +190793,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -188718,6 +191568,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -190136,6 +192994,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -190900,6 +193766,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -193258,6 +196132,42 @@
             "blackoutPct": 0
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ103",
+              "SQ105",
+              "SQ107"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-05"
+              }
+            ],
+            "blackoutPct": 16.1
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ105",
+              "SQ107",
+              "SQ121"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-10",
+                "to": "2026-01-10"
+              }
+            ],
+            "blackoutPct": 3.2
+          }
+        }
       }
     ],
     "metadata": {}
@@ -194012,6 +196922,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -194639,6 +197557,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -195504,6 +198430,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -196698,6 +199632,27 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ309",
+              "SQ317"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-12"
+              }
+            ],
+            "blackoutPct": 38.7
+          },
           "W": null,
           "J": null
         }
@@ -197925,6 +200880,27 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ35",
+              "SQ37"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-16"
+              }
+            ],
+            "blackoutPct": 51.6
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -198652,6 +201628,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -199453,6 +202437,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -201244,6 +204236,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -201998,6 +204998,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -202821,6 +205829,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -203566,6 +206582,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -205785,6 +208809,43 @@
             "blackoutPct": 48.4
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ913",
+              "SQ919"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-19"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ921"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-14"
+              },
+              {
+                "from": "2026-01-17",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 51.6
+          }
+        }
       }
     ],
     "metadata": {}
@@ -207041,6 +210102,52 @@
           "Y": null,
           "W": null,
           "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ995",
+              "SQ997"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-05",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-10"
+              }
+            ],
+            "blackoutPct": 12.9
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ995",
+              "SQ997"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-08",
+                "to": "2026-01-12"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-19",
+                "to": "2026-01-20"
+              }
+            ],
+            "blackoutPct": 29
+          }
         }
       }
     ],
@@ -209225,6 +212332,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -210256,6 +213371,39 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ355",
+              "SQ377"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-21",
+                "to": "2026-01-21"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-25"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 67.7
+          },
           "W": null,
           "J": null
         }
@@ -211877,6 +215025,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -213118,6 +216274,34 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ327"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-12"
+              },
+              {
+                "from": "2026-01-17",
+                "to": "2026-01-19"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              }
+            ],
+            "blackoutPct": 51.6
+          },
           "W": null,
           "J": null
         }
@@ -214388,6 +217572,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -215743,6 +218935,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -216896,6 +220096,26 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ21"
+            ],
+            "milesRequired": 59150,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-22"
+              }
+            ],
+            "blackoutPct": 71
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {
@@ -218038,6 +221258,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -219299,6 +222527,52 @@
           },
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ335",
+              "SQ337"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-19"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-26"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 77.4
+          },
+          "W": {
+            "flightNos": [
+              "SQ335",
+              "SQ337"
+            ],
+            "milesRequired": 52150,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-19"
+              },
+              {
+                "from": "2026-01-29",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 71
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -219968,6 +223242,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -221995,6 +225277,35 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ131",
+              "SQ141"
+            ],
+            "milesRequired": 5600,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-10",
+                "to": "2026-01-12"
+              },
+              {
+                "from": "2026-01-18",
+                "to": "2026-01-18"
+              }
+            ],
+            "blackoutPct": 32.3
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -223310,6 +226621,39 @@
           "Y": null,
           "W": null,
           "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ224",
+              "SQ226"
+            ],
+            "milesRequired": 14350,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-23"
+              }
+            ],
+            "blackoutPct": 74.2
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ224"
+            ],
+            "milesRequired": 29750,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-15"
+              }
+            ],
+            "blackoutPct": 48.4
+          }
         }
       }
     ],
@@ -225010,6 +228354,71 @@
             "blackoutPct": 61.3
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ153",
+              "SQ157"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-04",
+                "to": "2026-01-04"
+              }
+            ],
+            "blackoutPct": 3.2
+          },
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ157"
+            ],
+            "milesRequired": 17500,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-02",
+                "to": "2026-01-03"
+              },
+              {
+                "from": "2026-01-06",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-13",
+                "to": "2026-01-14"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-17"
+              },
+              {
+                "from": "2026-01-19",
+                "to": "2026-01-21"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-27",
+                "to": "2026-01-28"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 61.3
+          }
+        }
       }
     ],
     "metadata": {}
@@ -226498,6 +229907,31 @@
             "blackoutPct": 45.2
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ723",
+              "SQ725"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-19",
+                "to": "2026-01-20"
+              }
+            ],
+            "blackoutPct": 38.7
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -227456,6 +230890,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -228970,6 +232412,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -229914,6 +233364,38 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ27"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-11",
+                "to": "2026-01-15"
+              },
+              {
+                "from": "2026-01-17",
+                "to": "2026-01-22"
+              },
+              {
+                "from": "2026-01-29",
+                "to": "2026-01-29"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -230709,6 +234191,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -232061,6 +235551,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -234296,6 +237794,60 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ827",
+              "SQ831"
+            ],
+            "milesRequired": 14350,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-16"
+              },
+              {
+                "from": "2026-01-18",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-22",
+                "to": "2026-01-22"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-28",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 61.3
+          },
+          "W": {
+            "flightNos": [
+              "SQ831",
+              "SQ833"
+            ],
+            "milesRequired": 25200,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              }
+            ],
+            "blackoutPct": 19.4
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -235564,6 +239116,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -236923,6 +240483,30 @@
               }
             ],
             "blackoutPct": 29
+          },
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ163"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-25",
+                "to": "2026-01-25"
+              }
+            ],
+            "blackoutPct": 32.3
           },
           "W": null,
           "J": null
@@ -238982,6 +242566,27 @@
           "Y": null,
           "W": null,
           "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": {
+            "flightNos": [
+              "SQ923",
+              "SQ929"
+            ],
+            "milesRequired": 15400,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-14",
+                "to": "2026-01-16"
+              }
+            ],
+            "blackoutPct": 9.7
+          }
         }
       }
     ],
@@ -241276,6 +244881,30 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ222"
+            ],
+            "milesRequired": 20300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-20"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 71
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -242376,6 +246005,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -243812,6 +247449,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {
@@ -244556,6 +248201,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -245263,6 +248916,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -245995,6 +249656,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -246788,6 +250457,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -247575,6 +251252,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -248334,6 +252019,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -249359,6 +253052,34 @@
         "month": "202512",
         "redemptionDetails": {
           "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ869"
+            ],
+            "milesRequired": 10850,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-11"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-31",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 41.9
+          },
           "W": null,
           "J": null
         }
@@ -250821,6 +254542,30 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ761"
+            ],
+            "milesRequired": 9100,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-04"
+              },
+              {
+                "from": "2026-01-07",
+                "to": "2026-01-07"
+              }
+            ],
+            "blackoutPct": 16.1
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -251577,6 +255322,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -252729,6 +256482,38 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ345"
+            ],
+            "milesRequired": 30800,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-17",
+                "to": "2026-01-18"
+              },
+              {
+                "from": "2026-01-23",
+                "to": "2026-01-24"
+              },
+              {
+                "from": "2026-01-29",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 54.8
+          },
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -253329,6 +257114,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -255279,6 +259072,74 @@
             "blackoutPct": 25.8
           }
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ26"
+            ],
+            "milesRequired": 19250,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-07"
+              },
+              {
+                "from": "2026-01-10",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-19",
+                "to": "2026-01-19"
+              }
+            ],
+            "blackoutPct": 29
+          },
+          "W": {
+            "flightNos": [
+              "SQ26"
+            ],
+            "milesRequired": 39900,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-11",
+                "to": "2026-01-11"
+              }
+            ],
+            "blackoutPct": 22.6
+          },
+          "J": {
+            "flightNos": [
+              "SQ26"
+            ],
+            "milesRequired": 62300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-06"
+              },
+              {
+                "from": "2026-01-09",
+                "to": "2026-01-09"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-16"
+              },
+              {
+                "from": "2026-01-19",
+                "to": "2026-01-19"
+              }
+            ],
+            "blackoutPct": 29
+          }
+        }
       }
     ],
     "metadata": {}
@@ -256025,6 +259886,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -256862,6 +260731,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -257973,6 +261850,50 @@
           },
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ11"
+            ],
+            "milesRequired": 29750,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-10"
+              },
+              {
+                "from": "2026-01-30",
+                "to": "2026-01-31"
+              }
+            ],
+            "blackoutPct": 38.7
+          },
+          "W": {
+            "flightNos": [
+              "SQ11"
+            ],
+            "milesRequired": 56350,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-05"
+              },
+              {
+                "from": "2026-01-15",
+                "to": "2026-01-16"
+              },
+              {
+                "from": "2026-01-24",
+                "to": "2026-01-24"
+              }
+            ],
+            "blackoutPct": 25.8
+          },
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -258836,6 +262757,14 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
       }
     ],
     "metadata": {}
@@ -259450,6 +263379,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -260995,6 +264932,54 @@
           "W": null,
           "J": null
         }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": {
+            "flightNos": [
+              "SQ25"
+            ],
+            "milesRequired": 19250,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-10"
+              }
+            ],
+            "blackoutPct": 32.3
+          },
+          "W": {
+            "flightNos": [
+              "SQ25"
+            ],
+            "milesRequired": 39900,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-02",
+                "to": "2026-01-04"
+              }
+            ],
+            "blackoutPct": 9.7
+          },
+          "J": {
+            "flightNos": [
+              "SQ25"
+            ],
+            "milesRequired": 62300,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-02",
+                "to": "2026-01-03"
+              },
+              {
+                "from": "2026-01-13",
+                "to": "2026-01-14"
+              }
+            ],
+            "blackoutPct": 12.9
+          }
+        }
       }
     ],
     "metadata": {}
@@ -261718,6 +265703,14 @@
       },
       {
         "month": "202512",
+        "redemptionDetails": {
+          "Y": null,
+          "W": null,
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
         "redemptionDetails": {
           "Y": null,
           "W": null,
@@ -262771,6 +266764,30 @@
               }
             ],
             "blackoutPct": 48.4
+          },
+          "J": null
+        }
+      },
+      {
+        "month": "202601",
+        "redemptionDetails": {
+          "Y": null,
+          "W": {
+            "flightNos": [
+              "SQ12"
+            ],
+            "milesRequired": 56350,
+            "blackoutPeriod": [
+              {
+                "from": "2026-01-01",
+                "to": "2026-01-14"
+              },
+              {
+                "from": "2026-01-16",
+                "to": "2026-01-20"
+              }
+            ],
+            "blackoutPct": 61.3
           },
           "J": null
         }
