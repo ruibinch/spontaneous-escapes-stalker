@@ -28,6 +28,7 @@ const cityNameOverride: Record<string, string> = {
   'New York (EWR)': 'New York',
   'New York (JFK)': 'New York',
   'New York (Newark)': 'New York',
+  'San Franciso': 'San Francisco',
   Sermarang: 'Semarang',
   'Siam Reap': 'Siem Reap',
   'Seoul (Incheon)': 'Seoul',
