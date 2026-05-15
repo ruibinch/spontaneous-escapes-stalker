@@ -48,6 +48,7 @@ export const cityMappings: Record<
   Fuzhou: { iata: 'FOC', countryCode: 'CN', region: Region.NORTH_ASIA },
   Guangzhou: { iata: 'CAN', countryCode: 'CN', region: Region.NORTH_ASIA },
   Guilin: { iata: 'KWL', countryCode: 'CN', region: Region.NORTH_ASIA },
+  Hangzhou: { iata: 'HGH', countryCode: 'CN', region: Region.NORTH_ASIA },
   Hanoi: { iata: 'HAN', countryCode: 'VN', region: Region.SOUTH_EAST_ASIA },
   Hiroshima: { iata: 'HIJ', countryCode: 'JP', region: Region.NORTH_ASIA },
   'Ho Chi Minh City': { iata: 'SGN', countryCode: 'VN', region: Region.SOUTH_EAST_ASIA },
