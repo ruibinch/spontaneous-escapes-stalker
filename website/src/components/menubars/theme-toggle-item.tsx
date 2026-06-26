@@ -31,12 +31,14 @@ export function ThemeToggleItem() {
         onPress={toggleTheme}
         className={cn(
           'w-full',
-          'text-neutral-300/75 lg:hover:bg-neutral-300/25 lg:hover:dark:bg-neutral-300/25 lg:hover:text-white', // BarStyles.Active without the hover: classes in navbar display
+          'text-nav-text hover:bg-nav-hover hover:text-nav-text-active',
         )}
       >
         {(() => {
           if (!isThemeLoadedLocal) {
-            return <Skeleton className="h-4 w-4 rounded-md bg-neutral-500" />;
+            return (
+              <Skeleton className="h-4 w-4 rounded-md bg-neutral-200 dark:bg-slate-600" />
+            );
           }
           return isDarkTheme ? <MoonIcon /> : <SunIcon />;
         })()}

@@ -2,9 +2,9 @@ import { cn, tv } from '@heroui/react';
 
 export const SidebarWrapper = tv({
   base: cn(
-    'bg-gradient-to-r from-blue-900 to-indigo-900',
+    'bg-nav-bg border-r border-border',
     'transition-transform fixed h-full -translate-x-full shrink-0',
-    'w-52 border-r border-divider flex-col px-3',
+    'w-56 flex-col px-3',
     'lg:flex lg:static lg:h-screen lg:translate-x-0',
   ),
 
@@ -16,11 +16,11 @@ export const SidebarWrapper = tv({
 });
 
 export const BarItem = tv({
+  base: 'rounded-lg transition-colors duration-150',
   variants: {
     isActive: {
-      true: 'w-full bg-neutral-300/25 text-white',
-      false:
-        'w-full text-neutral-300/75 hover:bg-neutral-300/25 hover:dark:bg-neutral-300/25 hover:text-white',
+      true: 'w-full bg-nav-active-bg text-nav-text-active font-medium',
+      false: 'w-full text-nav-text hover:bg-nav-hover hover:text-nav-text-active',
     },
   },
 });

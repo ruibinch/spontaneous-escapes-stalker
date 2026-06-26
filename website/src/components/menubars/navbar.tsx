@@ -17,9 +17,9 @@ export const NavbarWrapper = () => {
   return (
     <Navbar
       isBordered
-      height="3.5rem" // 56px
+      height="3.5rem"
       classNames={{
-        base: 'lg:hidden bg-gradient-to-r from-blue-900 to-indigo-900',
+        base: 'lg:hidden bg-nav-bg border-b border-border',
         wrapper: 'px-4',
       }}
     >

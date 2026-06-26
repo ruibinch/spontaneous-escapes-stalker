@@ -42,9 +42,42 @@ const config: Config = {
     extend: {
       fontSize: {
         '2xs': '0.625rem',
+        stat: ['1.75rem', { lineHeight: '2rem', fontWeight: '700' }],
       },
       lineHeight: {
         '2xs': '0.75rem',
+      },
+      colors: {
+        surface: {
+          DEFAULT: 'var(--color-surface)',
+          raised: 'var(--color-surface-raised)',
+        },
+        border: {
+          DEFAULT: 'var(--color-border)',
+          subtle: 'var(--color-border-subtle)',
+        },
+        text: {
+          primary: 'var(--color-text-primary)',
+          secondary: 'var(--color-text-secondary)',
+          muted: 'var(--color-text-muted)',
+        },
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+          hover: 'var(--color-accent-hover)',
+          subtle: 'var(--color-accent-subtle)',
+        },
+        deal: {
+          good: 'var(--color-deal-good)',
+          caution: 'var(--color-deal-caution)',
+          poor: 'var(--color-deal-poor)',
+        },
+        nav: {
+          bg: 'var(--color-nav-bg)',
+          text: 'var(--color-nav-text)',
+          'text-active': 'var(--color-nav-text-active)',
+          'active-bg': 'var(--color-nav-active-bg)',
+          hover: 'var(--color-nav-hover)',
+        },
       },
     },
   },

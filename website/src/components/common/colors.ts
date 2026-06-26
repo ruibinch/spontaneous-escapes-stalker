@@ -2,8 +2,20 @@ import { FlightClass } from '@/index';
 
 export const flightClassColors: Record<FlightClass, string> = {
   Y: '#16a34a', // green-600
-  W: '#2563eb', // blue-600
-  J: '#b91c1c', // red-700
+  W: '#7c3aed', // violet-600
+  J: '#1d4ed8', // blue-700
+};
+
+export const flightClassColorsDark: Record<FlightClass, string> = {
+  Y: '#22c55e', // green-500
+  W: '#a78bfa', // violet-400
+  J: '#60a5fa', // blue-400
+};
+
+export const flightClassBgColors: Record<FlightClass, string> = {
+  Y: 'bg-green-50 dark:bg-green-950/30',
+  W: 'bg-violet-50 dark:bg-violet-950/30',
+  J: 'bg-blue-50 dark:bg-blue-950/30',
 };
 
 export const regionColors = {

@@ -1,13 +1,6 @@
 import { useMounted } from '@/hooks/use-mounted';
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Divider,
-  Skeleton,
-  cn,
-} from '@heroui/react';
-import React, { useEffect, useState } from 'react';
+import { Skeleton, cn } from '@heroui/react';
+import React from 'react';
 import { CommonStyles } from './styles';
 
 export function SummaryEntryCard({
@@ -36,36 +29,39 @@ export function SummaryEntryCard({
   const isMounted = useMounted();
 
   return (
-    <Card shadow="sm" radius="sm">
-      <CardHeader className="justify-center text-sm">{header}</CardHeader>
-      <Divider />
+    <div className="flex flex-col rounded-lg border border-border bg-surface p-4 gap-2">
+      <span className="text-xs font-medium text-text-muted uppercase tracking-wider">
+        {header}
+      </span>
+
       {showSkeletonOnCard && !isMounted ? (
-        <CardBody className="items-center">
-          <Skeleton
-            className={cn(
-              CommonStyles.Skeleton,
-              'w-16 h-8',
-              skeletonCardClassName,
-            )}
-          />
-        </CardBody>
+        <Skeleton
+          className={cn(
+            CommonStyles.Skeleton,
+            'w-16 h-8',
+            skeletonCardClassName,
+          )}
+        />
       ) : (
-        <CardBody className={cardBodyClassName ?? 'items-center'}>
+        <div className={cardBodyClassName ?? ''}>
           <div
-            // disable styling if content is a React element as content might have its own styling
             className={
-              React.isValidElement(content) ? '' : 'flex flex-col items-center'
+              React.isValidElement(content) ? '' : 'flex flex-col'
             }
           >
             {React.isValidElement(content) ? (
               content
             ) : (
-              <span className={contentClassName ?? 'text-2xl font-semibold'}>
+              <span
+                className={contentClassName ?? 'text-stat text-text-primary'}
+              >
                 {content}
               </span>
             )}
 
-            {subcontent && <span className="text-2xs">{subcontent}</span>}
+            {subcontent && (
+              <span className="text-xs text-text-muted">{subcontent}</span>
+            )}
 
             {badgeContent && (
               <BadgeContent
@@ -75,9 +71,9 @@ export function SummaryEntryCard({
               />
             )}
           </div>
-        </CardBody>
+        </div>
       )}
-    </Card>
+    </div>
   );
 }
 
@@ -96,18 +92,18 @@ function BadgeContent({
     <Skeleton
       className={cn(
         CommonStyles.Skeleton,
-        'mt-1.5 w-20 h-5',
+        'mt-1 w-20 h-5',
         skeletonBadgeClassName,
       )}
     />
   ) : (
-    <div
+    <span
       className={cn(
-        'mt-1.5 px-2 py-0.5 text-2xs rounded-lg',
-        'bg-amber-700/75 dark:bg-amber-700 text-neutral-50 dark:text-neutral-200',
+        'mt-1 inline-flex px-2 py-0.5 text-2xs rounded-md w-fit',
+        'bg-accent-subtle text-accent',
       )}
     >
-      <span>{badgeContent}</span>
-    </div>
+      {badgeContent}
+    </span>
   );
 }

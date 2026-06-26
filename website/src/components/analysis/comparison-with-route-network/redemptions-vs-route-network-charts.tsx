@@ -93,9 +93,10 @@ export function RedemptionsVsRouteNetworkCharts({
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
       <CardWrapper
-        title="Route network size vs no. of SE redemptions offered each month"
+        title="Route network size vs SE redemptions per month"
+        chartComponentStyle="h-52 xl:h-56"
         chart={
           <Line
             options={makeChartOptions({
@@ -116,7 +117,8 @@ export function RedemptionsVsRouteNetworkCharts({
       />
 
       <CardWrapper
-        title="Percentage of route network available for SE redemptions"
+        title="% of route network available for SE redemptions"
+        chartComponentStyle="h-52 xl:h-56"
         chart={
           <Bar
             options={makeChartOptions({

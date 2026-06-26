@@ -1,11 +1,11 @@
 import { ENABLE_COFFEE } from '@/common/env';
 import { BookOpenIcon } from '../icons/book-open';
 import { CalendarIcon } from '../icons/calendar';
-import { GlobeIcon } from '../icons/globe';
 import { HelpCircleIcon } from '../icons/help-circle';
+import { LayoutDashboardIcon } from '../icons/layout-dashboard';
 import { MapIcon } from '../icons/map';
 import { MessageCircleIcon } from '../icons/message-circle';
-import { PieChartIcon } from '../icons/pie-chart';
+import { TrendingUpIcon } from '../icons/trending-up';
 import { CoffeeItem } from './coffee-item';
 import { ThemeToggleItem } from './theme-toggle-item';
 
@@ -19,24 +19,24 @@ export interface BarItemProps {
 
 export const startBarItems = [
   {
-    title: 'Playground',
-    icon: <GlobeIcon />,
+    title: 'Dashboard',
+    icon: <LayoutDashboardIcon />,
     href: '/',
   },
   {
-    title: 'Analysis',
-    icon: <PieChartIcon />,
-    href: '/analysis',
-  },
-  {
-    title: 'View by Month',
-    icon: <CalendarIcon />,
-    href: '/month',
-  },
-  {
-    title: 'View by Route',
+    title: 'Route Explorer',
     icon: <MapIcon />,
     href: '/route',
+  },
+  {
+    title: 'Trends',
+    icon: <TrendingUpIcon />,
+    href: '/trends',
+  },
+  {
+    title: 'Monthly View',
+    icon: <CalendarIcon />,
+    href: '/month',
   },
 ];
 

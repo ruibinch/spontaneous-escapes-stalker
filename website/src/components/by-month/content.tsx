@@ -20,7 +20,6 @@ import { AlertInfo } from '../common/alert-info';
 import { FLIGHT_CLASS_ALL } from '../common/filters/flight-class-filter';
 import { REGION_ALL } from '../common/filters/region-filter';
 import { PageHeader } from '../common/page-header';
-import { SilkairRoutesToggle } from '../common/silkair-routes-toggle';
 import { CommonStyles } from '../common/styles';
 import { ByMonthFilters } from './by-month-filters';
 import { ByMonthSummary } from './by-month-summary';
@@ -75,9 +74,6 @@ export function ByMonthContent({
 }) {
   const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const redemptions = showSilkairRoutes ? redemptionsFull : redemptionsSiaOnly;
-  const shouldShowSilkairRoutesToggle =
-    redemptionsFull.length !== redemptionsSiaOnly.length;
-
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get('searchTerm') ?? '';
   const flightClass = searchParams.get('flightClass') ?? FLIGHT_CLASS_ALL;
@@ -94,24 +90,20 @@ export function ByMonthContent({
   const isFilterActive = redemptions.length !== redemptionsFiltered.length;
 
   return (
-    <div>
-      <PageHeader
-        breadcrumbs={
-          <Breadcrumbs size="md">
-            <BreadcrumbItem href="/month">View by Month</BreadcrumbItem>
-            <BreadcrumbItem>{`${month.slice(0, 4)}-${month.slice(
-              4,
-              6,
-            )}`}</BreadcrumbItem>
-          </Breadcrumbs>
-        }
-        title={`${month.slice(0, 4)} ${monthNumToNameMap[month.slice(4, 6)]}`}
-        rightComponent={
-          shouldShowSilkairRoutesToggle && <SilkairRoutesToggle />
-        }
-      />
-
-      <div className={cn(CommonStyles.Page(), 'flex flex-col w-full gap-8')}>
+    <div className={CommonStyles.Page()}>
+      <div className="flex flex-col gap-8">
+        <PageHeader
+          breadcrumbs={
+            <Breadcrumbs size="md">
+              <BreadcrumbItem href="/month">Monthly View</BreadcrumbItem>
+              <BreadcrumbItem>{`${month.slice(0, 4)}-${month.slice(
+                4,
+                6,
+              )}`}</BreadcrumbItem>
+            </Breadcrumbs>
+          }
+          title={`${month.slice(0, 4)} ${monthNumToNameMap[month.slice(4, 6)]}`}
+        />
         {monthSummaryAnalysisEntry.metadata.remarks && (
           <AlertInfo content={monthSummaryAnalysisEntry.metadata.remarks} />
         )}
@@ -134,5 +126,6 @@ export function ByMonthContent({
         <RedemptionsTable data={redemptionsFiltered} />
       </div>
     </div>
+
   );
 }

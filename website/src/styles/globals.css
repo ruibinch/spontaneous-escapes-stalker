@@ -2,11 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    /* Surface */
+    --color-surface: #ffffff;
+    --color-surface-raised: #f8fafc;
+
+    /* Borders */
+    --color-border: #e2e8f0;
+    --color-border-subtle: #f1f5f9;
+
+    /* Text */
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94a3b8;
+
+    /* Accent */
+    --color-accent: #2563eb;
+    --color-accent-hover: #1d4ed8;
+    --color-accent-subtle: #eff6ff;
+
+    /* Deal quality */
+    --color-deal-good: #16a34a;
+    --color-deal-caution: #d97706;
+    --color-deal-poor: #dc2626;
+
+    /* Navigation */
+    --color-nav-bg: #ffffff;
+    --color-nav-text: #64748b;
+    --color-nav-text-active: #0f172a;
+    --color-nav-active-bg: #f1f5f9;
+    --color-nav-hover: #f8fafc;
+  }
+
+  .dark {
+    --color-surface: #0f172a;
+    --color-surface-raised: #1e293b;
+
+    --color-border: #334155;
+    --color-border-subtle: #1e293b;
+
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #94a3b8;
+    --color-text-muted: #64748b;
+
+    --color-accent: #3b82f6;
+    --color-accent-hover: #60a5fa;
+    --color-accent-subtle: #1e293b;
+
+    --color-deal-good: #22c55e;
+    --color-deal-caution: #fbbf24;
+    --color-deal-poor: #f87171;
+
+    --color-nav-bg: #0f172a;
+    --color-nav-text: #94a3b8;
+    --color-nav-text-active: #f1f5f9;
+    --color-nav-active-bg: #1e293b;
+    --color-nav-hover: #1e293b;
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: Rubik, Avenir Next, Helvetica Neue, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
 }
 
 * {

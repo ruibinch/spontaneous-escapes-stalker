@@ -1,10 +1,10 @@
 import { excludeSilkairFlightsFromRouteAnalysis } from '@/common/exclude-silkair-flights';
 import { getStaticFileContent } from '@/common/get-static-file-content';
-import { PlaygroundContent } from '@/components/playground/content';
+import { DashboardContent } from '@/components/dashboard/content';
+import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
 import { Suspense } from 'react';
-import { RouteAnalysisEntry } from '..';
 
-export default function Playground() {
+export default function Dashboard() {
   const latestRedemptionAt = getStaticFileContent<string>({
     filename: '.latest-redemption-at',
     filetype: 'string',
@@ -15,16 +15,20 @@ export default function Playground() {
   const routeAnalysisListSiaOnly = excludeSilkairFlightsFromRouteAnalysis(
     routeAnalysisListFull,
   );
-
-  // TODO: refer to common server-side getMonthsList fn
+  const monthSummaryAnalysisList = getStaticFileContent<
+    MonthSummaryAnalysisEntry[]
+  >({
+    filename: 'month-summary-analysis.json',
+  });
   const monthsList = routeAnalysisListFull[0].details.map(({ month }) => month);
 
   return (
     <Suspense>
-      <PlaygroundContent
+      <DashboardContent
         latestRedemptionAt={new Date(latestRedemptionAt)}
         routeAnalysisListFull={routeAnalysisListFull}
         routeAnalysisListSiaOnly={routeAnalysisListSiaOnly}
+        monthSummaryAnalysisList={monthSummaryAnalysisList}
         monthsList={monthsList}
       />
     </Suspense>

@@ -1,18 +1,30 @@
 import { cn, tv } from '@heroui/react';
 
 const Page = tv({
-  base: 'max-w-[90rem] pt-6 pb-12 px-4 lg:px-6',
+  base: 'max-w-[90rem] mx-auto pt-8 pb-16 px-4 sm:px-6 lg:px-8',
 });
 
-const Border = cn('border-neutral-250 dark:border-neutral-500');
+const Border = cn('border-border');
 
 const CardWrapper = cn(
-  'flex flex-col gap-2 p-2 rounded-md shadow-md border',
-  Border,
+  'flex flex-col gap-3 p-4 rounded-lg border bg-surface',
+  'border-border',
 );
 
-const Link = cn('text-blue-500 dark:text-blue-400 hover:text-blue-600');
+const Link = cn('text-accent hover:text-accent-hover');
 
-const Skeleton = cn('bg-neutral-100 rounded-lg');
+const Skeleton = cn('bg-neutral-100 dark:bg-slate-700 rounded-lg');
 
-export const CommonStyles = { Page, Border, CardWrapper, Link, Skeleton };
+const SectionTitle = cn('text-lg font-semibold text-text-primary');
+
+const SectionSubtitle = cn('text-sm text-text-secondary');
+
+export const CommonStyles = {
+  Page,
+  Border,
+  CardWrapper,
+  Link,
+  Skeleton,
+  SectionTitle,
+  SectionSubtitle,
+};

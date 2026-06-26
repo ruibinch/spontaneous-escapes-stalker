@@ -35,10 +35,10 @@ export function getFlightClassIndicatorColor({
     return 'bg-green-600';
   }
   if (flightClass === 'Premium Economy' || flightClassCode === 'W') {
-    return 'bg-blue-600';
+    return 'bg-violet-600';
   }
   if (flightClass === 'Business' || flightClassCode === 'J') {
-    return 'bg-red-700';
+    return 'bg-blue-700';
   }
   return '';
 }

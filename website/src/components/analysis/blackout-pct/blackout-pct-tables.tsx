@@ -1,27 +1,9 @@
-import { CardWrapper } from '@/components/common/card-wrapper';
-import { CommonStyles } from '@/components/common/styles';
 import { RoutesStats, useRoutesStats } from '@/hooks/use-routes-stats';
 import { RouteAnalysisEntry } from '@/index';
-import {
-  Link,
-  Table,
-  TableBody,
-  TableCell,
-  TableColumn,
-  TableHeader,
-  TableRow,
-  cn,
-  getKeyValue,
-} from '@heroui/react';
+import { Link, cn } from '@heroui/react';
+import { CommonStyles } from '../../common/styles';
 
 const NUM_ROUTES_TO_DISPLAY = 10;
-
-const columns = [
-  { key: 'route', label: 'Route' },
-  { key: 'numMonths', label: 'Months' },
-  { key: 'numRedemptions', label: 'Redemptions' },
-  { key: 'averageBlackoutPct', label: 'Average blackout %' },
-];
 
 export function BlackoutPctTables({
   routeAnalysisList,
@@ -29,7 +11,6 @@ export function BlackoutPctTables({
   routeAnalysisList: RouteAnalysisEntry[];
 }) {
   const routesStats = useRoutesStats(routeAnalysisList);
-  // only include routes with a decent set of redemptions
   const routesStatsFiltered = routesStats.filter(
     (stats) => stats.numRedemptions > 10,
   );
@@ -43,88 +24,106 @@ export function BlackoutPctTables({
     .slice(0, NUM_ROUTES_TO_DISPLAY);
 
   return (
-    <div className="grid grid-cols-2 gap-2">
-      <div className="col-span-2 xl:col-span-1">
-        <BlackoutPctTable
-          title={`Top ${NUM_ROUTES_TO_DISPLAY} routes with highest blackout %`}
-          data={topRoutesWithHighestBlackoutPct}
-        />
-      </div>
-      <div className="col-span-2 xl:col-span-1">
-        <BlackoutPctTable
-          title={`Top ${NUM_ROUTES_TO_DISPLAY} routes with lowest blackout %`}
-          data={topRoutesWithLowestBlackoutPct}
-        />
-      </div>
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+      <BlackoutPctTable
+        title="Highest blackout %"
+        subtitle="Most restricted routes"
+        accent="red"
+        data={topRoutesWithHighestBlackoutPct}
+      />
+      <BlackoutPctTable
+        title="Lowest blackout %"
+        subtitle="Best availability routes"
+        accent="green"
+        data={topRoutesWithLowestBlackoutPct}
+      />
     </div>
   );
 }
 
 function BlackoutPctTable({
   title,
+  subtitle,
+  accent,
   data,
 }: {
   title: string;
+  subtitle: string;
+  accent: 'red' | 'green';
   data: RoutesStats[];
 }) {
+  const borderColor =
+    accent === 'red'
+      ? 'border-red-200 dark:border-red-900'
+      : 'border-green-200 dark:border-green-900';
+  const bgColor =
+    accent === 'red'
+      ? 'bg-red-50/30 dark:bg-red-950/10'
+      : 'bg-green-50/30 dark:bg-green-950/10';
+  const titleColor =
+    accent === 'red'
+      ? 'text-red-700 dark:text-red-400'
+      : 'text-green-700 dark:text-green-400';
+
   return (
-    <CardWrapper
-      title={title}
-      subtitle="(min 10 redemptions)"
-      style="gap-4 pb-4"
-      headerStyle="items-end"
-      content={
-        <Table
-          radius="sm"
-          aria-label="Percentage of redeemable routes table"
-          removeWrapper
+    <div
+      className={`flex flex-col gap-3 p-4 rounded-lg border ${borderColor} ${bgColor}`}
+    >
+      <div>
+        <span
+          className={`text-xs font-semibold uppercase tracking-wider ${titleColor}`}
         >
-          <TableHeader columns={columns}>
-            {(column) => (
-              <TableColumn key={column.key}>{column.label}</TableColumn>
-            )}
-          </TableHeader>
-          <TableBody items={data}>
-            {(item) => (
-              <TableRow
-                key={`${item.originIata}-${item.destinationIata}`}
-                className={cn(CommonStyles.Border, 'border-b')}
-              >
-                {(columnKey) => (
-                  <TableCell className="py-1.5 text-xs">
-                    {(() => {
-                      switch (columnKey) {
-                        case 'route':
-                          return (
-                            <Link
-                              key={`${item.originIata}${item.destinationIata}`}
-                              href={`/route/${item.originIata}${item.destinationIata}`}
-                              size="sm"
-                              underline="hover"
-                              className={cn(CommonStyles.Link, 'text-xs')}
-                            >
-                              {`${item.origin} - ${item.destination}`}
-                            </Link>
-                          );
-                        case 'averageBlackoutPct':
-                          const averageBlackoutPct = getKeyValue(
-                            item,
-                            columnKey,
-                          ) as number | null;
-                          return averageBlackoutPct === null
-                            ? '-'
-                            : `${getKeyValue(item, columnKey)}%`;
-                        default:
-                          return getKeyValue(item, columnKey);
-                      }
-                    })()}
-                  </TableCell>
-                )}
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      }
-    />
+          {title}
+        </span>
+        <p className="text-xs text-text-muted mt-0.5">
+          {subtitle} (min 10 redemptions)
+        </p>
+      </div>
+
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b border-border">
+            <th className="text-left py-1.5 text-xs font-medium text-text-muted">
+              Route
+            </th>
+            <th className="text-center py-1.5 text-xs font-medium text-text-muted w-16">
+              Months
+            </th>
+            <th className="text-center py-1.5 text-xs font-medium text-text-muted w-24">
+              Redemptions
+            </th>
+            <th className="text-right py-1.5 text-xs font-medium text-text-muted w-24">
+              Avg blackout %
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <tr
+              key={`${item.originIata}-${item.destinationIata}`}
+              className="border-b border-border-subtle"
+            >
+              <td className="py-2 text-sm">
+                <Link
+                  href={`/route/${item.originIata}${item.destinationIata}`}
+                  className="text-sm text-accent hover:text-accent-hover"
+                >
+                  {item.origin} - {item.destination}
+                </Link>
+              </td>
+              <td className="py-2 text-center text-text-secondary text-xs">
+                {item.numMonths}
+              </td>
+              <td className="py-2 text-center text-text-secondary text-xs">
+                {item.numRedemptions}
+              </td>
+              <td className="py-2 text-right font-medium text-text-primary text-xs">
+                {item.averageBlackoutPct}%
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }

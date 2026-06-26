@@ -36,15 +36,21 @@ export function CardWrapper({
   return (
     <div className={cn(CommonStyles.CardWrapper, style)}>
       <div className="flex justify-between gap-2 items-center">
-        <div className={cn('flex gap-2 items-start', headerStyle)}>
-          {title && <span className="text-sm">{title}</span>}
+        <div className={cn('flex gap-2 items-center', headerStyle)}>
+          {title && (
+            <span className="text-sm font-medium text-text-primary">
+              {title}
+            </span>
+          )}
 
-          {subtitle && <span className="text-2xs italic">{subtitle}</span>}
+          {subtitle && (
+            <span className="text-2xs text-text-muted italic">{subtitle}</span>
+          )}
 
           {tooltip && (
             <TooltipOrPopover content={tooltip}>
-              <div className="cursor-pointer">
-                <HelpCircleIcon width={16} height={16} />
+              <div className="cursor-pointer text-text-muted">
+                <HelpCircleIcon width={14} height={14} />
               </div>
             </TooltipOrPopover>
           )}
@@ -60,7 +66,7 @@ export function CardWrapper({
           <>
             <div
               className={cn(
-                'h-40 xl:h-48 overflow-hidden w-full',
+                'h-44 xl:h-52 overflow-hidden w-full',
                 chartRightComponent ? '' : 'w-full',
                 chartComponentStyle,
               )}

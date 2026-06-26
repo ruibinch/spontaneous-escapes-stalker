@@ -20,44 +20,45 @@ export function MonthOverviewContent() {
     };
   });
   const yearMonthListSorted = [...yearMonthList].sort(
-    (a, b) => Number(b.year) - Number(a.year), // latest year first
+    (a, b) => Number(b.year) - Number(a.year),
   );
 
   return (
-    <div>
-      <PageHeader
-        title="View by Month"
-        subtitle="View the history of Spontaneous Escapes redemptions offered in a past month"
-      />
+    <div className={CommonStyles.Page()}>
+      <div className="flex flex-col gap-8">
+        <PageHeader
+          title="Monthly View"
+          subtitle="Browse Spontaneous Escapes redemptions by month"
+        />
 
-      <div className={cn(CommonStyles.Page(), 'flex flex-col gap-6')}>
-        {yearMonthListSorted.map((entry) => (
-          <div key={entry.year} className="flex flex-col gap-2">
-            <h1 className="text-2xl font-semibold">{entry.year}</h1>
+        <div className="flex flex-col gap-6">
+          {yearMonthListSorted.map((entry) => (
+            <div key={entry.year} className="flex flex-col gap-3">
+              <h2 className="text-xl font-semibold text-text-primary">
+                {entry.year}
+              </h2>
 
-            <div className="grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-2">
-              {entry.months.map((month) => (
-                <Link
-                  key={month}
-                  href={`/month/${month}`}
-                  onClick={() => {
-                    trackEvent(['monthOverview'], { month });
-                  }}
-                >
-                  <Button
-                    size="sm"
-                    className={cn(
-                      CommonStyles.Border,
-                      'w-full bg-neutral-100 dark:bg-neutral-700 border-2 rounded-md',
-                    )}
+              <div className="grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-2">
+                {entry.months.map((month) => (
+                  <Link
+                    key={month}
+                    href={`/month/${month}`}
+                    onClick={() => {
+                      trackEvent(['monthOverview'], { month });
+                    }}
                   >
-                    {monthNumToNameMap[month.slice(4, 6)]}
-                  </Button>
-                </Link>
-              ))}
+                    <Button
+                      size="sm"
+                      className="w-full bg-surface-raised border border-border rounded-lg hover:border-accent/30 hover:bg-accent-subtle/50 transition-colors text-text-primary"
+                    >
+                      {monthNumToNameMap[month.slice(4, 6)]}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -27,12 +27,16 @@ export function NavbarItem({
       }}
     >
       <Tooltip size="lg" radius="sm" content={title} placement="bottom">
-        <div className={cn(BarStyles.BarItem({ isActive }), 'p-2 rounded-md')}>
-          {showRedDot && (
-            // slightly hacky implementation as can't get absolute positioning to work properly
-            <div className="w-2 h-2 rounded-lg bg-red-600 -mt-2 -ml-1" />
+        <div
+          className={cn(
+            BarStyles.BarItem({ isActive }),
+            'p-2 rounded-lg relative',
           )}
+        >
           <div className="text-inherit">{icon}</div>
+          {showRedDot && (
+            <div className="w-1.5 h-1.5 rounded-full bg-red-500 absolute top-1 right-1" />
+          )}
         </div>
       </Tooltip>
     </Link>

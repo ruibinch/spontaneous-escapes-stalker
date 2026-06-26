@@ -27,7 +27,7 @@ export function CoffeeItem() {
           trackEvent(['coffee']);
           onOpen();
         }}
-        className="w-full text-neutral-300/75 hover:bg-neutral-300/25 hover:dark:bg-neutral-300/25 hover:text-white"
+        className="w-full text-nav-text hover:bg-nav-hover hover:text-nav-text-active"
       >
         <CoffeeIcon />
       </Button>

@@ -1,6 +1,5 @@
-import { AlertInfo } from '@/components/common/alert-info';
 import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
-import { SectionHeader } from '../section-header';
+import { CommonStyles } from '../../common/styles';
 import { RedemptionsVsRouteNetworkCharts } from './redemptions-vs-route-network-charts';
 import { RouteRedeemablePctTable } from './route-redeemable-pct-table';
 
@@ -11,28 +10,31 @@ export function ComparisonWithRouteNetwork({
   monthSummaryAnalysisList: MonthSummaryAnalysisEntry[];
   routeAnalysisList: RouteAnalysisEntry[];
 }) {
-  const explanatoryNotes = [
-    'The SIA/SilkAir route network dataset time range spans from Nov 2017 to Feb 2024.',
-    'SilkAir ceased operations in end-2021; subsequently its flights were split between SIA and Scoot.',
-  ].map((note) => `• ${note}`);
-
   return (
-    <div className="flex flex-col gap-4">
-      <SectionHeader header="Comparison with SIA/SilkAir route network" />
-
-      <AlertInfo content={explanatoryNotes} />
-
-      <div className="grid grid-cols-3 gap-2">
-        <div className="col-span-3 md:col-span-2">
-          <RedemptionsVsRouteNetworkCharts
-            monthSummaryAnalysisList={monthSummaryAnalysisList}
-          />
-        </div>
-
-        <div className="col-span-3 md:col-span-1">
-          <RouteRedeemablePctTable routeAnalysisList={routeAnalysisList} />
-        </div>
+    <section className="flex flex-col gap-5">
+      <div>
+        <h2 className={CommonStyles.SectionTitle}>
+          Route Network Coverage
+        </h2>
+        <p className="text-sm text-text-secondary mt-0.5">
+          How Spontaneous Escapes compares to SIA&apos;s full route network
+          (OAG data: Nov 2017 — Feb 2024)
+        </p>
       </div>
-    </div>
+
+      <div className="p-3 rounded-lg border border-blue-200 dark:border-blue-900 bg-blue-50/30 dark:bg-blue-950/10 text-sm text-text-secondary">
+        <p>
+          SilkAir ceased operations in end-2021; its flights were subsequently
+          split between SIA and Scoot. Route network data is only available
+          through Feb 2024.
+        </p>
+      </div>
+
+      <RedemptionsVsRouteNetworkCharts
+        monthSummaryAnalysisList={monthSummaryAnalysisList}
+      />
+
+      <RouteRedeemablePctTable routeAnalysisList={routeAnalysisList} />
+    </section>
   );
 }
