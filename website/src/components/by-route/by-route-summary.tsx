@@ -1,10 +1,15 @@
 import { roundToDp } from '@/common/round-to-dp';
 import { useRoutesStats } from '@/hooks/use-routes-stats';
-import { RouteAnalysisEntry } from '@/index';
-import { flightClassCodeOrder } from '../common/flight-class-code-to-name';
+import { FlightClass, RouteAnalysisEntry } from '@/index';
 import { FlightClassIndicator } from '../common/flight-class-indicator';
 import { SummaryEntryCard } from '../common/summary-entry-card';
 import { RouteDetailDatum } from './helpers/make-route-details-list';
+
+const classNames: Record<string, string> = {
+  Y: 'Economy',
+  W: 'Prem Econ',
+  J: 'Business',
+};
 
 export function ByRouteSummary({
   routeMetadata: { originIata, destinationIata },
@@ -24,43 +29,13 @@ export function ByRouteSummary({
       stat.destinationIata === destinationIata,
   );
 
+  // Get latest miles for each class
+  const latestMiles = getLatestMiles(detailsListFiltered);
+
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
       <SummaryEntryCard
-        header="Redemptions"
-        content={detailsListFiltered.length}
-        subcontent={`out of  ${detailsList.length}`}
-        badgeContent={
-          routeStats &&
-          getBadgeText({
-            rank: routeStats.numRedemptionsRank,
-            isRankShared: routeStats.isNumRedemptionsRankShared,
-            total: routesStats.length,
-          })
-        }
-        showSkeletonOnBadge
-      />
-      <SummaryEntryCard
-        cardBodyClassName="px-3 md:px-6"
-        header="Redemptions, by class"
-        content={
-          <div className="flex flex-col text-sm">
-            {flightClassCodeOrder.map((code) => (
-              <div key={code} className="flex justify-between">
-                <div className="flex flex-row items-center gap-1.5">
-                  <FlightClassIndicator flightClassCode={code} />
-                  <span>{code}</span>
-                </div>
-                <div className="font-semibold">
-                  {calcRedemptionsByFlightClass(detailsListFiltered, code)}
-                </div>
-              </div>
-            ))}
-          </div>
-        }
-      />
-      <SummaryEntryCard
-        header="Redemption months"
+        header="Redemption Months"
         content={calcRedemptionMonthsCount(detailsListFiltered)}
         subcontent={`out of ${calcRedemptionMonthsCount(detailsList)}`}
         badgeContent={
@@ -74,9 +49,60 @@ export function ByRouteSummary({
         showSkeletonOnBadge
       />
       <SummaryEntryCard
-        header="Average blackout %"
+        header="By Class"
+        content={
+          <div className="flex flex-col gap-0.5 text-sm">
+            {(['Y', 'W', 'J'] as FlightClass[]).map((code) => {
+              const count = calcRedemptionsByFlightClass(
+                detailsListFiltered,
+                code,
+              );
+              if (count === 0) return null;
+              return (
+                <div key={code} className="flex justify-between items-center">
+                  <div className="flex items-center gap-1.5">
+                    <FlightClassIndicator flightClassCode={code} />
+                    <span className="text-text-secondary text-xs">
+                      {classNames[code]}
+                    </span>
+                  </div>
+                  <span className="font-semibold text-text-primary">
+                    {count}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        }
+      />
+      <SummaryEntryCard
+        header="Latest Miles"
+        content={
+          <div className="flex flex-col gap-0.5 text-sm">
+            {(['Y', 'W', 'J'] as FlightClass[]).map((code) => {
+              const miles = latestMiles[code];
+              if (!miles) return null;
+              return (
+                <div key={code} className="flex justify-between items-center">
+                  <div className="flex items-center gap-1.5">
+                    <FlightClassIndicator flightClassCode={code} />
+                    <span className="text-text-secondary text-xs">
+                      {classNames[code]}
+                    </span>
+                  </div>
+                  <span className="font-semibold text-text-primary">
+                    {miles.toLocaleString()}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        }
+      />
+      <SummaryEntryCard
+        header="Avg Blackout %"
         content={calcAvgBlackoutPct(detailsListFiltered)}
-        subcontent={`total average of ${calcAvgBlackoutPct(detailsList)}`}
+        subcontent={`total average: ${calcAvgBlackoutPct(detailsList)}`}
         badgeContent={
           routeStats &&
           getBadgeText({
@@ -111,10 +137,7 @@ function calcAvgBlackoutPct(list: RouteDetailDatum[]) {
     (
       _monthToCountAndBlackoutPctDict: Record<
         string,
-        {
-          count: number;
-          blackoutPctSum: number;
-        }
+        { count: number; blackoutPctSum: number }
       >,
       d,
     ) => {
@@ -141,6 +164,27 @@ function calcAvgBlackoutPct(list: RouteDetailDatum[]) {
   return avgBlackoutPctList.length > 0
     ? `${roundToDp(blackoutPctSum / avgBlackoutPctList.length, 1)}%`
     : '-';
+}
+
+function getLatestMiles(
+  list: RouteDetailDatum[],
+): Record<FlightClass, number | null> {
+  const result: Record<FlightClass, number | null> = {
+    Y: null,
+    W: null,
+    J: null,
+  };
+
+  // List is sorted by month desc, so first occurrence per class is latest
+  const sorted = [...list].sort((a, b) => b.month.localeCompare(a.month));
+  for (const item of sorted) {
+    const cls = item.flightClass as FlightClass;
+    if (result[cls] === null) {
+      result[cls] = item.milesRequired;
+    }
+  }
+
+  return result;
 }
 
 function getBadgeText({

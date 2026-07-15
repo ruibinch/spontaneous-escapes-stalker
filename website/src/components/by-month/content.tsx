@@ -1,7 +1,11 @@
 'use client';
 import { monthNumToNameMap } from '@/common/months-map';
 import { useSilkairRoutesToggleContext } from '@/contexts/silkair-routes-toggle-context';
-import { MonthSummaryAnalysisEntry, RedemptionEntry } from '@/index';
+import {
+  MonthSummaryAnalysisEntry,
+  RedemptionEntry,
+  RouteAnalysisEntry,
+} from '@/index';
 import { BreadcrumbItem, Breadcrumbs, Skeleton, cn } from '@heroui/react';
 import {
   ArcElement,
@@ -23,6 +27,7 @@ import { PageHeader } from '../common/page-header';
 import { CommonStyles } from '../common/styles';
 import { ByMonthFilters } from './by-month-filters';
 import { ByMonthSummary } from './by-month-summary';
+import { MonthHighlights } from './month-highlights';
 import { filterRedemptionEntryList } from './helpers/filter-redemption-entry-list';
 
 ChartJS.register(
@@ -41,7 +46,7 @@ const ByMonthCharts = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-3">
         {[...Array(2)].map((_, i) => (
           <div key={i} className="col-span-2 xl:col-span-1">
             <Skeleton className={cn(CommonStyles.Skeleton, 'w-full h-60')} />
@@ -66,11 +71,15 @@ export function ByMonthContent({
   redemptionsFull,
   redemptionsSiaOnly,
   monthSummaryAnalysisEntry,
+  routeAnalysisList,
+  totalMonths,
 }: {
   month: string;
   redemptionsFull: RedemptionEntry[];
   redemptionsSiaOnly: RedemptionEntry[];
   monthSummaryAnalysisEntry: MonthSummaryAnalysisEntry;
+  routeAnalysisList: RouteAnalysisEntry[];
+  totalMonths: number;
 }) {
   const { showSilkairRoutes } = useSilkairRoutesToggleContext();
   const redemptions = showSilkairRoutes ? redemptionsFull : redemptionsSiaOnly;
@@ -89,6 +98,11 @@ export function ByMonthContent({
   });
   const isFilterActive = redemptions.length !== redemptionsFiltered.length;
 
+  const monthName = monthNumToNameMap[month.slice(4, 6)];
+  const year = month.slice(0, 4);
+  const uniqueRoutes =
+    monthSummaryAnalysisEntry.byUniqueRoutes.availableForRedemption.total;
+
   return (
     <div className={CommonStyles.Page()}>
       <div className="flex flex-col gap-8">
@@ -96,21 +110,26 @@ export function ByMonthContent({
           breadcrumbs={
             <Breadcrumbs size="md">
               <BreadcrumbItem href="/month">Monthly View</BreadcrumbItem>
-              <BreadcrumbItem>{`${month.slice(0, 4)}-${month.slice(
-                4,
-                6,
-              )}`}</BreadcrumbItem>
+              <BreadcrumbItem>{`${year}-${month.slice(4, 6)}`}</BreadcrumbItem>
             </Breadcrumbs>
           }
-          title={`${month.slice(0, 4)} ${monthNumToNameMap[month.slice(4, 6)]}`}
+          title={`${year} ${monthName}`}
+          subtitle={`${uniqueRoutes} routes · ${redemptions.length} redemptions`}
         />
+
         {monthSummaryAnalysisEntry.metadata.remarks && (
           <AlertInfo content={monthSummaryAnalysisEntry.metadata.remarks} />
         )}
 
+        <MonthHighlights
+          redemptions={redemptions}
+          routeAnalysisList={routeAnalysisList}
+          totalMonths={totalMonths}
+        />
+
         <ByMonthFilters redemptions={redemptions} />
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           <ByMonthSummary
             month={month}
             redemptions={redemptions}
@@ -126,6 +145,5 @@ export function ByMonthContent({
         <RedemptionsTable data={redemptionsFiltered} />
       </div>
     </div>
-
   );
 }

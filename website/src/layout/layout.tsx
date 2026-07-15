@@ -12,19 +12,17 @@ interface Props {
 export const Layout = ({ children }: Props) => {
   return (
     <SidebarContextProvider>
-      {/*  NewChangelogItemContextProvider needs to be defined above the Sidebar/Navbar wrappers */}
       <NewChangelogItemContextProvider>
-        <section className="flex">
-          <SidebarWrapper />
+        <SilkairRoutesToggleContextProvider>
+          <section className="flex">
+            <SidebarWrapper />
 
-          <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-            <NavbarWrapper />
-
-            <SilkairRoutesToggleContextProvider>
+            <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+              <NavbarWrapper />
               {children}
-            </SilkairRoutesToggleContextProvider>
-          </div>
-        </section>
+            </div>
+          </section>
+        </SilkairRoutesToggleContextProvider>
       </NewChangelogItemContextProvider>
     </SidebarContextProvider>
   );

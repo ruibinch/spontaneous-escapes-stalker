@@ -9,7 +9,7 @@ interface Props {
 
 export function ByMonthCharts({ redemptionsFiltered, isFilterActive }: Props) {
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-2 gap-3">
       <div className="col-span-2 xl:col-span-1">
         <FlightClassDistributionChart
           redemptionsFiltered={redemptionsFiltered}

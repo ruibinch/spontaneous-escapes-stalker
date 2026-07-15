@@ -81,12 +81,12 @@ export function RouteRedeemablePctTable({
   }));
   const totalRoutes = data.length;
 
-  // Top and bottom 5
-  const topCoverage = data.slice(0, 5);
+  // Top and bottom 8
+  const topCoverage = data.slice(0, 8);
   const bottomCoverage = [...data]
     .filter((r) => r.redeemablePct > 0)
     .sort((a, b) => a.redeemablePct - b.redeemablePct)
-    .slice(0, 5);
+    .slice(0, 8);
 
   // Search results
   const searchResults = useMemo(() => {
@@ -105,64 +105,15 @@ export function RouteRedeemablePctTable({
 
   return (
     <div className="flex flex-col gap-5 p-5 rounded-lg border border-border bg-surface">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-        <div>
-          <span className="text-sm font-medium text-text-primary">
-            SE Coverage Distribution
-          </span>
-          <p className="text-xs text-text-muted mt-0.5">
-            % of months each route appeared on SE relative to months it had
-            scheduled flights ({totalRoutes} routes)
-          </p>
-        </div>
-
-        {/* Route lookup */}
-        <div className="relative w-full sm:w-64">
-          <SearchIcon
-            width={14}
-            height={14}
-            className="absolute left-2.5 top-1/2 -translate-y-1/2 text-text-muted"
-          />
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Look up a route..."
-            className="w-full pl-8 pr-3 py-2 text-xs rounded-lg border border-border bg-surface text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
-          />
-        </div>
+      <div>
+        <span className="text-sm font-medium text-text-primary">
+          SE Coverage Distribution
+        </span>
+        <p className="text-xs text-text-muted mt-0.5">
+          % of months each route appeared on SE relative to months it had
+          scheduled flights ({totalRoutes} routes)
+        </p>
       </div>
-
-      {/* Search results (shown when searching) */}
-      {searchResults && (
-        <div className="border border-border rounded-lg p-3">
-          {searchResults.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-1.5">
-              {searchResults.map((r) => (
-                <div
-                  key={r.routeIata}
-                  className="flex items-center justify-between text-sm"
-                >
-                  <Link
-                    href={`/route/${r.routeIata}`}
-                    className="text-sm text-accent hover:text-accent-hover"
-                  >
-                    {r.route}
-                  </Link>
-                  <span className="text-xs text-text-secondary ml-2">
-                    {r.redeemablePct}%{' '}
-                    <span className="text-text-muted">
-                      ({r.numMonthsWithRedemption}/{r.numMonthsWithFlight})
-                    </span>
-                  </span>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-xs text-text-muted">No routes found.</p>
-          )}
-        </div>
-      )}
 
       {/* Distribution bar */}
       <div className="flex flex-col gap-2">
@@ -252,6 +203,57 @@ export function RouteRedeemablePctTable({
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Route lookup */}
+      <div className="border-t border-border pt-4 flex flex-col gap-2">
+        <span className="text-xs font-medium text-text-muted">
+          Look up a specific route
+        </span>
+        <div className="relative w-full sm:w-72">
+          <SearchIcon
+            width={14}
+            height={14}
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 text-text-muted"
+          />
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search by city or IATA code..."
+            className="w-full pl-8 pr-3 py-2 text-xs rounded-lg border border-border bg-surface text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
+          />
+        </div>
+
+        {searchResults && (
+          <div className="mt-1">
+            {searchResults.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1.5">
+                {searchResults.map((r) => (
+                  <div
+                    key={r.routeIata}
+                    className="flex items-center justify-between text-sm"
+                  >
+                    <Link
+                      href={`/route/${r.routeIata}`}
+                      className="text-sm text-accent hover:text-accent-hover"
+                    >
+                      {r.route}
+                    </Link>
+                    <span className="text-xs text-text-secondary ml-2">
+                      {r.redeemablePct}%{' '}
+                      <span className="text-text-muted">
+                        ({r.numMonthsWithRedemption}/{r.numMonthsWithFlight})
+                      </span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-xs text-text-muted">No routes found.</p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

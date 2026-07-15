@@ -5,7 +5,7 @@ import { MONTHS_WITH_MISSING_DATA } from '@/common/months-data-info';
 import { yyyymmToDate } from '@/common/yyyymm-to-date';
 import { ByMonthContent } from '@/components/by-month/content';
 import { NoDataIllustration } from '@/components/icons/no-data';
-import { MonthSummaryAnalysisEntry } from '@/index';
+import { MonthSummaryAnalysisEntry, RouteAnalysisEntry } from '@/index';
 import { fetchMonthRedemptions } from '@/lib/fetchMonthRedemptions';
 import { isAfter, isBefore } from 'date-fns';
 import Image from 'next/image';
@@ -27,6 +27,9 @@ export default async function ByMonth({ params }: { params: ByMonthParams }) {
   const monthSummaryAnalysisList = getStaticFileContent<
     MonthSummaryAnalysisEntry[]
   >({ filename: 'month-summary-analysis.json' });
+  const routeAnalysisList = getStaticFileContent<RouteAnalysisEntry[]>({
+    filename: 'route-analysis.json',
+  });
 
   const monthSummaryAnalysisEntry = monthSummaryAnalysisList.find(
     (entry) => entry.month === month,
@@ -39,6 +42,8 @@ export default async function ByMonth({ params }: { params: ByMonthParams }) {
         redemptionsFull={redemptionsFull}
         redemptionsSiaOnly={redemptionsSiaOnly}
         monthSummaryAnalysisEntry={monthSummaryAnalysisEntry}
+        routeAnalysisList={routeAnalysisList}
+        totalMonths={monthsList.length}
       />
     </Suspense>
   );

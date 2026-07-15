@@ -17,7 +17,7 @@ export function ByMonthSummary({
   const monthStats = monthsStats.find((stat) => stat.month === month);
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
       <SummaryEntryCard
         header="Total Redemptions"
         content={redemptionsFiltered.length}
