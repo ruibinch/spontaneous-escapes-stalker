@@ -20,6 +20,7 @@ const cityNameOverride: Record<string, string> = {
   'Ho Chi Minh': 'Ho Chi Minh City',
   'Kuala lumpur': 'Kuala Lumpur',
   'London (Gatwick)': 'London',
+  'London Gatwick': 'London',
   'London (Heathrow)': 'London',
   'London (LGW)': 'London',
   'London (LHR)': 'London',
