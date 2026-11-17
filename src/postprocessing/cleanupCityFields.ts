@@ -38,6 +38,7 @@ const cityNameOverride: Record<string, string> = {
   'Sydney (WSI)': 'Sydney',
   'Tokyo (Haneda)': 'Tokyo',
   'Tokyo (Narita)': 'Tokyo',
+  'Tokyo Narita': 'Tokyo',
   Sinapore: 'Singapore',
   Zurich: 'Zürich',
 };
